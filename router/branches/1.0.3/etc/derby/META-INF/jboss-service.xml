@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server>
+  <!-- ==================================================================== -->
+  <!-- Start Derby                                                          -->
+  <!-- ==================================================================== -->
+  <mbean code="net.medcommons.router.data.DerbyRunner" name="Cache:name=MedcommonsDerbyRunner">
+  </mbean>
+</server>

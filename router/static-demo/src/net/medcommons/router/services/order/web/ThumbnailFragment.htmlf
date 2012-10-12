@@ -1,0 +1,233 @@
+<%@ taglib uri="http://jakarta.apache.org/struts/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://jakarta.apache.org/struts/tags-html" prefix="html" %>
+<%@ taglib uri="http://jakarta.apache.org/struts/tags-logic" prefix="logic" %>
+<%@ taglib uri="http://jakarta.apache.org/taglibs/datetime-1.0" prefix="dt" %>
+ 
+        <TR>
+          <TD bgColor=#003366>
+          	
+            <TABLE height=200 cellSpacing=0 cellPadding=0 width=<%=imageWidth%> border=0>
+              <TBODY>
+              <TR>
+             <!-- Report thumbnail -->
+                <TD>
+                <IMG height=1 src="bformspacer.gif" width=5></TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=0 width=140 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class="NotSelectedImage" id="thumbCell0">
+                        <IMG height=140   onmousedown="javascript:showOrder( '<%=passthruURLs%>');" src="OrderThumbnail.jpg" width=140></TD>
+                      </TR>
+                    <TR>
+                      <TD>
+                        <P class=ThumbLabel>Interpretation Order</P>
+                        <P class=ThumbLabel>1 page</P></TD></TR></TBODY></TABLE></TD>
+                 <% 
+                 int maxSeries = (study.series.size() > 3)? 3: study.series.size();
+		         for (int i = 0; i < maxSeries; i++) {
+		         %>
+		          <TD vAlign=top>
+		          <%
+					MCSeries series = (MCSeries) study.series.get(i);
+					int thumbnailReference = series.instances.size()/2;
+					MCInstance thumbnailImage = (MCInstance) series.instances.get(thumbnailReference);
+					String thumbnailName = "series" + i;
+					String thumbDescription = "thumbDescription"+ i;
+					String thumbLabel = "thumbLabel" + i;
+					StringBuffer buff = new StringBuffer("/router/WADO?studyUID=");
+					buff.append(thumbnailImage.StudyInstanceUID);
+					buff.append("&rows=140&columns=140&fname=");
+					buff.append(thumbnailImage.ReferencedFileID);
+					buff.append("&windowCenter=");
+					if ((thumbnailImage.level == null) ||
+						(thumbnailImage.level.equals(""))){
+							buff.append(200);
+						}
+					else
+						buff.append(thumbnailImage.level);
+						
+					buff.append("&windowWidth=");	
+					if ((thumbnailImage.window == null) ||
+						(thumbnailImage.window.equals(""))){
+							buff.append(500);
+						}
+					else
+						buff.append(thumbnailImage.window);
+					
+					String thumbnailURL = buff.toString();
+						
+				%>
+                  <TABLE cellSpacing=0 cellPadding=0 width=140 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD colSpan=2 id='<%="thumbCell"+(i+1)%>' class="NotSelectedImage">
+                      <A href="javascript:displaySelectedSeries(<%= i %>);">
+                      <IMG 
+                        height=140 src="blank.png" 
+                        width=140 border=0 name="<%=thumbnailName%>"
+                        id="<%=thumbnailName%>"
+                       ></A>
+                        </TD>
+                     </TR>
+                    <TR>
+                      <TD width=90>
+                        <P id="<%=thumbDescription%>" class=ThumbLabel> series </P></TD>
+                      <TD width=50>
+                        <P class=ImageCount>00:00&nbsp;&nbsp;</P></TD></TR>
+                    <TR>
+                      <TD colSpan=2><IMG height=5 
+                        src="bformspacer.gif" width=1></TD></TR>
+                    <TR>
+                      <TD colSpan=2>
+                        <P id="<%=thumbLabel%>" class=ThumbLabel> images</P>
+                        </TD>
+                      </TR>
+                    </TBODY>
+                   </TABLE>
+                   </TD>
+                <%
+                 } 
+                 %>
+                 <%
+                 // There are places for three series in the toolbar.
+                 // If there are less than three series in a study, fill in with blank
+                 // images.
+                 if (study.series.size() < 3){
+                 	int placeHolderImages =  3 - study.series.size();
+                 %>
+                  
+                 <%
+               		for (int i = 0; i < placeHolderImages; i++) {
+               %>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=0 width=140 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD colSpan=2>
+                      <IMG 
+                        height=140 src="blank.png" 
+                        width=140 border=0>
+
+                        </TD>
+                     </TR>
+                    <TR>
+                      <TD width=90>
+                        <P class=ThumbLabel></P></TD>
+                      <TD width=50>
+                        <P class=ImageCount></P></TD></TR>
+                    <TR>
+                      <TD colSpan=2><IMG height=5 
+                        src="bformspacer.gif" width=1></TD></TR>
+                    <TR>
+                      <TD colSpan=2>
+                        <P class=ThumbLabel> </P>
+                        </TD>
+                      </TR>
+                    </TBODY>
+                   </TABLE>
+                    </TD>
+                  
+               <%
+               	}// loop
+               } // If number of series < 3
+               %>
+               <!-- Tools -->
+                <TD bgColor=#003366>
+                <logic:notPresent name="notools" scope="page">
+                  <TABLE cellSpacing=0 cellPadding=0 width=180 border=0>
+                    <TBODY>
+                    <TR vAlign=center align=middle>
+                      <TD height=50>
+                      <%-- <a href="javascript:toggleZoomWL();"> --%>
+                      <IMG height=40 
+                        src="Window-Level.jpg" width=40 onclick="javascript:toggleZoomWL();" style="cursor: hand" name="WL_Zoom_Toggle">
+                        <%-- </a> --%>
+                        </TD>
+                      <TD height=50>
+                      <IMG height=40 
+                        src="R0.jpg" width=40>
+                        </TD>
+                      <TD height=50>
+                      	<IMG height=40 src="X_UP.jpg" name="Exit_Tool" width=40 onclick="javascript:exitScreen();" style="cursor: hand">
+                      	</TD>
+                      	</TR>
+                    <TR vAlign=center align=middle>
+                      <TD height=50><IMG height=40 
+                        src="COMPARE_UP.jpg" width=40></TD>
+                      <TD height=50>
+     
+                      <IMG height=40 onmousedown="javascript:showOrder ('<%=passthruURLs%>');"
+                        src="Hide_A.jpg" width=40>
+                        </TD>
+                      <TD height=50>
+                      <IMG height=40 src="Reset_UP.jpg" width=40 onclick="javascript:resetViewer()" style="cursor: hand"></TD></TR>
+                    <TR vAlign=center align=middle>
+                      <TD height=50><IMG height=40 
+                        src="DOCOM_ON.jpg" width=40 onclick="javascript:toggleOverlay()" style="cursor: hand"></TD>
+                      <TD height=50><IMG height=40 
+                        src="Annotation.jpg" width=40 onclick="javascript:toggleFullSize()" style="cursor: hand"></TD>
+                      <TD height=50>
+                      <IMG height=40 src="i_UP.jpg" width=40 onclick="javascript:displayHIPAALog('<%=tracking%>');" style="cursor: hand">
+                      </TD></TR>
+                    <TR vAlign=center align=middle>
+                      <TD colSpan=3>
+                      <IMG height=15 
+                        src="Info_Tool.jpg" width=1></TD></TR>
+                    <TR vAlign=center align=middle>
+                      <TD colSpan=3><a href="http://www.medcommons.net"><IMG height=35 
+                        src="medcommons_bottomfooter.gif" width=180 border="0"></a></TD></TR></TBODY></TABLE>
+                </logic:notPresent>
+                <logic:present name="notools" scope="page">
+                <img src="ToolsDisabled.png" width="178" height="208" border="0" usemap="#map" />
+                <map name="map">
+                <area shape="rect" coords="13,166,164,206" alt="MedCommons" href="http://www.medcommons.net" />
+                </map>
+                </logic:present>
+                </TD>
+                <TD><IMG height=1 src="bformspacer.gif" 
+                width=5></TD>
+                </TR>
+                </TBODY>
+                </TABLE>
+                </TD>
+                </TR>
+        <TR>
+          <TD class=ImageCount vAlign=center  align=left  bgColor=#000000 
+          height=30>
+          <TABLE width=<%=imageWidth%> height="30" cellpadding="0" cellspacing="0">
+          <tr>
+          	<TD  class=ImageCount vAlign=center  align=middle>
+          		<%= study.series.size() %> Series total - 
+          		<%=  study.PatientName %> /
+          		<%= study.PatientID %>
+          	</TD>
+          	  <TD class=ImageCount vAlign=bottom  align=middle  bgColor=#000000 height=30>
+            <FORM name=form1 action="" method=post>
+            <SELECT name="selectionMenu"
+            	onChange="menuSelect(this.options[this.selectedIndex].value)"> 
+              <OPTION class="MenuHighlight" value="ORDER0">Interpretation Order</OPTION> 
+             <% 
+             	int selectionIndex=0;
+		         for (int i=0; i < study.series.size();  i++) {
+			        MCSeries series = (MCSeries) study.series.get(i);
+			        
+					%>
+	              		<OPTION class="MenuHighlight" value=<%=selectionIndex%> ><%= series.SeriesDescription + " - " + series.size() + " images "%> - <dt:format pattern="MM/dd/yyyy"><%=series.getDate().getTime()%></dt:format>
+	              		</OPTION> 
+	              <%
+	              selectionIndex++;
+              } 
+              %>
+              <OPTION value="">--------</OPTION> 
+              <OPTION value="ORDER">New Order</OPTION> 
+              <OPTION value="">--------</OPTION> 
+              <OPTION value="ABOUT">About</OPTION> 
+              <OPTION value="HELP">Help</OPTION>
+              </SELECT> 
+      </FORM>
+      </TD>
+      </TR>
+      </TABLE>
+      </TD>
+      </TR>

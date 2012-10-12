@@ -1,0 +1,246 @@
+{% extends "www/base.html" %} 
+{% block head %}
+<script type='text/javascript'>
+</script>
+<style type='text/css'>
+  table tr { height: 2.3em; }
+  td.usertools * { vertical-align: middle; }
+  td.usertools .icon { position: relative; top: -2px; }
+  td { padding-left: 5px; }
+  #login {
+      font-size: 16px;
+      margin: 1em 1em 1em 1em;
+      position: relative;
+  }   
+  #login input.text {
+      width: 135px;
+      padding: 2px;
+  }
+  #login input#username {
+    width: 210px;
+  }
+  #login * {
+      vertical-align: middle;
+  }
+  #tou {
+    margin-top: 0.3em;
+  }
+  #login #tou, 
+  #login #tou * {
+      vertical-align: bottom;
+  }
+  #tou input {
+      position: relative;
+      top: -2px;
+  }
+  
+  #login #passwordshadow {
+      color: gray;
+  }
+  .error {
+      color: orange;
+  }
+  .clickable {
+      cursor: pointer;
+  }
+  INPUT.hintTextbox       { color: #888; }
+  INPUT.hintTextboxActive { color: #000; }
+  #content {
+  max-width: 1024px;
+  min-width: 650px;
+  }
+  #video {
+      margin-left: 2em;
+  }
+  #quote {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 13px;
+  }
+  #caption {
+      margin-left: 40px;
+      font-size: 11px;
+  }
+  #how {
+      height: 250px;
+  }
+  #testimonial {
+      margin: 1em 0;
+      height: 215px;
+  }
+  #testimonial, #how {
+      position: relative;
+      background-color: transparent;
+      margin: 0 0 1em 0;
+  }
+  #testimonial .text, #how .text {
+      position: absolute;
+      height: 100%;
+      width: 88%;
+      z-index: 10;
+      padding: 0.2em 0.5em;
+      margin: 0 1em;
+  }
+  #testimonial .box, #how .box {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #f1eddb;
+      filter: 
+        progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=0,strength=3)
+        progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=90,strength=7)
+        progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=180,strength=7)
+        progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=270,strength=3);      
+      -moz-box-shadow: 3px 2px 2px #ccc;
+      -webkit-box-shadow: 3px 2px 2px #ccc;
+      box-shadow: 3px 2px 2px #ccc;      
+      -webkit-border-radius: 9px;
+      -moz-border-radius: 9px;
+      border-radius: 9px;        
+  }
+  
+</style>
+<link rel="stylesheet" type="text/css" href="yui/2.8.0r4/button/assets/skins/sam/button.css" /> 
+
+{% endblock head %}
+{% block main %}
+
+<div id='content'>
+<div id='video'>
+  <div id='how'>
+      <div class='box'>
+      </div>
+      <div class='text'>
+      <h3>See How it Works</h3>
+      <div id='player'>
+       <img class='clickable' id='videothumb' src='/images/video_thumb.png' width='240' height='181'>
+      </div>
+      <div id='caption'>Click to play &nbsp;-&nbsp; 3 minute video</div>
+      </div>
+  </div>
+  
+  <div id='testimonial'>
+    <div class='box'>
+    </div>
+    <div class='text'>
+    <h3>Who's using MedCommons?</h3>
+    <p id='quote'>"The capability to upload medical images from CDs across the 
+    network has improved the workflow for both our clients and the Tumor Imaging Metrics Core service"</p>
+    <p>Gordon J. Harris, PhD<br>
+    Massachusetts General Hospital<br>
+    Director, 3D Imaging Service and Tumor Imaging Metrics Core
+    </p>
+    </div>
+  </div>
+</div>            
+  <div id='bullets'>
+          <h2>Medical Image Sharing Made Easy</h2>
+          <p>MedCommons is the easiest way to transfer medical images around.</p>
+          <ul>
+              <li>Upload straight from CD or scanner, view online</li>
+              <li>Share by email or SMS</li>
+              <li>For patients, doctors, practices, imaging centers, families</li>
+              <li>Free for up to 40 transfers per month</li>
+              <li>Secure, private and HIPAA compliant</li>
+           </ul> 
+               
+       <p>Register to try it out, free with no obligation!</p>
+       <form id='registerForm' action='/acct/register.php' method='POST'>
+           <div id='login'>
+               <input type='text' id='username' name='email' autocomplete='off' tabindex=1 class='hintTextbox text' value='Email Address'>
+               <input type='text' class='text' id='passwordshadow' value='Choose Password' tabindex=3>
+               <input type='password' id='password' name='pw1' value='' class='hidden text' tabindex=2>
+               <input type='submit' class='mainshort' id='regbutton' value='Register' tabindex=5>
+               <div id='tou'><input type='checkbox' id='termsOfUse' name='termsOfUse' value='true' tabindex=4> &nbsp;I agree to the 
+                   <a href='http://www.medcommons.net/terms.html' target='tou'>Terms of Use</a></div>
+           </div>
+       </form>
+   </div>
+</div>
+{% endblock main %} 
+
+{% block endjs %}
+
+<script type='text/javascript'>
+
+var HintClass = "hintTextbox";
+var HintActiveClass = "hintTextboxActive";
+
+// define a custom method on the string class to trim leading and training spaces
+String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); };
+
+function initHintTextboxes() {
+  var inputs = document.getElementsByTagName('input');
+  for (i=0; i<inputs.length; i++) {
+    var input = inputs[i];
+    if (input.type!="text" && input.type!="password")
+      continue;
+      
+    if (input.className.indexOf(HintClass)!=-1) {
+      input.hintText = input.value;
+      input.onfocus = onHintTextboxFocus;
+      input.onblur = onHintTextboxBlur;
+    }
+  }
+}
+
+function onHintTextboxFocus() {
+  var input = this;
+  if (input.value.trim()==input.hintText) {
+    input.value = "";
+    Y.one(input).replaceClass(HintClass,HintActiveClass);
+  }
+}
+
+function onHintTextboxBlur() {
+  var input = this;
+  if (input.value.trim().length==0) {
+    input.value = input.hintText;
+    Y.one(input).replaceClass(HintActiveClass,HintClass);
+  }
+}
+
+Y.on("domready", function() {
+    initHintTextboxes();
+
+    Y.one('#passwordshadow').on('focus', function() {
+        this.addClass('hidden');
+        Y.one('#password').removeClass('hidden');
+        $('password').focus();
+    });
+    Y.one('#tou').on('click', function() {
+        Y.all('.error').remove();
+    });
+    Y.one('#regbutton').on('click', function(e) {
+        Y.all('.error').remove();
+        if(!$('termsOfUse').checked) {
+            e.preventDefault();
+            Y.one('#registerForm').prepend("<p class='error'>Please Read the Terms of Use and check the box to confirm you agree</p>");
+        }
+        else
+        if($('password').value.length < 6) {
+            e.preventDefault();
+            $('password').select();
+            $('password').focus();
+            Y.one('#registerForm').prepend("<p class='error'>Please enter a password of 6 or more characters</p>");
+        }
+        else
+        if($('username').value.length < 1 || $('username').value.indexOf('@')<0) {
+            e.preventDefault();
+            $('username').select();
+            $('username').focus();
+            Y.one('#registerForm').prepend("<p class='error'>Please enter a valid email address</p>");
+        }        else
+            $('registerForm').submit();
+            
+    });
+    
+    Y.one('#videothumb').on('click', function() {
+        window.open('{{Site}}/inboxtour.html'.replace(/^https:/,'http:'),'medcommonsonyoutube','width=656,height=400,menubar=no,status=no,location=no,toolbar=no,scrollbars=no');
+    });
+    
+});
+</script>
+
+{% endblock endjs %}
+

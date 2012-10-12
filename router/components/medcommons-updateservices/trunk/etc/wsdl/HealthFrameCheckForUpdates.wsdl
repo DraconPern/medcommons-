@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.RecordsForLiving.com/HealthFrame/XMLMessaging_20/CheckForUpdates/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.RecordsForLiving.com/HealthFrame/XMLMessaging_20/CheckForUpdates/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.RecordsForLiving.com/HealthFrame/XMLMessaging_20/CheckForUpdates/">
+      <s:element name="AnyUpdateForVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="currentVersion" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="forPackage" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnyUpdateForVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AnyUpdateForVersionResult" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AnyUpdateForVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:AnyUpdateForVersion"/>
+  </wsdl:message>
+  <wsdl:message name="AnyUpdateForVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:AnyUpdateForVersionResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="_CheckForUpdatesSoap">
+    <wsdl:operation name="AnyUpdateForVersion">
+      <wsdl:input message="tns:AnyUpdateForVersionSoapIn"/>
+      <wsdl:output message="tns:AnyUpdateForVersionSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="_CheckForUpdatesSoap" type="tns:_CheckForUpdatesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AnyUpdateForVersion">
+      <soap:operation soapAction="http://www.RecordsForLiving.com/HealthFrame/XMLMessaging_20/CheckForUpdates/AnyUpdateForVersion" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="_CheckForUpdatesSoap12" type="tns:_CheckForUpdatesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AnyUpdateForVersion">
+      <soap12:operation soapAction="http://www.RecordsForLiving.com/HealthFrame/XMLMessaging_20/CheckForUpdates/AnyUpdateForVersion" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="_CheckForUpdates">
+    <wsdl:port name="_CheckForUpdatesSoap" binding="tns:_CheckForUpdatesSoap">
+      <soap:address location="http://www.recordsforliving.com/HealthFrame/XMLMessaging_20/CheckForUpdates/Default.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="_CheckForUpdatesSoap12" binding="tns:_CheckForUpdatesSoap12">
+      <soap12:address location="http://www.recordsforliving.com/HealthFrame/XMLMessaging_20/CheckForUpdates/Default.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

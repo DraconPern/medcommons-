@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Physician Practice Group DICOM  Radiology CD Upload</title>
+<link rel="stylesheet" type="text/css" href="styles1.css">
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body onload="MM_preloadImages('images/tabs/tabs_patientOver.png','images/tabs/tabs_doctorOver.png','images/tabs/tabs_groupOver.png','images/tabs/tabs_urlOver.png','images/buttons/btn_uploadCDOver.gif','images/buttons/btn_practiceRegOver.gif')">
+
+<!-- Nav Table -->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+<td>
+<div id="topnav">
+<ul class="nav">
+<a href="http://www.medcommons.net"><img src="images/logoHeader.gif" alt="MedCommons Inc" width="166" height="35" border="0"/></a>
+<br />
+
+	<li><a rel="tab" href="../index.html"><em>MedCommons Home</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="index.html"><em>On Demand Service</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="../integrators/platform.html"><em>Platform</em></a></li>
+   	 <li><em>|</em></li>
+    
+    	<li><a rel="tab" href="../resources.html"><em>Resources</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="https://healthurl.medcommons.net/mod/voucherclaim.php" target="_blank"><em>Pickup Records</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="https://healthurl.medcommons.net/acct/login.php" target="_blank"><em>Sign In</em></a></li>
+
+</ul>
+
+</div>
+
+</td>
+  </tr>
+  
+  <tr>
+<td bgcolor="#336699"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+</table>
+
+<!-- Feature Table-->
+<table width="900" border="0" cellspacing="0" cellpadding="0" background="images/backgroundGradient.jpg">
+  <tr>
+    <td><img src="images/features/groups.jpg" width="900" height="466" /></td>
+  </tr>
+    <tr>
+   <td align="center"><a href="doctors.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('doctor tab','','images/tabs/tabs_doctor.png',1)"><img src="images/tabs/tabs_doctorOver.png" alt="Doctor Tab" name="doctor tab" width="150" height="50" border="0" id="doctor tab" /></a><a href="patients.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('patient','','images/tabs/tabs_patient.png',1)"><img src="images/tabs/tabs_patientOver.png" alt="Patient Tab" name="patient" width="150" height="50" border="0" id="patient" /></a><img src="images/tabs/tabs_group.png" alt="Groups Tab" name="groups tab" width="150" height="50" border="0" id="groups tab" /></a><a href="sample.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('sampleURL tab','','images/tabs/tabs_sample.png',1)"><img src="images/tabs/tabs_sampleOver.png" alt="Sample HealthURL Tab" name="sampleURL tab" width="150" height="50" border="0" id="sampleURL tab" /></a></td>
+  </tr>
+</table>
+
+<!-- Content Table-->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50">&nbsp;</td>
+    <td width="800">&nbsp;</td>
+    <td width="50">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td align="center"><a href="http://healthurl.medcommons.net/acct/groupsetup.php?"
+	 target="_blank" onmouseover="MM_swapImage('regPractice','','images/buttons/btn_practiceRegOver.gif',1)" onmouseout="MM_swapImgRestore()"><img src="images/buttons/btn_practiceReg.gif" alt="Register Practice" name="regPractice" width="255" height="30" border="0" id="regPractice" /></a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td valign="top">
+     <h3>How It Works:</h3>
+     
+      <!-- numbered Table-->
+      <table width="800" border="0" cellspacing="5" cellpadding="0">
+        <tr>
+            <td align="left" valign="top"><img src="images/buttonCircle.gif" width="16" height="16" /></td>
+            <td valign="top">Register your practice with <b>MedCommons</b>, fill in a simple form to provide your contact name and email, and the email addresses for anyone else in your practice you'd like to have access. For HIPAA compliance, each invited individual will be sent a separate registration to provide their own password. </td>
+          <td width="200" rowspan="4" valign="top">
+              
+
+   <!~~ siderBar Table~~>
+          <table width="210" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" height="97%" background="images/backgroundGradient.jpg">
+  <tr bgcolor="#a7b7c8">
+    <!~~ left side ~~>
+    <td width="2" rowspan="12" bgcolor="#003366"><img src="images/spacer.gif" width="2" height="2" /></td>
+     <!~~ top ~~>
+    <td colspan="2" bgcolor="#003366" height="2"><img src="images/spacer.gif" width="2" height="2" /></td>
+       <!~~ right side ~~>
+    <td width="2" rowspan="12" bgcolor="#003366"><img src="images/spacer.gif" width="2" height="2" /></td>
+  </tr>
+  <tr bgcolor="#a7b7c8">
+    <td>&nbsp;</td>
+    <td width="175"><img src="images/hdr_usingURL.png" width="165" height="20" /></td>
+  </tr>
+  <tr>
+    <td width="25" height="25"><img name = "arrow1" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="share.html" onmouseover = "(document.arrow1.src)='images/arrow.gif';" onmouseout = "(document.arrow1.src)='images/spacer.gif';">Share</a></td>
+  </tr>
+  <tr>
+    <td width="25" height="25"><img name = "arrow2" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="fax.html" onmouseover = "(document.arrow2.src)='images/arrow.gif';" onmouseout = "(document.arrow2.src)='images/spacer.gif';">Get Records by FAX</a></td>
+  </tr>
+  <tr>
+    <td width="25" height="25"><img name = "arrow3" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="pdf.html" onmouseover = "(document.arrow3.src)='images/arrow.gif';" onmouseout = "(document.arrow3.src)='images/spacer.gif';">Add a PDF Document</a></td>
+  </tr>
+  <tr>
+    <td width="25" height="25"><img name = "arrow4" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="personalBU.html"  onmouseover = "(document.arrow4.src)='images/arrow.gif';" onmouseout = "(document.arrow4.src)='images/spacer.gif';">Personal Backup</a></td>
+  </tr>
+  <tr>
+    <td width="25" height="25"><img name = "arrow5" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="dicom.html"  onmouseover = "(document.arrow5.src)='images/arrow.gif';" onmouseout = "(document.arrow5.src)='images/spacer.gif';">Connect DICOM Workstation</a></td>
+  </tr>
+  <tr>
+    <td width="25" height="25"><img name = "arrow6" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="mriCT.html"  onmouseover = "(document.arrow6.src)='images/arrow.gif';" onmouseout = "(document.arrow6.src)='images/spacer.gif';">Connect MRI/CT Scanner</a></td>
+  </tr>
+  <tr>
+    <td width="25" height="25"><img name = "arrow7" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="pricing.html" onmouseover = "(document.arrow7.src)='images/arrow.gif';" onmouseout = "(document.arrow7.src)='images/spacer.gif';"">Pricing</a></td>
+  </tr>
+<!-- 
+  <tr>
+    <td width="25" height="25"><img name = "arrow8" src = "images/spacer.gif" alt = "" border = "0" /></td>
+    <td  class="listLink"><a href="amazon.html" onmouseover = "(document.arrow8.src)='images/arrow.gif';" onmouseout = "(document.arrow8.src)='images/spacer.gif';">Amazon Payments</a></td>
+  </tr>
+ -->
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr>
+    <!~~ bottom ~~>
+    <td colspan="2" bgcolor="#003366" height="2"><img src="images/spacer.gif" width="2" height="2" /></td>
+  </tr>
+</table>
+<!~~ end sideBar table ~~>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="16" align="left" valign="top"><img src="images/buttonCircle.gif" width="16" height="16" /></td>
+          <td width="584" valign="top">A private Inbox is created for your practice, and we provide a custom Web Link that can be shared with anyone for sending in DICOM CDs - just email the link, post it on your website, whatever you wish.</td>
+          <!-- siderBar Cell-->
+        </tr>
+        <tr>
+          <td valign="top"><img src="images/buttonCircle.gif" alt="" width="16" height="16" /></td>
+          <td valign="top">When uploaded, the CD information is transferred into a secure online <b>MedCommons HealthURL</b>, a standard health record with the full quality DICOM images attached.</td>
+        </tr>
+        <tr>
+          <td valign="top"><img src="images/buttonCircle.gif" alt="" width="16" height="16" /></td>
+          <td valign="top">The practice members that you invite can view the <b>HealthURLs</b> in your private inbox using their individual passwords, and outside CD submitters can access only the <b>HealthURLs</b> that they submitted.</td>
+        </tr>
+        <tr>
+          <td valign="top"><img src="images/buttonCircle.gif" alt="" width="16" height="16" /></td>
+          <td valign="top">Authorized users can view the <b>HealthURL</b>, including images in a Web browser. In addition, radiologists and surgeons can connect their DICOM workstation to the <b>HealthURL</b>. Electronic health records that support Web links can also display the <b>HealthURL</b>.</td>
+          <td valign="top">&nbsp;</td>
+        </tr>
+      </table>
+      <h3>BENEFITS FOR PRACTICES</h3>      
+      
+	<ul>
+    <li>Easy integration into practice websites and custom databases</li>
+	<li>Effective collaboration platform for clinicians and outsourced services</li>
+	<li>Preload diagnostic images directly from a patients radiology CD</li>
+	<li>Deliver radiology images to a surgeons desktop, workstation, operating room or iPhone</li>
+	<li>Save time for both patients and staff by posting a health record upload form pre-addressed to your practice</li>
+    </ul>
+
+      <!-- If you don't have a radiology CD, you can <span class="bodyLink"><a href="http://spool.medcommons.net/dicom/Demo%20DICOM%20CD.iso">download a small example CD here</a></span> - it's only 4 MB -->
+      
+      <H3>SAMPLE RADIOLOGY CD</H3>
+      You can try MedCommons even if you don't have a handy radiology CD. <span class="bodyLink"><a href="sampleCD.html">Download a usable sample here.</a></span>
+      
+    </td>
+    <td width="50">&nbsp;</td>
+  </tr>
+</table>
+<br />
+
+
+
+<!-- footer Table wrapper -->
+<table width="900" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+<tr>
+<td colspan="2"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+  <tr>
+<td>
+<div id="footernav">
+<ul class="nav">
+
+	<li><a rel="tab" href="../about.html"><em>About Us</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="../privacy.html"><em>Privacy Policy</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="../terms.html"><em>Terms of Use</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="../hipaa.html"><em>HIPAA</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="../contact.html"><em>Contact</em></a></li>
+	
+</ul>
+</div>
+</td>
+ 
+    <td width="457" align="right" class="footerLink"><b>© MedCommons Inc. 2009</b></td>
+  
+  </tr>
+</table>
+</body>
+</html>

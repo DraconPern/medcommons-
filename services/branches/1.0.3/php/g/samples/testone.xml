@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">	<dict>
+		<key>mastertitle</key>
+		<string>jane hernandez and co...</string>
+		<key>once</key>
+		<string>
+https://healthurl.medcommons.net/router/currentccr?a=1013062431111407&amp;aa=1117658438174637&amp;g=3642665a324059089d0b989286eb9a9ced046e54&amp;t=&amp;m=&amp;c=&amp;auth=c3faf3705e0e98c0984d1f86b96a789f3dba2638&amp;at=c3faf3705e0e98c0984d1f86b96a789f3dba2638
+		</string>	
+		<key>scenes</key>
+		<array>
+			<dict>
+				<key>scene</key>
+				<string>0</string>
+				<key>name</key>
+				<string>First Scene</string>
+				<key>cellstyle</key>
+				<string>dicom</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>Janes Account</string>
+				<key>largetitle</key>
+				<string>Jane Hernandez</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+
+				<array>
+
+				
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+					
+						<key>label</key>
+						<string>Radiology Report - PDF</string>
+						<key>blabel</key>
+						<string>
+							http://portal.medcommons.net/tests/About.pdf
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>toplabel</key>
+						<string>Radiology Report 20 Feb 2010</string>
+					</dict>
+
+		
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/3DBone.html
+						</string>
+						<key>label</key>
+						<string>3D Bone</string>
+						<key>toplabel</key>
+						<string>3D Bone Series</string>
+						<key>blabel</key>
+						<string>3D Bone Series MGH</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+					</dict>
+					
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+
+						<key>url</key>
+						<string>
+							https://healthurl.medcommons.net/router/DisplayCCR.action?ccrIndex=0&amp;guid=4684673561427334
+						</string>
+						<key>label</key>
+						<string>Continuity of Care Record</string>
+						<key>toplabel</key>
+						<string>Current CCR</string>
+						<key>blabel</key>
+						<string>
+							this is the merged - up to date CCR
+						</string>
+					<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/steth.png
+						</string>
+					</dict>		
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/images/janesPhonePhotos.png
+						</string>
+						<key>label</key>
+						<string>Photo Series from iPhone</string>
+						<key>toplabel</key>
+						<string>PhotoSeries</string>
+						<key>blabel</key>
+						<string>these come from the iPhone</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/iPhone.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb2.png
+						</string>
+						<key>label</key>
+						<string>Cross Sections</string>
+						<key>toplabel</key>
+						<string>DICOM Cross Sections</string>
+						<key>blabel</key>
+						<string>this came from Jane H</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb2.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb3.png
+						</string>
+						<key>label</key>
+						<string>Fourth Series</string>
+						<key>toplabel</key>
+						<string>Forth:=) Series</string>
+						<key>blabel</key>
+						<string>this came from Keith B</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb3.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb4.png
+						</string>
+						<key>label</key>
+						<string>Yet another series</string>
+						<key>toplabel</key>
+						<string>DICOM - The Final Series</string>
+						<key>blabel</key>
+						<string>214 iimages</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb4.png
+						</string>
+					</dict>
+
+			
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb0.png
+						</string>
+						<key>label</key>
+						<string>Alpha Test - 38615</string>
+						<key>blabel</key>
+						<string>1713806360 has motion</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb0.png
+						</string>
+						<key>toplabel</key>
+						<string>DICOM Alpha Test - 38615</string>
+					</dict>
+
+
+			<dict>
+						<key>blocktype</key>
+						<string>newscene</string>
+						<key>scene</key>
+						<string>
+							99
+						</string>
+						<key>label</key>
+						<string>Episode 2/20/10</string>
+						<key>toplabel</key>
+						<string>should not display</string>
+						<key>blabel</key>
+						<string>tap to view previous episode for Jane</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/Aiga_rightarrow_inv.gif
+						</string>
+					</dict>
+						<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/profile.php?p=dThumb0.png&amp;c=Jane+Hernandez&amp;ph=http://profile.ak.fbcdn.net/v229/1010/55/t1229257778_7617.jpg
+						</string>
+						<key>label</key>
+						<string>Janes Profile</string>
+						<key>toplabel</key>
+						<string>Profile as of Today</string>
+						<key>blabel</key>
+						<string>jane is brooms's goalie</string>
+						<key>imageurl</key>
+						<string>
+							http://profile.ak.fbcdn.net/v229/1010/55/t1229257778_7617.jpg
+						</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>scene</key>
+				<string>1</string>
+				<key>name</key>
+				<string>Scene 2</string>
+				<key>cellstyle</key>
+				<string>dicom</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>Jane H -  2/20/10</string>
+				<key>largetitle</key>
+				<string>Jane Hernandez 2/20/10</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+
+				<array>
+				
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							https://healthurl.medcommons.net/router/DisplayCCR.action?ccrIndex=0&amp;guid=4684673561427334
+						</string>
+						<key>label</key>
+						<string>Continuity of Care Record</string>
+						<key>toplabel</key>
+						<string>CCR from 20 Feb 2010</string>
+						<key>blabel</key>
+						<string>ccr should be from 20 Feb 2010</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/steth.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/radreport.pdf
+						</string>
+						<key>label</key>
+						<string>Radiology Report - PDF</string>
+						<key>blabel</key>
+						<string>
+							http://portal.medcommons.net/tests/About.pdf
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>toplabel</key>
+						<string>Radiology Report 20 Feb 2010</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb0.png
+						</string>
+						<key>label</key>
+						<string>Alpha Test - 38615</string>
+						<key>blabel</key>
+						<string>1713806360 has motion</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb0.png
+						</string>
+						<key>toplabel</key>
+						<string>DICOM Alpha Test - 38615</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb1.png
+						</string>
+						<key>label</key>
+						<string>Second Series</string>
+						<key>toplabel</key>
+						<string>DICOM Second Series</string>
+						<key>blabel</key>
+						<string>this came from Jane H</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb1.png
+						</string>
+					</dict>
+					
+					<dict>
+						<key>blocktype</key>
+						<string>newscene</string>
+						<key>scene</key>
+						<string>
+							0
+						</string>
+						<key>label</key>
+						<string>Back to Jane's Account</string>
+						<key>toplabel</key>
+						<string>should not display</string>
+						<key>blabel</key>
+						<string>tap to return current CCR</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/Aiga_leftarrow_inv.gif
+						</string>
+					</dict>
+						<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/profile.php?p=dThumb0.png&amp;c=Jane+Hernandez&amp;ph=http://profile.ak.fbcdn.net/v229/1010/55/t1229257778_7617.jpg
+						</string>
+						<key>label</key>
+						<string>Janes Profile</string>
+						<key>toplabel</key>
+						<string>Profile as of Today</string>
+						<key>blabel</key>
+						<string>jane is brooms's goalie</string>
+						<key>imageurl</key>
+						<string>
+							http://profile.ak.fbcdn.net/v229/1010/55/t1229257778_7617.jpg
+						</string>
+					</dict>
+
+				</array>
+			</dict>
+		</array>
+	</dict>
+</plist>

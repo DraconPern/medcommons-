@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for DICOM On Demand (DDL)  -->
+<jnlp
+  spec="1.5+"
+	codebase="http://stego.myhealthespace.com/DDL/app/"
+	href="dod.jnlp">
+  <information>
+    <title>DICOM On Demand</title>
+    <vendor>MedCommons, Inc.</vendor>
+
+    <homepage href="http://medcommons.net" />
+    <description>DICOM CSTORE SCP/SCU to CXP-enabled appliances. </description>
+    <description kind="short">DICOM On Demand </description>
+    <icon  kind="splash" href="../Logo_300x300.gif"/>
+    <icon  kind="shortcut" href="../Logo_300x300.gif"/>
+    <icon  kind="default" href="../Logo_300x300.gif"/>
+    <association mime-type="application/x-healthurl-download" extensions="download-hurl"/>
+    <offline-allowed />
+
+    <update check="always" policy="prompt-update"/>
+
+    <shortcut online="true">
+         <menu submenu="DICOM On Demand"/>
+    </shortcut>
+
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+
+  <j2se version="1.5+" java-vm-args="-ea" initial-heap-size="128m" max-heap-size="512m"/>
+
+	<extension name="Activation" href="activation.jnlp"/> <!-- Hack for getting around jar signed by another entity -->
+	  <jar href="medcommons-dicomclient-application.jar" main="true"/>
+    <jar href="log4j.jar" download="eager"/>
+    <jar href="groovy-min.jar" download="eager"/>
+    <jar href="pbeans.jar" download="eager"/>
+    <jar href="antlr.jar" download="eager"/>
+    <jar href="ccrxmlbean.jar" download="eager"/>
+    <jar href="commons-codec.jar" download="eager"/>
+    <jar href="commons-collections.jar" download="eager"/>
+    <jar href="commons-httpclient.jar" download="eager"/>
+    <jar href="commons-logging-api.jar" download="eager"/>
+    <jar href="commons-logging.jar" download="eager"/>
+    <jar href="mail.jar" download="eager"/>
+    <jar href="cos.jar" download="eager"/>
+    <jar href="dcm4che-core.jar" download="eager"/>
+    <jar href="dcm4che-net.jar" download="eager"/>
+    <jar href="dom4j.jar" download="eager"/>
+    <jar href="hsqldb.jar" download="eager"/>
+    <jar href="jdom.jar" download="eager"/>
+    <jar href="jetty-util.jar" download="eager"/>
+    <jar href="jetty.jar" download="eager"/>
+    <jar href="jnlp.jar" download="eager"/>
+    <jar href="jsp-api.jar" download="eager"/>
+    <jar href="jsr173_api.jar" download="eager"/>
+    <jar href="gateway-interfaces.jar" download="eager"/>
+    <jar href="medcommons-crypto.jar" download="eager"/>
+    <jar href="medcommons-cxplibrary.jar" download="eager"/>
+    <jar href="medcommons-transfer.jar" download="eager"/>
+    <jar href="medcommons-utils.jar" download="eager"/>
+    <jar href="saxon-dom.jar" download="eager"/>
+    <jar href="saxon.jar" download="eager"/>
+    <jar href="servlet-api.jar" download="eager"/>
+    <jar href="slf4j-api.jar" download="eager" />
+    <jar href="slf4j-log4j12.jar" download="eager"/>
+    <jar href="wsdl4j.jar" download="eager"/>
+    <jar href="wstx-asl.jar" download="eager"/>
+    <jar href="xbean.jar" download="eager"/>
+    <jar href="xbean_xpath.jar" download="eager"/>
+    <jar href="xercesImpl.jar" download="eager"/>
+    <jar href="xfire-all.jar" download="eager"/>
+    <jar href="not-yet-commons-ssl.jar" download="eager"/>
+    <jar href="jsonrpc.jar" download="eager"/>
+ 
+    <property name="defaultDICOMRemoteAETitle"
+    	value="UNKNOWN"/>
+    <property name="defaultDICOMRemoteDicomPort"
+    	value="UNKNOWN"/>
+    <property name="defaultDICOMRemoteHost"
+    	value="UNKNOWN"/>
+    <property name="defaultDICOMLocalAETitle"
+    	value="MCDICOM"/>
+    <property name="defaultDICOMLocalDicomPort"
+    	value="3002"/>
+    	
+    <property name="defaultAccountID" value="1117658438174637"/>
+   
+    <property name="defaultAuth" value="0ffe3d807c44d589439e70aa71c9c44bde561275"/>	
+    
+    <property name="defaultGroupAccountID" value="1172619833385984"/>
+    <property name="defaultGroupName" value="Demo Doctor Worklist"/>	
+    <property name="defaultCXPHost" value="healthurl.medcommons.net"/>
+    <property name="defaultCXPPort" value="443"/>
+    <property name="defaultCXPPath" value="/gateway/services/CXP2"/>
+    <property name="defaultCXPProtocol" value="https"/>
+    <property name="popupDoDDialog" value="true"/>
+    <property name="file.encoding" value="UTF8"/>
+
+  </resources>
+
+  <application-desc main-class="net.medcommons.application.dicomclient.DICOMClient" />
+
+
+</jnlp>
+

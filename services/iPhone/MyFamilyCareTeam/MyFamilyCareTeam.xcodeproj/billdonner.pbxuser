@@ -1,0 +1,914 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* MyFamilyCareTeamAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 1539}}";
+			sepNavSelRange = "{3246, 0}";
+			sepNavVisRange = "{1533, 940}";
+			sepNavWindowFrame = "{{508, 179}, {1334, 921}}";
+		};
+	};
+	1D3623250D0F684500981E51 /* MyFamilyCareTeamAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1060, 3857}}";
+			sepNavSelRange = "{4046, 401}";
+			sepNavVisRange = "{3989, 623}";
+			sepNavWindowFrame = "{{358, 257}, {1334, 921}}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* MyFamilyCareTeam */ = {
+		activeExec = 0;
+		executables = (
+			88D519820FAF07C70070BC9B /* MyFamilyCareTeam */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 88D519820FAF07C70070BC9B /* MyFamilyCareTeam */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* MyFamilyCareTeam */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* MyFamilyCareTeam */,
+		);
+		breakpoints = (
+			88D51A750FAF2C540070BC9B /* XMLReader.m:20 */,
+			88D51A860FAF2C820070BC9B /* xFamilyCareTeamAppDelegate.m:136 */,
+			88CAF4B20FAF3AB100145982 /* XMLReader.m:20 */,
+			88CAF4C20FAF3AEC00145982 /* XMLReader.m:222 */,
+			88CAF59C0FAF498B00145982 /* Patient.m:9 */,
+			88CAF5C50FAF4DAD00145982 /* TableViewCell.m:24 */,
+			88CAF5D80FAF511400145982 /* MyFamilyCareTeamAppDelegate.h:67 */,
+			88CAF6160FAF52BE00145982 /* MyFamilyCareTeamAppDelegate.m:155 */,
+			88CAF73D0FAF6AB800145982 /* TableViewCell.m:24 */,
+			88CAF8860FAFB90600145982 /* XMLReader.m:20 */,
+			88CAF9210FB076CF00145982 /* MyFamilyCareTeamAppDelegate.m:40 */,
+			88CAF98A0FB0827500145982 /* TableViewCell.m:24 */,
+			88CAFA290FB0925C00145982 /* TableViewCell.m:24 */,
+			88CAFAAF0FB0B4A000145982 /* TableViewCell.m:24 */,
+			88CAFAE70FB0D18300145982 /* Patient.m:8 */,
+			88CAFC270FB0EC7C00145982 /* XMLReader.m:121 */,
+		);
+		codeSenseManager = 88D5199D0FAF07E00070BC9B /* Code sense */;
+		executables = (
+			88D519820FAF07C70070BC9B /* MyFamilyCareTeam */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					346,
+					20,
+					246,
+					246,
+					176,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Errors_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					709,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXSymbolsDataSource_SymbolNameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					16,
+					200,
+					50,
+					649,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXSymbolsDataSource_SymbolTypeIconID,
+					PBXSymbolsDataSource_SymbolNameID,
+					PBXSymbolsDataSource_SymbolTypeID,
+					PBXSymbolsDataSource_ReferenceNameID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					669,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 264207070;
+			PBXWorkspaceStateSaveDate = 264207070;
+		};
+		perUserProjectItems = {
+			886F51E40FBF7FA50007CE7D /* PBXTextBookmark */ = 886F51E40FBF7FA50007CE7D /* PBXTextBookmark */;
+			886F52060FBF853E0007CE7D /* PBXTextBookmark */ = 886F52060FBF853E0007CE7D /* PBXTextBookmark */;
+			88B83E260FB3E8B40043CB92 /* PBXTextBookmark */ = 88B83E260FB3E8B40043CB92 /* PBXTextBookmark */;
+			88B83E270FB3E8B40043CB92 /* PBXTextBookmark */ = 88B83E270FB3E8B40043CB92 /* PBXTextBookmark */;
+			88B83E280FB3E8B40043CB92 /* PBXTextBookmark */ = 88B83E280FB3E8B40043CB92 /* PBXTextBookmark */;
+			88B83E360FB3E8B40043CB92 /* PBXTextBookmark */ = 88B83E360FB3E8B40043CB92 /* PBXTextBookmark */;
+			88B83FDF0FB723560043CB92 /* PBXBookmark */ = 88B83FDF0FB723560043CB92 /* PBXBookmark */;
+			88B83FE00FB723560043CB92 /* PBXBookmark */ = 88B83FE00FB723560043CB92 /* PBXBookmark */;
+			88CAF4380FAF319F00145982 /* PlistBookmark */ = 88CAF4380FAF319F00145982 /* PlistBookmark */;
+			88CAF47F0FAF375D00145982 /* PBXTextBookmark */ = 88CAF47F0FAF375D00145982 /* PBXTextBookmark */;
+			88CAF4810FAF375D00145982 /* PBXTextBookmark */ = 88CAF4810FAF375D00145982 /* PBXTextBookmark */;
+			88CAF7860FAF88F300145982 /* PBXBookmark */ = 88CAF7860FAF88F300145982 /* PBXBookmark */;
+			88CAF78A0FAF88F300145982 /* PBXBookmark */ = 88CAF78A0FAF88F300145982 /* PBXBookmark */;
+			88CAF78F0FAF88F300145982 /* PBXBookmark */ = 88CAF78F0FAF88F300145982 /* PBXBookmark */;
+			88CAFB6E0FB0DDF400145982 /* PBXBookmark */ = 88CAFB6E0FB0DDF400145982 /* PBXBookmark */;
+			88CAFB710FB0DDF400145982 /* PBXTextBookmark */ = 88CAFB710FB0DDF400145982 /* PBXTextBookmark */;
+			88CAFB760FB0DDF400145982 /* PBXTextBookmark */ = 88CAFB760FB0DDF400145982 /* PBXTextBookmark */;
+			88CAFBBD0FB0E58100145982 /* PBXTextBookmark */ = 88CAFBBD0FB0E58100145982 /* PBXTextBookmark */;
+			88CAFBBF0FB0E58100145982 /* PBXTextBookmark */ = 88CAFBBF0FB0E58100145982 /* PBXTextBookmark */;
+			88CAFBCB0FB0E58100145982 /* PBXTextBookmark */ = 88CAFBCB0FB0E58100145982 /* PBXTextBookmark */;
+			88CAFBCD0FB0E58100145982 /* PBXTextBookmark */ = 88CAFBCD0FB0E58100145982 /* PBXTextBookmark */;
+			88CAFBD10FB0E58100145982 /* PBXTextBookmark */ = 88CAFBD10FB0E58100145982 /* PBXTextBookmark */;
+			88CAFBD30FB0E58100145982 /* PBXTextBookmark */ = 88CAFBD30FB0E58100145982 /* PBXTextBookmark */;
+			88CAFC2E0FB0ECB000145982 /* PBXTextBookmark */ = 88CAFC2E0FB0ECB000145982 /* PBXTextBookmark */;
+			88D51A5F0FAF124E0070BC9B /* PlistBookmark */ = 88D51A5F0FAF124E0070BC9B /* PlistBookmark */;
+			88D51AAC0FAF2E040070BC9B /* PBXTextBookmark */ = 88D51AAC0FAF2E040070BC9B /* PBXTextBookmark */;
+			88D51AAD0FAF2E040070BC9B /* PBXTextBookmark */ = 88D51AAD0FAF2E040070BC9B /* PBXTextBookmark */;
+			88D51AB10FAF2E040070BC9B /* PBXTextBookmark */ = 88D51AB10FAF2E040070BC9B /* PBXTextBookmark */;
+			88D51AB20FAF2E040070BC9B /* PBXTextBookmark */ = 88D51AB20FAF2E040070BC9B /* PBXTextBookmark */;
+		};
+		sourceControlManager = 88D5199C0FAF07E00070BC9B /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {665, 772}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 368}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* MyFamilyCareTeam_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {740, 772}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 201}";
+		};
+	};
+	886F51E40FBF7FA50007CE7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MyFamilyCareTeamAppDelegate.m */;
+		name = "MyFamilyCareTeamAppDelegate.m: 138";
+		rLen = 401;
+		rLoc = 4046;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 3989;
+	};
+	886F52060FBF853E0007CE7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MyFamilyCareTeamAppDelegate.m */;
+		name = "MyFamilyCareTeamAppDelegate.m: 138";
+		rLen = 401;
+		rLoc = 4046;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 3989;
+	};
+	88B83E260FB3E8B40043CB92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* MyFamilyCareTeamAppDelegate.h */;
+		name = "MyFamilyCareTeamAppDelegate.h: 77";
+		rLen = 0;
+		rLoc = 3246;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 1533;
+	};
+	88B83E270FB3E8B40043CB92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBA80FB0DF6A00145982 /* Giver.h */;
+		name = "Giver.h: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 452;
+		vrLoc = 0;
+	};
+	88B83E280FB3E8B40043CB92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFB060FB0D3F700145982 /* Person.h */;
+		name = "Person.h: 10";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 735;
+		vrLoc = 0;
+	};
+	88B83E360FB3E8B40043CB92 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFB060FB0D3F700145982 /* Person.h */;
+		name = "Person.h: 10";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 735;
+		vrLoc = 0;
+	};
+	88B83FDF0FB723560043CB92 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 88D519AF0FAF08AF0070BC9B /* Default.png */;
+	};
+	88B83FE00FB723560043CB92 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 88D519AF0FAF08AF0070BC9B /* Default.png */;
+	};
+	88CAF4380FAF319F00145982 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/billdonner/Documents/MyFamilyCareTeam/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	88CAF47F0FAF375D00145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* MyFamilyCareTeamAppDelegate.h */;
+		name = "MyFamilyCareTeamAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 352;
+		vrLoc = 0;
+	};
+	88CAF4810FAF375D00145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MyFamilyCareTeamAppDelegate.m */;
+		name = "MyFamilyCareTeamAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2543;
+		vrLoc = 0;
+	};
+	88CAF4B20FAF3AB100145982 /* XMLReader.m:20 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519940FAF07E00070BC9B /* XMLReader.m */;
+		functionName = "-parser:didEndElement:namespaceURI:qualifiedName:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 20;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.778737;
+		state = 2;
+	};
+	88CAF4C20FAF3AEC00145982 /* XMLReader.m:222 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519940FAF07E00070BC9B /* XMLReader.m */;
+		functionName = "-connectionDidFail:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 222;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.780411;
+		state = 2;
+	};
+	88CAF59C0FAF498B00145982 /* Patient.m:9 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D5198E0FAF07E00070BC9B /* Patient.m */;
+		functionName = "-connectionDidFail:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 9;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.782208;
+		state = 2;
+	};
+	88CAF5C50FAF4DAD00145982 /* TableViewCell.m:24 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519920FAF07E00070BC9B /* TableViewCell.m */;
+		functionName = "-initWithFrame:reuseIdentifier:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 24;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.783971;
+		state = 2;
+	};
+	88CAF5D80FAF511400145982 /* MyFamilyCareTeamAppDelegate.h:67 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 1D3623240D0F684500981E51 /* MyFamilyCareTeamAppDelegate.h */;
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 67;
+		modificationTime = 264208475.785756;
+		state = 2;
+	};
+	88CAF6160FAF52BE00145982 /* MyFamilyCareTeamAppDelegate.m:155 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 1D3623250D0F684500981E51 /* MyFamilyCareTeamAppDelegate.m */;
+		functionName = "-applicationDidFinishLaunching:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 155;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.787565;
+		state = 2;
+	};
+	88CAF73D0FAF6AB800145982 /* TableViewCell.m:24 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519920FAF07E00070BC9B /* TableViewCell.m */;
+		functionName = "-imageForPatientSeverity:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 24;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.789418;
+		state = 2;
+	};
+	88CAF7860FAF88F300145982 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 88D519AC0FAF08AF0070BC9B /* mc57sq.png */;
+	};
+	88CAF78A0FAF88F300145982 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 88CAF77B0FAF87CC00145982 /* unknown-user.png */;
+	};
+	88CAF78F0FAF88F300145982 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 88D519AC0FAF08AF0070BC9B /* mc57sq.png */;
+	};
+	88CAF8860FAFB90600145982 /* XMLReader.m:20 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519940FAF07E00070BC9B /* XMLReader.m */;
+		functionName = "-parser:didEndElement:namespaceURI:qualifiedName:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 20;
+		modificationTime = 264208476.023543;
+		state = 0;
+	};
+	88CAF9210FB076CF00145982 /* MyFamilyCareTeamAppDelegate.m:40 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 1D3623250D0F684500981E51 /* MyFamilyCareTeamAppDelegate.m */;
+		functionName = "-initCache";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 40;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.792972;
+		state = 2;
+	};
+	88CAF98A0FB0827500145982 /* TableViewCell.m:24 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519920FAF07E00070BC9B /* TableViewCell.m */;
+		functionName = "-setPatient:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 24;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.79483;
+		state = 2;
+	};
+	88CAFA290FB0925C00145982 /* TableViewCell.m:24 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519920FAF07E00070BC9B /* TableViewCell.m */;
+		functionName = "-imageForPatientPhoto:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 24;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.796603;
+		state = 2;
+	};
+	88CAFAAF0FB0B4A000145982 /* TableViewCell.m:24 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519920FAF07E00070BC9B /* TableViewCell.m */;
+		functionName = "-setPatient:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 24;
+		modificationTime = 264208476.068941;
+		state = 0;
+	};
+	88CAFAE70FB0D18300145982 /* Patient.m:8 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D5198E0FAF07E00070BC9B /* Patient.m */;
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 8;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.800417;
+		state = 2;
+	};
+	88CAFB060FB0D3F700145982 /* Person.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 1026}}";
+			sepNavSelRange = "{156, 0}";
+			sepNavVisRange = "{5, 500}";
+			sepNavWindowFrame = "{{771, 70}, {1423, 1108}}";
+		};
+	};
+	88CAFB070FB0D3F700145982 /* Person.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 2090}}";
+			sepNavSelRange = "{192, 0}";
+			sepNavVisRange = "{0, 1049}";
+			sepNavWindowFrame = "{{401, 128}, {1423, 1050}}";
+		};
+	};
+	88CAFB6E0FB0DDF400145982 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 88CAF77B0FAF87CC00145982 /* unknown-user.png */;
+	};
+	88CAFB710FB0DDF400145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFB070FB0D3F700145982 /* Person.m */;
+		name = "Person.m: 40";
+		rLen = 0;
+		rLoc = 1254;
+		rType = 0;
+		vrLen = 1506;
+		vrLoc = 137;
+	};
+	88CAFB760FB0DDF400145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFB070FB0D3F700145982 /* Person.m */;
+		name = "Person.m: 2";
+		rLen = 0;
+		rLoc = 15;
+		rType = 0;
+		vrLen = 773;
+		vrLoc = 5900;
+	};
+	88CAFBA80FB0DF6A00145982 /* Giver.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 589}}";
+			sepNavSelRange = "{192, 0}";
+			sepNavVisRange = "{0, 452}";
+		};
+	};
+	88CAFBA90FB0DF6A00145982 /* Giver.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1364, 980}}";
+			sepNavSelRange = "{334, 0}";
+			sepNavVisRange = "{0, 334}";
+			sepNavWindowFrame = "{{515, 63}, {1423, 1108}}";
+		};
+	};
+	88CAFBBD0FB0E58100145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBBE0FB0E58100145982 /* NSObject.h */;
+		name = "NSObject.h: 65";
+		rLen = 33;
+		rLoc = 1205;
+		rType = 0;
+		vrLen = 694;
+		vrLoc = 880;
+	};
+	88CAFBBE0FB0E58100145982 /* NSObject.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSObject.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator2.2.1.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSObject.h;
+		sourceTree = "<absolute>";
+	};
+	88CAFBBF0FB0E58100145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBC00FB0E58100145982 /* Foundation.h */;
+		name = "Foundation.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1592;
+		vrLoc = 0;
+	};
+	88CAFBC00FB0E58100145982 /* Foundation.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = Foundation.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator2.2.1.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/Foundation.h;
+		sourceTree = "<absolute>";
+	};
+	88CAFBCB0FB0E58100145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBCC0FB0E58100145982 /* NSObject.h */;
+		name = "NSObject.h: 65";
+		rLen = 33;
+		rLoc = 1205;
+		rType = 0;
+		vrLen = 694;
+		vrLoc = 880;
+	};
+	88CAFBCC0FB0E58100145982 /* NSObject.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSObject.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator2.2.1.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSObject.h;
+		sourceTree = "<absolute>";
+	};
+	88CAFBCD0FB0E58100145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBCE0FB0E58100145982 /* Foundation.h */;
+		name = "Foundation.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1592;
+		vrLoc = 0;
+	};
+	88CAFBCE0FB0E58100145982 /* Foundation.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = Foundation.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator2.2.1.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/Foundation.h;
+		sourceTree = "<absolute>";
+	};
+	88CAFBD10FB0E58100145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBA80FB0DF6A00145982 /* Giver.h */;
+		name = "Giver.h: 12";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 653;
+		vrLoc = 0;
+	};
+	88CAFBD30FB0E58100145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBA90FB0DF6A00145982 /* Giver.m */;
+		name = "Giver.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 0;
+	};
+	88CAFC270FB0EC7C00145982 /* XMLReader.m:121 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519940FAF07E00070BC9B /* XMLReader.m */;
+		functionName = "-parser:didEndElement:namespaceURI:qualifiedName:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 121;
+		modificationTime = 264208475.802361;
+		state = 2;
+	};
+	88CAFC2E0FB0ECB000145982 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 88CAFBA90FB0DF6A00145982 /* Giver.m */;
+		name = "Giver.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 334;
+		vrLoc = 0;
+	};
+	88D519820FAF07C70070BC9B /* MyFamilyCareTeam */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = MyFamilyCareTeam;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	88D519880FAF07E00070BC9B /* xFamilyCareTeamAppDelegate.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = xFamilyCareTeamAppDelegate.m;
+		path = "/Users/billdonner/iPhoneSamples/MyCareTeam copy 2/Classes/xFamilyCareTeamAppDelegate.m";
+		sourceTree = "<absolute>";
+	};
+	88D519890FAF07E00070BC9B /* Patient.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 418}}";
+			sepNavSelRange = "{116, 0}";
+			sepNavVisRange = "{0, 485}";
+			sepNavWindowFrame = "{{148, -579}, {1334, 921}}";
+		};
+	};
+	88D5198A0FAF07E00070BC9B /* Classes */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 1862}}";
+			sepNavSelRange = "{3404, 0}";
+			sepNavVisRange = "{2981, 426}";
+			sepNavWindowFrame = "{{199, 84}, {1334, 921}}";
+		};
+	};
+	88D5198B0FAF07E00070BC9B /* URLCacheConnection.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1275, 2888}}";
+			sepNavSelRange = "{2585, 26}";
+			sepNavVisRange = "{1214, 1682}";
+			sepNavWindowFrame = "{{68, 217}, {1334, 921}}";
+		};
+	};
+	88D5198C0FAF07E00070BC9B /* URLCacheConnection.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 1168}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1214, 1870}";
+			sepNavWindowFrame = "{{38, 231}, {1334, 921}}";
+		};
+	};
+	88D5198D0FAF07E00070BC9B /* URLCacheAlert.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1275, 1026}}";
+			sepNavSelRange = "{472, 0}";
+			sepNavVisRange = "{472, 2151}";
+			sepNavWindowFrame = "{{391, -270}, {1334, 921}}";
+		};
+	};
+	88D5198E0FAF07E00070BC9B /* Patient.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 1235}}";
+			sepNavSelRange = "{1, 176}";
+			sepNavVisRange = "{0, 1685}";
+			sepNavWindowFrame = "{{124, 257}, {1334, 921}}";
+		};
+	};
+	88D5198F0FAF07E00070BC9B /* RootViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 1026}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{394, 1198}";
+		};
+	};
+	88D519900FAF07E00070BC9B /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {887, 2109}}";
+			sepNavSelRange = "{3, 0}";
+			sepNavVisRange = "{0, 521}";
+			sepNavWindowFrame = "{{394, 194}, {1334, 921}}";
+		};
+	};
+	88D519910FAF07E00070BC9B /* TableViewCell.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1275, 793}}";
+			sepNavSelRange = "{928, 0}";
+			sepNavVisRange = "{0, 928}";
+			sepNavWindowFrame = "{{397, 226}, {1334, 921}}";
+		};
+	};
+	88D519920FAF07E00070BC9B /* TableViewCell.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2380, 5472}}";
+			sepNavSelRange = "{6970, 0}";
+			sepNavVisRange = "{6190, 1554}";
+			sepNavWindowFrame = "{{555, 248}, {1334, 921}}";
+		};
+	};
+	88D519940FAF07E00070BC9B /* XMLReader.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1508, 4503}}";
+			sepNavSelRange = "{2311, 21}";
+			sepNavVisRange = "{1738, 607}";
+			sepNavWindowFrame = "{{266, 257}, {1334, 921}}";
+		};
+	};
+	88D5199C0FAF07E00070BC9B /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	88D5199D0FAF07E00070BC9B /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	88D519DF0FAF09510070BC9B /* XMLReader.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2292, 2109}}";
+			sepNavSelRange = "{2547, 0}";
+			sepNavVisRange = "{3002, 1294}";
+			sepNavWindowFrame = "{{324, 42}, {1412, 1136}}";
+		};
+	};
+	88D51A5F0FAF124E0070BC9B /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleInfoDictionaryVersion,
+		);
+		name = /Users/billdonner/Documents/MyFamilyCareTeam/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	88D51A750FAF2C540070BC9B /* XMLReader.m:20 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519940FAF07E00070BC9B /* XMLReader.m */;
+		functionName = "-parser:didEndElement:namespaceURI:qualifiedName:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 20;
+		location = MyFamilyCareTeam;
+		modificationTime = 264208475.775365;
+		state = 2;
+	};
+	88D51A860FAF2C820070BC9B /* xFamilyCareTeamAppDelegate.m:136 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88D519880FAF07E00070BC9B /* xFamilyCareTeamAppDelegate.m */;
+		functionName = "-applicationDidFinishLaunching:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 136;
+		modificationTime = 264208475.777012;
+		state = 2;
+	};
+	88D51AAC0FAF2E040070BC9B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* MyFamilyCareTeam_Prefix.pch */;
+		name = "MyFamilyCareTeam_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 201;
+		vrLoc = 0;
+	};
+	88D51AAD0FAF2E040070BC9B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 368;
+		vrLoc = 0;
+	};
+	88D51AB10FAF2E040070BC9B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* MyFamilyCareTeam_Prefix.pch */;
+		name = "MyFamilyCareTeam_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 201;
+		vrLoc = 0;
+	};
+	88D51AB20FAF2E040070BC9B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 368;
+		vrLoc = 0;
+	};
+}

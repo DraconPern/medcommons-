@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>Jetty Integration</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Jetty Integration" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container." class="currentPage">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Forewords and Requirements</h1>
+
+      
+<p>
+        This page explains how to run Cactus tests with the Jetty servlet
+        container. You will need the single <a href="http://mortbay.org/jetty/" title="">Jetty</a>
+        jar, and if you are using JSPs you will also need the Jasper jars.
+      </p>
+
+    
+</div>
+    
+    
+<div class="section">
+<h1>Setting up Jetty</h1>
+
+      
+<p>
+        The idea is to use the 
+        <code>org.apache.cactus.extension.jetty.JettyTestSetup</code> JUnit
+        TestSetup class provided by Cactus so that Jetty is started before the 
+        tests are run.
+      </p>
+      
+<p>
+        In order to use the TestSetup, you need to wrap your test suite in 
+        <code>JettyTestSetup</code>:
+      </p>
+
+<div class="source">
+<pre>
+public class TestJettyAll extends TestCase
+{
+    public static Test suite()
+    {
+        TestSuite suite = new TestSuite();
+        suite.addTestSuite(MyTestClass1.class);
+        [...]
+        suite.addTestSuite(MyTestClassN.class);
+        
+        return new JettyTestSetup(suite);
+    }        
+</pre>
+</div>
+      
+      
+<p>
+        You can configure the Jetty TestSetup either programatically or
+        with system properties:
+      </p>
+      
+<ul>
+        
+<li>
+          The method <code>setConfigFile(File)</code> or the system property
+          <code>cactus.jetty.config</code> sets the location of an optional
+          jetty.xml file (see Jetty's documentation for details).
+        </li>
+        
+<li>
+          The method <code>setResourceDir(File)</code> or the system property
+          <code>cactus.jetty.resourceDir</code> sets the directory containing
+          the web-application resources (expanded WAR). If you omit this step,
+          you'll only be able to use the Servlet Redirector.
+        </li>
+      
+</ul>
+      
+<p>
+        In both cases, the value set programatically takes precendence over the
+        value of the corresponding system property.
+      </p>
+      
+<div class="note">
+        If you're using JSPs you'll need to add the Jasper jars to your 
+        runtime Classpath (in addition to the Jetty jar).
+      </div>      
+
+      
+<div class="section">
+<h2>Example 1: Running from Ant</h2>
+
+        
+<p>
+          Let's assume we have a JUnit task that launches the tests.
+          We need to add the Jetty jar and optionally the Jasper jars
+          (if we use JSPs) to the runtime classpath. Then, all we have 
+          to do is add the correct VM arguments to configure
+          the <code>JettyTestSetup</code> behavior. For example:
+        </p>
+
+<div class="source">
+<pre>
+&lt;junit&gt;
+
+    [...]
+    
+    &lt;jvmarg value="-Dcactus.contextURL=http://localhost:${test.port}/test"/&gt;
+    &lt;jvmarg value="-Dcactus.jetty.resourceDir=${src.webapp.dir}"/&gt;
+    &lt;jvmarg value="-Dcactus.jetty.config=${src.webapp.dir}/test/jetty.xml"/&gt;
+
+    &lt;classpath&gt;
+        [...]
+        &lt;!-- Include Jetty jar and optionally Jasper jars in the classpath --&gt;
+        &lt;pathelement location="${jetty.jar}"/&gt;
+        &lt;pathelement location="${jasper-compiler.jar}"/&gt;
+        &lt;pathelement location="${jasper-runtime.jar}"/&gt;    
+    &lt;/classpath&gt;
+    
+    &lt;test name="org.apache.cactus.sample.TestJettyAll"/&gt;
+
+&lt;/junit&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Example 2: Running from an IDE</h2>
+
+        
+<p>
+          Again all you have to do is add the correct VM arguments, and the
+          Jetty and Jasper jars, to the JUnit launch.
+        </p>
+        
+<p>
+          For example in Eclipse you would add the jars, and create a JUnit
+          launch configuration as below:
+        </p>
+        
+<div class="figure">
+<img alt="Eclipse configuration for Jetty" src=".././images/jetty_eclipse.png"></div>
+
+      
+</div>
+
+    
+</div>
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {      
+        font-family: Arial, Helvetica, sans-serif; 
+        text-align: left;
+        color: black;
+}
+
+a:link {color: black}
+a:active {color: black}
+a:visited {color: black}
+	
+table.mainTable {
+	width: 640px;
+	background-color: #ffffff;
+	border:1px solid #004080;
+}
+
+table.mainTable tbody tr td.tableHdr{
+	padding: 3px;
+}
+
+table.phrTable {
+	width: 100%;
+	border: 0px #ffffff solid;
+	border-collapse: collapse;
+	padding: 3px;
+}
+
+table.phrTable tbody tr {
+	border-bottom: 0px solid #ffffff;
+	border-top: 0px;
+	border-left: 0px solid #ffffff;
+	border-right: 0px;
+}
+
+table.phrTable tbody tr td.nameColumn {
+	padding: 3px;
+	text-align: left;
+	text-indent: 0px;
+	font-weight: bold;
+	font-size: 8pt;
+}
+	
+table.phrTable tbody tr td.nameColumnContent {
+	padding: 3px;
+	text-align: left;
+	text-indent: 0px;
+	font-weight: normal;
+	font-size: 8pt;
+}
+	
+table.phrTable tbody tr.row1 {
+	border-bottom: 0px solid #ffffff;
+	border-top: 0px;
+	border-left: 0px solid #ffffff;
+	border-right: 0px;
+	background-color: #ffffff;
+}
+	
+table.phrTable tbody tr.row1 td {
+	padding: 3px;
+	vertical-align: top;
+	text-align: left;
+	text-indent: 0px;
+	font-weight: normal;
+	font-size: 8pt;
+	color: black;
+}
+
+table.phrTable tbody tr.row0 {
+	border-bottom: 0px solid #ffffff;
+	border-top: 0px;
+	border-left: 0px solid #ffffff;
+	border-right: 0px;
+	background-color: #eeeeee;
+}
+	
+table.phrTable tbody tr.row0 td {
+	padding: 3px;
+	vertical-align: top;
+	text-align: left;
+	text-indent: 0px;
+	font-weight: normal;
+	font-size: 8pt;
+	color: black;
+}
+
+table.phrTable tbody tr.row {
+	border-bottom: 0px solid #ffffff;
+	border-top: 0px;
+	border-left: 0px solid #ffffff;
+	border-right: 0px;
+	background-color: #eeeeee;
+}
+	
+table.phrTable tbody tr.row td {
+	padding: 3px;
+	vertical-align: top;
+	text-align: left;
+	text-indent: 0px;
+	font-weight: normal;
+	font-size: 8pt;
+	color: black;
+}
+
+table.phrTable tbody tr td.tableHdr {
+	background-color: #999999;
+	text-align: left;
+	text-indent: 0px;
+	font-weight: bold;
+	font-size: 10pt;
+	color: white;
+}
+	
+table.phrTable tbody tr td.columnHdr {
+	padding: 3px;
+	border-bottom: 0px solid transparent;
+	border-top: 0px solid transparent;
+	border-left: 0px solid transparent;
+	background-color: #dddddd;
+	text-align: left;
+	text-indent: 0px;
+	font-weight: bold;
+	font-size: 9pt;
+	color: #333333;
+}
+

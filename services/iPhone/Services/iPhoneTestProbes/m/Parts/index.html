@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>mcmobile-0233</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="minimum-scale=1.0, width=480, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="Images/WebClipIcon.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="Parts/Transitions.css">
+    <script type="text/javascript" src="Parts/utilities.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/setup.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Transitions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/StackLayout.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Text.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/PushButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/ButtonHandler.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/List.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_perf.js" charset="utf-8"></script>
+    <script type="text/javascript" src="json2.js"></script>
+    <script type="text/javascript" src="mc_common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_dbsubs.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_absubs.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_lists.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_views.js" charset="utf-8"></script>
+    <script type="text/javascript" src="phonegap.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="jquery.sparkline.min.js"></script>
+    <style>
+    #mycontainer {
+    
+-webkit-user-select: none;  /* prevent copy paste */
+width:100%;
+height:100%;
+}
+    #proberpanel {background-color:white;
+	font-size: .9em;
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, verdana;
+	text-decoration: none;
+	color: black;
+}
+#testcase {font-size:1.0em; font-weight:700}
+#data, #ipaddr{
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: rgb(204, 204, 204);
+}
+#pagecontent {background-color:white}
+
+.noshow, .invisible {
+    display: none;
+}
+
+#proberpanel h3 {
+    margin-top: 10px;
+    padding: 0px;
+}
+
+img #smallimg {
+    height: 40px;
+}
+
+.rowtag, .rowtagiphone {
+    font-size: 0.8em;
+    color: rgb(128, 128, 128);
+}
+.rowtag, .rowtagiphone {
+    font-size: 0.8em;
+    color: rgb(128, 128, 128);
+}
+
+.sparknum {
+    font-size: 0.6em;
+    color: rgb(128, 128, 128);
+    width: 5em;
+    margin-top: 0.3em;
+}
+</style>
+    <script type="text/javascript">
+
+touchMove = function(event) {
+
+// Prevent scrolling on this element
+
+event.preventDefault();
+
+}
+
+</script>
+    <!-- '<?php 'http://'.$_SERVER['SERVER_NAME'] ?>' -->
+</head>
+<body onload="customSetup('http://ci.myhealthespace.com');">
+    <div id="mycontainer" ontouchmove="touchMove(event);">
+        <div id="views">
+            <div id="front">
+                <div id="background">
+                    <input type="text" name="" value="" id="email">
+                    <input type="text" name="" value="" id="password" maxlength="15">
+                    <div id="text1"></div>
+                    <div id="loginButton"></div>
+                    <img src="Images/10th60by60.png" id="logo">
+                    <div id="text2"></div>
+                </div>
+                <div id="title"></div>
+                <div id="button6"></div>
+            </div>
+            <div id="loginerror">
+                <div id="rectangleShape2">
+                    <div id="patientListTitleNone1"></div>
+                    <div id="button2"></div>
+                </div>
+                <div id="text10"></div>
+                <div id="errbox"></div>
+            </div><div id="openview">
+                <div id="rectangleShape3">
+                    <div id="patientListTitleNone2"></div>
+                    <div id="button16"></div>
+                </div>
+                <div id="button17"></div>
+                <div id="button13"></div>
+                <div id="button9"></div>
+            </div><div id="settings">
+                <div id="button3"></div>
+                <div id="settingsGroup">
+                    <div id="familyTitle"></div>
+                    <select apple-style-relative="height: 20px;" id="fontFamily" onchange="fontFamilyChanged(event)">
+                        <option>American Typewriter</option>
+                        <option>American Typewriter Condensed</option>
+                        <option>Arial</option>
+                        <option>Arial Rounded MT Bold</option>
+                        <option>Courier New</option>
+                        <option>Georgia</option>
+                        <option>Helvetica</option>
+                        <option selected="selected">Marker Felt</option>
+                        <option>Times New Roman</option>
+                        <option>Trebuchet MS</option>
+                        <option>Verdana</option>
+                        <option>Zapfino</option>
+                    </select>
+                    <div id="sizeTitle"></div>
+                    <select apple-style-relative="height: 20px;" id="fontSize" onchange="fontSizeChanged(event)">
+                        <option value="12px">12px</option>
+                        <option value="14px">14px</option>
+                        <option value="16px">16px</option>
+                        <option selected="selected" value="18px">18px</option>
+                        <option value="24px">24px</option>
+                        <option value="36px">36px</option>
+                        <option value="48px">48px</option>
+                    </select>
+                    <div id="fontColor"></div>
+                    <div id="blackColorChip"></div>
+                    <div id="redColorChip"></div>
+                    <div id="blueColorChip"></div>
+                    <div id="greenColorChip"></div>
+                    <div id="purpleColorChip"></div>
+                    <div id="checkMark"></div>
+                </div>
+                <div id="showstamp">
+                </div>
+                <div id="logoutButton"></div>
+                <div id="text"></div>
+                <div id="logoutButton1"></div>
+            </div>
+            <div id="info">
+                <div id="logoutButton2"></div>
+                <div id="gotoSettingsButton"></div>
+                <div id="text3"></div>
+                <div id="topbox"></div>
+                <div id="message">
+                    <div id="text8"></div>
+                </div>
+                <div id="bottombox"></div>
+                <div id="button1"></div>
+                <div id="button"></div>
+                <div id="button4"></div>
+                <div id="button5"></div>
+                <div id="button8"></div>
+                <div id="button7"></div>
+                <div id="text6"></div>
+                <div id="text9"></div>
+            </div><div id="onepatient">
+                <div id="onePatientTitle"></div>
+                <div id="button22"></div>
+                <div id="button12"></div>
+                <div id="patientMcidB">
+                    <div id="patientMcid"></div>
+                </div>
+                <div id="patientDemoglB">
+                    <div id="patientDemogA"></div>
+                </div>
+                <div id="patientUpdateB">
+                    <div id="patientTimeA"></div>
+                </div>
+                <div id="button15"></div>
+                <div id="button19"></div>
+                <div id="button21"></div>
+                <div id="logoutButton3"></div>
+            </div><div id="activities">
+                <div id="onePatientTitle1"></div>
+                <div id="button18"></div>
+                <div id="patientDemoglB1">
+                    <div id="patientDemogB"></div>
+                </div>
+                <div id="patientUpdateB1">
+                    <div id="patientTimeB"></div>
+                </div>
+                <ul id="activityList">
+                    <li id="listRowTemplate" class="listRowTemplate_template" style="border-top-width: 0px; ">
+                        <div id="activityListItemLabel" class="activityListItemLabel_template"></div>
+                        <div id="arrow2" class="arrow2_template">
+                        </div>
+                    </li>
+                </ul>
+                <div id="logoutButton4"></div>
+                <div id="button11"></div>
+                <div id="button24"></div>
+                <div id="button25"></div>
+            </div><div id="consents">
+                <div id="onePatientTitle2"></div>
+                <div id="button20"></div>
+                <div id="patientDemoglB2">
+                    <div id="patientDemogC"></div>
+                </div>
+                <div id="patientUpdateB2">
+                    <div id="patientTimeC"></div>
+                </div>
+                <ul id="consentsList">
+                    <li id="listRowTemplate2" class="listRowTemplate2_template" style="border-top-width: 0px; ">
+                        <div id="consentsListItemLabel" class="consentsListItemLabel_template"></div>
+                        <div id="arrow3" class="arrow3_template">
+                        </div>
+                    </li>
+                </ul>
+                <div id="logoutButton5"></div>
+                <div id="button26"></div>
+                <div id="button27"></div>
+                <div id="button28"></div>
+            </div><div id="documents">
+                <div id="onePatientTitle3"></div>
+                <div id="button23"></div>
+                <div id="patientDemoglB3">
+                    <div id="patientDemogD"></div>
+                </div>
+                <div id="patientUpdateB3">
+                    <div id="patientTimeD"></div>
+                </div>
+                <ul id="documentsList">
+                    <li id="listRowTemplate1" class="listRowTemplate1_template" style="border-top-width: 0px; ">
+                        <div id="documentsListItemLabel" class="documentsListItemLabel_template"></div>
+                        <div id="arrow1" class="arrow1_template">
+                        </div>
+                    </li>
+                </ul>
+                <div id="logoutButton6"></div>
+                <div id="button29"></div>
+                <div id="button30"></div>
+                <div id="button31"></div>
+            </div><div id="patients">
+                <div id="rectangleShape">
+                    <div id="patientListTitle" onclick="flipToSettings(event)"></div>
+                    <div id="button10"></div>
+                    <div id="logoutButton7"></div>
+                    <div id="button32"></div>
+                </div>
+                <ul id="patientList">
+                    <li id="patientListItemArray" class="patientListItemArray_template">
+                        <div id="patientListItemLabel" class="patientListItemLabel_template"></div>
+                        <div id="arrow" class="arrow_template">
+                        </div>
+                    </li>
+                </ul>
+            </div><div id="nopatients">
+                <div id="rectangleShape1">
+                    <div id="patientListTitleNone"></div>
+                    <div id="button14"></div>
+                </div>
+                <div id="text5"></div>
+                <div id="logoutButton8"></div>
+            </div><div id="perf">
+                <div id="gotoSettingsButton1"></div>
+                <div id="text4"></div>
+                <div id="proberpanel">
+                    <center>
+                        <div id="pagecontent">
+                            <img src="/probe/custom/logo60by60.png">
+                            <table>
+                                <tbody>
+                                    <tr class="noshow">
+                                        <td><div class="rowtag">Remote Service</div></td>
+                                        <td><span id="service"></span><span id="downloadSize"></span><span id="iteration"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Remote Server</div></td>
+                                        <td id="serverName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Remote Time</div></td>
+                                        <td id="serverTime"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">IP Addrs</div></td>
+                                        <td class="plaincount" id="ipaddr"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Round Trip Time</div></td>
+                                        <td><div id="downloadt" class="sparknum"></div><span class="downloadTime">Loading..</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Elapsed at Server</div></td>
+                                        <td><div id="servicet" class="sparknum"></div><span class="serviceTime">Loading..</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Elapsed in Browser</div></td>
+                                        <td><div id="buildt" class="sparknum"></div><span class="buildTime">Loading..</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Load Average</div></td>
+                                        <td><div id="loadavg" class="sparknum"></div><span class="loadAvg">Loading..</span></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtag">Free Space</div></td>
+                                        <td id="diskfreespace"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td class="rowtag">Total Space</td>
+                                        <td id="disktotalspace"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Users</div></td>
+                                        <td class="plaincount" id="user_count"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Groups</div></td>
+                                        <td class="plaincount" id="group_count"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Documents</div></td>
+                                        <td class="plaincount" id="document_count"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Transactions</div></td>
+                                        <td class="plaincount" id="transaction_count"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </center>
+                </div>
+            </div></div>
+    </div>
+</body>
+</html>

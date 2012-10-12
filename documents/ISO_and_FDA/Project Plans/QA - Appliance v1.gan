@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Appliance V.1" company="MedCommons" webLink="" view-date="2007-11-14" view-index="0" gantt-divider-location="713" resource-divider-location="301" version="2.0">
+    <description><![CDATA[The to-do list for the first release of the project.]]></description>
+    <view zooming-state="default:2" id="gantt-chart"/>
+    <view id="resource-table">
+        <field id="0" name="Name" width="54"/>
+        <field id="1" name="Default role" width="45"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+    </calendars>
+    <tasks color="#8cb6ce">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Code Freeze`" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+        <task id="1" name="QA TASKS" color="#8cb6ce" meeting="false" start="2007-11-14" duration="22" complete="0" priority="1" expand="true">
+            <task id="2" name="Write demo script for test use" color="#8cb6ce" meeting="false" start="2007-12-13" duration="1" complete="0" priority="1" expand="true">
+                <task id="3" name="Test round-trip demo" color="#8cb6ce" meeting="false" start="2007-12-13" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="4" name="Write NBA demo script for test use" color="#8cb6ce" meeting="false" start="2007-12-11" duration="1" complete="0" priority="1" expand="true">
+                <task id="5" name="Test NBA demo" color="#8cb6ce" meeting="false" start="2007-12-11" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="6" name="DDL Testing" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="11" name="Requirements" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="116" name="Generate Requirements Documents" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="117" name="Generate consistent numbering" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="101" name="Test Data" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="102" name="Request old Amicas test scenarios" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="103" name="Write new test scenarios" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="104" name="Assemble test data" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="109" name="Test Procedures" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="110" name="DDL test" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="111" name="Viewer test" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="113" name="Console test" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="121" name="Appliance tests" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                    <task id="122" name="Load" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                    <task id="123" name="Security" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                    <task id="124" name="Backup" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                </task>
+                <task id="118" name="Third Party API test" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                    <task id="112" name="HealthBook test" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                    <task id="119" name="NBA test" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                </task>
+            </task>
+        </task>
+        <task id="94" name="REGULATORY TASKS" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true">
+            <task id="7" name="Write up notes on risk analysis meeting" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="114" name="Meetings" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true">
+                <task id="10" name="Final design review" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="9" name="Management meeting" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                    <task id="105" name="Org chart" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                    <task id="106" name="Responsibilities" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                    <task id="115" name="Success/failure" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                    <task id="107" name="Current CVs" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                </task>
+            </task>
+            <task id="108" name="Documents List" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="8" name="Traceability matrix" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="12" name="Register product with FDA" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="100" name="EHGT" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="97" name="EHGT terms of use legal review" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="8" name="Sean" function="Default:0" contacts="" phone=""/>
+        <resource id="9" name="Simon" function="Default:0" contacts="" phone=""/>
+        <resource id="10" name="Terry" function="Default:0" contacts="" phone=""/>
+        <resource id="11" name="Donald" function="Default:0" contacts="" phone=""/>
+        <resource id="12" name="Adrian" function="Default:0" contacts="" phone=""/>
+        <resource id="13" name="Bill" function="Default:0" contacts="" phone=""/>
+        <resource id="14" name="Caroline" function="Default:0" contacts="" phone=""/>
+        <resource id="15" name="Susan" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="2" resource-id="12" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="14" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="13" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="14" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="9" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="15" function="Default:0" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd3" order="0" width="75"/>
+        <displaycolumn property-id="tpd4" order="1" width="75"/>
+        <displaycolumn property-id="tpd5" order="2" width="75"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

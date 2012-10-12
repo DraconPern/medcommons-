@@ -1,0 +1,12 @@
+Download.php
+First link goes to installer screens
+
+
+swap horiz/vert into menu
+
+referrer is coming from outside of website - go to black on x click - 
+
+order.php
+tracking number bolder
+HIPAA header - hipaa signatures
+hipaa fields: medcommons, sender, recipient

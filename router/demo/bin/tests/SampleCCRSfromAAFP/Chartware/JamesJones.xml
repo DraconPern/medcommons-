@@ -1,0 +1,3124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContinuityOfCareRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:astm-org:CCR">
+	<CCRDocumentObjectID>CWASTMCCRID4dbe226c-4445-42f9-af2c-e18fcf2b6105</CCRDocumentObjectID>
+	<Language>
+		<Text>English</Text>
+	</Language>
+	<Version>V1.0</Version>
+	<DateTime>
+		<Type>
+			<Text>System Date at Export</Text>
+		</Type>
+		<ExactDateTime>2006-04-28T12:23:24Z</ExactDateTime>
+	</DateTime>
+	<Patient>
+		<ActorID>CWPATIENTACTOR7</ActorID>
+	</Patient>
+	<From>
+		<ActorLink>
+			<ActorID>CWPROVIDERACTOR2</ActorID>
+			<ActorRole>
+				<Text>Exporting provider</Text>
+			</ActorRole>
+		</ActorLink>
+	</From>
+	<Body>
+		<Problems>
+			<Problem>
+				<CCRDataObjectID>C9F91413-4AF3-11d3-BACE-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1999-08-04</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Allergic Rhinitis</Text>
+				</Description>
+				<Status>
+					<Text>Seasonal</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>78D53765-20E5-11d3-BA80-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1983-03-08</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Appendectomy</Text>
+				</Description>
+				<Status>
+					<Text>Surgery Hx</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>825C2529-214F-11d3-BA80-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Back Pain - 3 months</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>04DAA652-FB4A-4965-9EEA-5DF0090E1AC4</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>2005-05-07</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Carcinoma in Situ</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Attending Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>C9F91415-4AF3-11d3-BACE-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1999-08-04</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Constipation</Text>
+				</Description>
+				<Status>
+					<Text>Chronic</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Attending Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>086DDADE-31BD-45ba-93C2-058D8521C566</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>2004-06-09</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Disability Examination</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Attending Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>78D53764-20E5-11d3-BA80-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Headache</Text>
+				</Description>
+				<Status>
+					<Text>Episodic</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Attending Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>5</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1997-07-26</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Hypertension</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Attending Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+			</Problem>
+			<Problem>
+				<CCRDataObjectID>1</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1996-02-26</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Problem</Text>
+				</Type>
+				<Description>
+					<Text>Stress</Text>
+				</Description>
+				<Status>
+					<Text>Episodic</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Attending Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+			</Problem>
+		</Problems>
+		<FamilyHistory>
+			<FamilyProblemHistory>
+				<CCRDataObjectID>C9F91412-4AF3-11d3-BACE-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1999-08-04</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Family History</Text>
+				</Type>
+				<Description>
+					<Text>Prostate Cancer</Text>
+				</Description>
+				<Status>
+					<Text>Family Hx</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</FamilyProblemHistory>
+		</FamilyHistory>
+		<SocialHistory>
+			<SocialHistoryElement>
+				<CCRDataObjectID>C9F91414-4AF3-11d3-BACE-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Active Date</Text>
+					</Type>
+					<ExactDateTime>1999-08-04</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Social History</Text>
+				</Type>
+				<Description>
+					<Text>High Speed Car Crashes</Text>
+				</Description>
+				<Status>
+					<Text>Social Hx</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</SocialHistoryElement>
+		</SocialHistory>
+		<Alerts>
+			<Alert>
+				<CCRDataObjectID>78D53762-20E5-11d3-BA80-00105AE04C57</CCRDataObjectID>
+				<Type>
+					<Text>Allergy</Text>
+				</Type>
+				<Description>
+					<Text>CODEINE</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Alert>
+			<Alert>
+				<CCRDataObjectID>28b68585-065b-4162-9fb4-b1281b20b556</CCRDataObjectID>
+				<Type>
+					<Text>Allergy</Text>
+				</Type>
+				<Description>
+					<Text>CODEINE (CCR)</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Alert>
+			<Alert>
+				<CCRDataObjectID>78D53763-20E5-11d3-BA80-00105AE04C57</CCRDataObjectID>
+				<Type>
+					<Text>Allergy</Text>
+				</Type>
+				<Description>
+					<Text>PENICILLIN</Text>
+				</Description>
+				<Status>
+					<Text>Suspected</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Alert>
+			<Alert>
+				<CCRDataObjectID>8c7c3c33-bb05-4ed9-8951-ceff048952c4</CCRDataObjectID>
+				<Type>
+					<Text>Allergy</Text>
+				</Type>
+				<Description>
+					<Text>PENICILLIN (CCR)</Text>
+				</Description>
+				<Status>
+					<Text>Suspected</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Alert>
+			<Alert>
+				<CCRDataObjectID>6</CCRDataObjectID>
+				<Type>
+					<Text>Allergy</Text>
+				</Type>
+				<Description>
+					<Text>SULFA</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Alert>
+			<Alert>
+				<CCRDataObjectID>64f675a7-ee21-4287-8d1b-c5207d6e98f0</CCRDataObjectID>
+				<Type>
+					<Text>Allergy</Text>
+				</Type>
+				<Description>
+					<Text>SULFA (CCR)</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+			</Alert>
+		</Alerts>
+		<Medications>
+			<Medication>
+				<CCRDataObjectID>36B118EE-498E-4fec-AB96-B17D8709FF84</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>BETA CAROTENE</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Starting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>BETA CAROTENE</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>10000 IU qday Recommended</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>96F53260-21BD-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>CHRONULAC</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>CHRONULAC</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>20 g/30 ml qday prn as directed # 8 oz # 2 quarts Refill prn</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>12</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>CLARITIN</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>CLARITIN</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>10 mg qday</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>10</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>CODEINE   TYLENOL</Text>
+				</Description>
+				<Status>
+					<Text>Suspended</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>CODEINE   TYLENOL</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text> one cap q 4h prn as directed do not exceed 6 caps/24 hrs # 30</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>89E2F8B9-21BF-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>DARVOCET</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>DARVOCET</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>N-100 q 4 hrs prn pain # 30 GENERIC No Refill</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>DCEC5BB3-AA87-4877-925F-0C74D85719E1</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>E-MYCIN</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Starting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>E-MYCIN</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>333 mg tid # 30 GENERIC No Refill</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>19</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>FLONASE</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>FLONASE</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text># 16 gram 1 spray each nostril q day as directed</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>DC6A059E-21BE-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>HYDROCHLOROTHIAZIDE</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>HYDROCHLOROTHIAZIDE</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>50 mg qday</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>89E2F8BA-21BF-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>LASIX</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>LASIX</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>80 mg q day # 100 Generic No Refill</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>3</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>PROCARDIA</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>PROCARDIA</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text> one cap q 4h prn as directed do not exceed 6 caps/24 hrs # 30</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>89E2F8BB-21BF-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>SYNTHROID</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>SYNTHROID</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>0.075 mg qday # 100 No Refill Generic</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+			<Medication>
+				<CCRDataObjectID>96F53261-21BD-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2006-04-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<Description>
+					<Text>ZYLOPRIM</Text>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>ZYLOPRIM</Text>
+					</ProductName>
+				</Product>
+				<Directions>
+					<Direction>
+						<Description>
+							<Text>300 mg qday as directed Disp # 100 No Refill Generic</Text>
+						</Description>
+					</Direction>
+				</Directions>
+			</Medication>
+		</Medications>
+		<Immunizations>
+			<Immunization>
+				<CCRDataObjectID>F678B556-4204-4eec-A0B6-8CFCCA6D321A</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Date of immunization</Text>
+					</Type>
+					<ExactDateTime>1996-02-01</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Immunization</Text>
+				</Type>
+				<Description>
+					<Text>Cholera vaccine 2/1/1996.</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Provider that Added Immunization</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>CholeraVaccine</Text>
+					</ProductName>
+				</Product>
+			</Immunization>
+			<Immunization>
+				<CCRDataObjectID>FE265FB6-226B-11d3-BA83-00105AE04C57</CCRDataObjectID>
+				<Type>
+					<Text>Immunization</Text>
+				</Type>
+				<Description>
+					<Text>Hepatitis A vaccine, handout review.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>HEPATITIS A VACCINE</Text>
+					</ProductName>
+				</Product>
+			</Immunization>
+			<Immunization>
+				<CCRDataObjectID>B23DA320-21DD-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<Type>
+					<Text>Immunization</Text>
+				</Type>
+				<Description>
+					<Text>Hepatitis B vaccine, handout review.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>HEPATITIS B VACCINE</Text>
+					</ProductName>
+				</Product>
+			</Immunization>
+			<Immunization>
+				<CCRDataObjectID>FE265FB7-226B-11d3-BA83-00105AE04C57</CCRDataObjectID>
+				<Type>
+					<Text>Immunization</Text>
+				</Type>
+				<Description>
+					<Text>Hepatitis B vaccine, handout review.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>HEPATITIS B VACCINE</Text>
+					</ProductName>
+				</Product>
+			</Immunization>
+			<Immunization>
+				<CCRDataObjectID>30F5B057-88C2-4bd5-A62C-A2D3F495B3C5</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Date of immunization</Text>
+					</Type>
+					<ExactDateTime>1996-02-01</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Immunization</Text>
+				</Type>
+				<Description>
+					<Text>Hepatitis A vaccine 2/1/1996.</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Provider that Added Immunization</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>HepatitisAVaccine</Text>
+					</ProductName>
+				</Product>
+			</Immunization>
+			<Immunization>
+				<CCRDataObjectID>FC056581-21FA-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<Type>
+					<Text>Immunization</Text>
+				</Type>
+				<Description>
+					<Text>Lyme Disease vaccine, handout review.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Unknown source</Text>
+					</Description>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>LYME DISEASE VACCINE</Text>
+					</ProductName>
+				</Product>
+			</Immunization>
+			<Immunization>
+				<CCRDataObjectID>B2ADBC83-EC4A-4bd3-99B4-366BA58BCEE4</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Date of immunization</Text>
+					</Type>
+					<ExactDateTime>2001-02-18</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Immunization</Text>
+				</Type>
+				<Description>
+					<Text>Pneumovax 2/18/2001.</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Provider that Added Immunization</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Product>
+					<ProductName>
+						<Text>Pneumovax</Text>
+					</ProductName>
+				</Product>
+			</Immunization>
+		</Immunizations>
+		<Encounters>
+			<Encounter>
+				<CCRDataObjectID>F6BD2712-2097-11d3-BA7F-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Progress Notes  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>F712ABF2-21C0-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>F84C3B32-21CE-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>FC056572-21FA-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>General Medical Examination - 50 years of age  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>FDBCF4E4-528A-11d5-B36F-00A0C9784F1D</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2001-05-27</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2001-05-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Hospital Admit</Text>
+				</Type>
+				<Description>
+					<Text>Cancer  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>FE265FA2-226B-11d3-BA83-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-14</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-14</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Progress Notes  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>FFE4B3E2-226C-11d3-BA83-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-14</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-14</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal Pain -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>C0C84842-E17A-414e-AB01-4F9D7FF45008</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2001-02-18</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2001-02-18</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal Pain - 3 days  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>C6056A22-21FE-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Phone</Text>
+				</Type>
+				<Description>
+					<Text>Angina, unstable  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>CB616A72-21C2-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>CBD549B2-21C0-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>D1FCC5C2-21EF-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal Pain - 6 hours  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>D28B0792-2098-11d3-BA7F-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Progress Notes  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>DB651232-21B5-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Refill</Text>
+				</Type>
+				<Description>
+					<Text>Refill Prescription  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>DF5BF792-21FD-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Phone</Text>
+				</Type>
+				<Description>
+					<Text>Telephone Consultation with patient  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>E669F122-21C1-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>DC6A0592-21BE-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved and patient is now due for visit  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>EA7DBFB2-21C2-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>ED53E282-21F3-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>General Medical Examination - 50 years of age  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>F5B36DF2-21D9-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal Pain - 3 hours  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>89E2F8B2-21BF-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>8E58222A-92FF-4d00-A7CF-32BA59E465C3</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2001-02-18</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2001-02-18</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office Follow-Up</Text>
+				</Type>
+				<Description>
+					<Text>Chart Reviewed  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR1</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>8FB6EAE2-2175-11d3-BA81-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>HEADACHE - 3 days  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>915905D9-C383-4f82-98F9-10288A088183</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2000-06-28</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2000-06-28</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Date - Time 623.20  Interpreted by unrecognized provider George ChartWare VIP.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider George ChartWare VIP</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>916B9F82-21B5-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>92DA39F2-21D7-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal Pain -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>96F53252-21BD-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Request for New Medication -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>9B174792-21C2-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>A20BD9F2-18BE-11d3-BA6F-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-02</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-02</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Refill</Text>
+				</Type>
+				<Description>
+					<Text>Refill Prescription  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>A90EB752-21C0-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>AC1BA5C2-21D8-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Allergies - 2 months  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>B23DA2D2-21DD-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal Pain - 3 hours  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>268</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-27</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>271</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>273</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>274</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>275</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>276</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-28</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>277</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-29</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-29</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>278</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-29</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-29</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>279</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-07-14</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-07-14</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>29CCB2A2-21D0-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>2FAB15E2-1E8A-11d3-BA7C-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-09</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-09</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Aneurysm, cerebral  Performed by unrecognized provider Ann M Assistant, MA.  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Performed by unrecognized provider Ann M Assistant, MA.  Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>3723A4E2-21C2-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>CB8581C6-EA5A-4225-B132-18EED7479451</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2006-02-14</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2006-02-14</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>99211 Estab Pat (5) -  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>65834F62-21CE-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Progress Notes  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>672DF6D2-18BE-11d3-BA6F-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-02</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-02</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Refill</Text>
+				</Type>
+				<Description>
+					<Text>Refill Prescription  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>740F3082-21C2-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>79716FC2-2098-11d3-BA7F-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Progress Notes  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>825C24F2-214F-11d3-BA80-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-12</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal Pain - 3 hours  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>01B00592-21F3-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>094790D2-21C3-11d3-BA82-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-13</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx Request</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>1670CCF2-1ADC-11d3-BA73-00105AE04C57</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1999-06-04</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1999-06-04</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Ankle Problem -  CORRECTED NOTE  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>2</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1996-02-25</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1996-02-25</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>New Patient</Text>
+				</Type>
+				<Description>
+					<Text>Periodic Health Assessment, middle aged adult  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>232</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1996-03-05</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1996-03-05</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office Visit</Text>
+				</Type>
+				<Description>
+					<Text>Headache NOS  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>247</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Ofc MC</Text>
+				</Type>
+				<Description>
+					<Text>Office Visit - Established Patient  Interpreted by unrecognized provider Matthew  Cushing, MD  G4946.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider Matthew  Cushing, MD  G4946</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>259</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Phone</Text>
+				</Type>
+				<Description>
+					<Text>Telephone Consultation with patient  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>262</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-22</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-22</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>263</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-22</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-22</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>264</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-22</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-22</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Rx</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>250</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Ofc MC</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -  approved  Interpreted by unrecognized provider Matthew  Cushing, MD  G4946.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider Matthew  Cushing, MD  G4946</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>254</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>255</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-04-26</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Prescription Refill Request -   Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>267</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>1998-05-27</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>1998-05-27</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office DTS</Text>
+				</Type>
+				<Description>
+					<Text>Patient's chart reviewed  Interpreted by unrecognized provider John A. Johnson, MD.</Text>
+				</Description>
+				<Source>
+					<Description>
+						<Text>Interpreted by unrecognized provider John A. Johnson, MD</Text>
+					</Description>
+				</Source>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>4AB0E685-12C8-47b4-9A58-6B0E512F56C5</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-05-07</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-05-07</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Carcinoma in Situ in remission  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>73F6A7F9-1B85-4cc2-B271-C03D25B587DB</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-12-02</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-12-02</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Cough -  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>6F2C9C9C-E2D1-43af-B229-5BB1B3A9352F</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-12-05</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-12-05</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Arthritis Check -  last lab testing chronic  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>42D53153-19CD-4d5e-878A-F9835D1E69EA</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-12-15</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-12-15</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>Foot, right, Mechanics, Repeat x 1  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>E793D9DA-CF69-4665-9F61-AB5EA001BB66</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-12-15</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-12-15</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>XRay FASTING  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>D6E5F75A-DDB4-4d3c-AFE3-E06869B71D31</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-12-15</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-12-15</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>DTS Progress Notes  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>9D5B887E-C1EA-4b4b-994D-A5D86B3E3398</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-12-16</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-12-16</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>DTS Progress Notes  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>F908E365-0DFE-4eac-9A70-37655CBEF1BC</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2005-12-21</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2005-12-21</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>test specify action taken  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+			<Encounter>
+				<CCRDataObjectID>56A12F77-879C-4934-8A8A-7F7CBDA90487</CCRDataObjectID>
+				<DateTime>
+					<Type>
+						<Text>Encounter/Event Time</Text>
+					</Type>
+					<ExactDateTime>2006-02-03</ExactDateTime>
+				</DateTime>
+				<DateTime>
+					<Type>
+						<Text>System Time at Encounter</Text>
+					</Type>
+					<ExactDateTime>2006-02-03</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Office New Problem</Text>
+				</Type>
+				<Description>
+					<Text>test dx accum  .</Text>
+				</Description>
+				<Source>
+					<Actor>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				<Practitioners>
+					<Practitioner>
+						<ActorID>CWPROVIDERACTOR2</ActorID>
+						<ActorRole>
+							<Text>Interpreting Provider</Text>
+						</ActorRole>
+					</Practitioner>
+				</Practitioners>
+			</Encounter>
+		</Encounters>
+	</Body>
+	<Actors>
+		<Actor>
+			<ActorObjectID>CWACTOR1</ActorObjectID>
+			<InformationSystem>
+				<Name>ChartWare, Inc.</Name>
+				<Type>EMR</Type>
+				<Version>7.5.08</Version>
+			</InformationSystem>
+			<Relation>
+				<Text>Software Vendor</Text>
+			</Relation>
+			<Telephone>
+				<Value>800-642-4278</Value>
+			</Telephone>
+			<EMail>
+				<Value>sales@chartware.com</Value>
+			</EMail>
+			<URL>
+				<Value>http://www.chartware.com</Value>
+			</URL>
+			<Source>
+				<Description>
+					<Text>ChartWare user.</Text>
+				</Description>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>CWPROVIDERACTOR2</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<Given>David</Given>
+						<Middle>C.</Middle>
+						<Family>ChartWare</Family>
+						<Title>D.O.</Title>
+						<NickName>DCC</NickName>
+					</CurrentName>
+					<DisplayName>David C. ChartWare D.O.</DisplayName>
+				</Name>
+			</Person>
+			<Source>
+				<Description>
+					<Text>ChartWare user.</Text>
+				</Description>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>CWPATIENTACTOR7</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<Given>James</Given>
+						<Middle/>
+						<Family>Jones</Family>
+						<Suffix/>
+						<Title/>
+						<NickName />
+					</CurrentName>
+					<DisplayName>James  Jones  </DisplayName>
+				</Name>
+				<DateOfBirth>
+					<ExactDateTime>1944-12-31</ExactDateTime>
+				</DateOfBirth>
+				<Gender>
+					<Text>Male</Text>
+				</Gender>
+			</Person>
+			<Address>
+				<Line1/>
+				<Line2/>
+				<City/>
+				<State/>
+				<PostalCode/>
+			</Address>
+			<Telephone>
+				<Value/>
+				<Type>
+					<Text>Home Phone</Text>
+				</Type>
+			</Telephone>
+			<Telephone>
+				<Value/>
+				<Type>
+					<Text>Work Phone</Text>
+				</Type>
+			</Telephone>
+			<EMail>
+				<Value/>
+				<Type>
+					<Text>Email</Text>
+				</Type>
+			</EMail>
+			<Source>
+				<Description>
+					<Text>ChartWare user.</Text>
+				</Description>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>CWPROVIDERACTOR1</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<Given>John</Given>
+						<Middle>Q.</Middle>
+						<Family>ChartWare</Family>
+						<Title>M.D.</Title>
+						<NickName>JQC</NickName>
+					</CurrentName>
+					<DisplayName>John Q. ChartWare M.D.</DisplayName>
+				</Name>
+			</Person>
+			<Source>
+				<Description>
+					<Text>ChartWare user.</Text>
+				</Description>
+			</Source>
+		</Actor>
+	</Actors>
+</ContinuityOfCareRecord>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../Requirements/MedCommonsDocbookExtensions.dtd">
+<article>
+    <title> MedCommons DocBook Procedures    </title>
+    <articleinfo>
+        <invpartnumber>DEV-0001</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>April 15, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>         
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    
+    
+    <beginpage/>
+    <sect1>
+        <title>Overview</title>
+        <para>
+            The MedCommons requirements and specification documents are written in DocBook format. DocBook is an XML format widely used for technical documentation. Some minor
+            extensions have been made within the DocBook framework to explicitly support software requirements.
+        </para>
+        <para>
+            This document describes the procedures by which the XML documents are mapped to their output target types (currnently PDF).  It also describes some
+            further extensions that will be available soon.
+        </para>
+      
+        <para>
+            DocBook is described in detail at
+            <citation>
+                <ulink url="http://www.docbook.org/tdg/html/docbook.html">
+                    DocBook: The Definitive Guide
+                </ulink>
+            </citation>
+            
+        </para>
+        <para>
+            To do: Insert graphic description of transform sequences (XML ->DocBook->{Fo->PDF, HTML}, Poseidon->{HTML, JPEG}
+        </para>
+    </sect1>
+    <beginpage/>
+    <sect1>
+        <title>Installation</title>
+        <para>
+        The following software packages are required for build the documentation tree.
+        <itemizedlist>
+            <listitem>Subversion</listitem>
+            <listitem>DocBook 4.2 (included in MedCommons Subversion repository )</listitem>
+            <listitem>Apache ant  <ulink url="http://ant.apache.org/bindownload.cgi"> 1.6.2</ulink></listitem>
+            <listitem>Java <ulink url="http://java.sun.com/j2se/1.5.0/download.jsp"> JDK 1.5.x </ulink></listitem>
+            <listitem>Java Advanced Imaging <ulink url="http://java.sun.com/products/java-media/jai/"> JAI  1.1.2_x</ulink></listitem>
+            <listitem>Cygwin
+                <itemizedlist>
+                    <listitem>libxml2 and libxslt </listitem>
+                    <listitem>make</listitem>
+                </itemizedlist>
+                
+            </listitem>
+        </itemizedlist>
+            </para>
+        <para>
+            Installing these packages should be in this rough order:
+            <orderedlist>
+                <listitem>Install subversion. Either a tortoise client or the svn command line interface should be installed under Cygwin.</listitem>
+                <listitem>Install JDK 1.5.x  </listitem>
+                <listitem>Install ant </listitem>
+                <listitem>Install JAI</listitem>
+            </orderedlist>
+            After these software packages are installed then some configuration of ant is required:
+            <orderedlist>
+                <listitem>Go to the svn/MedCommonsDocBook/lib directory</listitem>
+                <listitem>Copy the avalon*.jar, batik.jar, and fop.jar files from the fop-0.20.5/lib directory into the ant's lib directory (typically /apache-ant-1.6.2/lib/)</listitem>
+            </orderedlist>
+            
+        </para>
+      
+         <para>
+             These procedures have been successfully run in both Windows XP and Linux (RH Fedora Core 3). 
+         </para>
+    
+    </sect1>
+    <beginpage/>
+    <sect1>
+        <title>Generating documents from DocBook source</title>
+        <para>The first time time that this is run on a machine the files must be checked out of subversion in a
+        different manner from subsequent updates. The documents directory needs to be checked out of the subversion repository. 
+            This requires that you have a user account and password for the respository. 
+          The checkout can be either from a svn client like Tortoise or a using the svn command line tool 
+            <footnote id="cygwinrequired"><para>svn may require that cygwin be installed on your Windows machine. In Linux or MacOSX svn is probably
+            already installed.</para></footnote>.  
+          Checking out the document tree from medcommons on the command line is done via the svn checkout command
+            <footnote id="checkout"><para>I don't have tortoise on my machine - if someone sends me a description of how to run it for the examples below
+            I'll include it in this document.</para></footnote>:
+          <programlisting>
+              svn co http://svn.medcommons.net:6666/svn/documents
+          </programlisting>      
+        </para>
+        <para>
+            All of the files relevant to this document are in the documents/MedCommonsDocBook directory.  The directory structure in the documents respository needs some
+        TLC. 
+        </para>
+        <para>The current structure is that all source documents are in documents/MedCommonsDocBook/documents. Output is in documents/MedCommonsDocBook/output.</para>
+        <para>
+            The basic procedure is to:
+            <orderedlist>
+                <listitem>Open up a command window.</listitem>
+                <listitem>Change directory to svn/documents/MedCommonsDocBook (if this in cygwin the directory will look like /cygdrive/c/MedCommons/).</listitem>
+                <listitem>Update to the latest documents in the repository: 
+                    <programlisting>svn update</programlisting>
+                </listitem>
+                <listitem>Enter "ant" on the command line<footnote>Threre will be a number of error messages that we can't do anything about in the short run. They are 'mostly harmless'. See the build.xml file 
+                for some details on this issue.</footnote>.</listitem>
+                <listitem>All output files are located in a the output subfolder.</listitem>
+            </orderedlist>
+            
+        </para>
+    </sect1>
+    
+    <sect1>
+        <title>MedCommons DocBook Customizations</title>
+        <sect2>
+            <title>&lt;requirement&gt; element</title>
+        </sect2>
+        
+        <para>
+            The requirement element provides a mechanism for explicitly tagging individual
+            requirements in requirement documents. These can be filtered out to generate 
+            traceability maps as well as generate standard documentation.
+            
+            The &lt;requirement&gt; element contains two sub-elements: &lt;reqTitle&gt; and &lt;reqDescription&gt;.  The  &lt;requirement&gt; element  also requires the id attribute be filled 
+            in with the requirement's global identifier. 
+<programlisting>
+&lt;requirement id="MCID-001"&gt;
+&lt;reqTitle&gt;
+A MedCommons User Id unambiguously identifies 
+a persona
+&lt;/reqTitle&gt;
+&lt;reqDescription&gt;
+MedCommons User Ids identify personas that a user creates.
+&lt;/reqDescription&gt;
+&lt;/requirement&gt;
+</programlisting>
+            
+        </para>
+        <para>
+            This in turn generates the following:
+            <requirement id="MCID-001">
+                <reqTitle>A MedCommons User Id unambiguously identifies a persona</reqTitle>
+                <reqDescription>MedCommons User Ids identify personas that a user creates. </reqDescription>
+            </requirement>
+            Additionally - index entries are generated for the requirement's ID.
+        </para>
+    </sect1>
+    <sect1>
+        <title>Editing MedCommons DocBook documents </title>
+        <para>
+            Editing these documents is best done in a XML editor which uses DTDs to constrain the editing process. XMLSpy and Oxygen are two of these. Some of the documents use
+            straight DocBook DTDs, others require that the MedCommonsDocbookExtensions.dtd (located in MedCommonsDocBook/documents/Requirements/) be loaded. The procedures
+            for doing this differ in each editor but in both of the editors mentioned above the loading is fairly automatic.  In Oxygen if you enter <literal>&lt;requi</literal> and hit return a blank 
+            template is generated for the requirement, reqTitle, and reqDescription elements. 
+        </para>
+        <para>
+            Once documents have been edited and their results checked after generating the target documents with ant the document files should be checked in via svn's commit command.
+        </para>
+    </sect1>
+    <appendix>
+        <title>MedCommonsDocbookExtensions.dtd</title>
+       <programlisting>
+           <![CDATA[
+          <!-- MedCommons DocBook extensions -->
+<!ENTITY %  local.compound.class "|requirement|usecase|refRequirement">
+<!ENTITY % local.divcomponent.mix  "|requirement|usecase|refRequirement">
+<!ENTITY % local.refcomponent.mix "|requirement|usecase|refRequirement">
+<!--<!ENTITY % indexdivcomponent.mix "|requirement"> -->
+
+
+
+<!ENTITY % DocBookDTD PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+ %DocBookDTD;
+     
+<!ELEMENT requirement (reqTitle, reqDescription)>
+<!ELEMENT reqTitle    (#PCDATA)>
+<!ELEMENT reqDescription (%para.char.mix; | %para.mix;)*>
+<!-- Need to add status -->
+<!ATTLIST requirement
+%idreq.attrib;		%pagenum.attrib;		%remap.attrib;
+		%xreflabel.attrib;
+		%revisionflag.attrib;
+		%effectivity.attrib;
+		%anchor.role.attrib;
+		%local.anchor.attrib;
+>
+<!ATTLIST requirement status CDATA #IMPLIED>	
+<!ELEMENT usecase (useTitle, useDescription) >
+           <!ELEMENT useTitle    (#PCDATA)>
+           <!ELEMENT useDescription (%para.char.mix; | %para.mix;)*>
+           <!ATTLIST usecase
+           %idreq.attrib;		%pagenum.attrib;		%remap.attrib;
+           %xreflabel.attrib;
+           %revisionflag.attrib;
+           %effectivity.attrib;
+           %anchor.role.attrib;
+           %local.anchor.attrib;
+           >
+           <!ATTLIST usecase status CDATA #IMPLIED>	
+           
+           <!ELEMENT refRequirement (requirementId+) >
+           <!ELEMENT  requirementId (#PCDATA)>
+           
+           <!ELEMENT refUsecase (usecaseId+) >
+           <!ELEMENT  usecaseId (#PCDATA)>
+           ]]>
+           
+       </programlisting>
+<sect1>
+    <title>DocBook conventions</title>
+    <sect2>
+        <title>Directory structure</title>
+    </sect2>
+    
+    <sect2>
+        <title>Including images in documents</title>
+        Images are stored relative to the baseline directory defined in ant's build.xml.  
+        
+        <programlisting>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/PatientDesktop.jpg"/>/>
+                </imageobject>
+                
+            </mediaobject>
+        </programlisting>
+    </sect2>
+    
+</sect1>
+       
+        
+    </appendix>
+    <appendix>
+        <title>Future extensions</title>
+        <orderedlist>
+            <listitem>
+                Indexes and glossary items will be generated for all documents in a single file. This means that everywhere  a requirement 
+                is defined or referred to can be gotten from one location.
+            </listitem>
+            <listitem>
+                A traceability matrix will be able to be auto-generated from the requirements and specifications in the following manner: XSLT will extract all of the requirement
+                definitions from the documents and all of the references to these documents as well (a referToRequirement element will also be created).  These will be sorted/processed into
+                a document where it will be clear how these are all connected (or not). 
+            </listitem>
+            <listitem>
+                Automatic web site generation of documents with HTML cross references.
+            </listitem>
+            <listitem>
+                Need to add a &lt;usecase&gt; element to dtd.
+            </listitem>
+        </orderedlist>
+        
+    </appendix>
+    
+</article>

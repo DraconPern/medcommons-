@@ -1,0 +1,1919 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================
+     $Id: build.xml 3324 2009-04-22 06:04:23Z ssadedin $
+     ====================================================================== -->
+
+<project name="router" default="world" xmlns:ivy="antlib:org.apache.ivy.ant" >
+ 
+	<!-- === globals ======================================================== -->
+
+	<property name="build.compiler" value="modern" />
+
+	<!-- optional user settable properties -->
+	<property file="build.properties" />
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+
+	<property name="build.modules.classes" value="build/modules/classes"/>
+
+	<property name="module.package" value="net.medcommons.modules"/>
+	<property name="module.package.folder" value="net/medcommons/modules"/>
+	<property name="module.package.files" value="${module.package.folder}/**"/>
+
+	<property name="application.package.classes" value="build/application/classes"/>
+	<property name="application.package" value="net.medcommons.application"/>
+	<property name="application.package.folder" value="net/medcommons/application"/>
+	<property name="application.package.files" value="${application.package.folder}/**"/>
+
+	<property name="version.files" value="net/medcommons/Version.class,*.txt"/>
+
+	<property name="build.debug" value="true"/>
+	<property name="build.stage.dir" value="build/stage"/>
+	<property name="build.stage.modules.dir" value="${build.stage.dir}/modules"/>
+	<property name="build.dist" value="build/dist"/>
+	<property name="build.dist.applicationlib" value="build/dist/lib"/>
+	
+	<property name="cactus.dir" value="lib/jakarta-cactus-13-1.7.2"/>
+
+	<property name="ccr.xbean" value="build/dist/ccrxbean.jar"/>
+	<property name="gateway.war.explode" value="false"/>
+
+	<patternset id="jars.patternset">
+		<include name="*.jar" />
+	</patternset>
+	<patternset id="zips.patternset">
+		<include name="*.zip" />
+	</patternset>
+
+	<patternset id="libraries.patternset">
+		<patternset refid="jars.patternset" />
+		<patternset refid="zips.patternset" />
+	</patternset>
+        <mkdir dir="lib/dependencies"/>
+	<path id="compile.path">
+		<pathelement location="${build.compile.dir}" />
+    <pathelement location="build/stage/classes/crosscontext/" />
+    <path refid="dependencies.path"/>
+		<fileset dir="lib/medcommons/common/" />
+		<fileset dir="lib/gnu/" />
+		
+		<fileset dir="lib/struts/" />
+		<fileset dir="lib/json/"/>
+
+		<fileset dir="lib/apache/">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="lib/xds/" />
+		<fileset dir="lib/derby/">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="lib/spring/">
+			<include name="spring-*.jar"/>
+   		</fileset>
+		<fileset dir="lib/tomcat/">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="etc/xmlbeans-1.0.3/lib/">
+			<include name="*.jar"/>
+		</fileset>
+		
+		<fileset dir="lib/openid">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement location="${ccr.xbean}"/>
+	</path>
+
+
+
+	<!--
+		Note: need to place all Axis jars in the ant/lib directory
+		for this to work.
+	-->
+	<path id="axis.classpath">
+		<fileset dir="lib/apache/axis/">
+			<include name="**/*.jar" />
+		</fileset>
+
+		<fileset dir="lib/xds/">
+			<include name="*.jar"/>
+		</fileset>
+
+	    <fileset dir="lib/dependencies">
+	      <include name="*.jar"/>
+	    </fileset>
+
+		<pathelement location="build/classes"/>
+	</path>
+	<taskdef name="axis-java2wsdl" classname="org.apache.axis.tools.ant.wsdl.Java2WsdlAntTask"
+	    loaderref="axis" >
+		<classpath refid="axis.classpath"/>
+	</taskdef>
+	<taskdef resource="axis-tasks.properties"
+	  classpathref="axis.classpath" />
+
+
+
+	<taskdef resource="axis-tasks.properties"
+		  classpathref="axis.classpath" />
+
+	<!-- === world ========================================================== -->
+
+	<target name="world" depends="dependencies,installer-tomcat" />
+
+  <target name="dependencies">
+      <echo message="Initializing build ..." />
+
+      <!-- only here for legacy reasons - clean up old services api jar files -->
+      <delete>
+        <fileset dir="lib" includes="medcommons-services*.jar"/>
+      </delete>
+
+      <ivy:configure file="ivy-settings.xml" />
+      <ivy:retrieve pattern="lib/dependencies/[artifact].[ext]" sync="true"/>
+      <path id="dependencies.path">
+        <fileset dir="lib/dependencies">
+            <include name="**/*.jar"/>
+        </fileset>
+			  <fileset dir="lib/dom4j">
+          <include name="*.jar"/>
+        </fileset>
+      </path>
+  </target>
+
+	<target name="build-timestamp">
+		<tstamp>
+			<format property="build.timestamp" pattern="yyyy-MM-dd HH:mm:ss"/>
+		</tstamp>
+		<echo message="${build.timestamp}"  file="src/net/medcommons/timestamp.txt"/>
+	</target>
+	<target name="init">
+		<mkdir dir="${build.stage.modules.dir}" />
+	</target>
+	<target name="package-wsr" depends="compile">
+		<mkdir dir="build/dist/" />
+		<jar destfile="build/dist/router-services.wsr">
+			<metainf dir="src/net/medcommons/router/services/">
+				<include name="web-service.xml" />
+			</metainf>
+			<fileset dir="build/classes/">
+				<include name="net/medcommons/router/services/study/**" />
+			</fileset>
+			<fileset dir="etc/static-files/">
+				<include name="studies/**" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="package-war" depends="compile">
+		<mkdir dir="build/dist/" />
+    	<copy todir="build/classes" file="src/net/medcommons/router/web/WEB-INF/classes/StripesResources.properties" />
+		<copy todir="build/classes" file="etc/configurations/log4j.xml"/>
+		<war destfile="build/dist/router.war"  webxml="src/net/medcommons/router/web/WEB-INF/web.xml" duplicate="preserve">
+			<classes dir="build/classes/">
+
+				<include name="**/*.class"/>
+				<!-- JAXB -->
+				<include name="**/*.properties" />
+				<include name="**/log4j.xml" />
+				<include name="**/bgm.ser" />
+			</classes>
+			<classes dir="src">
+				<include name="net/medcommons/*.txt" />
+        <include name="net/medcommons/router/selftests/*.html" />
+        <include name="net/medcommons/router/services/index/*.hbm.xml"/>
+			</classes>
+      <webinf dir="lib/packtag-3.0/files">
+				<include name="*.tld" />
+      </webinf>
+			<lib dir="lib/struts">
+				<include name="*.jar"/>
+				<!-- Note - this is much older than the one in lib/dependencies -->
+				<exclude name="commons-fileupload.jar"/>
+			</lib>
+
+      <lib dir="lib/dependencies">
+        <include name="*.jar"/>
+      </lib>
+			<lib dir="lib/apache">
+				<include name="**.jar" />
+				<!-- note: httpclient 3.0 included from xfire -->
+				<exclude name="commons-httpclient-2.0.2.jar"/>
+			</lib>
+			<lib dir="lib/apache/axis">
+				<include name="axis-ant.jar" />
+				<include name="axis.jar" />
+				<include name="axis-schema.jar" />
+				<include name="commons-discovery-*jar" />
+				<include name="jaxrpc.jar" />
+			</lib>
+			
+			<lib dir="lib/derby">
+				<include name="**.jar" />
+			</lib>
+		
+
+			<lib dir="lib/json">
+				<include name="jsonrpc-1.0.jar" />
+			</lib>
+		
+      		<lib dir="lib/spring">
+				<include name="spring-1.2.6.jar"/>
+			</lib>
+			<lib dir="lib/medcommons">
+				<include name="**/**.jar" />
+			</lib>
+			<lib dir="lib/xds">
+				<include name="**/**.jar" />
+			</lib>
+			<lib dir="lib/medcommons/common">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="lib/tomcat/jstl">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="build/dist/">
+				<include name="ccrxbean.jar"/>
+			</lib>
+			<lib dir="etc/xmlbeans-1.0.3/lib/">
+				<include name="xbean.jar"/>
+			</lib>
+			<lib dir="lib/openid/">
+				<include name="*.jar"/>
+			</lib>
+ 			<lib dir="lib/packtag-3.0/files">
+				<include name="*.jar"/>
+			</lib>
+      <lib dir="${build.stage.modules.dir}">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="${build.stage.dir}/router">
+				<include name="medcommons-router.jar"/>
+			</lib>
+			<!-- note: below are xfire client libs.  server would need more.
+			<lib dir="${xfire.dir}/lib">
+				<include name="wsdl4j-1.5.2.jar"/>
+				<include name="stax-api-1.0.1.jar"/>
+				<include name="mail-1.4.jar"/>
+				<include name="commons-httpclient-3.0.jar"/>
+				<include name="commons-codec-1.3.jar"/>
+				<include name="activation-1.1.jar"/>
+				<include name="XmlSchema-1.0.3.jar"/>
+				<include name="wstx-asl-3.0.1.jar"/>
+			</lib>
+	-->
+			<fileset dir="src/net/medcommons/router/services/wado/">
+				<include name="DcmDir.xsl" />
+				<include name="blank.html"/>
+				<include name="seriesControl.html"/>
+				<include name="*.png"/>
+				<include name="*.js"/>
+			</fileset>
+			<fileset dir="etc/static-files/">
+				<include name="stylesheets/*.xsl"/>
+				<include name="stylesheets/templates"/>
+				<include name="stylesheets/lib"/>
+			</fileset>
+			<fileset dir="src/net/medcommons/router/services/qa">
+				<include name="*.html"/>			
+			</fileset>
+			<fileset dir="src/net/medcommons/modules/publicapi">
+							<include name="*.html"/>			
+						</fileset>
+			<fileset dir="src/net/medcommons/router/selftests/">
+							<include name="*.jpg"/>			
+						</fileset>
+
+			<!-- Removed
+        <fileset dir="etc/static-files/HipaaLog/"/>
+      -->
+			<fileset dir="etc/static-files/DemoHelp/"/>
+			<fileset dir="etc/static-files/XdsUtils/">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="etc/schema/editsession/">
+						<include name="*.xsd"/>
+					</fileset>
+			
+			<fileset dir="src/net/medcommons/router/services/order/web/" />
+			<fileset dir="src/net/medcommons/router/services/dicom/util/web" />
+			<fileset dir="src/net/medcommons/router/services/selection/">
+				<include name="**"/>
+				<exclude name="**/.svn"/>
+			</fileset>
+			<fileset dir="src/net/medcommons/modules/services/cxp/jsp">
+				<include name="**"/>
+				<exclude name="**/.svn"/>
+			</fileset>
+
+			<!-- XDS web content -->
+			<fileset dir="src/net/medcommons/router/services/xds/consumer/web/">
+				<include name="**"/>
+				<exclude name="action"/>
+				<exclude name="servlets"/>
+			</fileset>
+
+			<fileset dir="src/net/medcommons/router/web/">
+				<include name="**"/>
+				<exclude name="WEB-INF/web.xml"/>
+			</fileset>
+			<fileset dir="etc/configurations/" />
+<!--
+				Kludge. If this version of dom4j is not included - we get errors thrown
+				by XPath/jaxen (probably the 1.1-beta9).
+				-->
+			 <lib dir="lib/dom4j">
+				<include name="*.jar"/>
+			  </lib>
+		</war>
+	</target>
+	<!--
+	  <target name="publish" depends="package-modules,package-applications">
+		  <delete dir="build/publish" />
+		  <mkdir dir="build/publish" />
+		  <copy todir="build/publish">
+			<fileset dir="${build.stage.modules.dir}">
+				<include name="medcommons-cxp-client.jar"/>
+			</fileset>
+			  <fileset dir="${build.dist}">
+				<include name="medcommons-transfer-application.jar"/>
+			</fileset>
+		  </copy>
+      < ! - - You will get an error when publishing unless you increment the version number below - - >
+      <ivy:publish resolver="public" pubrevision="0.7.22" overwrite="true">
+        <artifacts pattern="build/publish/[artifact].[ext]" />
+      </ivy:publish>
+    </target>
+    
+-->
+	<target name="package-gateway-war" depends="package-modules">
+		<mkdir dir="${build.dist}" />
+		<!-- -->
+		<war destfile="${build.dist}/gateway.war" webxml="etc/soap/gateway/webapp/WEB-INF/web.xml" duplicate="preserve" >
+			<lib dir="${build.stage.modules.dir}">
+				<patternset refid="libraries.patternset" />
+			</lib>
+	  		<lib dir="build/stage/router">
+	  					<include name="medcommons-router.jar" />
+	  		</lib>
+			<lib dir="${cactus.dir}/lib">
+				<patternset refid="libraries.patternset" />
+			</lib>
+			
+		      <lib dir="lib/dependencies">
+		        <include name="*.jar"/>
+		      </lib>
+		      
+			<!--
+				Kludge. If this version of dom4j is not included - we get errors thrown
+				by XPath/jaxen (probably the 1.1-beta9).
+				-->
+			 <lib dir="lib/dom4j">
+				<include name="*.jar"/>
+			  </lib>
+			<lib dir="lib/spring">
+				<patternset refid="libraries.patternset" />
+			</lib>
+			<lib dir="lib/apache">
+							<include name="**.jar" />
+							<!-- note: httpclient 3.0 included from xfire -->
+							<exclude name="commons-httpclient-2.0.2.jar"/>
+						</lib>
+			<webinf dir="etc/soap/gateway/resources" >
+			</webinf>
+
+     <!-- ssadedin: TODO: make activitylog into a proper module -->
+			<classes dir="build/classes/">
+        <include name="net/medcommons/modules/activitylog/**"/>
+      </classes>
+
+			<classes dir="src">
+        <include name="net/medcommons/router/services/index/*.hbm.xml"/>
+      </classes>
+
+      <!-- ssadedin: TODO: make into a proper module -->
+			<classes dir="build/classes/">
+        <include name="net/medcommons/router/services/ccrmerge/**"/>
+        <include name="net/medcommons/router/services/ccr/**"/>
+        <include name="net/medcommons/router/services/account/**"/>
+        <include name="net/medcommons/services/router/index/**"/>
+      </classes>
+
+      <classes dir="build/classes/">
+        <include name="net/medcommons/router/configuration/tomcat/**"/>
+      </classes>
+			<fileset dir="etc/soap/gateway" includes="cactus-report.xsl"/>
+			<fileset dir="src/" >
+						<include name="**/version.txt"/>
+			</fileset>
+			<!-- Module framework broken -->
+			<lib dir="lib/derby">
+				<include name="**.jar" />
+			</lib>
+			<lib dir="lib/apache/axis">
+							<include name="axis-ant.jar" />
+							<include name="axis.jar" />
+							<include name="axis-schema.jar" />
+							<include name="commons-discovery-*jar" />
+							<include name="jaxrpc.jar" />
+						</lib>
+
+			<lib dir="lib/json">
+  				<include name="jsonrpc-1.0.jar" />
+			</lib>
+
+		
+			<lib dir="lib/medcommons">
+				<include name="**/**.jar" />
+			</lib>
+			<lib dir="lib/xds">
+				<include name="**/**.jar" />
+			</lib>
+			<lib dir="lib/medcommons/common">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="lib/tomcat/jstl">
+				<include name="*.jar" />
+			</lib>
+			<lib dir="build/dist/">
+				<include name="ccrxbean.jar"/>
+			</lib>
+			<lib dir="etc/xmlbeans-1.0.3/lib/">
+				<include name="xbean.jar"/>
+			</lib>
+		</war>
+	</target>
+
+	<target name="explode-war" depends="package-war" if="deployExploded">
+		<antcall target="real-explode-war"/>
+		<property name="warFile" value="router.war/**"  />
+		<property name="warFileBase" value="router-exploded.war/"  />
+	</target>
+
+	<!-- explodes the war file into the build directory -->
+	<target name="real-explode-war">
+		<mkdir dir="build/dist/router-exploded.war/router.war"/>
+		<unwar src="build/dist/router.war" dest="build/dist/router-exploded.war/router.war"/>
+	</target>
+
+  <!--
+	<target name="precompile-jsps" depends="real-explode-war,deploy">
+		<delete dir="build/jspc" />
+		<mkdir dir="build/jspc/classes"/>
+		<mkdir dir="build/jspc/src"/>
+
+		<jspc destdir="build/jspc/src"
+          verbose="1"
+          srcdir="build/dist/router-exploded.war/router.war"
+    	  package="org.apache.jsp"
+    	>
+			<classpath>
+			</classpath>
+			<include name="*.jsp" />
+			<exclude name="TestQuery.jsp"/>
+		</jspc>
+		<javac   srcdir="build/jspc/src"
+             destdir="build/jspc/classes"
+             debug="on">
+			<classpath>
+				<path refid="compile.path"/>
+				<path location="build/classes"/>
+			</classpath>
+		</javac>
+
+		<mkdir dir="stage/jboss-3.2.3/server/router/work/MainEngine/localhost/router"/>
+		<copy todir="stage/jboss-3.2.3/server/router/work/MainEngine/localhost/router">
+			<fileset dir="build/jspc/classes/org/apache/jsp">
+				<include name="*.class"/>
+			</fileset>
+			<fileset dir="build/jspc/src">
+				<include name="*.java"/>
+			</fileset>
+		</copy>
+	</target>
+  -->
+
+	<!--
+	  Convert the libraries to be included in the
+	  Class-Path attribute of the MANIFEST.MF file
+	-->
+	<path id="application.transfer.compile.path">
+		      <path refid="dependencies.path"/>
+	</path>
+
+	<!--
+	Copies the SOAPMonitor applet into the correct location for router webapp
+	-->
+	<target name="deploy-cxp-service" depends="deploy-axis-router,compile">
+
+		<copy todir="stage/tomcat/webapps/router">
+			<fileset dir="stage/tomcat/webapps/router/WEB-INF/classes">
+				<include name="**.class"/>
+				<include name="*properties"/>
+				<exclude name="net/medcommons/account/**" />
+				<exclude name="${module.package.files}"/>
+				<exclude name="${application.package.files}"/>
+			</fileset>
+		</copy>
+		<mkdir dir="stage/tomcat/webapps/router/documentation"/>
+
+		<path id="deploy-cxp.compile.path">
+			<path refid="dependencies.path"/>
+			<fileset dir="build/stage/router/">
+						<include name="medcommons-router.jar"/>
+			</fileset>
+		</path>
+		
+		<axis-java2wsdl
+					classname="net.medcommons.cxp.CXP_10"
+					style="RPC"
+					namespace="urn:cxp"
+					location="https://cxp.medcommons.net/router/services/CXP"
+					output="stage/tomcat/webapps/router/documentation/CXP_10.wsdl"
+		 			classpathref="deploy-cxp.compile.path"
+		 			use="LITERAL">
+			<mapping package="net.medcommons.cxp" namespace="cxp" />
+		</axis-java2wsdl>
+
+
+		<axis-java2wsdl
+									classname="net.medcommons.cxp.QueryService"
+									style="RPC"
+									namespace="urn:cxp"
+									location="https://cxp.medcommons.net/router/services/QUERY"
+									output="stage/tomcat/webapps/router/documentation/Query.wsdl"
+						 			classpathref="deploy-cxp.compile.path"
+						 			use="LITERAL">
+			<mapping package="net.medcommons.cxp" namespace="cxp" />
+		</axis-java2wsdl>
+	</target>
+
+	<target name="prepare-pretest">
+		<available file="${cactus.dir}" property="cactus.exploded" value="true"/>
+	</target>
+	<target name="prepare" depends="prepare-pretest,  prepare-cactus,init">
+		<available file="/lib/jakarta-cactus-13-1.7.2" property="cactus.exploded" value="true"/>
+	</target>
+
+	<target name="prepare-cactus" unless="cactus.exploded">
+		<unzip src="${cactus.dir}.zip" dest="lib"/>
+		<delete>
+			<fileset dir="${cactus.dir}/lib">
+				<include name="jasper-compiler-4.1.30.jar" />
+				<include name="jasper-runtime-4.1.30.jar" />
+				<include name="servletapi-2.3.jar" />
+				<include name="commons-httpclient-2.0.2.jar"/>
+			</fileset>
+		</delete>
+	</target>
+
+  <!-- 
+  Compile cross context classes that are needed to be deployed visible to all webapps.
+  These will get deployed to the common / shared lib folder in tomcat.
+  -->
+  <target name="compile-cross-context">
+    <mkdir dir="build/stage/classes/crosscontext"/>
+    <javac srcdir="src/" destdir="build/stage/classes/crosscontext" debug="true" includes="net/medcommons/router/globalcontext/**" >
+      <!-- no classpath - these classes should have no dependencies! -->
+		</javac>
+  </target>
+
+	<target name="compile" depends="dependencies,package-modules,compile-cross-context,init">
+		<mkdir dir="build/stage/classes/router" />
+		<mkdir dir="build/stage/router" />
+		
+		<!-- Compile everything  -->
+		<javac srcdir="src/" destdir="build/stage/classes/router" debug="true"
+      excludes="net/medcommons/account/**,${module.package.files}/,net/medcommons/router/globalcontext/**,${application.package.files},org/cxp2/**,gov/nist/**">
+      <classpath>
+        <path refid="compile.path" />
+        <fileset dir="build/stage/modules">
+          <include name="**.jar"/>
+        </fileset>
+      </classpath>
+		</javac>
+		<copy todir="build/classes/router/net/medcommons"> 
+							<fileset dir="src/net/medcommons/">
+								<include name="version.txt"/>
+							</fileset>
+					</copy>
+		<jar destfile="${build.stage.dir}/router/medcommons-router.jar"
+						     basedir="build/stage/classes/router"
+						  />
+	</target>
+
+	<target name="compile-account">
+		<mkdir dir="build/account/classes/" />
+
+
+		<!-- Compile everything  -->
+		<javac srcdir="src/" destdir="build/account/classes/" debug="true"
+				includes="net/medcommons/account/**,net/medcommons/identity/**}">
+			<classpath refid="compile.path" />
+
+
+		</javac>
+
+	</target>
+
+	<target name="compile-storage">
+		<mkdir dir="build/classes/" />
+
+
+
+		<javac srcdir="src/" destdir="build/classes/" debug="true">
+			<classpath refid="compile.path" />
+		</javac>
+	</target>
+
+
+	<!-- Include the CXP SOAP service in the router web application -->
+	<target name="deploy-tomcat" depends="deploy-tomcat-distro">
+	</target>
+
+	<target name="deploy-tomcat-distro" depends="deploy-cxp-service,package-war,package-gateway-war">
+		<!-- Set defaults for warfile if not set by explode-war -->
+		<property name="warFile" value="router.war" />
+		<property name="warFileBase" value="" />
+
+		<mkdir dir="stage/tomcat"/>
+		<mkdir dir="stage/tomcat/common/classes"/>
+		<mkdir dir="stage/tomcat/common/endorsed"/>
+		<mkdir dir="stage/tomcat/logs"/>
+		<mkdir dir="stage/tomcat/webapps"/>
+
+ 
+		<!-- copy the exploded router warfile to the tomcat directory -->
+		<unwar src="build/dist/router.war" dest="stage/tomcat/webapps/router"/>
+
+		<!-- log4j config and the cross context files go to the global classes directory -->
+		<copy todir="stage/tomcat/common/classes">
+      <fileset dir="build/stage/classes/crosscontext/">
+        <include name="**/*.class" />
+			</fileset>
+			<fileset dir="etc/configurations">
+				<include name="log4j.xml" />
+			</fileset>
+		</copy>
+		<!--
+		<copy todir="stage/tomcat/common/endorsed">
+			<fileset dir="lib/hibernate/lib">
+				<include name="xalan-2.4.0.jar" />
+
+			</fileset>
+		</copy>
+			-->
+
+    <!-- Tomcat bug: will explode gateway.war and then refuse to update
+         from gateway.war again unless we physically remove it -->
+         <!-- <delete dir="stage/tomcat/webapps/gateway"/> -->
+
+		<!-- log4j properties config to turn off httpclient logging -->
+		<copy todir="stage/tomcat/webapps">
+			<fileset dir="etc/configurations">
+				<include name="log4j.properties" />
+			</fileset>
+			<!--
+			Copy the gateway war into the webapps directory;
+			tomcat will explode on startup
+			-->
+			<fileset dir="build/dist">
+				<include name="gateway.war"/>
+			</fileset>
+		</copy>
+
+		<copy todir="stage/tomcat/webapps/router/WEB-INF/lib">
+			<fileset dir="${build.stage.modules.dir}">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<!-- create temp dir required by tomcat -->
+		<mkdir dir="stage/tomcat/temp"/>
+		<!-- <mkdir dir="stage/tomcat/conf/hibernate"/> -->
+		<mkdir dir="stage/tomcat/data/stylesheets"/>
+		<mkdir dir="stage/tomcat/data/CCRViewer"/>
+
+
+		<!-- copy hibernate configuration -->
+		<!--
+		<copy todir="stage/tomcat/conf/hibernate">
+			<fileset dir="src">
+				<include name="**/*.hbm.xml"/>
+			</fileset>
+			<fileset dir="etc/hibernate">
+				<include name="**/hibernate.properties"/>
+			</fileset>
+		</copy>
+		-->
+		<copy todir="stage/tomcat/data/stylesheets">
+			<fileset dir="etc/static-files/stylesheets/"/>
+		</copy>
+		<copy todir="stage/tomcat/data/CCRViewer">
+			<fileset dir="etc/static-files/CCRViewer/"/>
+		</copy>
+		<copy todir="stage/tomcat/data/xds-templates">
+			<fileset dir="etc/static-files/xds-templates/"/>
+		</copy>
+
+		<copy todir="stage/tomcat/data">
+			<fileset dir="etc/configurations/">
+				<include name="xpaths*.xml"/>
+			</fileset>
+		</copy>
+		<!-- copy libraries -->
+		<copy todir="stage/tomcat">
+			<fileset dir="lib/tomcat">
+				<include name="**/**" />
+			</fileset>
+			<fileset dir="etc/tomcat">
+				<include name="conf/**" />
+				<include name="conf/.keystore" />
+			</fileset>
+			<fileset dir="src">
+				<include name="**/*.hbm.xml"/>
+				<!-- this is just a test mapping for services schema.  not used, causes errors. -->
+				<exclude name="net/medcommons/modules/services/services.hbm.xml"/>
+			</fileset>
+		</copy>
+
+		<!-- Copy the config.xml across -->
+		<copy todir="stage/tomcat/common/classes">
+			<fileset dir="etc/configurations">
+				<include name="config.xml"/>
+			</fileset>
+		</copy>
+
+		<!-- Copy the boot parameters across -->
+		<copy todir="stage/tomcat/conf">
+			<fileset dir="etc/configurations">
+				<include name="MedCommonsBootParameters.properties"/>
+				<!-- Note the local file only exists if the user creates it.  By default it doesn't exist -->
+				<include name="LocalBootParameters.properties"/>
+				<include name="SimpleRepositoryConfiguration.properties"/>
+				<include name="config.xml"/>
+				<include name="medcommons-config.xml"/>
+			</fileset>
+		</copy>
+
+		<!-- Copy the schemas for validation to the conf directory -->
+		<copy todir="stage/tomcat/conf">
+			<fileset dir="etc/schema/ccr/">
+				<include name="CCR_20051109.xsd"/>
+			</fileset>
+		</copy>
+		<copy todir="stage/tomcat/conf">
+					<fileset dir="etc/schema/editsession/">
+						<include name="EditSession10.xsd"/>
+					</fileset>
+		</copy>
+	
+		<!-- Copy test data for junit/cactus tests -->
+		<copy todir="stage/tomcat/tests">
+			<fileset dir="etc/tests">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+
+		<!--
+			Copy jar files for cactus testing.
+		-->
+		<copy todir="stage/tomcat/common/lib">
+			<fileset dir="${cactus.dir}/lib">
+				<include name="aspectjrt-1.2.1.jar"/>
+				<include name="cactus-1.7.2.jar"/>
+				<!-- <include name="commons-httpclient-2.0.2.jar"/> -->
+				<include name="commons-logging-1.0.4.jar"/>
+				<include name="junit-3.8.1.jar"/>
+
+			</fileset>
+		</copy>
+
+		<!-- Copy help files over to server - these include the schema and
+			help files that link to the WSDL and FireFox client installations
+			-->
+		<mkdir dir="stage/tomcat/webapps/router/documentation"/>
+		<copy todir="stage/tomcat/webapps/router/documentation">
+			<fileset dir="etc/static-files/documentation/">
+
+			</fileset>
+			<fileset dir="etc/schema/ccr/">
+				<include name="CCR_20051109.xsd"/>
+			</fileset>
+		</copy>
+		<!-- Setup the required data directories -->
+		<mkdir dir="stage/tomcat/data/images"/>
+		<mkdir dir="stage/tomcat/data/packages"/>
+
+		<!-- If there is no database then create one -->
+		<!-- <available file="stage/tomcat/data/derby/routerdb" type="dir" property="tomcat-db.present" value="true"/>
+		<antcall target="deploy-tomcat-database" inheritall="true"/> -->
+	</target>
+
+
+
+	<target name="deploy-axis-router" depends="deploy-axis">
+		<mkdir dir="stage/tomcat/webapps/router"/>
+		<unjar src="lib/apache/axis.war" dest="stage/tomcat/webapps/router"/>
+
+		<!-- Copy the SOAP service descriptors over to web application folder -->
+		<copy todir="stage/tomcat/webapps/router/WEB-INF">
+			<fileset dir="etc/soap/router">
+				<include name="server-config.wsdd"/>
+			</fileset>
+		</copy>
+
+
+
+	</target>
+
+
+	<target name="deploy-axis-account" depends="deploy-axis">
+		<mkdir dir="stage/tomcat/webapps/account"/>
+		<unjar src="lib/apache/axis.war" dest="stage/tomcat/webapps/account"/>
+		<!-- Copy the SOAP service descriptors over to web application folder -->
+		<copy todir="stage/tomcat/webapps/account/WEB-INF">
+			<fileset dir="etc/soap/account">
+				<include name="server-config.wsdd"/>
+			</fileset>
+		</copy>
+
+	</target>
+
+	<!--
+	Deploys the basic Axis files (library for SOAP) into
+	the specified web application.
+	-->
+	<target name="deploy-axis" >
+
+
+
+		<!-- copy activation.jar over -->
+		<copy todir="stage/tomcat/common/lib">
+			<fileset dir="lib/xds">
+				<include name="activation.jar"/>
+			</fileset>
+		</copy>
+
+
+	</target>
+
+	<!-- Deploy account SOAP server into Tomcat -->
+	<!--
+	<target name="deploy-account-serverx" depends="deploy-tomcat-distro" >
+		<mkdir dir="stage/tomcat/webapps/account" />
+
+		<copy todir="stage/tomcat/webapps/account">
+			<fileset dir="etc/storage/slide">
+				<include name="Domain.xml" />
+			</fileset>
+		</copy>
+		<copy todir="stage/tomcat/webapps/slide/WEB-INF">
+			<fileset dir="etc/storage/slide">
+				<include name="web.xml" />
+			</fileset>
+		</copy>
+		<copy todir="stage/tomcat/webapps/slide/WEB-INF/classes">
+			<fileset dir="etc/storage/slide/WEB-INF">
+				<include name="slide.properties" />
+			</fileset>
+		</copy>
+		<copy todir="stage/tomcat/conf">
+			<fileset dir="etc/storage/slide">
+				<include name="tomcat-users.xml" />
+			</fileset>
+		</copy>
+		<copy todir="stage/tomcat/webapps/slide/WEB-INF/classes">
+			<fileset dir="build/classes">
+				<include name="net/medcommons/storage/**/**.class" />
+				<include name="net/medcommons/crypto/**/**.class" />
+				<include name="net/medcommons/crypto/**/**.class" />
+				<include name="net/medcommons/router/services/repository/**/**.class" />
+				<include name="net/medcommons/router/configuration/**" />
+				<include name="net/medcommons/router/util/RESTUtil**.class"/>
+				<include name="net/medcommons/router/util/RESTException.class"/>
+				<include name="net/medcommons/services/**/"/>
+			</fileset>
+
+		</copy>
+
+
+
+
+	</target>
+-->
+
+	<!-- === version ============================================================= -->
+	<target name="update-version" unless="version.noupdate">
+		<exec executable="svnversion" output="src/net/medcommons/version.txt">
+			<arg value="." />
+		</exec>
+		<loadfile property="buildVersion" srcFile="src/net/medcommons/version.txt"/>
+		<echo message="Build version is ${buildVersion}"/>
+	</target>
+
+	<!-- === installer =========================================================== -->
+
+	<target name="installer-tomcat" depends="deploy-tomcat">
+		<chmod dir="stage/tomcat/bin" perm="ugo+rx" includes="**/*.sh"/>
+		<chmod dir="stage/tomcat/bin" perm="ugo+rx" includes="**/*.bat"/>
+		<chmod dir="stage/tomcat/data" perm="+rx"/>
+		<mkdir dir="build/installer/tomcat"/>
+		<copy todir="build/installer/tomcat" includeEmptyDirs="false">
+			<fileset dir="stage/tomcat/">
+				<include name="**/**"/>
+				<exclude name="**/**.class"/>
+				<exclude name="work/**"/>
+				<exclude name="conf/LocalBootParameters.properties"/>
+				<exclude name="data/temp/**"/>
+				<exclude name="data/Repository/**"/>
+
+				<!-- large jar files that do not seem to be needed -->
+				<exclude name="**/jgroups-*.jar"/>
+				<exclude name="**/proxool-*.jar"/>
+				<!--exclude name="**/xercesImpl.jar"/ -->
+				<exclude name="**/junit-*.jar"/>
+				<exclude name="**/jcs-1.0-dev.jar"/>
+				<exclude name="**/dom4j.jar"/>
+			</fileset>
+			<fileset dir="stage/tomcat/">
+        <include name="common/classes/**/*.class"/>
+      </fileset>
+		</copy>
+		<!-- because we exclude the directory in the copy we have to manually create it here -->
+		<mkdir dir="build/installer/tomcat/data/images"/>
+	</target>
+
+
+	<!-- ================  Modules ================ -->
+	<target name="package-modules" depends="prepare,package-module-filestore,package-module-repository,package-module-cxp-server,package-module-http,package-module-keymanagement,package-module-xml,package-module-personalbackup,package-module-backup,package-module-itk,package-module-publicapi,package-module-storagehandler">
+		<copy todir="build/classes/net/medcommons"> <!-- required for test routines to run -->
+					<fileset dir="src/net/medcommons/">
+						<include name="version.txt"/>
+					</fileset>
+			</copy>
+	</target>
+	<target name="package-module-filestore" >
+		<mkdir dir="${build.modules.classes}/filestore"/>
+		<path id="filestore.compile.path">
+			<path refid="dependencies.path"/>
+			
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<pathelement location="module.compile.path"/>
+
+		</path>
+
+		<javac classpathref="filestore.compile.path" destdir="${build.modules.classes}/filestore"
+				srcdir="src/" debug="${build.debug}"
+				includes="${module.package.folder}/filestore/**"
+		       deprecation="on" includeAntRuntime="false" />
+		<mkdir dir="${build.stage.modules.dir}"/>
+
+		
+	</target>
+	<target name="package-module-publicapi" >
+			<mkdir dir="${build.modules.classes}/publicapi"/>
+			<path id="publicapi.compile.path">
+				<path refid="dependencies.path"/>
+				<pathelement location="module.compile.path"/>
+				
+				<!-- Breaks module framework START -->
+				<fileset dir="lib/struts/" />
+				<fileset dir="lib/json/"/>
+
+				<fileset dir="lib/derby/">
+							<include name="*.jar"/>
+						</fileset>
+				<!-- Breaks module framework END -->
+				
+				<fileset dir="lib/xds">
+					<include name="jaxb-impl.jar"/>
+				</fileset>
+
+				<fileset dir="${cactus.dir}/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${build.stage.dir}/modules">
+				
+				</fileset>
+			</path>
+
+			<javac classpathref="publicapi.compile.path" destdir="${build.modules.classes}/publicapi"
+					srcdir="src/" debug="${build.debug}"
+					includes="${module.package.folder}/publicapi/**"
+			       deprecation="on" includeAntRuntime="false" />
+			<mkdir dir="${build.stage.modules.dir}"/>
+
+			<jar destfile="${build.stage.modules.dir}/medcommons-publicapi.jar"
+					       basedir="${build.modules.classes}/publicapi"
+						includes="${module.package.folder}/publicapi/**,log4j.properties"
+
+					  />
+	
+		</target>
+	<target name="package-module-itk" >
+		<mkdir dir="${build.modules.classes}/itk"/>
+		<path id="itk.compile.path">
+			<path refid="dependencies.path"/>
+			
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<pathelement location="module.compile.path"/>
+
+		</path>
+
+		<javac classpathref="itk.compile.path" destdir="${build.modules.classes}/itk"
+				srcdir="src/" debug="${build.debug}"
+				includes="${module.package.folder}/itk/**"
+		       deprecation="on" includeAntRuntime="false" />
+		<mkdir dir="${build.stage.modules.dir}"/>
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-itk.jar"
+				       basedir="${build.modules.classes}/itk"
+					includes="${module.package.folder}/itk/**,log4j.properties"
+
+				  />
+	</target>
+	<target name="package-module-repository" depends="package-module-filestore,package-module-xml, package-module-backup">
+		<mkdir dir="${build.modules.classes}/repository"/>
+		<path id="repository.compile.path">
+			<fileset dir="${build.stage.dir}/modules">
+				<include name="medcommons-filestore.jar"/>
+				<include name="medcommons-crypto.jar"/>
+				<include name="medcommons-gw-services.jar"/>
+				<include name="medcommons-backup.jar"/>
+			</fileset>
+     
+      <path refid="dependencies.path"/>
+			<fileset dir="lib/apache/">
+				<include name="**/*.jar"/>
+			</fileset>
+      <fileset dir="lib">
+        <include name="*.jar"/>
+      </fileset>
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<pathelement location="module.compile.path"/>
+
+		</path>
+
+		<javac classpathref="repository.compile.path" destdir="${build.modules.classes}/repository"
+					srcdir="src/" debug="${build.debug}"
+					includes="${module.package.folder}/repository/**"
+			       deprecation="on" includeAntRuntime="false" />
+		<mkdir dir="${build.stage.modules.dir}"/>
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-repository.jar"
+					       basedir="${build.modules.classes}/repository"
+						includes="${module.package.folder}/repository/**,log4j.properties"
+					  />
+	</target>
+
+
+	
+	<target name="package-module-http">
+		<mkdir dir="${build.modules.classes}/http"/>
+		<path id="http.compile.path">
+			
+     
+			<path refid="dependencies.path"/>
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+		</path>
+		<javac destdir="${build.modules.classes}/http"
+			       srcdir="src/" debug="${build.debug}"
+					classpathref="http.compile.path"
+					includes="${module.package.folder}/http/**"
+			       deprecation="on" includeAntRuntime="false" />
+
+		<mkdir dir="${build.stage.modules.dir}"/>
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-http.jar"
+						       basedir="${build.modules.classes}/http"
+						       includes="${module.package.folder}/http/**,log4j.properties"/>
+	</target>
+	<target name="package-module-backup">
+		<mkdir dir="${build.modules.classes}/backup"/>
+		<path id="backup.compile.path">
+			<path refid="dependencies.path"/>
+			<fileset dir="lib/apache/">
+				<include name="**/*.jar"/>
+			</fileset>
+			
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+		</path>
+		<javac destdir="${build.modules.classes}/backup"
+			       srcdir="src/" debug="${build.debug}"
+					classpathref="backup.compile.path"
+					includes="${module.package.folder}/backup/**"
+          excludes="**/SmallFileBackupServiceTest.java"
+			       deprecation="on" includeAntRuntime="false" />
+
+		<mkdir dir="${build.stage.modules.dir}"/>
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-backup.jar"
+						       basedir="${build.modules.classes}/backup">
+			<fileset dir="src/net/medcommons/modules/backup">
+				<include name="**/*.hbm.xml"/>
+			</fileset>
+			<fileset dir="etc/hibernate">
+				<include name="**/hibernate.cfg.xml"/>
+			</fileset>
+			<fileset dir="etc/configurations">
+				<include name="log4j.properties" />
+			</fileset>
+		</jar>
+
+	</target>
+	<!--
+	<target name="package-module-services" >
+		<mkdir dir="${build.modules.classes}/services"/>
+		<path id="services.compile.path">
+      <path refid="dependencies.path"/>
+			<fileset dir="lib/apache/">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${build.stage.dir}/modules">
+				<include name="medcommons-configuration.jar"/>
+			</fileset>
+			<fileset dir="${xfire.dir}/lib">
+				<include name="jdom-1.0.jar" />
+			</fileset>
+			<fileset dir="${xfire.dir}/modules">
+				<include name="xfire-core-1.2.2.jar"/>
+			</fileset>
+			<fileset dir="lib/tomcat/server/lib">
+				<include name="tomcat-util.jar"/>
+			</fileset>
+			<fileset dir="${xfire.dir}/lib">
+			   <include name="commons-httpclient-3.0.jar"/>
+		    </fileset>
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+		</path>
+		<javac destdir="${build.modules.classes}/services"
+			       srcdir="src/" debug="${build.debug}"
+					classpathref="services.compile.path"
+					includes="${module.package.folder}/services/**"
+			       deprecation="on" includeAntRuntime="false" />
+
+		<mkdir dir="${build.stage.modules.dir}"/>
+		<copy todir="${build.modules.classes}/services" file="src/${module.package.folder}/utils/log4j.properties" />
+		<jar destfile="${build.stage.modules.dir}/medcommons-gw-services.jar"
+						       basedir="${build.modules.classes}/services"
+						       includes="${module.package.folder}/services/**,log4j.properties"/>
+	</target>
+	-->
+	<target name="package-module-keymanagement" >
+		<mkdir dir="${build.modules.classes}/keymanagement"/>
+		<path id="keymanagement.compile.path">
+            <path refid="dependencies.path"/>
+			<fileset dir="lib/apache/">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="lib/json">
+				<include name="jsonrpc-1.0.jar" />
+			</fileset>
+			
+			
+			<fileset dir="lib/tomcat/server/lib">
+				<include name="tomcat-util.jar"/>
+			</fileset>
+
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+
+		</path>
+		<javac destdir="${build.modules.classes}/keymanagement"
+				       srcdir="src/" debug="${build.debug}"
+						classpathref="keymanagement.compile.path"
+						includes="${module.package.folder}/keymanagement/**"
+				       deprecation="on" includeAntRuntime="false" />
+
+		<mkdir dir="${build.stage.modules.dir}"/>
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-keymanagement.jar"
+							       basedir="${build.modules.classes}/keymanagement"
+							       includes="${module.package.folder}/keymanagement/**,log4j.properties"/>
+	</target>
+	<target name="package-module-xml" >
+		<mkdir dir="${build.modules.classes}/xml"/>
+		<path id="xml.compile.path">
+      
+			
+      		<fileset dir="lib/dependencies">
+        		<include name="*.jar"/>
+			</fileset>
+		</path>
+		<javac destdir="${build.modules.classes}/xml"
+					       srcdir="src/" debug="${build.debug}"
+							classpathref="xml.compile.path"
+							includes="${module.package.folder}/xml/**"
+					       deprecation="on" includeAntRuntime="false" />
+
+		<mkdir dir="${build.stage.modules.dir}"/>
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-xml.jar"
+								       basedir="${build.modules.classes}/xml"
+								       includes="${module.package.folder}/xml/**,log4j.properties"/>
+	</target>
+	
+<!--
+	<target name="package-module-dicom" >
+		<mkdir dir="${build.modules.classes}/dicom"/>
+		<path id="dicom.compile.path">
+			<path refid="dependencies.path"/>
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+		</path>
+		<javac destdir="${build.modules.classes}/dicom"
+					       srcdir="src/" debug="${build.debug}"
+							classpathref="dicom.compile.path"
+							includes="${module.package.folder}/dicom/**"
+			                excludes="${module.package.folder}/dicom/transcode/**"
+					       deprecation="on" includeAntRuntime="false" />
+
+		<mkdir dir="${build.stage.modules.dir}"/>
+		<copy todir="${build.modules.classes}/dicom" file="src/${module.package.folder}/dicom/log4j.properties" />
+		<jar destfile="${build.stage.modules.dir}/medcommons-dicom.jar"
+								       basedir="${build.modules.classes}/dicom"
+								       includes="${module.package.folder}/dicom/**,log4j.properties"/>
+	</target>
+	-->
+	
+	<target name="package-module-cxp-server" depends="package-module-repository,compile-cross-context">
+		<mkdir dir="${build.modules.classes}/cxp"/>
+		<path id="cxp.compile.path">
+      		<path refid="dependencies.path"/>
+			<!-- Breaks module framework START -->
+			<fileset dir="lib/struts/" />
+			<fileset dir="lib/json/"/>
+
+			<fileset dir="lib/derby/">
+						<include name="*.jar"/>
+					</fileset>
+			<!-- Breaks module framework END -->
+			
+			<fileset dir="lib/xds">
+				<include name="jaxb-impl.jar"/>
+			</fileset>
+
+			<fileset dir="${cactus.dir}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${build.stage.dir}/modules">
+				
+			</fileset>
+		</path>
+		<javac destdir="${build.modules.classes}/cxp" 
+			srcdir="src/" debug="${build.debug}" 
+			classpathref="cxp.compile.path" 
+			includes="${module.package.folder}/cxp/server/**" 
+			deprecation="on" includeAntRuntime="false" 
+			/>
+		<javac destdir="${build.modules.classes}/cxp" 
+					srcdir="test-src/" debug="${build.debug}" 
+					classpathref="cxp.compile.path" 
+					includes="net/medcommons/importexport/**" 
+					deprecation="on" includeAntRuntime="false" 
+					/>
+		<copy todir="${build.modules.classes}/cxp" 
+			file="etc/configurations/log4j.xml" />
+		<copy todir="${build.modules.classes}/cxp/net/medcommons" file="src/net/medcommons/version.txt" />
+		<mkdir dir="${build.stage.modules.dir}" />
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-cxp-server.jar" basedir="${build.modules.classes}/cxp" 
+				includes="net/medcommons/modules/cxp/server/**,net/medcommons/version.txt"
+				  />
+	</target>
+	
+	<target name="test-module-cxp">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" >
+			<classpath>
+				<path refid="dependencies.path"/>
+				<fileset dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</fileset>
+				
+				<fileset dir="${cactus.dir}/lib">
+
+					<include name="**/*.jar"/>
+				</fileset>
+
+
+			</classpath>
+			<formatter type="plain"/>
+
+			<test name="net.medcommons.modules.cxp.client.test.RepositoryMetadataTest"/>
+
+
+
+		</junit>
+	</target>
+	<target name="test-module-cxp-client">
+			<junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="yes">
+				<classpath>
+					<path refid="dependencies.path"/>
+					<fileset dir="${build.stage.modules.dir}">
+						<patternset refid="libraries.patternset" />
+					</fileset>
+					<pathelement location="build/modules/classes/cxp"/>
+				</classpath>
+				<formatter type="plain"/>
+				<test name="net.medcommons.importexport.test.PUTTest"/>
+				<test name="net.medcommons.importexport.test.GETTest"/>
+				<!-- <test name="net.medcommons.modules.cxp.client.test.DELETETest"/> -->
+
+
+
+			</junit>
+		</target>
+	<target name="test-module-cxp-get">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+
+				<fileset dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</fileset>
+
+				<fileset dir="${cactus.dir}/lib">
+
+					<include name="**/*.jar"/>
+				</fileset>
+
+
+			</classpath>
+			<formatter type="plain"/>
+
+
+			<test name="net.medcommons.importexport.test.GETTest"/>
+
+
+
+		</junit>
+	</target>
+	<target name="test-module-itk">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="yes" >
+			<classpath>
+				<path refid="dependencies.path"/>
+				<fileset dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</fileset>
+			</classpath>
+			<formatter type="plain"/>
+			<test name="net.medcommons.modules.itk.test.RescaleWindowCenterTest"/>
+		</junit>
+	</target>
+	<!--
+	<target name="test-module-dicom">
+			<junit printsummary="yes" fork="yes" haltonfailure="yes" >
+				<classpath>
+					<path refid="dependencies.path"/>
+					<fileset dir="${build.stage.modules.dir}">
+						<patternset refid="libraries.patternset" />
+					</fileset>
+				</classpath>
+				<formatter type="plain"/>
+				<test name="net.medcommons.modules.dicom.test.ParseTest"/>
+			</junit>
+		</target>
+		-->
+	<target name="package-module-personalbackup" depends="package-module-repository,package-module-filestore">
+		<mkdir dir="${build.modules.classes}/personalbackup"/>
+		<path id="personalbackup.compile.path">
+			<fileset dir="${build.stage.dir}/modules">
+				<include name="medcommons-repository.jar"/>
+				<include name="medcommons-gw-services.jar"/>
+				<include name="medcommons-filestore.jar"/>
+				<include name="medcommons-configuration.jar"/>
+			</fileset>
+     	 <path refid="dependencies.path"/>
+		</path>
+		<javac destdir="${build.modules.classes}/personalbackup" srcdir="src/" debug="${build.debug}" classpathref="personalbackup.compile.path" includes="${module.package.folder}/personalbackup/**" deprecation="on" includeAntRuntime="false" />
+		<copy todir="${build.modules.classes}/personalbackup" file="src/${module.package.folder}/personalbackup/test/log4j.properties" />
+		<mkdir dir="${build.stage.modules.dir}" />
+
+		<jar destfile="${build.stage.modules.dir}/medcommons-personalbackup.jar" basedir="${build.modules.classes}/personalbackup" includes="net/medcommons/**,log4j.properties" />
+	</target>
+
+	<target name="test-module-personalbackup">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+
+				<fileset dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</fileset>
+				<path refid="dependencies.path"/>
+				<fileset dir="${cactus.dir}/lib">
+
+					<include name="**/*.jar"/>
+				</fileset>
+
+
+			</classpath>
+			<formatter type="plain"/>
+
+			<test name="net.medcommons.modules.personalbackup.test.GenerateZipTest"/>
+		</junit>
+	</target>
+	<target name="package-module-storagehandler" depends="package-module-repository">
+			<mkdir dir="${build.modules.classes}/storagehandler"/>
+			<path id="storagehandler.compile.path">
+				<fileset dir="${build.stage.dir}/modules">
+					<include name="medcommons-repository.jar"/>
+					<include name="medcommons-phrdb.jar"/>
+					<include name="medcommons-filestore.jar"/>
+					<include name="medcommons-configuration.jar"/>
+				</fileset>
+				<fileset dir="lib/struts">
+					<include name="struts.jar"/>
+				</fileset>
+	     	 <path refid="dependencies.path"/>
+			</path>
+			<javac destdir="${build.modules.classes}/storagehandler" srcdir="src/" debug="${build.debug}" classpathref="storagehandler.compile.path" includes="${module.package.folder}/storagehandler/**" deprecation="on" includeAntRuntime="false" />
+			<copy todir="${build.modules.classes}/storagehandler" file="src/${module.package.folder}/personalbackup/test/log4j.properties" />
+			<mkdir dir="${build.stage.modules.dir}" />
+
+			<jar destfile="${build.stage.modules.dir}/medcommons-storagehandler.jar" basedir="${build.modules.classes}/storagehandler" includes="net/medcommons/**,log4j.properties" />
+		</target>
+	<target name="test-module-storagehandler">
+		
+		
+		<javac srcdir="test-src/" 
+			destdir="${build.modules.classes}/storagehandler/" 
+			debug="true"
+			includes="net/medcommons/modules/storagehandler/**">
+			<classpath>
+				
+		      <pathelement path="${build.stage.modules.dir}/medcommons-configuration.jar" />
+		     
+				<fileset dir='build/stage/modules'>
+				     <include name='*.jar'/>
+				</fileset>
+	        	<pathelement path="lib/easymock.jar" />
+		      	<path refid="compile.path" />
+				<pathelement path="build/stage/router/medcommons-router.jar" />
+		    </classpath>
+			
+		</javac>
+
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="yes">
+			<classpath>
+				<path refid="compile.path" />
+				<pathelement path="${build.modules.classes}/storagehandler" />
+				<pathelement path="build/stage/router/medcommons-router.jar" />
+				<pathelement path="build/stage/modules/medcommons-storagehandler.jar" />
+	       		<pathelement path="lib/easymock.jar" />
+          		<fileset dir='build/stage/modules'>
+            		<include name='*.jar'/>
+          		</fileset>
+			</classpath>
+				
+			<test name="net.medcommons.modules.storagehandler.ReferenceTest" haltonfailure="yes"/>
+					
+				
+			<formatter type="plain"/>
+		</junit>
+
+			
+	</target>
+	<target name="test-module-repository">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+
+	
+				<fileset dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</fileset>
+
+				<fileset dir="${cactus.dir}/lib">
+
+					<include name="**/*.jar"/>
+				</fileset>
+				<path refid="dependencies.path"/>
+
+			</classpath>
+			<formatter type="plain"/>
+
+			<test name="net.medcommons.modules.repository.test.MetadataTest"/>
+			<test name="net.medcommons.modules.repository.test.EncryptionTest"/>
+
+
+		</junit>
+	</target>
+
+	<target name="test-module-crypto">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+				<path refid="dependencies.path"/>
+				<fileset dir="${build.stage.modules.dir}">
+									<patternset refid="libraries.patternset" />
+								</fileset>
+			</classpath>
+			<formatter type="plain"/>
+			<test name="net.medcommons.modules.crypto.test.SHA1Test"/>
+			<test name="net.medcommons.modules.crypto.test.KeySerializationTest"/>
+			<test name="net.medcommons.modules.crypto.test.IOTest"/>
+
+
+		</junit>
+	</target>
+	<target name="test-module-backup">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+
+				
+				<path refid="dependencies.path"/>
+				
+			
+				<fileset dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</fileset>
+			
+
+			</classpath>
+			<formatter type="plain"/>
+			<!--<test name="net.medcommons.modules.backup.test.S3ClientTest"/> -->
+			<test name="net.medcommons.modules.backup.test.BackupQueueTest"/>
+
+
+		</junit>
+	</target>
+	<target name="test-module-configuration">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="yes">
+			<classpath>
+
+					<path refid="dependencies.path"/>
+				<!-- For log4j.properties file -->
+				<pathelement location="etc/soap/gateway/resources"/>
+
+				<fileset dir="${build.stage.modules.dir}">
+									<patternset refid="libraries.patternset" />
+								</fileset>
+			
+			</classpath>
+			<formatter type="plain"/>
+			<test name="net.medcommons.modules.configuration.test.ConfigurationTest"/>
+
+
+		</junit>
+	</target>
+
+	<target name="test-module-utils">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+
+				<path refid="dependencies.path"/>
+				<!-- For log4j.properties file -->
+				<pathelement location="etc/soap/gateway/resources"/>
+
+				<fileset dir="${build.stage.modules.dir}">
+									<patternset refid="libraries.patternset" />
+								</fileset>
+				<fileset dir="${cactus.dir}/lib">
+
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+			<formatter type="plain" />
+			<!-- 
+			Removed this test because of screwed-up dependencies - but
+			more tests needed in this module.
+			<test name="net.medcommons.modules.utils.test.VersionTest" />
+			-->
+
+
+
+		</junit>
+	</target>
+	<target name="test-module-filestore">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="yes">
+			<classpath>
+
+				<path refid="dependencies.path"/>
+				<!-- For log4j.properties file -->
+				<pathelement location="src" />
+				<pathelement location="etc/soap/gateway/resources" />
+				<pathelement location="build/modules/classes/filestore" />
+				<fileset dir="${build.stage.modules.dir}">
+						<patternset refid="libraries.patternset" />
+				</fileset>
+				<fileset dir="${build.stage.dir}/router">
+							<include name="medcommons-router.jar"/>
+				</fileset>
+			</classpath>
+			<formatter type="plain"/>
+      <!--
+      Failing, obsolete tests
+			<test name="net.medcommons.modules.filestore.test.PutDataTest"/>
+			<test name="net.medcommons.modules.filestore.test.GetDataTest"/>
+			<test name="net.medcommons.modules.filestore.test.DeleteDataTest"/>
+      -->
+
+		</junit>
+	</target>
+	<target name="test-module-services" depends='dependencies'>
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+
+				<path refid="dependencies.path"/>
+				<!-- For log4j.properties file -->
+				<pathelement location="etc/soap/gateway/resources"/>
+
+				<pathelement location="${build.stage.modules.dir}/medcommons-configuration.jar"/>
+				<pathelement location="${build.stage.modules.dir}/medcommons-gw-services.jar"/>
+
+				<fileset dir="${cactus.dir}/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+				
+			</classpath>
+			<formatter type="plain"/>
+			<test name="net.medcommons.modules.services.test.DocumentServiceTest"/>
+
+
+
+		</junit>
+	</target>
+	
+	<!--
+			Test modules that can be run against the standalone jar files
+		-->
+	<target name="test-modules-standalone" depends="test-module-filestore,test-module-crypto,test-module-configuration,test-module-utils"/>
+
+	<!--
+		Test modules that must be run against running server.
+	-->
+	<target name="test-modules-deployed" depends="test-module-cxp,test-module-cxp-client,test-module-repository,test-module-itk,test-module-storagehandler"/>
+
+	<target name="test-modules" depends="test-modules-standalone,test-modules-deployed"/>
+
+	
+	<!-- === tests =========================================================== -->
+	<target name="tests" depends="compile">
+		
+		<path id="tests.compile.path">
+					<path refid="compile.path"/>
+					<fileset dir="build/stage/router/">
+								<include name="medcommons-router.jar"/>
+					</fileset>
+				</path>
+    <echo message = "compiling test dependencies ..."/>
+		<javac srcdir="src/" 
+			includes="net/medcommons/modules/utils/ResourceNames.java" 
+			destdir="build/classes/" debug="true">
+			<classpath refid="tests.compile.path"/>
+    	</javac>
+
+    <echo message = "compiling tests ..."/>
+		<javac srcdir="test-src/" destdir="build/classes/" debug="true">
+			<classpath>
+	      <pathelement path="${build.stage.modules.dir}/medcommons-configuration.jar" />
+	      <pathelement path="${build.stage.modules.dir}/medcommons-http.jar" />
+        	<pathelement path="lib/easymock.jar" />
+	      <path refid="tests.compile.path" />
+        <fileset dir='build/stage/modules'>
+          <include name='*.jar'/>
+        </fileset>
+	    </classpath>
+		</javac>
+
+		<junit fork="yes" printsummary="on" showoutput="yes" dir=".">
+			<classpath>
+				<path refid="tests.compile.path" />
+				<pathelement path="build/classes" />
+       			 <pathelement path="lib/easymock.jar" />
+	      		<pathelement path="${build.stage.modules.dir}/medcommons-http.jar" />
+	      		<pathelement path="${build.stage.modules.dir}/medcommons-backup.jar" />
+		        <fileset dir='build/stage/modules'>
+		          <include name='*.jar'/>
+		        </fileset>
+			</classpath>
+			<test name="net.medcommons.AllTests" haltonfailure="yes"  outfile="test-results">
+				<formatter type="plain"/>
+			</test>
+		</junit>
+
+	</target>
+	<target name="profile-ccrmerge" depends="compile">
+		
+					<javac srcdir="test-src/" destdir="build/classes/" debug="true">
+						<classpath>
+			        <pathelement path="lib/easymock.jar" />
+              <fileset dir='build/stage/modules'>
+                <include name='*.jar'/>
+              </fileset>
+				      <path refid="compile.path" />
+				    </classpath>
+					</javac>
+				 <java classname="net.medcommons.router.services.ccrmerge.CCRMergeTest" fork="true" >
+		    		<jvmarg value="-Xmx256m"/>
+		    		<jvmarg value="-Xdebug"/>
+				 	<jvmarg value="-agentlib:hprof=cpu=samples,depth=20"/>
+				 	<!--  
+		         <arg line="-open"/>
+		         <arg line="etc/test/getPHRReference.xml"/>
+				-->
+
+				 	<classpath>
+				 						<path refid="compile.path" />
+				 						<pathelement path="build/classes" />
+				 		        <pathelement path="lib/easymock.jar" />
+				 			      <pathelement path="${build.stage.modules.dir}/medcommons-http.jar" />
+				 					</classpath>
+
+		      </java>
+	</target>
+	
+
+
+	<target name="tests-ccrmerge" depends="compile">
+			<javac srcdir="src/" includes="net/medcommons/modules/utils/ResourceNames.java" destdir="build/classes/" debug="true">
+				<classpath refid="compile.path" />
+	    </javac>
+			<javac srcdir="test-src/" destdir="build/classes/" debug="true">
+				<classpath>
+		      <pathelement path="${build.stage.modules.dir}/medcommons-configuration.jar" />
+		      <pathelement path="${build.stage.modules.dir}/medcommons-http.jar" />
+			  <pathelement path="${build.stage.modules.dir}/medcommons-xml.jar" />	
+					<fileset dir='build/stage/router'>
+												<include name='medcommons-router.jar'/>
+										</fileset>
+	        <pathelement path="lib/easymock.jar" />
+		      <path refid="compile.path" />
+		    </classpath>
+			</javac>
+
+			<junit fork="yes" printsummary="on" >
+				<classpath>
+					<path refid="compile.path" />
+					<pathelement path="build/classes" />
+	        		<pathelement path="lib/easymock.jar" />
+					<fileset dir='build/stage/router'>
+							<include name='medcommons-router.jar'/>
+					</fileset>
+          			<fileset dir='build/stage/modules'>
+           			 <include name='*.jar'/>
+          			</fileset>
+					
+				</classpath>
+				
+				<test name="net.medcommons.router.services.ccrmerge.CCRMergeTest" haltonfailure="yes" outfile="test-results">
+					<formatter type="plain" usefile="false"/>
+				</test>
+				
+				<test name="net.medcommons.router.services.ccrmerge.CCRMergeComponentsTest" haltonfailure="yes" outfile="test-results">
+					<formatter type="plain" usefile="false"/>
+				</test>
+				<!--
+				
+				<test name="net.medcommons.router.services.ccrmerge.MonsterMergeTest" haltonfailure="yes" outfile="test-results">
+									<formatter type="plain" usefile="false"/>
+								</test>
+				-->
+			</junit>
+
+		</target>
+	
+	<!--
+	Transfer application is a simple shell which just calls other jar files.
+	This should be moved out to a separate project. Note that the classpath
+	of jar files is much larger than needed.
+	-->
+	<target name="package-application-transfer" depends="compile">
+			<mkdir dir="build/application/" />
+			<mkdir dir="build/application/lib" />
+			<mkdir dir="${build.dist.applicationlib}"/>
+			<mkdir dir="${application.package.classes}" />
+			<mkdir dir="${application.package.classes}/transfer" />
+			<pathconvert property="application.transfer.manifest.classpath"
+				                      pathsep=" ">
+				  <path refid="application.transfer.compile.path"/>
+				  <chainedmapper>
+				    <flattenmapper/>
+				    <globmapper from="*" to="lib/*"/>
+				  </chainedmapper>
+				</pathconvert>
+	
+			<copy todir="${build.dist.applicationlib}">
+				
+				<fileset dir="lib/dependencies">
+				        		<include name="*.jar"/>
+							</fileset> 
+	
+			</copy>
+		
+		
+			<jar jarfile="${build.dist}/medcommons-transfer-application.jar"
+				
+				>
+					<manifest>
+						<attribute name="Built-By" value="${user.name}"/>
+				      	<attribute name="Class-Path" value="${application.transfer.manifest.classpath}"/>
+						<!-- <attribute name="Build-Version" value="${buildVersion}"/> -->
+						<attribute name="Main-Class" value="net.medcommons.modules.transfer.UploadFileAgent"/>
+	
+				      </manifest>
+				<fileset dir="etc/tests/modules">
+					<include name="log4j.xml" />
+				</fileset>
+			</jar>
+	
+		</target>
+	<target name="test-applications" depends="test-application-transfer"/>
+ 
+	<!--
+	Runs a simple Download test via transfer (e.g., CXP)
+	
+	-->
+	<target name="test-application-transfer">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" >
+			<classpath>
+				<path refid="dependencies.path"/>
+				<fileset dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</fileset>
+				<fileset dir="${build.dist}">
+					<include name="medcommons-transfer-application.jar" />
+				</fileset>
+
+				
+				<fileset dir="${cactus.dir}/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+
+
+			</classpath>
+			<formatter type="plain"/>
+
+			<test name="net.medcommons.modules.transfer.test.DownloadTest"/>
+
+
+
+		</junit>
+	</target>
+
+
+
+	<!-- === doc =========================================================== -->
+
+	<target name="doc" depends="xmldoc,javadoc" />
+
+	<target name="xmldoc">
+		<mkdir dir="build/doc/" />
+		<xslt basedir="doc/src/" destdir="build/doc/" extension=".html" style="doc/lib/docbook-xsl/html/docbook.xsl">
+			<param name="chapter.autolabel" expression="1" />
+			<param name="section.autolabel" expression="1" />
+			<param name="section.label.includes.component.label" expression="1" />
+		</xslt>
+	</target>
+
+	<target name="javadoc">
+		<mkdir dir="build/doc/api/" />
+		<javadoc destdir="build/doc/api/" author="true" version="false" use="true" windowtitle="Zabbix/J" classpathref="compile.path">
+			<packageset dir="src/" defaultexcludes="yes">
+				<include name="net/medcommons/router/**" />
+			</packageset>
+
+			<doctitle>
+				<![CDATA[<h1>MedCommons Router API Docs</h1>]]></doctitle>
+		<bottom>
+			<![CDATA[<i>Copyright &#169; 2004 MedCommons, Inc. All Rights Reserved.</i>]]></bottom>
+</javadoc>
+</target>
+<target name="service-javadoc">
+<mkdir dir="build/doc/services-api/" />
+<javadoc destdir="build/doc/services-api/" author="true" version="false" use="true" windowtitle="MedCommons Services" classpathref="compile.path">
+	<packageset dir="src/" defaultexcludes="yes">
+		<include name="net/medcommons/services/interfaces/**" />
+	</packageset>
+
+	<doctitle>
+		<![CDATA[<h1>MedCommons Central Services API Docs</h1>]]></doctitle>
+<bottom>
+	<![CDATA[<i>Copyright &#169; 2004 MedCommons, Inc. All Rights Reserved.</i>]]></bottom>
+</javadoc>
+</target>
+
+<!-- === clean ========================================================== -->
+
+<target name="clean">
+  <delete dir="build/" />
+</target>
+
+<target name="real-clean" depends="clean">
+  <delete dir="stage" />
+</target>
+
+
+</project>

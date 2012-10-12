@@ -1,0 +1,60 @@
+A very terse description of setup on windows:
+
+1. install java
+
+2. install cygwin (inc. svn)
+
+2.1 checkout /services/trunk/php
+
+3. install xampp
+
+  3.1 do an svn checkout to get the PHP code into the xampp htdocs directory
+  3.2 because of medcommons deploys the same files to multiple places you need
+      to simulate that to make an easy dev environment by creating sym links / junction
+      points.  Eg:
+
+      cd c:\xampp\htdocs\mc
+      junction.exe  css  c:\xampp\htdocs\mc\site\css
+      junction.exe  images c:\xampp\htdocs\mc\site\images
+
+  3.3 Make a directory c:\cygwin\tmp\_php_consumer_test
+      Needed for PHP sessions to go into 
+  
+4. adjust php.ini,  httpd.conf
+
+  4.1 If using xampp 1.7, follow instructions here:  http://www.apachefriends.org/f/viewtopic.php?f=16&t=32617
+
+  4.2 Add mysql databases / users
+
+  generally turns out like this:
+
+   grant all privileges on *.* to 'root'@'yeti' with grant option;
+
+  4.3 Add mysql.internal to hosts file 
+
+5. Run db creation script in 
+
+    https://svn.medcommons.net/svn/services/trunk/schema 
+
+6. install python 2.5 (NOT 2.6)
+
+7. install python mysql support 
+   - download exe installer for mysql-python from http://sourceforge.net/projects/mysql-python
+   - you'll have to dig to find the exe version down the list a bit, make sure you get 2.5 
+     version of it
+   - note:  on win7 some msvc dependencies are missing.  finding them (anywhere) and copying them
+     to c:\windows\SysWOW64 worked to make it run.
+
+8. install fpconst from http://pypi.python.org/packages/source/f/fpconst/fpconst-0.7.2.tar.gz#md5=10ba9e04129af23108d24c22c3a698b1
+   use 'python setup.py install' to install
+
+9. install SOAPpy from http://transact.dl.sourceforge.net/sourceforge/pywebsvcs/SOAPpy-0.11.6.tar.gz
+   NOTE: get .11.6, don't get .12, it's broken in python 2.5, and don't get 0.11.1, it doesn't work with XFire
+   use 'python setup.py install' to install
+
+10. Set $GLOBALS['Script_Domain'] = null in urls.inc.php - necessary because by default it's set to your domain, 
+    but script domain can't have less than two components to work in javascript.  So if your machine
+    is not referenced by fully qualified domain name (eg: localhost, 'foo') it won't work.
+
+11. Now you can publish to get templates.  I set up a sym link to send them to the right
+    place.  Install Django. Check out console.    

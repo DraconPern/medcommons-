@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.medcommons.application.dicomclient.utils">
+<class name="net.medcommons.application.dicomclient.utils.DicomOutputTransaction" table="DICOMOUTPUTTRANSACTION">
+	<id name="id" column="OBJECT_ID">
+       <generator class="native"/>
+     </id>
+
+
+	<property name="timeStarted"/>
+	<property name="totalBytes"/>
+	<property name="objectCount"/>
+	<property name="retryCount"/>
+	<property name="status"/>
+	<property name="statusMessage"/>
+	<property name="directory"/>
+	<property name="bytesTransferred"/>
+	<property name="patientName"/>
+	<property name="studyDescription"/>
+	<property name="seriesDescription"/>
+	<property name="patientId"/>
+	<property name="patientIdType"/>
+	<property name="exportMethod"/>
+	<property name="exportFolder"/>
+	<property name="transactionFolder"/>
+	<property name="cxpJob"/>
+	<property name="dicomRemoteHost"/>
+	<property name="dicomRemoteAeTitle"/>
+	<property name="dicomRemotePort"/>
+	<property name="dicomLocalAeTitle"/>
+	<property name="dashboardStatusId"/>
+
+
+
+
+</class>
+</hibernate-mapping>

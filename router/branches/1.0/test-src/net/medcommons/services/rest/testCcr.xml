@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContinuityOfCareRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:astm-org:CCR CCR9.xsd" xmlns="urn:astm-org:CCR">
+    <!-- This is a simple CCR created to test notifications.  It contains lots of Actors AA2 - AA10,
+         plus 2 MedCommons linked actors, MC1 and MC2
+         but no links to them in To or From.  Tests can create links using JDOM
+
+         AA2 - has email address - jsmith@ccrdemohealthclinic.com
+         AA3 - has email address
+         AA6 - no email address
+         AA7 - no email address
+         MC1 - medcommons, email address - mc1@medcommons.org
+         MC2 - medcommons, email address - mc2@medcommons.org
+        
+         -->
+    <CCRDocumentObjectID>AA259200546518274050</CCRDocumentObjectID>
+    <Language>
+        <Text>English</Text>
+    </Language>
+    <Version>V1.0</Version>
+    <DateTime>
+        <ExactDateTime>2005-09-22T20:29:55.0Z</ExactDateTime>
+    </DateTime>
+    <Patient>
+        <ActorID>APatient</ActorID>
+    </Patient>
+    <From>
+    	<ActorLink><ActorID>APatient</ActorID></ActorLink>
+    </From>
+   
+    <Purpose>
+        <Description>
+          <Text>A test CCR used for unit tests</Text>
+        </Description>
+    </Purpose>
+    <Body>
+    </Body>
+    <Actors>
+        <Actor>
+            <ActorObjectID>APatient</ActorObjectID>
+            <Person>
+                <Name>
+                    <CurrentName>
+                        <Given>Jane</Given>
+                        <Middle>B</Middle>
+                        <Family>Hernandez</Family>
+                    </CurrentName>
+                </Name>
+                <DateOfBirth>
+                    <ExactDateTime>1968-01-16T05:00:00Z</ExactDateTime>
+                </DateOfBirth>
+                <Gender>
+                    <Text>Female</Text>
+                </Gender>
+            </Person>
+            <IDs>
+                <Type>
+                    <Text>SSN</Text>
+                </Type>
+                <ID>888-88-8888</ID>
+                <Source>
+                    <Actor>
+                        <ActorID>AA2</ActorID>
+                    </Actor>
+                </Source>
+            </IDs>
+            <Address>
+                <Type>
+                    <Text>Home</Text>
+                </Type>
+                <Line1>758 Las Olas Dr.</Line1>
+                <City>Fort Lauderdale</City>
+                <State>FL</State>
+                <PostalCode>33011</PostalCode>
+            </Address>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA2</ActorObjectID>
+            <Person>
+                <Name>
+                    <CurrentName>
+                        <Given>John</Given>
+                        <Middle>Adam</Middle>
+                        <Family>Smith</Family>
+                    </CurrentName>
+                    <DisplayName>Dr. John Smith</DisplayName>
+                </Name>
+            </Person>
+            <Specialty>
+                <Text>Internal Medicine</Text>
+            </Specialty>
+            <Address>
+                <Type>
+                    <Text>Home</Text>
+                </Type>
+                <Line1>94044 Link Road</Line1>
+                <City>San Francisco</City>
+                <State>CA</State>
+                <PostalCode>94304</PostalCode>
+            </Address>
+            <Telephone>
+                <Value>415-555-1212</Value>
+                <Type>
+                    <Text>Home</Text>
+                </Type>
+            </Telephone>
+            <EMail>
+                <Value>jsmith@ccrdemohealthclinic.com</Value>
+            </EMail>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA3</ActorObjectID>
+            <Organization>
+                <Name>TEPR CCR Demo Health Clinic</Name>
+            </Organization>
+            <Address>
+                <Type>
+                    <Text>Main</Text>
+                </Type>
+                <Line1>94044 Link Road</Line1>
+                <City>San Francisco</City>
+                <State>CA</State>
+                <PostalCode>94304</PostalCode>
+            </Address>
+            <Telephone>
+                <Value>415-555-1212</Value>
+                <Type>
+                    <Text>Main</Text>
+                </Type>
+            </Telephone>
+            <EMail>
+                <Value>jsmith@ccrdemohealthclinic.com</Value>
+            </EMail>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA4</ActorObjectID>
+            <InformationSystem>
+                <Name>Solventus CCR Generation Tool</Name>
+                <Version>V1.0</Version>
+            </InformationSystem>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA5</ActorObjectID>
+            <Person>
+                <Name>
+                    <CurrentName>
+                        <Given>John</Given>
+                        <Family>Gray</Family>
+                    </CurrentName>
+                    <DisplayName>Dr. John Gray</DisplayName>
+                </Name>
+            </Person>
+            <Address>
+                <Type>
+                    <Text>Home</Text>
+                </Type>
+                <Line1>800 E Las Olas Blvd</Line1>
+                <City>Fort Lauderdale</City>
+                <State>FL</State>
+                <PostalCode>33301</PostalCode>
+            </Address>
+            <Telephone>
+                <Value>954-555-1212</Value>
+                <Type>
+                    <Text>Home</Text>
+                </Type>
+            </Telephone>
+            <EMail>
+                <Value>ken.miller@solventus.com</Value>
+            </EMail>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA6</ActorObjectID>
+            <Organization>
+                <Name>Blue Cross Blue Shield of Florida BlueScript</Name>
+            </Organization>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA7</ActorObjectID>
+            <Person>
+                <Name>
+                    <CurrentName>
+                        <Given>Steven</Given>
+                        <Family>Hernandez</Family>
+                    </CurrentName>
+                </Name>
+                <DateOfBirth>
+                    <ExactDateTime>1968-08-21T04:00:00Z</ExactDateTime>
+                </DateOfBirth>
+                <Gender>
+                    <Text>Male</Text>
+                </Gender>
+            </Person>
+            <IDs>
+                <Type>
+                    <Text>SSN</Text>
+                </Type>
+                <ID>151436167</ID>
+                <Source>
+                    <Actor>
+                        <ActorID>AA2</ActorID>
+                    </Actor>
+                </Source>
+            </IDs>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA8</ActorObjectID>
+            <Person>
+                <Name>
+                    <CurrentName>
+                        <Given>John</Given>
+                        <Family>Rivera</Family>
+                    </CurrentName>
+                </Name>
+                <DateOfBirth>
+                    <ExactDateTime>1965-01-03T05:00:00Z</ExactDateTime>
+                </DateOfBirth>
+            </Person>
+            <Relation>
+                <Text>Sibling</Text>
+            </Relation>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA9</ActorObjectID>
+            <Person>
+                <Name>
+                    <CurrentName>
+                        <Given>Peter</Given>
+                        <Family>Primary</Family>
+                    </CurrentName>
+                    <DisplayName>Dr. Peter Primary</DisplayName>
+                </Name>
+            </Person>
+            <EMail>
+                <Value>ccrfp@hotmail.com</Value>
+            </EMail>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>AA0010</ActorObjectID>
+            <Organization>
+                <Name>Acme Corp.</Name>
+            </Organization>
+            <Address>
+                <Type>
+                    <Text>Main</Text>
+                </Type>
+                <Line1>2 N Flagler Dr.</Line1>
+                <City>Miami</City>
+                <State>FL</State>
+                <PostalCode>33044</PostalCode>
+            </Address>
+            <Source>
+                <Actor>
+                    <ActorID>AA2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>MC1</ActorObjectID>
+            <InformationSystem>
+                <Name>MedCommons Notification</Name>
+                <Type>Repository</Type>
+                <Version>0.9.10</Version>
+            </InformationSystem>
+            <EMail>
+                <Value>mc1@medcommons.org</Value>
+            </EMail>
+            <Source>
+                <Actor>
+                    <ActorID>MC1</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+        <Actor>
+            <ActorObjectID>MC2</ActorObjectID>
+            <InformationSystem>
+                <Name>MedCommons Notification</Name>
+                <Type>Repository</Type>
+                <Version>0.9.10</Version>
+            </InformationSystem>
+            <EMail>
+                <Value>mc2@medcommons.org</Value>
+            </EMail>
+            <Source>
+                <Actor>
+                    <ActorID>MC2</ActorID>
+                </Actor>
+            </Source>
+        </Actor>
+    </Actors>
+</ContinuityOfCareRecord>

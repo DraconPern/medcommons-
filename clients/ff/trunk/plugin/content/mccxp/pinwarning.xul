@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mccxp.css" type="text/css"?>
+
+<window
+    id="mccxp_pinWarning"
+    title="Insecure PIN Warning"
+    xmlns:h="http://www.w3.org/1999/xhtml"    
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"    
+    style="padding: 10px;"
+    onload="mccxp_initSettings();"
+    >
+    <script src="MochiKit.js"/>
+    <script src="xpath.js"/>
+    <script src="misc.js"/>
+    <script src="dom.js"/>
+    <script src="mccxp.js"/>
+
+    <label class="infoheading" style="padding-top: 5px;" value="Warning!"/>
+    <description style="margin-bottom: 5px;">You are sending the PIN in an
+      insecure manner.  Please acknowledge that the contents are demo data with no patient
+      identifiable information.
+    </description>
+    <spacer height="10"/>
+    <hbox flex="1" align="start" pack="end"   style="">
+        <button id="okButton" label="Demo CCR" oncommand="window.opener.mccxp_dialog_result = true; window.close();"/>
+        <button id="cancelButton" label="Cancel" oncommand="window.opener.mccxp_dialog_result = false; window.close();"/>
+    </hbox> 
+</window>
+

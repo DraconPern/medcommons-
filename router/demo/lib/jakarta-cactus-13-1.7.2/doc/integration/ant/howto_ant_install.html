@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Installing Ant</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Installing Ant" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Forewords</h1>
+
+      
+<div class="note">
+        
+<b>You need to have a good understanding of Ant before
+        reading this tutorial. If you don't, I suggest you read the
+        <a href="http://ant.apache.org/manual/index.html" title="">Ant User Manual</a> first</b>.
+      </div>
+
+      
+<p>
+        This tutorial explains how to install Ant properly to be able to
+        run the Sample application provided with the Cactus distribution and
+        also build the Cactus distribution from the sources.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Ant tasks needed by Cactus</h1>
+
+      
+<p>
+        Cactus uses the following optional tasks of Ant:
+      </p>
+      
+<ul>
+        
+<li>
+          The <b><code>junit</code></b> task: it is used to run
+          the unit tests of Cactus itself and the Cactus unit tests of the
+          Sample application. This task is
+          normally found in the <code>optional.jar</code> Ant jar.
+        </li>
+        
+<li>
+          The Cactus Sample application uses some Ant custom tasks provided
+          by Cactus in the <code>cactus-ant.jar</code> jar file (
+          found in the <code>lib/</code> directory where you unpacked the
+          Cactus distribution).
+        </li>
+        
+<li>
+          The <b><code>checkstyle</code></b> task: it is used only
+          to build Cactus from the sources (i.e. not needed for building the
+          Cactus sample application). The version of
+          <a href="http://checkstyle.sf.net" title="">Checkstyle</a> used is 3.0+.
+        </li>
+      
+</ul>
+
+      
+<p>
+        In order to simplify the installation of Ant and the gathering of
+        the required Ant tasks as described above, we provide a
+        prepackaged zip containing everything needed. This is available from
+        the <a href="../.././downloads.html" title="Downloads of Cactus releases and nightly builds.">downloads</a> section.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Installing Ant on Windows systems</h1>
+
+      
+<p>
+        Follow the steps below to install Ant:
+      </p>
+      
+<ol>
+        
+<li>
+          Download Jakarta Ant
+          (<code>jakarta-ant-&lt;version&gt;-bin.zip</code>) from
+          <a href="http://ant.apache.org/" title="">here</a>. We recommend version 1.5.3 or 
+          above. Alternatively you can download the
+          prepackaged Ant version, as mentioned above.
+        </li>
+        
+<li>
+          Unzip it in a directory. Let's call this directory
+          <code>antroot</code>,
+        </li>
+        
+<li>
+          Create an environment variable named <code>ANT_HOME</code> that
+          points to the <code>antroot</code> directory,
+        </li>
+        
+<li>
+          Modify the <code>PATH</code> environment variable to include the
+          <code>%ANT_HOME%\bin</code> directory (so that you'll be able to type
+          <code>ant</code> in a DOS shell, in whatever directory and it will
+          call the <code>%ANT_HOME%\bin\ant.bat</code> script,
+        </li>
+        
+<li>
+          Download the Ant optional task jar
+          (<code>jakarta-ant-&lt;version&gt;-optional.jar</code>) from
+          <a href="http://ant.apache.org/" title="">here</a>
+          and put it in <code>%ANT_HOME%\lib</code>. <i>Note that this step
+          is needed only if you haven't downloaded the prepackaged zip</i>,
+        </li>
+        
+<li>
+          If you haven't downloaded the prepackaged Ant zip, you'll need to
+          download the Stylebook 1.0b3 for Xalan 2 jar, the latest
+          <a href="http://xml.apache.org/xalan-j/" title="">Xalan</a>, the latest
+          <a href="http://xml.apache.org/xerces-j" title="">Xerces</a>, the
+          latest <a href="http://junit.org" title="">JUnit</a> and the latest
+          <a href="http://checkstyle.sf.net" title="">Checkstyle</a> jars. You'll
+          also need to ensure that you use a JAXP 1.1 parser. You can download
+          one (crimson) from
+          <a href="http://java.sun.com/xml/download.html" title="">here</a>. Put
+          all these jars in <code>%ANT_HOME%\lib</code>.
+        </li>
+      
+</ol>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

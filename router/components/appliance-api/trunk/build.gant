@@ -1,0 +1,12 @@
+// Import ivy tools and retrieve dependencies
+includeTool << gant.tools.Ivy
+ant.property(file:'build.properties')
+ant.property(name:'mc.ivy.repo',value:"${System.properties['user.home']}/.mc")
+ivy.settings(file: 'ivy-settings.xml')
+ivy.retrieve(pattern:'lib/[artifact].[ext]',sync:'true')
+
+// Use default MedCommons build targets
+includeTargets << new File('lib/builddefaults.gant')
+
+COMPONENT_NAME="medcommons-appliance-api"
+

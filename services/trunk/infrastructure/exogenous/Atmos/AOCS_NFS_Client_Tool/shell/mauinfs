@@ -1,0 +1,867 @@
+#!/bin/bash 
+#
+# chkconfig: 345 80 1
+# description: mount NFS to access maui
+#
+#
+# Authors: Bradley Goodman
+#          Arkady Kanevsky
+#          Anfernee Gui
+#
+# /etc/init.d/mauinfs
+#
+### BEGIN INIT INFO
+# Provides:       mauinfs
+# Required-Start: $network $portmapper
+# Required-Stop: $network $portmapper
+# Default-Start:  3 5
+# Default-Stop:
+# Description:    mount NFS to access Atmos
+### END INIT INFO
+
+# ################################################################
+# Copyright (C) 2009, All Rights Reserved, by
+# EMC Corporation, Hopkinton, MA.
+#
+# This software is furnished under a license under either the EMC Cloud
+# Infrastructure ISV Program Agreement, the EMC Velocity Atmos Partner
+# Program Agreement,or the Atmos OnLine Compute and Storage Service
+# Agreement (License) and may be used and copied only  in  accordance
+# with  the  terms  of such  License and with the inclusion of the above
+# copyright notice. This software or  any  other copies thereof may not
+# be provided or otherwise made available to any  other person.
+# No title to and ownership of  the  software  is  hereby transferred.
+#
+# The information in this software is subject to change without  notice
+# and  should  not be  construed  as  a commitment by EMC Corporation.
+#
+# EMC assumes no responsibility for the use or  reliability  of its
+# software on equipment which is not supplied by EMC.
+# ################################################################
+
+#
+#  This program is used in CaaS client vm.
+#  This program manages client VM for CaaS NFS service.
+#
+# This file should be put into /etc/init.d.
+# It is owned by root and chmod to 700.
+SET_HOSTNAME=0
+LOG_FILE=/var/log/caas.log
+
+# Judge whether or not OS is in RedHat family
+    if [ -e /etc/redhat-release ]; then
+        #echo "[caas_configurehostname] This OS is in RedHat Family, automatically configure hostname"
+        SET_HOSTNAME=1
+	# Source function
+. /etc/init.d/functions
+        # Source network config
+	if [ ! -f /etc/sysconfig/network ]; then
+	    exit 1
+	fi
+. /etc/sysconfig/network
+
+	# Check whether the network is up or not
+	[ "${NETWORKING}" = "no" ] && exit 1
+    elif [ -e /etc/SuSE-release ]; then
+        #echo "[caas_configurehostname] This OS is in SuSE Family, automatically configure hostname"
+        #
+        # The "export HOME=" is to fix logging problem.
+        # Otherwise, the following warning will be printed in log file:
+        #
+        #  Use of uninitialized value in concatenation (.) or string at
+        #  /usr/lib/perl5/vendor_perl/5.8.8/ycp.pm line 765 (#1)
+        #
+export HOME=/root
+	
+	sles_version=$(cat /etc/SuSE-release | grep "VERSION" | awk '{print $3'})
+	#echo "$sles_version" 
+	if [ $sles_version == 10 ]; then
+	# SLES family (SLES 10)
+		SET_HOSTNAME=3
+		echo -n "SLES version $sles_version and SET_HOSTNAME $SET_HOSTNAME" >> $LOG_FILE
+	elif [ $sles_version == 11 ]; then
+	# SLES family (SLES 11)
+		SET_HOSTNAME=2
+                echo -n "SLES version $sles_version and SET_HOSTNAME $SET_HOSTNAME" >> $LOG_FILE
+	else
+	# SLES family (treat as SLES 11)
+		SET_HOSTNAME=2
+		echo -n "SLES version $sles_version and treat as SLES 11 - SET_HOSTNAME $SET_HOSTNAME" >> $LOG_FILE
+	fi
+	# Source function
+. /etc/rc.status
+	# nfs config
+        if [ ! -f /etc/sysconfig/nfs ]; then
+            exit 1
+        fi
+. /etc/sysconfig/nfs
+    else
+        echo "This OS is not in RedHat nor in SuSE Family" >> $LOG_FILE
+        SET_HOSTNAME=0
+    fi
+
+
+NULL_FILE=/dev/null
+PATH=$PATH:/sbin
+
+# Define constants
+SERVER_ENDPOINT="https://compute.atmosonline.com/management"
+MOUNT_PATH="/mnt/mauinfs"
+KT_FILE="/etc/krb5.keytab"
+CONF_FILE="/etc/krb5.conf"
+LDAP_CONF="/etc/ldap.conf"
+OPENLDAP_CONF="/etc/openldap/ldap.conf"
+OPENLDAP_PEM="/etc/openldap/cacerts/cacert.pem"
+CACERT_DIR="/etc/openldap/cacerts"
+SERVER_FILE="/etc/mauinfsserver"
+NFS_FILE=$SERVER_FILE
+SELF_FILE="/etc/mauiprivateip"
+ROUTE_SCRIPT="caas_add_static_route.sh"
+PROFILED_FILE="/etc/init.d/$ROUTE_SCRIPT"
+CONF_CMD="caas_getkey"
+NFSSERVER_CMD="caas_getnfsserver"
+LDAP_CMD="caas_getldap"
+ID_FILE="/etc/idmapd.conf"
+TEMPFILE=$ID_FILE.tmp
+SYSCONFIG_NFS=/etc/sysconfig/nfs
+
+function processLine(){
+        line="$@"
+
+        grep_domain=$(echo $line | grep ^Domain)
+        grep_nouser=$(echo $line | grep ^Nobody-User)
+        grep_nogrop=$(echo $line | grep ^Nobody-Group)
+
+
+        if [ "$grep_domain" != "" ]; then
+                echo "#" $line >> $TEMPFILE
+                echo "Domain = $DOMAIN" >> $TEMPFILE
+        fi
+
+        if [ "$grep_nouser" != "" ]; then
+                echo "#" $line >> $TEMPFILE
+                echo "Nobody-User = nobody" >> $TEMPFILE
+        fi
+
+        if [ "$grep_nogrop" != "" ]; then
+                echo "Nobody-Group = nobody" >> $TEMPFILE
+        fi
+
+        if [ "$grep_nouser" = "" ] &&  [ "$grep_nogrop" = "" ] &&  [ "$grep_domain" = "" ]; then
+                echo $line >> $TEMPFILE
+        fi
+
+}
+
+function prompt_file() {
+    FILE="$@"
+    default_back_loc="$FILE.bak"
+    if [ -e $FILE ]; then
+        echo -n "$FILE already exists. It will be over-written. Do you want to back it up? y/n (default: y)"
+        read back_kt
+        if [ "$back_kt" = "n" ]; then
+             echo -n #rm -f $FILE
+        else
+             echo -n "Enter the backup location for $FILE: (default: $default_back_loc)"
+             read back_loc
+             if [ "$back_loc" = "" ]; then
+                 back_loc=$default_back_loc
+             fi
+             yes | cp $FILE $back_loc
+        fi
+    fi
+
+}
+
+function prompt_server_up() {
+    # Prompt user to input server endpoint
+    echo -n "Enter service endpoint(default: $SERVER_ENDPOINT - hit return to accept the default or enter a different URL):"
+    read SERVER
+
+    if [ "$SERVER" = "" ]; then
+       SERVER=$SERVER_ENDPOINT
+    fi
+
+    # Prompt to ask for CaaS username/password
+    echo -n "Enter your Compute Service username:"
+    read CAASUSER
+
+    echo -n "Enter your Compute Service password:"
+    stty -echo
+    read PASSWORD
+    stty echo
+    echo ""
+    
+    echo -n "Enter your VM name:"
+    read VM
+
+  
+    if [ "$CAASUSER" = "" ] || [ "$PASSWORD" = "" ] || [ "$VM" = "" ]; then
+	echo "Username, password and VM name cannot be empty!"
+	exit 1
+    fi
+
+    prompt_file "$KT_FILE"
+    prompt_file "$CONF_FILE"
+    prompt_file "$LDAP_CONF"
+    prompt_file "$OPENLDAP_CONF"
+    prompt_file "$OPENLDAP_PEM"
+
+
+}
+
+insert_before_last() {
+t="$1";
+awk -vt="$t" '{a[NR]=$0} /}/{i=NR}
+END{
+    for(o=1;o<=NR;o++){
+        if (o==i){   print t; print a[o]
+        }else{ print a[o]  }
+    }
+}' "$2" > /tmp/temp_file
+mv /tmp/temp_file "$2"
+}
+
+function add_static_route() {
+
+        # Get private IP
+        if [ ! -e $NFS_FILE ]; then
+                echo "Error: $NFS_FILE not exists!" >&2
+                exit 1
+        fi
+        if [ ! -e $SELF_FILE ]; then
+                echo "Error: $SELF_FILE not exists!" >&2
+                exit 1
+        fi
+        self_ip=$(cat $SELF_FILE | head -1)
+
+        if [ "" = "$self_ip" ]; then
+                echo "Error: Private IP not returned by App Server!" >&2
+                exit 1
+        fi
+
+        # List All eths
+        eths=$(ifconfig | grep ^eth | awk '{print $1}')
+
+        for eth in $eths; do
+                ip_addr=$(ifconfig $eth | grep "inet addr:" | cut -d: -f2 | awk '{print $1'})
+                if [ "$ip_addr" = "$self_ip" ]; then
+                        PRIVATE_ETH=$eth
+                        # echo "Your private eth is $eth"
+                        break
+                fi
+        done
+
+        if [ "" = "$PRIVATE_ETH" ]; then
+                echo "Error: Can't find any nic which matches the private IP address $self_ip! Probably caused by the wrong VM name input."  >&2
+                exit 1
+        fi
+
+	# set static route
+        echo "Set static route to NFS through private network" >> $LOG_FILE 2>&1
+        NFS_HOST=$(cat $NFS_FILE)
+        NFS_IP=$(host $NFS_HOST | grep "has address" | head -1 | awk '{print $4}')
+        if [ "" = "$NFS_IP" ]; then
+                echo "host cannot be resolved!"
+                exit 1
+        fi
+        ip r a $NFS_IP/32 dev $PRIVATE_ETH >> $LOG_FILE 2>&1
+
+        cat > $PROFILED_FILE << endline
+#!/bin/sh
+#
+#chkconfig: 345 40 99
+#description: add static route to client vms
+
+# Authors: Bradley Goodman
+#          Arkady Kanevsky
+#          Anfernee Gui
+#
+# /etc/init.d/
+#
+### BEGIN INIT INFO
+# Provides:       caas_add_static_route.sh
+# Required-Start: $mauinfs
+# Required-Stop: $mauinfs
+# Default-Start:  3 5
+# Default-Stop:
+# Description:    add static route to NFS VM
+### END INIT INFO
+
+# ################################################################
+# Copyright (C) 2009, All Rights Reserved, by
+# EMC Corporation, Hopkinton, MA.
+#
+# This software is furnished under a license under either the EMC Cloud
+# Infrastructure ISV Program Agreement, the EMC Velocity Atmos Partner
+# Program Agreement,or the Atmos OnLine Compute and Storage Service
+# Agreement (License) and may be used and copied only  in  accordance
+# with  the  terms  of such  License and with the inclusion of the above
+# copyright notice. This software or  any  other copies thereof may not
+# be provided or otherwise made available to any  other person.
+# No title to and ownership of  the  software  is  hereby transferred.
+#
+# The information in this software is subject to change without  notice
+# and  should  not be  construed  as  a commitment by EMC Corporation.
+#
+# EMC assumes no responsibility for the use or  reliability  of its
+# software on equipment which is not supplied by EMC.
+# ################################################################
+
+#
+#  This program is used in CaaS client vm.
+#
+
+LOG_FILE=/var/log/caas.log
+
+# Get private IP
+function start() {
+RETRY_TIME=10
+        if [ ! -e $NFS_FILE ]; then
+                echo "Error: $NFS_FILE not exists!"
+                exit 1
+        fi
+        if [ ! -e $SELF_FILE ]; then
+                echo "Error: $SELF_FILE not exists!"
+                exit 1
+        fi
+        self_ip=\$(cat $SELF_FILE | head -1)
+
+        if [ "" = "\$self_ip" ]; then
+                echo "Error: Private IP not returned by App Server!"
+                exit 1
+        fi
+
+        # List All eths
+	sleep 5
+	time1=1
+
+	while [ \$time1 -lt \$RETRY_TIME ]; do
+                echo "ifconfig not ready, wait 3 seconds, No \$time1"
+                sleep 3
+                eths=\$(ifconfig | grep ^eth | awk '{print \$1}')
+		
+
+        	for eth in \$eths; do
+                	ip_addr=\$(ifconfig \$eth | grep "inet addr:" | cut -d: -f2 | awk '{print \$1'})
+
+	                if [ "\$ip_addr" = "\$self_ip" ]; then
+        	                PRIVATE_ETH=\$eth
+                	        echo "Your private eth is \$eth" >> $LOG_FILE 2>&1
+                        	break
+                	fi
+        	done
+
+	        if [ "" = "\$PRIVATE_ETH" ]; then
+			time1=\$((time1+1))
+        	else
+			break
+		fi
+
+	done 
+
+	if [ \$time1 -eq \$RETRY_TIME ]; then 
+		echo "Error: Doesn't find eth which matches the private IP address \$self_ip!" >> $LOG_FILE 2>&1
+                exit 1
+	fi 
+	
+        # set static route
+        echo "Set static route to NFS through private network" >> $LOG_FILE 2>&1
+        NFS_HOST=\$(cat $NFS_FILE)
+        NFS_IP=\$(host \$NFS_HOST | grep "has address" | head -1 | awk '{print \$4}')
+        if [ "" = "\$NFS_IP" ]; then
+                echo "host cannot be resolved!" >> $LOG_FILE 2>&1
+                exit 1
+        fi
+        ip r a \$NFS_IP/32 dev \$PRIVATE_ETH
+}
+
+function status() {
+        echo "caas_add_static_route.sh: status done"
+}
+
+function stop() {
+        echo "caas_add_static_route.sh: stop done"
+}
+
+case "\$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  status)
+        status
+        ;;
+  *)
+        echo $"Usage: caas_add_static_route.sh (start|stop|status)"
+        exit 1
+esac
+
+endline
+
+chmod +x $PROFILED_FILE
+chkconfig $ROUTE_SCRIPT on
+}
+
+# from /etc/init.d/nfs
+mount_rpc_pipefs() {
+    # See if the file system is there yet
+    case `stat -c "%t" -f /var/lib/nfs/rpc_pipefs` in
+    *67596969*)
+        return 0;;
+    esac
+    mount -t rpc_pipefs rpc_pipefs /var/lib/nfs/rpc_pipefs
+}
+
+umount_rpc_pipefs() {
+    # See if the file system is there
+    case `stat -c "%t" -f /var/lib/nfs/rpc_pipefs` in
+    *67596969*)
+        umount /var/lib/nfs/rpc_pipefs
+    esac
+}
+
+function start_gssd() {
+    /sbin/modprobe rpcsec_gss_krb5
+    mount_rpc_pipefs
+    startproc /usr/sbin/rpc.gssd
+    return $?
+}
+
+function stop_gssd() {
+	echo -n "stopping gssd" >> $LOG_FILE
+	killproc /usr/sbin/rpc.gssd >> $LOG_FILE 2>&1
+	return $?
+}
+
+function start_idmapd() {
+    mount_rpc_pipefs
+
+    # check if there is already a idmapd running
+    if checkproc /usr/sbin/rpc.idmapd && test -f /var/lock/subsys/nfsserver-rpc.idmapd; then
+	echo -n "idmapd is running; stoping it" >> $LOG_FILE
+        killproc -HUP /usr/sbin/rpc.idmapd  >> $LOG_FILE 2>&1
+    fi	
+    startproc /usr/sbin/rpc.idmapd > /var/lock/subsys/nfs-rpc.idmapd
+    return $?
+}
+
+function stop_idmapd() {
+	# stop idmapd
+	if test -f /usr/sbin/rpc.idmapd; then
+                # only stop idmapd if it is not needed by server
+                if test ! -f $IDMAPD_SERVER_STATE ; then
+                    echo -n "stopping idmapd"  >> $LOG_FILE
+                    killproc /usr/sbin/rpc.idmapd >> $LOG_FILE 2>&1
+		else
+		   echo -n "NOT stopping idmapd NFS Server is running" >> $LOG_FILE
+                fi
+                rm -f /var/lock/subsys/nfs-rpc.idmapd
+            fi
+}
+
+function modify_idmapd() {
+   # Modify /etc/idmapd.conf
+        DOMAIN=$(hostname -d)
+        echo "Configuring /etc/idmapd.conf ..." >> $LOG_FILE 2>&1
+        echo " Your domain name is $DOMAIN"  >> $LOG_FILE 2>&1
+
+        # Copy line by line
+        rm -f $TEMPFILE
+
+        exec 3<&0
+        exec 0<$ID_FILE
+
+        while read line
+        do
+                processLine $line
+        done
+
+        exec 0<&3
+
+        # replace the old file
+        mv $TEMPFILE $ID_FILE -f
+}
+
+function configure() {
+    echo "configuring mauinfs"  >> $LOG_FILE 2>&1
+   
+    echo "shutting down kerberos"  >> $LOG_FILE 2>&1
+    service kadmin stop  >> $LOG_FILE 2>&1
+    chkconfig kadmin off  >> $LOG_FILE 2>&1
+    service krb524 stop  >> $LOG_FILE 2>&1
+    chkconfig krb524 off  >> $LOG_FILE 2>&1
+    service krb5kdc stop  >> $LOG_FILE 2>&1
+    chkconfig krb5kdc off  >> $LOG_FILE 2>&1
+    echo "shutting down ldap"  >> $LOG_FILE 2>&1
+    service ldap stop  >> $LOG_FILE 2>&1
+    chkconfig ldap off  >> $LOG_FILE 2>&1
+
+    echo "shutting down mauinfs"  >> $LOG_FILE 2>&1
+    service mauifs stop  >> $LOG_FILE 2>&1
+    chkconfig mauifs off  >> $LOG_FILE 2>&1
+    service mauinfs stop  >> $LOG_FILE 2>&1
+    chkconfig mauinfs off  >> $LOG_FILE 2>&1
+    
+# Prompt 
+    prompt_server_up
+
+    echo "Configuring..."
+
+    # Modify /etc/sysconfig/nfs
+    echo "Add SECURE GSS for NFS in $SYSCONFIG_NFS"  >> $LOG_FILE 2>&1
+    if [ -e $SYSCONFIG_NFS ]; then
+        if [ $SET_HOSTNAME == 1 ]; then
+        	line=$(cat $SYSCONFIG_NFS | grep ^SECURE_NFS=)
+        	if [ "" == "$line" ]; then
+            		echo "SECURE_NFS=yes" >> $SYSCONFIG_NFS
+        	else
+            		cat $SYSCONFIG_NFS | sed 's/^SECURE_NFS=[\t a-zA-Z0-9]*/SECURE_NFS=yes/g' > $SYSCONFIG_NFS.bak
+            		yes | cp $SYSCONFIG_NFS.bak $SYSCONFIG_NFS
+		fi
+	elif [ $SET_HOSTNAME == 2 ] || [ $SET_HOSTNAME == 3 ]; then
+		line=$(cat $SYSCONFIG_NFS | grep ^NFS_SECURITY_GSS=);
+                if [ "" == "$line" ]; then
+                        echo "NFS_SECURITY_GSS="yes"" >> $SYSCONFIG_NFS
+                else
+                        sed -i 's/^NFS_SECURITY_GSS=.*/NFS_SECURITY_GSS="yes"/g' $SYSCONFIG_NFS
+                fi
+	else
+		echo "Error: unknown OS version"  >> $LOG_FILE
+		exit 1
+	fi
+    else
+        echo "Error: $SYSCONFIG_NFS not exists!"  >> $LOG_FILE 2>&1
+        exit 1
+    fi
+
+    # link libgssapi_krb5 to the right file
+    echo "Creating symbolic link for libgssapi_krb5.so"  >> $LOG_FILE 2>&1
+    if [ ! -e /usr/lib64/libgssapi_krb5.so ]; then
+        ln -s /usr/lib64/libgssapi_krb5.so.2.2 /usr/lib64/libgssapi_krb5.so  >> $LOG_FILE 2>&1
+    fi
+    if [ ! -e /usr/lib/libgssapi_krb5.so ]; then
+        ln -s /usr/lib/libgssapi_krb5.so.2.2 /usr/lib/libgssapi_krb5.so  >> $LOG_FILE 2>&1
+    fi
+
+    # Configure NFS client
+    echo "Configuring NFS server location and private IP address"  >> $LOG_FILE 2>&1
+	
+    # mount Atmos through NFSv4 to Mountpath
+    $NFSSERVER_CMD -s $SERVER -u $CAASUSER -p $PASSWORD -c $SERVER_FILE  >> $LOG_FILE
+    if [ $? != 0 ]; then
+        echo "Getting NFS server failed" >> $LOG_FILE
+        exit 1
+    fi
+
+    # Get VM's private IP address
+    $NFSSERVER_CMD -s $SERVER -u $CAASUSER -p $PASSWORD -c $SELF_FILE -v $VM  >> $LOG_FILE
+    if [ $? != 0 ]; then
+        echo "Getting private IP failed!" >> $LOG_FILE
+        exit 1
+    fi
+
+    # add static route
+    add_static_route
+
+    # Configure hostname and modify /etc/hosts
+    caas_configurehostname  >> $LOG_FILE
+    HOSTNAME=$(hostname -f)
+
+    # Configure NFS client
+    #echo "Configuring NFS client for kerberos key"
+
+    # Invoke CaaS REST interface for kerberos token
+    $CONF_CMD -s $SERVER -u $CAASUSER -p $PASSWORD -t $HOSTNAME -k $KT_FILE -c $CONF_FILE  >> $LOG_FILE
+    if [ $? != 0 ]; then 
+        echo "Configuring kerberos failed!" >> $LOG_FILE
+        exit 1
+    fi      
+
+    # Invoke CaaS REST interface for Ldap configuration files
+    # Check for cacerts directory
+    if [ ! -d $CACERT_DIR ]; then
+        mkdir $CACERT_DIR
+        echo "Created /etc/openldap/cacerts" >> $LOG_FILE
+    fi
+    $LDAP_CMD -s $SERVER -u $CAASUSER -p $PASSWORD -c $LDAP_CONF -o $OPENLDAP_CONF  -a $OPENLDAP_PEM  >> $LOG_FILE
+    if [ $? != 0 ]; then
+        echo "Configuring ldap failed." >> $LOG_FILE
+        exit 1
+    fi
+
+    # chmod 
+    chown root $KT_FILE
+    chmod 640 $KT_FILE
+    chmod 600 $SERVER_FILE
+
+    # Modify /etc/idmapd.conf
+    modify_idmapd
+
+    # Modify /etc/nsswitch.conf
+    #echo "Modifying /etc/nsswitch.conf"
+    if [ $SET_HOSTNAME == 1 ]; then
+    cat /etc/nsswitch.conf | sed 's/ldap//g' \
+        | sed 's/\(passwd:\)\([\t a-zA-Z]*\)/& ldap/g'\
+        | sed 's/\(shadow:\)\([\t a-zA-Z]*\)/& ldap/g'\
+        | sed 's/\(group:\)\([\t a-zA-Z]*\)/& ldap/g' > /etc/nsswitch.conf.back
+    yes | cp -f /etc/nsswitch.conf.back /etc/nsswitch.conf
+    elif [ $SET_HOSTNAME == 2 ] || [ $SET_HOSTNAME == 3 ]; then
+	sed -i "s/passwd.*/passwd: files compat/g" /etc/nsswitch.conf
+	sed -i "s/group.*/group: files compat/g" /etc/nsswitch.conf
+    fi
+
+    LDAPSERVER=`awk '{if ($1 == "URI") {print $2}}' /etc/ldap.conf`;
+    if [ $SET_HOSTNAME == 2 ] || [ $SET_HOSTNAME == 3 ]; then
+    	LDAPSERVER=`echo $LDAPSERVER | sed 's/ldap:\/\/\(.*\)\//\1/'`
+    fi
+    LDAPBASE=`awk '{if ($1 == "BASE") {print $2}}' /etc/ldap.conf`;
+
+    if [ "$LDAPSERVER" == "" ]; then
+        echo "Could not read LDAP server name from /etc/ldap.conf"  >> $LOG_FILE
+        exit 1
+    fi
+    if [ "$LDAPBASE" == "" ]; then
+        echo "Could not read LDAP Base DN name from /etc/ldap.conf"  >> $LOG_FILE
+        exit 1
+    fi
+    if [ $SET_HOSTNAME == 1 ]; then
+	# RHEL family
+    	#echo "authconfig enablekrb5..."
+	authconfig --enablekrb5 --update
+	if [ $? != 0 ]; then
+		echo "authconfig enablekrb5 failed!" >> $LOG_FILE 2>&1
+        	exit 1
+    	fi
+
+    	#echo "authconfig enableldap..."
+    	authconfig --enableldap --ldapserver=$LDAPSERVER --ldapbasedn=$LDAPBASE --enableldaptls --update
+    	if [ $? != 0 ]; then
+        	echo "authconfig enabledldap failed!"  >> $LOG_FILE 2>&1
+        	exit 1
+    	fi
+
+    	#echo "authconfig disablelocauthorize ..."
+    	authconfig --disablelocauthorize --update
+    	if [ $? != 0 ]; then
+        	echo "authconfig disablelocauthorize failed!"  >> $LOG_FILE 2>&1
+        	exit 1
+    	fi
+
+    	#echo "restarting rpcgssd..."
+	chkconfig rpcgssd on
+    	service rpcgssd restart  >> $LOG_FILE 2>&1
+    	if [ $? != 0 ]; then
+        	echo "restarting rpcgssd failed!" >> $LOG_FILE
+        	exit 1
+    	fi
+
+    	#echo "restarting rpcidmapd..."
+	chkconfig rpcidmapd on
+    	service rpcidmapd restart  >> $LOG_FILE 2>&1
+    	if [ $? != 0 ]; then
+        	echo "restarting rpcidmapd failed!" >> $LOG_FILE
+        	exit 1
+    	fi
+    elif [ $SET_HOSTNAME == 2 ]; then
+	# SLES family (SLES 11)
+	
+	/sbin/yast2 kerberos pam enable ssh_support=yes ignore_unknown=yes verbose >> $LOG_FILE 2>&1
+	/sbin/yast2 kerberos summary  >> $LOG_FILE 2>&1
+	sed -i "s/debug.*/debug = true/g" $CONF_FILE
+        line=$(cat $CONF_FILE | grep ^external)
+        if [ "" == "$line" ]; then
+                insert_before_last "\texternal = sshd" "$CONF_FILE"
+        else
+                sed -i "s/external.*/external = sshd/g" $CONF_FILE
+        fi
+        line=$(cat $CONF_FILE | grep ^use_shmem)
+        if [ "" == "$line" ]; then
+                insert_before_last "\tuse_shmem = sshd" "$CONF_FILE"
+        else
+                sed -i "s/use_shmem.*/use_shmem = sshd/g" $CONF_FILE
+        fi
+        /sbin/yast2 kerberos summary  >> $LOG_FILE 2>&1
+
+	/sbin/yast2 ldap pam enable server=$LDAPSERVER base=$LDAPBASE tls=yes verbose >> $LOG_FILE 2>&1
+	/sbin/yast2 ldap summary  >> $LOG_FILE 2>&1
+
+	sed -i "s/pam_password.*/pam_password md5/g" $LDAP_CONF
+	line=$(cat /etc/ldap.conf | grep ^tls_cacertdir)
+        if [ "" == "$line" ]; then
+                echo "tls_cacertdir /etc/openldap/cacerts" >> $LDAP_CONF
+        else
+                sed -i "s/tls_cacertdir.*/tls_cacertdir $CACERT_DIR/g" $LDAP_CONF
+        fi
+	/sbin/yast2 ldap summary  >> $LOG_FILE 2>&1
+
+	#echo "restarting gssd..."
+	echo -n "stopping gssd"  >> $LOG_FILE 2>&1
+	stop_gssd
+	echo -n "starting gssd"  >> $LOG_FILE 2>&1
+        start_gssd || {
+		rc_status -v
+		echo -n "starting rpc.gssd failed!" >> $LOG_FILE
+                rc_exit
+        }
+        
+	echo -n "stopping idmapd"  >> $LOG_FILE 2>&1
+        stop_idmapd
+        echo -n "starting idmapd"  >> $LOG_FILE 2>&1
+        start_idmapd || {
+                rc_status -v
+                echo -n "starting rpc.idmapd failed!" >> $LOG_FILE
+                rc_exit
+        }
+    elif [ $SET_HOSTNAME == 3 ]; then
+        # SLES family (SLES 10)
+
+        /sbin/yast2 kerberos pam enable verbose >> $LOG_FILE 2>&1
+        /sbin/yast2 kerberos summary  >> $LOG_FILE 2>&1
+	sed -i "s/debug.*/debug = true/g" $CONF_FILE
+	line=$(cat $CONF_FILE | grep ^external)
+	if [ "" == "$line" ]; then
+		insert_before_last "\texternal = sshd" "$CONF_FILE"
+	else
+		sed -i "s/external.*/external = sshd/g" $CONF_FILE
+	fi
+	line=$(cat $CONF_FILE | grep ^use_shmem)
+        if [ "" == "$line" ]; then
+        	insert_before_last "\tuse_shmem = sshd" "$CONF_FILE"
+        else
+        	sed -i "s/use_shmem.*/use_shmem = sshd/g" $CONF_FILE
+        fi
+        /sbin/yast2 kerberos summary  >> $LOG_FILE 2>&1
+
+        /sbin/yast2 ldap configure server=$LDAPSERVER base=$LDAPBASE verbose >> $LOG_FILE 2>&1
+        
+	/sbin/yast2 ldap pam enable verbose >> $LOG_FILE 2>&1
+        /sbin/yast2 ldap summary  >> $LOG_FILE 2>&1
+        sed -i "s/ssl.*/ssl start_tls/g" $LDAP_CONF
+        sed -i "s/pam_password.*/pam_password md5/g" $LDAP_CONF
+        line=$(cat /etc/ldap.conf | grep ^tls_cacertdir)
+        if [ "" == "$line" ]; then
+        	echo "tls_cacertdir /etc/openldap/cacerts" >> $LDAP_CONF
+	else
+        	sed -i "s/tls_cacertdir.*/tls_cacertdir $CACERT_DIR/g" $LDAP_CONF
+        fi
+        sed -i "s/tls_checkpeer.*/tls_checkpeer no/g" $LDAP_CONF
+        /sbin/yast2 ldap summary  >> $LOG_FILE 2>&1
+
+	# Need to stop gssd service in order to restart idmapd one
+	# Bug 10818
+        echo "stopping gssd..." >> $LOG_FILE
+	service gssd stop >> $LOG_FILE 2>&1
+
+	echo "restarting idmapd..." >> $LOG_FILE
+        service idmapd restart  >> $LOG_FILE 2>&1
+        if [ $? != 0 ]; then
+                echo -n "restarting idmapd failed!" >> $LOG_FILE
+                exit 1
+        fi
+	chkconfig idmapd on  >> $LOG_FILE 2>&1
+
+        echo "starting gssd..." >> $LOG_FILE
+	service gssd start >> $LOG_FILE 2>&1
+	if [ $? != 0 ]; then
+                echo -n "starting gssd failed!" >> $LOG_FILE
+                exit 1
+        fi
+        chkconfig gssd on >> $LOG_FILE 2>&1
+    else
+	echo -n "Unknown Linux type!" >> $LOG_FILE
+	exit 1
+    fi
+
+    # echo success or fail
+    if [ $? == 0 ]; then
+    	# add to chkconfig list
+    	chkconfig mauinfs on
+
+	echo "Configure successful."
+    else
+	echo -n "Configure failed." >> $LOG_FILE 2>&1
+    fi
+}
+
+
+function start()  {
+    # Test if the mount path exists
+    if [ ! -d $MOUNT_PATH ]; then
+        mkdir $MOUNT_PATH
+    fi
+
+    # Test if the nfs server conf file exists
+    if [ ! -f $SERVER_FILE ]; then
+        echo "$SERVER_FILE not exists."
+        exit 1
+    fi
+
+    # mount Atmos through NFSv4 to Mountpath
+    if [ $SET_HOSTNAME == 1 ]; then
+	action $"Starting Mauinfs service" mount -t nfs4 -o sec=krb5 $(cat $SERVER_FILE):/ $MOUNT_PATH
+    elif [ $SET_HOSTNAME == 2 ] || [ $SET_HOSTNAME == 3 ]; then
+	echo -n "Starting Mauinfs service" 
+	hostname `cat /etc/HOSTNAME`
+	mount -t nfs4 -o sec=krb5 $(cat $SERVER_FILE):/ $MOUNT_PATH
+	rc_status -v
+    fi
+
+    [ $? -ne 0 ] && exit $?
+    touch /var/lock/subsys/mauinfs
+
+}
+
+function stop() {
+    if [ $SET_HOSTNAME == 1 ]; then
+	action $"Shutting down Mauinfs service"  umount $MOUNT_PATH
+    elif [ $SET_HOSTNAME == 2 ] || [ $SET_HOSTNAME == 3 ]; then
+	echo -n "Shutting down Mauinfs service"
+	umount $MOUNT_PATH
+	rc_status -v
+    fi
+
+#	[ $? -ne 0 ] && exit $?
+	[ $? -ne 0 ]
+	rm -rf /var/lock/subsys/mauinfs
+}
+
+function restart() {
+    stop
+    start
+}
+
+function status() {
+        echo "Mauinfs status:"
+	
+	# check the fs being mounted
+	mount | grep mauinfs
+	if [ $? != 0 ]; then
+		echo "Mauinfs is not mounted."
+	fi	
+}
+
+
+case "$1" in
+  configure)
+	configure
+	;; 
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  status)
+	status
+	;;
+  restart)
+	restart
+	;;
+  *)
+	echo $"Usage: mauinfs (configure|start|stop|status|restart)"
+	exit 1
+esac
+

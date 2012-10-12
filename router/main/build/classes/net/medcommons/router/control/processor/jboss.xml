@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<jboss>
+	<enterprise-beans>
+		<message-driven>
+			<ejb-name>RemoteCommandProcessorMDB</ejb-name>
+			<destination-jndi-name>queue/RemoteCommandQueue</destination-jndi-name>
+			<resource-ref>
+				<res-ref-name>java:/ConnectionFactory</res-ref-name>
+				<jndi-name>ConnectionFactory</jndi-name>
+			</resource-ref>
+		</message-driven>
+	</enterprise-beans>
+</jboss>

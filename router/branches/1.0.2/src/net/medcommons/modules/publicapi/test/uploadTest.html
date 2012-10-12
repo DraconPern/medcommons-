@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Test form for file upload </title>
+</head>
+<body>
+<form action="/router/updatePHR"
+enctype="multipart/form-data" method="post">
+<table>
+<tr>
+<td>
+Enter the transaction token:
+</td>
+<td>
+<input type="text" name="token" size="50">
+</td>
+</tr>
+<tr>
+<td>
+Enter the authorization token:
+</td>
+<td>
+<input type="text" name="auth" size="30">
+</td>
+</tr>
+
+
+<tr>
+<td>
+File
+</td>
+<td>
+<input type="file" name="document" size="100">
+</td>
+</tr>
+</table>
+
+<div>
+<input type="submit" value="Send">
+</div>
+</form>
+</body>

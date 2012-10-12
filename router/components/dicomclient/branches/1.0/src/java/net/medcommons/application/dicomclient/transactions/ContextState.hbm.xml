@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.medcommons.application.dicomclient.utils">
+<class name="net.medcommons.application.dicomclient.transactions.ContextState" table="ContextState">
+	<id name="id" column="OBJECT_ID">
+       <generator class="native"/>
+     </id>
+
+	
+	<property name="guid"/>
+	<property name="storageId"/>
+	<property name="cxpPort"/>
+	<property name="cxpHost"/>
+	<property name="cxpPath"/>
+	<property name="cxpProtocol"/>
+	<property name="accountId"/>
+	<property name="auth"/>
+	<property name="groupAccountId"/>
+	<property name="groupName"/>
+	<property name="gatewayRoot"/>
+
+    
+</class>
+</hibernate-mapping>

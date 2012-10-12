@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../Requirements/MedCommonsDocbookExtensions.dtd">
+<article>
+    <title> MedCommons Command Interpreter</title>
+    <articleinfo>
+        <invpartnumber>SS-0005</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                <date>April 17, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>
+                    <para>Initial Draft</para>
+                </revdescription>
+            </revision>
+        </revhistory>
+        <legalnotice>
+            <para>Copyright 2005 MedCommons, Inc.</para>
+        </legalnotice>
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para> This document describes the command interpreter used by the MedCommons system.
+            Repository and Enterprise Gateways have a command interpreter. </para>
+    </sect1>
+    <sect1>
+        <title/>
+        <para>
+            <itemizedlist>
+                <listitem>Register</listitem>
+                <listitem>Transfer</listitem>
+                <listitem>Delete</listitem>
+                <listitem>UpdateSoftware</listitem>
+                <listitem>Bootstrap Gateway</listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
+    <sect1>
+        <title>
+            <para>Platform Command Service</para>
+        </title>
+        <sect2>
+            <title>Data flow</title>
+            TBD. Have state machine defining
+            <orderedlist>
+                <listitem>How commands get to the command interpreter</listitem>
+                <listitem>How each one is executed</listitem>
+                <listitem>How state is send back up to the ARS for success/warning/failure</listitem>
+                <listitem>How commands are chained together in sequences (some failures mean that subsequent commands should not be executed)</listitem>
+            </orderedlist>
+            
+        </sect2>
+        
+        <sect2>
+            <title>
+                <para>Command Dictionary</para>
+            </title>
+            <para> Commands are defined by a MedCommons-controlled dictionary. Commands are atomic
+                (need to be more explicit here). <table frame="all" tocentry="1">
+                    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <tbody valign="top">
+                            <row>
+                                <entry>Command</entry>
+                                <entry>Arguments</entry>
+                                <entry>Description</entry>
+                            </row>
+                            <row>
+                                <entry>Copy</entry>
+                                <entry>Medcommons Object Identifier, Target MedCommons Node ID</entry>
+                                <entry>Copies data object to specified node using an internal MedCommons protocol (typically HTTP and/or WebDAV).</entry>
+                            </row>
+                            <row>
+                                <entry>Delete</entry>
+                                <entry>MedCommons Object Identifier</entry>
+                                <entry>Deletes data from node </entry>
+                            </row>
+                            <row>
+                                <entry>Exists</entry>
+                                <entry>MedCommons Object Identifier</entry>
+                                <entry>Returns True if data object exists on machine, false
+                                    otherwise. </entry>
+                            </row>
+                            <row>
+                                <entry>Log</entry>
+                                <entry/>
+                                <entry/>
+                            </row>
+                            <row>
+                                <entry>Notify</entry>
+                                <entry>Notification message, Notification target type, notification
+                                    target id</entry>
+                                <entry>Generates message based on the contents of the notification
+                                    message and the type of the target to the designated
+                                target.</entry>
+                            </row>
+                            <row>
+                                <entry>setServiceStatus</entry>
+                                <entry>name of service, status </entry>
+                                <entry>
+                                    Sets the state of a service. Typically the state is ON or
+                                    OFF.
+                                </entry>
+                            </row>
+                            <row>
+                                <entry>Transmit</entry>
+                                <entry>MedCommons Object Identifier, Target External Node Id</entry>
+                                <entry>Transmits data object to specified external node outside the MedCommons universe. 
+                                    This transfer mechanism must be appropriate for the target node (DICOM device, USB device, CD export, ..)
+                                </entry>
+                            </row>
+                            <row>
+                                <entry>UpdateSoftware</entry>
+                                <entry>name of service</entry>
+                                <entry>Updates the jar files for the specified service from a
+                                    central location.</entry>
+                            </row>
+                            <row>
+                                <entry>ValidateData</entry>
+                                <entry>MedCommons Object Identifier</entry>
+                                <entry>Calculates the hash value of the object on disk; returns True
+                                    if the object's hash matches its name, false otherwise
+                                    .</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </sect2>
+    </sect1>
+</article>

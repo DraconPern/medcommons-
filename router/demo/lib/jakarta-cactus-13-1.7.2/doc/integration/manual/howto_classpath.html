@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Setting the Cactus CLASSPATH</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Setting the Cactus CLASSPATH" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/manual/index.html">Manual</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Manual integration<ul>
+    
+<li>
+<a href="../.././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Guide</a>
+</li>
+    
+<li>
+<a href="../.././integration/manual/howto_classpath.html" title="Information on how to set up the classpath for running Cactus tests." class="currentPage">Classpath Setup</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Setting up Cactus Classpaths</h1>
+
+      
+<p>
+        You must understand that your Cactus tests are started by a JUnit
+        Test Runner (in the client JVM) and that the Cactus TestCase that you
+        have extended will connect to the Cactus Redirector (in the server
+        JVM), where your <code>testXXX()</code> methods will be executed. See
+        <a href="../.././how_it_works.html" title="High level view of the inner workings of Cactus.">How it works</a> to understand the
+        mechanism.
+      </p>
+
+      
+<p>
+        Please also check the <a href="../.././integration/index.html" title="Information on the various methods of running tests with Cactus.">TestRunner
+        Howto</a> tutorial which explains all the different ways to
+        start a JUnit Test Runner.
+      </p>
+
+      
+<div class="note">
+        
+<b>It is very important that you understand what files you need
+        to put in the client and server classpaths, as 99% of Cactus
+        errors come from an incorrect classpath !</b>
+      
+</div>
+
+      
+<div class="figure">
+<img alt="Classpaths" src="../.././images/classpath.jpg"></div>
+
+      
+<div class="section">
+<h2>Client side classpath</h2>
+
+        
+<p>
+          The Cactus tests are started by running a JUnit Test Runner (For
+          explanations on how JUnit works see the
+          <a href="http://junit.sourceforge.net" title="">JUnit web site</a>).
+          As pictured in figure 1, you need to have the following jars and
+          classes in your client side classpath:
+        </p>
+        
+<ul>
+          
+<li>
+            
+<b><code>junit.jar</code></b>: obviously this is needed
+            for the JUnit Test Runner and because the Cactus
+            <code>XXXTestCase</code> classes extend the JUnit
+            <code>org.junit.framework.TestCase</code> class.
+          </li>
+          
+<li>
+            
+<b><code>cactus.jar</code></b>: well, this is the
+            Cactus jar containing all Cactus classes,
+          </li>
+          
+<li>
+            
+<b>your test classes</b>: these are
+            your test classes that extend the Cactus <code>XXXTestCase</code>
+            classes,
+          </li>
+          
+<li>
+            
+<b><code>servlet.jar or j2ee.jar</code></b>: these are
+            the Servlet API / J2EE API interfaces. This
+            is needed on the client side classpath because your test cases
+            extend one or several of <code>XXXTestCase</code> which use class
+            variables that are Servlet / J2EE objects
+            (<code>HttpSevletRequest</code>, <code>PageContext</code>, ...).
+            You can get this jar either from your servlet engine or from the
+            <a href="http://java.sun.com" title="">Sun Web Site</a> (
+            <a href="http://java.sun.com/products/servlet/download.html" title="">
+            Servlet download page</a> or
+            <a href="http://java.sun.com/j2ee/download.html" title="">J2EE download
+            page</a>).
+          </li>
+          
+<li>
+            
+<b><code>httpclient.jar</code></b>: needed for
+            Cactus Cookie handling.
+          </li>
+          
+<li>
+            
+<b><code>commons-logging.jar</code></b>: Cactus uses
+            the Jakarta Commons Logging facade framework to provide seamless
+            Cactus logging using any existing Logging framework (Log4j,
+            LogKit, JDK 1.4 Logging, etc). It is also needed for Commons
+            HttpClient.
+          </li>
+          
+<li>
+            
+<b><code>logging framework jar</code>(optional)</b>: The
+            logging framework to use (Log4j jar, LogKit jar, etc). It is
+            optional as it is only needed for internal Cactus logging and in
+            addition, the Commons Logging framework provides a simple logger
+            that logs on the console.
+          </li>
+          
+<li>
+            
+<b><code>httpunit.jar</code></b>, <b>
+            <code>Tidy.jar</code></b> and <b>
+            <code>xerces.jar</code> (optional)</b>: only needed if you
+            wish to use
+            <a href="http://httpunit.sourceforge.net" title="">HttpUnit</a>
+            in your <code>endXXX()</code> methods (see the
+            <a href="../.././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">HttpUnit Howto</a> tutorial).
+            The 3 jars mentioned above are part of the HttpUnit distribution.
+          </li>
+          
+<li>
+            
+<b><code>aspectjrt.jar</code></b>:
+            <a href="http://www.eclipse.org/aspectj/" title="">AspectJ</a> runtime jar.
+          </li>
+        
+</ul>
+
+        
+<div class="note">
+          If you have the habit of using class variables for the classes
+          to test (as opposed to declaring them within the
+          <code>testXXX()</code> method), you'll also need to put your classes
+          under test in the client side classpath.
+        </div>
+
+        
+<p>
+          In addition to the above mentioned jars and classes, you may have
+          to put the <b><code>cactus.properties</code></b>
+          configuration file in your classpath (Only if you are using it to
+          configure Cactus of course). Details are described in the
+          <a href="../.././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Config Howto</a> tutorial).
+        </p>
+
+        
+<div class="note">
+          If you are using Log4J as the logging framework, you will also
+          need to put a <code>log4j.properties</code> Log4j configuration
+          file in your client side classpath (See the
+          <a href="../.././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Config Howto</a> tutorial).
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Server side classpath</h2>
+
+        
+<p>
+          The server side part is a webapp. It can be packaged as a .war file
+          or as expanded war. It should have the following structure, which
+          will ensure that the classpath is correct:
+        </p>
+
+        
+<ul>
+          
+<li>
+            
+<b><code>WEB-INF/lib/cactus.jar</code></b>: the
+            Cactus main jar,
+          </li>
+          
+<li>
+            
+<b><code>WEB-INF/lib/junit.jar</code></b>: this is
+            needed because the Cactus <code>XXXTestCase</code> extends
+            the JUnit <code>org.junit.framework.TestCase</code> class.
+          </li>
+          
+<li>
+            
+<b><code>WEB-INF/lib/aspectjrt.jar</code></b>:
+            <a href="http://www.eclipse.org/aspectj/" title="">AspectJ</a> runtime jar.
+          </li>
+          
+<li>
+            
+<b><code>WEB-INF/lib/commons-logging.jar</code></b>:
+            Cactus uses the Jakarta Commons Logging facade framework to provide
+            seamless Cactus logging using any existing Logging framework (Log4j,
+            LogKit, JDK 1.4 Logging, etc). It is also needed for Commons
+            HttpClient.
+          </li>
+          
+<li>
+            
+<b><code>WEB-INF/lib/logging framework jar</code>
+            (optional)</b>: The logging framework to use (Log4j jar,
+            LogKit jar, etc). It is optional as it is only needed for internal
+            Cactus logging and in addition, the Commons Logging framework
+            provides a simple logger that logs on the console.
+          </li>
+          
+<li>
+            
+<b><code>WEB-INF/classes/&lt;your test classes&gt;</code>
+            </b>: obviously as their <code>testXXX()</code> methods will
+            get executed in the container.
+          </li>
+          
+<li>
+            
+<b><code>WEB-INF/classes/&lt;your classes under test&gt;</code>
+            </b>: will be called by your test classes.
+          </li>
+        
+</ul>
+
+       
+<div class="note">
+          If you have several webapps that use cactus you can put all Cactus
+          jars in a place loaded by your container System classloader (provided
+          your container correctly sets the Context classloader). The location
+          is container-dependent; for example for Tomcat 4.x, you can put the
+          jars in <code>TOMCAT_HOME/common/lib</code>.
+        </div>
+
+        
+<div class="note">
+          If you are using Log4J as the logging framework, you will also
+          need to put a <code>log4j.properties</code> Log4j configuration
+          file in your server side classpath (usually in
+          <code>WEB-INF/classes</code>).
+        </div>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

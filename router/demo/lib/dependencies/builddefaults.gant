@@ -1,0 +1,186 @@
+/**
+ * Standard MedCommons Component Build Script
+ *
+ * This script provides targets that do all the normal operations
+ * for a standard component.  The component needs to satisfy 
+ * the following layout:
+ *
+ *   src              - source files
+ *   ivy-settings.xml - standard template, same for all projects
+ *   build.number     - svn controlled properties file with single build.number 
+ *                      property, starting at 0
+ *   ivy.xml          - contains component dependencies
+ *   build.gant       - component build script (includes this one).
+ *
+ * When run, the default build script will create directories:
+ *
+ *   lib              - directory for dependencies (will be created, libs downloaded by ivy)
+ *   dist             - output jar files created here
+ *
+ * The build.gant for the component needs to include the following 
+ * boilerplate code to kick start the build:
+ *
+ *   // Import ivy tools and retrieve dependencies
+ *   includeTool << gant.tools.Ivy
+ *   ant.property(file:'build.properties')
+ *   ant.property(name:'mc.ivy.repo',value:"${System.properties['user.home']}/.mc")
+ *   ivy.settings(file: 'ivy-settings.xml')
+ *   ivy.retrieve(pattern:'lib/[artifact].[ext]',sync:'true')
+ *
+ *   // Get default MedCommons build targets
+ *   includeTargets << new File('lib/builddefaults.gant')
+ *
+ * The default name for the component is derived from the directory
+ * or the parent directory.  To customize the name, define the variable
+ * COMPONENT_NAME in your script.  
+ *
+ * You can also define variables 
+ *
+ * MAJOR_REVISION=<Major revision>
+ * MINOR_REVISION=<Minor revision>
+ *
+ * To reflect the version of the component (defaults are 1 and 0)
+ *
+ **/
+
+// Read the ivy file to figure out the module
+def ivyXml = new XmlSlurper().parse('ivy.xml')
+COMPONENT_NAME = ivyXml.info.@module.text()
+try {
+  if(TESTS)
+    println "Tests are enabled"
+}
+catch(def e) { 
+  TESTS=new File('test-src').exists() 
+}
+
+MAJOR_VERSION = '1'
+MINOR_VERSION = '0'
+
+def properties(String fn) {
+  Properties p = new Properties()
+  if(new File(fn).exists()) {
+    p.load(new FileInputStream(fn))
+  }
+  return p
+}
+
+def getBuildNumber() {
+  // Read build.properties
+  def props = properties('build.properties')
+  def bnf = properties('build.number')
+  def buildNumber = bnf['build.number'] as BigInteger // groovy bug requires big int
+  println "Loaded build number ${buildNumber}"
+  if(props['build.buildnumber.disable']!='true') {
+    buildNumber++
+    bnf['build.number'] = buildNumber as String
+    bnf.store(new FileOutputStream('build.number'),"Build Number")
+  }
+  return buildNumber;
+}
+
+def buildNumber = null
+target(buildnumber:'load and increment build number') {
+  buildNumber = getBuildNumber()
+  println "Using build number ${buildNumber}"
+}
+
+target(compile: 'compile source files' ) {
+
+  println """
+  ===========================================
+
+   Compiling $COMPONENT_NAME
+
+  ===========================================
+
+  """
+  ant.mkdir(dir:'build/classes')
+  ant.javac(srcdir: 'src', compiler: 'modern', debug: 'true', target: '1.5', destdir: 'build/classes') {
+    classpath {
+      fileset(dir: 'lib') {
+        include(name:'**/*.jar')
+      }
+    }
+  }
+}
+
+target( dist: 'create jar files') {
+  depends(compile)
+  ant.mkdir(dir:'build/dist');
+
+  if(!COMPONENT_NAME)
+    throw new IllegalArgumentException("""
+  ERROR:  No MedCommons component name defined.  Please set a component name for this build
+          using code such as:
+
+            COMPONENT_NAME = <name of your component>
+  """)
+
+  ant.jar(destfile: "build/dist/"+COMPONENT_NAME+".jar", basedir: 'build/classes')
+}
+
+
+if(TESTS) {
+  target(tests: 'run tests') {
+    depends('compile')
+
+    mkdir(dir: 'build/test-classes')
+    ant.groovyc(srcdir: 'test-src', destdir: 'build/test-classes') {
+      classpath {
+        pathelement(location: 'build/classes')
+        fileset( dir: 'lib' ) {
+          include( name: '*.jar' )
+        }
+      }
+      javac(source : '1.5' , target : '1.5' , debug : 'on') {
+        classpath {
+          pathelement(location: 'build/classes')
+          fileset(dir: 'lib' ) {
+            include(name: '*.jar' )
+          }
+        }
+      }
+    }
+
+    mkdir(dir: 'test_results')
+    junit(printsummary: 'yes',
+          showoutput: 'no',
+          fork: 'yes',
+          haltonfailure: 'yes') {
+            classpath {
+                pathelement(location: 'build/classes')
+                pathelement(location: 'build/test-classes')
+                fileset(dir: 'lib') {
+                    include(name: '*.jar')
+                }
+            }
+            formatter (type: 'plain')
+            batchtest(todir: 'test_results') { 
+                fileset(dir: "build/test-classes") { 
+                  include(name: "**/*Test.class") 
+                } 
+            } 
+    }
+    
+  }
+}
+
+target(publish: 'publish new version of this component to local repository') {
+  depends(clean,dist,buildnumber)
+
+  if(TESTS) {
+    depends(tests)
+  }
+
+  delete(file:"build/dist/ivy.xml")
+  ivy.publish(resolver:"public",pubrevision:"${MAJOR_VERSION}.${MINOR_VERSION}.${buildNumber}",overwrite:"true") {
+    artifacts(pattern:"build/dist/[artifact].[ext]")
+  }
+}
+
+target(clean: 'remove all build products') {
+  delete(dir:'build')
+}
+
+setDefaultTarget(dist)

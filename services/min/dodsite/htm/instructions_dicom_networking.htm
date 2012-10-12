@@ -1,0 +1,105 @@
+<div id="ContentBoxInterior" mainTitle='DICOM Networking'>
+<div id="doc-contents"><b>DICOM Networking<br>
+</b><br>
+<div style="text-align: left;">
+<div id="l8:h" style="text-align: left;">
+<div id="lhqz" style="text-align: left;">
+<div id="vv.d" style="text-align: left;"><i><b><font
+	size="3"> 1 - Get the DICOM parameters for your workstation or
+PACS<br>
+</font></b></i><br>
+<ul style="margin-left: 40px;">
+	<li>Each system hides these differently. You may need to contact
+	your PACS administrator.</li>
+	<li>The three parameters to remember are:</li>
+	<ul>
+		<li><b>AETitle</b>&nbsp; (e.g.: OSIRIX_AG-M_ADRI)<br>
+
+		</li>
+		<li><b>Port</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (e.g.: 11112)</li>
+		<li><b>IP Address</b> or Host Name&nbsp;&nbsp; (e.g.:
+		192.168.101.38)<br>
+		</li>
+	</ul>
+	<li>Many PACS and some workstations do not accept DICOM from
+	strangers.<br>
+
+	</li>
+	<ul>
+		<li>They will need to be configured with the DICOM parameters of
+		the DDL.</li>
+		<li>These parameters are displayed by the Configure DDL screen as
+		Hostaddress, dicomLocalAeTitle, dicomLocalPort (see Fig 8).<br>
+		</li>
+	</ul>
+</ul>
+<br>
+<div id="laqt" style="text-align: left;"><img
+	src="images/ddv3wjrd_12dthfcqfd_b.png"
+	style="width: 640px; height: 228.066px;"><br>
+<br>
+<br>
+</div>
+
+<hr class="pb">
+<font size="3">&nbsp;</font><i><b><font size="3"><br>
+2 - Select Configure DDL<br>
+</font></b></i><br>
+<ul style="margin-left: 40px;">
+	<li>DDL installation and startup are automatic and take about a
+	minute. Check and accept any security warnings that pop up.</li>
+	<ul>
+		<li>If installation seems to take too long, check your desktop
+		for hidden Java windows asking for permission.<br>
+		</li>
+	</ul>
+	<li>If there are already Orders on the queue the DDL Poller will
+	grab them before you have a chance to configure DICOM. This will be
+	improved in a future release.</li>
+
+	<li>The DDL icon will be in the system tray (PC) or the system bar
+	(Mac).<br>
+	</li>
+</ul>
+<br>
+<div id="jci4" style="text-align: left;"><img
+	src="images/ddv3wjrd_11drjdz4c7_b.png"
+	style="width: 193px; height: 203px;"><br>
+<br>
+<br>
+<hr class="pb">
+<font size="3">&nbsp;<i><b><br>
+3 - Set the DICOM Remote Parameters to match your workstation or PACS
+(from Step 1)</b></i></font><br>
+<br>
+<div style="margin-left: 40px;">
+<ul>
+	<li>Enter the parameters<br>
+	</li>
+	<ul>
+		<li><b>dicomRemoteAeTitle</b> gets AETitle</li>
+		<li><b>dicomRemoteHost</b> gets IP Address<br>
+		</li>
+		<li><b>dicomRemotePort</b> gets Port</li>
+	</ul>
+	<li>Set the exportMethod</li>
+	<ul>
+		<li><b>CSTORE</b></li>
+	</ul>
+	<li>Click <b>Update Configuration</b></li>
+	<li>When the page refreshes, DICOMEcho should report success.<br>
+	</li>
+</ul>
+<br>
+</div>
+<div id="cnrk" style="text-align: left;"><img
+	src="images/ddv3wjrd_14gwtdzhdw_b.png"
+	style="width: 640px; height: 696.423px;"><br>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>MedCommons HomePages</string>
+
+		<key>leftLineStyle</key>
+		<string>narrow</string>
+
+		<key>scenes</key>
+		<array>
+
+			<dict>
+
+				<key>scene</key>
+				<string>0</string>
+
+
+				<key>name</key>
+				<string>Realms</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Realms</string>
+
+				<key>largetitle</key>
+				<string>Realms</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Main Web Site</string>
+						<key>height</key>
+						<string>320</string>
+						<key>url</key>
+						<string>
+							http://www.medcommons.net/
+						</string>
+						<key>label</key>
+						<string>Main Site</string>
+						<key>blabel</key>
+						<string>
+						http://www.medcommons.net/
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://www.medcommons.net/
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>CI Sign On</string>
+						<key>height</key>
+						<string>320</string>
+
+						<key>label</key>
+						<string>CI Sign Ons</string>
+						<key>url</key>
+						<string>
+							http://ci.myhealthespace.com
+						</string>
+						<key>blabel</key>
+						<string>
+							http://ci.myhealthespace.com
+						</string>
+						<key>imageurl</key>
+
+						<string>
+							http://ci.myhealthespace.com
+						</string>
+					</dict>
+					
+					<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Portal Sign On</string>
+						<key>height</key>
+						<string>320</string>
+
+						<key>label</key>
+						<string>Portal Sign On</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net
+						</string>
+						<key>blabel</key>
+						<string>
+							http://portal.medcommons.net
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net
+						</string>
+					</dict>
+
+		<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>HealthURL Sign On</string>
+						<key>height</key>
+						<string>320</string>
+
+						<key>label</key>
+						<string>HealthURL Sign On</string>
+						<key>url</key>
+						<string>
+							http://healthurl.medcommons.net
+						</string>
+						<key>blabel</key>
+						<string>
+							http://healthurl.medcommons.net
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://healthurl.medcommons.net
+						</string>
+					</dict>
+					
+							<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Jane H</string>
+						<key>height</key>
+						<string>320</string>
+
+						<key>label</key>
+						<string>Janes H</string>
+						<key>url</key>
+						<string>
+			https://healthurl.medcommons.net/router/currentccr?a=1013062431111407&amp;aa=1117658438174637&amp;g=3642665a324059089d0b989286eb9a9ced046e54&amp;t=&amp;m=&amp;c=&amp;auth=c3faf3705e0e98c0984d1f86b96a789f3dba2638&amp;at=c3faf3705e0e98c0984d1f86b96a789f3dba2638
+		</string>
+						<key>blabel</key>
+						<string>
+			https://healthurl.medcommons.net/router/currentccr?a=1013062431111407&amp;aa=1117658438174637&amp;g=3642665a324059089d0b989286eb9a9ced046e54&amp;t=&amp;m=&amp;c=&amp;auth=c3faf3705e0e98c0984d1f86b96a789f3dba2638&amp;at=c3faf3705e0e98c0984d1f86b96a789f3dba2638
+		</string>
+						<key>imageurl</key>
+					<string>
+			https://healthurl.medcommons.net/router/currentccr?a=1013062431111407&amp;aa=1117658438174637&amp;g=3642665a324059089d0b989286eb9a9ced046e54&amp;t=&amp;m=&amp;c=&amp;auth=c3faf3705e0e98c0984d1f86b96a789f3dba2638&amp;at=c3faf3705e0e98c0984d1f86b96a789f3dba2638
+		</string>
+					</dict>
+				</array>
+
+			</dict>
+
+
+
+		</array>
+	</dict>
+</plist>

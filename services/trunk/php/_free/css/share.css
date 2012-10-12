@@ -1,0 +1,98 @@
+ul.toolbox_body{
+	position:relative;
+	display:block;	
+	
+}
+
+ul.toolbox_body, ul.toolbox_body ul {
+	margin: 0px 0px;
+	padding: 0px 0px;	
+	list-style-type: none;
+}
+
+ul.toolbox_body ul{
+	display:none;	
+}
+
+ul.toolbox_body a{
+	padding-left: 0px;
+	text-decoration:none;
+	/*color: blue;*/
+}
+
+ul.toolbox_body ul{
+	position:absolute;
+	margin-left: 20px;
+	border: 1px solid #cdcdcd;
+	font-size: .9em;
+	padding: 0px 5px 10px 3px;
+	top: 15px;
+	right: -18px;
+	background-color: white;
+	z-index: 99;
+	overflow:hidden;
+}
+*html ul.toolbox_body ul{
+}
+
+ul.toolbox_body ul li a{
+	display:relative;
+	display:block;	
+	padding-left: 25px;
+	text-decoration:none;
+	margin-left: 5px;	
+	margin: 0 0;
+}
+ul.toolbox_body li.share ul li{
+	padding: 2px 0;	
+	margin: 0 0;		
+	display:block;
+}
+
+
+ul.toolbox_body li.addthisto{
+	
+}
+
+
+ul.toolbox_body ul li a:hover, ul.toolbox_body ul li a:focus{
+	background-color:#cdcdcd;
+}
+
+ul.toolbox_body li.cdctv a{
+		background:transparent url('../images/sys_images/widget/icon_cdctv.gif') 0 center no-repeat;
+}
+ul.toolbox_body li.email a{
+	background:transparent url('../images/sys_images/widget/icon_email.gif') 0 center no-repeat;
+}
+ul.toolbox_body li.print a{
+	background:transparent url('../images/sys_images/widget/icon_print.gif') 0 center no-repeat;
+}
+ul.toolbox_body li.subscribe a{
+	background:transparent url('../images/sys_images/widget/icon_subscribe.gif') 0 center no-repeat;
+}
+ul.toolbox_body li.pdf a{
+	background:transparent url('../images/sys_images/widget/icon_pdf.gif')  0 center no-repeat;
+}
+ul.toolbox_body li.podcast a{
+	background:transparent url('../images/sys_images/widget/icon_podcast.gif') 0 center no-repeat;
+}
+ul.toolbox_body li.rss a{
+	background:transparent url('../images/sys_images/widget/icon_rss.gif') 0 center no-repeat;
+}
+/*
+ul.toolbox_body li.share a{
+	background:transparent url('../images/sys_images/widget/icon_share.gif') 0 center no-repeat;
+}
+*/
+
+
+
+ul.toolbox_body li.favorites a{ background:transparent url('../images/sys_images/widget/favorites.png') 0 center no-repeat;}
+ul.toolbox_body li.delicious a{ background:transparent url('../images/sys_images/widget/delicious.png') 0 center no-repeat;}
+ul.toolbox_body li.digg a{ background:transparent url('../images/sys_images/widget/digg.png') 0 center no-repeat;}
+ul.toolbox_body li.facebook a{ background:transparent url('../images/sys_images/widget/facebook.gif') 0 center no-repeat;}
+ul.toolbox_body li.google a{ background:transparent url('../images/sys_images/widget/goog.png') 0 center no-repeat;}
+ul.toolbox_body li.technorati a{ background:transparent url('../images/sys_images/widget/technorati.png') 0 center no-repeat;}
+ul.toolbox_body li.yahoo a{ background:transparent url('../images/sys_images/widget/yahoo-myweb.png') 0 center no-repeat;} 
+

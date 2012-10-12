@@ -1,0 +1,317 @@
+body {
+		margin:10px 0px 10px 10px;
+		background:#66CCFF;		
+		}
+	A 		{ color: #000; text-decoration: none; }
+	A:link	{color: #000; text-decoration: underline;  }
+	A:visited	{color: #000; text-decoration: underline;  }
+	A:active	{color: #000; text-decoration: underline;  }
+	A:hover	{ color: #000; background-color:#FFF; }
+
+
+	h1, h2, h3 {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#banner {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#FFF;
+		font-weight:normal;	
+  		padding:0px;
+
+		}
+
+	.description {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color: #000;
+		font-size: 10px;
+  		text-transform:none;	
+		}
+				
+	#content {
+		position:absolute;
+		color: #FFF;
+		margin-top:0px;
+		margin-right:20px;
+		margin-bottom:20px;
+		margin-left:215px;
+		width: 681px;
+		}
+
+	#container {
+		background:#FFF;	
+		margin-left:0px;
+		width: 896px;
+		}
+
+
+	#links {	
+		padding:0px;				
+		width:200px;	
+		background:#66CCFF;			
+		}
+		
+	.blog {
+  		padding:0px;
+		background:#90D9FD; 
+		}
+
+	.blogbody {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		padding:10px;
+  		background:#90D9FD;
+		}
+
+	.blogbody a            { color: #000; text-decoration: none; }
+	.blogbody a:link      { color: #000; text-decoration: underline;  }
+	.blogbody a:visited  { color: #000; text-decoration: underline;  }
+	.blogbody a:active   { color: #000; text-decoration: underline;  }
+	.blogbody a:hover    { color: #000; background-color:#FFF; }
+
+	.title	{
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-size: 10px;
+		font-weight:normal;
+		color: #FFF;
+		background-color: #66CCFF;
+		letter-spacing: .3em;	
+  		text-transform:uppercase;
+		}			
+
+	#menu {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		margin-bottom:0px;
+		background:#66CCFF;
+		text-align:left;
+  		text-transform:uppercase;
+		}		
+
+	.date	{ 
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-size: 9px;
+		font-weight:normal;
+		color: #000; 
+		margin-bottom:0px;
+		}			
+		
+	.posted	{ 
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-size: 9px; 
+		color: #000; 
+		margin-bottom:0px;
+		}
+		
+		
+	.calendar {
+		width: 200px;
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		background:#66CCFF;
+  		padding:0px;
+              text-align:left;
+		}
+	
+	.calendarhead {	
+		width: 200px;
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		padding:0px;
+  		margin-top:10px;
+		letter-spacing: .3em;
+  		background:#66CCFF;
+  		text-transform:uppercase;
+              text-align:left;		
+		}			
+		
+	.side {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		background:#66CCFF;
+ 		padding:0px;		
+  		margin-top:10px;		
+		}	
+		
+	.sidetitle {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#FFF;
+		font-size: 10px;
+		font-weight:normal;
+  		padding:0px;
+  		margin-top:15px;
+		letter-spacing: .3em;
+  		background:#90D9FD;
+  		text-transform:uppercase;		
+		}		
+	
+	.syndicate {
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-size: 10px;		
+  		padding:0px;
+  		margin-top:5px;
+  		background:#66CCFF;  		
+ 		}	
+		
+	.powered {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;	
+		font-weight:normal;	
+		text-transform:uppercase; 
+		padding:0px;
+		margin-top:20px;
+		letter-spacing: .3em;					
+  		background:#66CCFF;		
+		}	
+		
+	
+	.comments-body {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		background:#90D9FD;
+  		line-height:140%;
+  		padding:10px;		
+ 		border-bottom:1px dotted #999; 					
+		}		
+
+	.comments-post {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		background:#90D9FD;		
+		}	
+			
+	
+	.trackback-url {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		background:#66CCFF;
+  		line-height:140%;
+ 		padding:0px;		
+ 		border:1px dotted #999; 					
+		}
+
+
+	.trackback-body {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		background:#66CCFF;
+  		line-height:140%;
+ 		padding-bottom:10px;
+  		padding-top:10px;		
+ 		border-bottom:1px dotted #999; 					
+		}		
+
+	.trackback-post {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;
+		font-weight:normal;
+  		background:#66CCFF;		
+		}	
+
+		
+	.comments-head	{ 
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-size: 10px; 
+		color: #000; 
+		margin-top:20px;
+		font-weight:normal;
+  		background:#66CCFF;		
+		}		
+
+	#banner-commentspop {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#FFF;
+		font-size: 10px;
+		font-weight: normal;		
+  		background:#66CCFF;
+  		padding-left:0px;
+  		padding-right:0px;
+  		padding-top:0px;
+  		padding-bottom:0px;  		  		  				}
+
+	.bvs {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;	
+		font-weight:normal;	
+		text-transform:uppercase; 
+		padding:0px;
+		margin-top:0px;
+		letter-spacing: .3em;					
+  		background:#66CCFF;		
+		}	
+
+
+	.bvs2 {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#000;
+		font-size: 10px;	
+		font-weight:normal;	
+		text-transform:uppercase; 
+		padding:0px;
+		margin-top:0px;
+		letter-spacing: .3em;					
+  		background:#66CCFF;		
+		}	
+
+	.bvs3 {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#FFF;
+		font-size: 10px;	
+		font-weight:normal;	
+		text-transform:uppercase; 
+		padding:0px;
+		margin-top:0px;
+		letter-spacing: .3em;					
+  		background:#90D9FD;		
+		}	
+
+
+.categories {
+		font-family: arial, helvetica, verdana, sans-serif;
+		color:#FFF;
+		font-size: 10px;
+		font-weight:normal;
+  		padding:0px;
+  		margin-top:0px;
+		letter-spacing: .3em;
+  		background:#90D9FD;
+  		text-transform:uppercase;		
+		}		
+
+.button {
+  		background:#FFF;
+ 		padding-left:0px;
+  		padding-right:0px;
+  		padding-top:0px;
+  		padding-bottom:0px;  			
+		}	
+
+.weather {
+  		background:#FFF;
+ 		padding-left:0px;
+  		padding-right:0px;
+  		padding-top:10px;
+  		padding-bottom:10px;  			
+		}

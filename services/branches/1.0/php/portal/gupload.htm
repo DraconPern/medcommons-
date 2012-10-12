@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Contact and send a CD to Consultant</title>
+        <link rel="shortcut icon" href="favicon.gif" type="image/gif"/>
+<meta name="viewport" content="minimum-scale=0.6, width=device-width, maximum-scale=1.6, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="mcportal.png">
+    <link rel="stylesheet" type="text/css"  href="/css/medCommonsStyles.css"/>
+ <link rel="stylesheet" type="text/css"  href="gstyle.css"/>
+</head>
+<body>
+<img src='$$$logourl$$$' />
+<div class='crumbs'><span id=hospital>$$$practice$$$</span>&nbsp;&gt;&nbsp;<span id=program>$$$program$$$</span>
+&gt; $$$crumbs$$$
+</div>
+<h3>Contact and send a CD to Consultant $$$consultant$$$</h3>
+<form id=payment method=post action='$$$action$$$'>
+<input type=hidden value='$$$programind$$$' name=p />
+<input type=hidden value='$$$practiceind$$$' name=h />
+	<div class='_errormainclass' >_errormaintext</div> 
+	<fieldset>
+		<legend>Your Contact Details</legend>
+		<ol>
+			<li>
+				<label for=Hospital>Hospital</label>
+				<input id=Hospital name=Hospital type=text value='$$$defaultHospital$$$' >
+			</li>
+			<li>
+				<label for=Ref>Ref Physician</label>
+				<input id=Ref name=Ref type=text value='$$$defaultRefPhys$$$'>
+			</li>
+			<li>
+				<label for=Email>Email Contact</label>
+				<input id=Email name=Email type=email value='$$$defaultEmailContact$$$' >
+			</li>
+			</ol>
+			</fieldset>
+				<fieldset>
+		<legend>Clinical History</legend>
+		<ol>
+			<li>
+					<label for="custom_07">Clinical History</label>
+					<textarea rows=6 cols=40  name="Clinical" id="Clinical" /></textarea>
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>CellPhone</legend>
+		<ol>
+				<li>
+				<label for=Phone>Phone Number</label>
+				<input id=Phone name=Phone type=text value='$$$defaultPhone$$$'>				
+			</li>
+					<li>
+				<fieldset>
+						<ol>
+					   <li>
+							<input id=Call name=radio-call value='1' type=radio checked="checked" >
+							<label for=Call>Call</label>
+						</li>
+						<li>
+							<input id=Text name=radio-call value='2' type=radio>
+							<label for=Text >Text</label>
+						</li>
+						<li>
+							<input id=Both name=radio-call value='3' type=radio>
+							<label for=Both >Both</label>
+						</li>
+					</ol>
+				</fieldset>
+			</li>
+			
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Video Conference</legend>
+		<ol>
+			<li>
+				<label for=Video>Video URL</label>
+				<input id=Video name=Video type=text value='$$$defaultVideoURL$$$'>
+			</li>
+			<li>
+				<fieldset>
+				
+					<ol>
+					   <li>
+							<input id=Skype name=radio-video value='1' type=radio>
+							<label for=Skype>Skype</label>
+						</li>
+						<li>
+							<input id=ooVoo name=radio-video value='2' type=radio>
+							<label for=ooVoo >ooVoo</label>
+						</li>
+					</ol>
+				</fieldset>
+			</li>
+		</ol>
+	</fieldset>
+	
+
+	<fieldset>
+		<button type=submit>$$$buttonlabel$$$</button>
+	</fieldset>
+</form>
+</body>
+</html>

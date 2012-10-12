@@ -1,0 +1,35 @@
+<server>
+  <mbean code="net.sf.hibernate.jmx.HibernateService" name="jboss.jca:service=HibernateFactory,name=HibernateFactory">
+      <depends>jboss.jca:service=RARDeployer</depends>
+      <!-- Hsqldb 
+      <depends>jboss.jca:service=LocalTxCM,name=DefaultDS</depends>
+      <depends>jboss:service=Hypersonic</depends>
+-->
+      <!-- Derby -->
+      <depends>jboss.jca:service=LocalTxCM,name=DerbyDS</depends>
+
+      <depends>jboss.web:service=WebServer</depends>
+
+      <attribute name="MapResources">net/medcommons/router/services/dicom/util/dicom.hbm.xml,net/medcommons/router/services/transfer/order.hbm.xml</attribute>
+      <attribute name="JndiName">java:/hibernate/HibernateFactory</attribute>
+
+      <!-- Hsqldb 
+      <attribute name="Datasource">java:/DefaultDS</attribute>
+      <attribute name="Dialect">net.sf.hibernate.dialect.HSQLDialect</attribute>
+-->
+      <!-- Derby -->
+      <attribute name="Datasource">java:/DerbyDS</attribute>
+      <attribute name="Dialect">net.sf.hibernate.dialect.DerbyDialect</attribute>
+
+      <!-- TODO: get stuff working with jboss transactions  -->
+      <!--
+      <attribute name="TransactionStrategy">net.sf.hibernate.transaction.JTATransactionFactory</attribute>
+      <attribute name="TransactionManagerLookupStrategy">
+          net.sf.hibernate.transaction.JBossTransactionManagerLookup
+        </attribute>
+        <attribute name="UserTransactionName">java:/ClientUserTransaction</attribute>
+        -->
+      <attribute name="UseOuterJoin">false</attribute>
+      <attribute name="ShowSql">false</attribute>
+  </mbean>
+</server>

@@ -1,0 +1,34 @@
+P {
+  FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+a {
+  FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+
+a:link { 
+  color: blue;
+}
+
+a:visited { 
+  color: purple;
+}
+
+
+.currentPage {
+  FONT-WEIGHT: bold; 
+  BORDER-BOTTOM: solid black
+}
+    
+/* ssadedin: added to stop image links showing borders */
+img
+{
+  border-style: none;
+}
+
+.copyrighttext {
+  FONT-SIZE: 9px; 
+  FONT-FAMILY: Arial
+}
+

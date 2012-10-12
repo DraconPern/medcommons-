@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!--
+  This version of the config file is loaded and used by junit tests
+ -->
+<beans>
+
+  <bean id="systemServicesFactory" class="net.medcommons.modules.services.client.rest.RESTProxyServicesFactory">
+    <constructor-arg><value>token:Gateway</value></constructor-arg>
+  </bean>
+
+  <bean id="nodeKeyProvider" class="net.medcommons.modules.services.client.rest.TestNodeKeyProvider">
+  </bean>
+
+</beans>

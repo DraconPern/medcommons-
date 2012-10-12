@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!--
+
+ Copyright 2006; Some Rights Reserved
+ 
+ This sample program is licensed under the Creative Commons Attribution
+ license. For more details see:
+ http://creativecommons.org/licenses/by/2.5/
+ We request attribution to both MedCommons and the CCR Accelerator group.
+ -->
+<!--
+Notes for building client:
+- Use JDK 1.5 or later (may work in earlier versions - but it has only been 
+  tested with 1.5.
+- Use Ant 1.6.5 or later.
+- Install Apache Axis jar files in the ant/lib directory. Copy of *all* of the
+  jar files in the lib/apache/axis directory in this project into the ant/lib 
+  directory. This is required for the axis ant tasks to work.
+
+  
+-->
+<project name="cxpclient" default="world">
+
+	<!-- === globals ======================================================== -->
+
+	<property name="build.compiler" value="modern" />
+
+	<!-- optional user settable properties -->
+	<property file="build.properties" />
+
+	
+
+	<path id="compile.path">
+		<pathelement location="${build.compile.dir}" />
+
+		<fileset dir="lib/axis/">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="lib/xerces-2_7_1/">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	
+	
+
+	
+	<!-- 
+		Note: need to place all Axis jars in the ant/lib directory 
+		for this to work.
+	-->
+	<path id="axis.classpath">
+			<fileset dir="lib/axis/">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+	<taskdef resource="axis-tasks.properties"
+	  classpathref="axis.classpath" />
+	<!-- === world ========================================================== -->
+
+	<target name="world" depends="compile" />
+
+	
+
+	<!--
+		Create client-side Java classes from WSDL
+	-->
+	<target name="create-cxp-from-wsdl">
+		<mkdir dir="build/source/"/>
+		
+		<axis-wsdl2java output="build/source" 
+			testcase="true" 
+			verbose="true" 
+			serverside="false" 	
+			url="etc/wsdl/CXP_10.wsdl"
+			>
+			<mapping namespace="urn:astm-org:ccr" package="ccr" />
+		</axis-wsdl2java>
+		
+
+	</target>
+	
+
+	<target name="compile" depends = "create-cxp-from-wsdl">
+			<mkdir dir="build/classes/" />
+			
+			<javac srcdir="build/source/" destdir="build/classes/" debug="true">
+						<classpath refid="compile.path" />
+					</javac>
+			<javac srcdir="src/" destdir="build/classes/" debug="true">
+				<classpath refid="compile.path" />
+			</javac>
+			
+		</target>
+	
+<!-- === clean ========================================================== -->
+
+<target name="clean">
+	<delete dir="build/" />
+</target>
+
+</project>

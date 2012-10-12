@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Webapp Eclipse plug-in</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Webapp Eclipse plug-in" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/eclipse/index.html">Eclipse</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Eclipse Integration<ul>
+    
+<li>
+<a href="../.././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Eclipse Plugins<ul>
+    
+<li>
+<a href="../.././integration/eclipse/runner_plugin.html" title="Information about the Cactus Runner plugin for Eclipse.">Cactus Runner Plugin</a>
+</li>
+    
+<li>
+<a href="../.././integration/eclipse/webapp_plugin.html" title="Information about the Cactus Web Application plugin for Eclipse." class="currentPage">Web Application Plugin</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Developers<ul>
+    
+<li>
+<a href="../.././integration/eclipse/development.html" title="Described how to set up an Eclipse development environment for working on the Cactus plugins for Eclipse.">Development environment</a>
+</li>
+  
+</ul>
+</li>
+  
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+    
+<div class="section">
+<h1>Overview</h1>
+      
+<p>
+        The Webapp 
+        <a href="http://www.eclipse.org" title="">Eclipse</a>
+        plug-in is intended for war packaging of a web application.
+        It can only be used by another plug-in, i.e. it does not provide any action
+        to users for the moment.
+      </p>
+      
+<li>
+        
+<a href="#features">Features</a>
+      
+</li>
+      
+<li>
+        
+<a href="#installation">Installation</a>
+      
+</li>
+      
+<li>
+        
+<a href="#using">Using</a>
+      
+</li>
+    
+</div>
+
+    
+<a name="features">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Features</h1>
+      
+<ul>
+        
+<li>
+          Provides a project property page for web application setup.
+          <div class="figure">
+<img alt="Webapp property page" src="../.././images/eclipse/webapp/propertypage.png"></div>
+        
+</li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          Generates a war file containg the libraries (Jar files) and the web files
+          selected in the property page.
+        </li>
+      
+</ul>
+    
+</div>
+
+    
+<a name="installation">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Installation</h1>
+      
+<div class="section">
+<h2>Requirements</h2>
+        
+<p>
+          The webapp plugin requires a version of the Eclipse platform later
+          than 2.1 RC2.
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Installation</h2>
+        
+<p>
+          Uncompress the zip file and copy the
+          <code>org.apache.cactus.integration.eclipse_[version]</code> folder to 
+          your Eclipse <code>plugins</code> folder and restart Eclipse.
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Configuration</h2>
+        
+<p>
+          Select a Java project, right click and open its properties. On the page that
+          appears select the Web Application item.
+        </p>
+      
+</div>
+    
+</div>
+    
+    
+<a name="using">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Using</h1>
+      
+<p>
+        This plug-in can only be called by another plug-in. See the 
+        <a href="../.././integration/eclipse/runner_plugin.html" title="Information about the Cactus Runner plugin for Eclipse.">Cactus runner 
+        plug-in</a> for a use case.
+      </p>
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

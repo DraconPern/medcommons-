@@ -1,0 +1,169 @@
+#!/usr/bin/python -u
+
+#
+#  This program is used in CaaS client vm. 
+#
+#  This python script should be owned by root and chmod to 700. 
+#  It is used to get keytab files from the server.
+#
+
+# ################################################################
+# Copyright (C) 2009, All Rights Reserved, by
+# EMC Corporation, Hopkinton, MA.
+#
+# This software is furnished under a license under either the EMC Cloud
+# Infrastructure ISV Program Agreement, the EMC Velocity Atmos Partner
+# Program Agreement,or the Atmos OnLine Compute and Storage Service
+# Agreement (License) and may be used and copied only  in  accordance
+# with  the  terms  of such  License and with the inclusion of the above
+# copyright notice. This software or  any  other copies thereof may not
+# be provided or otherwise made available to any  other person.
+# No title to and ownership of  the  software  is  hereby transferred.
+#
+# The information in this software is subject to change without  notice
+# and  should  not be  construed  as  a commitment by EMC Corporation.
+#
+# EMC assumes no responsibility for the use or  reliability  of its
+# software on equipment which is not supplied by EMC.
+# ################################################################
+
+import getopt, sys, urllib2, base64, re
+
+#
+#  Print command usages
+#
+def usage():
+    print("Usage caas_getkey:\n");
+    print("  -s [server]   =  server endpoint (default: http://10.32.120.49:8888/cloud/rest)");
+    print("  -u [username] =  web service's username");
+    print("  -p [password] =  web service's passowrd");
+    print("  -t [host]     =  client's hostname (have to be consistent with DNS)");
+    print("  -k [keytab]   =  keytab file location (default: \"/etc/krb5.keytab\" )");
+    print("  -c [conf]     =  kerberos conf file (default: \"/etc/krb5.conf\")")
+    print("  -h            =  help\n");
+    sys.exit(-1)
+
+
+#
+#  Print Error Message
+#
+def print_err(e):
+	if e.code == 401:
+                print >> sys.stderr, "Compute Service username or password is wrong"
+                sys.exit(-1)
+
+        m3 = re.search('<message>', output)
+        m4 = re.search('</message>', output)
+
+        if m3 == None or m4 == None:
+                print >> sys.stderr, 'Cannot parse error message!'
+                sys.exit(-1)
+
+        print >> sys.stderr, output[m3.end():m4.start()]
+
+
+def send_http_request(url, username, password):
+	
+    	# Set Basic Authentication
+    	base64string = base64.encodestring('%s:%s' % (username, password))[:-1]
+    	authheader = "Basic %s" % base64string
+
+    	# Create Req
+    	req = urllib2.Request(url)
+    	req.add_header("Authorization", authheader)
+
+	try:
+	        handle = urllib2.urlopen(req)
+    	except urllib2.HTTPError, e:
+       		print >> sys.stderr, e
+        	print_err(e)
+        	sys.exit(-1)
+    	except urllib2.URLError, e:
+        	if isinstance(e.reason, str):
+                	print >> sys.stderr, e.reason
+                	sys.exit(-1)
+        	elif isinstance(e.reason, Exception):
+                	x, y = e.reason
+                	print >> sys.stderr, y
+                	sys.exit(-1)
+        	else:
+                	print >> sys.stderr, e.reason
+               		sys.exit(-1)
+	return handle
+
+
+#
+#   Main
+#
+def main():
+    # Variables
+    username = ""
+    password = ""
+    server   = ""
+    host     = ""
+    keytab   = "/etc/krb5.keytab"
+    krbconf  = "/etc/krb5.conf"
+
+    nfsservice = "/1.0.0.0/nfsproxy/kerberos_keytab"
+    nfsconfig  = "/1.0.0.0/nfsproxy/kerberos_conf"
+
+    # Getopt
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "hs:u:p:k:c:t:")
+    except getopt.GetoptError:
+        sys.stdout = sys.stderr
+        usage()
+
+    for o, a in opts:
+        if o == "-s":
+            server = a
+        if o == "-u":
+            username = a
+        if o == "-p":
+            password = a
+        if o == "-t":
+            host = a
+        if o == "-k":
+            keytab = a
+        if o == "-c":
+            krbconf = a
+        if o == "-h":
+            usage()
+
+    if username == "" or password == "" or server == "":
+        usage() 
+
+    #
+    # To get config file 
+    #
+    print "[caas_getkey] Getting krb5.conf..."
+
+    # Set URL
+    url = server + nfsconfig
+
+    # Send Req
+    handle = send_http_request(url, username, password)
+
+    # Write to file
+    file = open(krbconf, "w")
+    file.write(handle.read())
+    file.close()
+
+    #
+    # To get keytab file
+    #
+    print "[caas_getkey] Getting krb5.keytab..."
+    # Set URL
+    url = server + nfsservice + "=" + host
+
+    # Send Req
+    handle = send_http_request(url, username, password)
+ 
+    # Write to file
+    file = open(keytab, "w")
+    file.write(handle.read())
+    file.close()
+
+        
+if __name__ == '__main__':
+    main()

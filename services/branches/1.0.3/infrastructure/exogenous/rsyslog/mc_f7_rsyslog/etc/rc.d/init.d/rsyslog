@@ -1,0 +1,103 @@
+#!/bin/bash
+#
+# rsyslog        Starts rsyslogd
+#
+#
+# chkconfig: 2345 12 88
+# description: Rsyslog is the facility by which many daemons use to log \
+# messages to various system log files.  It is a good idea to always \
+# run rsyslog.
+### BEGIN INIT INFO
+# Provides: $rsyslog
+# Short-Description: System logging and kernel message trapping daemons
+# Description: Rsyslog is the facility by which many daemons use to log \
+#              messages to various system log files.  It is a good idea to always \
+#              run rsyslog.
+### END INIT INFO
+
+# Source function library.
+. /etc/init.d/functions
+
+export PATH="${PATH}:/usr/local/sbin"
+
+[ -f /usr/local/sbin/rsyslogd ] || exit 0
+
+# Source config
+if [ -f /etc/sysconfig/rsyslog ] ; then
+	. /etc/sysconfig/rsyslog
+else
+	RSYSLOGD_OPTIONS="-m 0"
+fi
+
+RETVAL=0
+
+if [ -z "$RSYSLOG_UMASK" ] ; then
+      RSYSLOG_UMASK=077;
+fi
+umask $RSYSLOG_UMASK
+
+start() {
+ 	echo -n $"Starting system logger: "
+	daemon rsyslogd $RSYSLOGD_OPTIONS
+	RETVAL=$?
+	echo
+	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/rsyslog
+	return $RETVAL
+}	
+stop() {
+	echo -n $"Shutting down system logger: "
+	killproc rsyslogd
+	RETVAL=$?
+	echo
+	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/rsyslog
+	return $RETVAL
+}
+rhstatus() {
+	status rsyslogd
+}
+restart() {
+	stop
+	start
+}	
+reload()  {
+    RETVAL=1
+    rsyslog=`cat /var/run/rsyslogd.pid 2>/dev/null`
+    echo -n "Reloading rsyslogd..."
+    if [ -n "${rsyslog}" ] && [ -e /proc/"${rsyslog}" ]; then
+	kill -HUP "$rsyslog";
+	RETVAL=$?
+    fi
+    if [ $RETVAL -ne 0 ]; then
+	failure
+    else
+	success
+    fi
+    echo    
+    return $RETVAL
+}
+case "$1" in
+  start)
+  	start
+	;;
+  stop)
+  	stop
+	;;
+  status)
+  	rhstatus
+	;;
+  restart)
+  	restart
+	;;
+  reload)
+	reload
+	;;
+  condrestart)
+  	[ -f /var/lock/subsys/rsyslog ] && restart || :
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|status|restart|condrestart}"
+	exit 1
+esac
+
+exit $?
+

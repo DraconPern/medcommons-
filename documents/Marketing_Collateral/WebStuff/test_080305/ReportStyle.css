@@ -1,0 +1,14 @@
+body {font-family:Verdana,sans-serif,Arial;font-size:8pt;text-align:center;background-image: url(pagebg.gif); background-repeat: repeat-x}
+td {font-family:Verdana,sans-serif,Arial;font-size:8pt}
+tr {text-align:right}
+a:active { color: #0000FF; text-decoration: none }
+a:link { color: #0000FF; text-decoration: none }
+a:visited { color: #0000C0; text-decoration: none }
+a:hover { color: #0000C0; text-decoration: underline }
+.head {font-family:Verdana,sans-serif,Arial;font-weight: bold;font-size:13pt;text-align:center}
+.th {background-color:#B0EBFE;font-weight:bold;text-align:center}
+.ts {background-color:#B0EBFE;font-weight:bold}
+.tl {text-align:left}
+.tc {text-align:center}
+.tur { background-color: #FFFFFF }
+.ter { background-color: #E7E7E7 }

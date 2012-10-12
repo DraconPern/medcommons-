@@ -1,0 +1,423 @@
+/* MedCommons */
+html, body {
+	height: 100%;
+}
+body {
+	background: #ffffff;
+	color: #555;
+	font-family: 'lucida grande', 'Segoe UI', arial, verdana;
+	font-size: 12px;
+}
+
+h2 {
+  font-size: 130%;
+}
+
+p {
+	margin: 0.7em 0;
+}
+
+button, input[type=checkbox], input[type="radio"], input[type="reset"], input[type=submit] {
+    padding:1px 4px;
+}
+
+h2,h3 {
+  margin: 0.5em 0 0.5em 0;
+}	
+
+fieldset {
+	border: solid 1px;
+	padding: 1em;
+}
+legend {
+	padding: 0 0.7em;
+}
+
+.sup {font-size: 0.75em; line-height: 0.5em}  
+.navText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+.smallBullets {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+.bodyCopy1 {
+	color: #000;
+	font-weight: normal;
+}
+.bodyCopy2 {
+font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+	font-weight: normal;
+	text-indent: 20px;
+}
+.bodyHeadline {
+	font-weight: bold;
+	font-size: 16px;
+	color: #555;
+	
+}
+
+.left {
+	float: left;
+}
+
+body,td,th {
+	border-style: none;
+	text-align: left;
+}
+
+table { margin-bottom: 0.3em; }
+
+
+.headline1 {
+	font-size: 24px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #000;
+}
+.subHead1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+}
+.listLink {
+	font: 12px Arial, Helvetica, sans-serif;
+}
+.listLink a {
+	text-decoration: none;
+}
+
+.listLink,
+.listLink a:link,
+.listLink a:visited {
+	color: #576B60;
+}
+.listLink a:hover {
+	color: #36F;
+}
+.listLink a:active,
+.footerLink a:link,
+.footerLink a:visited  
+ {
+	color: #576B60;
+}
+
+.footerLink {
+	font: 10px Arial, Helvetica, sans-serif;
+	color: #576B60;
+}
+.footerLink a {
+	text-decoration: none;
+}
+.footerLink a:hover {
+	color: #36F;
+}
+.footerLink a:active {
+	color: #576B60;
+}
+
+.bodyLink,
+.bodyLink a:link,
+.bodyLink a:visited {
+	font: 14px Arial, Helvetica, sans-serif;
+	color: #576B60;
+}
+.bodyLink a {
+	text-decoration: none;
+}
+.bodyLink a:hover, 
+.bodyLink a:active {
+	color: #F90;
+}
+.header2 {
+	height: 50px; 
+	margin-bottom: 0 !important;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	color: #000;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+
+
+
+/*=============== top navigation ===================*/
+#topnav em { 
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 12px;
+     font-weight: bold;
+}
+.nav { 
+     width:100%; 
+     overflow:hidden; 
+     padding:2px 0 0 0; 
+}
+#navcontainer a {display:block; text-decoration:none; color:white;}
+#navcontainer a em { display:block; color:#162e5b; font-style:normal; padding:0px 0px 0px 0px;}
+
+
+#navcontainer em { display:block; color:#666; font-style:normal; padding:0px 0px 0px 0px; font-weight: bold;}
+
+#navcontainer a:hover {color:#ffffff; margin-right:0px; position:relative;text-decoration:none;}
+#navcontainer a:hover em {padding-left:5px; color:#63a2cd;text-decoration:none;}
+
+#navcontainer a.current {color:#000000; position:relative;}
+#navcontainer a.current em {padding-left:5px; color:#cccccc;}
+
+.clear { clear:both;}
+
+
+
+/*=============== Instruction Box Styles ===================*/
+.tinst {clear: both; width:100%; border:none;  padding:1em; margin-top: 2em; margin-bottom: 1em;  background-color:#EEE;}
+.tinstprint {clear: both; border:1px solid;  margin: 2em 1em 1em 1em;  background-color:#EEE;}
+.tinst .lcol {width: 15em; font-weight: 600;} 
+.tinst .rcol {}
+
+
+
+/*=============== Instruction Box 2 Styles ===================*/
+.tinst2 {clear: both; width:90%; border:none;  padding:1em; margin-top: 1em; margin-bottom: 1em;  background-color:#fff;}
+.tinstprint {clear: both; border:1px solid;  margin-top: 2em; margin-bottom: 1em;  background-color:#fff;}
+.tinst2 .lcol {width: 5em; font-weight: 600;} 
+.tinst2 .rcol {}
+
+
+ul.listinline, ul.listinlinetiny { margin: 0px;}
+.listinline li {display: inline; }
+.listinlinetiny li { font-size: .8em; display: inline;}
+
+a,a:link,a:active,a:visited {
+	
+	color: #926C40; /* orange */
+	color: #294C5C; /* blueish green */
+	color: #925140; /* rust */
+	color: #6D7872; /* olive */
+	color: #2E7847; /* dark green */
+	
+	xfont-weight: bold; 
+	xfont-style: italic;
+	
+	xtext-decoration:none;
+	text-decoration:underline;
+	
+	xborder-bottom: 1px solid #C2D0C8;
+	xtext-decoration:none;
+	outline:none; 
+}
+
+
+a:focus {outline:none;}
+a:hover {text-decoration:underline;}
+
+#topheader {
+}
+#topheader td {
+  padding: 0px 0px 5px 10px;
+}
+
+/*=============== buttons  ===================*/
+input.mainshort, button.mainshort, input.mainlarge, input.mainsmall, button.mainlarge, button.mainsmall, 
+button.mainwide, input.primebutton, button.altsmall, input.altsmall, button.altshort, input.altshort, 
+button.mainwide, input.mainwide, input.mainmicro, button.mainmicro  {
+  font-family: verdana;  font-weight: bold;  text-align: left;  border-style: none;  color: white;  display: inline-block;  cursor: pointer;}
+button.mainlarge,input.mainlarge{  width: 195px;  font-size: 13px;  padding: 7px 0px 10px 0.8em;  background: transparent url(/images/button.png) no-repeat scroll 0pt 0pt;}
+button.mainshort,input.mainshort,input.primebutton , 
+button.mainsmall,input.mainsmall,button.altsmall, input.altsmall, button.altshort, input.altshort, button.mainwide, input.mainwide {
+  font-size: 12px;  padding: 6px 0px 7px 0.7em;
+}
+button.mainshort,input.mainshort {
+  width: 90px;  padding-left: 0.7em;  background: transparent url(/images/button_short.png) no-repeat scroll 0pt 0pt;
+}
+button.altshort,input.altshort {  width: 70px;  padding-left: 0.7em;
+  background: transparent url(/images/button_alt_short.png) no-repeat scroll 0pt 0pt;
+}
+button.mainsmall,input.mainsmall,input.primebutton  {
+  width: 118px;  background: transparent url(/images/button_small.png) no-repeat scroll 0pt 0pt;
+}
+button.altshort,input.altshort,button.altsmall,input.altsmall {  text-align: center;  padding-left:0px;  padding-right: 0px;}
+input.mainsmall,input.mainshort,input.primebutton,input.altsmall,input.altshort{  padding-top: 6px;}
+input.mainlarge.smalltext {  padding-top: 14px;  padding-left: 6px;  font-size: 12px;}
+input.mainshort.smalltext,input.mainwide.smalltext {  padding-top: 8px;  font-size: 10px;}
+input.mainmicro,button.mainmicro {  padding: 3px 0px 2px 6px; font-size: 9px;  width: 69px;  background: transparent url(/images/buttonmicro.png) no-repeat scroll 0pt 0pt;}
+
+button.altsmall, input.altsmall  {  width: 125px;  background: transparent url(/images/button_alt_small.png) no-repeat scroll 0pt 0pt;}
+button.mainwide,input.mainwide {  width: 144px;  background: transparent url(/images/button_wide.png) no-repeat scroll 0pt 0pt;}
+
+button.mainmicro.disabled,input.mainmicro.disabled { color: #bbb;  background: transparent url(/images/buttonmicro_disabled.png) no-repeat scroll 0pt 0pt;}
+
+button.mainwide,
+button.mainwide, input.mainwide, input.mainmicro, button.mainmicro  {
+	font-family: verdana;
+	font-weight: bold;
+	text-align: left;
+	border-style: none;
+	color: white;
+	cursor: pointer;
+	vertical-align: middle;
+}
+button.mainwide, input.mainwide {
+  font-size: 12px;  padding: 6px 7px 10px 16px;
+}
+
+button.mainwide,input.mainwide {  width: 144px;  background: transparent url(/images/button_wide.png) no-repeat scroll 0pt 0pt;}
+
+/* ==============  footer ============ */
+#ft {clear:both; float:left; color:#000;background:transparent;font-size:95%; width:95%; margin: 0px 0px; margin-top: 0.5em; }
+#ft h3, #ft p {margin-bottom:8px;}
+#ft ul {list-style:none;}
+#ft ul li {padding-right: 2em; padding-bottom:.1em; display: inline;}
+#ft a:hover {text-decoration:underline;}
+#ft div.column-group {clear:both;text-align:left;margin:0 auto;}
+#ft div.column {float:left;width:14em;padding-bottom:3em;}
+#ft div.last-child {float:right;text-align:right;padding-top:2em;}
+#visi { display: none; } /* login stamp not displayed by default, enabled by javascript */
+
+html {
+    background-color: white;
+}
+
+#hd, #ft, #menu, #main {
+}
+
+#hd {
+    padding: 22px 0.7em;
+}
+#ft {
+    padding: 0.7em 0;
+}
+
+#hd {
+    border-bottom: 2px solid #e0e0d0;
+}
+
+#hd, .hdcolor {
+	background-color: #f1eddb;
+    xbackground-color: #F9F7EC;
+}
+
+#bd {
+    background-color: #F3F9FC;
+    background-color: white;
+}
+
+#doc3 {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+body {
+    font-family: 'lucida grande', 'Segoe UI', arial, verdana;
+  font-size: 12pt;
+  margin: 0;
+}
+
+#video {
+    float: right;
+    margin: 30px 40px 0 0;
+    width: 300px;
+}
+
+#ft {
+    margin: 0 0;
+    color: #aaa;
+    font-size: 11px;
+    background-color: white;
+}
+
+#yui-main {
+}
+
+
+
+#hd .button {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; 
+    background-color: #8DA095;
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    padding: 6px 1em 3px 1em;
+    margin: 0 1em;
+    position: absolute;
+    float: right;
+    position: relative;
+    top: -27px;
+    cursor: pointer;
+}
+
+#bullets {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; 
+    padding: 0.5em 14px 1em 14px;
+}
+#bullets h2 {
+    color: #555;
+}
+
+#bullets li {
+    margin-top: 0.4em;
+    font-size: 1.1em;
+}
+
+#content {
+  margin: 0 0;
+}
+.hidden {
+    display: none;
+}
+#content { 
+    padding: 1em;
+}
+.xunderlay {
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; z-index: 100000;
+}
+.xunderlay .yui3-widget {
+	background-color: white;
+	border: 2px solid #666;
+}
+div.tip img.icon {
+	position: absolute;
+	top: 3.0em;
+	left: 1em;
+}
+div.tipmsg {
+	margin-left: 3em;
+}
+div.tipmsg p {
+	margin: 0.3em 0;
+}
+div.tip .goaway {
+	margin-top: 1em;
+	font-size: 85%;
+}
+div.tip .goaway * {
+	vertical-align: middle;
+}
+.roundcorners {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+}
+.headertip {
+    border: 2px solid #666;
+    xborder-top: none;
+    background-color: #F1F1DB;
+    background-color: #fafafa;
+    margin: 1em 1em 1em 0em;
+    padding: 0.8em 1em 0.2em 1.5em;
+    overflow: hidden;
+}
+.headertip input {
+	position: relative;
+	top: 1px;
+}

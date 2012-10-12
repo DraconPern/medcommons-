@@ -1,0 +1,12 @@
+=============================Consolidated Log==============================
+
+  -  0000952: Uploads Fail for DICOM Data Sets with Many Studies or Series
+  -  0000946: Select CD Button Slightly Cut Off in IE6/7
+  -  0000949: DDL Warnings Shown if Browser Closed and Opened Again even for Same Host
+  -  0000953: Percentage Complete Never Reaches 100% (Rare)
+  -  0000954: Select CD Button Stays Enabled After Click Allowing Multiple Clicks to Occur
+  -  0000951: Some Computers with Java 1.5 Experience Errors when Starting Upload
+  -  0000948: DDL Does not Show Warning Prompt about New Web Page Sending Command if Started Fresh on Mac
+  -  0000950: Security Warnings Do Not Raise to Top on Mac 
+  -  0000955: DDL Sometimes VERY Slow to Open CD Chooser
+

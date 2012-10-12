@@ -1,0 +1,86 @@
+<head>
+<title>MultiGateway Controller Screen</title>
+<style>
+body,p,td,th {
+	font-family: Arial;
+	color: #333333
+}
+
+a:link,a:visited {
+	color:#0055cc;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#000000;
+	background-color: #FFFF00;
+}
+
+h1 {
+	font-family: Tahoma;
+	font-size:24px;
+	color: #113399;
+	font-weight:normal;
+}
+h2 {
+	font-family: Tahoma;
+	font-size:18px;
+	color: #6666ff;
+	font-weight:normal;
+}
+th {
+	font-weight: bold;
+	background-color: #7799cc;
+	font-size:14px;
+	color: #FFFFFF;
+	padding-left:10px;
+	padding-right:10px;
+	border-left: 1px solid #CCCCCC;
+}
+td {
+	font-size:14px;
+	text-align:center;
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #666666;
+} 
+
+up {background-color:#EEEEFF;}
+.dn {background-color:#FFCCCC;}
+.la {background-color:#F0F0FF;}
+.lb {background-color:#E0E0E0;}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid #999999;
+}
+</style>
+<body>
+
+<table width='600' bgcolor=#DFF2F7><tr><td><img src="logo_sm.gif"></td></tr></table>
+<h1>MultiGateway Controller Screen 7/20/04</h1>
+
+<h2>Affiliate: <b>ImageExpress</b><br>Gateways: <b>NERegion</b></h2>
+
+<table border=0 cellspacing=0 cellpadding=3 width=600>
+<th>SITE</th><th>IP</th><th>STATUS</th><th>PING</th></tr>
+<tr class='la'><td>MedCommons Primary Central</td><td><a href=#>primary.medcommons.net</a></td><td align='center'>UP</td><td align='right'>31</td></tr>
+<tr class='lb'><td>MedCommons Secondary Central</td><td><a href=#>backup.medcommons.net</a></td><td align='center'>UP</td><td align='right'>178</td></tr>
+</table>
+<p>
+
+<h2>MedCommons Affiliate Filter: <b>ImageExpress</b><br>Gateway Filter: <b>NERegion</b></h2>
+
+</p>
+<table border=0 cellspacing=0 cellpadding=3 width=600>
+<th rowspan=2>Medical Gateway</th><th rowspan=2>IP</th><th rowspan=2>STATUS</th><th rowspan=2>PING</th><th colspan=2>XFERS</th><th colspan=2>Pending</th></tr>
+<tr><th>IN</th><th>OUT</th><th>IN</th><th>OUT</th></tr>
+<tr class='la'><td>slr01</td><td><a href=#>131.33.22:2203</a></td><td>UP</td><td>33</td><td>33</td><td>22</td><td> 7</td><td>6</td></tr>
+
+<tr class='lb'><td>lvl01</td><td><a href=#>www.fnrx.com</a></td><td>UP</td><td>78</td><td>21</td><td>33</td><td> 4</td><td>7</td></tr>
+
+<tr class='dn'><td>lvl02</td><td><a href=#>33.22.33.1</a></td><td>DN</td><td>204</td><td></td><td></td><td></td><td></td></tr>
+
+<tr class='la'><td>cpr01</td><td><a href=#>www.fnrb.biz</a></td><td>UP</td><td>12</td><td></td><td></td><td></td><td></td></tr>
+</table>
+ 

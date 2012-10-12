@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>Features</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Features" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus.">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list." class="currentPage">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus.">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Current scope and status of Cactus</h1>
+
+      
+<p>
+        Cactus has the ability to unit test the following kind of components
+        running in a Servlet/EJB container:
+      </p>
+
+      
+<div class="figure">
+<img alt="Scope and Status" src="./images/scope.jpg"></div>
+
+      
+<div class="note">
+        Support for testing the View layer is done through integration
+        with <a href="http://httpunit.sourceforge.net/" title="">HttpUnit</a>.
+        This is functional unit testing (see the
+        <a href="./index.html#unittest_types">What is Cactus</a> 
+        page, for a description of the different kinds of unit tests).
+      </div>
+      
+<div class="note">
+        EJB unit testing is currently done by calling the EJB to unit test as 
+        you would if you were writing code to call an EJB from a servlet (See
+        the <a href="./writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">EJB Howto</a> page for more details).
+        We are working on providing an EJB Redirector.
+      </div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>General design features</h1>
+
+      
+<ul>
+        
+<li>
+          Cactus gives you a very good confidence that your code is going
+          to run fine on the server it will be deployed on (thanks to Cactus
+          in-container approach that executes the test <i>inside</i> the
+          container),
+        </li>
+        
+<li>
+          Cactus let you test container interactions. This is essential
+          in a world where containers are providing more and more
+          features for their components every day,
+        </li>
+        
+<li>
+          Cactus let you test and automate the deployment process to your
+          server (using powerful Integration Modules with different build 
+          tools and IDEs),
+        </li>
+        
+<li>
+          Cactus does not mandate any change to your classes to test, although
+          it helps think about writing better code and do some refactoring,
+        </li>
+        
+<li>
+          Cactus provides a good middle ground in term of test granularity:
+          too fine-grained tests are hard to write (like Mock Objects tests
+          that completely simulates the domain objects and focus exclusively
+          on unit testing your code logic) and need complementary tests. Too
+          coarse-grained tests (like functional tests) are not enough to
+          easily uncover bugs and work in a iterative development process
+          where tests are run very often to ensure everything is working. We
+          believe Cactus provides a good compromise.
+        </li>
+      
+</ul>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Detailed feature list</h1>
+      
+<p>
+        
+<img hspace="0" vspace="0" border="0" alt="New in Cactus 1.7" src="./images/new.jpg"><i> = 
+        New in Cactus 1.7</i>
+      
+</p>
+      
+<ul>
+        
+<li>
+          Integrates seamlessly with the JUnit testing framework. Any tool
+          that works with JUnit will work with Cactus because a Cactus test
+          is a JUnit test! See the
+          <a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">TestCase Howto</a>
+          tutorial for details.
+        </li>
+        
+<li>
+          Provides a <code>ServletTestCase</code> class that your test case
+          can extend for unit testing Servlets or any java classes that
+          make use of Servlet API objects.
+        </li>
+        
+<li>
+          Provides a <code>JspTestCase</code> class that your test case
+          can extend for unit testing Taglibs or any java classes that
+          make use of JSP API objects. In addition, provides a
+          <code>TestJspTagLifecycle</code> extension to help test JSP Taglibs.
+        </li>
+        
+<li>
+          Provides a <code>FilterTestCase</code> class that your test case
+          can extend for unit testing Filters or any java classes that
+          make use of Filter API objects.
+        </li>
+        
+<li>
+          Allows to run existing JUnit Test Case classes on the server side.
+          This is provided by special Cactus TestSuite classes that wrap
+          your existing Test Cases.
+        </li>
+        
+<li>
+          Ability to unit test EJBs (including local interfaces) by calling
+          them from a <code>ServletTestCase</code>,
+          <code>JspTestCase</code> or <code>FilterTestCase</code> class (see 
+          the <a href="./writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">EJB Howto</a>).
+        </li>
+        
+<li>
+          Extends JUnit by defining two additional (and optional) methods
+          that can be implemented for each test case (i.e. for each
+          <code>testXXX()</code> method): <code>beginXXX()</code> and
+          <code>endXXX()</code>. See the
+          <a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">TestCase Howto</a> tutorial
+          for details.
+        </li>
+        
+<li>
+          It is possible to set up the following in <code>beginXXX()</code>:
+          <ul>
+            
+<li>
+              HTTP cookies,
+            </li>
+            
+<li>
+              Servlet Session Cookie,
+            </li>
+            
+<li>
+              HTTP parameters (GET and POST),
+            </li>
+            
+<li>
+              HTTP Headers,
+            </li>
+            
+<li>
+              Whether an HTTP Session will be created or not on the server side,
+            </li>
+            
+<li>
+              BASIC and Form-based Authentication parameters,
+            </li>
+            
+<li>
+              Send any data as POST data
+            </li>
+          
+</ul>
+        
+</li>
+        
+<li>
+          It is possible to verify the following in <code>endXXX()</code>:
+          <ul>
+            
+<li>
+              Returned data (as String or using <code>HttpUnit</code>),
+            </li>
+            
+<li>
+              Returned cookies,
+            </li>
+            
+<li>
+              Returned HTTP headers,
+            </li>
+            
+<li>
+              Returned response code
+            </li>
+          
+</ul>
+        
+</li>
+        
+<li>
+          Handles <code>setUp()</code> and <code>tearDown()</code> methods
+          which work the same as for JUnit except that they are run on the
+          server side before and after calling each <code>testXXX()</code>
+          method
+        </li>
+        
+<li>
+          Extends JUnit by providing a global <code>begin()</code> and
+          <code>end()</code> which are run on the client side before and 
+          after each test. They are the equivalent of JUnit's 
+          <code>setUp()</code> and <code>tearDown()</code> which are run
+          on the Server side.
+        </li>
+        
+<li>
+          Provides several Integration Module for easily running Cactus
+          tests:
+          <ul>
+            
+<li>
+              
+<i>Ant Integration Module</i>: generic and directly usable 
+              scripts to run Cactus tests (start and stop containers 
+              automatically, package and deploy a Cactify webapp and run the 
+              tests).
+            </li>
+            
+<li>
+              
+<i>Browser Integration</i>: It is possible to run Cactus tests
+              from a Browser. Results can be displayed either in XML or in
+              HTML (either server-side XSLT or Browser XSLT for the Browsers 
+              which support it)
+            </li>
+            
+<li>
+              
+<i>Maven Integration</i>: Complete end to end Cactus test 
+              automation with minimal setup. It's probably currently the easiest
+              way to run Cactus tests (provided you have Maven installed on
+              your machine).
+            </li>
+            
+<li>
+              Several other integration provided by third parties.
+            </li>
+          
+</ul>
+        
+</li>
+        
+<li>
+          The Ant integration module and the Maven integraton one support the 
+          following containers:
+          <ul>
+            
+<li>
+              Tomcat 3.x
+            </li>
+            
+<li>
+              Tomcat 4.x
+            </li>
+            
+<li>
+              Tomcat 5.0.x
+            </li>
+            
+<li>
+              Resin 2.x
+            </li>
+            
+<li>
+              Resin 3.x (above version 3.0.5)
+            </li>
+            
+<li>
+              WebLogic 7.x
+            </li>
+            
+<li>
+              Orion 1.x
+            </li>
+            
+<li>
+              Orion 2.x
+            </li>
+            
+<li>
+              JBoss/Jetty 3.x
+            </li>
+            
+<li>
+              Note: The WebLogic 6.x support has been dropped as BEA does not
+              provide a link to download WebLogic 6.x anymore.
+            </li>
+          
+</ul>
+        
+</li>
+        
+<li>
+          Tested with all versions of JUnit up to the current one in JUnit CVS.
+        </li>
+        
+<li>
+          Support for Servlet API 2.2 and 2.3 (Support for Servlet API 2.1 is
+          no longer provided)
+        </li>
+        
+<li>
+          Works with JDK 1.4+
+        </li>
+        
+<li>
+          Wraps some of the standard API objects in order to provide
+          additional methods to help write unit tests.
+          See the <a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">TestCase
+          Howto</a> tutorial for details.
+        </li>
+        
+<li>
+          Internal logging using Jakarta Commons Logging facade framework
+          to help debug problems.
+        </li>
+        
+<li>
+          HttpUnit integration. See the
+          <a href="./writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">HttpUnit Howto</a> tutorial
+          for details. This enables
+          Cactus to provide strong and integrated functional
+          unit testing features.
+        </li>
+        
+<li>
+          Uses Jakarta Commons
+          <a href="http://jakarta.apache.org/commons/httpclient/" title="">HttpClient</a> for HTTP
+          connections.
+        </li>
+        
+<li>
+          Support for BASIC and Form-based authentication methods. You can test 
+          code that uses the Servlet security API (see the
+          <a href="./writing/howto_security.html" title="">Security Howto</a>).
+        </li>
+        
+<li>
+          Ability to specify, per test case, what redirector to use. Useful,
+          for example, when you want to test some code that is using the
+          Servlet Security API at the same time as other code that should not
+          be protected.
+        </li>
+        
+<li>
+          Provides a <code>JettyTestSetup</code> JUnit TestSetup class to
+          automatically start Jetty before a test suite starts executing.
+        </li>
+        
+<li>
+          Provide a sample application that demonstrates how to write Cactus
+          tests for Servlet, Taglibs and Filters. It also show how to use the 
+          Ant Integration Module to automate the full process.
+        </li>
+        
+<li>
+          Provide a sample application that demonstrates how to use the 
+          <code>JettyTestSetup</code> feature to run Cactus tests.
+        </li>
+        
+<li>
+          Provide a sample application that demonstrates how to write Cactus
+          tests for EJBs. It also show how to use the Ant Integration Module
+          to automate the full process.
+        </li>
+        
+<li>
+          Supports internationalization.
+        </li>
+      
+</ul>
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="PatientName" type="xs:Name"></xs:element>
+	<xs:element name="PatientAddress" type="xs:string"></xs:element>
+	<xs:element name="PatientDOB" type="xs:date"></xs:element>
+	<xs:complexType name="CreditCardInfo">
+		<xs:sequence>
+			<xs:element name="CardNumber" type="xs:normalizedString"></xs:element>
+			<xs:element name="CardType" type="xs:short" />
+			<xs:element name="CardExpiration" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TransactionID" type="xs:ID"></xs:element>
+	<xs:group name="Reis">
+		<xs:sequence />
+	</xs:group>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mccxp.css" type="text/css"?>
+
+<window
+    id="mccxp_getWindow"
+    title="Get CCR"
+    xmlns:h="http://www.w3.org/1999/xhtml"    
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"    
+    >
+    <script src="MochiKit.js"/>
+    <script src="xpath.js"/>
+    <script src="misc.js"/>
+    <script src="dom.js"/>
+    <script src="mccxp.js"/>
+
+    <label class="infoheading" style="padding-top: 5px;" value="Get CCR"/>
+    <description>You can get a CCR from a CXP server:</description> 
+    <spacer height="10"/>
+    <hbox> 
+      <label class="label" value="Please enter the Id"/>
+      <spacer width="10"/><textbox id="cxpTxId" value="" flex="1"/>
+    </hbox>
+    <spacer height="10"/>
+    <hbox> 
+      <label class="label" value="Please enter the PIN (if applicable)"/>
+      <textbox id="pin" value="" flex="1"/>
+    </hbox>
+    <spacer height="10"/>
+    <!--
+    <hbox><label class="label" value="Enter the CXP Server:"/><spacer width="10"/><textbox id="cxpServerHost" value="" flex="1"/></hbox>
+    <spacer height="10"/>
+    -->
+    <hbox flex="1" align="start" pack="end"   style="">
+        <button id="getButton" label="Get" oncommand="mccxp_getDownload(); "/>
+        <button id="cancelButton" label="Close" oncommand="window.close()"/>
+    </hbox> 
+    <spacer flex="1"/>
+</window>
+

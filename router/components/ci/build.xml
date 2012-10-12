@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id$
+     ====================================================================== -->
+<project name="cilib" default="world" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+     - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+      <echo message="Initializing build ..." />
+      <ivy:configure file="ivy-settings.xml" />
+      <ivy:retrieve /> 
+      <mkdir dir="build/dist"/>
+    </target>
+ 
+    <target name="publish" depends="init">
+      <copy file="cilib.sh" todir="build/dist"/>
+      <delete file="build/dist/ivy.xml"/>
+      <!-- You will get an error when publishing unless you increment the version number below -->
+      <ivy:publish resolver="public" pubrevision="1.0.5">
+        <artifacts pattern="build/dist/[artifact].[ext]" />
+      </ivy:publish>
+    </target>
+
+    <target name="clean">
+     <delete dir="build"/>
+    </target>
+</project>

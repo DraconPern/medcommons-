@@ -1,0 +1,266 @@
+<WebScriptTool>
+	<DisplayName>Edit Saved CCR</DisplayName>
+	<Step v='4'>
+		<ver>12</ver>
+		<id>419222</id>
+		<Summary v='2'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<childCount>4</childCount>
+		<ChildItems>
+			<CookieKiller v='1'>
+				<ver>12</ver>
+				<id>419223</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+			</CookieKiller>
+			<Request v='9'>
+				<ver>12</ver>
+				<id>419224</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>3</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>419225</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<TemplateBinding v='1'>
+								<sourceFile/>
+							</TemplateBinding>
+						</ChildItems>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>419226</id>
+						<name>tracking</name>
+						<value>%24%7Btn%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Request v='9'>
+						<ver>12</ver>
+						<id>419227</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<host>${host}</host>
+						<path>/router/logon.jsp</path>
+						<protocol>http</protocol>
+						<resource/>
+						<targetFrame>contents</targetFrame>
+						<label/>
+						<headers/>
+						<multipartBoundary/>
+						<Object>null</Object>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset/>
+						<method>1310723</method>
+						<waitForSubRequests>true</waitForSubRequests>
+					</Request>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${host}</host>
+				<path>/router/tracking.jsp</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset/>
+				<method>1650532410</method>
+				<waitForSubRequests>true</waitForSubRequests>
+			</Request>
+			<Request v='9'>
+				<ver>12</ver>
+				<id>419228</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>4</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>419229</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<TemplateBinding v='1'>
+								<sourceFile/>
+							</TemplateBinding>
+						</ChildItems>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>419230</id>
+						<name>password</name>
+						<value/>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>419231</id>
+						<name>trackingNumber</name>
+						<value>%24%7Btn%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>419232</id>
+						<name>pin</name>
+						<value>%24%7BPIN%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${host}</host>
+				<path>/router/track.do</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame>contents</targetFrame>
+				<isActive>1</isActive>
+				<label/>
+				<headers>User-Agent: Firefox 0.9.3 (compatible;MSIE 6.0; Windows 98)
+Content-Type: application/x-www-form-urlencoded
+</headers>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset/>
+				<method>1835093605</method>
+				<waitForSubRequests>true</waitForSubRequests>
+			</Request>
+			<Navigation v='7'>
+				<ver>12</ver>
+				<id>419233</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<targetFrame>contents</targetFrame>
+				<continueOnFailure>true</continueOnFailure>
+				<references>
+					<count>2</count>
+					<VisibleTextReference v='2'>
+						<value>Edit and Send CCR</value>
+						<filter>Links</filter>
+					</VisibleTextReference>
+					<JavascriptReference v='2'>
+						<value>document.getElementById(&apos;yui-gen8&apos;).getElementsByTagName(&apos;A&apos;)[0]</value>
+						<filter>Links</filter>
+					</JavascriptReference>
+				</references>
+				<isPassive>false</isPassive>
+				<passiveTimeoutMs>1000</passiveTimeoutMs>
+				<useRegex>false</useRegex>
+			</Navigation>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<name>Edit Saved CCR</name>
+		<repetitions>1</repetitions>
+		<repeatType>1</repeatType>
+		<repeatVariable>accid</repeatVariable>
+		<incrementAutomatically>true</incrementAutomatically>
+		<incrementAll>true</incrementAll>
+		<expanded>1</expanded>
+	</Step>
+</WebScriptTool>

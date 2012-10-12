@@ -1,0 +1,438 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>Getting Started</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Getting Started" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus.">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list.">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus." class="currentPage">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus.">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Forewords</h1>
+      
+<p>
+        If you want to quickly get a feeling of Cactus, there is a
+        <a href="./integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">20 minutes tutorial</a> that take you
+        through running your first Cactus test using Tomcat. It doesn't explain
+        how Cactus works or any other details but let's you have something
+        running quickly.
+      </p>
+      
+<p>
+        We suggest you take this quicky tutorial and then come back here and
+        continue reading below. You would have had a first glimpse of Cactus
+        in action and will be ready to understand the concepts behind it and
+        its full power.
+      </p>
+    
+</div>
+
+    
+<div class="section">
+<h1>Installing Cactus</h1>
+
+      
+<p>
+        There is not really an installation of Cactus per see, as Cactus is
+        not an application but a framework. However you do need to understand
+        how it integrates in your working environment. In order to simplify
+        this integration Cactus offers 
+        <a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">several integration modules</a>. Thus, 
+        installing Cactus simply means picking an integration module and 
+        learning how to configure and use it.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>System Requirements</h1>
+
+      
+<p>
+        In order to run Cactus tests you need to have the following
+        software already installed on your system:
+      </p>
+
+      
+<ul>
+        
+<li>
+          
+<b>Java Virtual Machine</b>
+          A Java 1.2 or greater compatible virtual machine must be present. Note
+          that all servlet engines require a JVM to run so if you are already
+          using servlets you already have one installed.
+        </li>
+        
+<li>
+          
+<b>Servlet/J2EE Engine</b>
+          A Servlet 2.x/J2EE 1.x compliant servlet engine for running your 
+          Cactus tests must be present.
+        </li>
+      
+</ul>
+
+      
+<p>
+        You also need to have installed the development tools that you are 
+        integrating Cactus with. For example, if you plan to use the Ant
+        integration, you must have Ant installed. If you plan to execute
+        Cactus tests from an IDE, this IDE software has to be already 
+        installed, etc.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>The Cactus files</h1>
+
+      
+<p>
+        At this point, you should have
+        <a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">downloaded</a> a Cactus distribution
+        (for the J2EE API you intend to use) and unzipped it in a
+        <code>[cactus root]</code> directory.
+      </p>
+      
+<p>
+        You'll find the following directories under <code>[cactus root]</code>:
+      </p>
+      
+<ul>
+        
+<li>
+          
+<b><code>doc/</code></b>: contains Cactus web site and
+          API javadocs.
+        </li>
+        
+<li>
+          
+<b><code>lib/</code></b>: contains Cactus jars and related
+          external libraries.
+        </li>
+        
+<li>
+          
+<b><code>samples/</code></b>: contains 
+          <a href="./howto_sample.html" title="How to get started with the sample application provided by Cactus.">sample applications</a>
+          showing how to write Cactus tests and how to automate their 
+          execution.
+        </li>
+        
+<li>
+          
+<b><code>samples/ejb</code></b>: contains a sample 
+          application showing how to test EJBs with Cactus.
+        </li>
+        
+<li>
+          
+<b><code>samples/jetty</code></b>: contains a sample 
+          application showing how to test Servlet with Cactus and Jetty
+          (using the <code>JettyTestSetup</code> extension).
+        </li>
+        
+<li>
+          
+<b><code>samples/servlet</code></b>: contains a sample 
+          application showing how to test Servlet/JSPs/Taglibs with Cactus.
+        </li>
+        
+<li>
+          
+<b><code>web/</code></b>: contains the JSP redirector file
+          which is only required if you're using the 
+          <a href="./integration/manual/index.html" title="Explains how to manually configure Cactus.">manual integration</a>.
+        </li>
+      
+</ul>
+
+      
+<p>
+        The jars making up Cactus are:
+      </p>
+      
+<ul>
+        
+<li>
+          
+<b><code>cactus.jar</code></b>: the main jar,
+          contains the framework classes. You can find this jar in
+          <code>[cactus root]/lib</code>.
+        </li>
+        
+<li>
+          
+<b><code>cactus-ant.jar</code></b>: a jar which
+          contains some custom Ant tasks to help integrate easily with Ant.
+          This is only needed if you wish to use Ant for automating the
+          execution of Cactus tests. For more information on how to integrate
+          Cactus with Ant, see the
+          <a href="./integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant Howto</a> tutorial. You also
+          find this jar in <code>[cactus root]/lib</code>.
+        </li>
+        
+<li>
+          
+<b><code>httpclient.jar</code></b>: Cactus is relying
+          on the Jakarta Commons HttpClient framework for Cookie handling.
+        </li>
+        
+<li>
+          
+<b><code>junit.jar</code></b>: Cactus extends JUnit and
+          thus needs the JUnit jar.
+        </li>
+        
+<li>
+          
+<b><code>aspectjrt.jar</code></b>: Cactus uses
+          <a href="http://www.eclipse.org/aspectj/" title="">AspectJ</a> for performing
+          several tasks (logging entries and exit of methods, checking
+          configuration, etc).
+        </li>
+        
+<li>
+          
+<b><code>commons-logging.jar</code></b>: Cactus uses
+          the Jakarta Commons Logging facade framework to provide seamless
+          Cactus logging using any existing Logging framework (Log4j,
+          LogKit, JDK 1.4 Logging, etc). It is also needed for Commons
+          HttpClient.
+        </li>
+        
+<li>
+          
+<b><code>servletapi.jar</code></b>: Required for compiling
+          the Servlet sample. Ideally we should be bundling the J2EE jar (which
+          is required for compiling the EJB sample). However the Sun license 
+          does not allow us to redistribute it so you'll need to download it
+          by yourself (see the <a href="./howto_sample.html" title="How to get started with the sample application provided by Cactus.">Sample howto</a> 
+          page.
+        </li>
+        
+<li>
+          
+<b><code>httpunit.jar</code></b>: Cactus uses the
+          HttpUnit framework to perform <a href="./writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">complex 
+          assertions of returned responses</a>. Cactus also bundles a default 
+          web response object but the HttpUnit one should be preffered for 
+          complex assertions.
+        </li>
+        
+<li>
+          
+<b><code>nekohtml.jar</code></b>: Required by HttpUnit.
+        </li>
+      
+</ul>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>What's next?</h1>
+
+      
+<p>
+        At this point you should understand what Cactus is and how it works.
+      </p>
+      
+<p>
+        Pick the <a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Cactus integration module</a> that 
+        you wish to use in your development environment. Read up on how it works
+        and how to use it.
+      </p>
+      
+<p>
+        Then, you should read the <a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">TestCase
+        Howto</a> to understand how to write Cactus Test Cases.
+      </p>
+      
+<p>
+        The last step is probably to put in practice what you've learned so far
+        by <a href="./howto_sample.html" title="How to get started with the sample application provided by Cactus.">running the Cactus Samples</a>.
+      </p>
+      
+<p>
+        Enjoy !
+      </p>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

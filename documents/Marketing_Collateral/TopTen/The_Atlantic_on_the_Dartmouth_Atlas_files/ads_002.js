@@ -1,0 +1,1 @@
+document.write( '<a href="http://www.theatlantic.com:81/sam/click/72/0" target="_new"><img src="http://www.theatlantic.com/ads/bkspn/bomc1_bkslf_stat_120x600_05.gif" border="0" hspace="0" vspace="0" alt="Click here."></a>' );

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.medcommons.application.dicomclient.utils">
+<class name="net.medcommons.application.dicomclient.utils.CxpTransaction" table="CXPTRANSACTION">
+	<id name="id" column="OBJECT_ID">
+       <generator class="native"/>
+     </id>
+
+	<property name="patientName"/>
+	<property name="displayName"/>
+	<property name="nSeries"/>
+	<property name="totalImages"/>
+	<property name="totalBytes"/>
+	<property name="status"/>
+	<property name="elapsedTime"/>
+	<property name="transactionType"/>
+	<property name="bytesTransferred"/>
+	<property name="timeStarted"/>
+	<property name="statusMessage"/>
+	<property name="retryCount"/>
+	<property name="ccrFilename"/>
+	<property name="transactionFolder"/>
+	<property name="exportFolder"/>
+	<property name="viewUrl"/>
+	<property name="studyInstanceUid"/>
+	<property name="kbPerSecond"/>
+	<property name="contextStateId"/>
+	<property name="dashboardStatusId"/>
+	
+</class>
+</hibernate-mapping>

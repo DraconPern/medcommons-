@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeDesigner_V6.0" APIVersion="1.4.4057.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2004-04-13T14:04:49Z" uuid="024e0aab-3e7a-45c6-ab67-7ce662723025">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.1/">
+   <subform name="form1" layout="tb" locale="en_US">
+      <pageSet>
+         <pageArea name="Page1" id="Page1">
+            <contentArea x="0.25in" y="0.25in" w="8in" h="10.5in"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform w="8in" h="10.5in">
+         <field name="LastName" y="141.29mm" x="57.94mm" w="55mm" h="7.5mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>lastName</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field name="Street" y="160.07mm" x="57.94mm" w="55mm" h="7.5mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Street</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field name="TrackingNum" y="170.92mm" x="59mm" w="55mm" h="7.5mm" access="readOnly">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>TrackingNum</p></body>
+                  </exData>
+               </value>
+            </caption>
+            <value>
+               <text>12345678</text>
+            </value>
+         </field>
+         <field name="Button1" y="195.53mm" x="71.97mm" w="25mm" h="6mm">
+            <ui>
+               <button/>
+            </ui>
+            <caption>
+               <value>
+                  <text>Button</text>
+               </value>
+               <para vAlign="middle" hAlign="center"/>
+               <font size="8pt" typeface="Arial"/>
+            </caption>
+            <border>
+               <edge stroke="raised"/>
+               <fill>
+                  <color value="212,208,200"/>
+               </fill>
+            </border>
+            <bind match="none"/>
+            <event activity="click">
+               <submit textEncoding="UTF-8" target="http://localhost:8080/central/TestServlet" xdpContent="pdf datasets xfdf"/>
+            </event>
+         </field>
+         <draw x="98.16mm" y="197.11mm">
+            <value>
+               <text>http://localhost:8080/central/TestServlet</text>
+            </value>
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Microsoft Sans Serif"/>
+            <para lineHeight="9pt"/>
+         </draw>
+         <field name="FormName" y="105.83mm" x="61.38mm" w="55mm" h="7.5mm" access="readOnly" presence="hidden">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <value>
+               <text>SimpleForm1</text>
+            </value>
+         </field>
+         <field name="Recipe" y="81.76mm" x="57.68mm" w="55mm" h="7.5mm" access="readOnly" presence="hidden">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <value>
+               <text>BasicVanillaRecipe</text>
+            </value>
+         </field>
+         <draw name="StaticText1" y="217.22mm" x="54.24mm" minW="63.2454mm" minH="8.4765mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>options - annotations, no pdf,<span style="xfa-spacerun:yes"> </span></p><p>no digital signature, no template</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+         </draw>
+         <draw name="StaticText2" y="132.82mm" x="57.68mm" minW="36.6029mm" minH="7.4986mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>there are 2 hidden fields - FormName and Recipe</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+         </draw>
+         <draw name="StaticText3" y="83.61mm" x="78.85mm" minW="61.9127mm" minH="15.7421mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>TestForm1</p><p style="font-size:8pt">041204<span style="font-size:24pt"> XDP annotations</span></p></body>
+               </exData>
+            </value>
+            <font size="24pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+         </draw>
+         <draw name="StaticText4" y="170.92mm" x="115.62mm" minW="57.5524mm" h="7.5mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>the TrackingNum fields is output only</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+         </draw>
+         <draw name="StaticText5" y="146.05mm" x="119.59mm" minW="54.1623mm" minH="6.0067mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>these fields are for user input</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+         </draw>
+      </subform>
+   </subform>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?templateDesigner DefaultRunAt client?>
+   <?templateDesigner XDCFile acrobat6.xdc?>
+   <?templateDesigner Zoom 84?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/1.0/">
+   <agent name="designer">
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </agent>
+   <present>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+</xfa:datasets>
+<sourceSet xmlns="http://www.xfa.org/schema/xfa-source-set/1.0/"/>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.1/"/>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.1/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">MMM D, YYYY</datePattern>
+         <datePattern name="long">M/D/YY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">MMMM D, YYYY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A</timePattern>
+         <timePattern name="long">h:MM A</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM:SS A Z</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="minus">-</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+   </locale>
+</localeSet></xdp:xdp>

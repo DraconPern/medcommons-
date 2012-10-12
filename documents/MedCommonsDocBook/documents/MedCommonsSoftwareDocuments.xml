@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../DocBook/docbookx.dtd">
+<article>
+    <title>MedCommons Software Documents</title>
+    <articleinfo>
+    
+    <revhistory>
+        <revision>
+            <revnumber>A</revnumber>
+            
+            <date>April 17, 2005</date>
+            <authorinitials>SWD</authorinitials>
+            <revdescription><para>Initial Draft</para></revdescription>
+        </revision>
+    </revhistory>
+        <legalnotice><para>Copyright 2005 MedCommons, Inc.</para></legalnotice>
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para>
+            The naming conventions used in this document are from Q-0005 Document Naming Convention.
+            </para>
+    </sect1>
+    <sect1>
+        <title>Requirements</title>
+        
+   
+    <para>
+        The requirement documents define numbered requirements which are referred to in specification documents and bug reports. These documents are derived from several 
+        sources including customer requests, regulatory requirements, product briefs, and good software engineering practice.
+    </para>
+    <para>There are two broad types of requirement documents: "platform" level requirements that cover general  requirements for all MedCommons products and product specifications.
+        Each requirement document contains numbered requirements (the formal requirements) as well as use cases which define how the system or subsystem is to be used.
+        </para>
+    <table>
+            <title>MedCommons Requirements</title>
+            <tgroup cols="3" align ="left" colsep="1" rowsep="1">
+                <colspec colwidth="0.8in"/>
+                <colspec colwidth="1.7in"/>
+                <colspec colwidth="4.0in"/>
+                <tbody valign="top">
+                    <row>
+                        <entry> 
+                            REQ-0001
+                        </entry>
+                        <entry>
+                            MedCommons Platform Object Identity Requirements
+                        </entry>
+                        <entry>
+                            Defines requirements for all MedCommons Platform object identifiers.
+                        </entry>
+                    </row>
+                    <row>
+                        <entry> 
+                            REQ-0002
+                        </entry>
+                        <entry>
+                            MedCommons Platform Security Requirements
+                        </entry>
+                        <entry>
+                            Defines security requirements for the MedCommons Platform.
+                        </entry>
+                    </row>
+                    <row>
+                        <entry> 
+                            REQ-0003
+                        </entry>
+                        <entry>
+                            MedCommons Platform Patient Centricity Requirements
+                        </entry>
+                        <entry>
+                            Defines 'patient centric' for the MedCommons Platform.
+                        </entry>
+                        </row>
+                        <row>
+                            <entry> 
+                                REQ-0004
+                            </entry>
+                            <entry>
+                                MedCommons Patient Desktop
+                            </entry>
+                            <entry>
+                                Defines requirements for Patient Desktop.
+                            </entry>
+                        </row>
+                        <row>
+                            <entry> 
+                                REQ-0005
+                            </entry>
+                            <entry>
+                                MedCommons Patient Document Viewer
+                            </entry>
+                            <entry>
+                                Defines security requirements for the MedCommons Patient Document Viewer (previously known
+                                as the WADO viewer).
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>REQ-0006</entry>
+                            <entry> MedCommons Repository Gateway Requirements</entry>
+                            <entry>
+                              
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>REQ-0007</entry>
+                            <entry> MedCommons Enterprise Gateway Requirements</entry>
+                            <entry>
+                                Defines external protocol (XDS, DICOM, HL7) interfaces.
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>REQ-0008</entry>
+                            <entry> MedCommons Embedded Gateway Requirements</entry>
+                            <entry>
+                                
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>REQ-0009</entry>
+                            <entry> MedCommons Central Service Requirements</entry>
+                            <entry>
+                            </entry>
+                        </row>
+                    <row>
+                        <entry>REQ-0010</entry>
+                        <entry> MedCommons CCR Requirements</entry>
+                        <entry>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>REQ-0011</entry>
+                        <entry> MedCommons Device Requirements</entry>
+                        <entry>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>MedCommons Requirement Prefixes</title>
+            <tgroup cols="3" align ="left" colsep="1" rowsep="1">
+                <colspec colwidth="0.8in"/>
+                <colspec colwidth="1.7in"/>
+                <colspec colwidth="4.0in"/>
+                <tbody valign="top">
+                    <row>
+                        <entry> 
+                            OID
+                        </entry>
+                        <entry>Object Identifier</entry>
+                        <entry>Requirements for the several types of MedCommons Object Identifiers </entry>
+                    </row>
+                    <row>
+                        <entry> 
+                            MCID
+                        </entry>
+                        <entry>MedCommons Id</entry>
+                        <entry>Every user (patient, provider, administrator) has a MedCommons Id.</entry>
+                    </row>
+                    <row>
+                        <entry> 
+                            SEC
+                        </entry>
+                        <entry>Security</entry>
+                        <entry>Defines security requirements that are the outcome of a risk assessment.</entry>
+                    </row>
+                    <row>
+                        <entry> 
+                            TEMPID
+                        </entry>
+                        <entry>MedCommons Temporary Identifiers</entry>
+                        <entry>Defines temporary identifiers in the MedCommons system. Temporary identifiers are used to refer to objects that have not yet become fixed content.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </sect1>
+        <sect1>
+            <title>Procedures</title>
+            <table>
+                <title>Development Procedures</title>
+                <tgroup cols="3" align ="left" colsep="1" rowsep="1">
+                    <colspec colwidth="0.8in"/>
+                    <colspec colwidth="1.7in"/>
+                    <colspec colwidth="4.0in"/>
+                    <tbody valign="top">
+                        <row>
+                            <entry> 
+                                DEV-0001
+                            </entry>
+                            <entry>
+                                MedCommons DocBook Procedures
+                            </entry>
+                            <entry>Defines procedures for creating, editing, and transforming MedCommons DocBook source documents into readable output documents.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            
+        </sect1>
+    <sect1>
+        <title>Specifications</title>
+        <para>
+            TBD: As a rule each requirement should have a corresponding spec document. This may change over time - but that's the short-run assumption.
+        </para>
+        <para>
+            <table>
+                <title>MedCommons Specifications</title>
+                <tgroup cols="3" align ="left" colsep="1" rowsep="1">
+                    <colspec colwidth="0.8in"/>
+                    <colspec colwidth="1.7in"/>
+                    <colspec colwidth="4.0in"/>
+                    <tbody valign="top">
+                        <row>
+                            <entry> 
+                                SS-0001
+                            </entry>
+                            <entry>
+                                Platform MedCommons Object Identity Specification
+                            </entry>
+                            <entry>
+                                Defines the domain of all MedCommons global identifiers for nodes, data, and users.
+                            </entry>
+                        </row>
+                        <row>
+                            <entry> 
+                                SS-0002
+                            </entry>
+                            <entry>
+                                MedCommons Network Overview
+                            </entry>
+                            <entry>
+                                Provides description of all MedCommons network services and their interfaces.
+                            </entry>
+                        </row>
+                        <row>
+                            <entry> 
+                                SS-0003
+                            </entry>
+                            <entry>
+                                MedCommons Application Architecture
+                            </entry>
+                        </row>
+                        <row>
+                            <entry> 
+                                SS-0004
+                            </entry>
+                            <entry>
+                                MedCommons Application Requests And Tasks
+                            </entry>
+                        </row>
+                        <row>
+                            <entry> 
+                                SS-0005
+                            </entry>
+                            <entry>
+                                MedCommons Command Interpreter
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+                </table>
+        </para>
+    </sect1>
+    <sect1>
+        <title>To do</title>
+        <para>
+            List of things to fix in the current document tree.
+        </para>
+        </sect1>
+    
+    
+
+    
+</article>

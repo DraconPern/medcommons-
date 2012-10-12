@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<data-sources />
+	
+	<form-beans>
+
+    <!-- Maintains WADO state in session -->
+		<form-bean name="wadoForm" type="net.medcommons.router.services.wado.WADOParameterForm"/>
+
+    <!-- Used to initialize HIMSS XDS Patient List -->
+		<form-bean name="xdsPatientForm" type="net.medcommons.router.services.xds.consumer.web.action.PatientListForm"/>
+
+    <!-- Simple patient query form -->
+		<form-bean name="patientQueryForm" type="net.medcommons.router.services.xds.consumer.web.action.PatientQueryForm"/>
+
+    <!-- Notification Form -->
+		<form-bean name="notificationForm" type="net.medcommons.router.services.wado.actions.NotificationForm"/>
+
+    <!-- CCR Copy Form : a special Notification Form that copies a src CCR and sets properties on the copy -->
+		<form-bean name="ccrCopyForm" type="net.medcommons.router.services.wado.actions.NotificationForm"/>
+	</form-beans>
+	
+	<global-exceptions>
+    <exception key="wado.expired_session" type="net.medcommons.router.services.wado.SessionExpiredException" path="/wadoError.jsp"/>
+    <exception key="wado.missing.ccr" type="net.medcommons.router.services.wado.CCRNotFoundException" path="/wadoError.jsp"/>
+    <exception key="medcommons.notLoggedIn" type="net.medcommons.router.services.wado.NotLoggedInException" path="/logon.jsp"/>
+    <exception key="medcommons.loginFailure" type="net.medcommons.router.services.wado.LoginFailedException" path="/logon.jsp"/>
+    <exception key="medcommons.invalidCredentials" type="net.medcommons.router.services.wado.InvalidCredentialsException" path="/logon.jsp"/>
+    <exception key="medcommons.documentUnavailable" type="net.medcommons.router.services.wado.DocumentNotFoundException" path="/wadoError.jsp"/>
+    <exception key="medcommons.documentUnavailable" type="net.medcommons.router.services.repository.DocumentNotFoundException" path="/wadoError.jsp"/>
+    <exception key="medcommons.genericError" type="java.lang.Exception" path="/wadoError.jsp"/>
+  </global-exceptions>
+
+	<global-forwards />
+	
+	<action-mappings>
+
+      <!-- WADO -->
+      
+      <!-- 
+        Return a string of XML describing status of the gateway
+        -->
+	    <action path="/status" type="net.medcommons.router.services.wado.actions.StatusAction">
+            <forward name="success" path="/status.jsp"/>
+            <forward name="xml" path="/status-xml.jsp"/>
+            <forward name="xhtml" path="/status-xhtml.jsp"/>
+	    </action>	
+	    
+ 	    <action path="/activity" type="net.medcommons.router.services.wado.actions.StatusAction">
+            <forward name="success" path="/desktops.jsp"/>
+	    </action>		
+
+     <!-- 
+        Return the server log file
+        -->
+ 	    <action path="/log" type="net.medcommons.router.services.wado.actions.ServerLogAction">
+        <forward name="dummy" path="/status-xml.jsp"/>
+	    </action>		
+
+     <!-- HIMSS demo -->
+      <action path="/xdsPatients"
+                type="net.medcommons.router.services.xds.consumer.web.action.InitializePatientListAction">
+          <forward name="success" path="/XdsPatientList.jsp"/>
+        </action>	
+
+       <!-- Send a referral -->
+      <action path="/confirmReferral"
+                type="net.medcommons.router.services.wado.actions.ConfirmReferralAction"
+                name="notificationForm"
+                scope="session">
+         <forward name="success" path="/sendResult.jsp"/>
+      </action>	
+
+       <!-- save a referral without sending -->
+      <action path="/saveReply"
+                type="net.medcommons.router.services.wado.actions.SaveReplyAction"
+                name="notificationForm"
+                scope="session">
+         <forward name="success" path="/sendResult.jsp"/>
+      </action>	
+
+       <!-- Add a CCR to an Account -->
+      <action path="/addToAccount"
+                type="net.medcommons.router.services.wado.actions.AddToAccountAction">
+         <!-- Not used, required by struts -->
+         <forward name="dummy" path="/error.jsp"/>
+      </action>	
+
+      <!-- Initializes and shows Notification Form/eReferral Letter-->
+      <action path="/showNotificationForm"
+                type="net.medcommons.router.services.wado.actions.ShowNotificationFormAction">
+        <forward name="success" path="/notificationForm.jsp"/>
+      </action>	
+
+      <!-- View CCR -->
+      <action path="/viewEditCCR"
+                type="net.medcommons.router.services.wado.actions.ViewEditCCRAction" >
+	      <forward name="view" path="/viewer"/>
+	      <forward name="edit" path="/showNotificationForm.do"/>
+	      <forward name="undefined" path="/viewer"/>
+	      <forward name="uploadAccountFiles" path="/uploadAccountFiles.jsp"/>
+      </action>	
+
+      <!-- Create Reply CCR -->
+      <action path="/createReplyCCR"
+                name="notificationForm"
+                type="net.medcommons.router.services.wado.actions.CreateReplyCCRAction" >
+	      <forward name="success" path="/viewEditCCR.do"/>
+      </action>	
+
+      <!-- Create Reply CCR -->
+      <action path="/saveCurrentCCR"
+                name="notificationForm"
+                type="net.medcommons.router.services.wado.actions.SaveReplyAction">
+                <forward name="success" path="/SetCurrentCCR.action"/>
+      </action>	
+
+      <!-- Initializes and shows Notification Form/eReferral Letter-->
+      <action path="/updateCcr"
+                type="net.medcommons.router.services.xds.consumer.web.action.UpdateActiveCCRAction"
+                name="notificationForm"
+                scope="session">
+         <forward name="success" path="/viewEditCCR.do"/>
+         <forward name="desktop" path="/XdsFolders.jsp"/>
+         <forward name="viewer" path="/viewEditCCR.do"/>
+         <forward name="consent" path="/showConsentForm.do"/>
+         <forward name="transaction" path="/viewEditCCR.do"/>
+         <forward name="home" redirect="true" path="https://secure.medcommons.net/hpbody.html"/>
+         <forward name="showAddDocument" path="/showAddDocument.do"/>
+         <forward name="logon" path="/logon.jsp"/>
+      </action>	
+
+      <!-- Initializes and shows Notification Form/eReferral Letter-->
+      <action path="/validateCcr" type="net.medcommons.router.services.xds.consumer.web.action.ValidateCCRAction">
+         <forward name="success" path="/XdsFolders.jsp"/>
+      </action>	
+
+      <!-- Opens a study ensuring any prior session information is cleared -->
+      <action path="/showConsentForm"
+                type="net.medcommons.router.services.wado.actions.ShowConsentFormAction"
+                name="notificationForm"
+                scope="session">
+         <forward name="success" path="/consentForm.jsp"/>
+      </action>	
+
+     <!-- 
+        Show the status of the EncoderManager
+        -->
+	    <action path="/encoderStatus" type="net.medcommons.router.services.wado.actions.EncoderStatusAction">
+        <forward name="success" path="/encoderStatus.jsp"/>
+	    </action>		
+
+      <!-- 
+        Show page to add a document to a Study
+        -->
+	    <action path="/showAddDocument" type="net.medcommons.router.services.wado.actions.InitAddDocumentAction">
+        <forward name="success" path="/addDocument.jsp"/>
+	    </action>		
+
+      <!-- 
+        Deletes a patient id on the ccr in session at ccrIndex, specified by patient id index
+        Returns JSON result.
+       -->
+	    <action path="/deletePatientId" type="net.medcommons.router.services.wado.actions.DeletePatientIdAction">
+        <forward name="dummy" path="error.jsp"/>
+	    </action>		
+
+      <!-- 
+        Import an external document to an account via file upload
+       -->
+       <action path="/addAccountDocument" 
+         type="net.medcommons.router.services.wado.actions.AddAccountDocumentAction" 
+         input="/accountDocument.jsp"
+         name="uploadDocumentForm">
+         <forward name="success" path="/accountDocument.jsp"/>
+	    </action>		
+
+      <!-- 
+        Import an external document via base64 encoded upload
+       -->
+       <action path="/putDocument" 
+         type="net.medcommons.router.services.wado.actions.PutDocumentAction">
+         <forward name="dummy" path="/error.jsp"/>
+	    </action>		
+
+      <!-- 
+        Allocates a new tracking number and assigns it to the Current CCR
+        -->
+      <action path="/newTrackingNumber" type="net.medcommons.router.services.wado.actions.NewTrackingNumberAction">
+        <forward name="success" path="/updateCcr.do?forward=viewer"/>
+	    </action>		
+
+      <!-- 
+        Allocates a new tracking number and assigns it to the Current CCR
+        -->
+      <action path="/validateSeriesCopy" type="net.medcommons.router.services.wado.actions.NewTrackingNumberAction">
+        <forward name="success" path="/validateSeriesView.do"/>
+	    </action>
+
+      <!-- Validates a series, displaying it afterwards -->
+      <action path="/validateSeriesView" type="net.medcommons.router.services.xds.consumer.web.action.ValidateSeriesAction">
+         <forward name="success" path="/viewEditCCR.do"/>
+      </action>	
+
+      <!-- 
+        Renders an arbitrary document directly to the output stream
+        -->
+	    <action path="/streamDocument" type="net.medcommons.router.services.wado.actions.StreamDocumentAction">
+        <forward name="dummy" path="/error.jsp"/>
+	    </action>		
+
+      <!-- 
+        Kill an active job
+        -->
+	    <action path="/killEncodeJob" type="net.medcommons.router.services.wado.actions.KillEncoderJob">
+        <forward name="success" path="/encoderStatus.do"/>
+	    </action>		
+
+	</action-mappings>
+	
+	<controller
+		bufferSize="4096"
+		debug="0"
+		locale="false"
+		nocache="false"
+    inputForward="false"
+    processorClass="net.medcommons.router.util.struts.JDomRequestProcessor" />
+
+	<message-resources null="true" parameter="net.medcommons.ApplicationResources" />
+</struts-config>
+

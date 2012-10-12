@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+-
+- set two Siwanoy
+
+-->
+
+<!--
+- Database: 'songbook'
+-->
+<TableExport xporttime='05/26/09 13:39:50' filter='none' >
+<description>Siwanoy Set 2</description>
+ <songs>
+<tune>Brown Sugar</tune>
+<tune>Hit Me With Your Best Shot </tune>
+<tune>Sweet Home Alabama</tune>
+<tune>Born to Be Wild</tune>
+<tune>Long Train Running</tune>
+<tune>Rescue Me</tune>
+<tune>Heard It Thru the Grapevine</tune>
+<tune>Locomotion</tune>
+<tune>Proud Mary</tune>
+<tune>Miss You</tune>
+<tune>Wild Horses</tune>
+<tune>La Grange</tune>
+<tune>Tush</tune>
+<tune>Let It Rain</tune>
+<tune>Were an American Band</tune>
+<tune>Crossroads</tune>
+<tune>Like A Rolling Stone</tune>
+<tune>Hush</tune>
+</songs>
+</TableExport>

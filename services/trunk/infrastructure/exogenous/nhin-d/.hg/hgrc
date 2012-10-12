@@ -1,0 +1,6 @@
+[paths]
+default = https://nhin-d.googlecode.com/hg/ nhin-d
+
+
+[tortoisehg]
+postpull = update

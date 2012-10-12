@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>Ray Ramirez</string>
+		<key>version</key>
+		<string>003</string>
+		<key>landscapeWidenButton</key>
+		<string>yes</string>
+		<key>bottomRootSegment</key>
+		<dict>
+			<key>Buttons</key>
+
+			<array>
+						<dict>
+					<key>Action</key>
+					<string>GotoScene</string>
+					<key>Info</key>
+					<string>back to scene 1</string>
+					<key>Label</key>
+
+					<string>MedCommons</string>
+					<key>Title</key>
+					<string>MedCommons</string>
+					<key>URL</key>
+					<string>2</string>
+					<key>scene</key>
+
+					<string>2</string>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<string>GotoScene</string>
+					<key>Info</key>
+					<string>back to scene 0</string>
+					<key>Label</key>
+
+					<string>Rosters</string>
+					<key>Title</key>
+					<string>Rosters</string>
+					<key>URL</key>
+					<string>0</string>
+					<key>scene</key>
+
+					<string>0</string>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<string>GotoScene</string>
+					<key>Info</key>
+					<string>back to scene 1</string>
+					<key>Label</key>
+
+					<string>AHMS</string>
+					<key>Title</key>
+					<string>AHMS</string>
+					<key>URL</key>
+					<string>1</string>
+					<key>scene</key>
+
+					<string>1</string>
+				</dict>
+
+
+			</array>
+			<key>Width</key>
+			<string>310</string>
+		</dict>
+		<key>xleftRootSegment</key>
+		<dict>
+			<key>Buttons</key>
+
+			<array>
+							<dict>
+					<key>Action</key>
+					<string>InvokeMethod</string>
+					<key>class</key>
+					<string>TestMorePage</string>
+					<key>method</key>
+					<string>more</string>
+					<key>Label</key>
+					<string>more</string>
+					<key>Info</key>
+					<string>
+						calls method in class for this button
+					</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>MorePage</string>
+				</dict>
+
+			</array>
+			<key>Width</key>
+			<string>70</string>
+		</dict>
+		<key>xrightRootSegment</key>
+		<dict>
+			<key>Buttons</key>
+
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>GotoScene</string>
+					<key>Info</key>
+					<string>back to scene 0</string>
+					<key>Label</key>
+
+					<string>Rosters</string>
+					<key>Title</key>
+					<string>Rosters</string>
+					<key>URL</key>
+					<string>0</string>
+					<key>scene</key>
+
+					<string>0</string>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<string>GotoScene</string>
+					<key>Info</key>
+					<string>back to scene 1</string>
+					<key>Label</key>
+
+					<string>AHMS</string>
+					<key>Title</key>
+					<string>AHMS</string>
+					<key>URL</key>
+					<string>1</string>
+					<key>scene</key>
+
+					<string>1</string>
+				</dict>
+
+
+			</array>
+			<key>Width</key>
+			<string>100</string>
+		</dict>
+		<key>rightDetailSegment</key>
+		<dict>
+			<key>Width</key>
+			<string>100</string>
+			<key>Buttons</key>
+			<array>
+			
+
+				
+						<dict>
+					<key>Action</key>
+					<string>InvokeMethod</string>
+					<key>class</key>
+					<string>TestMorePage</string>
+					<key>method</key>
+					<string>more</string>
+					<key>Label</key>
+					<string>Info</string>
+					<key>Info</key>
+					<string>
+						calls method in class for this button
+					</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>MorePage</string>
+				</dict>
+				
+				
+			</array>
+		</dict>
+
+		<key>leftDetailSegment</key>
+		<dict>
+			<key>Width</key>
+			<string>200</string>
+			<key>Buttons</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>ShowDetail</string>
+					<key>ImageURL</key>
+
+					<string>
+						http://pbats.com/images/profiles/1197045186ramirez.jpg
+					</string>
+					<key>Info</key>
+					<string>trainer home</string>
+					<key>Label</key>
+					<string>Ray</string>
+					<key>Title</key>
+
+					<string>NY Mets</string>
+					<key>URL</key>
+					<string>
+						http://www.medcommons.net/MedPadPrototyper/samples/RamHome.html
+					</string>
+				</dict>
+
+
+			</array>
+		</dict>
+			<key>rightFullSegment</key>
+		<dict>
+			<key>Width</key>
+			<string>300</string>
+			<key>Buttons</key>
+			<array>
+
+				<dict>
+					<key>Action</key>
+					<string>InvokeMethod</string>
+					<key>class</key>
+					<string>TestShooter</string>
+					<key>method</key>
+					<string>testShooter</string>
+					<key>args</key>
+					<dict>
+						<key>Fee</key>
+						<integer>666</integer>
+						<key>Fie</key>
+						<string>Plugh!</string>
+						<key>Foe</key>
+						<array>
+							<string>Neo-cons</string>
+							<string>Tea Partiers</string>
+							<string>Sinisters</string>
+						</array>
+						<key>Fum</key>
+						<false />
+					</dict>
+					<key>Label</key>
+					<string>Camera</string>
+					<key>Info</key>
+					<string>
+						calls method in class for this button
+					</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>Samples</string>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<string>InvokeMethod</string>
+					<key>class</key>
+					<string>TestSOAPNotes</string>
+					<key>method</key>
+					<string>listSOAPNotes</string>
+					<key>args</key>
+					<dict>
+						<key>Fee</key>
+						<integer>666</integer>
+						<key>Fie</key>
+						<string>Plugh!</string>
+						<key>Foe</key>
+						<array>
+							<string>Neo-cons</string>
+							<string>Tea Partiers</string>
+							<string>Sinisters</string>
+						</array>
+						<key>Fum</key>
+						<false />
+					</dict>
+					<key>Label</key>
+					<string>S.O.A.P.</string>
+					<key>Info</key>
+					<string>
+						calls method in class for this button
+					</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>Samples</string>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<string>InvokeMethod</string>
+					<key>class</key>
+					<string>FullScreenViewer</string>
+					<key>method</key>
+					<string>injectJS:</string>
+					<key>args</key>
+					<dict>
+					
+						<key>js</key>
+						<string>showSharingDialog({});</string>
+					</dict>
+					<key>Label</key>
+					<string>Share</string>
+					<key>Info</key>
+					<string>
+						calls method in class for this button
+					</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>Samples</string>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<string>InvokeMethod</string>
+					<key>class</key>
+					<string>TestFaxCover</string>
+					<key>method</key>
+					<string>faxCoverTest:</string>
+					<key>args</key>
+					<dict>	
+						<key>url</key>
+						<string>https://portal.medcommons.net/portal/iPadCover.php</string>	
+						<key>url2</key>
+						<string>https://www.apple.com</string>	
+						<key>title</key>
+						<string>Fax Cover Sheet for NY Mets Player </string>
+					</dict>
+					<key>Label</key>
+					<string>Fax</string>
+					<key>Info</key>
+					<string>
+						calls method in class for this button
+					</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>Samples</string>
+				</dict>
+			
+			</array>
+		</dict>
+		
+		<key>leftFullSegment</key>
+		<dict>
+			<key>Width</key>
+			<string>100</string>
+			<key>Buttons</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>InvokeMethod</string>
+					<key>class</key>
+					<string>DismissalController</string>
+					<key>method</key>
+					<string>removeFullScreenView</string>
+						<key>Label</key>
+					<string>Home</string>
+					<key>Info</key>
+					<string>
+						calls method in class for this button
+					</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>Samples</string>
+				</dict>
+	
+			</array>
+		</dict>
+
+		<key>scenes</key>
+		<array>
+
+			<dict>
+				<key>Title</key>
+				<string>NY Mets</string>
+				<key>URL</key>
+				<string>http://www.mets.com</string>
+				<key>barbuttontitle</key>
+
+				<string>Menu</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>largetitle</key>
+
+				<string>Rosters</string>
+				<key>name</key>
+				<string>Main Scene</string>
+				<key>scene</key>
+				<string>0</string>
+				<key>smalltitle</key>
+
+				<string>Rosters</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>blocks</key>
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/nymetslogo.jpg
+						</string>
+						<key>Info</key>
+
+						<string>tap to see NY Mets Roster</string>
+						<key>Label</key>
+						<string>NY Mets</string>
+						<key>Title</key>
+						<string>Mets Roster</string>
+						<key>URL</key>
+
+						<string>
+							http://mets.mlb.com/team/roster_active.jsp?c_id=nym
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/buffalobisonslogo.jpg
+						</string>
+
+						<key>Info</key>
+						<string>tap to see Bisons Player Roster</string>
+						<key>Label</key>
+						<string>Buffalo Bisons</string>
+						<key>Title</key>
+						<string>Buffalo Bisons Roster</string>
+
+						<key>URL</key>
+						<string>
+							http://web.minorleaguebaseball.com/milb/stats/stats.jsp?t=t_ros&amp;cid=422
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/binghamtonmetslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							tap to see Binghamton Mets Player Roster
+						</string>
+						<key>Label</key>
+						<string>Binghamton Mets</string>
+
+						<key>Title</key>
+						<string>Binghamton Mets Roster</string>
+						<key>URL</key>
+						<string>
+							http://web.minorleaguebaseball.com/milb/stats/stats.jsp?t=t_ros&amp;cid=505
+						</string>
+					</dict>
+					<dict>
+
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/stluciemetslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							tap to see St Lucie Mets Player Roster
+						</string>
+
+						<key>Label</key>
+						<string>St Lucie Mets</string>
+						<key>Title</key>
+						<string>St Lucie Mets Roster</string>
+						<key>URL</key>
+						<string>
+							http://web.minorleaguebaseball.com/milb/stats/stats.jsp?t=t_ros&amp;cid=507
+						</string>
+
+						<key>scene</key>
+						<string>4</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+
+						<string>
+							http://www.siriushealthcare.com/ipad/images/savannahsandgnatslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							tap to see Savannah Sand Gnats Player Roster
+						</string>
+						<key>Label</key>
+						<string>Savannah Sand Gnats</string>
+						<key>Title</key>
+
+						<string>Savannah Sand Gnats Roster</string>
+						<key>URL</key>
+						<string>
+							http://web.minorleaguebaseball.com/milb/stats/stats.jsp?t=t_ros&amp;cid=543
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/brooklyncycloneslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							tap to see Brooklyn Cyclones Player Roster
+						</string>
+						<key>Label</key>
+
+						<string>Brooklyn Cyclones</string>
+						<key>Title</key>
+						<string>Brooklyn Cyclones Roster</string>
+						<key>URL</key>
+						<string>
+							http://web.minorleaguebaseball.com/milb/stats/stats.jsp?t=t_ros&amp;cid=453
+						</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/kingsportmetslogo.jpg
+						</string>
+						<key>Info</key>
+
+						<string>
+							tap to see Kingsport Mets Player Roster
+						</string>
+						<key>Label</key>
+						<string>Kingsport Mets</string>
+						<key>Title</key>
+						<string>Kingsport Mets Roster</string>
+						<key>URL</key>
+
+						<string>
+							http://web.minorleaguebaseball.com/milb/stats/stats.jsp?t=t_ros&amp;cid=506
+						</string>
+					</dict>
+				</array>
+
+			</dict>
+
+
+			<dict>
+				<key>Title</key>
+				<string>NY Mets</string>
+				<key>URL</key>
+				<string>http://www.mets.com</string>
+				<key>barbuttontitle</key>
+				<string>Menu</string>
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>largetitle</key>
+
+				<string>Ray Ramirez Scene Two</string>
+				<key>name</key>
+				<string>Main Scene</string>
+				<key>scene</key>
+				<string>1</string>
+				<key>smalltitle</key>
+
+				<string>AHMS</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>blocks</key>
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/nymetslogo.jpg
+						</string>
+						<key>Info</key>
+
+						<string>AHMS View - NY Mets Roster</string>
+						<key>Label</key>
+						<string>NY Mets</string>
+						<key>Title</key>
+						<string>Mets - AHMS</string>
+						<key>URL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/Sutton%20Login.png
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/buffalobisonslogo.jpg
+						</string>
+
+						<key>Info</key>
+						<string>
+							AHMS View - Bisons Player Roster
+						</string>
+						<key>Label</key>
+						<string>Buffalo Bisons</string>
+						<key>Title</key>
+						<string>Buffalo Bisons - AHMS</string>
+
+						<key>URL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/Sutton%20Login.png
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/binghamtonmetslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							AHMS View - Binghamton Mets Player Roster
+						</string>
+						<key>Label</key>
+						<string>Binghamton Mets</string>
+
+						<key>Title</key>
+						<string>Binghamton Mets - AHMS</string>
+						<key>URL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/Sutton%20Login.png
+						</string>
+					</dict>
+					<dict>
+
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/stluciemetslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							AHMS View - St Lucie Mets Player Roster
+						</string>
+
+						<key>Label</key>
+						<string>St Lucie Mets</string>
+						<key>Title</key>
+						<string>St Lucie Mets - AHMS</string>
+						<key>URL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/Sutton%20Login.png
+						</string>
+
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+
+						<string>
+							http://www.siriushealthcare.com/ipad/images/savannahsandgnatslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							AHMS View - Savannah Sand Gnats Player
+							Roster
+						</string>
+						<key>Label</key>
+						<string>Savannah Sand Gnats</string>
+						<key>Title</key>
+
+						<string>Savannah Sand Gnats - AHMS</string>
+						<key>URL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/Sutton%20Login.png
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/brooklyncycloneslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							AHMS View - Brooklyn Cyclones Player Roster
+						</string>
+						<key>Label</key>
+
+						<string>Brooklyn Cyclones</string>
+						<key>Title</key>
+						<string>Brooklyn Cyclones - AHMS</string>
+						<key>URL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/Sutton%20Login.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/kingsportmetslogo.jpg
+						</string>
+						<key>Info</key>
+
+						<string>
+							AHMS View - Kingsport Mets Player Roster
+						</string>
+						<key>Label</key>
+						<string>Kingsport Mets</string>
+						<key>Title</key>
+						<string>Kingsport Mets - AHMS</string>
+						<key>URL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/Sutton%20Login.png
+						</string>
+					</dict>
+				</array>
+
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string>NY Mets</string>
+				<key>URL</key>
+				<string>http://www.mets.com</string>
+					<key>barbuttontitle</key>
+
+				<string>Menu</string>
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>largetitle</key>
+
+				<string>Ray Ramirez Scene Three</string>
+				<key>name</key>
+				<string>Main Scene</string>
+				<key>scene</key>
+				<string>2</string>
+				<key>smalltitle</key>
+
+				<string>MedCommons</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>blocks</key>
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/nymetslogo.jpg
+						</string>
+						<key>Info</key>
+
+						<string>
+							MedCommons View - NY Mets Roster
+						</string>
+						<key>Label</key>
+						<string>NY Mets</string>
+						<key>Title</key>
+						<string>Mets - MedCommons</string>
+						<key>URL</key>
+						<string>
+							https://portal.medcommons.net/portal/g4.php?start&amp;h=10
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/buffalobisonslogo.jpg
+						</string>
+
+						<key>Info</key>
+						<string>
+							MedCommons View - Bisons Player Roster
+						</string>
+						<key>Label</key>
+						<string>Buffalo Bisons</string>
+						<key>Title</key>
+						<string>Buffalo Bisons - MedCommons</string>
+
+						<key>URL</key>
+						<string>
+							https://portal.medcommons.net/portal/g4.php?start&amp;h=11
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/binghamtonmetslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							MedCommons View - Binghamton Mets Player
+							Roster
+						</string>
+						<key>Label</key>
+						<string>Binghamton Mets</string>
+
+						<key>Title</key>
+						<string>Binghamton Mets - MedCommons</string>
+						<key>URL</key>
+						<string>
+							https://portal.medcommons.net/portal/g4.php?start&amp;h=12
+						</string>
+
+					</dict>
+					<dict>
+
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/stluciemetslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							MedCommons View - St Lucie Mets Player
+							Roster
+						</string>
+
+						<key>Label</key>
+						<string>St Lucie Mets</string>
+						<key>Title</key>
+						<string>St Lucie Mets - MedCommons</string>
+						<key>URL</key>
+						<string>
+							https://portal.medcommons.net/portal/g4.php?start&amp;h=13
+						</string>
+
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+
+						<string>
+							http://www.siriushealthcare.com/ipad/images/savannahsandgnatslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							MedCommons View - Savannah Sand Gnats Player
+							Roster
+						</string>
+						<key>Label</key>
+						<string>Savannah Sand Gnats</string>
+						<key>Title</key>
+
+						<string>
+							Savannah Sand Gnats - MedCommons
+						</string>
+						<key>URL</key>
+						<string>
+							https://portal.medcommons.net/portal/g4.php?start&amp;h=14
+						</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/brooklyncycloneslogo.jpg
+						</string>
+						<key>Info</key>
+						<string>
+							MedCommons View - Brooklyn Cyclones Player
+							Roster
+						</string>
+						<key>Label</key>
+
+						<string>Brooklyn Cyclones</string>
+						<key>Title</key>
+						<string>Brooklyn Cyclones - MedCommons</string>
+						<key>URL</key>
+						<string>
+							https://portal.medcommons.net/portal/g4.php?start&amp;h=15
+						</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.siriushealthcare.com/ipad/images/kingsportmetslogo.jpg
+						</string>
+						<key>Info</key>
+
+						<string>
+							MedCommons View - Kingsport Mets Player
+							Roster
+						</string>
+						<key>Label</key>
+						<string>Kingsport Mets</string>
+						<key>Title</key>
+						<string>Kingsport Mets - MedCommons</string>
+						<key>URL</key>
+						<string>
+							https://portal.medcommons.net/portal/g4.php?start&amp;h=16
+						</string>
+					</dict>
+				</array>
+
+			</dict>
+		</array>
+	</dict>
+</plist>

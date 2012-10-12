@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mccxp.css" type="text/css"?>
+
+<window
+    id="mccxp_attachWindow"
+    title="CCR References"
+    xmlns:h="http://www.w3.org/1999/xhtml"    
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"    
+    onload="mccxp_attachInit()"
+    >
+    <script language="JavaScript">
+      var refTable;
+      function mccxp_attachInit() {
+        refTable  = mcxel('referencesTable');
+        for(i=0;i&lt;window.opener.mccxp_references.length; ++i) {
+          refTable.appendItem(window.opener.mccxp_references[i]);
+        }
+      }
+
+      function mccxp_removeItem() {
+        try {
+          refTable.removeItemAt(refTable.selectedIndex+2);
+        }
+        catch(e) {
+          alert(e);
+        }
+      }
+
+      function mccxp_saveReferences() {
+        window.opener.mccxp_references = new Array();
+        for(i=0;i&lt;refTable.getRowCount();++i) {
+          window.opener.mccxp_references.push(refTable.getItemAtIndex(i).label);
+        }
+      }
+    </script>
+
+    <script src="MochiKit.js"/>
+    <script src="xpath.js"/>
+    <script src="misc.js"/>
+    <script src="dom.js"/>
+    <script src="mccxp.js"/>
+    <label class="infoheading" style="padding-top: 5px;" value="Attachments"/>
+    <description>Add references you would like send with your CCR here.</description> 
+    <hbox> 
+      <!-- <label class="label" value="File:"/><textbox id="filename" value="" flex="1"/> -->
+      <spacer flex="1"/>
+      <button id="browseButton" label="Add..." oncommand="refTable.appendItem(mccxp_browseFile());"/>
+      <button id="removeButton" label="Remove" disabled="true" oncommand="mccxp_removeItem();"/>
+    </hbox>
+    <listbox id="referencesTable" onselect="mcxel('removeButton').disabled=false;"  flex="1">
+      <listhead>
+        <listheader label="File"/>
+      </listhead>
+      <listcols>
+         <listcol flex="1"/>
+      </listcols>
+    </listbox>
+    <hbox align="start" pack="end"   style="">
+        <button id="closeButton" label="Close" oncommand="mccxp_saveReferences(); window.close();"/>
+    </hbox> 
+</window>
+

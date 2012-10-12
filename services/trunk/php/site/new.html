@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>MedCommons - Medical Image Transfer Made Easy</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/base/base-min.css">
+   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/button/assets/skins/sam/button.css" /> 
+   <link rel="stylesheet" type="text/css" href="new.css">
+</head>
+<body>
+<div id="doc3" class="yui-t7 yui-skin-sam">
+   <div id="hd" role="banner">
+       <div class='button'>Login</div>
+       <div class='button'>FAQ</div>
+       
+       
+       <img src='/images/MEDcommons_logo_246x50_Tran2.gif'/>
+       
+   </div>
+   <div id="bd" role="main">
+    <div id="yui-main">
+    <div class="yui-b">
+      <div class="yui-g">
+        <div id='content'>
+        
+            <div id='video'>
+                <object width="320" height="200"><param name="movie" value="http://www.youtube.com/v/nqh54qqkwgE?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/nqh54qqkwgE?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="200"></embed></object>            
+            </div>            
+           
+        
+          <div id='bullets'>
+              <h2>Medical Image Sharing Made Easy</h2>
+              <p>MedCommons is the easiest way to transfer Medical Images around.</p>
+              <ul>
+                  <li>Upload straight from CD or Scanner, View Online</li>
+                  <li>Share by Email, SMS or Fax</li>
+                  <li>Perfect for Patients, Doctors, Practices, Imaging Centers</li>
+                  <li>Free for up to 20 uploads per month</li>
+                  <li>Secure, Private and HIPAA compliant</li>
+                </ul> 
+           
+           <p>Register to try it out, free with no obligation!</p>
+           <div id='login'>
+               <input type='text' id='username' name='username' autocomplete='off' class='hintTextbox' value='Email Address'/>
+               <input type='text' id='passwordshadow' value='Choose a Password'/>
+               <input type='password' id='password' name='password' value='' class='hidden'/>
+           </div>
+           
+           </div>
+           
+         </div>
+      </div>
+    </div>
+    </div>
+   <div id="ft" role="contentinfo"><p>Copyright &copy; MedCommons 2010</p></div>
+</div>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/element/element-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/button/button-min.js"></script>   
+<script type='text/javascript'>
+
+var HintClass = "hintTextbox";
+var HintActiveClass = "hintTextboxActive";
+
+// define a custom method on the string class to trim leading and training spaces
+String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); };
+
+function initHintTextboxes() {
+  var inputs = document.getElementsByTagName('input');
+  for (i=0; i<inputs.length; i++) {
+    var input = inputs[i];
+    if (input.type!="text" && input.type!="password")
+      continue;
+      
+    if (input.className.indexOf(HintClass)!=-1) {
+      input.hintText = input.value;
+      input.className = HintClass;
+      input.onfocus = onHintTextboxFocus;
+      input.onblur = onHintTextboxBlur;
+    }
+  }
+}
+
+function onHintTextboxFocus() {
+  var input = this;
+  if (input.value.trim()==input.hintText) {
+    input.value = "";
+    input.className = HintActiveClass;
+  }
+}
+
+function onHintTextboxBlur() {
+  var input = this;
+  if (input.value.trim().length==0) {
+    input.value = input.hintText;
+    input.className = HintClass;
+  }
+}
+
+var $ = function(id) { return new YAHOO.util.Element(id); }
+
+YAHOO.util.Event.onContentReady("login",function () {   
+    initHintTextboxes();
+    new YAHOO.widget.Button({ id:"loginreg", container: "login", label: "Register" });    
+    
+    $('passwordshadow').on('focus', function() {
+        this.addClass('hidden');
+        $('password').removeClass('hidden');
+        document.getElementById('password').focus();
+    });    
+});
+</script>
+</body>
+</html>

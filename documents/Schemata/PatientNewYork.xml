@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MedCommonsOrderFields>
+	<PatientDetailsSubForm>
+		<DateOfBirth>11/07/52</DateOfBirth>
+		<LastName>Donner</LastName>
+		<FirstName>Bill</FirstName>
+		<MiddleInitial />
+		<Prefix>Mr.</Prefix>
+		<AddressLine2>3rd Floor</AddressLine2>
+		<City>Bronxville</City>
+		<Zip>10708</Zip>
+		<State>New York</State>
+		<Sex>M</Sex>
+		<SSN>58372839</SSN>
+		<AddressLine1>33 Valley Road</AddressLine1>
+	</PatientDetailsSubForm>
+	<TrackingNumber>0000000000</TrackingNumber>
+	<CreditCardInfo>
+		<CardNum>**** **** 8841</CardNum>
+		<ExpDate>03/08</ExpDate>
+		<Amount />
+		<Tax />
+		<TotalCharge />
+		<CardType>MasterCard</CardType>
+	</CreditCardInfo>
+	<CopyGroupSubform>
+		<SendCopyTo1 />
+		<SendCopyTo2 />
+		<SendCopyTo1 />
+		<SendCopyTo2 />
+	</CopyGroupSubform>
+	<SelectionSubForm>
+		<Selection1>Now is the time for all good men to come to the aid of their countries</Selection1>
+		<Selection3>adsfadf</Selection3>
+		<Selection2>11111111111111112222222222222222222222222223333333333333333333333333333334444444444444444444</Selection2>
+	</SelectionSubForm>
+</MedCommonsOrderFields>

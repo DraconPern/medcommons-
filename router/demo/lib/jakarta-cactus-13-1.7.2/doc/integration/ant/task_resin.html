@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Resin[2x|3x] Ant Tasks</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Resin[2x|3x] Ant Tasks" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus." class="currentPage">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+  
+<div class="section">
+<h1>Resin[2x|3x] Tasks</h1>
+
+    
+<p>
+      The <b>resin2x</b> and <b>resin3x</b> tasks 
+      start/stop Resin 2.x/3.x instances. Both tasks support the following
+      parameters.
+    </p>
+
+    
+<div class="section">
+<h2>Parameters</h2>
+
+      
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+        
+<tr>
+          
+<th>Name</th>
+          <th>Description</th>
+          <th>Required</th>
+        
+</tr>
+        
+<tr>
+          
+<td><b>dir</b></td>
+          <td>
+            The installation directory of the Resin server
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td><b>action</b></td>
+          <td>
+            The action to perform. Valid values are "start" and "stop" to
+            respectively start and stop the container.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>testurl</td>
+          <td>
+            A container URL to poll to test if the container has been
+            started/stopped. If specified the task waits until the
+            container has completely started/stopped.
+          </td>
+          <td>No</td>
+        
+</tr>
+        
+<tr>
+          
+<td>warfile</td>
+          <td>
+            The WAR file to deploy
+          </td>
+          <td>No. One of warfile and earfile.</td>
+        
+</tr>
+        
+<tr>
+          
+<td>earfile</td>
+          <td>
+            The EAR file to deploy
+          </td>
+          <td>No. One of warfile and earfile.</td>
+        
+</tr>
+        
+<tr>
+          
+<td>resinconf</td>
+          <td>
+            The configuration file to use instead of the default one
+          </td>
+          <td>No</td>
+        
+</tr>
+        
+<tr>
+          
+<td>port</td>
+          <td>
+            The TCP port that the container should listen to
+          </td>
+          <td>No, default is 8080</td>
+        
+</tr>
+        
+<tr>
+          
+<td>tmpdir</td>
+          <td>
+            The directory to which the container will be installed for the
+            tests.
+          </td>
+          <td>No (by default the system temporary directory is used)</td>
+        
+</tr>
+        
+<tr>
+          
+<td>output</td>
+          <td>
+            Name of a file to write the output of the container to. If not
+            specified, the standard output will be used
+          </td>
+          <td>No</td>
+        
+</tr>
+        
+<tr>
+          
+<td>append</td>
+          <td>
+            Whether output should be appended to or overwrite an existing
+            file.
+          </td>
+          <td>No, default is <i>false</i></td>
+        
+</tr>
+      
+</table>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Examples</h2>
+
+      
+<p>
+        Start a Resin 3.x instance, wait for it to be started and
+        stop it, waiting for it to be completely stopped:
+      </p>
+
+<div class="source">
+<pre>
+&lt;parallel&gt;
+  &lt;resin3x dir="${cactus.home.resin3x}" action="start"/&gt;
+  &lt;sequential&gt;
+    &lt;waitfor&gt;
+      &lt;http url="http://localhost:${cactus.port}"/&gt;
+    &lt;/waitfor&gt;
+    &lt;resin3x dir="${cactus.home.resin3x}" action="stop"/&gt;
+    &lt;waitfor&gt;
+      &lt;not&gt;
+        &lt;http url="http://localhost:${cactus.port}"/&gt;
+      &lt;/not&gt;
+    &lt;/waitfor&gt;
+  &lt;/sequential&gt;
+&lt;/parallel&gt;
+</pre>
+</div>
+
+      
+<p>
+        This is equivalent to the following (notice the use of the
+        'testurl' attribute:
+      </p>
+
+<div class="source">
+<pre>
+&lt;resin3x dir="${cactus.home.resin3x}" action="start"
+    testurl="http://localhost:${cactus.port}"/&gt;
+&lt;resin3x dir="${cactus.home.resin3x}" action="stop"
+    testurl="http://localhost:${cactus.port}"/&gt;
+</pre>
+</div>
+      
+    
+</div>
+
+  
+</div>
+
+  
+
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

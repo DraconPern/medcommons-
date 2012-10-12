@@ -1,0 +1,126 @@
+div.sidebar{				
+	padding: 1px 1px;	
+	margin-bottom: 15px;
+	border: 1px solid #DFDFDF;
+}
+
+div.sidebar .sidebar_inner{	
+	position: relative;
+	height: 100%;	
+	padding: 10px 10px;
+}
+
+
+div#sinner div.sidebar h3{	
+	font-weight: normal;	
+}
+
+div.sidebar .sbody{	
+	display:block;
+	position:relative;	
+}
+
+div.yellowbg{
+	background-color: #fffbbf;
+	border: none;
+}
+
+div.custom{
+	margin: 0px 0xp;
+	padding: 0px 0px;
+	border: none;
+	
+}
+
+div.custom div.sidebar_inner{
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+div.short_badge{
+	color: white;
+	background: url(../images/sys_images/internal_bluebox.gif) top left no-repeat;
+	height: 243px;	
+	border:none;	
+	overflow: hide;
+}
+
+div.short_badge div.sbody{
+	padding: 10px 15px;
+	
+}
+
+div.short_badge h2{
+	color:white;	
+	font-weight: normal;
+	line-height: 1.2em;
+	font-family: "Century Gothic", Arial, san-serif;
+	/* font-size: 22px; */
+	font-size: 1.8em;
+}
+div#sinner div.default_audience h3{
+	font-weight:bold;
+}
+div.default_audience select{
+	
+}
+input.audience_go{
+	position:relative;
+	top: 7px;
+	
+}
+
+div#containerIE7L input.audience_go{
+	top: 5px;
+}
+
+
+
+
+/************ Blue Box *************/
+div.var8{
+	border: none;
+}
+div.var8 div.sidebar_inner{
+	padding: 0 0;
+	border: none;
+	
+}
+
+div.var2{
+	background-color: #EAF0F4;
+	border: none;
+}
+/*
+
+  		
+background:url("../images/sys_images/explore-home-top.gif") no-repeat scroll 0 0 #308acb;
+color:white;
+height:100%;
+position:relative;
+width:308px;
+padding-top: 10px;
+
+}
+*/
+/************** Inner Sidebar *************/
+.InnerSidebar{
+	width: 180px;	
+	float: right;
+	margin-left: 10px;
+}
+
+.InnerSidebar div.sidebar{					
+	border: none;
+	background-color: #EAF0F4;
+}
+
+.InnerSidebar div.yellowbg{
+	background-color: #fffbbf;
+	border: none;
+}
+/********* news room **************/
+div.newsroom div#sinner div.sidebar h3{
+	font-size: 1.3em;
+	
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Setting Up Fax</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+  <meta name="apple-touch-fullscreen" content="YES" />
+<meta name="format-detection" content="telephone=no">
+<style type="text/css" media="screen">
+  body {
+    margin: 0;
+    font-family: Helvetica;
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#outer {padding:5px 20px 0px 20px;margin: 20px;width:650px;}
+  </style>
+</head>
+<body>
+<div id=outer>
+<img src=https://www.medcommons.net/images/logoHeader.gif />
+<h1>Overview of MedCommons BarCoded Fax Handling</h1>
+There are a few flexible pieces to the MedCommons Fax services:
+<ul>
+<li>Incoming fax lines are supplied by outside vendors. In the normal case, a  MedCommons Customer must make a separate arrangement to rent or lease lines from these vendors.
+MedCommons handles the technical interfaces.</li>
+<li>Cover Sheets are custom-printed by the MedCommons Web and Mobile Web Software. The correct phone numbers and bar codes are automicatically inserted into the Coversheet by 
+the MedCommons software according to the Group which covers a particular patient account</li>
+<li>When a Fax arrives it is automatically placed into the corrected MedCommons Account according to the barcode on the coversheet</li>
+</ul>
+MedCommons Operations Staff will assist the customer in connecting her incoming fax line to the correct group.
+<h1>Incoming Fax Lines</h1>
+Incoming bar-coded fax lines can be rented/leased/procured from DataOnCall or from eFaxDeveloper. They have different pricing packages depending on whether the incoming line is
+toll-free, volumes, and so forth, and should be matched to th needs of each
+customer. With the current software, a single line can service any number of MedCommons Accounts and Groups on a single appliance. 
+<p>The software interface and capabilities of each package is essentialy the same. The vendor will provide the customer with a number that looks something like:
+<code>
+1.212.555.1234
+</code>
+In every case the encoding of the barcode uses a CODE_TYPE of DATAMATRIX and DM_DOT_PIXELS of 8.
+</p>
+<h4>Install Fax Handler Code</h4>
+<ul>
+<li>Each separate line has a separate folder containing the code needed to process incoming faxes on that line. The code is in svn under php/global/fax/</li>
+<li>By convention, the fax handling is all routed thru www.medcommons.net to keep things nice and clean, but that is not actually required. 
+You can put the code anywhere on any appliance.
+On the main, shared MedCommons systems, the code is installed at eg http://www.medcommons.net/1.212.555.1234/, http://www.medcommons.net/1.877.717.7503/</li>
+<li>In the file index.php change the gateway_url to point to the actual appliance eg http://tenth.medcommons.net/</li>
+<li>Now tell DataOnCall or eFaxDeveloper the actual URL where you have put the handler in their setup interface.</li>
+</ul>
+<p>At this point any incoming bar-coded fax over the new line will get routed to MedCommons Accounts on the appliance</p>
+<h1>Connecting Groups to Fax Lines</h1>
+For any account in any group to receive incoming bar-coded fax, the correct cover sheets and barcodes must be generated 
+which include the fax line information as well as account and group preferences such as names of Hospitals, Teams, etc. The mcx table "GroupFax" contains all of these preferences
+and must be tweaked per line per group to control the various options.
+<h4>UI Interface Considerations for CoverSheet Generation</h4>
+The UI for both Web and mobile devices must accommodate the reality that a given "account" may have zero, one, or more than one possible fax line to use. As a simplification, we can
+postpone implementation of the multi-line case until called upn.
+<ul>
+<li>No Fax Lines for This Group - The UI should explicitly say no cover sheets are available and lead the user to a page that might inspire him to setup a line</li>
+<li>There is a Fax Line for This Group - In this case the various fields in the GroupFax entry are combined to build the cover sheet as necessary</li>
+</ul>
+<h4>Patient Fields</h4>
+These are the only fields that are varied per patient account. They are supplied automatically to the coversheet generation software.
+<ul>
+<li>Patient Name - up to 32 chars of patient name, displayed in the Patient: form field,  pulled from the MedCommons Account for this patient. This is often sourced directly from a DICOM modality.</li>
+<li>Patient MCID - 16 digit MCID - not directly displayed on the coversheet, but is encoded in the barcode itself</li>
+</ul>
+
+<h4>Group Fields</h4>
+These are the fields that are set at the Group level for all cover sheets issued for the group.
+<ul>
+<li>FaxTo Name - up to 32 chars of an arbitrary string that will be displayed as the Fax To: field in the Coversheet - e.g. 'NY Dangers'</li>
+<li>Main Blurb - up to 1024 chars of an arbitrary string will be be displayed as the body of the Coversheet - e.g. 
+<small>The NY Dangers maintain a standard Electronic Health Record (EHR) on MedCommons to help keep my care safe and effective. Your cooperation in 
+using and updating my EHR is greatly appreciated.</small></li>
+<li>Salutation - up to 255 chars, e.g 'Thank You'</li>
+<li>Consent Blurb - up to 1024 chars of an arbitrary string will be be displayed if the 'Show Consent' option is selected. It is used to include a real patient signature 
+on the Cover Sheet - e.g. <small>Please print,sign, and save this request and consent in your files. This EHR account accepts Fax and DICOM diagnostic images (see below). You may use my MedCommons account
+as a HIPAA and FDA compliant secure communication system.</small> 
+</ul>
+</div>
+
+
+</body>
+</html>

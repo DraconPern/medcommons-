@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>medcommons</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/hpbody.css" rel="stylesheet" type="text/css">
+<link href="css/fp_diag.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+function showCaption(msgnum) {
+	for(i=1;i<6;i++) {		
+	var theCaption = document.getElementById("msg" + i);
+	theCaption.className = (i==msgnum) ? 'show' : 'hide';
+	var theImage = document.getElementById("img" + i);
+	theImage.style.borderColor = (i==msgnum) ? '#000000' : '#527463';
+	}
+	var theCaption = document.getElementById("msg6");
+	theCaption.className = 'hide';
+	if (msgnum==3) {
+	var theCaption = document.getElementById("msg6");
+	theCaption.className = 'show';
+	}	
+		
+}
+</script>
+</head>
+
+<body>
+<div class="textmenu"><ul>
+  <li>&nbsp;&nbsp;<a href="https://secure.test.medcommons.net/logservice/trackemail.php?a=3715764899095044836749009640" target="_top"><font color="#FFFFFF">X</font></a></li>
+  <li><a href="terms_of_use.htm" target="_top">Terms of Use</a></li>
+  <li><a href="about.htm" target="_top">About Us</a>&nbsp;&nbsp;||&nbsp;&nbsp;</li>
+  <li><a href="faq.htm" target="_top">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;</li>
+  <li><a href="tour.htm" target="_top">Tour</a>&nbsp;&nbsp;||&nbsp;&nbsp;</li>
+</ul></div>
+
+
+<div class="rightcol">
+<img src="images/title_whatsnew.gif" width="200" height="50">
+<ul>
+<li><a href="http://www.medcommons.net/whitepapers/nhinrfiresponse.pdf" target="_top">MedCommons Response to NHIN RFI</a></li>
+<li class="btxt"><a href="http://www.medcommons.net/press/mcpr021605.html" target="_top">MedCommons HIMSS press release</a></li>
+<li class="bpic"><a href="brailer_photo.htm" target="_top">Dr. Brailer visits MedCommons at the HIMSS Interoperability Showcase</a></li>
+</ul>
+</div>
+<div class="rightcol">
+<img src="images/title_links.gif" width="200" height="50">
+<ul>
+<li class="bweb"><a href="#">More information on the CCR standard</a></li>
+</ul>
+</div>
+
+
+<div id="content">
+<h1>Welcome to MedCommons</h1>
+<h2>MedCommons is a service for secure digital transfer of patient health information records (PHI) among providers, patients, and their consultants under explicit patient consent. Patients 'opt in' to PHI transfers by signing consent forms with their providers. This also allows MedCommons to support the provider's HIPAA responsibilities.</h2>
+<h2>For interoperability and archival longevity, MedCommons uses the ASTM Continuity of Care Record (CCR) standard for transfer of PHI. Diagnostic imaging and legacy documents such as physicians' reports are also handled in a non-proprietary manner.</h2>
+<h2>MedCommons delivers increased productivity for physicians whether or not they have installed an electronic medical record system. MedCommons can be used for faster electronic referrals, secure patient communications that are more efficient than the phone, and as a highly integrated yet individualized presentation of the services they access or provide.</h2>
+<h2>All of this is provided by MedCommons in a manner that is automatically accessible to the patient and automatically incorporated into their personal health record repository that only they control.</h2>
+</div>
+
+
+<div id="diagramhead"><img border="0" src="images/diag_head.gif" width="400" height="30"></div>
+<div id="diagram">
+<a href="#" onmouseover="javascript:showCaption(1);"><img id="img1" border="0" src="images/diag_safe.jpg" width="100" height="100"></a>
+<a href="#" onmouseover="javascript:showCaption(2);"><img id="img2" border="0" src="images/diag_doctor.jpg" width="100" height="100"></a>
+<a href="#" onmouseover="javascript:showCaption(3);"><img id="img3" border="0" src="images/diag_astmlogo.gif" width="122" height="60"></a>
+<a href="#" onmouseover="javascript:showCaption(4);"><img id="img4" border="0" src="images/diag_xray.jpg" width="100" height="100"></a>
+<a href="#" onmouseover="javascript:showCaption(5);"><img id="img5" border="0" src="images/diag_surgeon.jpg" width="100" height="100"></a>
+<img id="img6" border="0" src="images/diag_ps.gif" width="122" height="65">
+<div class="hide" id="msg1">MedCommons is the patient's bank for personal health information.</div>
+<div class="hide" id="msg2">Physicians save time when they use a standard designed and controlled by their peers.</div>
+<div class="hide" id="msg3">ASTM CCR is the physician-inspired interoperability standard.</div>
+<div class="hide" id="msg4">Imaging facilities and diagnostic labs achieve unprecedented integration of their services</div>
+<div class="hide" id="msg5">Specialists extend their referral base across traditional enterprise and technical barriers.</div>
+<div class="hide" id="msg6"><br><br><a href="http://www.astm.org/" target="_blank">visit ASTM CCR site</a><br><br><br><a href="http://www.centerforhit.org/x201.xml" target="_blank">learn more about the CCR standard</a></div>
+</div>
+
+
+<div id="footer">&copy; 2005 MedCommons all rights reserved.&nbsp;&nbsp;&nbsp;page last modified:&nbsp;<script type="text/javascript"> document.write(document.lastModified);</script></div>
+
+</body>
+</html>

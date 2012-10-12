@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+    <title>Security Requirements </title>
+    
+    <articleinfo>
+        <invpartnumber>REQ-0002</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>March 27, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>
+            
+            
+            
+            
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+   
+        <para>
+            The MedCommons applications and platform must be trusted by users if it is to be successful; it must earn and keep that trust over many years. The standard by which this is judged
+            will change over time and we wish to lead the industry in this regard. Patients and doctors are trusting us with the transfer and storage of their private medical information. 
+            
+        </para>
+        <para>
+            No privacy or security system that has such a large social component is foolproof. Thus we need to detect problems and notify the appropriate party when a problem occurs. 
+        </para>
+        <para>
+            Architectual decisions can attempt to minimize security issues (hard to guess identifiers; 
+            avoiding storing data that we don't need to store; storing the bulk of data in encrypted form;  ). 
+            Policies need to be defined for break-the-glass access; logging; 
+        </para>
+        <sect2>
+            <title>Process</title>
+       
+        <para>
+            HIPAA requires that a risk analysis be performed 
+        </para>
+        <para>
+            Risk analysis drives the MedCommons security architecture but it is only one part of the process. Regulations, good software security practice, and user interface design that 
+            promotes good security hygiene are other important inputs. To the degree that these can be subsumed in risk analysis that's very useful.
+            
+        </para>
+        </sect2>
+        <sect2>
+            <title>Regulatory and legal constraints</title>
+            HIPAA.
+            Privacy law
+            
+            The HIPAA requirements are not our requirements - they are input to our requirements as mediated by the risk analysis. The form and scope of the regulations is very broad; 
+            MedCommons requirements narrow these down to what our business is responsible for in such a way that the requirements are concrete, clear, and testable.
+            
+            <para>
+                Emphasize that these requirements are not contracts with external entities. For example- saying that x/y should not be possible is not binding with a customer. The various legal
+                contracts are separate from these but it is hard to define documents that meet both sets of needs. Contracts need to be vetted by lawyers; these
+            </para>
+            
+        </sect2>
+        <sect2>
+            <title>General business stragegy</title>
+            Volantary.  Assume we don't need contracts with each provider entity because we're under patient control. Prohibit (by architecture) random access of providers into patient's medical
+            records. Don't provide back door APIs. 
+            
+            Open source/non-discriminating.
+            
+        </sect2>
+        
+    </sect1>
+    <sect1>
+        <title>Requirements</title>
+    
+    
+    <sect2>
+            <title>General Requirements</title>
+            <requirement id="SEC-0001">
+                <reqTitle>Security policies and application user interface must be understood by the user</reqTitle>
+                <reqDescription>
+                    No system is secure if the users model is inconsistent with the policies and implementations. From a design perspective this is a big problem. 
+                </reqDescription>
+            </requirement>
+            <requirement id="SEC-0002">
+                <reqTitle>Security policies and application user interface must minimize security problems.</reqTitle>
+                <reqDescription>Phishing, various social engineering attempts to break security must be minimized by design. </reqDescription>
+            </requirement>
+            <requirement id="SEC-0003">
+                <reqTitle>The MedCommons User must be in control over the security of their data.</reqTitle>
+                <reqDescription>There are some design tensions here between this requirement and SEC-0002. It is difficult to have general rules that prevent abuses in data sharing while permitting
+                the user to define that they really do want to share their data with person X. How X gets authenticated; how to prevent others from impersonating X; how to keep this all simple at the same time
+                is hard.
+                </reqDescription>
+            </requirement>
+            <requirement id="SEC-0004">
+                <reqTitle>Different components of the MedCommons system have different security requirements; the components with lower security requirements can not
+                weaken the security of more secure components.
+                </reqTitle>
+                <reqDescription>
+                    (I need terminology help here.The enterprise vs. respository vs. embedded gateway happens at the application layer, not here at the platform layer.)
+                    Some portions are the MedCommons system are relatively insecure. For example - DICOM Query/Retrieve requires that inexact matches be performed on patient names. 
+                    This type of component can not be as secure as the registry on the MedCommons central site. 
+                    
+                </reqDescription>
+            </requirement>
+        
+    </sect2>
+        
+        <sect2>
+            <title>Privacy</title>
+            <para>
+              Define privacy.
+                Market-driven vs. ??
+               
+                When privacy has been breached (medical records are in court proceedings, theft, persons that were trusted are no longer trusted) the system must have a mechanism of
+                denying further access.
+                
+                Reporting requirements. We need to define our business in such a way that we are not subject to medical reporting requirements (TB, sexually transmitted diseases). 
+                This is the part of the
+                'practice of medicine' that we need to avoid.
+                
+                
+            </para>
+            <requirement id="PRIVACY-0001">
+                <reqTitle>MedCommons requires a privacy policy</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            <requirement id="PRIVACY-0002">
+                <reqTitle>PHI availability in the MedCommons system is extremely restricted. PHI is only visible when a requirement specifies it to be available.</reqTitle>
+                <reqDescription>
+                    PHI (Patient Health Information) is confidential data that must not be disclosed to third parties. Instead of specifying where PHI can not be displayed the default 
+                    in MedCommons shall be that PHI is not available.  Specifically:
+                    <itemizedlist>
+                        <listitem>It is not possible to perform a query by patient name. All access to a patient's records follows the MedCommons User Id.</listitem>
+                        <listitem>Transactions between system components should use only tracking numbers, data object identifiers, and gateway identifiers.
+                            Even if someone could listen in on all transactions they would not be able to decipher PHI.</listitem>
+                        <listitem>PHI within the MedCommons system should be stored in encrypted form.</listitem>
+                    </itemizedlist>
+                    
+                </reqDescription>
+            </requirement>
+            
+            
+        </sect2>
+        <sect2>
+            <title>Security</title>
+            <para>
+              
+            </para>
+            <requirement id="SEC-00x">
+                <reqTitle>All access to user data is logged</reqTitle>
+                <reqDescription>
+                   
+                </reqDescription>
+                
+            </requirement>
+            <refRequirement>
+                <requirementId>PCENTRIC-001</requirementId>
+            </refRequirement>
+            
+            
+        </sect2>
+        
+        <sect2>
+            <title>Policies</title>
+              <para>
+              </para>
+            <requirement id="">
+                <reqTitle>Privacy policy</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            <requirement id="">
+                <reqTitle>Memos</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            <requirement id="">
+                <reqTitle>Periodic audits</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            <requirement id="">
+                <reqTitle>Intrusion detection</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            
+            <requirement id="">
+                <reqTitle>Notification procedures</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            
+        </sect2>
+    
+    </sect1>
+    
+</article>

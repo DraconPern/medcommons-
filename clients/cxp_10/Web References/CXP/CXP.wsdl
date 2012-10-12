@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:BeanService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://gateway001.medcommons.net:8443/router/services/CXP" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="https://gateway001.medcommons.net:8443/router/services/CXP" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:BeanService">
+      <s:import namespace="https://gateway001.medcommons.net:8443/router/services/CXP" />
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="Parameter">
+        <s:sequence>
+          <s:element name="name" nillable="true" type="s:string" />
+          <s:element name="value" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RegistryParameters">
+        <s:sequence>
+          <s:element name="parameters" nillable="true" type="tns:ArrayOf_tns1_Parameter" />
+          <s:element name="registryId" nillable="true" type="s:string" />
+          <s:element name="registryName" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PutResponse">
+        <s:sequence>
+          <s:element name="cxpVersion" nillable="true" type="s:string" />
+          <s:element name="guid" nillable="true" type="s:string" />
+          <s:element name="parameters" nillable="true" type="tns:ArrayOf_tns1_RegistryParameters" />
+          <s:element name="reason" nillable="true" type="s:string" />
+          <s:element name="registryParameters" nillable="true" type="tns:ArrayOf_tns1_RegistryParameters" />
+          <s:element name="status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CXPAttachment">
+        <s:sequence />
+      </s:complexType>
+      <s:complexType name="GetResponse">
+        <s:sequence>
+          <s:element name="content" nillable="true" type="s:string" />
+          <s:element name="contentType" nillable="true" type="s:string" />
+          <s:element name="cxpVersion" nillable="true" type="s:string" />
+          <s:element name="guid" nillable="true" type="s:string" />
+          <s:element name="parameters" nillable="true" type="tns:ArrayOf_tns1_RegistryParameters" />
+          <s:element name="reason" nillable="true" type="s:string" />
+          <s:element name="registryParameters" nillable="true" type="tns:ArrayOf_tns1_RegistryParameters" />
+          <s:element name="status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeleteResponse">
+        <s:sequence>
+          <s:element name="cxpVersion" nillable="true" type="s:string" />
+          <s:element name="guid" nillable="true" type="s:string" />
+          <s:element name="parameters" nillable="true" type="tns:ArrayOf_tns1_RegistryParameters" />
+          <s:element name="reason" nillable="true" type="s:string" />
+          <s:element name="registryParameters" nillable="true" type="tns:ArrayOf_tns1_RegistryParameters" />
+          <s:element name="status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="https://gateway001.medcommons.net:8443/router/services/CXP">
+      <s:import namespace="urn:BeanService" />
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="ArrayOf_tns1_Parameter">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute wsdl:arrayType="s0:Parameter[]" ref="soapenc:arrayType" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOf_tns1_RegistryParameters">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute wsdl:arrayType="s0:RegistryParameters[]" ref="soapenc:arrayType" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CXPException">
+        <s:sequence />
+      </s:complexType>
+      <s:complexType name="ArrayOf_tns1_CXPAttachment">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute wsdl:arrayType="s0:CXPAttachment[]" ref="soapenc:arrayType" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="deleteResponse1">
+    <wsdl:part name="deleteReturn" type="s0:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRequest1">
+    <wsdl:part name="inputRegistryParameters" type="tns:ArrayOf_tns1_RegistryParameters" />
+  </wsdl:message>
+  <wsdl:message name="putResponse2">
+    <wsdl:part name="putReturn" type="s0:PutResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteRequest1">
+    <wsdl:part name="parameters" type="tns:ArrayOf_tns1_RegistryParameters" />
+  </wsdl:message>
+  <wsdl:message name="putRequest2">
+    <wsdl:part name="ccrXml" type="s:string" />
+    <wsdl:part name="inputRegistryParameters" type="tns:ArrayOf_tns1_RegistryParameters" />
+    <wsdl:part name="attachments" type="tns:ArrayOf_tns1_CXPAttachment" />
+  </wsdl:message>
+  <wsdl:message name="deleteResponse">
+    <wsdl:part name="deleteReturn" type="s0:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="putResponse">
+    <wsdl:part name="putReturn" type="s0:PutResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResponse1">
+    <wsdl:part name="getReturn" type="s0:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersionRequest" />
+  <wsdl:message name="getResponse">
+    <wsdl:part name="getReturn" type="s0:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="getVersionReturn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteRequest">
+    <wsdl:part name="guid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="putRequest1">
+    <wsdl:part name="ccrXml" type="s:string" />
+    <wsdl:part name="inputRegistryParameters" type="tns:ArrayOf_tns1_RegistryParameters" />
+  </wsdl:message>
+  <wsdl:message name="putResponse1">
+    <wsdl:part name="putReturn" type="s0:PutResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteRequest2">
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="parameters" type="s0:RegistryParameters" />
+  </wsdl:message>
+  <wsdl:message name="CXPException">
+    <wsdl:part name="fault" type="tns:CXPException" />
+  </wsdl:message>
+  <wsdl:message name="getRequest">
+    <wsdl:part name="xmlData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteResponse2">
+    <wsdl:part name="deleteReturn" type="s0:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="putRequest">
+    <wsdl:part name="ccrXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:portType name="CXP_10">
+    <wsdl:operation name="put" parameterOrder="ccrXml">
+      <wsdl:input name="putRequest" message="tns:putRequest" />
+      <wsdl:output name="putResponse" message="tns:putResponse" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="put" parameterOrder="ccrXml inputRegistryParameters">
+      <wsdl:input name="putRequest1" message="tns:putRequest1" />
+      <wsdl:output name="putResponse1" message="tns:putResponse1" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="put" parameterOrder="ccrXml inputRegistryParameters attachments">
+      <wsdl:input name="putRequest2" message="tns:putRequest2" />
+      <wsdl:output name="putResponse2" message="tns:putResponse2" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="get" parameterOrder="xmlData">
+      <wsdl:input name="getRequest" message="tns:getRequest" />
+      <wsdl:output name="getResponse" message="tns:getResponse" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="get" parameterOrder="inputRegistryParameters">
+      <wsdl:input name="getRequest1" message="tns:getRequest1" />
+      <wsdl:output name="getResponse1" message="tns:getResponse1" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="delete" parameterOrder="guid">
+      <wsdl:input name="deleteRequest" message="tns:deleteRequest" />
+      <wsdl:output name="deleteResponse" message="tns:deleteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="delete" parameterOrder="parameters">
+      <wsdl:input name="deleteRequest1" message="tns:deleteRequest1" />
+      <wsdl:output name="deleteResponse1" message="tns:deleteResponse1" />
+    </wsdl:operation>
+    <wsdl:operation name="delete" parameterOrder="guid parameters">
+      <wsdl:input name="deleteRequest2" message="tns:deleteRequest2" />
+      <wsdl:output name="deleteResponse2" message="tns:deleteResponse2" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input name="getVersionRequest" message="tns:getVersionRequest" />
+      <wsdl:output name="getVersionResponse" message="tns:getVersionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CXPSoapBinding" type="tns:CXP_10">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="put">
+      <soap:operation soapAction="" />
+      <wsdl:input name="putRequest">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="putResponse">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="put">
+      <soap:operation soapAction="" />
+      <wsdl:input name="putRequest1">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="putResponse1">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="put">
+      <soap:operation soapAction="" />
+      <wsdl:input name="putRequest2">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="putResponse2">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="get">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getRequest">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getResponse">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="get">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getRequest1">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getResponse1">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="" />
+      <wsdl:input name="deleteRequest">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="deleteResponse">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="" />
+      <wsdl:input name="deleteRequest1">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="deleteResponse1">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="" />
+      <wsdl:input name="deleteRequest2">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="deleteResponse2">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getVersionRequest">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="encoded" namespace="https://gateway001.medcommons.net:8443/router/services/CXP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CXP_10Service">
+    <wsdl:port name="CXP" binding="tns:CXPSoapBinding">
+      <soap:address location="https://gateway001.medcommons.net/router/services/CXP" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

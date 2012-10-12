@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>PlanB Gig</string>
+		<key>leftBlockStyle</key>
+		<string>narrow</string>
+
+		<key>rightRootSegment</key>
+
+		<dict>
+			<key>Width</key>
+			<string>80</string>
+			<key>Buttons</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>ReplaceScene</string>
+					<key>URL</key>
+					<string>1</string>
+					<key>scene</key>
+					<string>1</string>
+					<key>Label</key>
+					<string>Second Set</string>
+					<key>Info</key>
+					<string>content from apple and others...</string>
+					<key>ImageURL</key>
+					<string>
+							http://portal.medcommons.net/portal/images/HTML5-logo-BW-266x300.png
+					</string>
+					<key>Title</key>
+					<string>Second Set</string>
+				</dict>
+			</array>
+		</dict>
+		
+        <key>leftRootSegment</key>
+
+		<dict>
+			<key>Width</key>
+			<string>80</string>
+			<key>Buttons</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>ReplaceScene</string>
+					<key>URL</key>
+					<string>0</string>
+					<key>scene</key>
+					<string>0</string>
+					<key>Label</key>
+					<string>First Set</string>
+					<key>Info</key>
+					<string>how to set up Plists</string>
+					<key>ImageURL</key>
+					<string>
+							http://portal.medcommons.net/portal/images/HTML5-logo-BW-266x300.png
+					</string>
+					<key>Title</key>
+					<string>First Set</string>
+				</dict>
+			</array>
+		</dict>
+		
+
+		<key>scenes</key>
+		<array>
+			<dict>
+				<key>scene</key>
+				<string>0</string>
+				<key>name</key>
+				<string>First Set</string>
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>First Set</string>
+				<key>largetitle</key>
+				<string>MedPad Prototyper - First Set</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+				<array>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>URL</key>
+						<string>http://www.guntheranderson.com/v/data/allalong.htm
+						</string>
+						<key>Label</key>
+						<string>All Along The Watchtower</string>
+						<key>Info</key>
+						<string>Bob Dylan
+						</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/HTML5-logo-BW-266x300.png
+						</string>
+						<key>Title</key>
+						<string>All Along The Watchtower</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>steely dan</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/HTML5-logo-BW-266x300.png
+						</string>
+						<key>Title</key>
+						<string>Pretzel Logic</string>
+						<key>Label</key>
+						<string>Pretzel Logic</string>
+						<key>URL</key>
+						<string>http://www.guntheranderson.com/v/data/pretzell.htm
+						</string>
+					</dict>
+
+				</array>
+			</dict>
+
+			<dict>
+				<key>scene</key>
+				<string>1</string>
+				<key>name</key>
+				<string>Second Set</string>
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key><string>Second Set</string>
+				<key>largetitle</key><string>Second Set</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>Traffic</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/HTML5-logo-BW-266x300.png
+						</string>
+						<key>Title</key>
+						<string>Dear Mr Fantasy</string>
+						<key>Label</key>
+						<string>Dear Mr Fantasy</string>
+						<key>URL</key>
+						<string>http://www.azchords.com/t/traffic-tabs-5639/dearmrfantasy-tabs-80130.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>461 Ocean Boulevard</string>
+					<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/HTML5-logo-BW-266x300.png
+						</string>
+						<key>Title</key>
+						<string>I Shot the Sheriff</string>
+						<key>Label</key>
+						<string>I Shot the Sheriff</string>
+						<key>URL</key>
+						<string>http://www.ultimate-guitar.com/tabs/e/eric_clapton/i_shot_the_sheriff_crd.htm
+						</string>
+					</dict>
+					
+		
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>Wilco</string>
+						<key>Label</key>
+						<string>Wilco</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/HTML5VideoPlayer
+						</string>
+					</dict>
+
+
+					
+				</array>
+			</dict>
+		</array>
+
+	</dict>
+</plist>
+
+

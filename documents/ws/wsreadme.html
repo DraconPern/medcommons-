@@ -1,0 +1,50 @@
+<html><head><title>interface and test case page</title></head><body>
+<h4>central system development status on secure.private.medcommons.net aug0705</h4>
+<p>useful links
+<br><small><a href=pingservice.php?a=ifucnrdthsthnuwn>ping test</a></small>
+<br><small><a href=../notifierservice/tests/testreferralinvitemsg.html>send an e referral test </a></small>
+<br><small><a href=../mc/console/mcexplorer.html>medcommons explorer </a></small>
+<br><small><a href=resetdb.php>reset database to repeat tests </a></small>
+<p>these are all REST services - you can examine the arglists by putting the mouse over the link 
+<p><b>registerDocument - Register a Document </b><br>
+// urlcallformat:
+// docid,rightsid,mcid = ../ws/registerDocument.php?mcid=xxx&guid=yyy&rights=rrr 
+<small><a href=../ws/registerDocument.php?mcid=xxx&guid=yyy&rights=rrr>testcase registerDocument</a></small>
+<p> Adds a document and adds initial rights for the given user based on their MedCommons Id. 
+<br>If rights are not specified then the initial rights are a default set that give "ownership" type rights to the given user.
+<br>Passing an mcid of all zeroes will trigger a temporary mcid to be created for this document.
+<br><small>The following reamins to be done
+<br> a registered document must have locations stored in the document_locations table in central. 
+Thus in registering a new document central must know which Node is making the call so that it can add the association 
+between the Node and the Document. The Node is not included in the argument list below because it is assumed that in other 
+layers of security the calling gateway has established its identity with Central and thus the Node is already known. 
+In the short term however, it may be necessary to add a NodeId parameter to this call.
+</small>
+
+<p><b>trackDocument  - Attach tracking number to a document  </b><br>
+// urlcallformat:
+//trackingNumber = ../ws/trackDocument.php?rightsid =xxx&pinHash=yyy  
+<small><a href=../ws/trackDocument.php?rightsid=xxx&pinHash=yyy>testcase trackDocument</a></small>
+<p>    Allocates a new, unique tracking number and associates a pin for the given document
+<br> we require the document to first be registered via DocumentService.registerDocument. 
+<br> a post condition of this call is that calling validate() and passing the returned tracking number and pinHash will return the MedCommons Id for the document.
+
+<p><b>reigsterTrackDocument - (new) Registers a document and assigns a tracking number. In POPS, assign a provisional MedCommons ID</b><br>
+// urlcallformat:
+//trackingNumber = ../ws/registerTrackDocument.php?mcid=xxx&guid=yyy&pinHash=zzz&rights=rrr  
+<small><a href=../ws/registerTrackDocument.php?mcid=xxx&guid=yyy&pinHash=zzz>testcase registeTtrackDocument</a></small>
+<p>   Registers a document and associates a pin code and tracking number with the document. MedCommons generates both the tracking number and pin code, but never stores the pin code.
+<br>Passing an mcid of all zeroes indicates a POPs transaction, which will generate a temporary MedCOmmons Id equal to the transaction number returned prepended with a special code.
+<br>Rights are applied as with registerDocument
+
+
+
+<p><b>validateDocument</b><br>
+// urlcallformat:
+// mcid,docid,rightsid = ../ws/validateDocument.php?trackingNumber=xxx&pinHash=yyy
+<small><a href=../ws/validateDocument.php?trackingNumber=xxx&pinHash=yyy>testcase validateDocument</a></small>
+<p>    Validates the given trackingNumber and pin combination. If valid, returns the MedCommons Id for that combination. If not valid, returns an error.
+<br>First the tracking_number table is searched for all records matching the supplicated tracking number and hash
+<br>The the rights table is consulted to get the MedCommons ID and document id.
+</body>
+<html>

@@ -1,0 +1,12 @@
+org.apache.cactus.integration.ant
+org.apache.cactus.integration.ant.container
+org.apache.cactus.integration.ant.container.enhydra
+org.apache.cactus.integration.ant.container.jboss
+org.apache.cactus.integration.ant.container.orion
+org.apache.cactus.integration.ant.container.resin
+org.apache.cactus.integration.ant.container.tomcat
+org.apache.cactus.integration.ant.container.weblogic
+org.apache.cactus.integration.ant.deployment
+org.apache.cactus.integration.ant.deployment.application
+org.apache.cactus.integration.ant.deployment.webapp
+org.apache.cactus.integration.ant.util

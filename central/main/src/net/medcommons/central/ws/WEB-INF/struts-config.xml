@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by bill donner (medcommons) -->
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="arbitraryTransferForm" type="net.medcommons.central.ws.transferutility.ArbitraryTransferForm"/>
+	</form-beans>
+	<action-mappings>
+		<action path="/transferutility/InvokeTransfer" type="net.medcommons.central.ws.transferutility.InvokeTransferAction"
+		        name="arbitraryTransferForm" scope="request" input="/transferutility/index.jsp" unknown="false" validate="false">
+			<forward name="success" path="/transferutility/index.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

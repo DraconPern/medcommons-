@@ -1,0 +1,277 @@
+table#uploadTable {
+    width: 80%;
+    max-width: 580px;
+}
+table#uploadTable tr td {
+    text-align: left;
+    padding-left: 15px;
+}
+table#uploadTable tr th {
+    width: 150px;
+    whitespace: nowrap;
+    text-align: right;
+}
+table#uploadTable tr td textarea {
+    width: 80%;
+}
+table#uploadTable input.button {
+    width: 80%;
+    max-width: 300px;
+}
+
+table#uploadTable tr {
+	margin-top: 3px;
+}
+
+#upload p {
+    padding: 4px 0px;
+}
+td.middled *, p.middled * {
+    vertical-align: middle;
+}
+.hidden {
+    display: none;
+}
+#step1boxes {
+    position: relative;
+    height: 6em;
+}
+#wholeStep1 {
+	position: relative;
+}
+#detecting, #installDDLStep, #foundDDL {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+#section {
+    height: 260px;
+}
+
+#voucherDetailsStep table#voucherTable {
+    margin-left: 40px;
+}
+#voucherTableMessage {
+	padding-left: 0px;
+}
+
+#voucherDetailsStep table#voucherTable th {
+    text-align: right;
+    padding-right: 10px;
+}
+#voucherDetailsStep table td.buttons button {
+    margin: 5px 0px;
+}
+#helpbar {
+  position: relative;
+    margin-top: 1em;
+    width: 35em;
+    background-color: #89b7dC;
+    background-color: white;
+}
+
+#helpbar p {
+    padding: 0px 0px;
+  xcolor: white;
+}
+p.error { 
+    color: red;
+}
+#main ul {
+    padding-left: 3em;
+}
+#helpers {
+  margin-top: 1em;
+    background-color: #89b7dC;
+    color: white;
+    float: left;
+}
+#helpers a {
+    color: white;
+}
+#helpers div.inner, #helpers h5 {
+    margin: 0px 10px;
+}
+#helpers label, #helpers input {
+    display: block;
+    margin: 3px 0px;
+    font-size: 12px;
+}
+#helpers input {
+    font-size: 12px;
+}
+#problemResultFields a {
+  text-decoration: underline;
+}
+button {
+    font-size: 95%;
+    padding: 0px 3px;
+}
+
+#scanningMsg * {
+	vertical-align: middle;
+}
+
+
+#studies, #series {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+
+#startDDLHeading {
+	margin-top: 10px;
+}
+.clickable {
+	cursor: pointer;
+}
+.indent {
+	margin-left: 30%;
+}
+
+table.summary {
+  width: 100%;
+}
+table.summary th {
+  background-color: #eee;
+  padding-left: 3px;
+}
+table.summary td {
+  text-align: center;
+}
+
+#fillOutFormStep {
+    margin: 10px auto 5px 10px;
+    width: 600px;
+}
+
+table.dodx td, table.dodx tbody th {
+    background-color: #fffcdd;
+  padding: 1px 3px;
+}
+ 
+#voucherDetailsStep table#voucherTable {
+      margin-top: 20px;
+}
+#voucherDetailsStep table#voucherTable td {
+	  text-align: left;
+}
+
+#voucherDetailsStep table#voucherTable th {
+	  text-align: left;
+}
+td#voucherId { width: 19%; min-width:  85px;}
+td#voucherPin { width: 15%; }
+td#progressCell { width: 26%; whitespace: no-wrap;}
+
+table#dataSourceLayout tr.buttonRow td,
+table tr.buttonRow td {
+  background-color: white;
+  vertical-align: middle;
+}
+#printButton {
+}
+
+table#patientDataLayout, #voucherDetailsStep table#voucherTable, #patientNamesTable, #voucherTableMessage {
+  margin-left: 10px;
+  margin-right: auto;
+  width: 500px;
+}
+  
+#cdinstructions h3,
+#documents {
+    margin-left: 40px;
+}
+#cdinstructions h3 img {
+	position: relative; 
+	top: 2px;
+}
+
+#documents {
+	margin-bottom: 2em;
+}
+
+#selectcdbox, #scanningMsgBlock {
+    margin-left: 70px;
+}#helpicon {
+	position: relative;
+	top: 2px;
+}
+#series {
+	overflow: auto;
+}
+#termsOfUseLink {
+	position: relative;
+	top: -1px;
+}
+#thankyouMessage {
+	font-weight: bold;
+	color: #444;
+}
+select#series {
+    max-height: 8em;	
+}
+a.obviousLink:link, a.obviousLink:visited {
+	text-decoration: underline;
+}
+a.obviousLink:hover, a.obviousLink:active {
+ color: orange;
+}
+#endLinks {
+	margin-left: 40px;
+}
+.lightbox {
+    border: solid 2px black;
+    background-color: white;
+    padding: 6px;
+}
+.error {
+	color: #c00;
+}
+#patientNamesTable td {
+	text-align: left;
+}
+#patientNamesTable tfoot td {
+	text-align: center;
+}
+#patientNamesTable td.patientCount {
+	width: 30%;
+	text-align: right;
+}
+#beginUploadButton {
+	width: 20%;
+	margin: 0% 65% 0% 13%;
+}
+
+tr.headingRow hr {
+	clear: both;
+}
+tr.headingRow h4 {
+	position: relative;
+	top: -1.5em;
+	float: left;
+	padding-right: 1em;
+	padding-left: 1em;
+	margin-left: 2em;
+	background-color: white;
+	font-size: 14px;
+}
+#documents input {
+	height: 1.9em;
+	width: 100%;
+}
+#selectcdbox {
+	position: relative;
+	width: 24em;
+}
+#cddrives {
+	margin: 0.7em 0;
+	width: 100%;
+	overflow: auto;
+}
+#cddrives button {
+	width: 50% !important;
+}
+#browseFilesButton {
+	float: right;
+}

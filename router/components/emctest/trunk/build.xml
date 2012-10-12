@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id$
+     ====================================================================== -->
+<!--
+	Creates a emcbridge.war for the emcbridge webapp.
+	-->
+<project name="emcbridge" default="world" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+	<tstamp>
+       <format property="cur-tstamp" pattern="M/d/yyyy h:m a"/>
+	</tstamp>
+
+	<property file="pack.properties" />
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+  <property name="application.package.classes" value="build/classes"/>
+  <property name="application.package" value="net.medcommons.application"/>
+  <property name="application.package.folder" value="net/medcommons/application"/>
+  <property name="application.package.files" value="${application.package.folder}/**"/>
+  <property name="build.dist" value="build/dist"/>
+  
+  <property name="stage.lib" value="build/stage/lib/"/>
+  <property name="build.lib" value="build/dist/lib"/>
+  <target name="world" depends="generate-war">
+  </target>
+
+    <!-- - - - - - - - - - - - - - - - - -
+          target: init
+     - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+		<mkdir dir="${build.lib}"/>
+      <echo message="Initializing build ..." />
+      <ivy:configure file="ivy-settings.xml" />
+      <ivy:retrieve pattern="${build.lib}/[artifact].[ext]" sync="true"/>
+	  <available file="${stage.lib}" property="stage.lib.present" />
+    </target>
+
+
+
+<target name="init-lib" unless="stage.lib.present" depends="init">
+	  <mkdir dir="build/dist/" />
+	  <mkdir dir="${stage.lib}"/>
+      <copy todir="${stage.lib}">
+			<fileset dir="${build.lib}"></fileset>
+		</copy>
+      
+    </target>
+
+    <!-- =================================
+          target: compile
+         ================================= -->
+    <target name="compile" depends="init-lib,generate-index-files" description="--> compiles source">
+      <mkdir dir="build/classes"/>
+
+      <javac 
+      	srcdir="src" 
+      	compiler="modern" 
+      	target="1.5" 
+      	destdir="build/classes" 
+      	includes="net/medcommons/**,com/emc/**"
+      	debug="true" >
+        <classpath>
+          <fileset dir="${build.dist}/lib">
+            <include name="**/*.jar"/>
+          </fileset>
+          <fileset dir="Shared">
+          	<include name="dfc.jar"/>
+          	<include name="standard.jar"/>
+          	<include name="jstl.jar"/>
+          </fileset>
+          <fileset dir="EMCSource">
+          	<include name="*.jar"/>
+        	<!--<include name="HSCCommon.jar"/> -->
+          </fileset>
+        	
+        </classpath>
+      </javac>
+    </target>
+
+    <!-- =================================
+          target: compile-test
+         ================================= -->
+    <target name="compile-test" depends="init-lib,generate-index-files" description="--> compiles source">
+      <mkdir dir="build/classes"/>
+
+      <javac 
+      	srcdir="src" 
+      	compiler="modern" 
+      	target="1.5" 
+      	destdir="build/classes" 
+      	includes="com/emc/**/**"
+      	debug="true" >
+        <classpath>
+          <fileset dir="${build.dist}/lib">
+            <include name="**/*.jar"/>
+          </fileset>
+          <fileset dir="Shared">
+          	<include name="dfc.jar"/>
+          	<include name="standard.jar"/>
+          	<include name="jstl.jar"/>
+          </fileset>
+          <fileset dir="EMCSource">
+        	<include name="**/*.jar"/>
+          </fileset>
+        	
+        </classpath>
+      </javac>
+    </target>
+
+	<!--
+	  Convert the libraries to be included in the
+	  Class-Path attribute of the MANIFEST.MF file
+	-->
+	<path id="application.compile.path">
+
+				<fileset dir="${stage.lib}">
+					<include name="**/*.jar"/>
+					<!-- Log4j.. -->
+				</fileset>
+	</path>
+
+
+
+
+	<target name="create-emcbridge-jar" depends="compile">
+
+
+		<mkdir dir="${application.package.classes}" />
+
+		<pathconvert property="application.manifest.classpath"
+			                      pathsep=" ">
+			  <path refid="application.compile.path"/>
+			  <chainedmapper>
+			    <flattenmapper/>
+			    <globmapper from="*" to="lib/*"/>
+			  </chainedmapper>
+			</pathconvert>
+
+<!--
+		<copy todir="${build.dist}">
+			<fileset dir="etc/images">
+				<include name="**/*.jpg"/>
+				<include name="**/*.png"/>
+			</fileset>
+		</copy>
+-->
+
+		
+		<jar jarfile="${build.dist}/medcommons-emcbridge-application.jar"
+				basedir="${application.package.classes}"
+				
+			>
+			<!-- excludes="com/emc/**" -->
+				<manifest>
+					<!--<attribute name="Built-By" value="${user.name}"/> -->
+			      	<!-- <attribute name="Class-Path" value="${application.manifest.classpath}"/> -->
+					<!-- <attribute name="Build-Version" value="${buildVersion}"/> -->
+					<!-- <attribute name="Main-Class" value="net.medcommons.application.dicomclient.DICOMClient"/> -->
+
+			      </manifest>
+
+		<!--
+				<fileset dir="etc/images">
+					<include name="**/*.png"/>
+					<include name="**/*.gif"/>
+					<include name="**/*.jpg"/>
+				</fileset>
+
+
+		-->
+				
+				<fileset dir="src/">
+					<include name="timestamp.txt"/>
+					<include name="ddlversion.txt"/>
+					<include name="buildtime.txt"/>
+					
+				</fileset>
+					<fileset dir="etc/conf">
+					<include name="log4j.xml"/>
+				</fileset>
+
+		</jar>
+	
+
+
+<echo file="version.xml" append="false" message="&lt;?xml version='1.0' encoding='utf-8'?&gt;&lt;version&gt;&lt;rev&gt;$$Rev: ${svn.revision} $$&lt;/rev&gt;&lt;/version&gt;"/>
+
+
+	</target>
+
+    <target name="publish" depends="generate-war">
+      <!-- You will get an error when publishing unless you increment the version number below -->
+      <ivy:publish resolver="public" pubrevision="1.5.12" overwrite="true">
+        <artifacts pattern="build/dist/[artifact].[ext]" />
+      	 <artifacts pattern="build/dist/lib/[artifact].[ext]" />
+      </ivy:publish>
+    </target>
+
+    <target name="clean">
+	  <delete dir="build/classes"/>
+	  <delete dir="build/dist/classes"/>
+    </target>
+	<target name="cleanall">
+     <delete dir="build"/>
+    </target>
+
+	
+<target name="update-version" unless="version.noupdate">
+		<exec executable="svnversion" output="src/ddlversion.txt">
+			<arg value="." />
+		</exec>
+		<loadfile property="buildVersion" srcFile="src/ddlversion.txt"/>
+		<echo message="Build version is ${buildVersion}"/>
+	</target>
+
+
+	<target name="run">
+		 <java classname="net.medcommons.application.dicomclient.DICOMClient" fork="true" >
+    		<jvmarg value="-Xmx256m"/>
+    		<jvmarg value="-Xdebug"/>
+		 	  <jvmarg value="-Xnoagent"/>
+		 	  <jvmarg value="-XX:MaxPermSize=128m"/>
+		 	  <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,address=4144,suspend=n"/>
+         <arg line="src/meta/war/app/DDL.properties"/>
+         <arg line="http://localhost:9080"/>
+
+
+        <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="build/dist">
+            <include name="medcommons-dicomclient-application.jar" />
+            <include name="medcommons-dicomclient.jar" />
+          </fileset>
+        </classpath>
+
+      </java>
+	</target>
+		<target name="spawn">
+		 <java classname="net.medcommons.application.dicomclient.DICOMClient" fork="true" spawn="true" >
+    		<jvmarg value="-Xmx256m"/>
+    		<jvmarg value="-Xdebug"/>
+		 	  <jvmarg value="-Xnoagent"/>
+		 	  <jvmarg value="-XX:MaxPermSize=128m"/>
+		 	  <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,address=4144,suspend=n"/>
+         <arg line="src/meta/war/app/DDL.properties"/>
+         <arg line="http://localhost:9080"/>
+
+
+        <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="build/dist">
+            <include name="medcommons-dicomclient-application.jar" />
+            <include name="medcommons-dicomclient.jar" />
+          </fileset>
+        </classpath>
+
+      </java>
+	</target>
+	
+	<target name="run-test" depends="compile-test">
+		 <java classname="com.emc.solution.test.Testing" fork="true">
+        <classpath>
+      	          <fileset dir="Shared">
+       	          	<include name="dfc.jar"/>
+       	          	<include name="standard.jar"/>
+       	          	<include name="jstl.jar"/>
+       	          </fileset>
+       	          <fileset dir="EMCSource">
+       	        	<include name="**/*.jar"/>
+       	          </fileset>
+        	
+        		<pathelement location="build/classes"/>
+        	<pathelement location="etc/conf"/>
+        		<pathelement location="saved_config"/> <!-- For dfc.properties -->
+
+        </classpath>
+	  
+		<arg value="00e6c80bb7f863962c37312d98943ae1e6c03dec" />
+	    <arg value="Cache"/>
+      </java>
+	</target>
+	<target name="build-timestamp">
+		<tstamp>
+			<format property="build.buildtime" pattern="EEE, MMM d 'at' yyyy HH:mm:ss z"/>
+		</tstamp>
+		<tstamp>
+			<format property="build.timestamp" pattern="yyyy-MM-dd HH:mm:ss"/>
+		</tstamp>
+		<echo message="${build.buildtime}"  file="src/buildtime.txt"/>
+		<echo message="${build.timestamp}"  file="src/timestamp.txt"/>
+	</target>
+	<!--
+	This generates the war file that is deployed on the server.
+		-->
+	<target name="generate-war" depends="compile,create-emcbridge-jar">
+		<mkdir dir="build/dist/classes"/>
+		<copy todir="build/dist/lib" >
+			<fileset dir="Shared">				      
+					<include name="dfc.jar"/>
+					<include name="aspectjrt.jar"/>
+			</fileset>
+			<fileset dir="EMCSource">				      
+								<!-- <include name="HSCCommon.jar"/> -->
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+		<war destfile="build/dist/emcbridge.war"  webxml="etc/meta/war/WEB-INF/web.xml" duplicate="preserve">
+			<classes dir="etc/meta/war/WEB-INF/classes/">
+				<include name="StripesResources.properties"/>
+			</classes>
+			<classes dir="saved_config"/>
+			<lib dir="build/dist/lib">
+				<include name="**/*.jar"/>
+				<exclude name="**/servlet-api.jar"/>
+				<exclude name="**/jsp.jar"/>
+				<exclude name="**/jsp-api.jar"/>
+				
+			</lib>
+
+			<lib dir="build/dist">
+				<include name="medcommons-emcbridge-application.jar"/>
+			</lib>
+			
+			
+
+
+			<fileset dir="etc/meta/war/">
+				<include name="**/*.html"/>
+				<include name="**/*.smd"/>
+				<include name="**/*.css"/>
+				<include name="**/*.jpeg"/>
+				<include name="**/*.jpg"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.png"/>
+				<include name="**/*.svg"/>
+				<include name="**/*.js"/>
+			</fileset>
+			<fileset dir="src/net/medcommons/emcbridge/jsp">
+				<include name="**/*.jsp"/>
+			</fileset>
+
+
+		</war>
+	</target>
+	<target name="test-components">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" >
+			 <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="build/dist">
+            <include name="medcommons-dicomclient-application.jar" />
+            <include name="medcommons-dicomclient.jar" />
+          </fileset>
+        </classpath>
+			<formatter type="plain"/>
+
+			<test name="net.medcommons.application.dicomclient.utils.test.DicomNamesTest"/>
+
+		</junit>
+
+	</target>
+	
+	<target name="generate-index-files" depends="build-timestamp,update-version">
+		<loadfile property="buildVersion" srcFile="src/ddlversion.txt"/>
+		<loadfile property="buildTime" srcFile="src/buildtime.txt"/>
+		<echo message="Build version is ${buildVersion}"/>
+	    <delete file="etc/meta/war/index.html" quiet="true"/>
+	    <copy file="etc/meta/war/index_template.html"
+	             tofile="etc/meta/war/index.html" >
+	        <filterchain>
+	           <striplinecomments>
+	              <comment value="!"/>
+	           </striplinecomments>
+	           <replacetokens>
+	                <token key="BuildTime" value="${buildTime}"/>
+	                <token key="BuildVersion" value="${buildVersion}"/>
+	            </replacetokens>
+	        </filterchain>
+	    </copy>
+	
+	</target>
+
+</project>

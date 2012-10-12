@@ -1,0 +1,29 @@
+==================================
+  HOWTO MAKE IT WORK ON CYGWIN
+==================================
+
+As outlandish as it might seem, it is possible to do all this rpm stuff under
+Windows using Cygwin.    
+
+1. Install rpm and rpmbuild using Cygwin setup.exe
+
+2. Define some environment variables to set where it is going to look for build components
+
+  export IDENTITY_WORK='c:/mc/svn/services/java/identity'
+  export CONFIG_WORK=c:/mc/svn/services/config
+
+Notice how the paths are in mixed format (usable by both Windows AND Unix code, this is important).
+
+3. Set up rpm macros in your home directory:
+
+  cat > ~/.rpmmacros
+  %_topdir      /sv/forge/rpmbuild
+  %_smp_mflags  -j3
+  <CTRL-D>
+
+Make sure you set the correct path in there. This sets the root location for rpm and stops it 
+trying to write to outlandish parts of the Cygwin file system.
+
+Don't expect these cygwin generated rpms to actually install anywhere (even on Cygwin). This procedure
+just lets you work on the specs and verify they are ok by doing builds with them.
+

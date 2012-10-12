@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SampleArchiveImages</key>
+	<array>
+		<string>rukind-sample-archive.gif</string>
+		<string>deadstein-sample-asis.png</string>
+		<string>dylan-sample-archive.jpg</string>
+		<string>mccartney-sample-archive.jpg</string>
+		<string>lennon-sample-archive.jpg</string>
+		<string>harrison-sample-archive.jpg</string>
+		<string>sample1-art.jpg</string>
+		<string>sample2-art.jpg</string>
+	</array>
+	<key>SampleArchiveNames</key>
+	<array>
+		<string>rukind-sample-archive.zip</string>
+		<string>deadstein-sample-asis.zip</string>
+		<string>dylan-sample-archive.zip</string>
+		<string>mccartney-sample-archive.zip</string>
+		<string>lennon-sample-archive.zip</string>
+		<string>harrison-sample-archive.zip</string>
+		<string>sample1-archive.zip</string>
+		<string>sample2-archive.zip</string>
+	</array>
+</dict>
+</plist>

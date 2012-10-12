@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>Writing Cactus TestCase</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Writing Cactus TestCase" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././writing/howto_testcase.html">Writing Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Writing Tests<ul>
+    
+<li>
+<a href=".././writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests." class="currentPage">General Principles</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">Testing Servlets</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus.">Testing Filters</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_jsp.html" title="How to write unit tests for JSP pages using Cactus.">Testing JSP Pages</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">Testing Taglibs</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">Testing EJBs</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Advanced Topics<ul>
+    
+<li>
+<a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">Integrating HttpUnit</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_security.html" title="">Using Authentication</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Reference<ul>
+    
+<li>
+<a href=".././api/framework-12/index.html" title="">Javadocs (J2EE 1.2)</a>
+</li>
+    
+<li>
+<a href=".././api/framework-13/index.html" title="">Javadocs (J2EE 1.3)</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Introduction</h1>
+
+      
+<p>
+        This tutorial explains how to write a test case, using Cactus. There
+        are several types of test cases: test cases for writing servlet
+        unit tests, test cases for writing taglib unit tests and test cases
+        for writing filter unit tests. We will first cover the principles
+        which are generic to all test cases and then we will dive into
+        the details specific to each test case.
+      </p>
+      
+<ul>
+        
+<li>
+          
+<a href="#general_principles">General principles</a>
+        
+</li>
+        
+<li>
+          
+<a href="#specific_details">TestCase specific details</a>
+        
+</li>
+      
+</ul>
+
+      
+<div class="note">
+        In order to help writing test case we highly suggest to have a look
+        at the examples provided as part of the Cactus distribution. Also,
+        all the best practices for JUnit also applies to Cactus test cases
+        as they are in essence JUnit test cases.
+      </div>
+
+    
+</div>
+
+    
+<a name="general_principles">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>General principles</h1>
+
+      
+<p>
+        To write a test case, please follow the steps defined below.
+      </p>
+
+      
+<div class="section">
+<h2>Step 1: Imports</h2>
+
+        
+<p>
+          You need to include the following imports in your test class (
+          <code>junit.framework.*</code> is needed because Cactus uses JUnit
+          as the client side application for calling the tests):
+        </p>
+
+
+<div class="source">
+<pre>
+import org.apache.cactus.*;
+import junit.framework.*;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 2: Extend a Cactus TestCase class or reuse a JUnit TestCase</h2>
+        
+        
+<div class="section">
+<h3>Option A: Extend a Cactus TestCase class</h3>
+  
+          
+<p>
+            We need to create a class (our test class) that extends one of
+            Cactus test cases, depending on what we are testing:
+          </p>
+          
+<ul>
+            
+<li>
+              
+<b><code>ServletTestCase</code></b>: extend this class
+              for writing tests for unit testing code that uses Servlet API
+              objects (<code>HttpServletRequest</code>,
+              <code>HttpServletResponse</code>, <code>HttpSession</code>,
+              <code>ServletConfig</code>, <code>ServletContext</code>, ...),
+              like Servlets or any java classes which have methods that
+              manipulates Servlet API objects. For example:<br>
+<br>
+
+<div class="source">
+<pre>
+public class TestSampleServlet extends ServletTestCase
+{
+</pre>
+</div>
+              
+<br>
+            
+</li>
+            
+<li>
+              
+<b><code>JspTestCase</code></b>: extend this class for
+              writing tests for unit testing code that uses JSP API objects
+              (<code>PageContext</code>, <code>JspWriter</code>, ...), like
+              Taglibs or any java classes which have methods that manipulates
+              JSP API objects. For example:<br>
+<br>
+
+<div class="source">
+<pre>
+public class TestSampleTag extends JspTestCase
+{
+</pre>
+</div>
+              
+<br>
+            
+</li>
+            
+<li>
+              
+<b><code>FilterTestCase</code></b>: extend this class
+              for writing tests for unit testing code that uses Filter API
+              objects (<code>FilterChain</code>, <code>FilterConfig</code>,
+              <code>HttpServletRequest</code>, <code>HttpServletResponse</code>,
+              ...), like Filters or any java classes which have methods that
+              manipulates Filter API objects. For example:<br>
+<br>
+
+<div class="source">
+<pre>
+public class TestSampleFilter extends FilterTestCase
+{
+</pre>
+</div>
+              
+<br>
+            
+</li>
+          
+</ul>
+  
+        
+</div>
+  
+        
+<div class="section">
+<h3>Option B: reuse a JUnit TestCase</h3>
+  
+          
+<p>
+            Cactus is able to run pure JUnit TestCase on the server side.
+            This is done by using the <code>ServletTestSuite</code> Test Suite
+            that wraps your existing Test Cases. For example:<br>
+<br>
+
+<div class="source">
+<pre>
+public class TestJUnitTestCaseWrapper extends TestCase
+{
+    public static Test suite()
+    {
+        ServletTestSuite suite = new ServletTestSuite();
+        suite.addTestSuite(TestJUnitTestCaseWrapper.class);
+        return suite;
+    }
+
+    public void testXXX()
+    {
+    }
+}
+</pre>
+</div>
+          
+</p>
+        
+</div>
+  
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 3 (optional): setUp() and tearDown() methods</h2>
+
+        
+<p>
+          As in JUnit, you can define a <code>setUp()</code> and a
+          <code>tearDown()</code> methods. They are executed respectively
+          before and after each test case. However, whereas in JUnit they are
+          executed on the client side, in Cactus they are executed on the
+          server side. It means that you will be able to access the Cactus
+          implicit object (these are the objects from the API as described
+          in Step 2) within them. In other words, you'll be able to do
+          things such as putting a value in the HTTP Session prior to calling
+          the test cases, etc.
+        </p>
+        
+<p>
+          As in JUnit, the <code>setUp()</code> and <code>tearDown()</code>
+          methods are optional.
+        </p>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 4 (optional): begin() and end() methods</h2>
+
+        
+<p>
+          
+<code>begin(...)</code> and <code>end(...)</code> methods are the
+          client side equivalent of the <code>setUp()</code> and a
+          <code>tearDown()</code> methods (see previous step). They are called
+          on the client side, before and after every test.
+        </p>
+        
+<p>
+          The <code>begin()</code> and <code>end()</code>
+          methods are optional.
+        </p>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 5: testXXX() methods</h2>
+
+        
+<p>
+          As in JUnit, the main method for a test is the
+          <code>testXXX()</code> method. The difference being that these
+          methods are executed in the container with Cactus. Each XXX test
+          case must have a <code>testXXX()</code> method defined.
+        </p>
+        
+<p>
+          In your <code>testXXX()</code> methods you will:
+        </p>
+        
+<ul>
+          
+<li>
+            instantiate the class to test (you can also factor this instance
+            out and define is as a class instance variable),
+          </li>
+          
+<li>
+            setup any server-side domain object (like putting a variable in
+            the Http session, ...). Indeed, the Cactus test case class that
+            you have extended in Step 2 has several instance variables (they
+            are the different API objects mentioned in Step 2) that it has
+            initialised with valid objects. Depending on the test case class
+            that you have extended these variables are <code>request</code>
+            (of type <code>HttpServletRequest</code>),
+            <code>config</code> (of type <code>ServletConfig</code> for
+            <code>ServletTestCase</code> or of type <code>FilterConfig</code>
+            for <code>FilterTestCase</code>), ... (see the "Testcase Specific
+            Details" Step below),
+          </li>
+          
+<li>
+            call the method to test,
+          </li>
+          
+<li>
+            perform JUnit standard asserts (<code>asserts(..)</code>,
+            <code>assertEquals(...)</code>, <code>fail(...)</code>, ...) to
+            verify that the test was successful
+          </li>
+        
+</ul>
+        
+<p>
+          For example:
+        </p>
+
+
+<div class="source">
+<pre>
+public void testXXX()
+{
+    // Initialize class to test
+    SampleServlet servlet = new SampleServlet();
+
+    // Set a variable in session as the doSomething() method that we are testing need
+    // this variable to be present in the session (for example)
+    session.setAttribute("name", "value");
+
+    // Call the method to test, passing an HttpServletRequest object (for example)
+    String result = servlet.doSomething(request);
+
+    // Perform verification that test was successful
+    assertEquals("something", result);
+    assertEquals("otherValue", session.getAttribute("otherName"));
+}
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 6 (optional): beginXXX() methods</h2>
+
+        
+<p>
+          For each XXX test case, you can define a corresponding
+          <code>beginXXX()</code> method (optional). You will use it to
+          initialize HTTP related parameters (HTTP parameters, cookies,
+          HTTP headers, URL to simulate, ...). You will be able to retrieve
+          these values in your <code>testXXX()</code> by calling the different
+          API of <code>HttpServletRequest</code> (like
+          <code>getQueryString()</code>, <code>getCookies()</code>,
+          <code>getHeader()</code>, ...).
+        </p>
+        
+<p>
+          The signature of the begin method is:
+        </p>
+
+
+<div class="source">
+<pre>
+public void beginXXX(WebRequest theRequest)
+{
+  [...]
+}
+</pre>
+</div>
+
+        
+<p>
+          where <code>theRequest</code> is the object (provided by Cactus)
+          that you use to set all the HTTP related parameters.
+        </p>
+        
+<p>
+          The full description of all the HTTP related parameters that you can
+          set can be found in the javadoc for the <code>WebRequest</code>
+          interface. You should also check the examples provided as part of the
+          Cactus distribution.
+        </p>
+        
+<p>
+          The <code>beginXXX()</code> methods are executed on the client
+          side, prior to executing <code>testXXX()</code> on the server side
+          and thus, do not have access to any of the class variables that
+          represent API objects (their values are <code>null</code>)
+        </p>
+
+      
+</div>
+
+      
+<a name="endxxx">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>Step 7 (optional): endXXX() methods</h2>
+
+        
+<p>
+          For each XXX test case, you can define a corresponding
+          <code>endXXX()</code> method. You will use this method to
+          verify the returned HTTP related parameters from your test case
+          (like the returned content of the HTTP response, any returned
+          cookies, returned HTTP headers, ...).
+        </p>
+        
+<p>
+          For versions of Cactus up to v1.1, the signature of the end
+          method is:
+        </p>
+
+
+<div class="source">
+<pre>
+public void endXXX(HttpURLConnection theConnection)
+{
+  [...]
+}
+</pre>
+</div>
+
+        
+<p>
+          ... and some helper methods to extract the response content and
+          cookies were provided in the <code>AssertUtils</code> class
+          (see javadoc).
+        </p>
+        
+<p>
+          However, beginning with Cactus 1.2, this signature has been
+          deprecated. There are now 2 possible signatures for the end
+          method, depending on whether you need to perform sophisticated
+          checks on the content of what is returned or not. For complex
+          checking, we have integrated with the
+          <a href="http://httpunit.sourceforge.net" title="">HttpUnit</a>
+          framework. See the
+          <a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">HttpUnit tutorial</a> for the
+          end method signatures and a full description.
+        </p>
+        
+<p>
+          The <code>endXXX()</code> methods are executed on the client
+          side, after executing <code>testXXX()</code> on the server side
+          and thus, do not have access to any of the class variables that
+          represent API objects (their values are <code>null</code>)
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+    
+<a name="specific_details">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>TestCase specific details</h1>
+
+      
+<p>
+        
+<b>Before reading any of the following detailed tutorials,
+        make sure you have read the previous general principles.</b>
+      
+</p>
+      
+<ul>
+        
+<li>
+          
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">ServletTestCase
+          principles</a>,
+        </li>
+        
+<li>
+          
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">JspTestCase
+          principles</a>,
+        </li>
+        
+<li>
+          
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus.">FilterTestCase
+          principles</a>
+        
+</li>
+      
+</ul>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

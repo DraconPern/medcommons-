@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContinuityOfCareRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR CCR9.xsd" xmlns="urn:astm-org:CCR">
+  <CCRDocumentObjectID>3329a665-c5cb-4749-844e-c391d371e7c8</CCRDocumentObjectID>
+  <Language>
+    <Text>English</Text>
+  </Language>
+  <Version>1.0</Version>
+  <DateTime>
+    <Type>
+      <Text />
+    </Type>
+    <ExactDateTime>2006-06-04T06:50:00.0Z</ExactDateTime>
+  </DateTime>
+  <Patient>
+    <ActorID>ABCD-0000-11111-XYZ09</ActorID>
+  </Patient>
+  <From>
+    <ActorLink>
+      <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+      <ActorRole>
+        <Text>Primary Care Provider</Text>
+      </ActorRole>
+    </ActorLink>
+    <ActorLink>
+      <ActorID>11111111-xyz987537-abcdddddd</ActorID>
+    </ActorLink>
+  </From>
+  <To>
+    <ActorLink>
+      <ActorID>11111111AAXXYYZZ-abcdddddd</ActorID>
+      <ActorRole>
+        <Text>Consulting Provider</Text>
+      </ActorRole>
+    </ActorLink>
+  </To>
+  <Purpose>
+    <DateTime>
+      <Type />
+      <ExactDateTime>2006-06-04T06:50:00.0Z</ExactDateTime>
+    </DateTime>
+    <Description>
+      <Text>Request For Treatment</Text>
+    </Description>
+  </Purpose>
+  <Body>
+    <Payers>
+      <Payer>
+        <CCRDataObjectID>ABCD-10000000-XYYYYZZZZ_ABC</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Effective Date</Text>
+          </Type>
+          <ExactDateTime>2006-06-04T06:50:00.0Z</ExactDateTime>
+        </DateTime>
+        <DateTime>
+          <Type>
+            <Text>Termination Date</Text>
+          </Type>
+          <ExactDateTime>2006-06-04T06:50:00.0Z</ExactDateTime>
+        </DateTime>
+        <IDs>
+          <Type>
+            <Text>Policy Number</Text>
+          </Type>
+          <ID>21-3450-123</ID>
+          <Source>
+            <Actor>
+              <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+            </Actor>
+          </Source>
+        </IDs>
+        <IDs>
+          <Type>
+            <Text>Group Number</Text>
+          </Type>
+          <ID>222222</ID>
+          <Source>
+            <Actor>
+              <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+            </Actor>
+          </Source>
+        </IDs>
+        <IDs>
+          <Type>
+            <Text>Group Name</Text>
+          </Type>
+          <ID>BCBS</ID>
+          <Source>
+            <Actor>
+              <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+            </Actor>
+          </Source>
+        </IDs>
+        <Type>
+          <Text>Primary Health Insurance</Text>
+        </Type>
+        <Source>
+          <Actor>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+          </Actor>
+        </Source>
+        <PaymentProvider>
+          <ActorID>bb7b7882-33c3-421a-8246-66a45a70da17</ActorID>
+        </PaymentProvider>
+      </Payer>
+    </Payers>
+    <AdvanceDirectives>
+      <AdvanceDirective>
+        <CCRDataObjectID>98dc166c-1f7f-4cae-8085-be493ec23d8d</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Recorded Date</Text>
+          </Type>
+          <ExactDateTime>2006-09-13T06:00:00.0Z</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Life Support Status</Text>
+        </Type>
+        <Description>
+          <Text />
+          <ObjectAttribute>
+            <Attribute>Comment</Attribute>
+            <AttributeValue>
+              <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" xsi:type="q1:string">Patient claims on file with hospital</Value>
+            </AttributeValue>
+          </ObjectAttribute>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+          </Actor>
+        </Source>
+      </AdvanceDirective>
+      <AdvanceDirective>
+        <CCRDataObjectID>e287b1ee-4b8c-45d2-816a-e80efa2d5c3d</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Recorded Date</Text>
+          </Type>
+          <ExactDateTime>2006-10-01T08:00:00.0Z</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>CPR Status</Text>
+        </Type>
+        <Description>
+          <Text />
+        </Description>
+        <Status>
+          <Text>Current and Verified</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+          </Actor>
+        </Source>
+      </AdvanceDirective>
+    </AdvanceDirectives>
+    <Problems>
+      <Problem>
+        <CCRDataObjectID>079a65ab-e818-439f-9933-4fe73b884db1</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Onset</Text>
+          </Type>
+          <ExactDateTime>2003-04-01T09:30:00.0Z</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Congestive Heart Failure</Text>
+          <Code>
+            <Value>402.11</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2005</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>ABCD-0000-11111-XYZ09</ActorID>
+          </Actor>
+        </Source>
+      </Problem>
+    </Problems>
+    <SocialHistory>
+      <SocialHistoryElement>
+        <CCRDataObjectID>0fb74b8b-b193-4dfe-9e8b-6db925cfe938</CCRDataObjectID>
+        <Type>
+          <Text>Marital Status</Text>
+        </Type>
+        <Description>
+          <Text>Married</Text>
+        </Description>
+        <Source>
+          <Actor>
+            <ActorID>ABCD-0000-11111-XYZ09</ActorID>
+          </Actor>
+        </Source>
+      </SocialHistoryElement>
+      <SocialHistoryElement>
+        <CCRDataObjectID>175aca48-4864-42a9-978c-040d64c18bc8</CCRDataObjectID>
+        <Type>
+          <Text>Tobacco Use</Text>
+        </Type>
+        <Description>
+          <Text>no tobacco use</Text>
+        </Description>
+        <Source>
+          <Actor>
+            <ActorID>ABCD-0000-11111-XYZ09</ActorID>
+          </Actor>
+        </Source>
+      </SocialHistoryElement>
+      <SocialHistoryElement>
+        <CCRDataObjectID>a1b2484b-f940-4e6f-9507-ff3e1810d83c</CCRDataObjectID>
+        <Type>
+          <Text>Alcohol Use</Text>
+        </Type>
+        <Description>
+          <Text>Drink modestly</Text>
+        </Description>
+        <Source>
+          <Actor>
+            <ActorID>ABCD-0000-11111-XYZ09</ActorID>
+          </Actor>
+        </Source>
+      </SocialHistoryElement>
+    </SocialHistory>
+    <Alerts>
+      <Alert>
+        <CCRDataObjectID>d9285ba7-d54e-444f-9dd7-1028bd8baa1d</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Initial Occurrence</Text>
+          </Type>
+          <ExactDateTime>1998-10-01T08:00:00.0Z</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Allergy</Text>
+        </Type>
+        <Description>
+          <Text>Penguins</Text>
+          <Code>
+            <Value>272.2</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2005</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+          </Actor>
+        </Source>
+        <Agent>
+          <EnvironmentalAgents>
+            <EnvironmentalAgent>
+              <CCRDataObjectID>d287031f-aa6d-4cb4-b3a4-7cd522c22484</CCRDataObjectID>
+              <Description>
+                <Text>Penguins</Text>
+              </Description>
+              <Source>
+                <Actor>
+                  <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+                </Actor>
+              </Source>
+            </EnvironmentalAgent>
+          </EnvironmentalAgents>
+        </Agent>
+      </Alert>
+    </Alerts>
+    <Medications>
+      <Medication>
+        <CCRDataObjectID>db43b02e-cdcb-421d-9b19-c375143e9ab6</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Prescription Date</Text>
+          </Type>
+          <ExactDateTime>2005-09-25T08:30:04.0Z</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+          </Actor>
+        </Source>
+        <Product>
+          <ProductName>
+            <Text>zyrtec</Text>
+          </ProductName>
+          <Strength>
+            <Value>10</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+        </Product>
+        <Quantity>
+          <Value>30</Value>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Frequency>
+              <Description>
+                <Text>2 tablet daily</Text>
+              </Description>
+              <FrequencySequencePosition>1</FrequencySequencePosition>
+            </Frequency>
+          </Direction>
+        </Directions>
+        <Refills>
+          <Refill>
+            <Number>1</Number>
+          </Refill>
+        </Refills>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>035a9240-0955-4f59-ad89-4f301630dca5</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Prescription Date</Text>
+          </Type>
+          <ExactDateTime>2004-06-05T14:46:30.0Z</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+          </Actor>
+        </Source>
+        <Product>
+          <ProductName>
+            <Text>Bactrim Susp</Text>
+          </ProductName>
+          <Strength>
+            <Value>5</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+        </Product>
+        <Quantity>
+          <Value>15</Value>
+        </Quantity>
+        <PatientInstructions>
+          <Instruction>
+            <Text>take one daily</Text>
+          </Instruction>
+        </PatientInstructions>
+      </Medication>
+    </Medications>
+    <Encounters>
+      <Encounter>
+        <CCRDataObjectID>2679bfc0-cf8a-498a-88f0-88321a7d2d83</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Encounter Date</Text>
+          </Type>
+          <ExactDateTime>2005-10-09T9:46:44.0Z</ExactDateTime>
+        </DateTime>
+        <Source>
+          <Actor>
+            <ActorID>ABCD-0000-11111-XYZ09</ActorID>
+          </Actor>
+        </Source>
+        <Practitioners>
+          <Practitioner>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+            <ActorRole>
+              <Text>Practitioner</Text>
+            </ActorRole>
+          </Practitioner>
+        </Practitioners>
+      </Encounter>
+      <Encounter>
+        <CCRDataObjectID>6629b61d-88c5-4ab1-bce6-c40284171cc0</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Encounter Date</Text>
+          </Type>
+          <ExactDateTime>2005-09-20T06:49:48.4Z</ExactDateTime>
+        </DateTime>
+        <Source>
+          <Actor>
+            <ActorID>ABCD-0000-11111-XYZ09</ActorID>
+          </Actor>
+        </Source>
+        <Practitioners>
+          <Practitioner>
+            <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+            <ActorRole>
+              <Text>Practitioner</Text>
+            </ActorRole>
+          </Practitioner>
+        </Practitioners>
+      </Encounter>
+    </Encounters>
+  </Body>
+  <Actors>
+    <Actor>
+      <ActorObjectID>azxxxxyyy-120000045-ABCD-12345usss</ActorObjectID>
+      <Person>
+        <Name>
+          <DisplayName>John Smith, M.D.</DisplayName>
+        </Name>
+      </Person>
+      <Address />
+      <Telephone>
+        <Value />
+        <Type>
+          <Text>Work</Text>
+        </Type>
+      </Telephone>
+      <URL>
+        <Value />
+        <Type>
+          <Text>URL</Text>
+        </Type>
+      </URL>
+      <Status>
+        <Text />
+      </Status>
+      <Source>
+        <Description>
+          <Text />
+        </Description>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>11111111-xyz987537-abcdddddd</ActorObjectID>
+      <InformationSystem>
+        <Name>Digital Clinic CCR Generation System</Name>
+        <Version>1.0</Version>
+      </InformationSystem>
+      <Address />
+      <Telephone>
+        <Value />
+        <Type>
+          <Text>Work</Text>
+        </Type>
+      </Telephone>
+      <URL>
+        <Value>www.medicosystem.com</Value>
+        <Type>
+          <Text>URL</Text>
+        </Type>
+      </URL>
+      <Status>
+        <Text />
+      </Status>
+      <Source>
+        <Description>
+          <Text />
+        </Description>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>11111111AAXXYYZZ-abcdddddd</ActorObjectID>
+      <Person>
+        <Name>
+          <DisplayName>Elizabeth Jones, M.D.</DisplayName>
+        </Name>
+      </Person>
+      <Source>
+        <Actor>
+          <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>da2c2597-5342-4004-b5ed-2dbd59dc7952</ActorObjectID>
+      <InformationSystem>
+        <Name>Information System</Name>
+        <Version>1</Version>
+      </InformationSystem>
+      <Address />
+      <Telephone>
+        <Value />
+        <Type>
+          <Text>Work</Text>
+        </Type>
+      </Telephone>
+      <URL>
+        <Value>www.medicosystem.com</Value>
+        <Type>
+          <Text>URL</Text>
+        </Type>
+      </URL>
+      <Status>
+        <Text />
+      </Status>
+      <Source>
+        <Description>
+          <Text />
+        </Description>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>ABCD-0000-11111-XYZ09</ActorObjectID>
+      <Person>
+        <Name>
+          <CurrentName>
+            <Given>CCR</Given>
+            <Middle />
+            <Family>Test2</Family>
+            <Suffix />
+            <Title />
+          </CurrentName>
+          <DisplayName>Sample 1, CCR</DisplayName>
+        </Name>
+        <DateOfBirth>
+          <ExactDateTime>1981-09-20T06:00:00.0Z</ExactDateTime>
+        </DateOfBirth>
+        <Gender>
+          <Text>Male</Text>
+        </Gender>
+      </Person>
+      <IDs>
+        <Type>
+          <Text>MRN</Text>
+        </Type>
+        <ID>1111a</ID>
+        <IssuedBy>
+          <ActorID>da2c2597-5342-4004-b5ed-2dbd59dc7952</ActorID>
+          <ActorRole>
+            <Text>Information System</Text>
+          </ActorRole>
+        </IssuedBy>
+        <Source>
+          <Description>
+            <Text />
+          </Description>
+        </Source>
+      </IDs>
+      <IDs>
+        <Type>
+          <Text>SSN</Text>
+        </Type>
+        <ID>123004567</ID>
+        <IssuedBy>
+          <ActorID>da2c2597-5342-4004-b5ed-2dbd59dc7952</ActorID>
+          <ActorRole>
+            <Text>Information System</Text>
+          </ActorRole>
+        </IssuedBy>
+        <Source>
+          <Description>
+            <Text />
+          </Description>
+        </Source>
+      </IDs>
+      <Address>
+        <Type>
+          <Text>Home</Text>
+        </Type>
+        <Line1>1234 Samish Road</Line1>
+        <City>Sammamish</City>
+        <State>WA</State>
+        <PostalCode>98074</PostalCode>
+      </Address>
+      <Telephone>
+        <Value />
+        <Type>
+          <Text>Cell</Text>
+        </Type>
+      </Telephone>
+      <Telephone>
+        <Value>4248980001</Value>
+        <Type>
+          <Text>Home</Text>
+        </Type>
+      </Telephone>
+      <Telephone>
+        <Value>4258851000</Value>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+      </Telephone>
+      <EMail>
+        <Value>info@medicosystem.com</Value>
+        <Type>
+          <Text>EMail</Text>
+        </Type>
+      </EMail>
+      <URL>
+        <Value />
+        <Type>
+          <Text>URL</Text>
+        </Type>
+      </URL>
+      <Status>
+        <Text />
+      </Status>
+      <Source>
+        <Description>
+          <Text />
+        </Description>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>bb7b7882-33c3-421a-8246-66a45a70da17</ActorObjectID>
+      <Organization>
+        <Name>Medico System Inc.</Name>
+      </Organization>
+      <Source>
+        <Actor>
+          <ActorID>azxxxxyyy-120000045-ABCD-12345usss</ActorID>
+        </Actor>
+      </Source>
+    </Actor>
+  </Actors>
+</ContinuityOfCareRecord>

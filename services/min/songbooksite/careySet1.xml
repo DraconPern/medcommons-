@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+-
+- set one Carey
+
+-->
+
+<!--
+- Database: 'songbook'
+-->
+<TableExport xporttime='05/26/09 13:39:50' filter='none' >
+<description>Set One Carey Party</description>
+ <songs>
+<tune>Jumpin Jack Flash </tune>
+<tune>Born to Be Wild</tune>
+<tune>Sweet Home Alabama</tune>
+<tune>Long Train Running</tune>
+<tune>Rescue Me</tune>
+<tune>Heard It Thru the Grapevine</tune>
+<tune>Locomotion</tune>
+<tune>Proud Mary</tune>
+<tune>Love Shack</tune>
+<tune>Fire</tune>
+<tune>Miss You</tune>
+<tune>Gimme Shelter</tune>
+<tune>I Shot the Sheriff</tune>
+<tune>Were an American Band</tune>
+<tune>Son of a Preacher</tune>
+<tune>Crossroads</tune>
+<tune>Hush</tune>
+<tune>Birthday</tune>
+</songs>
+</TableExport>

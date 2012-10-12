@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <jnlp spec="1.5+" codebase="$$codebase" href="activation.jnlp">
+ <information>
+<title>Activation</title>
+<vendor>Sun Microsystems, Inc.</vendor>
+ </information>
+<resources>
+<jar href="activation.jar"/>
+</resources>
+ <component-desc/>
+</jnlp> 

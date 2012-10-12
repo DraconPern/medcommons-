@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server>
+  <mbean code="net.medcommons.central.storage.StorageService" name="medcommons:service=StorageService">
+	<depends>jboss:service=Naming</depends>
+	<depends>medcommons:service=GuidFactoryService</depends>
+	<attribute name="StoragePath">../server/central/data/store</attribute>
+  </mbean>
+</server>

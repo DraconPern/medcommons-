@@ -1,0 +1,5 @@
+<server>
+  <mbean code="net.medcommons.central.chef.ChefService" name="medcommons:service=ChefService">
+  	<depends>jboss:service=Naming</depends>
+  </mbean>
+</server>

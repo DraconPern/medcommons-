@@ -1,0 +1,566 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <link href='api.css' rel='stylesheet' type='text/css'/>
+  </head>
+  <body>
+    <h1><img src='mc_logo.png'/> MedCommons API Documentation</h1>
+
+    <h2>Contents</h2>
+    <ol>
+      <li><a href='#intro'>Introduction</a></li>
+      <li><a href='#auth'>Authorization Overview</a></li>
+      <li><a href='#arch'>Understanding MedCommons Architecture</a></li>
+      <li><a href='#api'>API Reference</a></li>
+      <li><a href='#examples'>Examples</a></li>
+    </ol>
+
+    <hr/>
+    <h2><a name='intro'>1. Introduction</a></h2>
+    <p>This document describes how you can connect 3rd party applications and
+    web sites with MedCommons Appliances.  MedCommons Appliances expose APIs
+    that you can call from your application to do things such as:</p>
+    <p><ul>
+        <li>Retrieve information from a person's health record</li>
+        <li>Update a person's health record</li>
+        <li>Manage permissions for who is allowed to access a person's health record (known as "consents").</li>
+      </ul>
+    </p>
+    <p>This document describes the MedCommons API in terms of Web based services that can be 
+    invoked as simple URLs (commonly referred to as a "REST" style interface).  This interface can
+    work with any programming language.  For specific languages MedCommons may supply wrapper classes
+    that handle the operations in the interface for you which may make accessing the interface easier. 
+    Currently, such a wrapper class is
+    <a href='../client/mc_oauth_client_php.txt'>available for PHP</a>.</p>
+
+    <h2><a name='auth'>2. Authorization Overview</a></h2>
+    <p>Before you can call most services in the MedCommons APIs you must
+    obtain authorization.  MedCommons uses a standard process known as <a href='http://oauth.net/core/1.0/'>OAuth</a>
+    for authorizing access.
+    OAuth defines a two-step authorization process that occurs before
+    before you can successfully call OAuth services:
+    <ul>
+      <li>Your application must be registered with the Appliance that you want to access.
+      This is known as "Consumer" authorization (your application is the "consumer").
+      Through the registration
+      process you will receive a Consumer key and secret pair that
+      you need to use in your API calls.</li>
+      <li>Once your application is registered, you must obtain permission for each specific
+      patient account that you wish to access separately.  The permission you obtain is represented by
+      an "Access Token"  - it authorizes access <i>to a single 
+        patient</i>.  Access tokens may be obtained in two ways:
+      <ol>
+        <li>They may be given back to you in response to a <a href='#create_account'>new patient</a> service call that you make 
+        to create a new patient.
+        In that case you are given access automatically because you created the patient yourself</li>
+        <li>To access patients that you did not create yourself you must get the patient (or someone authorized on their behalf)
+        to grant you permission by first calling the <a href='#request_token'>request token</a> service to 
+        create a request token and then getting the patient to authorize the request token 
+        by sending them to the <a href='#authorize'>Authorization Page</a> on the appliance where the patient's account
+        is stored.  When the patient has authorized a request token, you can finally submit the authorized request to the
+        <a href='#access_token'>access token</a> service which returns you the Access Token for the patient.  These steps
+        are not special to MedCommons and are all defined in the <a href='http://oauth.net/core/1.0/'>OAuth specification</a>.
+        </li>
+      </ol>
+      Once created, typically
+      your application will store an Access Token for each user account accessed persistently, for example, in a 
+      database table.</li>
+    </ul>
+    <p>Except for services that are specifically noted as accessible without OAuth, all calls to the 
+       MedCommons API must be signed using the Consumer and Access credentials as
+       specified by the <a href='http://oauth.net/core/1.0/'>OAuth</a> specification.</p>
+
+    <h2><a name='arch'>3. Understanding MedCommons Architecture</a></h2>
+    <p>MedCommons uses a tiered architecture to facilitate scalability. In this architecture, there
+    are 3 tiers:</p>
+    <ul>
+      <li>The <i>appliance</i> tier - this is the level at which accounts, groups and consents are managed.
+          Every patient is allocated to one and only one appliance in the MedCommons universe.
+          However actual medical data is not stored or served from this tier.</li>
+          <li>The <i>storage</i> tier - this is where actual PHI and imaging data is stored.  It is sometimes
+          referred to as the "storage layer", or the "gateway" or "router" (these last two are historical). 
+          A single appliance can be configured to store data across many separate storage instances (or gateways).
+          </li>
+          <li>The <i>global</i> tier - this is the highest level containing all appliances.  Some global services are
+        provided centrally from MedCommons at this level, such as locating a
+        patient's appliance from their account id.  This document does not describe these services.</li>
+      </ul>
+    <p>Because of this tiered architecture, some operations need to be performed in two stages:
+    <ol>
+      <li>Call the patient's appliance to find correct gateway holding the patient's data.   This 
+      is the purpose of the <a href='#find_storage'>find_storage</a> call in the API below.</li>
+      <li>Call the returned storage URL perform desired operation on the patient's data.</li>
+    </ol>
+    <p>A patient's data will be located at a gateway instance and will move only rarely
+       and any migration will be transparent to the caller.   Thus it is safe to store a URL
+       to patient's gateway for short periods of time, for example, up to 24 hours.</p>
+
+    <h2><a name='api'>4. API Reference</a></h2>
+    <p>This section describes the specific API calls that you can make to a MedCommons HealthURL Appliance.</p>
+    <p>Note: examples in this section omit OAuth signature parameters for clarity.  However unless otherwise noted,
+    calls will not succeed unless they are accompanied by a correct OAuth signature from an access token authorized to operate on
+    the corresponding patient account.</p>
+    <ul>
+    <li><a href='#request_token'>4.1 request_token </a> -  Obtain a request token</li>
+    <li><a href='#authorize'>4.2 authorize </a> -  authorize a request token</li>
+    <li><a href='#access_token'>4.3 access_token </a> -  obtain an access_token</li>
+    <li><a href='#loginservice'>4.4 login </a> -  Provide login credentials and receive a login token</li>
+    <li><a href='#patientlistatom'>4.5 patient list atom feed </a> - Query recently changed patients in a group patient list</li>
+    <li><a href='#set_consents'>4.6 set_consents </a> -  Set Access Permissions for an Account</li>
+    <li><a href='#find_storage'>4.7 find_storage </a> -  Resolve a gateway for accessing a user's content</li>
+    <li><a href='#ccr'>4.8 ccr </a> -  Retrieve Health Record for User</li>
+    <li><a href='#Activity'>4.9 Activity </a> -  Retrieve Activity Log for User</li>
+    <li><a href='#update_ccr'>4.10 update_ccr </a> -  Update Health Record for User</li>
+    <li><a href='#destroy_token'>4.11 destroy_token </a> -  Destroy a previously authorized token</li>
+    <li><a href='#share_phr'>4.12 Share PHR </a> -  Share access to an account using a Tracking Number and PIN</li>
+    <li><a href='#create_account'>4.13 Create Account</a> -  Create a new account</li>
+    <li><a href='#order'>4.14 Create an order</a> -  Create a new order</li>
+    <li><a href='#queryccrs'>4.15 Fetch Patient CCRs</a> - Query for all top level CCRs belonging to a Patient</li>
+    <li><a href='#querydocuments'>4.16 Fetch Patient Document List</a> - Query for all documents belonging to a patient</li>
+  </ul>
+    <h3><a name='request_token'>4.1 request_token - Obtain a request token</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/request_token.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td colspan="4">This is a standard OAuth call.  Please refer to OAuth specification for all parameters</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='authorize'>4.2 authorize - authorize a request token</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/authorize.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>16 digit MedCommons  Account Id to which access is to be authorized.</td></tr>
+          <tr><td class='param'>realm</td><td>arbitrary text value, max 200 chars, limited to alphanumeric characters, spaces and underscores</td><td>Optional</td><td>indicating a realm 
+            (group, role or other category) in your application to display
+            in reference to the given token.</td></tr>
+          <tr><td class='param'>oauth_token</td><td>OAuth request token</td><td>1</td><td>Value returned from request_token call. This is a standard OAuth parameter.</td></tr>
+          <tr><td class='param'>oauth_callback</td><td>URL (text)</td><td>Optional</td><td>URL  to which user will be redirected after approving or denying access</td></tr>
+          <tr><th>return</th><td colspan="3">This call does not return a result.  It should be executed by the patient's browser, typically as a redirect.  
+                                             It will render a page allowing the patient to grant you access and redirect back to you when they have done so.</td></tr>
+
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/api/authorize.php?oauth_token=bc644c382a404651e96af5533c82b1267304f987&amp;accid=1012576340589251&amp;realm=Bar</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='access_token'>4.3 access_token - obtain an access_token</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/access_token.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td colspan="4">This is a standard OAuth call.  Please refer to OAuth specification for all parameters</td></tr>
+        </tbody>
+      </table>
+
+
+    <h3><a name='loginservice'>4.4 loginservice - login to MedCommons</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/acct/loginservice.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>email</td><td>email address</td><td>1</td><td>Email address of account to be logged into.</td></tr>
+          <tr><td class='param'>password</td><td>text</td><td>1</td><td>Password of account to be logged in to.</td></tr>
+          <tr><th>return</th><td colspan="3">a JSON encoded object with attributes status='ok' if successful and 'result' with 
+                                             details about the account, including 'auth', a token for calling other 
+                                             services requiring login authentication.</td></tr>
+          <tr><th>notes</th><td colspan="3">This service does <i>not</i> require an OAuth signature.</td></tr>
+          <tr><td colspan="4">&nbsp;</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='patientlistatom'>4.5 patient_list_atom - retrieve list of recent patients from a patient list</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/access_token.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+              <tr><td class='param'>auth</td><td>text, 40 characters</td><td>1</td><td>An auth token as returned from login service (see above).</td></tr>
+              <tr><th>return</th><td colspan="3">Atom feed (XML) containing patients on patient list in order of most recently modified
+                                                 to least recently modified.  Each entry may be accompanied  by details of any
+                                                 order that is linked to the patient if the patient is associated with a DICOM Order.</td></tr>
+          <tr><th>notes</th><td colspan="3">This service does <i>not</i> require an OAuth signature.</td></tr>
+          <tr><td colspan="4">&nbsp;</td></tr>
+          <tr class='example'><th>example</th><td colspan="3">https://healthurl.medcommons.net/acct/patient_list_atom.php?auth=97a49ea6137dc95bc02a3775282b5e19c47d7892</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='set_consents'>4.6 set_consents - Set Access Permissions for an Account</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/set_consents.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account that owns content for which consent to access will be modified.</td></tr>
+          <tr><td class='param'>&lt;account id&gt;</td>
+            <td>String value, one of "R", "W", "C" </td>
+            <td>1 or more</td>
+            <td>Indicates the type of consent to grant to specified account.  The account may be specified
+                as either a 16 digit MedCommons Account Id, or it may be specified in the form of a 
+                fully qualified OpenID URL.
+            </td>
+          </tr>
+          <tr><th>return</th><td colspan='3'>JSON encoded object with attribute "status" indicating "ok" if successful</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/api/set_consents.php?accid=1013062431111407&1117658438174637=RW</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='find_storage'>4.7 find_storage - Resolve a gateway for accessing a user's content</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/find_storage.php</th></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account whose gateway URL is to be returned. The account must be located on the appliance to which the call is directed.</td></tr>
+          <tr><th>return</th><td colspan='3'>JSON encoded object with attribute "status" indicating "ok" and "result" with URL of gateway if successful</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/api/find_storage.php?accid=1013062431111407</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='ccr'>4.8 ccr - Retrieve Health Record for User</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/ccrs/&lt;accountid&gt;[/&lt;guid&gt;]</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accountid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account from which the CCR is to be retrieved.</td></tr>
+          <tr><td class='param'>guid</td><td>40 character guid (global identifier) of CCR</td><td>Optional</td><td>If not supplied the user's Current CCR will be returned.</td></tr>
+          <tr><td class='param'>fmt</td><td>one of 'xml' or 'json'</td><td>Optional</td>
+              <td>If not supplied the requested CCR is returned as a fully
+                functional, live HTML page.  If set to one of "xml" or
+                "json" then the CCR will be returned in the respective format.</td></tr>
+          <tr><th>return</th><td colspan='3'>The CCR in the format requested.  In all cases it will be streamed back directly (no wrapping, encoding etc. on top of the requested format).</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/ccrs/1013062431111407?fmt=json</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='Activity'>4.9 Activity - Retrieve Activity Log for User</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/Activity.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account for which the activity log should be retrieved.</td></tr>
+          <tr><td class='param'>since</td><td>long integer</td><td>Optional</td><td>Causes only records since given time in seconds since 1 Jan 1970 GMT to be returned.</td></tr>
+          <tr><td class='param'>max</td><td>integer</td><td>Optional</td><td>Maximum number of records to return</td></tr>
+          <tr><th>return</th><td colspan='3'>json object representing the activity log 
+                       *                     as an array of sessions, each with a list of events</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/Activity.action?accid=1013062431111407&max=50&since=1205387193</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='update_ccr'>4.10 update_ccr - Update Health Record for User</h3>
+    <p>To be completed</p>
+
+    <h3><a name='destroy_token'>4.11 destroy_token - Destroy a previously authorized token</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/destroy_token.php</th></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>token</td><td>40 digit alphanumeric token</td><td>1</td><td>The token to be destroyed.  The token must have been issued by the calling consumer.</td></tr>
+          <tr><th>return</th><td colspan='3'>JSON encoded object with attribute "status" indicating "ok" if successful, otherwise "failed" and "error" with details</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/api/destroy_token.php?token=d63aa792627e1c7b8e6f581991663e4d49cba50d</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='share_phr'>4.12 SharePHR - Share access to a user's health records using Tracking Number and PIN</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/SharePHR.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>fromAccount</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account to which access is to be shared</td></tr>
+          <tr><td class='param'>toEmail</td><td>email address</td><td>1</td><td>Email address to send notification to</td></tr>
+          <tr><td class='param'>pin</td><td>5 digit PIN</td><td>1</td><td>The secret PIN to assign as an access code.</td></tr>
+          <tr><td class='param'>auth</td><td>oauth access token</td><td>1</td><td>same as oauth_token in OAuth calls, redundant but required</td></tr>
+          <tr><th>return</th><td colspan='3'>json object with 'status'
+              attribute = 'ok' and 'trackingNumber' attribute indicating
+              Tracking Number created, or  'status' having another value and 'error' having diagnostic information.</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/SharePHR.action?fromAccount=1087997704966332&amp;<br/>toEmail=joeshmoe@some.email.com&amp;auth=97a49ea6137dc95bc02a3775282b5e19c47d7892&amp;pin=12345</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='create_account'>4.13 NewPatient - Create a Patient Account</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/NewPatient.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>givenName</td><td>text, max 32 characters</td><td>1</td><td>Patient Given Name</td></tr>
+          <tr><td class='param'>familyName</td><td>text max 32 characters</td><td>1</td><td>Patient Family Name</td></tr>
+          <tr><td class='param'>dateOfBirth</td><td>date, mm/dd/yyyy</td><td>0,1</td><td>Patient Date of Birth</td></tr>
+          <tr><td class='param'>sex</td><td>Male or Female</td><td>0,1</td><td>Sex of Patient</td></tr>
+          <tr><td class='param'>height</td><td>numeric with units eg: 176 cm</td><td>0,1</td><td>Height of patient</td></tr>
+          <tr><td class='param'>weight</td><td>numeric with units eg: 178 lb</td><td>0,1</td><td>Weight of the patient</td></tr>
+          <tr><td class='param'>city</td><td>text, unlimited</td><td>0,1</td><td>City of patient address</td></tr>
+          <tr><td class='param'>state</td><td>text, unlimited</td><td>0,1</td><td>State / Province of patient address</td></tr>
+          <tr><td class='param'>photoUrl</td><td>URL, max 255 chars</td><td>0,1</td><td>URL to photo of patient</td></tr>
+          <tr><td class='param'>country</td><td>text, unlimited</td><td>0,1</td><td>Country of patient address</td></tr>
+          <tr><td class='param'>createCCR</td><td>true or false (default=true)</td><td>0,1</td><td>Whether to create an initial Current CCR for the patient</td></tr>
+          <tr><td class='param'>sponsorAccountId</td><td>16 digit account ID</td><td>0,1</td><td>MedCommons Account ID of account sponsoring the patient account.  Will be given full access rights to patient account.</td></tr>
+          <tr><td class='param'>activationKey</td><td>text</td><td>0,1</td><td>Amazon DevPay activation key for account.  If provided will activate account with this key so that account has long term storage paid for</td></tr>
+          <tr><td class='param'>activationProductCode</td><td>text</td><td>0,1</td><td>Amazon DevPay product code corresponding to activation key</td></tr>
+          <tr><td class='param'>auth</td><td>40 character token</td><td>0,1</td><td>Auth token that will be set as parent of token for created account.</td></tr>
+          <tr><th>return</th><td colspan='3'>json object with 'status'
+              attribute = 'ok', 'patientMedCommonsId' attribute indicating id of created account,
+              'auth' attribute indicating oauth access token, corresponding 'secret' attribute indicating secret. 
+              If CCR was created, currentCCRGuid attribute will also be present specifying guid of created CCR.</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/NewPatient.action?<br/>givenName=joe&amp;familyName=shmoe&amp;auth=84547f4c4a7085a8c9960883d0fc60e06556604a</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='order'>4.14 order - Create an order for a group</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/orders/order</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+              <tr><td class='param'></td><td>text, 40 characters</td><td>1</td><td>An auth token as returned from login service (see above).</td></tr>
+              <tr><th>return</th><td colspan="3">Atom feed (XML) containing patients on patient list in order of most recently modified
+                                                 to least recently modified.  Each entry may be accompanied  by details of any
+                                                 order that is linked to the patient if the patient is associated with a DICOM Order.</td></tr>
+          <tr><th>notes</th><td colspan="3">This service does <i>not</i> require an OAuth signature.</td></tr>
+          <tr><td colspan="4">&nbsp;</td></tr>
+          <tr class='example'><th>example</th><td colspan="3">https://healthurl.medcommons.net/acct/patient_list_atom.php?auth=97a49ea6137dc95bc02a3775282b5e19c47d7892</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='queryccrs'>4.15 Fetch Patient CCRs - Query List of Available CCRs for a Patient</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/QueryPatientCCRs.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digits</td><td>1</td><td>MedCommons Account ID of patient to query CCRs for</td></tr>
+          <tr><th>return</th><td colspan='3'>json object with 'result' attribute being an array of 
+           'profile' objects in the form { name, guid, date }.</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/QueryPatientCCRs.action?accid=1013062431111407</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='querydocuments'>4.16 Query Documents - Query List of all Documents for a Patient</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/QueryDocuments.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digits</td><td>1</td><td>MedCommons Account ID of patient to query documents for</td></tr>
+          <tr><th>return</th><td colspan='3'>json object with 'result' attribute being an array of 
+           'document' objects.</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/QueryDocuments.action?accid=1013062431111407</td></tr>
+        </tbody>
+      </table>
+
+    <h2><a name='examples'>5. Examples</a></h2>
+    <h3>5.1 Simple PHP Example</h3>
+    <p>This example uses PHP along with an open source <a href='http://code.google.com/p/oauth/'>PHP OAuth library</a> to demonstrate how to call the MedCommons APIs.
+    It uses pre-registered demonstration tokens that work with the MedCommons Demo Data set.  You will need to replace 
+    these tokens that you acquire via methods covered in Section 2 above.</p>
+
+
+    <div style='margin-left: 1.0in'>
+ <font face="monospace" size="2">
+<font color="#6a5acd">&lt;?</font><br>
+<font color="#a020f0">require_once</font>&nbsp;&quot;<font color="#008888">OAuth.php</font>&quot;;<br>
+<br>
+<font color="#0000ff">// Consumer - enter your application's token and secret here</font><br>
+<font color="#804040"><b>$</b></font><font color="#008080">consumer</font>&nbsp;&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#a020f0">new</font>&nbsp;OAuthConsumer<font color="#6a5acd">(</font>&quot;<font color="#008888">270ebdf10b9bb9dd957a4a14833367183a196da7</font>&quot;, &quot;<font color="#008888">72c25b142d4dd453213b586fc1278afc446b1d89</font>&quot;, <font color="#2e8b57"><b>NULL</b></font><font color="#6a5acd">)</font>;<br>
+<br>
+<font color="#0000ff">// Access Token - enter your the Access Token for the user you are calling here</font><br>
+<font color="#804040"><b>$</b></font><font color="#008080">acc_token</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#a020f0">new</font>&nbsp;OAuthToken<font color="#6a5acd">(</font>&quot;<font color="#008888">970efdf18b9bb9dd957a4a14833367283a116d37</font>&quot;, &quot;<font color="#008888">32c25b142d4dd453213b586fc1278afc446b1d49</font>&quot;, <font color="#ff00ff">1</font><font color="#6a5acd">)</font>;<br>
+<font color="#804040"><b>$</b></font><font color="#008080">req</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;OAuthRequest<font color="#804040"><b>::</b></font>from_consumer_and_token<font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">consumer</font>, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">acc_token</font>, &quot;<font color="#008888">GET</font>&quot;, &quot;<font color="#008888"><a href="https://healthurl.medcommons.net/api/set_consents.php">https://healthurl.medcommons.net/api/set_consents.php</a></font>&quot;, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>array</b></font><font color="#6a5acd">(</font>&quot;<font color="#008888">accid</font>&quot;&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;&quot;<font color="#008888">1013062431111407</font>&quot;, &quot;<font color="#008888">1117658438174637</font>&quot;&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;&quot;<font color="#008888">R</font>&quot;<font color="#6a5acd">))</font>;<br>
+<br>
+<font color="#804040"><b>$</b></font><font color="#008080">req</font><font color="#2e8b57"><b>-&gt;</b></font>sign_request<font color="#6a5acd">(</font><font color="#a020f0">new</font>&nbsp;OAuthSignatureMethod_HMAC_SHA1<font color="#6a5acd">()</font>, <font color="#804040"><b>$</b></font><font color="#008080">consumer</font>, <font color="#804040"><b>$</b></font><font color="#008080">acc_token</font><font color="#6a5acd">)</font>;<br>
+<font color="#804040"><b>$</b></font><font color="#008080">result</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">file_get_contents</font><font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">req</font><font color="#2e8b57"><b>-&gt;</b></font>to_url<font color="#6a5acd">())</font>;<br>
+<br>
+<font color="#a020f0">echo</font>&nbsp;&quot;<font color="#008888">Raw result is </font>&quot;<font color="#804040"><b>.</b></font><font color="#804040"><b>$</b></font><font color="#008080">result</font>;<br>
+<br>
+<font color="#0000ff">// Parse JSON</font><br>
+<font color="#804040"><b>$</b></font><font color="#008080">out</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;json_decode<font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">result</font><font color="#6a5acd">)</font>;<br>
+<font color="#804040"><b>if</b></font><font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">out</font><font color="#2e8b57"><b>-&gt;</b></font>status&nbsp;<font color="#804040"><b>==</b></font>&nbsp;&quot;<font color="#008888">ok</font>&quot;<font color="#6a5acd">)</font>&nbsp;<font color="#6a5acd">{</font><br>
+&nbsp;&nbsp;<font color="#a020f0">echo</font>&nbsp;&quot;<font color="#008888">Call succeeded</font>&quot;;<br>
+<font color="#6a5acd">}</font><br>
+<font color="#804040"><b>else</b></font>&nbsp;<font color="#6a5acd">{</font><br>
+&nbsp;&nbsp;<font color="#a020f0">echo</font>&nbsp;&quot;<font color="#008888">Call failed:&nbsp;&nbsp;</font>&quot;<font color="#804040"><b>.</b></font><font color="#804040"><b>$</b></font><font color="#008080">out</font><font color="#2e8b57"><b>-&gt;</b></font>message;<br>
+<font color="#6a5acd">}</font><br>
+<font color="#6a5acd">?&gt;</font><br>
+</font>
+</div>
+  <h3>5.2 Simple Java Example - Getting a CCR</h3>
+  <p>This example shows how to fetch a CCR using Java.  The source code including libraries and a build script
+     can be found in the <a href='../examples/java-examples.zip'>Java examples</a> distribution.</p>
+
+<div style='margin-left: 1.0in; font-size: 12px;'>
+<font face="monospace">
+<font color="#0000ff">/**</font><br>
+<font color="#0000ff">&nbsp;*</font><font color="#6a5acd">&nbsp;Copyright 2009, MedCommons Inc.</font><br>
+<font color="#0000ff">&nbsp;*/</font><br>
+<font color="#a020f0">import</font>&nbsp;java.util.*;<br>
+<br>
+<font color="#a020f0">import</font>&nbsp;net.oauth.*;<br>
+<font color="#a020f0">import</font>&nbsp;net.oauth.client.*;<br>
+<br>
+<font color="#a020f0">import</font>&nbsp;org.json.JSONObject;<br>
+<br>
+<font color="#0000ff">/**</font><br>
+<font color="#0000ff">&nbsp;*</font><font color="#6a5acd">&nbsp;A simple example program to show how to get a CCR from </font><br>
+<font color="#0000ff">&nbsp;*</font><font color="#6a5acd">&nbsp;MedCommons using the MedCommons Oauth API.</font><br>
+<font color="#0000ff">&nbsp;* </font><font color="#008080">&lt;</font><font color="#804040"><b>p</b></font><font color="#008080">&gt;</font><br>
+<font color="#0000ff">&nbsp;* For more information on the MedCommons OAuth API, see the </font><br>
+<font color="#0000ff">&nbsp;* </font><font color="#008080">&lt;</font><font color="#804040"><b>a</b></font><font color="#008080">&nbsp;</font><font color="#2e8b57"><b>href</b></font><font color="#008080">=</font><font color="#008888">'<a href="http://healthurl.medcommons.net/api/doc">http://healthurl.medcommons.net/api/doc</a>'</font><font color="#008080">&gt;</font><font color="#6a5acd"><u>Online Documentation</u></font><font color="#008080">&lt;/</font><font color="#804040"><b>a</b></font><font color="#008080">&gt;</font><font color="#0000ff">.</font><br>
+<font color="#0000ff">&nbsp;* </font><br>
+<font color="#0000ff">&nbsp;* </font><font color="#6a5acd">@author</font><font color="#0000ff">&nbsp;ssadedin@medcommons.net</font><br>
+<font color="#0000ff">&nbsp;*/</font><br>
+<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>class</b></font>&nbsp;GetCCR {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// The consumer token details will be provided to you by MedCommons</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// or the operator of the appliance you wish to use.&nbsp;&nbsp;You must</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// get these details as a one time operation via manual or </font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// out-of-band process in which you register your details with the</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// appliance operator.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#2e8b57"><b>final</b></font>&nbsp;String consumerToken = <font color="#008888">&quot;270ebdf10b9bb9dd957a4a14833367183a196da7&quot;</font>; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#2e8b57"><b>final</b></font>&nbsp;String consumerSecret = <font color="#008888">&quot;72c25b142d4dd453213b586fc1278afc446b1d89&quot;</font>; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// The access token is specific to the patient that you wish</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// to call the APIs for.&nbsp;&nbsp; You can get an access token for an</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// existing patient by creating a request token and forwarding the</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// user to the OAuth authorization page (this process is defined by OAuth).</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">//</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// If you are creating patients yourself using the MedCommons public</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// API then you will get an access token returned to you from the</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// patient creation service call itself.&nbsp;&nbsp; You need to store that</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// token to use in future OAuth calls.&nbsp;&nbsp;The token here is one</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// that is permanently rigged to enable access to the MedCommons </font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// demonstration data set.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#2e8b57"><b>final</b></font>&nbsp;String accessToken = <font color="#008888">&quot;970efdf18b9bb9dd957a4a14833367283a116d37&quot;</font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#2e8b57"><b>final</b></font>&nbsp;String tokenSecret = <font color="#008888">&quot;32c25b142d4dd453213b586fc1278afc446b1d49&quot;</font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#2e8b57"><b>final</b></font>&nbsp;String accountId = <font color="#008888">&quot;1013062431111407&quot;</font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// The base URL of the MedCommons Appliance you wish to make service </font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// calls to</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#2e8b57"><b>final</b></font>&nbsp;String applianceBaseUrl = <font color="#008888">&quot;<a href="https://healthurl.medcommons.net/">https://healthurl.medcommons.net/</a>&quot;</font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>public</b></font>&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#2e8b57"><b>void</b></font>&nbsp;main(String[]&nbsp;args)&nbsp;&nbsp;<font color="#2e8b57"><b>throws</b></font>&nbsp;Exception {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// First create the OAuth credentials</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OAuthConsumer consumer = <font color="#804040"><b>new</b></font>&nbsp;OAuthConsumer(<font color="#ff00ff">null</font>, consumerToken, consumerSecret, <font color="#ff00ff">null</font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OAuthAccessor accessor = <font color="#804040"><b>new</b></font>&nbsp;OAuthAccessor(consumer);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accessor.accessToken = accessToken;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accessor.tokenSecret = tokenSecret;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// The OAuthClient does the actual work of making calls for us</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OAuthClient client = <font color="#804040"><b>new</b></font>&nbsp;OAuthClient(<font color="#804040"><b>new</b></font>&nbsp;URLConnectionClient());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// First find the storage location (gateway) by passing</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// the account id to the find_storage service</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Map&lt;String, String&gt; params = <font color="#804040"><b>new</b></font>&nbsp;HashMap&lt;String, String&gt;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;params.put(<font color="#008888">&quot;accid&quot;</font>,accountId);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OAuthMessage response = client.invoke(accessor, applianceBaseUrl+<font color="#008888">&quot;api/find_storage.php&quot;</font>, params.entrySet());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String text = response.readBodyAsString();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<font color="#008888">&quot;Got response to find_storage call : &quot;</font>&nbsp;+ text);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSONObject obj = <font color="#804040"><b>new</b></font>&nbsp;JSONObject(text);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String gwUrl = obj.getString(<font color="#008888">&quot;result&quot;</font>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<font color="#008888">&quot;Storage URL for account &quot;</font>&nbsp;+ accountId + <font color="#008888">&quot; is &quot;</font>&nbsp;+ gwUrl);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// Now get the CCR from the gateway from the ccrs service on the gateway we found</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;params.clear();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;params.put(<font color="#008888">&quot;fmt&quot;</font>,<font color="#008888">&quot;xml&quot;</font>); <font color="#0000ff">// ask for it in XML format.&nbsp;&nbsp;We could also ask for &quot;json&quot;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(gwUrl+<font color="#008888">&quot;/ccrs/&quot;</font>+accountId);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = client.invoke(accessor, gwUrl+<font color="#008888">&quot;/ccrs/&quot;</font>+accountId, params.entrySet());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<font color="#008888">&quot;Got CCR: &quot;</font>&nbsp;+ response.readBodyAsString());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+</font>
+</div>
+  <h3>5.3 Java Example - Performing OAuth Authorization</h3>
+  <p>
+  This example shows how you can direct a user to a web page 
+  to obtain authorization to access their account.  It opens a
+  browser to which you need to log in as the patient being accessed
+  (jhernandez@medcommons.net, password "tester") to authorize access
+  to her account.  After authorizing access, the example downloads 
+  the patient's CCR and displays it for you.
+ </p>
+ <i><b>Please Note:</b></i>  This example requires Java 1.6 or greater.
+ <p>To view this example, download the <a href='../examples/java-examples.zip'>Java examples</a> distribution.</p>
+
+  <h3>5.4 Full Java Example - Uploading and Accessing Images</h3>
+  <p>
+ This example works by using the MedCommons On Demand service which allows you 
+ to upload image data directly into a group's patient list.
+ To do so it demonstrates how two separate authentication mechanisms
+ are used within MedCommons:
+ </p>
+ <ul><li>OAuth - for applications to identify themselves
+     <li>Login Service - for people to identify themselves
+ </ul>
+ </p>
+ <p>The example proceeds roughly in four separate phases:</p>
+ <ol>
+     <li>Create a unique order reference and launch the browser
+         to allow upload of DICOM
+     <li>Login to the MedCommons Appliance and use the login
+         authorization to poll the group patient list
+         until the new patient for the order appears.
+     <li>Download the Current CCR for the patient and parse 
+         it to find references to DICOM series
+     <li>Create an HTML file with links to the uploaded images
+          and then show that file in the browser         
+ </ol>
+ <p>
+ <i><b>Please Note:</b></i>  This example requires Java 1.6 or greater.
+ <p>To view this example, download the <a href='../examples/java-examples.zip'>Java examples</a> distribution.</p>
+
+  </body>
+</html>

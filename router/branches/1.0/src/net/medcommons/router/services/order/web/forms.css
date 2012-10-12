@@ -1,0 +1,74 @@
+.lineHeader br {
+	clear: both;
+	font-size: 1px;
+	height: 1px;
+}
+
+.lineHeader hr {
+	position: relative;
+	top: 1.0em;
+	margin: 5px 10px;
+}
+.lineHeader h4 {
+	position: relative;
+	top: -1.2em;
+	float: left;
+	padding-right: 1em;
+	padding-left: 1em;
+	margin: 1em 0px 0px 3em;
+	background-color: #f2f2f2;
+	font-size: 13px;
+}
+#shareDlg th {
+	width: 6em;
+	padding-right: 1em;
+	text-align: right;
+	color: #333;
+}
+#shareDlg input[type='radio'] {
+	margin-left: 1em;
+	margin-right: 0.2em;
+	margin-bottom: 0.5em;
+}
+#shareDlg .stars {
+	margin-right: 1em;
+	margin-left: 0.5em;
+}
+#shareDlg .stars img {
+	position: relative;
+	top: 1px;
+	height: 15px;
+	width: 15px;
+}
+#shareDlg input[type='text'],
+#shareDlg input[type='email'] {
+	width: 20em;
+}
+#waitMessage img {
+	margin-left: 2em;
+	position: relative;
+	top: -3px;
+	margin-right: 1em;
+}
+#waitMessage {
+	margin-top: 1em;
+}
+
+#waitMessage * {
+	vertical-align: middle;
+}
+#shareResultTable {
+	margin-left: 2em;
+	border-collapse: separate;
+}
+#shareResultTable td,
+#shareResultTable th {
+	background-color: white;
+	border-style: none;
+	padding: 7px;
+}
+
+.yui-content form th, 
+.yui-content form td  {
+	border-style: none;
+}

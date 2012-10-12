@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="net.medcommons.services">
+
+ <class name="net.medcommons.modules.services.impl.TrackingNumber" table="tracking_number">
+ 	<meta attribute="class-description">
+ 		A test mapping
+ 	</meta>
+    <id name="trackingNumber" type="string">
+	   <column name="tracking_number"/>
+	   <generator class="assigned"/>
+    </id>
+	<property name="encryptedPIN" column = "encrypted_pin"/>
+	<property name="rightsId" column = "rights_id"/>
+</class>
+ 
+</hibernate-mapping>

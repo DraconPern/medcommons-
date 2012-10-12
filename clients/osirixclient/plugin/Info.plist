@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.193</string>
+	<key>CFBundleVersion</key>
+	<string>193</string>
+	<key>MenuTitles</key>
+	<array>
+		<string>Send via MedCommons</string>
+	</array>
+	<key>NSHumanReadableCopyright</key>
+	<string>© MedCommons 2007</string>
+	<key>NSPrincipalClass</key>
+	<string>MedCommons</string>
+	<key>pluginType</key>
+	<string>Report</string>
+</dict>
+</plist>

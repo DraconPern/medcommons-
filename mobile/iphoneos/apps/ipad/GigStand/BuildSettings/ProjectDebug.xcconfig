@@ -1,0 +1,9 @@
+//
+//  ProjectDebug.xcconfig
+//  MCProvider
+//
+//  Created by J. G. Pusey on 5/9/10.
+//  Copyright 2010 MedCommons, Inc. All rights reserved.
+//
+
+#include "ProjectBase"

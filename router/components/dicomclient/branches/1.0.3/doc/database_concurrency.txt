@@ -1,0 +1,140 @@
+DATABASE CONCURRENCY IN DDL
+===========================
+
+There are several crucial issues that interplay in making sure database concurrency is
+handled correctly.
+
+The two key aspects to this are:
+
+    -   how the persistence layer (pbeans) handles concurrency
+    -   how the underlying database (hsqldb) handles it
+
+1.  Persistence Layer (pBeans)
+
+PBeans fronts the database with a "store" object.  This object can do queries, updates, etc.
+
+The "store" object caches all the objects it touches.  If the same store is queried twice for
+the row, *the same java object is returned*.   When a row is queried, the cached java object
+is always updated with new attribute values, but it remains the *same object*.  This is is very 
+important.   If two separate threads use the same store (and this is fine with pbeans) they will 
+be getting referencs to the same objects and will need to sychronize their access to the extent 
+that those objects are not thread safe.
+
+One important qualification to the above paragraph is that although pbeans caches objects,
+it does so with a "weak" hash.   So this means that you are not guaranteed forever to
+get the same object back - only as long as it remains in memory.  Having said this, though,
+the only way the weak reference can be released is if there are no other strong references,
+so it *should* be safe to assume at least that all references that exist within code will
+always be to the *same* object, even if that object may vary across invocations.
+
+If the store is not shared between threads but duplicated across them then this means 
+that separate caches will be held in memory and also separate connection pools will be
+used.   References to separate objects will be returned, and they will have isolated values
+except at read time, when they will always get refreshed with values from the database.
+
+2.  HSQLDB
+
+HSQLDB itself only implements "UNCOMMITTED READ" transaction isolation.
+
+This means that two separate pbeans threads might have complete isolation between
+their objects, but once the data hits the database that guarantee goes away.
+ie. One thread might make a change and that change will become visible to the
+other thread *prior* to the commit of the transaction occuring.  
+
+
+3. DESIGN FOR CONCURRENCY
+
+The most important thing to avoid is the problem where threads "stomp" on each other's data,
+causing a write to "appear" to fail even though it was correctly saved.  Example:
+
+   A :   load (foo)
+   B :   load (foo)
+   A :   foo.bar = 'TREE'
+   A :   save(foo)
+   B :   save(foo)  -> overwrites A's changes!!!
+
+HSQLDB will happily let this occur without complaint.   However we can avoid it mostly
+if we use the pBeans shared store, because then both A and B are seeing the same
+object.  We will only have an issue if there is actual contention on the updated fields,
+eg:
+
+
+   A :   load (foo)
+   B :   load (foo)
+   B :   foo.bar = 'CAT'
+   A :   foo.bar = 'TREE'
+   A :   save(foo)
+   B :   save(foo)  -> overwrites A's changes!!!
+
+As a result, we need to deal with it with appropriate design in the code.   PBeans 
+supports a locking mechanism itself which appears to be intended to deal with these issues.
+In this scenario, the best action would be as follows:
+
+   A :   lock (foo)
+   B :   lock (foo)
+   A :   load (foo)
+   A :   foo.bar = 'TREE'
+   A :   save(foo)
+   A :   release(foo)
+   B :   load (foo)
+   B :   foo.bar = 'CAT'
+   B :   save(foo)  -> overwrites A's changes!!!
+   B :   release(foo)
+
+Notice B still overwrites A's changes, however it has done so with a consistent view of the 
+object - ie: it does so in the full knowledge of A's changes.
+
+Based on this, the design philosophy is that all threads share the same Store and
+any object to be updated *must* be locked at the beginning of its transaction.  Due 
+to pBeans shared store semantics it is not necessary
+to reload an object after locking it - it should already have the latest
+shared state visible across all threads.  If all write transactions are locked then 
+this should be a consistent view of the object.   However no assumptions can be
+made about the object prior to it being locked.  This might mean double checking
+of values in some situations, eg:
+
+  select * from foo where bar = X
+  lock(foo) {
+    // Does foo.bar still equal X?  maybe not!  Check again here!
+    if(foo.bar == X) {
+      ...
+    }
+  }
+
+MAJOR PROBLEM:
+
+A further problem with PBeans approach - can we lose in-memory updates due to
+another party doing a query?  Example:
+
+  A:  load(foo)
+  A:  foo.bar = 'cat'
+  B:  load(foo)  ->  PBeans 'refreshes' the object, which OVERWRITES A's change!
+  A:  save(foo)
+  A:  WTF??? foo.bar != 'cat' ?
+
+This really is a deal breaker, because we have PBeans overwriting in-memory objects
+that other threads are using, as part of innocent queries, *even* if they locked the objects
+concerned.  So - WE ARE GOING WITH THREAD LOCAL Stores.
+
+
+UPDATE:  Again, advantage of PBeans locking: we can lock objects before they come back 
+in the query, potentially, eg:
+
+  store.lock(Foo.class, "X") {
+    select * from foo where bar = X
+    // no need to check again as long as all threads touching this field
+    // are doing this same lock
+    ....
+  }
+
+It might be easier and more performant simply to lock the objects using Java's native
+sychronization keyword rather than using pBeans locking.  The only catch is that then
+you will be restricted to locking a single object at a time which may not work for 
+transactions where there are many entities updated.   This needs to be judged as 
+we work through the code.
+
+UPDATE:  discovered one significant benefit of using the pBeans locking - you can
+lock an object prior to it existing in the db.  This is important to let you prevent
+race conditions when creating new entities.
+
+UPDATE2:  The code is now using the pBeans locking mechanism due to above reason.

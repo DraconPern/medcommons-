@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MedCommons Imaging Portal Login Sports Demo</title>
+ <link rel="stylesheet" type="text/css"  href="css/gstyle.css"/>
+        <link rel="shortcut icon" href="images/favicon.gif" type="image/gif"/>
+<meta name="viewport" content="minimum-scale=0.6, width=device-width, maximum-scale=1.6, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="mcportal.png">
+
+</head>
+<body>
+<img src='$$$logourl$$$' onClick="window.location='?home&h=$$$practiceind$$$'"/>
+<div><span id=hospital>$$$practice$$$</span>&nbsp;<span id=program>$$$program$$$</span></div>
+<br/>
+<br/>
+
+ <form name="login" id=payment action='/acct/login.php' method="post">
+ 			<fieldset>
+		<legend>Please Login</legend>
+		<ol>
+			<li>    <label for="openid_url">User ID</label>
+		    <input type="text" value="" id="openid_url" name="openid_url" class="infield"/>
+			</li>
+			<li>
+		 <label for="password">Password</label>
+		    <input type="password" id="password" name="password"/>
+			</li>
+
+			</ol>
+			</fieldset>
+		
+				<p>
+			<input type="submit" value="Sign In" name="loginsubmit" class="mainwide"/>
+			</p>
+			</form>		
+		
+		
+	<p>
+			<span class="bodyLink"><a class="bodyLink" target="popUp" href='#' >Demo Logins</a></span>
+	        </p>		
+		
+	
+ <form name="login2" style='display:inline;' action='/acct/login.php' method="post">		
+	
+	        <select  style='display:inline;' name="openid_url">
+  <option value ="billdonner+dirkdiamond@gmail.com">Dirk Diamond, ATC</option>
+
+</select>	
+    <input type="hidden" id="password" value = 'tester' name="password"/>
+    		<p>
+			<input style='display:inline;' type="submit" value=" Demo Sign In" name="loginsubmit" class="mainwide"/>
+			</p>		
+		</form>
+		<p>
+			<span class="bodyLink"><a class="bodyLink" target="popUp" href="https://healthurl.medcommons.net/acct/forgot.php?next=/acct/home.php">Problems?</a></span>
+	        </p>
+
+</body>
+</html>

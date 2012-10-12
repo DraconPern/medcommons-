@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server>
+  <mbean code="net.medcommons.router.transfer.client.TransferClientService" name="medcommons:service=TransferClientService">
+	<depends>jboss:service=Naming</depends>
+	<depends>medcommons:service=ConfigurationService</depends>
+  </mbean>
+</server>

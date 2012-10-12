@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>To Do</title>
+	</head>
+	<body>
+	<h2> Bugs</h2>
+	<ol>
+		<li>PDF document scrambling</li>
+		<li> Need to finish stylesheet for xds.
+		<pre>
+		05:01:48,604 ERROR [RemoteController] getRoutingQueue:BADBOY: java.net.ConnectException: Connection refused: connect
+05:01:56,165 ERROR [XdsSubmitDocument] Uknown parameter 'hash' with value '7ea1d5f7b99c73c86a264181af22209e885c8747'
+05:01:56,175 ERROR [XdsSubmitDocument] Uknown parameter 'serviceStartTime' with value '20050101125959'
+05:01:56,175 ERROR [XdsSubmitDocument] Uknown parameter 'serviceStopTime' with value '20050102125959'
+05:01:56,175 ERROR [XdsSubmitDocument] Uknown parameter 'size' with value '9180'
+05:01:56,175 INFO  [XdsSubmitDocument] File fieldname = uploadedFile2
+05:01:56,175 INFO  [XdsSubmitDocument] File filename = siemens_ccr.xml
+05:01:56,175 INFO  [XdsSubmitDocument] File uuid = theDocument0
+05:01:56,175 INFO  [XdsSubmitDocument] About to submit 1 documents
+05:01:56,175 INFO  [XdsSubmitDocument] Document: <theDocument0>, siemens_ccr.xml
+05:01:56,205 INFO  [SOAPRequestFactory] Extrinsic object is net.medcommons.xdsbindings.impl.ExtrinsicObjectImpl@3da850
+05:01:56,205 INFO  [SOAPRequestFactory] doc is net.medcommons.xds.client.XDSSubmittedDocument@1f51e5c
+05:01:56,205 INFO  [SOAPRequestFactory] doc.getSymbolicId = theDocument0
+05:01:56,225 INFO  [XdsSubmitDocument] Response is null
+05:01:56,235 ERROR [XdsSubmitDocument] Failed to upload file from browser to MedCommons gateway file system
+java.lang.NullPointerException
+        at net.medcommons.router.services.xds.consumer.web.servlets.XdsSubmitDocument.doPost(XdsSubmitDocument.java:243)
+
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:709)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:237)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:157)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:214)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:178)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:126)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:107)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:148)
+        at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:825)
+        at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.processConnection(Http11Protocol.java:731)
+        at org.apache.tomcat.util.net.PoolTcpEndpoint.processSocket(PoolTcpEndpoint.java:526)
+        at org.apache.tomcat.util.net.LeaderFollowerWorkerThread.runIt(LeaderFollowerWorkerThread.java:80)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:684)
+        at java.lang.Thread.run(Thread.java:595)
+</pre></li>
+	</ol>
+	<h2> Features</h2>
+	<ol>
+		<li>Replace document</li>
+		<li>[? Doesn't work on NIST server] Display list of folders for a patient</li>
+		<li>[done]Multiple document submission</li>
+		<li>CCR editor</li>
+	</ol>
+	</body>
+</html>

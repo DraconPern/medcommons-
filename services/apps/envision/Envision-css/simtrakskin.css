@@ -1,0 +1,9 @@
+body {padding:0; margin:0; background-color: black;}
+.simtrak_viewer {border: none; background-color: black;  margin:20px;} 
+.yui-content,.yui-nav {margin:20px;} 
+#navcontainer {  text-align:left;  font-size:9px;}
+#navcontainer ul li {display: inline;}
+#navcontainer a {  color: white;  font-size:10px;  text-decoration: none;}
+#adminstuff {padding:10px;}
+#logo  {float: right;  }
+#stamp {padding:0;margin-left:27px; padding-left:21px; background-color: #f5f5f5; }

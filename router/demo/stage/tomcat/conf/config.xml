@@ -1,0 +1,16 @@
+<config>
+  <property name="DeviceGuid">TEST</property>
+  <property name="CommandServiceUrl">http://medcommons.net:8080/jboss-net/services/CommandService</property>
+  <property name="PackageServiceUrl">http://localhost:8080/jboss-net/services/PackageService</property>
+  <property name="DataRoot">data/</property>
+  <property name="ConfigRoot">conf/</property>
+  <property name="MedCommonsBootParameters">MedCommonsBootParameters.properties</property>
+  <property name="PackageRoot">data/packages/</property>
+  
+<!-- web properties -->
+<property name="net.medcommons.selection.web.order-form-name">initViewer.do</property>
+
+<!-- Derby database location -->
+<property name="net.medcommons.router.hibernate.DerbyDirectory">data/derby</property>
+
+</config>

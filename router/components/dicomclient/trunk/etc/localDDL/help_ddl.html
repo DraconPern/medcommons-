@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+  <head>
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="expires" content="0">
+<link rel="icon"
+      type="image/png"
+      href="/localDDL/images/Active.png" />
+    <title>DDL Status</title>
+<script>
+	djConfig = {
+		isDebug: false,
+		debugAtAllCosts: false
+	};
+</script>
+
+<script type="text/javascript" src="dojo.js"></script>
+<script  type="text/javascript" src="ddl.js"> /* Load basic DDL routines */ </script>
+<script  type="text/javascript" src="format-utils.js"> /* Load dojo-based format routines */ </script>
+<script  type="text/javascript" src="status.js"> /* Load dojo-based format routines */ </script>
+
+<style type="text/css" media="all">
+@import "medCommonsStyles.css";
+</style>
+
+
+
+  </head>
+
+  <body id="ContentBox">
+	  <h2>Status</h2>
+<h3>Clear All Transactions</h3>
+	 DDL maintains a local database of transactions: Queued, Active, Completed, and Error.  Selecting "Clear All Transactions" removes all
+	  transactions from the local database; active transfers are cancelled.
+<h3>Clear Completed Transactions</h3>
+	  Deletes only completed transactions from the database.
+</body>
+</html>

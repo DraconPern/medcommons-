@@ -1,0 +1,147 @@
+
+/* CoolMenus 4 - default styles - do not edit */
+.clCMEvent
+	{
+	position:absolute;
+	width:99%;
+	height:99%;
+	clip:rect(0,100%,100%,0);
+	left:0;
+	top:0;
+	visibility:visible
+	}
+
+.clCMAbs
+	{
+	position:absolute;
+	visibility:hidden;
+	left:0;
+	top:0
+	}
+
+/* CoolMenus 4 - default styles - end */
+
+/*Style for the background-bar*/
+.clBar
+	{
+	position:absolute;
+	width:10;
+	height:10;
+	background-color:#003e60;
+	layer-background-color:#003e60;
+	visibility:hidden;
+	}
+
+/*Styles for level 0*/
+.clLevel0,.clLevel0over
+	{
+	position:absolute;
+	padding:4px;
+	font-family:verdana,tahoma,arial,helvetica;
+	font-size:8pt;
+	font-weight:normal;
+	}
+
+.clLevelblank
+	{
+	position:absolute;
+	padding:4px;
+	font-family:verdana,tahoma,arial,helvetica;
+	font-size:8pt;
+	font-weight:normal;
+	}
+
+.clLevel0
+	{
+	background-color:#003e60;
+	layer-background-color:#003e60;
+	color: #ffffff;
+	/*color:#aaeeff;*/
+	}
+
+.clLevel0over
+	{
+	background-color:#003e60;
+	layer-background-color:#003e60;
+	color:#eeeeee;
+	cursor:pointer;
+	cursor:hand;
+	}
+
+.clLevel0border
+	{
+	position:absolute;
+	visibility:hidden;
+	background-color:#003e60;
+	layer-background-color:#003e60;
+	}
+
+
+/*Styles for level 1*/
+.clLevel1, .clLevel1over
+	{
+	position:absolute;
+	padding:4px;
+	font-family:verdana,tahoma, arial,helvetica;
+	font-size:8pt;
+	font-weight:normal
+	}
+
+.clLevel1
+	{
+	background-color:#003e60;
+	layer-background-color:#003e60;
+	color:white;
+	}
+
+.clLevel1over
+	{
+	background-color:#6699cc;
+	layer-background-color:#6699cc;
+	color:#eeeeee;
+	cursor:pointer;
+	cursor:hand;
+	}
+
+.clLevel1border
+	{
+	position:absolute;
+	visibility:hidden;
+	background-color:#eeeeee;
+	layer-background-color:#eeeeee
+	}
+
+
+/*Styles for level 2*/
+.clLevel2, .clLevel2over
+	{
+	position:absolute;
+	padding:4px;
+	font-family:verdana,tahoma,arial,helvetica;
+	font-size:8pt;
+	font-weight:normal
+	}
+
+.clLevel2
+	{
+	background-color:#003e60;
+	layer-background-color:#003e60;
+	color:white;
+	}
+
+.clLevel2over
+	{
+	background-color:#6699cc;
+	layer-background-color:#6699cc;
+	color:#eeeeee;
+	cursor:pointer;
+	cursor:hand;
+	}
+
+.clLevel2border
+	{
+	position:absolute;
+	visibility:hidden;
+	background-color:#eeeeee;
+	layer-background-color:#eeeeee;
+	}

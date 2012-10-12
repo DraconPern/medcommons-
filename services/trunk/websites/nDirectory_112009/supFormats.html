@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to MedCommons</title>
+<link rel="stylesheet" type="text/css" href="stylesCorp.css">
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body onload="MM_preloadImages('images/tabs/tabs_patientOver.png','images/tabs/tabs_doctorOver.png','images/tabs/tabs_groupOver.png','images/tabs/tabs_urlOver.png','images/tabs/tab_conceptOver.png','images/tabs/tab_platformArchOver.png','images/tabs/tab_platformOperationsOver.png','images/tabs/tab_platformAppsOver.png','images/tabs/tab_benefitsOver.png')">
+
+<!-- Nav Table -->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+<td>
+<div id="topnav">
+<ul class="nav">
+<img src="images/logoHeader.gif" alt="medCommons Logo" width="166" height="35"/>
+<br />
+
+	<li><a rel="tab" href="index.html"><em>MedCommons Home</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="ondemand/index.html"><em>On Demand Service</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="integrators/platform.html"><em>Platform</em></a></li>
+    	<li><em>|</em></li>
+    
+    	<li><a rel="tab" href="resources.html"><em>Resources</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="pickUp.html" target="popUp"><em>Pickup Records</em></a></li>	
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="signIn.html" target="popUp"><em>Sign In</em></a></li>
+	
+</ul>
+
+</div>
+
+</td>
+  </tr>
+  
+  <tr>
+<td bgcolor="#336699"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+</table>
+
+
+
+<!-- Content Table-->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="75">&nbsp;</td>
+    <td width="750" class="header2">Supported Import/Export Formats</td>
+    <td width="75">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td valign="top">
+   
+<h3>Continuity of Care Record - CCR</h3> 
+This ANSI-accredited standard is the most widely deployed medical record format. It is the basis of interoperability with Google Health and supported by a wide range of EMR and PHR vendors. MedCommons subscribers can install the full-featured HealthBook CCR editor to enter detailed medical information and to create redacted summaries for social network postings. 
+<p>
+<img src="images/images_supFormats/CCR.gif" alt="ccrimage">
+<br />
+
+<h3>Portable Document Format - PDF</h3> 
+Universally accessible using Adobe Acrobat and many other applications, the PDF format is the dominant means of capturing complete, legally binding medical records requests that include narrative diagnostic reports, clinical notes, surgical and procedure summaries as well as nursing notes. Complete medical records are essential for second opinions and for protection from medical errors. PDF documents can be added to a HealthURL account by direct upload from any browser or they can be automatically converted from paper using personalized coded fax cover sheets.
+<p>
+<img src="images/images_supFormats/PDF.gif" alt="pdfimage">
+<br />
+
+<h3>Photographs and Charts - JPEG  and PNG</h3>
+Photos and graphs are supported through the standard formats
+<p>
+<img src="images/images_supFormats/bp2008.gif" alt="bpimage">
+<br />
+
+<h3>Diagnostic Radiology Imaging - DICOM</h3>
+The DICOM format is used by all modern radiology devices including CT, MRI, Computed and Digital Radiography, Ultrasound and more. DDL, a free and open source software (F/OSS) DICOM utility, is available for download to connect scanners, workstations and picture archiving and communications systems (PACS) bidirectionally to any HealthURL. A plugin to OsiriX, a widely used open source 3D workstation provides additional integration with the HealthURL.
+<p>
+<img src="images/images_supFormats/DICOM.gif" alt="dicomimage">
+<br />
+
+<h3>Download all Documents for Portability - ZIP</h3>
+To avoid lock-in and make it easy to back up your archival records, MedCommons HealthURL accounts and the MedCommons Application for Facebook provide a one-click Download all Documents button that delivers all account documents in open standard format with full fidelity. Documents are delivered as a single ZIP file shown expanded in the below for clarity.
+<p>
+<img src="images/images_supFormats/downloadAllZip.gif" alt="downloadallimage">
+
+
+
+</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<br />
+
+
+
+<!-- footer Table wrapper -->
+<table width="900" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+<tr>
+<td colspan="2"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+  <tr>
+<td>
+<div id="footernav">
+<ul class="nav">
+
+	<li><a rel="tab" href="about.html"><em>About Us</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="privacy.html"><em>Privacy Policy</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="terms.html"><em>Terms of Use</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="hipaa.html"><em>HIPAA</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="contact.html"><em>Contact</em></a></li>
+	
+</ul>
+</div>
+</td>
+ 
+    <td width="457" align="right" class="footerLink"><b>© MedCommons Inc. 2009</b></td>
+  
+  </tr>
+</table>
+</body>
+</html>

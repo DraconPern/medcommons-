@@ -1,0 +1,587 @@
+div#topnav{
+	position:relative;
+	margin: 0px auto;	
+	width: 960px;			
+	height: 100%;	
+	font-size: 14px;		
+	text-align: center;	
+	padding-bottom: 5px;	
+	z-index: 2;
+}
+div#topsubnav  #seperator {
+	padding: 0 10px;
+}
+
+div#topnav ul{
+	position: relative;
+	height: 100%;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	padding-left:0px;
+}
+
+div#topnav li{	
+	margin: 0px 0px;
+	float:left;
+	list-style-type: none;
+	font-weight: bold;		
+	margin-right: 0px;	
+	/*line-height: 18px;*/
+	line-height: 1.1em;	
+}
+
+div#topnav li a{
+	position: relative;
+	display: block;
+	text-align:left;
+	color: white;	
+	font-family: Helvetica,Arial,Sans Serif;
+	text-decoration: none;	
+	width: 191px;
+	height: 56px;	
+	margin-right: 1px;		
+	/*background:url(../images/sys_images/mnnav_blue.png) top left no-repeat;*/
+}
+
+div#topnav li a hover{
+	height: 55px;
+}
+
+div#topnav li a span{
+	position: relative;	
+	display: block;		
+	padding: 9px 17px;
+	padding-right: 25px;
+	
+	
+}
+
+div#topnav li a span span{
+	position: relative;	
+	padding: 0px 0px;
+	margin-right: -10px;
+	padding-right: 70px;	
+	background: url(../images/sys_images/button-audience-menu-arrow.png) no-repeat scroll 100% 9px transparent;
+}
+
+div#topnav li.menu1_5_selected a span span{
+	background: url(../images/sys_images/button-audience-menu-arrow.jpg) left bottom no-repeat;
+	padding-bottom: 10px;
+}
+
+
+div#topnav li.menu1_1 a{
+	background:url(../images/sys_images/mnnav_blue.gif) top left no-repeat #105598;
+}
+
+
+div#topnav li.menu1_1_not_selected a:hover, div#topnav li.menu1_1_not_selected a:focus{
+	background:url(../images/sys_images/mnnav_bluehi.gif) top left no-repeat #2B82C5;
+	
+}
+
+
+
+div#topnav li.menu1_2 a{
+	background:url(../images/sys_images/mnnav_teal.gif) top left no-repeat #007075;
+}
+div#topnav li.menu1_2_not_selected a:hover, div#topnav li.menu1_2_not_selected a:focus{
+	background:url(../images/sys_images/mnnav_tealhi.gif) top left no-repeat #30b7bd;
+}
+
+div#topnav li.menu1_3 a{
+	background:url(../images/sys_images/mnnav_green.gif) top left no-repeat #068557;
+}
+div#topnav li.menu1_3_not_selected a:hover, div#topnav li.menu1_3_not_selected a:focus{
+	background:url(../images/sys_images/mnnav_greenhi.gif) top left no-repeat #4dc49e;
+}
+
+
+div#topnav li.menu1_4 a{
+	/*color: black;*/
+	color: #604638;
+	background:url(../images/sys_images/mnnav_yellow.gif) top left no-repeat #e8bf58;
+}
+
+div#topnav li.menu1_4 a span{
+	padding-right:32px;
+	
+}
+
+div#topnav li.menu1_4_not_selected a:hover, div#topnav li.menu1_4_not_selected a:focus{
+	background:url(../images/sys_images/mnnav_yellowhi.gif) top left no-repeat #f8e689;
+}
+
+div#topnav li.lastTopMenu a{
+	background:url("../images/sys_images/mnnav_silver.gif") no-repeat scroll left top transparent;
+	color: #666666;
+
+}
+
+
+
+div#topnav li.menu1_5_selected a{
+	
+	margin-bottom: -11px;
+	background:url(../images/sys_images/InfoForYou_Over.jpg) top left no-repeat #E2EDF3;		
+	color: #666666;
+	height: 100%;
+	
+}
+
+
+div#topnav li.hover a{
+	background:url(../images/sys_images/button-audience-menu.png) top left no-repeat;			
+	cursor:default;
+}
+
+div#topnav li.hover ul li a{
+	cursor:pointer;
+}
+
+/**** Popup ****/
+div#topnav ul li.popup{			
+	z-index:3;
+	position:relative;
+	display:block;
+	
+}
+
+div#topnav ul li.popup .popupa{
+	
+}
+div#container div#topnav ul li.popup div.pmenu{
+	display:none;
+}
+
+
+div#topnav ul li.popup div.pmenu{
+	position:absolute;
+	margin-top: -7px;
+	display:block;
+	background: url(../images/sys_images/button-audience-menu.png) bottom left no-repeat;
+	width: 189px;	
+	left: 0px;
+	z-index:4px
+	
+}
+
+div#topnav ul li.popup div.pmenu ul{
+	margin: 0px 0px;
+	padding: 0 0 5px 1px;	
+}
+
+div#topnav ul li.popup ul li{
+	position:relative;	
+	float:none;
+	margin: 0px 0px;
+}
+div#topnav ul li.popup ul li a{
+	margin: 0 3px 0 1px;
+	padding: 0px 0px;
+	background-image: none;		
+	width: auto;	
+	height: auto;	
+	padding: 9px 0px 9px 17px;	
+	color:#3A8BC5;
+	border-top: 1px solid lightgrey;
+}
+div#topnav ul li.popup ul li a:hover{
+	text-decoration: underline;
+}
+
+
+div#containerIE6 div#topnav ul li.popup ul li a{
+	height: 0px;
+}
+
+div#topnav ul li.popup ul li a span, div#topnav ul li.popup ul li a span span{
+	margin: 0px 0px;
+	padding: 0px 0px;		
+	display:block;	
+}
+
+/************* Secondary ******************/
+
+div.secondary_header div.sheader_right{	
+	display:block;
+	float:right;
+	font-size:12px;
+	height:96px;
+	margin-bottom:-96px;
+	position:relative;
+	width:140px;
+	padding: 0 15px 0 140px;
+	text-align:right;
+	z-index: 1;
+	
+
+}
+div.secondary_header div.sheader_right p{
+	line-height:14px;
+}
+div.secondary_header div.sheader_right .text{
+	text-indent: 50px;
+	margin-bottom: 0px;
+	
+}
+div.secondary_header div.sheader_right img{
+	float: right;
+	
+}
+div.secondary_header div.sheader_right .link{
+	font-weight:bold;
+	margin-top: 5px;
+}
+
+div.secondary_header div.sheader_right_none{	
+	
+	display:block;
+	float:right;
+	font-size:12px;
+	height:96px;
+	margin-bottom:-96px;
+	position:relative;
+	width:5px;
+	
+	text-align:right;
+	
+}
+/** Find Insurance Options  **/
+div#topnav ul li.menu1_1_selected a{	
+	background:url(../images/sys_images/blue-tab.gif) top left no-repeat #105598;
+}
+
+div.secondary_page1_1 div.secondary_header{
+	margin-top: -1px;
+	background:url(../images/sys_images/blue-ttl-bg.gif) 0px 0px no-repeat #105598;
+	height:96px;
+}
+div#containerIE7L div.secondary_page1_1 div.secondary_header{
+	background:url(../images/sys_images/blue-ttl-bg.gif) -1px 0px no-repeat;
+	
+}
+
+/** Learn About Prevention **/
+div#topnav ul li.menu1_2_selected a{
+	background:url(../images/sys_images/teal-tab.gif) top left no-repeat #007075;
+}
+
+
+div.secondary_page1_2 div.secondary_header{
+	margin-top: -1px;
+	background:url(../images/sys_images/teal-ttl-bg.gif) 0px 0px no-repeat #007075;
+	height:96px;
+}
+div#containerIE7L div.secondary_page1_2 div.secondary_header{
+	background:url(../images/sys_images/teal-ttl-bg.gif) -2px 0px no-repeat;
+}
+
+div.secondary_page1_1 div.secondary_header div.sheader_right {
+background:url("../images/sys_images/blue-sheader-right-bg.gif") no-repeat scroll right top;
+
+}
+
+div.secondary_page1_2 div.secondary_header div.sheader_right {
+background:url("../images/sys_images/teal-sheader-right-bg.gif") no-repeat scroll right top;
+}
+
+div.secondary_page1_3 div.secondary_header div.sheader_right {
+background:url("../images/sys_images/green-sheader-right-bg.gif") no-repeat scroll right top;
+}
+
+
+/** Compare Care Quality  **/
+div#topnav ul li.menu1_3_selected a{
+	background:url(../images/sys_images/green-tab.gif) top left no-repeat #068557;
+}
+
+div.secondary_page1_3 div.secondary_header{
+	margin-top: -1px;
+	background:url(../images/sys_images/green-ttl-bg.gif) 0px 0px no-repeat #068557;
+	height:96px;
+}
+
+div#containerIE7L div.secondary_page1_3 div.secondary_header{
+	background:url(../images/sys_images/green-ttl-bg.gif) 0px 0px no-repeat;
+}
+
+
+
+
+
+div.secondary_portal{
+	position:relative;
+	margin: 0px auto;	
+	width: 960px;			
+	height: 100%;	
+	margin-top: -1px;	
+	padding-left: 1px;
+}
+
+
+
+div#containerIE7L div.secondary_portal{
+	padding-top: 5px;
+	margin-top: -10px;
+}
+div.secondary_portal .section_title{
+	color: white;
+}
+div.secondary_portal .section_title div.vCenter_body{
+	
+	padding:15px 0 0 35px;
+	
+	
+	
+}
+
+
+
+
+
+
+div.secondary_page1_5{	
+	height: 100%;
+	margin-top: 0px;
+	background: url(../images/sys_images/in_topheadersbak.jpg) center top no-repeat;		
+}
+div#containerIE7L div.secondary_page1_5{
+	margin-top: -4px;
+}
+
+
+div.secondary_page1_5 div.titlebg, div.secondary_portal div.titlebg, div.secondary_page1_4 div.titlebg{	
+	position:relative;
+	top: 12px;	
+	margin: 0px auto;	
+	width: 960px;			
+	/*
+	border: 1px solid red;
+	height: 85px;
+	*/
+}
+div.secondary_page1_5 div.titlebg div.headimg, div.secondary_portal div.titlebg div.headimg, div.secondary_page1_4 div.titlebg div.headimg{
+	position: absolute;
+	right: 0px;	
+	margin: 0px 0px;
+	padding: 0px 0px;	
+	text-align:right;
+}
+div.secondary_page1_5 div.titlebg p, div.secondary_portal div.titlebg p, div.secondary_page1_4 div.titlebg p{
+	position: relative;	
+	top: 0px;	
+	height:75px;	
+	
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+div.secondary_page1_5 div.titlebg p img, div.secondary_portal div.titlebg p img, div.secondary_page1_4 div.titlebg p img{
+	padding-top: 8px;
+}
+
+div.secondary_page1_5 div.section_title, div.secondary_portal div.section_title, div.secondary_page1_4 div.section_title{
+	position:relative;	
+	margin: 0px auto;	
+	width: 960px;		
+	margin-top: 10px;	
+	text-align:left;
+	
+}
+div.secondary_page1_5 .secondary_header{
+	
+	margin-top: 10px;
+	
+	
+}
+
+div.secondary_page1_5 div.section_title img.navimg{
+	position:relative;
+	float:right;
+	padding-top: 2px;
+	margin-bottom: -10px;	
+}
+
+div.secondary_portal div.section_title{
+	margin-top: 0px;	
+}
+
+div.secondary_portal div.section_title p {
+font-size:1.2em;
+line-height:1.2em;
+
+}
+
+
+div.vCenter{
+	height: 88px;
+	display: table; 	
+	#position: relative;
+	overflow: hidden;
+	
+	
+}
+
+div#containerIE7 div.vCenter h1{
+	display:block;		
+	z-index: 1;		
+	
+}
+div#containerIE6 div.vCenter h1{
+	display:block;	
+	height:1.2em;	
+	
+}
+
+div.vCenter_inner{
+	#position: absolute;
+	#top: 50%;
+	display: table-cell;
+	vertical-align: middle;
+	
+}
+
+div.vCenter_body{
+	#position: relative;
+	#top: -50%;
+}
+
+div.secondary_page1_5 div.section_title img, div.secondary_portal div.section_title img, div.secondary_page1_4 div.section_title img{
+	float: right;
+}
+
+div.secondary_page1_5 div.section_title h1, div.secondary_page1_4 div.section_title h1{	
+	color:#333333;
+	font-family:"Century Gothic",Arial,san-serif;
+	font-size:30px;
+	font-weight:normal;
+
+}
+
+div.secondary_portal div.section_title h1{
+	font-family: "Century Gothic", Arial, san-serif;
+	/*font-size: 27px;*/
+	font-size: 2.2em;
+	font-weight: regular;
+	font-weight:normal;
+	color: #FFFFFF;
+}
+
+div.secondary_portal div.section_title h1{
+	color: white;
+}
+
+div#topsubnav{
+	margin: 0px auto;	
+	width: 960px;			
+	height: 100%;		
+	padding-top: 10px;
+	font-size: 13px;	
+	color: #b7cacf;	
+	
+	
+}
+
+div#topsubnav ul{
+	position: relative;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	text-align: center;	
+}
+div#topsubnav ul li{
+	margin: 0px 0px;
+	display: inline;
+	list-style-type: none;
+	font-weight: normal;		
+	margin-right: 0px;
+}
+
+div#topsubnav  a:visited {
+color: #105191;
+}
+
+
+div#topsubnav ul li.topsub_selected a, div#topsubnav ul li a:hover, div#topsubnav ul li a:focus{
+	color: #303131;
+}
+
+div#topsubnav ul li.topsub_selected a{
+	background: url(../images/sys_images/inaudience_indicator.png) center bottom no-repeat;	
+	padding-bottom:14px;
+	font-weight:bold;
+
+}
+
+/**** Understand the new law ****/
+
+div.secondary_page1_4{	
+	height: 100%;
+	margin-top: -1px;
+	background: url(../images/sys_images/yellow_submenu_bg.gif) center top no-repeat;				
+}
+div#containerIE7L div.secondary_page1_4{
+	margin-top: -6px;	
+}
+
+div.secondary_page1_4 div#wrapper{	
+	background-color: #fffbbf;
+	
+}
+
+
+div#topnav li.menu1_4_selected a{
+	
+	margin-bottom: -11px;
+	background:url(../images/sys_images/yellow_tab.gif) top left no-repeat #e8bf58;		
+	color: #666666;
+}
+
+
+div#topsubnav{
+	margin: 0px auto;	
+	width: 960px;			
+	height: 100%;		
+	padding-top: 7px;
+	font-size: 13px;
+	color: #b7cacf;	
+	
+}
+
+div#topsubnav ul{
+	position: relative;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	text-align: center;	
+}
+div#topsubnav ul li{
+	margin: 0px 0px;
+	display: inline;
+	list-style-type: none;
+	font-weight: normal;		
+	margin-right: 0px;
+}
+
+div.secondary_page1_4 div#topsubnav{	
+	height: 33px;
+}
+div.secondary_page1_4 div#topsubnav ul li.topsub_selected a, div#topsubnav ul li a:hover, div#topsubnav ul li a:focus{
+	color: #303131;
+}
+
+div.secondary_page1_4 div#topsubnav ul li.topsub_selected a{
+	background: url(../images/sys_images/sub-nav_arrow.gif) center bottom no-repeat;	
+	padding-bottom: 14px;
+}
+
+
+ul.secondary_menu {
+	padding-top:1px;	
+	
+}
+
+ul.secondary_menu li{
+	top: 2px;
+	position: relative;
+	
+	
+}

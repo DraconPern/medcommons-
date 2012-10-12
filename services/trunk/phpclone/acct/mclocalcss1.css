@@ -1,0 +1,131 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.5em;
+	color: #333333;
+	text-align:center;		
+	
+}
+
+h1 {
+color:#FFFFFF;
+display:inline;
+font-family:"Century Gothic",Helvetica,Arial,san-serif;
+font-size:32px;
+font-weight:normal;
+line-height:1.1em;
+}
+
+
+h2,h3{ color: #666666;	}
+
+
+a {text-decoration:none ; color: #2589c8;}
+a:link{color: #105191;}
+a:visited{color:#7d508e;}
+a:hover, a:focus {text-decoration: underline;}
+
+
+
+
+
+
+#container { 
+background: url(../images/sys_images/background.jpg) 0px 0px repeat-x;
+background-image:url("../images/sys_images/background.jpg");
+background-color:transparent;
+
+}
+div#topnav li a {
+color:white;
+}
+div#topnav li.menu1_1 a {
+background-color:#105598;
+background-image:url("../images/sys_images/mnnav_blue.gif");
+}
+div#topnav li.menu1_2 a {
+background-color:#007075;
+background-image:url("../images/sys_images/mnnav_teal.gif");
+}
+div#topnav li.menu1_3 a {
+background-color:#068557;
+background-image:url("../images/sys_images/mnnav_green.gif");
+}
+div#topnav li.menu1_4 a {
+background-color:#E8BF58;
+background-image:url("../images/sys_images/mnnav_yellow.gif");
+color:#604638;
+}
+div#topnav li.menu1_4 a span {
+padding-right:32px;
+}
+div#topnav li.lastTopMenu a {
+background-color:transparent;
+background-image:url("../images/sys_images/mnnav_silver.gif");
+color:#666666;
+}
+div.secondary_header {
+background-color:#105598;
+background-image:url("../images/sys_images/blue-ttl-bg.gif");
+}
+div.secondary_page1_1 div.secondary_header div.sheader_right {
+background-color:transparent;
+background-image:url("../images/sys_images/blue-sheader-right-bg.gif");
+}
+div#foot_body {
+background-color:transparent;
+background-image:url("../images/sys_images/bg-footer.gif");
+}
+div#blueTop {
+background-color:#1F6EB0;
+background-image:url("/images/blue-top-bg950.png");
+}
+div#blueContainerResults {
+background-color:#1F6EB0;
+background-image:url("/images/blue-bottom-bg950.png");
+color:#FFFFFF;
+}
+
+div#header p#control {
+color:#666666;
+
+}
+
+.yellowTextBold {
+color:#FFE65C;
+}
+.middleLine {
+background-color:#66A8D8;
+background-image:none;
+}
+.
+
+.topBottomLine {
+background-color:#66A8D8;
+background-image:none;
+}
+
+div#header div#sitelogo p {
+color:#666666;
+}
+
+
+div.secondary_portal div.section_title {color:white;}
+div.secondary_portal div.section_title h1 {color:white;}
+div#foot {
+background-color:white;
+color:#666666;
+
+
+}
+
+
+div.secondary_portal .section_title div.vCenter_body {
+padding-bottom:0;
+padding-left:35px;
+padding-right:0;
+padding-top:15px;
+}
+
+

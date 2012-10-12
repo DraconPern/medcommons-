@@ -1,0 +1,1208 @@
+<WebScriptTemplate>
+	<Variables>
+	</Variables>
+	<TestItem v='2'>
+		<ver>13</ver>
+		<id>257542</id>
+		<Summary v='2'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<childCount>5</childCount>
+		<ChildItems>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>267215</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>2</childCount>
+				<ChildItems>
+					<CookieKiller v='1'>
+						<ver>13</ver>
+						<id>267217</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+					</CookieKiller>
+					<Request v='10'>
+						<ver>13</ver>
+						<id>267219</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>4</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>13</ver>
+								<id>267221</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>267223</id>
+								<name>accid</name>
+								<value>%24%7Buser1%7D</value>
+								<sendEquals>false</sendEquals>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>267316</id>
+								<name>auth</name>
+								<value>%24%7Buser1auth%7D</value>
+								<sendEquals>false</sendEquals>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>267225</id>
+								<name>tracking</name>
+								<value>new</value>
+								<sendEquals>false</sendEquals>
+							</Parameter>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<host>${host}</host>
+						<path>/router/tracking.jsp</path>
+						<protocol>http</protocol>
+						<resource/>
+						<targetFrame/>
+						<isActive>1</isActive>
+						<label/>
+						<headers/>
+						<multipartBoundary/>
+						<Object>null</Object>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset/>
+						<method>2</method>
+						<waitForSubRequests>true</waitForSubRequests>
+					</Request>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>New CCR as User1</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>2</expanded>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>258088</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>4</childCount>
+				<ChildItems>
+					<Navigation v='7'>
+						<ver>13</ver>
+						<id>257832</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>1</count>
+							<NameOrIdReference v='2'>
+								<value>patientIdUp</value>
+								<filter>All</filter>
+							</NameOrIdReference>
+						</references>
+						<isPassive>true</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<FormPopulator v='7'>
+						<ver>13</ver>
+						<id>258084</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>2</childCount>
+						<ChildItems>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>258085</id>
+								<name>patientId</name>
+								<value>${user2}</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>258086</id>
+								<name>patientIdType</name>
+								<value>MedCommons Account Id</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<formName>editPatientIdForm</formName>
+						<submit>false</submit>
+						<formIndex>0</formIndex>
+						<ignoreHiddenFields>true</ignoreHiddenFields>
+						<useRegex>false</useRegex>
+					</FormPopulator>
+					<Execute v='4'>
+						<ver>13</ver>
+						<id>258415</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<name>Save Patient ID</name>
+						<script>contents.editPatientIdSubmit()</script>
+						<imageId>4294967295</imageId>
+						<pluginAccess>false</pluginAccess>
+						<frameName/>
+						<sourceFile/>
+					</Execute>
+					<Timer v='4'>
+						<ver>13</ver>
+						<id>258419</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<waitMs>1000</waitMs>
+						<cascade>false</cascade>
+						<lowerMs>1000</lowerMs>
+						<upperMs>2000</upperMs>
+					</Timer>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Populate Patient Account ID</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>2</expanded>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>267315</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Populate Data</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>258097</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>8</childCount>
+				<ChildItems>
+					<FormPopulator v='7'>
+						<ver>13</ver>
+						<id>258347</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>7</childCount>
+						<ChildItems>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>258348</id>
+								<name>toEmail</name>
+								<value>onemctest@gmail.com</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>267317</id>
+								<name>pin0</name>
+								<value>1</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>267318</id>
+								<name>pin1</name>
+								<value>2</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>267319</id>
+								<name>pin2</name>
+								<value>3</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>267320</id>
+								<name>pin3</name>
+								<value>4</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>267321</id>
+								<name>pin4</name>
+								<value>5</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>258350</id>
+								<name>termsOfUse</name>
+								<value>on</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<formName>referralForm</formName>
+						<submit>false</submit>
+						<formIndex>0</formIndex>
+						<ignoreHiddenFields>true</ignoreHiddenFields>
+						<useRegex>false</useRegex>
+					</FormPopulator>
+					<Navigation v='7'>
+						<ver>13</ver>
+						<id>258351</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>3</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>13</ver>
+								<id>258393</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+							<Request v='10'>
+								<ver>13</ver>
+								<id>258352</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>32</childCount>
+								<ChildItems>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258353</id>
+										<name>initialSeriesGuid</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258354</id>
+										<name>updateIndex</name>
+										<value>0</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258355</id>
+										<name>newAcct</name>
+										<value>true</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258356</id>
+										<name>destAcctId</name>
+										<value>9999999999999999</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258357</id>
+										<name>patientPrevCCRs</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258358</id>
+										<name>patientLaterCCRs</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258359</id>
+										<name>patientGivenName</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258360</id>
+										<name>patientMiddleName</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258361</id>
+										<name>patientFamilyName</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258362</id>
+										<name>ageSex</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258363</id>
+										<name>headerDob</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258364</id>
+										<name>patientId</name>
+										<value>1257006974806686</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258365</id>
+										<name>patientDateOfBirth</name>
+										<value>Unknown</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258366</id>
+										<name>patientAge</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258367</id>
+										<name>patientGender</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258368</id>
+										<name>patientEmail</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258369</id>
+										<name>patientAddress1</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258370</id>
+										<name>patientCity</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258371</id>
+										<name>patientState</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258372</id>
+										<name>patientPostalCode</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258373</id>
+										<name>patientCountry</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258374</id>
+										<name>patientPhoneNumber</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258375</id>
+										<name>toEmail</name>
+										<value>onemctest@gmail.com</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258376</id>
+										<name>sourceEmail</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258377</id>
+										<name>replyPin</name>
+										<value>12345</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258378</id>
+										<name>notificationSubject</name>
+										<value>MedCommons+Notification+for</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258379</id>
+										<name>termsOfUse</name>
+										<value>on</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258380</id>
+										<name>ccrPurpose</name>
+										<value>+</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258381</id>
+										<name>purposeText</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258382</id>
+										<name>objectiveText</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258383</id>
+										<name>assessmentText</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>258384</id>
+										<name>planText</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>300</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<Object>null</Object>
+								<host>${host}</host>
+								<path>/router/confirmReferral.do</path>
+								<protocol>http</protocol>
+								<resource/>
+								<targetFrame/>
+								<label/>
+								<headers/>
+								<multipartBoundary/>
+								<newWindowWidth>3276832</newWindowWidth>
+								<newWindowHeight>2097207</newWindowHeight>
+								<Object>null</Object>
+								<lenientSubrequestCount>true</lenientSubrequestCount>
+								<formCharset/>
+								<method>3145778</method>
+								<waitForSubRequests>true</waitForSubRequests>
+							</Request>
+							<Request v='10'>
+								<ver>13</ver>
+								<id>258385</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>300</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<Object>null</Object>
+								<host>${host}</host>
+								<path>/router/ereferralLetter.css</path>
+								<protocol>http</protocol>
+								<resource/>
+								<targetFrame/>
+								<label/>
+								<headers/>
+								<multipartBoundary/>
+								<newWindowWidth>3276832</newWindowWidth>
+								<newWindowHeight>2097207</newWindowHeight>
+								<Object>null</Object>
+								<lenientSubrequestCount>false</lenientSubrequestCount>
+								<formCharset/>
+								<method>3145778</method>
+								<waitForSubRequests>true</waitForSubRequests>
+							</Request>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<targetFrame>resultsframe</targetFrame>
+						<continueOnFailure>true</continueOnFailure>
+						<selectedReference>1</selectedReference>
+						<references>
+							<count>2</count>
+							<NameOrIdReference v='2'>
+								<value>save</value>
+								<filter>Links</filter>
+							</NameOrIdReference>
+							<VisibleTextReference v='2'>
+								<value>Save</value>
+								<filter>Links</filter>
+							</VisibleTextReference>
+						</references>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<Assertion v='10'>
+						<ver>13</ver>
+						<id>267435</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<JScriptCheck v='1'>
+								<ver>13</ver>
+								<id>267436</id>
+								<script>return ccrGuid != null;</script>
+								<frameType>1</frameType>
+								<frameName>contents</frameName>
+							</JScriptCheck>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<failureAction>
+							<AbortTestJumpAction v='1'>
+							</AbortTestJumpAction>
+						</failureAction>
+						<captureScreenShot>true</captureScreenShot>
+						<scalingPercent>80</scalingPercent>
+						<captureDuplicates>false</captureDuplicates>
+						<scroll>false</scroll>
+						<waitToPass>true</waitToPass>
+						<waitSeconds>10</waitSeconds>
+					</Assertion>
+					<Execute v='4'>
+						<ver>13</ver>
+						<id>267431</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>13</ver>
+								<id>267432</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<name>get tn and pin</name>
+						<script>badboy.setVariable(&apos;tn&apos;,
+	window.contents.document.getElementById(&apos;ssTrackingNumber&apos;).innerText);
+badboy.setVariable(&apos;pin&apos;,  
+	window.contents.document.getElementById(&apos;ssPin&apos;).innerText);
+badboy.setVariable(&apos;guid&apos;,window.contents.ccrGuid);</script>
+						<imageId>4294967295</imageId>
+						<pluginAccess>false</pluginAccess>
+						<frameName/>
+						<sourceFile/>
+					</Execute>
+					<Navigation v='7'>
+						<ver>13</ver>
+						<id>267415</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>2</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>13</ver>
+								<id>267423</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+							<Request v='10'>
+								<ver>13</ver>
+								<id>267416</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<Object>null</Object>
+								<host>${host}</host>
+								<path>/router/MergeWithCurrentCCR.action</path>
+								<protocol>http</protocol>
+								<resource/>
+								<targetFrame/>
+								<label/>
+								<headers/>
+								<multipartBoundary/>
+								<newWindowWidth>6815828</newWindowWidth>
+								<newWindowHeight>2883701</newWindowHeight>
+								<Object>null</Object>
+								<lenientSubrequestCount>true</lenientSubrequestCount>
+								<formCharset/>
+								<method>7274574</method>
+								<waitForSubRequests>true</waitForSubRequests>
+							</Request>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>2</count>
+							<VisibleTextReference v='2'>
+								<value>Merge into Current CCR</value>
+								<filter>Links</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.getElementById(&apos;allTools&apos;).getElementsByTagName(&apos;SPAN&apos;)[3].getElementsByTagName(&apos;A&apos;)[0]</value>
+								<filter>Links</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>true</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<Navigation v='7'>
+						<ver>13</ver>
+						<id>267417</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>2</count>
+							<VisibleTextReference v='2'>
+								<value>OK</value>
+								<filter>Buttons</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>contents.contents.contents.contents.contents.document.getElementById(&apos;statusTable&apos;).getElementsByTagName(&apos;TBODY&apos;)[0].getElementsByTagName(&apos;TR&apos;)[3].getElementsByTagName(&apos;TD&apos;)[0].getElementsByTagName(&apos;INPUT&apos;)[0]</value>
+								<filter>Buttons</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>true</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<Request v='10'>
+						<ver>13</ver>
+						<id>261180</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>3</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>13</ver>
+								<id>261183</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>261181</id>
+								<name>a</name>
+								<value>%24%7Buser2%7D</value>
+								<sendEquals>true</sendEquals>
+								<method>1</method>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>267323</id>
+								<name>auth</name>
+								<value>%24%7Buser1auth%7D</value>
+								<sendEquals>false</sendEquals>
+								<method>1</method>
+							</Parameter>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<host>${host}</host>
+						<path>/router/CurrentCCR.action</path>
+						<protocol>http</protocol>
+						<resource/>
+						<targetFrame/>
+						<isActive>1</isActive>
+						<label/>
+						<headers/>
+						<multipartBoundary/>
+						<Object>null</Object>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset>utf-8</formCharset>
+						<method>1</method>
+						<waitForSubRequests>true</waitForSubRequests>
+					</Request>
+					<Navigation v='7'>
+						<ver>13</ver>
+						<id>267433</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>13</ver>
+								<id>267434</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<targetFrame>contents</targetFrame>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>2</count>
+							<VisibleTextReference v='2'>
+								<value>Edit</value>
+								<filter>Links</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.getElementById(&apos;topbuttons&apos;).getElementsByTagName(&apos;SPAN&apos;)[0].getElementsByTagName(&apos;A&apos;)[0]</value>
+								<filter>Links</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Send and View Current CCR</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>1</expanded>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>258736</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Check Current CCR</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+			</Step>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>300</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<Object>null</Object>
+		<title>Merge</title>
+		<template/>
+		<expanded>1</expanded>
+	</TestItem>
+</WebScriptTemplate>

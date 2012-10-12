@@ -1,0 +1,176 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* AppSettings */ = {
+		activeExec = 0;
+		executables = (
+			88B83D4B0FB2237C0043CB92 /* AppSettings */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 88B83D4B0FB2237C0043CB92 /* AppSettings */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* AppSettings */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* AppSettings */,
+		);
+		codeSenseManager = 88B83D550FB2239B0043CB92 /* Code sense */;
+		executables = (
+			88B83D4B0FB2237C0043CB92 /* AppSettings */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					434,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 263332732;
+			PBXWorkspaceStateSaveDate = 263332732;
+		};
+		perUserProjectItems = {
+			88B83D660FB22B3B0043CB92 /* PlistBookmark */ = 88B83D660FB22B3B0043CB92 /* PlistBookmark */;
+			88B83D680FB22B3B0043CB92 /* PlistBookmark */ = 88B83D680FB22B3B0043CB92 /* PlistBookmark */;
+			88B83DC20FB381F70043CB92 /* PlistBookmark */ = 88B83DC20FB381F70043CB92 /* PlistBookmark */;
+			88B83DC30FB381F70043CB92 /* PlistBookmark */ = 88B83DC30FB381F70043CB92 /* PlistBookmark */;
+			88B83DC70FB381F70043CB92 /* PBXBookmark */ = 88B83DC70FB381F70043CB92 /* PBXBookmark */;
+			88B83DC80FB381F70043CB92 /* PlistBookmark */ = 88B83DC80FB381F70043CB92 /* PlistBookmark */;
+		};
+		sourceControlManager = 88B83D540FB2239B0043CB92 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	88B83D4B0FB2237C0043CB92 /* AppSettings */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = AppSettings;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	88B83D540FB2239B0043CB92 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	88B83D550FB2239B0043CB92 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	88B83D5F0FB228840043CB92 /* Root.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Root.plist;
+		path = /Users/billdonner/Documents/AppSettings/Settings.bundle/Root.plist;
+		sourceTree = "<absolute>";
+	};
+	88B83D660FB22B3B0043CB92 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = /Users/billdonner/Documents/AppSettings/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	88B83D680FB22B3B0043CB92 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = /Users/billdonner/Documents/AppSettings/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	88B83D8A0FB2306B0043CB92 /* Root.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Root.plist;
+		path = /Users/billdonner/Documents/AppSettings/Settings.bundle/Root.plist;
+		sourceTree = "<absolute>";
+	};
+	88B83DC20FB381F70043CB92 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 88B83D8A0FB2306B0043CB92 /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/billdonner/Documents/AppSettings/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	88B83DC30FB381F70043CB92 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 88B83DC40FB381F70043CB92 /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/billdonner/Documents/AppSettings/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	88B83DC40FB381F70043CB92 /* Root.plist */ = {
+		isa = PBXFileReference;
+		name = Root.plist;
+		path = /Users/billdonner/Documents/AppSettings/Settings.bundle/Root.plist;
+		sourceTree = "<absolute>";
+	};
+	88B83DC70FB381F70043CB92 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 88B83D5F0FB228840043CB92 /* Root.plist */;
+	};
+	88B83DC80FB381F70043CB92 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 88B83D8A0FB2306B0043CB92 /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/billdonner/Documents/AppSettings/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+}

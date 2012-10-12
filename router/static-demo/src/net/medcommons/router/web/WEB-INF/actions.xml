@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<data-sources />
+	
+	<form-beans>
+		<form-bean name="studyForm" type="net.medcommons.router.services.selection.action.StudyListForm"/>
+	</form-beans>
+	
+	<global-exceptions />
+	<global-forwards />
+	
+	<action-mappings>
+	    <action path="/initSelection"
+                type="net.medcommons.router.services.selection.action.InitializeSelectionScreenAction">
+	      <forward name="success" path="/selections.jsp"/>
+	    </action>		
+	    
+	    <action path="/viewStudies"
+                type="net.medcommons.router.services.selection.action.ViewStudiesAction"
+	            scope="session"
+	            name="studyForm"
+	           	validate="false">
+	      <forward name="success" path="/selections.jsp"/>
+	    </action>
+	    	    
+	</action-mappings>
+	
+	<controller
+		bufferSize="4096"
+		debug="0"
+		locale="false"
+		nocache="false"
+		inputForward="false" />
+	<message-resources null="true" parameter="net.medcommons.ApplicationResources" />
+</struts-config>
+

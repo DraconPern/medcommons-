@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jnlp spec="1.5+" codebase="file:////Users/mesozoic/Documents/MedCommons/svn.medcommons.net/router/components/dicomclient/trunk/build/dist">
+
+  <information>
+
+    <title>DICOM Data Liberator</title>
+
+    <vendor>MedCommons, Inc.</vendor>
+
+    <homepage href="http://medcommons.net" />
+    <description>DICOM CSTORE SCP/SCU to CXP</description>
+     <icon href="quetzalcoatlus.jpg"/>
+    <offline-allowed />
+    <!--
+    <shortcut online="true">
+         <desktop/>
+         <menu submenu="DICOM Data Liberator"/>
+      </shortcut>
+-->
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+
+ <j2se version="1.6.0" /> 
+    <jar main="true" href="medcommons-dicomclient-application.jar" 
+    	java-vm-args="-Dlog4j.ignoreTCL -Dlog4j.debug=true"
+     />
+	
+
+	<property 
+        name="configFilename" 
+        value="@user.home/DDL.properties"/>
+        
+
+    <property name="log4j.configuration" 
+    value="http://localhost:8888/www/log4j.xml"/>
+
+  </resources>
+
+  <application-desc main-class="net.medcommons.application.dicomclient.DICOMClient" >
+    <argument>-Viewer</argument>
+  </application-desc>
+
+</jnlp>
+

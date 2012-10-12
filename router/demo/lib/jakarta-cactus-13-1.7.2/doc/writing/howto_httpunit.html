@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>HttpUnit Howto</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="HttpUnit Howto" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././writing/howto_testcase.html">Writing Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Writing Tests<ul>
+    
+<li>
+<a href=".././writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">General Principles</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">Testing Servlets</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus.">Testing Filters</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_jsp.html" title="How to write unit tests for JSP pages using Cactus.">Testing JSP Pages</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">Testing Taglibs</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">Testing EJBs</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Advanced Topics<ul>
+    
+<li>
+<a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases" class="currentPage">Integrating HttpUnit</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_security.html" title="">Using Authentication</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Reference<ul>
+    
+<li>
+<a href=".././api/framework-12/index.html" title="">Javadocs (J2EE 1.2)</a>
+</li>
+    
+<li>
+<a href=".././api/framework-13/index.html" title="">Javadocs (J2EE 1.3)</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>HttpUnit integration</h1>
+
+      
+<div class="note">
+        
+<b>The HttpUnit integration is only available for Cactus v1.2 and
+        later. It won't work with version 1.1 and earlier.</b>
+      
+</div>
+
+      
+<p>
+        Cactus test cases allow to assert the results of the returned server
+        output stream in an <code>endXXX()</code> method (where <code>XXX</code>
+        is the name of your test case).
+      </p>
+      
+<p>
+        Cactus proposes 2 ways of writing your <code>endXXX()</code> methods,
+      </p>
+      
+<ul>
+        
+<li>
+          
+<b>Method 1</b>:  it allows you to do simple check on the
+          returned stream like checking for returned cookies, HTTP headers and
+          to do assertions on the returned content as a String,
+        </li>
+        
+<li>
+          
+<b>Method 2</b>: it allows you to do complex and
+          powerful assertions on the returned content. For example, you can
+          get an HTML DOM view of your returned HTML page and check that a given
+          named table has the correct number of columns, ....
+        </li>
+      
+</ul>
+      
+<p>
+        Method 2 is supported through the integration with
+        <a href="http://httpunit.sourceforge.net" title="">HttpUnit</a>, meaning
+        you'll benefit from the full assertion power of HttpUnit in your
+        <code>endXXX()</code> method. Method 1 is a class provided by Cactus.
+      </p>
+      
+<p>
+        Depending on your need you can choose, on a per test case basis, the
+        method you want to use.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Usage</h1>
+
+      
+<p>
+        The signature of an <code>endXXX()</code> method is always:
+      </p>
+
+<div class="source">
+<pre>
+public void endXXX(WebResponse theResponse)
+{
+[...]
+}
+</pre>
+</div>
+
+      
+<p>
+        The <code>WebResponse</code> object is passed by the Cactus framework
+        to your <code>endXXX()</code> method. What changes between the 2
+        methods described above is the class of the <code>WebResponse</code>
+        object that is passed:
+      </p>
+      
+<ul>
+        
+<li>
+          
+<code>org.apache.cactus.WebResponse</code> for Method 1,
+        </li>
+        
+<li>
+          
+<code>com.meterware.httpunit.WebResponse</code> for Method 2
+          (HttpUnit)
+        </li>
+      
+</ul>
+
+      
+<div class="section">
+<h2>Method 1: Cactus provided WebResponse object</h2>
+
+         
+<p>
+           An example:
+         </p>
+
+
+<div class="source">
+<pre>
+public void endXXX(org.apache.cactus.WebResponse theResponse)
+{
+  // Get the returned cookies
+  Hashtable cookies = theResponse.getCookies();
+
+  // Get the returned content as a string
+  String content = theResponse.getText();
+
+  // Do some asserts
+  assertEquals(content, "&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;");
+[...]
+}
+</pre>
+</div>
+
+        
+<div class="note">
+          For the complete list of all methods available on the
+          <code>WebResponse</code> object, see the associated Javadoc.
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Method 2: HttpUnit provided WebResponse object</h2>
+
+         
+<p>
+           An example:
+         </p>
+
+
+<div class="source">
+<pre>
+public void endXXX(com.meterware.httpunit.WebResponse theResponse)
+{
+  WebTable table = theResponse.getTables()[0];
+  assertEquals("rows", 4, table.getRowCount());
+  assertEquals("columns", 3, table.getColumnCount());
+  assertEquals("links", 1, table.getTableCell(0, 2).getLinks().length);
+[...]
+}
+</pre>
+</div>
+
+        
+<div class="note">
+          For the complete list of all methods available on the
+          HttpUnit <code>WebResponse</code> object, see the HttpUnit
+          documentation.
+        </div>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!--
+
+-->
+
+<jnlp-versions>
+   <resource>
+      <pattern>
+         <name> medcommons-dicomclient-application.jar</name>
+         <version-id>1.0</version-id>
+      </pattern>
+      <file> medcommons-dicomclient-application.jar</file>
+   </resource>
+</jnlp-versions>

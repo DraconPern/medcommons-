@@ -1,0 +1,2158 @@
+<WebScriptTool>
+	<DisplayName>Edit Saved CCR</DisplayName>
+	<Step v='4'>
+		<ver>12</ver>
+		<id>474787</id>
+		<Summary v='2'>
+			<played>2</played>
+			<succeeded>2</succeeded>
+			<warnings>1</warnings>
+			<maxResponseTime>3236</maxResponseTime>
+			<averageResponseTime>2095</averageResponseTime>
+		</Summary>
+		<childCount>3</childCount>
+		<ChildItems>
+			<CookieKiller v='1'>
+				<ver>12</ver>
+				<id>474788</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+			</CookieKiller>
+			<Request v='10'>
+				<ver>12</ver>
+				<id>474789</id>
+				<Summary v='2'>
+					<played>1</played>
+					<succeeded>1</succeeded>
+					<maxResponseTime>953</maxResponseTime>
+					<averageResponseTime>953</averageResponseTime>
+				</Summary>
+				<childCount>3</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>474790</id>
+						<Summary v='2'>
+							<played>1</played>
+							<succeeded>1</succeeded>
+							<maxResponseTime>953</maxResponseTime>
+							<averageResponseTime>953</averageResponseTime>
+						</Summary>
+						<childCount>2</childCount>
+						<ChildItems>
+							<TemplateBinding v='1'>
+								<sourceFile/>
+							</TemplateBinding>
+							<Response v='3'>
+								<ver>12</ver>
+								<id>475427</id>
+								<Summary v='2'>
+									<played>1</played>
+									<succeeded>1</succeeded>
+									<maxResponseTime>953</maxResponseTime>
+									<averageResponseTime>953</averageResponseTime>
+								</Summary>
+								<timeMs>953</timeMs>
+								<size>19099</size>
+								<encodedContent>false</encodedContent>
+								<content>
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+      
+
+&lt;!--
+ Copyright 2008 MedCommons Inc.   All Rights Reserved.
+--&gt;
+
+
+
+&lt;html&gt;
+  &lt;head&gt;
+    
+    
+    &lt;base href=&apos;http://yeti:9080/router/&apos;/&gt;
+    &lt;title&gt;eHealthCCR CCR Transfer and Repository Services
+      &lt;/title&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;images/favicon.gif&quot; type=&quot;image/gif&quot;/&gt;
+    
+    
+    
+
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/router/combined.css.h-763237185.pack&quot; charset=&quot;utf-8&quot;/&gt;
+
+    
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/router/yui-2.6.0/menu/assets/skins/mc/menu.css.h406947667.pack&quot; charset=&quot;utf-8&quot;/&gt;
+    
+    
+    &lt;style type=&quot;text/css&quot;&gt;
+      
+    &lt;/style&gt;
+    &lt;!--[if IE]&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+    #tabborder {
+        position: static;
+    }
+    #nav li {
+      display: inline; 
+    } 
+    &lt;/style&gt;
+    &lt;![endif]--&gt;
+
+    &lt;script language=&quot;JavaScript&quot; type=&quot;text/JavaScript&quot;&gt;
+
+      
+      var tabImages = new Array();
+
+      var acctServer = &apos;http://mc/acct/ws&apos;;
+
+      function rollOver(img) {
+        if(!img)
+	      return;
+        var index = parseInt(/[0-9]/.exec(img.id));
+        var overSrc = &apos;images/mmtab_over_0&apos;+index+&apos;.gif&apos;; // default
+        if(tabImages[index] != null) {
+          overSrc = tabImages[index].overSrc;
+        }
+        img.src=overSrc;
+      }
+
+      function rollOut(img,index) {
+        if(!img)
+          return;
+	      /*
+        var index = parseInt(/[0-9]/.exec(img.id));
+        var offSrc = &apos;images/mmtab_off_0&apos;+index+&apos;.gif&apos;; // default
+        if(tabImages[index] != null) {
+          offSrc = tabImages[index].offSrc;
+        }
+
+        var tab = $(&apos;tab&apos;+(index));
+        if(!tab.current) {
+          img.src=offSrc;
+        }
+        */
+      }
+    &lt;/script&gt;
+
+
+    &lt;script language=&quot;JavaScript&quot;&gt;
+      
+      var tablist = new Array();
+
+      function showThisTab() {
+        showTab(this);
+      }
+
+      function showTabById(id) {
+        showTab($(id),true);
+      }
+
+      function highlightTabById(id,seturl) {
+        highlightTab($(id),seturl);
+      }
+
+      function showTab(tabToShow) {
+        var onSwitchTab;
+        try {
+          onSwitchTab = contents.onSwitchTab;
+        }
+        catch(ex) {
+          onSwitchTab = null;
+        }
+
+        if(onSwitchTab!=null) {
+          if(contents.onSwitchTab(getTabUrl(tabToShow))) { // allow tab window to cancel
+            if(tabToShow != currentTab)
+              $(&apos;patientHeader&apos;).style.visibility = &apos;hidden&apos;;
+            highlightTab(tabToShow,false);
+            setButtons([]);
+          }
+        }
+        else  {
+          if(tabToShow != currentTab)
+            $(&apos;patientHeader&apos;).style.visibility = &apos;hidden&apos;;
+          highlightTab(tabToShow,true);
+          setButtons([]);
+        }
+
+      }
+
+      
+      function getTabUrl(tab) {
+        var url = tab.url;
+        var params = &apos;&apos;;
+        var mode = tab.mode;
+        if(mode != null) {
+          // toggle mode
+          if(tab.current) {
+            if(mode==&quot;edit&quot;)
+              mode = &quot;view&quot;;
+            else
+              mode = &quot;edit&quot;;
+          }
+          params += &apos;mode=&apos;+mode;
+        }
+        if(tab.ccrIndex != null) {
+          params += &quot;&amp;ccrIndex=&quot; + tab.ccrIndex;
+        }
+        if(!url.match(/^javascript:/) &amp;&amp; (params != &apos;&apos;)) {
+          if(url.indexOf(&apos;?&apos;)&lt;0) {
+            url += &quot;?&quot;;
+          }
+          else
+            url += &quot;&amp;&quot;;
+          url += params;
+        }
+        
+        if(url.match(/^http/)==null) {
+          url = &apos;http://yeti:9080/router/&apos; + url; 
+        }
+
+        return url;
+      }
+
+      
+      var currentTab = null;
+
+      function searchHighlightTab(tabToShow,tabParent,seturl) {
+        for(var i=0; i&lt;tabParent.childNodes.length; i++) {
+          var tab = tabParent.childNodes[i];
+          searchHighlightTab(tabToShow,tab,seturl);
+
+          if(tab.nodeType!=1)//element
+            continue;
+
+          if((tab.id == null) || (tab.id == &apos;&apos;)) // ignore misc elements, only want ones that we gave an id
+            continue;
+
+          if(tab.tagName == &apos;IMG&apos;) // ignore misc elements, only want ones that we gave an id
+            continue;
+
+          //log(&apos;found tab.url=&apos;+tab.url);
+
+          var index = parseInt(/[0-9]/.exec(tab.id));
+          if(tab == tabToShow) {
+            tab.className=&quot;currentTab&quot;;
+            if(!isNaN(index)) {
+              rollOver($(&apos;tabImg&apos;+index));
+            }
+
+            setTabImages(tab,&apos;images/tablefthl.png&apos;, &apos;images/tabrighthl.png&apos;,&apos;4&apos;,&apos;currentTab&apos;);
+            currentTab = tab;
+            if(seturl) {
+              var url = getTabUrl(tabToShow);
+              el(&quot;contents&quot;).src=url;
+            }
+            tab.current = true;
+            unhideTab(tabToShow.id);
+          }
+          else
+          if((tab.tagName == &apos;SPAN&apos;) || (tab.tagName == &apos;span&apos;)) {
+            tab.className=&quot;normalTab&quot;;
+            tab.current = false;
+            if(!isNaN(index)) {
+              rollOut($(&apos;tabImg&apos;+index));
+            }
+            setTabImages(tab,&apos;images/tableft.png&apos;, &apos;images/tabright.png&apos;, &apos;3&apos;,&apos;normalTab&apos;);
+          }
+        }
+      }
+
+      function getVisibleTabs() {
+        var tabs = $(&apos;tabsContainer&apos;);
+        return tabs.getElementsByTagName(&apos;span&apos;);
+      }
+
+      function setTabImages(tab, srcleft,srcright,top,c) {
+        var tabParent = tab.parentNode;
+        var left = null;
+        for(var i=0; i&lt;tabParent.childNodes.length; ++i) {
+          var img = tabParent.childNodes[i];
+          if((img.tagName != &apos;IMG&apos;) &amp;&amp; (img.tagName != &apos;img&apos;))
+            continue;
+
+          if(img.src.indexOf(&apos;tab&apos;)&lt;0)
+            continue;
+
+          img.style.position = &apos;relative&apos;;
+          img.style.top = top;
+
+          if(!left) {
+            left = img;
+            left.src = srcleft;
+            left.className=c;
+          }
+          else {
+            img.src = srcright;
+            img.className=c;
+            break;
+          }
+        }
+      }
+
+
+      function setTabIcon(tab, img) {
+        if(tab == null) {
+          tab = currentTab;
+        }
+        if(!tab.id) {
+          tab = el(tab);
+        }
+        tab.img = img;
+        setTabText(tab, getTabText());
+      }
+
+      function setTabText(tab,text) {
+        log(&quot;setting tab text to &quot; + text + &quot;: &quot; + stacktrace());
+
+        if((tab == undefined) || (tab == null)) {
+          tab = currentTab;
+        }
+
+        if(!tab.id) {
+          tab = el(tab);
+        }
+
+        tab.text = text;
+        if(tab.img)
+          tab.innerHTML=text+&apos;&amp;nbsp;&apos; + tab.img;
+        else
+          tab.innerHTML=text;
+      }
+
+      function getTabText(tab) {
+        if(tab == null) {
+          tab = currentTab;
+        }
+
+        if(!tab.id) {
+          tab = el(tab);
+        }
+        if(tab.text)
+          return tab.text;
+        else
+          return tab.innerHTML;
+      }
+
+      function highlightTab(tabToShow,seturl) {
+        $(&apos;tabs&apos;).style.height=&apos;30px&apos;;
+
+        
+        var tabs = $(&apos;tabsContainer&apos;);
+        searchHighlightTab(tabToShow,tabs,seturl);
+      }
+
+      
+      function hideTab(id) {
+        var tab = el(id);
+        if(tab) {
+          var li = tab.parentNode;
+          while(li.tagName.toLowerCase() != &apos;li&apos;) {
+            li = li.parentNode;
+          }
+          li.style.display = &apos;none&apos;;
+          tab.hidden = true;
+        }
+      }
+
+      function removeTab(t) {
+        removeElement(t.parentNode);
+      }
+
+      
+      function removeTabs(f) {
+        var toRemove = filter(f, $(&apos;nav&apos;).getElementsByTagName(&apos;SPAN&apos;));
+        forEach(toRemove, function(t) {
+            log(&quot;removing tab &quot; + t.id);
+            removeTab(t);
+        });
+      }
+
+      function unhideTab(id) {
+        var tab = el(id);
+        if(tab) {
+          var li = tab.parentNode;
+          while(li.tagName.toLowerCase() != &apos;li&apos;) {
+            li = li.parentNode;
+          }
+          if((YAHOO.env.ua.ie &gt; 0) || (YAHOO.env.ua.gecko&lt;=1.8))
+            li.style.display = &apos;inline&apos;;
+          else
+            li.style.display = &apos;inline-block&apos;; // helps slightly in some browsers when zoomed
+        }
+      }
+
+      
+      function previousTab() {
+        var previous = null;
+        var found =false;
+        nodeWalk($(&apos;nav&apos;),function(n) {
+          if(n == currentTab) {
+            found = true;
+            return null;
+          }
+
+          if(!found &amp;&amp; n.id &amp;&amp; (!n.hidden) &amp;&amp; n.id.match(/^tab[0-9]*$/))
+            previous = n;
+
+          return n.childNodes;
+
+        });
+
+        return previous;
+      }
+
+      
+      function nextTab() {
+        var next = null;
+        var found = false;
+        var currFound = false;
+        nodeWalk($(&apos;nav&apos;),function(n) {
+          if(found)
+            return null;
+
+          if(n == currentTab) {
+            currFound = true;
+          }
+          else
+          if(currFound &amp;&amp; n.id &amp;&amp; (!n.hidden) &amp;&amp; n.id.match(/^tab[0-9]*$/)) {
+            found = true;
+            next = n;
+            return null;
+          }
+          return n.childNodes;
+        });
+
+        return next;
+      }
+
+      function initContentsHeight() {
+        // note, ideally would calculate toolsHeight as below, but it is not available
+        // at load time, and want to avoid things &quot;jumping&quot; around by resizing afterwards.
+        // var toolsHeight = (elementPosition(&apos;menu&apos;).y + elementDimensions(&apos;menu&apos;).h);
+        if(typeof viewportSize == &apos;undefined&apos;)
+          return;
+        var toolsHeight = 60;
+        if($(&apos;topmessage&apos;))
+          toolsHeight += elementDimensions($(&apos;topmessage&apos;)).h;
+
+        var availableHeight = viewportSize().h - toolsHeight;
+        if($(&apos;patientHeader&apos;))
+          availableHeight -= elementDimensions(&apos;patientHeader&apos;).h;
+
+        try {
+          $(&apos;contents&apos;).height = availableHeight;
+          if(window.contents.viewportSize)
+            log(&quot;Available height = &quot; + availableHeight + &quot; internal height = &quot; + window.contents.viewportSize().h);
+          if(contents.onParentSize) {
+            window.contents.eval(&apos;onParentSize();&apos;);
+          }
+        }
+        catch(e) {
+          log(&quot;error adjusting content height: &quot; + e);
+        }
+
+      }
+
+      // Set resize handler to keep updating window when size changes
+      window.onresize = initContentsHeight;
+
+      var tabcount = 0;
+
+      function addTabHandlers(tabParent) {
+        for(var i=0; i&lt;tabParent.childNodes.length;i++) {
+          var tab = tabParent.childNodes[i];
+          if(tab != tabParent)
+            addTabHandlers(tab);
+
+          if(tab.nodeType!=1)  // must be element
+            continue;
+
+          if((tab.id == null) || (tab.id == &apos;&apos;)) // ignore misc elements, only want ones that we gave an id
+            continue;
+
+
+          if((tab.tagName == &apos;span&apos;) || (tab.tagName == &apos;SPAN&apos;)) {
+            // Set handlers for this tab
+            tab.onclick=showThisTab;
+            tab.url=tablist[tab.id];
+            //log(&apos;initing tab with id=&apos;+tab.id);
+          }
+        }
+      }
+
+      var tabCounter = null;
+      function getTabs() {
+        return $$(&apos;ul#nav li span&apos;);
+      }
+
+      function replaceTab(txt,url,tip,before) {
+        found = false;
+        forEach(getVisibleTabs(), function(t) {
+          if(getTabText(t) == txt) {
+            found = true;
+            t.url = url;
+            t.tip = tip; // todo, need to set tip in DOM
+          }
+        });
+
+        if(!found) 
+          addTab(txt,url,tip,before);
+      }
+
+      function addTab(txt,url,tip,before) {
+        if(!tabCounter)
+            tabCounter = counter(10);
+
+        var tabId = &apos;tab&apos;+tabCounter();
+        if(!tip) {
+          tip = &quot;&quot;;
+        }
+        var tabSpan = SPAN({&apos;id&apos;:tabId,&apos;class&apos;:&apos;normalTab&apos;,title: tip}, txt);
+        var newTab = LI(null,IMG({src:&apos;images/tableft.png&apos;}),
+                      tabSpan,
+                      IMG({src:&apos;images/tabright.png&apos;}));
+
+        log(before);
+        if(before == null) {
+          appendChildNodes($(&apos;nav&apos;),newTab);
+        }
+        else {
+          $(&apos;nav&apos;).insertBefore(newTab,before.parentNode);
+        }
+
+        tablist[tabId] = url;
+        addTabHandlers($(&apos;tabsContainer&apos;));
+        return tabSpan;
+      }
+
+      
+      
+
+      var initialContentsUrl = &apos;Track.action?show&apos;;
+      var originalHash  = null;
+
+      
+
+
+      var startupMsg = null;
+
+      function initTabs() {
+        checkIE();
+        ce_connect(&apos;openCCR&apos;, onOpenCCR);
+        ce_connect(&apos;newCCR&apos;, onOpenCCR);
+        ce_add_server(acctServer+&apos;/ce_signal.php&apos;);
+        var tabs=$(&quot;tabsContainer&quot;);
+        addTabHandlers(tabs);
+        log(&quot;initial contents = &quot; + initialContentsUrl);
+        
+        
+          
+          
+            
+              
+                log(&quot;setting initial tab = Track.action?show&quot;);
+                highlightTab($(&quot;tab6&quot;),false);
+                $(&quot;contents&quot;).src=initialContentsUrl;
+              
+              
+            
+          
+          
+        
+
+        window.menu = new YAHOO.widget.MenuBar(&apos;menu&apos;, { iframe:true, autosubmenudisplay: true });
+        menu.render();
+
+        var tzOffset = -1*(new Date()).getTimezoneOffset();
+        var tz = &apos;GMT&apos;+ (tzOffset&gt;=0?&apos;+&apos;:&apos;-&apos;)+Math.floor(Math.abs(tzOffset/60))+&apos;:&apos; + numberFormatter(&quot;00&quot;)(Math.abs(tzOffset%60));
+        setCookie(&apos;mctz&apos;,tz);
+        loadScript(&apos;http://mc/acct/ws/setmcgw.php?gw=http%3a%2f%2fmc%3a9080%2frouter&apos;);
+        window.focus();
+        
+      }
+
+      function checkModified() {
+        closeSession();
+        // Check if any tabs modified
+        if(some(getTabs(), function(t) { return t.modified == true; })) {
+          return &apos;One or more CCRs have unsaved changes. You will lose these changes if you leave without saving them.&apos;;
+        }
+      }
+
+      var is_closed = false;
+      function closeSession() {
+        if(is_closed)
+          return;
+        is_closed = true;
+        
+        if(window.opened) {
+          if(window.name == &apos;ccr&apos;) {
+            
+            var context = window.location.pathname.match(/(\/[A-Za-z]*)\/.*$/)[1];
+            var expires = new Date( new Date().getTime()-100000 );
+            log(&quot;sending closeCCR signal&quot;);
+            ce_signal(&apos;closeCCR&apos;,window.contents.ccrGuid);
+            // log(&quot;Deleting JSESSIONID cookie &quot; + expires + &quot; from path &quot; + context);
+            // setCookie(&apos;JSESSIONID&apos;, &apos;deleted&apos;, expires, context);
+          }
+        }
+      }
+
+      var disable_auto_close = false;
+      function onOpenCCR(guid) {
+        // Other CCR opened - close myself
+        log(&quot;platform: onOpenCCR&quot;);
+        if((ce_last_event_src != window.contents.ce_src_id) &amp;&amp; (ce_last_event_src != window.ce_src_id) &amp;&amp; !disable_auto_close) {
+          window.contents.location.href=&apos;closed.jsp&apos;;
+          window.close();
+        }
+      }
+
+      /**
+       * Sets the tracking number and PIN details that will be advertised
+       * to clients as currently showing in this viewer. (eg. for FF CCR Client)
+       */
+      function setAdvertisedCcr(tn,pin) {
+        window.medcommons_advertised_ownerId=tn;
+        window.medcommons_advertised_pin=pin;
+      }
+
+      function checkIE() {
+        if((YAHOO.env.ua.ie &gt; 0) &amp;&amp; (YAHOO.env.ua.ie &lt; 7)) {
+          alert( &apos;WARNING:  You are using Internet Explorer version 6.0 or older.\n\n&apos;
+                +&apos;This version is not supported by this web site and you may experience problems using it.\n\n&apos;
+                +&apos;For best experience we recommend upgrading to a supported browser such as: \n\n&apos;
+                +&apos;   -  Internet Explorer 7.0 or later\n\n&apos;
+                +&apos;   -  FireFox 2.0 or later\n\n&apos;
+                +&apos;   -  Safari 3.0 or later&apos;
+                );
+        }
+      }
+
+      tablist[&quot;tab1&quot;]=&quot;updateCcr.do?forward=selection&quot;;
+      tablist[&quot;tab2&quot;]=&quot;updateCcr.do?forward=home&quot;;
+      tablist[&quot;tab3&quot;]=&quot;updateCcr.do?forward=consent&quot;;
+      tablist[&quot;tab4&quot;]=&quot;updateCcr.do?forward=transaction&quot;;
+      tablist[&quot;tab5&quot;]=&quot;updateCcr.do?forward=desktop&quot;;
+      tablist[&quot;tab6&quot;]=&quot;updateCcr.do?forward=viewer&quot;;
+      tablist[&quot;tab7&quot;]=&quot;updateCcr.do?forward=logon&quot;;
+
+      // Allows FF client to &quot;see&quot; the url of the gateway it is looking at
+      window.medcommons_advertised_cxpUrl=&apos;http://mc:9080/router/CxpServlet&apos;;
+      try {
+        if(window.opener) {
+          window.opened = true; // window.opener may disappear if user closes opener
+        }
+        window.onbeforeunload=checkModified;
+        window.onunload=closeSession;
+      }
+      catch(e) {
+      }
+      useCleanURLs = false;
+    &lt;/script&gt;
+
+    
+  &lt;/head&gt;
+  &lt;body style=&quot;height: 100%; overflow: hidden;&quot; class=&quot;yui-skin-mc&quot; onload=&quot;initTabs();&quot;&gt;
+    
+    &lt;div id=&quot;tabs&quot; class=&quot;lightBackground&quot; style=&quot;height: 30px; width: 100%; vertical-align: bottom;&quot; &gt;
+        
+        &lt;br/&gt;
+        &lt;span id=&quot;tabsContainer&quot; class=&quot;bottomAlign&quot; style=&quot;width: 100%;&quot;&gt;
+          
+        &lt;img src=&quot;images/transparentblank.gif&quot; width=&quot;50&quot; height=&quot;1px&quot;/&gt;
+
+        
+        &lt;ul id=&quot;nav&quot;&gt;
+          &lt;li style=&quot;display: none;&quot; &gt;&lt;img src=&quot;images/tableft.png&quot;/&gt;&lt;span id=&quot;tab4&quot; class=&quot;normalTab&quot;&gt;CCR&lt;/span&gt;&lt;img src=&quot;images/tabright.png&quot;/&gt;&lt;/li&gt;
+          &lt;li style=&quot;display: none;&quot;&gt;&lt;img src=&quot;images/tablefthl.png&quot;/&gt;&lt;span id=&quot;tab6&quot; class=&quot;normalTab&quot;&gt;Received CCR&lt;/span&gt;&lt;img src=&quot;images/tabrighthl.png&quot;/&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;a href=&quot;http://mc/www/&quot; border=&quot;0&quot;&gt;&lt;img alt=&quot;eHealthCCR makes the best bread!&quot;
+             id=&quot;smallLogoImg&quot;
+             border=&quot;0&quot;
+             height=&quot;30&quot;
+             src=&quot;images/ehealthccr_logo_148x30.png&quot;
+             style=&quot;position: absolute;  right: 20px; bottom: 0px;&quot;
+             /&gt;
+         &lt;/a&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;tabborder&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;menu&quot; class=&quot;yuimenubar yuimenubarnav&quot; style=&apos;z-index: 1000000;&apos;&gt;
+        &lt;div class=&quot;bd&quot;&gt;
+            &lt;ul class=&quot;first-of-type&quot; style=&apos;border-style-top: none;&apos;&gt;
+                &lt;li class=&quot;yuimenubaritem first-of-type&quot;&gt;&lt;a class=&quot;yuimenubaritemlabel&quot; href=&quot;#&quot; onclick=&apos;return false;&apos;&gt;CCR File&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;yuimenubaritem&quot;&gt;&lt;a class=&quot;yuimenubaritemlabel&quot; href=&quot;#&quot; onclick=&apos;return false;&apos;&gt;CCR Attached Documents&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;yuimenubaritem&quot;&gt;&lt;a class=&quot;yuimenubaritemlabel&quot; href=&quot;#&quot; onclick=&apos;return false;&apos;&gt;CCR Section&lt;/a&gt;&lt;/li&gt;
+                
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    
+    &lt;div id=&quot;patientHeader&quot; class=&apos;hidden&apos;&gt;&amp;nbsp;&lt;/div&gt;
+
+    &lt;iframe
+      name=&quot;contents&quot;
+      id=&quot;contents&quot;
+      width=&quot;100%&quot;
+      height=&quot;100%&quot;
+      style=&quot;border-style: none; overflow: auto; z-index: 0;&quot;
+      src=&quot;blank.html&quot;
+      frameborder=&quot;0&quot;
+      onload=&apos;initContentsHeight();&apos;
+      &gt;
+      &amp;nbsp;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;acdiv&quot;&gt;&lt;/div&gt;
+  &lt;div id=&apos;topbar&apos;&gt;
+    &lt;span id=&apos;topbuttons&apos;&gt;&amp;nbsp;&lt;/span&gt;
+    &lt;span id=&apos;topcenterbuttons&apos; class=&apos;hidden&apos;&gt;&lt;a class=&apos;tcb&apos; href=&apos;javascript:window.contents.showQuickReply();&apos;&gt;Click Here&lt;/a&gt; to Quick Reply to this CCR&lt;/span&gt;
+  &lt;/div&gt;
+   
+
+  &lt;object
+        ID=&quot;HBCHECK&quot; Name=&quot;HBCHECK&quot;
+        WIDTH=1 HEIGHT=1
+   classid=&quot;clsid:261B31E6-20A6-482C-A78E-46E68ACFB54B&quot;
+    CODEBASE=&quot;CheckForHealthBook.cab#version=1,0,0,1&quot;&gt;
+  &lt;/object&gt;
+
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/router/combined.js.h1790302803.pack&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+
+</content>
+								<totalSize>19099</totalSize>
+								<timeStamp>2009-09-22 08:39:20</timeStamp>
+								<logContent/>
+							</Response>
+						</ChildItems>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>474791</id>
+						<name>tracking</name>
+						<value>%24%7Btn%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Request v='10'>
+						<ver>12</ver>
+						<id>474792</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<host>${host}</host>
+						<path>/router/logon.jsp</path>
+						<protocol>http</protocol>
+						<resource/>
+						<targetFrame>contents</targetFrame>
+						<label/>
+						<headers/>
+						<multipartBoundary/>
+						<Object>null</Object>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset/>
+						<method>1310723</method>
+						<waitForSubRequests>true</waitForSubRequests>
+					</Request>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${host}</host>
+				<path>/router/tracking.jsp</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset/>
+				<method>1650532410</method>
+				<waitForSubRequests>true</waitForSubRequests>
+			</Request>
+			<Request v='10'>
+				<ver>12</ver>
+				<id>474793</id>
+				<Summary v='2'>
+					<played>1</played>
+					<succeeded>1</succeeded>
+					<maxResponseTime>3236</maxResponseTime>
+					<averageResponseTime>3236</averageResponseTime>
+				</Summary>
+				<childCount>4</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>474794</id>
+						<Summary v='2'>
+							<played>1</played>
+							<succeeded>1</succeeded>
+							<maxResponseTime>3236</maxResponseTime>
+							<averageResponseTime>3236</averageResponseTime>
+						</Summary>
+						<childCount>2</childCount>
+						<ChildItems>
+							<TemplateBinding v='1'>
+								<sourceFile/>
+							</TemplateBinding>
+							<Response v='3'>
+								<ver>12</ver>
+								<id>475428</id>
+								<Summary v='2'>
+									<played>1</played>
+									<succeeded>1</succeeded>
+									<maxResponseTime>3236</maxResponseTime>
+									<averageResponseTime>3236</averageResponseTime>
+								</Summary>
+								<timeMs>3236</timeMs>
+								<size>52833</size>
+								<encodedContent>false</encodedContent>
+								<content>
+      
+
+
+
+
+
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+
+
+
+
+
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/router/combined.css.h1262760118.pack&quot; charset=&quot;utf-8&quot;/&gt;
+      
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/router/combined.js.h723654461.pack&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+    
+    &lt;!--[if IE]&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+     
+     #patientGivenLabel {
+       left: 5px;
+     }
+     #patientFamilyLabel {
+       left: 122px;
+     }
+    &lt;/style&gt;
+    &lt;![endif]--&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+      .yui-overlay, .yui-panel-container {
+        position: relative;
+      }
+      .yui-skin-sam .yui-panel-container.shadow .underlay {
+        position:relative;
+      }
+      #dialogDiv #orderForm_c {
+        position:relative;
+      }
+      div.hd {
+        height: 23px;
+      }
+    &lt;/style&gt;
+
+    
+    &lt;script type=&quot;text/javascript&quot;&gt;
+            
+
+
+
+
+
+  var ccrs = new Array();
+  var ccr = null;
+  var activeCCR = null;
+  
+  
+    
+      
+      
+      
+       
+      ccr = {
+        guid: &apos;0e88f1a5ef8160c609d2eb6f5f271bdef3665cb1&apos;,
+        uri: &apos;session://currentCcr&apos;,
+        from: {actorLink:[{actorID:&apos;AA0002&apos;,actorRole:{text:&apos;Primary Care Provider&apos;}},{actorID:&apos;AA0003&apos;},{actorID:&apos;AA0004&apos;},{actorID:&apos;AA1775254182&apos;,actorRole:{text:&apos;Notification reply&apos;}}]},
+        patientId: &apos;&apos;,
+        createDateTime: &apos;10/18/2005 6:37 PM&apos;,
+        trackingNumber: &apos;5334 9367 8869&apos;,
+        logicalType: &apos;&apos;,
+        storageMode: &apos;FIXED&apos;,
+        actors: [{ actorObjectID: &apos;AA0001&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;John&apos;, middleName: &apos;B&apos;, familyName: &apos;Doqit&apos;, dateOfBirth: &apos;&apos;, email: &apos;jdoqit@ccr.ccr&apos; },
+{ actorObjectID: &apos;AA0002&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;John&apos;, middleName: &apos;&apos;, familyName: &apos;Smith&apos;, dateOfBirth: &apos;&apos;, email: &apos;jsmith@teprccrdemohealthclinic.com&apos; },
+{ actorObjectID: &apos;AA0003&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;jsmith@ccrdemohealthclinic.com&apos;},
+{ actorObjectID: &apos;AA0004&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos;},
+{ actorObjectID: &apos;AA0005&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos; },
+{ actorObjectID: &apos;AA0006&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos;},
+{ actorObjectID: &apos;AA0006&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos;},
+{ actorObjectID: &apos;AA0008&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos;},
+{ actorObjectID: &apos;AA0009&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos; },
+{ actorObjectID: &apos;AA0010&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos; },
+{ actorObjectID: &apos;AA00011&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;&apos;},
+{ actorObjectID: &apos;AA1617612793&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;ssadedin@medcommons.org&apos;},
+{ actorObjectID: &apos;AA1775254182&apos;, medCommonsId: &apos;&apos;,  givenName: &apos;&apos;, middleName: &apos;&apos;, familyName: &apos;&apos;, dateOfBirth: &apos;&apos;, email: &apos;ssadedin@medcommons.net&apos;}],
+        references: {reference:[{referenceObjectID:&apos;mcref-0&apos;,type:{text:&apos;application/x-ccr+xml&apos;},source:{actorID:&apos;AA1775254182&apos;},locations:{location:{description:{objectAttribute:[{attribute:&apos;URL&apos;,attributeValue:{value:&apos;mcid://95b1525e6ff1079901f446af0b114557307eac9e&apos;}},{attribute:&apos;DisplayName&apos;,attributeValue:{value:&apos;ccrsample2_solventus_CXP.xml&apos;}}]}}}}]},
+        patient: { 
+          medCommonsId: &apos;&apos;,
+          actorId: &apos;AA0001&apos;,
+          givenName: &apos;John&apos;,
+          familyName: &apos;Doqit&apos;,
+          dateOfBirth: &apos;2005-08-16T04:00:00Z&apos;,
+          age: &apos;&apos;,
+          address1: &apos;100 Quality Lane&apos;,
+          city: &apos;Leawood&apos;,
+          state: &apos;KS&apos;,
+          postalCode: &apos;66211&apos;,
+          country: &apos;&apos;,
+          organization: &apos;TEPR CCR Demo Health Clinic&apos;,
+          gender: &apos;Male&apos;,
+          emails: [],
+          phoneNumbers: [],
+          ids: [ 
+              
+                
+                { type: &apos;MRN&apos;, value: &apos;2340854230&apos; }
+              
+                ,
+                { type: &apos;SSN&apos;, value: &apos;555-55-1234&apos; }
+              
+            ],
+	        status: &apos;&apos;
+          }
+      };
+      ccr.patient.ageSex = ageSex(ccr.patient.age, ccr.patient.gender);
+      ccrs[&quot;3027171970611841&quot;]=ccr;
+      if(activeCCR == null) {
+        activeCCR = update(ccr,CCR);
+        activeCCR.get = partial(resolve,ccr);
+      }
+    
+  
+    
+  
+  ccr = activeCCR;
+
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+      var displayMode = &apos;&apos;;
+      var createDate = &apos;&apos;;
+      var acctServer = &apos;http://mc/acct/ws&apos;;
+      var secureServer = &apos;http://mc/secure/ws&apos;;
+
+      var enableBilling = true;
+
+      ce_add_server(acctServer+&apos;/ce_signal.php&apos;);
+
+      
+      var patientIds = [
+        
+          
+          { type: &apos;MRN&apos;, value: &apos;2340854230&apos; }
+        
+          ,
+          { type: &apos;SSN&apos;, value: &apos;555-55-1234&apos; }
+        
+      ];
+
+      
+      
+
+      
+
+var currentCcrGuid = null;
+var _a = [];
+
+
+if(_a[&apos;CURRENTCCR&apos;])
+  currentCcrGuid = _a[&apos;CURRENTCCR&apos;].guid;
+
+accountDocuments = _a; _a = null; delete _a;
+
+      var remoteAccessAddress = &apos;http://mc:9080/router&apos;;
+      var ccrCreateDateTime = &apos;10/18/2005 6:37 PM&apos;;
+      var patientMode = false;
+      var ccrGuid = null;
+      
+        ccrGuid = &apos;0e88f1a5ef8160c609d2eb6f5f271bdef3665cb1&apos;;
+        window.parent.ce_signal(&apos;openCCR&apos;,ccrGuid,remoteAccessAddress);
+      
+      
+
+
+      var medcommonsIdKnown = false;
+      
+
+      var ccrPurpose = &apos;Request For Consult&apos;;
+
+      var commonsUrl = &apos;http://mc/secure/ws&apos;;
+
+      var cxp2Protocol = &apos;http&apos;;
+      var cxp2Port =  &apos;9080&apos;;
+      var cxp2Host =  &apos;mc&apos;;
+      var cxp2Path =  &apos;/gateway/services/CXP2&apos;;
+
+      
+      var isCCCR = false;
+
+      var mergeTool = [&quot;Merge into Current CCR&quot;,&quot;mergeIntoCurrentCCR();&quot;];
+      var saveAsFixedTool = [&quot;Save as CCR Tab&quot;,&quot;saveAsFixed();&quot;];
+      var createReplyTool = [&quot;Create Reply&quot;,&quot;createReplyCCR();&quot;];
+      var newOrderTool = [&quot;Create Order&quot;,&quot;createOrderCCR();&quot;];
+      var editExternally;
+      if (isHealthBookInstalled()){
+       	editExternally = [&quot;Edit With HealthBook&quot;,&quot;editCCRExternally();&quot;];
+      }
+      else{
+      	editExternally = [&quot;Install HealthBook Editor&quot;,&quot;installHealthBook();&quot;];
+      }
+      var importTool = 
+        [{ text: &apos;Import&apos;, submenu: { id: &apos;import&apos;, itemdata: [ 
+            {text: &apos;Voucher&apos;, onclick: {fn: importVoucher}},
+            {text: &apos;Account&apos;, onclick: {fn: importAccount}},
+            {text: &apos;CCR&apos;, onclick: {fn: importCCR}},
+            {text: &apos;Upload Account Files&apos;, onclick: {fn: uploadAccountFiles}}
+           ]}}];
+
+      var defaultTools = [
+            [&quot;View CCR&quot;,&quot;viewCcr();&quot;],
+            newOrderTool,
+            [&quot;Edit as New CCR&quot;,&quot;sendAsNew();&quot;],
+            editExternally,
+            saveAsFixedTool,
+            createReplyTool,
+            mergeTool,
+            importTool,
+            [&quot;Print this Page&quot;,&quot;print();&quot;],
+            [CCR_ATTACHMENTS_MENU, &quot;Add PDF Document&quot;,&apos;showAddDocument();&apos;,&quot;window.contents.addDocumentWindow = window.open(&apos;blank.html&apos;,&apos;addDocument&apos;,&apos;scrollbars=1,width=520,height=220,resizable=1&apos;)&quot;],
+            [CCR_ATTACHMENTS_MENU, &quot;Add Web Reference&quot;,&quot;addWebReference();&quot;],
+            [CCR_SECTIONS_MENU, &quot;Patient Demographics&quot;, &quot;showDemographicsForm()&quot;]
+          ];
+ 
+      addSectionMenus(defaultTools);
+
+      var emergencyCcrGuid = &apos;&apos;;
+      for(var t in accountDocuments) {
+        var d = accountDocuments[t];
+        if(d.guid == ccrGuid) {
+            tabText = documentTypes[d.type];
+            window.parent.setTabText(null,tabText);
+        }
+      };
+
+      var accountSettings = {&quot;accountId&quot;:&quot;0000000000000000&quot;,&quot;amazonPid&quot;:null,&quot;amazonProductToken&quot;:null,&quot;amazonUserToken&quot;:null,&quot;currentCcrGuid&quot;:null,&quot;dicomAeTitle&quot;:null,&quot;dicomHost&quot;:null,&quot;dicomPort&quot;:-1,&quot;email&quot;:null,&quot;emergencyCcrGuid&quot;:null,&quot;expiryDate&quot;:null,&quot;firstName&quot;:null,&quot;groupCreateDateTime&quot;:null,&quot;groupId&quot;:null,&quot;groupInstanceId&quot;:null,&quot;groupName&quot;:null,&quot;lastName&quot;:null,&quot;photoUrl&quot;:null,&quot;registry&quot;:null,&quot;toDir&quot;:null,&quot;voucher&quot;:null,&quot;vouchersEnabled&quot;:false};
+      
+
+      tabText = window.parent.getTabText();
+
+      var tools = new Array();
+      forEach(defaultTools, function(o){tools.push(o);});
+      var emergencyCcrTool = [&quot;Set as Emergency CCR&quot;, &quot;setEmergencyCCR();&quot;];
+
+
+      if(!window.parent.currentTab.secondaryTab)
+        window.parent.setTabIcon(null, &apos;&lt;img class=&quot;tabIcon&quot; title=&quot;Switch to View Mode&quot; style=&quot;position: relative; top: 1px; left: 3px;&quot; src=&quot;images/tancycle.gif&quot; onmouseout=&quot;this.src=\&apos;images/tancycle.gif\&apos;&quot; onmouseover=&quot;this.src=\&apos;images/redcycle.gif\&apos;&quot;/&gt;&apos;);
+
+      var closeTab = false;
+      
+
+      var cleanPatient = true;
+      var registry = null;
+      var groupId = null;
+      var changeNotifications = null;
+      var storageMode = &apos;FIXED&apos;;
+      var storageId = &apos;0000000000000000&apos;;
+      var patientMedCommonsId = &quot;&quot;;
+      var auth=&apos;f9910cbad9f2d31d6896755202b35fb2bd941f98&apos;;
+
+      
+      
+      var writeable = true;
+
+      
+
+      var setAsCurrentCCRTool = [&quot;Set as Current CCR&quot;, &quot;saveCurrentCcr()&quot;];
+
+      var ccrPurposes = &quot;eHealthCCR Notification for [Recipient],Private Communication,Request For Consult,Request For Procedure,Request for Service,Request for Encounter,Request for Authorization,Request for Medical Device Or Product,Request for Medication,Request for Immunization,For Patient Use&quot;.split(/,/);
+      function init() {
+        
+        parent.currentTab.url = &apos;updateCcr.do&apos;;
+        forEach(findChildElements($(&apos;ccrTable&apos;), [ &apos;.insecureFormInput&apos;]), function(i) {
+            connect(i,&apos;onfocus&apos;,function(e) { privacyHighlight(e.target()) });  
+        });
+        
+        initTabInfo(0,&apos;&apos;,&apos;FIXED&apos;,&apos;edit&apos;);
+
+        updateFragment();
+
+        if(cleanPatient) {
+          cleanTabs();
+        }
+
+        if(!empty(parent.currentTab.ccr.documentType)) {
+          log(&quot;setting tab text for &quot; + documentTypes[parent.currentTab.ccr.documentType]);
+          parent.setTabText(null,documentTypes[parent.currentTab.ccr.documentType]);
+        }
+
+        if(ccrGuid != null) {
+          if(window.parent.getTabText().match(/\*$/)) {
+            window.parent.setTabText(null,tabText);
+          }
+        }
+
+        displayPatientId();
+        
+        if(false) {
+          window.parent.hideTab(&apos;tab6&apos;);
+          if(ccrGuid == null) {
+            window.parent.ce_signal(&apos;newCCR&apos;,ccrGuid,remoteAccessAddress);
+          }
+        }
+
+        setPatientTitle(&apos;John&apos;, &apos;Doqit&apos;); 
+
+        
+        
+        
+
+        window.activeForm=document.referralForm;
+
+        var purposes = el(&apos;ccrPurpose&apos;);
+        var selectedPurpose = purposes.selectedIndex;
+        if(selectedPurpose == 0) {
+          if(ccrPurpose != &apos;&apos;) {
+            purposes.options[purposes.options.length]=new Option(ccrPurpose);
+            purposes.selectedIndex = purposes.options.length-1;
+          }
+        }
+
+        roundElement(&apos;privacyWarning&apos;);
+
+        initPinFields();
+
+        tools.push(setAsCurrentCCRTool);
+
+        var f = document.referralForm;
+        for(i=0; i&lt;f.elements.length; i++) {
+          var e = f.elements[i];
+          if((e.id != &apos;termsOfUseCheckBox&apos;) &amp;&amp; (e.id != &apos;assignedPin&apos;)) {
+            connect(e,&apos;onchange&apos;,onFieldChange);
+          }
+        }
+        headerSync();
+        addToCallStack(f.patientDateOfBirth, &apos;onchange&apos;, headerSync);
+        
+
+        groupId = &apos;&apos;;
+        groupName = &apos;&apos;;
+
+        if( !empty(accId) &amp;&amp; (displayMode != &quot;eccr&quot;)) {
+          tools.push(emergencyCcrTool);
+          
+          
+          
+            if(groupId) {
+              tools.push([&quot;Add to my Worklist&quot;,&quot;addToAccount();&quot;]);
+            }
+            
+              
+              
+                else {
+                  tools.push([&quot;Add to my Account&quot;,&quot;addToAccount();&quot;]);
+                }
+              
+            
+          
+        }
+
+        addContextManager(tools);
+
+        window.parent.setTools(tools);
+        parent.enableTool(createReplyTool,storageMode == &apos;FIXED&apos;);
+        setWriteable(writeable);
+
+        fetchToDir();
+        fetchPatientCCRs();
+        resolveToEmail();
+
+        parent.addPatientHeader(this.getCcr());
+
+        
+
+        connect(&apos;toEmail&apos;,&apos;onblur&apos;,resolveToEmail);
+        updatePin();
+        updateCCRFrameSize();
+
+        connect(window,&apos;ccrSaved&apos;,updateStorageId);
+        connect(window,&apos;ccrSaved&apos;,updateCCRLink);
+        connect(window,&apos;ccrSaved&apos;,updateTools);
+        connect(window,&apos;ccrSaved&apos;, function() { $(&apos;closePatientCardButton&apos;).value = &apos;Close&apos;; });
+        connect(window,&apos;ccrModified&apos;, function() { $(&apos;closePatientCardButton&apos;).value = &apos;Save&apos;; });
+
+        if(ccrGuid == null) {
+          setModified();
+        }
+
+        
+
+        static_init();
+      }
+
+      window.parent.setAdvertisedCcr(&apos;0000000000000000&apos;,&apos;&apos;);
+
+      
+
+      
+      var loadedGuid = &apos;0e88f1a5ef8160c609d2eb6f5f271bdef3665cb1&apos;;
+
+      var hasUnvalidatedAttachments = false;
+      var accId = null;
+      
+
+      ce_connect(&apos;osirixOpen&apos;,function(g) {
+        if(ccrGuid == null) {
+          if(!confirm(&quot;Your new CCR has been uploaded and is available for viewing.\r\n\r\nYou have unsaved changes in this CCR.  If you continue, they will be lost.\r\n\r\nContinue and view new CCR?&quot;))
+            return;
+        }
+        window.location=&apos;access?load&amp;g=&apos;+g;
+      });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  
+  &lt;body onload=&quot;init();&quot; style=&quot;height: 100%;&quot; class=&quot;yui-skin-sam&quot; style=&quot;z-index: 0;&quot;&gt;
+
+  
+  &lt;div id=&quot;dialogDiv&quot; class=&quot;invisible&quot; &gt; &amp;nbsp;&lt;/div&gt;
+
+  &lt;div id=&quot;notopbuttons&quot; class=&quot;topbuttonmsg&quot;
+       style=&quot;display:none;&quot; &gt;
+    
+  &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 2px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+  &lt;p&gt;&lt;p&gt;&lt;img src=&apos;images/padlock.gif&apos;/&gt;&amp;nbsp;Save is Disabled: You do not have Consent to modify this Patient&apos;s PHR.&lt;/p&gt;&lt;/p&gt;
+  &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 2px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+
+  &lt;/div&gt;
+  &lt;div id=&quot;nobuttonsfixed&quot; class=&quot;topbuttonmsg&quot;
+        &gt;
+    
+  &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 2px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+  &lt;p&gt;&lt;p&gt;&lt;img src=&apos;images/padlock.gif&apos;/&gt;This is a saved CCR. Use the Edit as New CCR tool to edit and reply.&lt;/p&gt;&lt;/p&gt;
+  &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 1px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(224,243,209) 2px solid; BORDER-TOP: rgb(224,243,209) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(224,243,209) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(224,243,209) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(193,231,162)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+
+  &lt;/div&gt;
+  &lt;div id=&quot;privacyWarning&quot; style=&quot;z-index: 2&quot;&gt;
+     &lt;table style=&quot;margin-left: 5px;&quot; class=&quot;privacyTable&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+     &lt;tr&gt;
+       &lt;td valign=&quot;top&quot;&gt;&lt;img src=&quot;images/padlock.gif&quot;/&gt;&lt;/td&gt;
+       &lt;td&gt;&lt;b&gt;Warning!&lt;/b&gt; This information will appear in unsecure mail notifications and should not include private information.&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;form name=&quot;referralForm&quot; id=&quot;referralForm&quot; method=&quot;post&quot; onsubmit=&quot;return goReferralEmail();&quot; action=&quot;/router/confirmReferral.do&quot; target=&quot;referralEmail&quot;&gt;
+    &lt;div id=&quot;referralFormContainer&quot; class=&quot;dialog &quot;&gt;
+      
+  &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 2px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 1px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 1px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 1px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;div&gt;
+    &lt;div class=&apos;hd&apos;&gt;Notifications&lt;/div&gt;
+    
+            &lt;input type=&quot;hidden&quot; name=&quot;initialSeriesGuid&quot; value=&quot;&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;initialSeriesIndex&quot; value=&quot;&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;updateIndex&quot; value=&quot;0&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;newAcct&quot; value=&quot;false&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;destAcctId&quot; name=&quot;destAcctId&quot; value=&quot;&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;restore&quot; name=&quot;restore&quot; value=&quot;&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;assignedPin&quot; name=&quot;assignedPin&quot; value=&quot;&quot;/&gt;
+
+            
+            &lt;input type=&quot;hidden&quot; name=&quot;patientPrevCCRs&quot; value=&quot;&quot;/&gt;&lt;input type=&quot;hidden&quot; name=&quot;patientLaterCCRs&quot; value=&quot;&quot;/&gt;
+            
+            
+            &lt;table id=&quot;ccrTable&quot; class=&quot;ccrTable&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+            
+  &lt;tr&gt;&lt;th style=&quot;padding-top: 5px;&quot;&gt;&lt;img id=&apos;toggleToFromImg&apos; src=&apos;images/toggle_inactive.png&apos; title=&apos;Swap To and From&apos;/&gt; TO&lt;/th&gt;
+    &lt;td class=&quot;ltrtxt&quot; rowspan=&quot;3&quot;&gt;
+      &lt;table class=&quot;notificationsTable&quot; cellspacing=&quot;0&quot; width=&quot;98%&quot;&gt;
+        &lt;tr&gt;
+          &lt;td width=&quot;50%&quot; style=&quot;border-right:none;&quot;&gt;
+            
+            &lt;div id=&apos;toEmailWrapper&apos; style=&quot;position: relative;&quot;&gt;
+            &lt;input id=&quot;toEmail&quot; title=&quot;Enter addresses to send to. Separate multiple addresses with commas.&quot; name=&quot;toEmails&quot; class=&quot;insecureFormInput&quot; join=&quot;,&quot; value=&quot;ssadedin@medcommons.org&quot; /&gt;
+              &lt;img class=&quot;secureImg&quot; title=&quot;Do not put patient identifiable information in this field.&quot; src=&quot;images/padlock.gif&quot;/&gt;
+              &lt;div id=&apos;toACContainer&apos;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;toAcctMsg&quot; title=&quot;This User will be pre-authorized and will not require a PIN&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;img src=&quot;images/person-tiny.png&quot;/&gt;&amp;nbsp;User will be Pre-Authorized&lt;/div&gt;
+            &lt;div id=&quot;toGroupMsg&quot; title=&quot;This Group will be pre-authorized and will not require a PIN&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;img src=&quot;images/tiny-group.png&quot;/&gt;&amp;nbsp;Group will be Pre-Authorized&lt;/div&gt;
+           &lt;/td&gt;
+          &lt;td style=&quot;border-bottom: none;&quot;  style=&quot;position: relative;&quot;&gt;
+            &lt;div style=&quot;position: relative;&quot;&gt;
+             
+               &lt;span style=&quot;float: right; padding: 3px; padding-right: 18px; position: relative;&quot; id=&quot;trackingNumberContainer&quot; class=&quot;insecure&quot;&gt;
+                &lt;div id=&quot;trackingNumber&quot;&gt;
+                  
+                    
+                    
+                    
+                      5334 9367 8869
+                    
+                  
+                  &lt;/div&gt;
+                  &lt;img class=&quot;secureImg&quot; title=&quot;Do not put patient identifiable information in this field.&quot;  style=&quot;top: 3px;&quot; src=&quot;images/padlock.gif&quot;/&gt;
+               &lt;/span&gt;
+               
+               &lt;span style=&quot;float: left; font-weight: bold;&quot;&gt;Tracking Number&lt;/span&gt;
+             &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td style=&quot;border-top: none; border-bottom: none; border-right: none;&quot;&gt;
+          
+          &lt;div style=&quot;position: relative;&quot;&gt;
+            &lt;input id=&quot;sourceEmail&quot; name=&quot;sourceEmails&quot; class=&quot;insecureFormInput&quot; join=&quot;,&quot; value=&quot;jsmith@teprccrdemohealthclinic.com,jsmith@ccrdemohealthclinic.com,ssadedin@medcommons.net&quot; /&gt;
+              &lt;img class=&quot;secureImg&quot; title=&quot;Do not put patient identifiable information in this field.&quot;  src=&quot;images/padlock.gif&quot;/&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td style=&quot;border-top: none; border-bottom: none;&quot;&gt;
+            
+            
+            &lt;span style=&quot;float: left; font-weight: bold;&quot;&gt;Assigned PIN&lt;/span&gt;
+            &lt;span id=&quot;pinFields&quot; class=&quot;writeOnly&quot; style=&quot;float: right;&quot;&gt;
+              &lt;input type=&quot;text&quot; class=&quot;pinInput&quot; name=&quot;pin0&quot; value=&quot;&quot; size=&quot;1&quot;/&gt;
+              &lt;input type=&quot;text&quot; class=&quot;pinInput&quot; name=&quot;pin1&quot; size=&quot;1&quot; value=&quot;&quot;/&gt;
+              &lt;input type=&quot;text&quot; class=&quot;pinInput&quot; name=&quot;pin2&quot; size=&quot;1&quot; value=&quot;&quot;/&gt;
+              &lt;input type=&quot;text&quot; class=&quot;pinInput&quot; name=&quot;pin3&quot; size=&quot;1&quot; value=&quot;&quot;/&gt;
+              &lt;input type=&quot;text&quot; class=&quot;pinInput&quot; name=&quot;pin4&quot; size=&quot;1&quot; value=&quot;&quot;/&gt;
+            &lt;/span&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;&quot; colspan=&quot;2&quot; &gt;
+          &lt;div style=&quot;position: relative;&quot;&gt;
+            
+            
+            
+            &lt;input class=&quot;insecureFormInput&quot;
+                   id=&quot;ccrPurpose&quot;
+                   name=&quot;ccrPurpose&quot;
+                   style=&quot;width: 99%; padding-left: 4px; padding-bottom: 4px;&quot;
+                   value=&quot;Request For Consult&quot;
+                   /&gt;
+              &lt;img class=&quot;secureImg&quot; title=&quot;Do not put patient identifiable information in this field.&quot;  style=&quot;top: 3px;&quot; src=&quot;images/padlock.gif&quot;/&gt;
+              &lt;div id=&apos;purposesACContainer&apos;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;&lt;th style=&quot;padding-top: 5px;&quot;&gt;FROM&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;th&gt;PURPOSE&lt;/th&gt;&lt;/tr&gt;
+
+            &lt;tr &gt;&lt;th height=&quot;30&quot;&gt;&amp;nbsp;&lt;/th&gt;
+                 &lt;td class=&quot;smallltrtxt&quot; align=&quot;right&quot;&gt;
+                   &lt;div id=&quot;termsOfUseLabel&quot; style=&quot;display:none;&quot;&gt;
+                     &lt;input type=&quot;checkbox&quot; name=&quot;termsOfUse&quot; value=&quot;on&quot; id=&quot;termsOfUseCheckBox&quot;&gt;&lt;span  style=&quot;position: relative; top: -2px&quot;&gt;I accept the &lt;a href=&quot;http://www.medcommons.net/termsofuse.html&quot; target=&quot;termsOfUse&quot; title=&quot;Click here to read the Terms of Use&quot;&gt;Terms of Use&lt;/a&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                 &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;&lt;th&gt;COMMENT&lt;br/&gt;&lt;br/&gt;&lt;/th&gt;
+                
+                
+                &lt;td class=&quot;ltrtxt&quot;&gt;
+                    &lt;textarea 
+                      id=&quot;purposeText&quot;
+                      rows=&quot;1&quot;
+                      style=&quot;font-weight: bold; height: 14px;&quot;
+                      cols=&quot;80&quot;
+                      class=&quot;formInput&quot;
+                      onfocus=&quot;highlight(this)&quot;
+                      onblur=&quot;unhighlight(this)&quot; name=&quot;purposeText&quot;
+                      onkeyup=&quot;adjustTextAreaHeight(this);&quot;
+                      &gt;&lt;/textarea&gt;
+                      &lt;br/&gt;
+                      &lt;br/&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            
+              
+                &lt;tr height=&quot;20&quot;&gt;
+                  &lt;th class=&quot;leftnav&quot; id=&quot;referencesLabel&quot; style=&apos;position: relative;&apos;&gt;&lt;span&gt;REFERENCES&lt;/span&gt;&lt;/td&gt;
+                  &lt;td class=&quot;ltrtxt&quot; rowspan=&quot;2&quot;&gt;
+                        &lt;div id=&quot;referencesTable&quot;&gt;
+                          
+      
+
+
+&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;referencesTable&quot;&gt;
+&lt;tbody id=&quot;referencesTableBody&quot;&gt;
+
+
+    
+    
+    &lt;tr  &gt;
+      &lt;script type=&quot;text/javascript&quot;&gt;
+        
+      &lt;/script&gt;
+      &lt;td class=&quot;referenceIndexCell&quot;&gt;1&lt;/td&gt;
+      &lt;td&gt;
+        
+          
+          &lt;a href=&apos;javascript:goViewer(&quot;95b1525e6ff1079901f446af0b114557307eac9e&quot;,1);&apos; title=&quot;Open this Reference in the Viewer&quot;&gt;ccrsample2_solventus_CXP.xml&lt;/a&gt;
+        
+      &lt;/td&gt;
+      &lt;td class=&quot;seriesTypeCell&quot;&gt;
+        
+          
+          
+          UNINITIALIZED
+        
+      &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;
+          
+            ( 40.5 KB)
+          
+      &lt;/td&gt;
+      &lt;td align=&apos;left&apos; style=&apos;vertical-align: middle;&apos; valign=&quot;center&quot;&gt;
+      &lt;div style=&quot;position: relative;&quot;&gt;
+      
+        
+        
+          &lt;a class=&quot;deleteLink&quot; href=&quot;javascript:deleteSeries(1);&quot; title=&quot;Delete this Reference&quot;&gt;X&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+        
+      
+      &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+                        &lt;/div&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              
+            
+            &lt;tr&gt;
+              &lt;th rowspan=&quot;2&quot; valign=&quot;top&quot;&gt;
+              &amp;nbsp;
+                &lt;/th&gt;
+                
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        
+    &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 1px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 1px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 1px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 2px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+  &lt;/div&gt;
+
+    &lt;/div&gt; 
+
+    &lt;div id=&quot;patientCard&quot; class=&quot;dialog invisible expanded&quot; style=&quot;z-index: 0;&quot;&gt;
+    
+  &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 2px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 1px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 1px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(181,180,163) 1px solid; BORDER-TOP: rgb(181,180,163) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(181,180,163) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(181,180,163) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(137,135,112)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+    &lt;div&gt;
+    &lt;div class=&apos;hd&apos;&gt;Patient Demographics&lt;/div&gt;
+    
+          &lt;div class=&quot;bd&quot;&gt;
+              &lt;h4 id=&quot;patientNameLabel&quot;&gt;Name&lt;/h4&gt;
+              &lt;span id=&quot;patientNameBlock&quot;&gt;
+                 &lt;input title=&quot;First Name&quot; style=&quot;width: 100px;&quot; name=&quot;patientGivenName&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;John&quot; /&gt;
+                 &lt;span id=&quot;patientMiddleNameBlock&quot; style=&quot;display: none;&quot;&gt;&amp;nbsp;
+                 &lt;input title=&quot;Middle Name&quot; style=&quot;width: 40px;&quot; name=&quot;patientMiddleName&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;B&quot; /&gt;
+                 &lt;/span&gt;
+                 &amp;nbsp;
+                 &lt;input title=&quot;Family Name&quot; style=&quot;width: 90px;&quot; name=&quot;patientFamilyName&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;Doqit&quot; /&gt;
+                 &amp;nbsp;
+                 &lt;input type=&quot;text&quot; name=&quot;ageSex&quot; id=&quot;pcAgeSex&quot; class=&quot;formInput&quot; title=&quot;Age/Sex&quot; style=&quot;width: 35px;&quot; readonly=&quot;true&quot; value=&quot;&quot;/&gt;
+                 &amp;nbsp;
+                 &lt;input type=&quot;text&quot; name=&quot;headerDob&quot; id=&quot;pcHeaderDob&quot; class=&quot;formInput&quot; title=&quot;Patient Date of Birth&quot; style=&quot;width: 75px;&quot; readonly=&quot;true&quot; value=&quot;&quot;/&gt;
+                 &amp;nbsp;
+                 &lt;br id=&quot;patientIdBreak&quot;/&gt;
+                 &lt;h4 id=&quot;patientIdHeading&quot;&gt;ID&lt;/h4&gt;
+                 &lt;input name=&quot;patientId&quot; class=&quot;formInput&quot; title=&quot;Patient ID&quot; onfocus=&quot;highlight(this);&quot; 
+                        style=&quot;width: 140px; position: relative;&quot; readonly=&quot;true&quot; value=&apos;&apos;/&gt;
+                 &lt;span id=&quot;patientIdButtons&quot;&gt;
+                   &lt;img id=&quot;patientIdUp&quot;
+                      onclick=&quot;editPatientId();&quot;
+                      src=&quot;images/greypen.gif&quot;
+                      title=&quot;Edit Patient ID&quot;/&gt;
+                   &lt;img id=&quot;patientIdDown&quot;
+                     onclick=&quot;patientIdDownClick();&quot;
+                     src=&quot;images/black_arrow_down.gif&quot;
+                     title=&quot;Choose Patient Id&quot;
+                     /&gt;
+                 &lt;/span&gt;
+                 &lt;span id=&quot;headerMcId&quot; style=&quot;position:relative;&quot;&gt;
+                 &lt;/span&gt;
+              &lt;/span&gt;
+              &lt;div id=&quot;patientIdLabel&quot; style=&apos;clear:both;&apos;&gt;&amp;nbsp;&lt;/div&gt;
+              &lt;span id=&quot;patientLabels&quot; class=&quot;invisible&quot;&gt;
+                &lt;span id=&quot;patientGivenLabel&quot;&gt;Given&lt;/span&gt;
+                &lt;span id=&quot;patientFamilyLabel&quot;&gt;Family&lt;/span&gt;
+              &lt;/span&gt;
+           &lt;div id=&quot;patientCardInner&quot;&gt;
+           
+           
+           &lt;h4&gt;DOB&lt;/h4&gt;
+             &lt;input name=&quot;patientDateOfBirth&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; size=&quot;28&quot; style=&quot;&quot;
+              title=&quot;Enter dates as either exact dates in mm/dd/yyyy or yyyy-mm-dd hh:mm form or as approximate dates in free text form&quot;
+              value=&quot;2005-08-16T04:00:00Z&quot;/&gt;
+              &lt;span class=&quot;smallPatientLabel&quot;&gt;&amp;nbsp;(example: mm/dd/yyyy)&lt;br/&gt;&lt;/span&gt;
+           &lt;br style=&quot;clear:both;&quot;/&gt;
+           &lt;h4&gt;Age&lt;/h4&gt;
+           &lt;input name=&quot;patientAge&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; size=&quot;4&quot; style=&quot;text-align: center&quot; value=&quot;&quot;/&gt;
+            &amp;nbsp;&lt;b class=&apos;patientCardHeading&apos;&gt;Sex&lt;/b&gt;&amp;nbsp;
+            &lt;input id=&quot;patientGender&quot; name=&quot;patientGender&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;Male&quot; /&gt;
+            &lt;div id=&apos;genderACContainer&apos;&gt;&lt;/div&gt;
+           &lt;br style=&quot;clear:both;&quot;/&gt;
+           &lt;h5&gt;Email&amp;nbsp;&amp;nbsp;&lt;/h5&gt;
+           &lt;input style=&quot;width: 263px;&quot; name=&quot;patientEmail&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;jdoqit@ccr.ccr&quot; /&gt;
+           &lt;br style=&quot;clear:both;&quot;/&gt;
+           &lt;h5&gt;Street&amp;nbsp;&amp;nbsp;&lt;/h5&gt;
+           &lt;input style=&quot;width: 263px;&quot; name=&quot;patientAddress1&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;100 Quality Lane&quot; /&gt;
+           &lt;br style=&quot;clear:both;&quot;/&gt;
+           &lt;h5&gt;City&amp;nbsp;&amp;nbsp;&lt;/h5&gt;
+           &lt;input name=&quot;patientCity&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;Leawood&quot; /&gt;
+           &amp;nbsp;&lt;span class=&quot;smallPatientLabel&quot;&gt;State&lt;/span&gt;
+           &lt;input style=&quot;width:30px;&quot; name=&quot;patientState&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;KS&quot; /&gt;
+           &amp;nbsp;&lt;span class=&quot;smallPatientLabel&quot;&gt;ZIP&lt;/span&gt;
+           &lt;input style=&quot;width:40px;&quot; name=&quot;patientPostalCode&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;66211&quot; /&gt;
+           &lt;br style=&quot;clear:both;&quot;/&gt;
+           &lt;h5&gt;Country&amp;nbsp;&amp;nbsp;&lt;/h5&gt;
+           &lt;input style=&quot;width:60px;&quot; name=&quot;patientCountry&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;&quot; /&gt;
+            &lt;span style=&quot;position: absolute; left: 150px;&quot;&gt;
+              &lt;span class=&quot;smallPatientLabel&quot;&gt;Phone&lt;/span&gt;&amp;nbsp;&lt;input name=&quot;patientPhoneNumber&quot; class=&quot;formInput&quot; onfocus=&quot;highlight(this);&quot; value=&quot;913-555-1212&quot; /&gt;
+            &lt;/span&gt;
+            &lt;input type=&quot;button&quot; id=&apos;closePatientCardButton&apos; onclick=&apos;demographicsOK()&apos; value=&quot;Close&quot;/&gt;
+          &lt;/div&gt; 
+        &lt;/div&gt; 
+        
+    &lt;DIV style=&quot;BACKGROUND-COLOR: rgb(255,255,255)&quot;&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 1px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 1px solid; MARGIN-RIGHT: 0px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 2px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 1px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 1px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 1px solid; MARGIN-RIGHT: 1px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 1px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 2px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 1px solid; MARGIN-RIGHT: 2px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;SPAN style=&quot;BORDER-RIGHT: rgb(241,240,235) 2px solid; BORDER-TOP: rgb(241,240,235) 0px solid; DISPLAY: block; FONT-SIZE: 1px; MARGIN-LEFT: 3px; OVERFLOW: hidden; BORDER-LEFT: rgb(241,240,235) 2px solid; MARGIN-RIGHT: 3px; BORDER-BOTTOM: rgb(241,240,235) 0px solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(226,225,215)&quot;&gt;&lt;/SPAN&gt;&lt;/DIV&gt;
+  &lt;/div&gt;
+
+     &lt;/div&gt; 
+    &lt;br/&gt;
+   &lt;/form&gt;
+
+    
+
+    &lt;div id=&quot;acdiv&quot; &gt;&lt;/div&gt;
+
+    &lt;div id=&quot;addWebReferenceDiv&quot; class=&quot;popupForm&quot;&gt;
+      &lt;h4&gt;Add Web Reference&lt;/h4&gt;
+      &lt;form name=&quot;addWebReferenceForm&quot; onsubmit=&quot;return false;&quot;&gt;
+        &lt;label for=&quot;webRefUrl&quot;&gt;Enter the URL of the document here:&lt;/label&gt;
+        &lt;br/&gt;&lt;br/&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;input type=&quot;text&quot; name=&quot;webRefUrl&quot; size=&quot;50&quot; value=&quot;&quot;/&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Add&quot; onclick=&quot;addWebRefSubmit()&quot;/&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Cancel&quot; onclick=&quot;addWebRefCancel();&quot;/&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;editPatientIdDiv&quot; class=&quot;popupForm&quot;&gt;
+      &lt;h4&gt;Edit Patient ID&lt;/h4&gt;
+      &lt;form name=&quot;editPatientIdForm&quot; onsubmit=&quot;return false;&quot;&gt;
+        &lt;label for=&quot;patientId&quot;&gt;ID:&lt;/label&gt;&amp;nbsp;&amp;nbsp;&lt;input type=&quot;text&quot; name=&quot;patientId&quot; size=&quot;30&quot; value=&quot;&quot;/&gt;
+        &lt;br/&gt;
+        &lt;label for=&quot;patientId&quot;&gt;Type:&lt;/label&gt;&amp;nbsp;&amp;nbsp;&lt;input type=&quot;text&quot; name=&quot;patientIdType&quot; size=&quot;30&quot; value=&quot;&quot;/&gt;
+        &lt;br/&gt;
+        &lt;br style=&quot;height: 3px;&quot;/&gt;
+        &lt;label&gt;&amp;nbsp;&lt;/label&gt;&amp;nbsp;&amp;nbsp;
+        &lt;input type=&quot;button&quot; value=&quot;Save&quot; onclick=&quot;editPatientIdSubmit()&quot;/&gt;
+        &lt;button name=&quot;delete&quot; onclick=&quot;deletePatientIdSubmit();&quot;&gt;Delete&lt;img style=&quot;vertical-align: middle; margin: 3px 2px;&quot; src=&quot;images/delete.gif&quot;/&gt;&lt;/button&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Cancel&quot; onclick=&quot;hide(&apos;editPatientIdDiv&apos;);&quot;/&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+
+    
+
+
+
+
+
+ 
+
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    function familyhistoryInit() {
+      
+    
+    
+       
+       
+       addEditorRow( 
+          &apos;Mother&apos;,
+          &apos;&apos;,
+          &apos;&apos;,
+          &apos;&apos;
+          );
+    
+       
+       
+       addEditorRow( 
+          &apos;Father&apos;,
+          &apos;&apos;,
+          &apos;&apos;,
+          &apos;&apos;
+          );
+    
+  
+
+      
+      
+      
+        
+        var commentTd = $(&apos;familyhistory[0].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+        
+        var commentTd = $(&apos;familyhistory[1].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+      
+      if(!window.editorTitleRounded) {
+        roundClass(&apos;DIV&apos;,&apos;editorTitle&apos;,{corners:&apos;top&apos;});
+        window.editorTitleRounded=true;
+      }
+      $(&apos;familyhistoryTable&apos;).initialized = true;
+      $(&apos;familyhistoryEditor&apos;).dirty=false;
+    }
+  &lt;/script&gt;
+  &lt;div id=&quot;familyhistoryEditor&quot; class=&quot;editorOuter&quot;&gt;
+    &lt;div class=&quot;editorTitle&quot;&gt;&lt;div style=&quot;padding: 0px 2px;&quot;&gt;Family History&lt;/div&gt;&lt;/div&gt;
+    &lt;div id=&quot;familyhistoryEditorInner&quot; class=&quot;ccrEditForm&quot;&gt;
+        &lt;div id=&quot;familyhistoryBox&quot; class=&quot;editorBody&quot;&gt;
+          &lt;p style=&quot;margin:0px;padding:5px 2px 10px 2px;&quot;&gt;Select an entry to edit or click the &quot;plus&quot; sign to create a new one:&lt;/p&gt;
+          &lt;div style=&quot;border-style: none; border-width: 1px;&quot; &gt;
+            &lt;table id=&quot;familyhistoryTable&quot; cellpadding=&quot;0&quot; cellspacing=&quot;2&quot; class=&quot;editorTable&quot; border=&quot;0&quot; onmouseover=&quot;initTable(this);&quot;&gt;
+              &lt;thead&gt;
+              &lt;tr&gt;
+                
+    &lt;th id=&apos;dateTime&apos;&gt;Date&lt;/th&gt;
+    &lt;th id=&apos;familyMember.actorRole&apos;&gt;Relation&lt;/th&gt;
+    &lt;th id=&apos;problem.description&apos;&gt;Problem Description&lt;/th&gt;
+    &lt;th id=&apos;problem.code&apos;&gt;Code&lt;/th&gt;
+    &lt;th id=&apos;dateTime&apos;&gt;Date/Time&lt;/th&gt;
+  
+                &lt;th id=&apos;comment&apos;&gt;Comment&lt;/th&gt;
+                &lt;th title=&quot;Add Row&quot;&gt;&lt;a href=&quot;javascript:addEditorRow();&quot; title=&quot;Add Row&quot;&gt;&lt;img src=&quot;images/plus.gif&quot;  border=&quot;0&quot;/&gt;&lt;/a&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+              &lt;/tbody&gt;
+              &lt;/table&gt;
+            &lt;/div&gt; 
+          &lt;hr/&gt;
+          &lt;input type=&quot;button&quot; id=&quot;saveFamilyHistory&quot; value=&quot;Save&quot; onclick=&quot;editorSave(&apos;FamilyHistory&apos;);&quot;/&gt;&amp;nbsp;
+          &lt;input type=&quot;button&quot; value=&quot;Cancel&quot; onclick=&quot;hideEditor();&quot;/&gt;
+          &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt;
+
+
+
+    
+
+
+
+
+
+ 
+
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    function vitalsignsInit() {
+      
+    
+    
+  
+
+      
+      
+      
+      
+      if(!window.editorTitleRounded) {
+        roundClass(&apos;DIV&apos;,&apos;editorTitle&apos;,{corners:&apos;top&apos;});
+        window.editorTitleRounded=true;
+      }
+      $(&apos;vitalsignsTable&apos;).initialized = true;
+      $(&apos;vitalsignsEditor&apos;).dirty=false;
+    }
+  &lt;/script&gt;
+  &lt;div id=&quot;vitalsignsEditor&quot; class=&quot;editorOuter&quot;&gt;
+    &lt;div class=&quot;editorTitle&quot;&gt;&lt;div style=&quot;padding: 0px 2px;&quot;&gt;Vital Signs&lt;/div&gt;&lt;/div&gt;
+    &lt;div id=&quot;vitalsignsEditorInner&quot; class=&quot;ccrEditForm&quot;&gt;
+        &lt;div id=&quot;vitalsignsBox&quot; class=&quot;editorBody&quot;&gt;
+          &lt;p style=&quot;margin:0px;padding:5px 2px 10px 2px;&quot;&gt;Select an entry to edit or click the &quot;plus&quot; sign to create a new one:&lt;/p&gt;
+          &lt;div style=&quot;border-style: none; border-width: 1px;&quot; &gt;
+            &lt;table id=&quot;vitalsignsTable&quot; cellpadding=&quot;0&quot; cellspacing=&quot;2&quot; class=&quot;editorTable&quot; border=&quot;0&quot; onmouseover=&quot;initTable(this);&quot;&gt;
+              &lt;thead&gt;
+              &lt;tr&gt;
+                
+              &lt;th id=&apos;dateTime&apos;&gt;Date&lt;/th&gt;
+              &lt;th id=&apos;description.text&apos;&gt;Description&lt;/th&gt;
+              &lt;th id=&apos;test.description.text&apos;&gt;Test&lt;/th&gt;
+              &lt;th id=&apos;test.testResult.value&apos;&gt;Result&lt;/th&gt;
+              &lt;th id=&apos;test.testResult.units.unit&apos;&gt;Units&lt;/th&gt;
+  
+                &lt;th id=&apos;comment&apos;&gt;Comment&lt;/th&gt;
+                &lt;th title=&quot;Add Row&quot;&gt;&lt;a href=&quot;javascript:addEditorRow();&quot; title=&quot;Add Row&quot;&gt;&lt;img src=&quot;images/plus.gif&quot;  border=&quot;0&quot;/&gt;&lt;/a&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+              &lt;/tbody&gt;
+              &lt;/table&gt;
+            &lt;/div&gt; 
+          &lt;hr/&gt;
+          &lt;input type=&quot;button&quot; id=&quot;saveVitalSigns&quot; value=&quot;Save&quot; onclick=&quot;editorSave(&apos;VitalSigns&apos;);&quot;/&gt;&amp;nbsp;
+          &lt;input type=&quot;button&quot; value=&quot;Cancel&quot; onclick=&quot;hideEditor();&quot;/&gt;
+          &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt;
+
+
+
+    
+
+
+
+
+
+ 
+
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    function proceduresInit() {
+      
+    
+    
+       
+       
+       addEditorRow( 
+          &apos;2005-08-08T04:00:00Z&apos;,
+          &apos;&apos;,
+          &apos;86580&apos;,
+          &apos;TB intradermal test&apos;,
+          &apos;Dr. Smith&amp;#039;s Office&apos;,
+          &apos;In Progress&apos;
+          );
+    
+       
+       
+       addEditorRow( 
+          &apos;2005-08-05T04:00:00Z&apos;,
+          &apos;&apos;,
+          &apos;93024&apos;,
+          &apos;Cardiac drug stress test&apos;,
+          &apos;St. Mary Hospital&apos;,
+          &apos;Completed&apos;
+          );
+    
+       
+       
+       addEditorRow( 
+          &apos;1982-09-14T04:00:00Z&apos;,
+          &apos;Surgical&apos;,
+          &apos;44970&apos;,
+          &apos;Laparoscopy, appendectomy&apos;,
+          &apos;&apos;,
+          &apos;Completed&apos;
+          );
+    
+  
+
+      
+      
+      
+        
+        var commentTd = $(&apos;procedures[0].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+        
+        var commentTd = $(&apos;procedures[1].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+        
+        var commentTd = $(&apos;procedures[2].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+      
+      if(!window.editorTitleRounded) {
+        roundClass(&apos;DIV&apos;,&apos;editorTitle&apos;,{corners:&apos;top&apos;});
+        window.editorTitleRounded=true;
+      }
+      $(&apos;proceduresTable&apos;).initialized = true;
+      $(&apos;proceduresEditor&apos;).dirty=false;
+    }
+  &lt;/script&gt;
+  &lt;div id=&quot;proceduresEditor&quot; class=&quot;editorOuter&quot;&gt;
+    &lt;div class=&quot;editorTitle&quot;&gt;&lt;div style=&quot;padding: 0px 2px;&quot;&gt;Procedures&lt;/div&gt;&lt;/div&gt;
+    &lt;div id=&quot;proceduresEditorInner&quot; class=&quot;ccrEditForm&quot;&gt;
+        &lt;div id=&quot;proceduresBox&quot; class=&quot;editorBody&quot;&gt;
+          &lt;p style=&quot;margin:0px;padding:5px 2px 10px 2px;&quot;&gt;Select an entry to edit or click the &quot;plus&quot; sign to create a new one:&lt;/p&gt;
+          &lt;div style=&quot;border-style: none; border-width: 1px;&quot; &gt;
+            &lt;table id=&quot;proceduresTable&quot; cellpadding=&quot;0&quot; cellspacing=&quot;2&quot; class=&quot;editorTable&quot; border=&quot;0&quot; onmouseover=&quot;initTable(this);&quot;&gt;
+              &lt;thead&gt;
+              &lt;tr&gt;
+                
+              &lt;th id=&apos;dateTime&apos;&gt;Date&lt;/th&gt;
+              &lt;th id=&apos;type.text&apos;&gt;Type&lt;/th&gt;
+              &lt;th id=&apos;description.code.value&apos;&gt;Code&lt;/th&gt;
+              &lt;th id=&apos;description.text&apos;&gt;Description&lt;/th&gt;
+              &lt;th id=&apos;locations.location.description.text&apos;&gt;Location&lt;/th&gt;
+              &lt;th id=&apos;status.text&apos;&gt;Status&lt;/th&gt;
+  
+                &lt;th id=&apos;comment&apos;&gt;Comment&lt;/th&gt;
+                &lt;th title=&quot;Add Row&quot;&gt;&lt;a href=&quot;javascript:addEditorRow();&quot; title=&quot;Add Row&quot;&gt;&lt;img src=&quot;images/plus.gif&quot;  border=&quot;0&quot;/&gt;&lt;/a&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+              &lt;/tbody&gt;
+              &lt;/table&gt;
+            &lt;/div&gt; 
+          &lt;hr/&gt;
+          &lt;input type=&quot;button&quot; id=&quot;saveProcedures&quot; value=&quot;Save&quot; onclick=&quot;editorSave(&apos;Procedures&apos;);&quot;/&gt;&amp;nbsp;
+          &lt;input type=&quot;button&quot; value=&quot;Cancel&quot; onclick=&quot;hideEditor();&quot;/&gt;
+          &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt;
+
+
+
+    
+
+
+
+
+
+ 
+
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    function medicationsInit() {
+      
+    
+    
+       
+       
+       addEditorRow( 
+          
+          &apos;2003-12-09T05:00:00Z&apos;,
+          &apos;furosemide&apos;,
+          &apos;Furosemide&apos;,
+          &apos;80 mg&apos;,
+          &apos;&apos;,
+          &apos;tablet&apos;,
+          &apos;Active&apos;
+          );
+    
+       
+       
+       addEditorRow( 
+          
+          &apos;2005-03-29T05:00:00Z&apos;,
+          &apos;metformin&apos;,
+          &apos;Glucophage XR&apos;,
+          &apos;500 mg&apos;,
+          &apos;&apos;,
+          &apos;tablet, extended release&apos;,
+          &apos;Active&apos;
+          );
+    
+       
+       
+       addEditorRow( 
+          
+          &apos;2005-03-29T05:00:00Z&apos;,
+          &apos;metoprolol&apos;,
+          &apos;Lopressor&apos;,
+          &apos;100 mg&apos;,
+          &apos;&apos;,
+          &apos;tablet&apos;,
+          &apos;Active&apos;
+          );
+    
+       
+       
+       addEditorRow( 
+          
+          &apos;2005-03-29T05:00:00Z&apos;,
+          &apos;potassium chloride&apos;,
+          &apos;Potassium Chloride&apos;,
+          &apos;40 mEq/15 mL&apos;,
+          &apos;&apos;,
+          &apos;liquid&apos;,
+          &apos;Active&apos;
+          );
+    
+  
+
+      
+      
+      
+        
+        var commentTd = $(&apos;medications[0].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+        
+        var commentTd = $(&apos;medications[1].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+        
+        var commentTd = $(&apos;medications[2].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+        
+        var commentTd = $(&apos;medications[3].comment&apos;);
+        commentTd.emptyField=false;
+        replaceChildNodes(commentTd,&apos;&apos;);
+      
+      
+      if(!window.editorTitleRounded) {
+        roundClass(&apos;DIV&apos;,&apos;editorTitle&apos;,{corners:&apos;top&apos;});
+        window.editorTitleRounded=true;
+      }
+      $(&apos;medicationsTable&apos;).initialized = true;
+      $(&apos;medicationsEditor&apos;).dirty=false;
+    }
+  &lt;/script&gt;
+  &lt;div id=&quot;medicationsEditor&quot; class=&quot;editorOuter&quot;&gt;
+    &lt;div class=&quot;editorTitle&quot;&gt;&lt;div style=&quot;padding: 0px 2px;&quot;&gt;Medications&lt;/div&gt;&lt;/div&gt;
+    &lt;div id=&quot;medicationsEditorInner&quot; class=&quot;ccrEditForm&quot;&gt;
+        &lt;div id=&quot;medicationsBox&quot; class=&quot;editorBody&quot;&gt;
+          &lt;p style=&quot;margin:0px;padding:5px 2px 10px 2px;&quot;&gt;Select an entry to edit or click the &quot;plus&quot; sign to create a new one:&lt;/p&gt;
+          &lt;div style=&quot;border-style: none; border-width: 1px;&quot; &gt;
+            &lt;table id=&quot;medicationsTable&quot; cellpadding=&quot;0&quot; cellspacing=&quot;2&quot; class=&quot;editorTable&quot; border=&quot;0&quot; onmouseover=&quot;initTable(this);&quot;&gt;
+              &lt;thead&gt;
+              &lt;tr&gt;
+                
+              &lt;th id=&apos;dateTime&apos;&gt;Date&lt;/th&gt;
+              &lt;th id=&apos;product.productName.text&apos;&gt;Name&lt;/th&gt;
+              &lt;th id=&apos;product.brandName.text&apos;&gt;Brand&lt;/th&gt;
+              &lt;th id=&apos;product.strength.value&apos;&gt;Strength&lt;/th&gt;
+              &lt;th id=&apos;product.strength.units.unit&apos;&gt;Units&lt;/th&gt;
+              &lt;th id=&apos;product.form.text&apos;&gt;Form&lt;/th&gt;
+              &lt;th id=&apos;status.text&apos;&gt;Status&lt;/th&gt;
+  
+                &lt;th id=&apos;comment&apos;&gt;Comment&lt;/th&gt;
+                &lt;th title=&quot;Add Row&quot;&gt;&lt;a href=&quot;javascript:addEditorRow();&quot; title=&quot;Add Row&quot;&gt;&lt;img src=&quot;images/plus.gif&quot;  border=&quot;0&quot;/&gt;&lt;/a&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+              &lt;/tbody&gt;
+              &lt;/table&gt;
+            &lt;/div&gt; 
+          &lt;hr/&gt;
+          &lt;input type=&quot;button&quot; id=&quot;saveMedications&quot; value=&quot;Save&quot; onclick=&quot;editorSave(&apos;Medications&apos;);&quot;/&gt;&amp;nbsp;
+          &lt;input type=&quot;button&quot; value=&quot;Cancel&quot; onclick=&quot;hideEditor();&quot;/&gt;
+          &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt;
+
+
+
+    &lt;div id=&quot;sendStatusDiv&quot; class=&quot;popupForm&quot;&gt;
+  &lt;h3 id=&quot;sendStatusTitle&quot;&gt;Send Status&lt;/h3&gt;
+  &lt;table id=&quot;statusTable&quot; style=&quot;margin-left: 10px;&quot;&gt;
+      &lt;tr&gt;&lt;th&gt;Status&lt;/th&gt;&lt;td id=&quot;ssStatus&quot;&gt;Sending&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;Tracking Number&lt;/th&gt;&lt;td id=&quot;ssTrackingNumber&quot;&gt;-&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;PIN&lt;/th&gt;&lt;td id=&quot;ssPin&quot;&gt;-&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr id=&quot;ssAcctCreatedRow&quot; &gt;&lt;th id=&quot;ssAcctCreatedLabel&quot;&gt;&amp;nbsp;&lt;/th&gt;&lt;td id=&quot;ssAcctCreated&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;&amp;nbsp;&lt;/th&gt;&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;Print&quot; style=&quot;width: 80px&quot; onClick=&quot;printResults()&quot;/&gt;
+        &amp;nbsp;&lt;input type=&quot;button&quot; value=&quot;OK&quot; style=&quot;width: 80px&quot; onClick=&quot;hide(&apos;sendStatusDiv&apos;);el(&apos;ssAcctCreated&apos;).innerHTML=&apos; &apos;; el(&apos;ssAcctCreatedLabel&apos;).innerHTML=&apos; &apos;;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;div id=&quot;ssError&quot;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+    
+    &lt;div id=&quot;mergeStatusDiv&quot; class=&quot;popupForm&quot;&gt;
+      &lt;h3 id=&quot;mergeStatusTitle&quot;&gt;Merging to Current CCR&amp;nbsp;&amp;nbsp;&lt;/h3&gt;
+      &lt;table id=&quot;statusTable&quot; style=&quot;margin-left: 10px;&quot;&gt;
+          &lt;tr&gt;&lt;th&gt;Status&lt;/th&gt;&lt;td id=&quot;mgStatus&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;th&gt;Description&lt;/th&gt;&lt;td id=&quot;mgDesc&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;th&gt;&amp;nbsp;&lt;/th&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;th&gt;&amp;nbsp;&lt;/th&gt;&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;OK&quot; style=&quot;width: 80px&quot; onClick=&quot;hide(&apos;mergeStatusDiv&apos;);&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+        &lt;div id=&quot;changeNotificationDiv&quot; class=&quot;popupForm&quot;&gt;
+      &lt;h3&gt;Current CCR Updated&lt;/h3&gt;
+      &lt;p&gt;Your Current CCR has been updated as shown below:&lt;/p&gt;
+      &lt;p style=&quot;text-align: center;&quot;&gt;
+      &lt;table id=&quot;changeNotificationTable&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;&lt;th&gt;Location&lt;/th&gt;&lt;th&gt;Changes&lt;/th&gt;&lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+      &lt;/p&gt;
+      &lt;p style=&quot;text-align: right;&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;OK&quot; style=&quot;width: 50px;&quot; onclick=&quot;clearChangeNotifications();&quot;/&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;div id=&apos;notificationsTableCache&apos;&gt;&amp;nbsp;&lt;/div&gt;
+
+
+    
+    &lt;iframe name=&quot;resultsframe&quot;
+            id=&quot;results&quot;
+            onload=&quot;resultReady();&quot;
+            src=&quot;blank.html&quot;&gt;You need support for frames to view this page&lt;/iframe&gt;
+
+    
+    &lt;iframe name=&quot;ccrframe&quot;  id=&quot;ccrframe&quot;
+            style=&quot;border-style: none; overflow: auto; border-top-style: solid;  border-top-color: #ccc;  border-top-width: 2px;&quot; 
+            frameborder=&quot;0&quot;
+            src=&quot;DisplayCCR.action?ccrIndex=0&quot;&gt;You need support for frames to view this page&lt;/iframe&gt;
+    &lt;script src=&quot;yui-2.6.0/yuiloader/yuiloader-min.js&quot;&gt;&lt;/script&gt; 
+  
+    
+  &lt;/body&gt;
+&lt;/html&gt;
+
+
+</content>
+								<totalSize>52833</totalSize>
+								<timeStamp>2009-09-22 08:39:24</timeStamp>
+								<logContent/>
+							</Response>
+						</ChildItems>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>474795</id>
+						<name>password</name>
+						<value/>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>474796</id>
+						<name>trackingNumber</name>
+						<value>%24%7Btn%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>474797</id>
+						<name>pin</name>
+						<value>%24%7BPIN%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${host}</host>
+				<path>/router/Track.action</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame>contents</targetFrame>
+				<isActive>1</isActive>
+				<label/>
+				<headers>User-Agent: Firefox 0.9.3 (compatible;MSIE 6.0; Windows 98)
+Content-Type: application/x-www-form-urlencoded
+</headers>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset/>
+				<method>2</method>
+				<waitForSubRequests>true</waitForSubRequests>
+			</Request>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<name>Edit Saved CCR</name>
+		<repetitions>1</repetitions>
+		<repeatType>1</repeatType>
+		<repeatVariable>accid</repeatVariable>
+		<incrementAutomatically>true</incrementAutomatically>
+		<incrementAll>true</incrementAll>
+		<expanded>1</expanded>
+	</Step>
+</WebScriptTool>

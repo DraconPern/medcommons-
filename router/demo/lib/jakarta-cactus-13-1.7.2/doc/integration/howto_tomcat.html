@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>Tomcat Quickstart</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Tomcat Quickstart" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x." class="currentPage">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Tomcat Quickstart forewords</h1>
+
+      
+<div class="note">
+        This tutorial applies to Cactus 1.4 or greater and Tomcat 4.0 or
+        greater.
+      </div>
+
+      
+<p>
+        This document is a step by step tutorial that explains how to set up
+        Cactus and run Cactus tests in Tomcat in less than 10 minutes !
+        (discounting download time of course :-)).
+      </p>
+      
+<p>
+        There are 2 ways of packaging Cactus so that you can execute Cactus
+        tests on your application:
+      </p>
+      
+<ul>
+        
+<li>
+          By putting all Cactus jars in your <code>WEB-INF/lib</code> directory,
+          as described in the <a href=".././integration/manual/howto_classpath.html" title="Information on how to set up the classpath for running Cactus tests.">Classpath
+          Tutorial</a>,
+        </li>
+        
+<li>
+          By putting the Cactus jars in your container classpath so that Cactus
+          will load them using the container Context class loader. This
+          tutorial will describe this strategy as it is the less intrusive one
+          and provides reuse of Cactus jars across several webapps.
+        </li>
+      
+</ul>
+      
+<p>
+        In addition to this, there are several ways to trigger the execution of
+        the Cactus tests (see the <a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">TestRunner
+        Howto</a> tutorial). We will describe the easiest one to set up in
+        this tutorial, which is by using a browser.
+      </p>
+      
+<div class="note">
+        Step 1 to step 3 are a one time install steps that you need to perform
+        only once to be able to run Cactus tests within Tomcat.
+      </div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 1: Install Tomcat</h1>
+      
+<p>
+        Download <a href="http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/" title="">Tomcat</a>
+        4.0 or greater and unzip it in any directory. Let's call this directory
+        <code>[tomcat-root]</code>.
+      </p>
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 2 : Copy the Cactus jars</h1>
+      
+<p>
+        Download the Cactus jars from the <a href=".././downloads.html" title="Downloads of Cactus releases and nightly builds.">Cactus
+        download page</a>. They are located in the <code>lib/</code>
+        directory in the zip.
+      </p>
+      
+<p>
+        Copy the following jars to <code>[tomcat-root]/common/lib</code>:
+      </p>
+      
+<ul>
+        
+<li>
+          
+<code>cactus.jar</code>
+        
+</li>
+        
+<li>
+          
+<code>commons-httpclient.jar</code>
+        
+</li>
+        
+<li>
+          
+<code>commons-logging.jar</code>
+        
+</li>
+        
+<li>
+          
+<code>junit.jar</code>
+        
+</li>
+        
+<li>
+          
+<code>aspectjrt.jar</code>
+        
+</li>
+      
+</ul>
+      
+<div class="note">
+        This is the minium set of jars needed. If later on you wish to use the
+        Cactus <a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">HttpUnit integration</a>
+        you'll also need to copy <code>httpunit.jar</code>.
+      </div>
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 3: Modify Tomcat web.xml</h1>
+      
+<p>
+        Edit <code>[tomcat-root]/conf/web.xml</code> and add the following at
+        the beginning of the file, after the <code>&lt;webapp&gt;</code> tag:
+      </p>
+
+<div class="source">
+<pre>
+&lt;servlet&gt;
+  &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;org.apache.cactus.server.ServletTestRedirector&lt;/servlet-class&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;param1&lt;/param-name&gt;
+    &lt;param-value&gt;value1 used for testing&lt;/param-value&gt;
+  &lt;/init-param&gt;
+&lt;/servlet&gt;
+
+&lt;servlet&gt;
+  &lt;servlet-name&gt;ServletTestRunner&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;org.apache.cactus.server.runner.ServletTestRunner&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+</pre>
+</div>
+
+      
+<p>
+        Then, after the last <code>&lt;servlet&gt;</code> definition (there
+        are a few provided by Tomcat in addition to our 2 above), add:
+      </p>
+
+
+<div class="source">
+<pre>
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/ServletRedirector&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;ServletTestRunner&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/ServletTestRunner&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</pre>
+</div>
+
+      
+<div class="note">
+        
+<b>Warning</b>: Be careful when you modify the global 
+        Tomcat <code>web.xml</code> file. If later on you wish to use
+        the Cactus Ant integration and more specifically if you use the
+        <code>&lt;cactifywar&gt;</code> Ant task, you may run into problems.
+        The <code>&lt;cactifywar&gt;</code> task automatically adds the
+        needed Cactus redirectors (thus they'll be added twice leading to
+        an error.
+      </div>
+      
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 4: Creating a sample applicaton to test</h1>
+      
+<p>
+        We're now going to create a very very simple application to server
+        so that we can unit test it.
+      </p>
+      
+<p>
+        First, create the following directory structure:
+      </p>
+
+
+<div class="source">
+<pre>
+[tomcat-root]/webapps
+  |_ test
+    |_ WEB-INF
+      |_ classes
+</pre>
+</div>
+
+      
+<p>
+        Then, create the following <code>SampleServlet.java</code> java source
+        file, compile it and copy the resulting .class file in
+        <code>[tomcat-root]/webapps/test/WEB-INF/classes</code>.
+      </p>
+
+
+<div class="source">
+<pre>
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
+public class SampleServlet extends HttpServlet
+{
+    public void saveToSession(HttpServletRequest request)
+    {
+    	String testparam = request.getParameter("testparam");
+    	request.getSession().setAttribute("testAttribute", testparam);
+    }
+}
+</pre>
+</div>
+
+      
+<div class="note">
+        You'll notice that this isn't even a finished servlet ! However, this
+        shows that you can start testing your code with Cactus even before
+        you have finished writing it completely. Extreme Programmers should
+        like this :-)
+      </div>
+
+      
+<p>
+        We're now read to create our first Cactus test case. Create the
+        following <code>TestSampleServlet.java</code> java source file, compile
+        it and copy the resulting .class file in
+        <code>[tomcat-root]/webapps/test/WEB-INF/classes</code>.
+      </p>
+
+
+<div class="source">
+<pre>
+import junit.framework.Test;
+import junit.framework.TestSuite;
+
+import org.apache.cactus.ServletTestCase;
+import org.apache.cactus.WebRequest;
+
+public class TestSampleServlet extends ServletTestCase
+{
+    public TestSampleServlet(String theName)
+    {
+        super(theName);
+    }
+
+    public static Test suite()
+    {
+        return new TestSuite(TestSampleServlet.class);
+    }
+
+    public void beginSaveToSessionOK(WebRequest webRequest)
+    {
+        webRequest.addParameter("testparam", "it works!");
+    }
+
+    public void testSaveToSessionOK()
+    {
+        SampleServlet servlet = new SampleServlet();
+        servlet.saveToSession(request);
+        assertEquals("it works!", session.getAttribute("testAttribute"));
+    }
+}
+</pre>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 5: Run the test</h1>
+
+      
+<p>
+        Time to enjoy our hard work ! Start Tomcat by running
+        <code>[tomcat-root]/bin/startup.bat</code> (for windows) or
+        <code>[tomcat-root]/bin/startup.sh</code> (for unix).
+      </p>
+      
+<p>
+        Open a browser and point it at
+        <code>http://localhost:8080/test/ServletTestRunner?suite=TestSampleServlet</code>
+      
+</p>
+      
+<p>
+        You should see:
+      </p>
+      
+<div class="figure">
+<img alt="XML output of ServletTestRunner" src=".././images/tomcat_xml.jpg"></div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 6: Even more fun!</h1>
+      
+<p>
+        Ok, that's nice ... But what if I want HTML instead of XML? Don't
+        worry there is a solution. Grab the following
+        <a href=".././misc/cactus-report.xsl" title="">XSLT stylesheet</a>
+        (based on the stylesheet used by the
+        <b>&lt;junitreport&gt;</b> Ant task) and drop it in
+        <code>[tomcat-root]/webapps/test</code>. Then, open a browser and type
+        <code>http://localhost:8080/test/ServletTestRunner?suite=TestSampleServlet&amp;xsl=cactus-report.xsl</code>.
+        You should now see the following:
+      </p>
+
+      
+<div class="figure">
+<img alt="HTML output of ServletTestRunner" src=".././images/tomcat_html.jpg"></div>
+
+      
+<div class="note">
+        This will work with any browser that supports client-slide XSLT 
+        transformations (both Internet Explorer and Mozilla do, for example).
+      </div>
+
+    
+</div>
+
+  
+
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

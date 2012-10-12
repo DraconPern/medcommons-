@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<servlet>
+		<servlet-name>WADO</servlet-name>
+		<servlet-class>net.medcommons.router.services.wado.WADOServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/actions.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>Part10ToXML</servlet-name>
+		<servlet-class>net.medcommons.router.services.wado.Part10ToXML</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>SimpleViewer</servlet-name>
+		<servlet-class>net.medcommons.router.services.wado.SimpleViewer</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>OrderProcessorServlet</servlet-name>
+		<servlet-class>net.medcommons.router.services.order.processing.OrderProcessorServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!-- Struts Configuration -->
+	
+	<!--   <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/actions.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  -->
+	
+	<!-- Struts actions are mapped to the .mc extension -->
+	
+	<!--
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.mc</url-pattern>
+  </servlet-mapping>
+  -->
+	<servlet-mapping>
+		<servlet-name>WADO</servlet-name>
+		<url-pattern>/WADO</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Part10ToXML</servlet-name>
+		<url-pattern>/Part10ToXML</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SimpleViewer</servlet-name>
+		<url-pattern>/SimpleViewer</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderProcessorServlet</servlet-name>
+		<url-pattern>/OrderProcessorServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Define a Security Constraint on this Application -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Entire Application</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>public</role-name>
+			<role-name>manager</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>router</realm-name>
+	</login-config>
+
+	<security-role>
+		<description>The role that is required to log in to 
+                    the Manager Application</description>
+		<role-name>public</role-name>
+	</security-role>
+
+	<security-role>
+		<description>The role that is required to log in to 
+                    the Manager Application</description>
+		<role-name>manager</role-name>
+	</security-role>
+
+  
+</web-app>
+

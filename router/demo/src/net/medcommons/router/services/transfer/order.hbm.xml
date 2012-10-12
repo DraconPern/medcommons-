@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping package="net.medcommons.router.services.transfer">
+
+ <class name="net.medcommons.router.services.transfer.MCOrder" table="MCORDER">
+ 	<meta attribute="class-description">
+ 		Represents the order used to generate routing commands.
+ 	</meta>
+  <id name="id" type="long">
+   <column name="MCORDER_ID" sql-type="INTEGER"/>
+   <generator class="native"/>
+  </id>
+	<property name="orderGuid" column = "MCORDER_GUID"/>
+	<property name="trackingNumber" column="MCORDER_TRACKINGNUMBER"/>
+	<property name="recipientGuid" column="MCORDER_RECIPIENT_GUID"/>
+	<property name="affiliate" column="MCORDER_AFFILIATE"/>
+	<property name="originatorGuid" column="MCORDER_ORIGIN_GUID"/>
+	<property name="description" column="MCORDER_DESCRIPTION"/>
+	<property name="timeCreated" column="MCORDER_TIME_CREATED"/>
+	<property name="patientName" column="MCORDER_PATIENT_NAME"/>
+	<property name="patientId" column="MCORDER_PATIENT_ID"/>
+	<property name="modality" column="MCORDER_MODALITY"/>
+	<property name="nseries" column="MCORDER_NSERIES"/>
+	<property name="nimages" column="MCORDER_NIMAGES"/>
+	<property name="patientDob" 	column="MCORDER_PATIENT_DOB"/>
+	<property name="patientSex" 	column="MCORDER_PATIENT_SEX"/>
+	<property name="patientAge" 	column="MCORDER_PATIENT_AGE"/>
+	<property name="trackingId" 	column="MCORDER_TRACKING_ID"/>
+ </class>
+ 
+
+ 
+ <class name="net.medcommons.router.services.transfer.MCOrderSeriesLink" table="ORDER_SERIES">
+  	<meta attribute="class-description">
+ 		Represents mapping of order to series.
+ 	</meta>
+  <id name="id" type="long">
+   <column name="ORDER_SERIES_ID" sql-type="INTEGER"/>
+   <generator class="native"/>
+  </id>
+  <property name="mcGuid" column="ORDER_SERIES_MCGUID"/>
+   <property name="orderGuid" column="ORDER_SERIES_ORDERGUID"/> 
+ </class>
+
+ 
+</hibernate-mapping>

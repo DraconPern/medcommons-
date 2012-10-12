@@ -1,0 +1,4 @@
+
+ERROR: No value found for External Identifier patientId
+Validation failed
+            

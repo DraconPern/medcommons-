@@ -1,0 +1,13 @@
+name,type,attrs
+
+apps.medcommons.net,Apps Home (EC2/i-95ac1efc) <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/661405' title='(rs/aws)'>(rs/aws)</a></small>
+dicomondemand.com,Dicom On Demand Home (EC2/i-fc895395) <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/430311' title='(rs/aws)'>(rs/aws)</a></small>
+familycareteam.com,Family Care Team Home (EC2/i-8ad80be3) <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/382184' title='(rs/aws)'>(rs/aws)</a></small>
+fb01.medcommons.net,Facebook Primary (EC2/i-8ad80be3) <small><a target='_new'  href='http://apps.facebook.com/hbmonitor' title='(monitor)'>(monitor)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/382184' title='(rs/aws)'>(rs/aws)</a></small>
+fb02.medcommons.net,Facebook Backup (EC2/i-8dd80be4) <small><a target='_new'  href='http://apps.facebook.com/hbmonitor' title='(monitor)'>(monitor)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/382185' title='(rs/aws)'>(rs/aws)</a></small>
+healthurl.medcommons.net,Healthurl Service (EC2/i-ca65baa3) <small><a target='_new'  href='https://healthurl.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/571610' title='(rs/aws)'>(rs/aws)</a></small>
+hot.medcommons.net,MOD Hot Spare (EC2/i-084a9061) <small><a target='_new' href='https://hot.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/438326' title='(rs/aws)'>(rs/aws)</a></small>
+pantagruel.medcommons.net,Micro Node (ARTiGO Pico-ITX A-1K) <small><a target='_new' href='https://tenth.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small>
+tenth.medcommons.net,MOD Vouchers/IS Home (EC2/i-3397675a) <small><a target='_new' href='https://tenth.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/498243' title='(rs/aws)'>(rs/aws)</a></small>
+timc.medcommons.net,TIMC Node (EC2/i-572a6a3e) <small><a target='_new' href='https://timc.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/1379569' title='(rs/aws)'>(rs/aws)</a></small>
+www.medcommons.net,Medcommons WWW (EC2/i-fc895395) <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/430311' title='(rs/aws)'>(rs/aws)</a></small>

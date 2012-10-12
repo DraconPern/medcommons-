@@ -1,0 +1,57 @@
+// Import ivy tools and retrieve dependencies
+includeTool << gant.tools.Ivy
+ant.property(file:'build.properties')
+ant.property(name:'mc.ivy.repo',value:"${System.properties['user.home']}/.mc")
+ivy.settings(file: 'ivy-settings.xml')
+ivy.retrieve(pattern:'lib/[artifact].[ext]',sync:'true')
+
+ant.taskdef(name:"groovyc",classname:"org.codehaus.groovy.ant.Groovyc")
+
+/*
+target(tests: 'run tests') {
+  depends('compile')
+
+  mkdir(dir: 'build/test-classes')
+  ant.groovyc(srcdir: 'test-src', destdir: 'build/test-classes') {
+    classpath {
+      pathelement(location: 'build/classes')
+      fileset( dir: 'lib' ) {
+        include( name: '*.jar' )
+      }
+    }
+    javac(source : '1.5' , target : '1.5' , debug : 'on') {
+      classpath {
+        pathelement(location: 'build/classes')
+        fileset(dir: 'lib' ) {
+          include(name: '*.jar' )
+        }
+      }
+    }
+  }
+
+  mkdir(dir: 'test_results')
+  junit(printsummary: 'yes',
+        showoutput: 'no',
+        fork: 'yes',
+        haltonfailure: 'yes') {
+          classpath {
+              pathelement(location: 'build/classes')
+              pathelement(location: 'build/test-classes')
+              fileset(dir: 'lib') {
+                  include(name: '*.jar')
+              }
+          }
+          formatter (type: 'plain')
+          test (name: 'net.medcommons.modules.services.client.rest.DocumentServiceProxyTest', todir:'test_results')
+  }
+  
+}
+*/
+
+// Use default MedCommons build targets
+includeTargets << new File('lib/builddefaults.gant')
+
+COMPONENT_NAME = 'medcommons-services'
+TESTS=true
+
+

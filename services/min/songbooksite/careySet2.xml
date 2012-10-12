@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+-
+- all Songs XML Dump
+- version 0.8
+- Host: localhost
+- Generation Time: 05/26/09 14:02:54
+
+-->
+
+<!--
+- Database: 'songbook'
+-->
+<TableExport xporttime='05/26/09 14:02:54' filter='none' >
+<description>Set Two Carey Party</description>
+  <songs>
+  
+<tune>Gimme Some Lovin</tune>
+<tune>Brown Sugar</tune>
+<tune>Magic Carpet Ride</tune>
+<tune>Rock and Roll</tune>
+<tune>Bad to the Bone</tune>
+<tune>Heat Wave</tune>
+<tune>Twist and Shout</tune>
+<tune>Twist Again</tune>
+<tune>The Twist</tune>
+<tune>Midnight Hour</tune>
+<tune>Burnin Love </tune>
+<tune>Key to the Highway</tune>
+<tune>La Grange</tune>
+<tune>Tush</tune>
+<tune>Sultans of Swing</tune>
+<tune>Sweet Child of Mine</tune>
+<tune>Dani California</tune>
+<tune>Cold Shot</tune>
+<tune>Around and Around</tune>
+<tune>Honky Tonk</tune>
+
+</songs>
+</TableExport>

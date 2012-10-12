@@ -1,0 +1,649 @@
+/**
+ * GANT build script to facilitate Java source code generation out of WSDL files.
+ * Additionally you can check wsdl files to be compatible with Axis2, XFire, CXF, and Java 6 code generation.
+ *
+ * Original copyright below. There were many changes so that CXF was used 
+ * instead of Axis2.
+ * 
+ * Copyright (C) 2007, Klaus P. Berg (Klaus-Peter.Berg@web.de)
+ * 
+ * This software is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * You can use it in its original form or modify it.
+ * But whatever you do, please make sure you credit your sources. 
+ * So, please honor the original author of material by making sure 
+ * you keep the name attached to it as it wanders the net. 
+ *
+ *
+ * PRECONDITIONS:
+ * - install Groovy 1.0
+ * - install Axis2 1.3
+ * - install XFire 1.2.6
+ * - install CXF 2.0.2
+ * - "install" Java 6 lib files: tools.jar & rt.jar (not necessary if you are running Java6 instead of Java5)
+ * - add commons-beanutils-1.8.0-BETA.jar, commons-collections-3.2.jar, commons-lang-2.3.jar, gant-0.3.1.jar, (groovysoap-all-1.0-0.3-snapshot_jdk1.5.0.jar,) japa.jar, wsdlchecker.jar
+ *   to your <USER_HOME>/.groovy/lib directory
+ * 
+ * Type ">gant -T" or "gant" in your command line to get a table of contents with available gant tasks
+ */
+ includeTool << gant.tools.Ivy
+
+ant.property(file:'build-wsdl.properties')
+
+ant.property(name:'mc.ivy.repo',value:"${System.properties['user.home']}/.mc")
+
+ivy.settings(file: 'ivy-settings.xml')
+
+ivy.retrieve(pattern:'lib/[artifact].[ext]',sync:'true')
+
+
+
+// Use default MedCommons build targets
+
+//includeTargets << new File('lib/builddefaults.gant')
+
+	import org.apache.commons.lang.StringUtils
+
+	
+	private static final String NL = System.getProperty("line.separator")
+	private static final String SHOW_INSTALLED_FRAMEWORKS_TARGET_DESCRIPTION = "checks your build.properties settings for available frameworks"
+	private static final String WSDLS_TARGET_DESCRIPTION = "prints all wsdl files with their target endpoints, together with wsdl file 'shortnames' to be used by other targets regex"
+	private static final String JAVAGEN_TARGET_DESCRIPTION = "generate java code from wsdl, compile, provide javadoc, and generate necessary jar/zip files"
+	private static final String CHECK_TARGET_DESCRIPTION = "check one or more wsdl files for compatibility with installed code generators & validator"
+	private static final String VALIDATE_TARGET_DESCRIPTION = "validate one or more wsdls files using the CXF validator tool (if CXF is installed)"
+	private static final String ALLJARS_TARGET_DESCRIPTION = "generates a directory with all Axis2 client jars, src/javadoc-ZIPs, and xsb resource files if xmlbeans is used"
+	private static final String NAMESPACE_TO_PACKAGE_MAPPING_TARGET_DESCRIPTION = "prints a namespace-to-package mapping for a wsdl file"
+	
+	
+	boolean wsdlRegexProvided = false
+	boolean wsdlRegexOK = false
+	def wsdlFilesMatchingRegexList = [] // TODO: use this list for the Groovy WsdlFramework, too
+
+	def readProperties() {
+   	 	Ant.property(file: 'build.properties')
+   	 	def props = Ant.project.properties
+       	return props;
+   	}   	
+   	def antProperty = readProperties()
+	
+	long startTime = System.currentTimeMillis()
+	
+	// Classpath for java code generation tool
+	def java2wsdl_classpath = Ant.path {
+		fileset(dir: antProperty.'cxf.lib.dir') {
+			include(name: '*.jar')
+		}
+	}
+	
+	def generateJavaCode = { wsdlFile, javaSrcDir ->
+		def ns2pValues = ''
+		println 'generateJavaCode'
+		if (antProperty.'ns2p.replace'.equals("yes")) {
+			//TODO: consider replacing regex by XmlSlurper  
+			def pattern  = ~/^.*(?:targetNamespace=")([^"]+)"/			
+			def matcher = pattern.matcher('')
+			def ns2pMap = [:]
+			new File(wsdlFile).eachLine {
+				matcher.reset(it)
+				while (matcher.find()) {
+					String namespace = matcher.group(1)
+					if (!ns2pMap.containsKey(namespace)) {
+						ns2pMap.put(namespace, (namespace-'http://').replace('/', '.').replaceAll(antProperty.'ns2p.namespace',antProperty.'ns2p.package'))
+					}
+				}
+			}
+			Iterator iter = ns2pMap.keySet().iterator();
+			StringBuilder sbuf = new StringBuilder(256)
+			while (iter.hasNext()) {
+				String key = iter.next();
+				String value = ns2pMap.get(key)
+				sbuf.append(key)
+				sbuf.append('=')
+				sbuf.append(value)
+				sbuf.append(',')
+			}
+			if (sbuf.length() > 0) {
+				ns2pValues = sbuf.replace(sbuf.length()-1, sbuf.length(), '').toString()
+			}
+			else {
+				println 'No namespace-to-package replacement possible: nothing matched'
+			}
+		}
+	
+		def wsdlFileDir = StringUtils.substringBeforeLast(wsdlFile, '/')
+		def stubPackageSuffix = (wsdlFile - wsdlFileDir - '/' - '.wsdl').toLowerCase() + '.soap.stubs'
+		def outputDir = javaSrcDir-'/src' // Axis2 will generate a /src dir for us
+		ant.mkdir(dir:'generatedSrc')
+		def outFile = new File("${antProperty.'error.cxf.file'}")
+		outFile << wsdlFile + NL
+		def clientPackage = ''
+		def serverPackage = ''
+		StringBuilder clientBuff = new StringBuilder(256);
+		clientBuff.append("net.medcommons.updateservice.client.");
+		clientBuff.append("healthframe"); /* In future - key this off of the wsdl */
+		
+		clientPackage = clientBuff.toString();
+		
+		StringBuilder serverBuff = new StringBuilder(256);
+		serverBuff.append("net.medcommons.updateservice.server.");
+		serverBuff.append("healthframe"); /* In future - key this off of the wsdl */
+		
+		serverPackage = serverBuff.toString();
+		
+		Ant.java(classname: 'org.apache.cxf.tools.wsdlto.WSDLToJava',
+			classpath: java2wsdl_classpath,
+			fork: true,
+			output: "${antProperty.'output.cxf.file'}",
+			error: "${antProperty.'error.cxf.file'}",
+			append: "yes",
+			resultproperty: "clientResult_$wsdlFile") {
+				if (antProperty.'proxy.enabled'.equals("yes")) {
+					println "Using proxy ${antProperty.'proxy.host'}:${antProperty.'proxy.port'}"
+					jvmarg (value: "-Dhttp.proxyHost=${antProperty.'proxy.host'}")
+					jvmarg (value: "-Dhttp.proxyPort=${antProperty.'proxy.port'}")
+				}
+				jvmarg (value: "-Djava.endorsed.dirs=lib")
+				//jvmarg (value: "-verbose")
+				arg (value: '-p')
+				arg (value: clientPackage) 
+				arg (value: '-client')
+				arg (value: '-d')
+				arg (value: 'generatedSrc')
+				arg (value: wsdlFile) 
+				
+		}
+		
+		if (Ant.project.properties."clientResult_$wsdlFile" != '0') {
+			println '... ERROR generating client code'
+		}
+		else {
+			println '... OK'
+		}
+		
+		Ant.java(classname: 'org.apache.cxf.tools.wsdlto.WSDLToJava',
+			classpath: java2wsdl_classpath,
+			fork: true,
+			output: "${antProperty.'output.cxf.file'}",
+			error: "${antProperty.'error.cxf.file'}",
+			append: "yes",
+			resultproperty: "serverResult_$wsdlFile") {
+				if (antProperty.'proxy.enabled'.equals("yes")) {
+					println "Using proxy ${antProperty.'proxy.host'}:${antProperty.'proxy.port'}"
+					jvmarg (value: "-Dhttp.proxyHost=${antProperty.'proxy.host'}")
+					jvmarg (value: "-Dhttp.proxyPort=${antProperty.'proxy.port'}")
+				}
+				jvmarg (value: "-Djava.endorsed.dirs=lib")
+				arg (value: '-p')
+				arg (value: serverPackage)
+				arg (value: '-server')
+				arg (value: '-d')
+				arg (value: 'generatedSrc')
+				arg (value: wsdlFile) 
+				
+		}
+		print "$wsdlFile "
+		
+		if (Ant.project.properties."serverResult_$wsdlFile" != '0') {
+			println '... ERROR generating server code'
+		}
+		else {
+			println '... OK'
+		}
+		
+	}
+	
+	target ('default': 'print gant usage') {
+		println """
+	USAGE:
+	gant available ($SHOW_INSTALLED_FRAMEWORKS_TARGET_DESCRIPTION)
+	gant wsdls ($WSDLS_TARGET_DESCRIPTION)
+	gant [-D "wsdl=<wsdl_shortname_regex>"] javagen ($JAVAGEN_TARGET_DESCRIPTION)
+	gant [-D "wsdl=<wsdl_shortname_regex>"] check ($CHECK_TARGET_DESCRIPTION)
+	gant [-D "wsdl=<wsdl_shortname_regex>"] validate ($VALIDATE_TARGET_DESCRIPTION)
+	gant [-D collect] alljars ($ALLJARS_TARGET_DESCRIPTION)
+	gant -D "wsdl=<wsdl_shortname_regex>" [-D "replace=<old>,<new>"] ns2p ($NAMESPACE_TO_PACKAGE_MAPPING_TARGET_DESCRIPTION)
+			
+	Produced listings in your 'results' directory:
+		output-<tool>.txt & error-<tool>.txt with infos/errors/warnings for the code generation
+	"""
+	}
+	
+	public class WsdlInfo implements Comparable {
+		String prefix
+		String suffix
+		def targetUrlList = []
+		
+		public WsdlInfo(String prefix, String suffix, def targetUrlList) {
+			this.prefix = prefix
+			this.suffix = suffix
+			this.targetUrlList = targetUrlList
+		}
+		
+		public int compareTo(WsdlInfo anotherWsdlLongName) { 
+			return this.prefix.compareTo(anotherWsdlLongName.prefix) 
+		} 
+		public int compareTo(Object o) { 
+			return compareTo((WsdlInfo)o) 
+		}
+
+		public String toString() {
+			def s = "$prefix [$suffix]\n\t[" 
+			StringBuilder sbuf = new StringBuilder(256)
+			targetUrlList.each {
+				sbuf.append(it)
+				sbuf.append('\n')
+				sbuf.append('\t')
+			}
+			s += sbuf.toString().replaceAll(/\n\t$/, ']')
+			targetUrlList.isEmpty() ? s + ']' : s
+		}
+	}
+	
+	target (available: "$SHOW_INSTALLED_FRAMEWORKS_TARGET_DESCRIPTION") {
+		availableCodeGenerators = []
+		
+		if (antProperty.'xfire.available'.equals('yes')) {
+			availableCodeGenerators << 'XFire code generator'
+		}
+		if (antProperty.'wsimport.available'.equals('yes')) {
+			availableCodeGenerators << 'Java6 wsimport'
+		}
+		if (antProperty.'cxf.available'.equals('yes')) {
+			availableCodeGenerators << 'CXF code generator'
+			availableCodeGenerators << 'CXF validator'
+		}
+		println availableCodeGenerators
+	}
+	
+	target( dist2: 'create jar files2') {
+  		depends(compilegeneratedcode)
+  		ant.mkdir(dir:'build/dist');
+  		ant.jar(destfile: "build/dist/"+medcommons-updateservice-client+".jar", basedir: 'build/classes', includes: 'build/classes/net/medcommons/updateservice/client')
+   		ant.jar(destfile: "build/dist/"+medcommons-updateservice-server+".jar", basedir: 'build/classes', includes: 'build/classes/net/medcommons/updateservice/server')
+	}
+  
+	target (init: 'check wsdl regex match (for internal use only)') {
+		ant.mkdir(dir:'build');
+		try {
+			// referencing 'wsdl' in this try blockchecks for the existence of this variable
+			// if you call Gant with '>gant -D "wsdl=<wsdl_target'>" then the variable 'wsdl'
+			// will be created by Gant for you, otherwise the catch block will be executed
+			def wsdlRootDir = new File(antProperty.'wsdl.root.dir')
+			def wsdlList = []
+			boolean atLeastOneMatchingWsdlFileFound = false
+			wsdlRootDir.eachFileRecurse{
+				if (it.isFile() && it.name.endsWith('.wsdl')) {
+					def wsdlFile = it.canonicalPath.replace('\\', '/')
+					def startIndex = wsdlFile.indexOf('/wsdl') + 1
+					def endIndex = wsdlFile.lastIndexOf('.')
+					def shortname = StringUtils.substringAfterLast(wsdlFile, '/')-'.wsdl'
+					if (shortname ==~ wsdl) {
+						println "---> Provided regex matched '$shortname'"
+						wsdlFilesMatchingRegexList << wsdlFile
+						atLeastOneMatchingWsdlFileFound = true
+						return;
+					}
+				}
+			}
+			wsdlRegexProvided = true
+			if (atLeastOneMatchingWsdlFileFound) {
+				wsdlRegexOK = true
+			}
+			else {
+				println "\tWarning: No wsdl file found that matches regex pattern '$wsdl'!"
+				wsdlRegexOK = false
+			}
+		}
+		catch (Exception e) {
+			// no regex evaulation necessary
+		}
+	}
+	
+	// the output of this target can be used to enrich an already existent 'ns2p.properties' file
+	// in order to provide an Axis2 namespace-to-package mapping on a per-wsdl-file basis.
+	// Escaping the ':' in the 'http://' is already done for your convenience.
+	// NOTE: the optional replacement is ONLY used for the part BETWEEN "http://..." and the next "/" (!)
+	//       in order to modify only the "root parts" of the package hierarchy.
+	target (ns2p: "$NAMESPACE_TO_PACKAGE_MAPPING_TARGET_DESCRIPTION") {	
+		depends(init)
+		if (!wsdlRegexProvided) {
+			println 'No wsdl-regex provided --> target terminated.'
+			return
+		}
+		if (!wsdlRegexOK) {
+			return
+		}
+		
+		def replacement = []
+		try {
+			replacement = replace.split(',')
+			println "using the following replacement: ${replace.replace(',', '=')}"
+		}
+		catch (Exception e) {
+			replacement = ['@', '?']
+		}
+		
+		wsdlFilesMatchingRegexList.each {
+			println "checking $it"
+			def node = new XmlSlurper().parse(new File(it))
+			def Iterator iter = node.breadthFirst()
+			def ns2pMap = new TreeMap() // we want it sorted ;-)
+			while (iter.hasNext()) {
+				def element = iter.next()
+				def tns = element.'@targetNamespace'
+				if (tns.size() > 0) {
+					def ns = ''
+					def tnsStr = tns.toString()
+					if (tnsStr.startsWith("http:")) {
+						ns = StringUtils.substringBetween(tnsStr, "http://", "/")
+						if (ns == null) {
+							ns = StringUtils.substringAfter(tnsStr, "http://")
+						}
+						if (ns != null) {
+							def parts = ns.split('\\.')
+							StringBuilder sbuf = new StringBuilder(64)
+							parts.toList().reverse().each{
+								sbuf.append(it)
+								sbuf.append('.')
+							}	
+							def rest = (tnsStr - 'http://' - ns).replace('/', '.')
+							def	completePackage = sbuf.replace(sbuf.length()-1, sbuf.length(), '').toString().replaceAll(replacement[0], replacement[1])
+							if (rest.length() > 0) {
+								completePackage += rest
+							}
+							ns2pMap.put(tnsStr.replaceAll(':', /\\:/), completePackage);
+						}
+						else {
+							println "Error: operation not possible!"
+							return
+						}
+					}
+					else if (tnsStr.startsWith("urn:")) {
+						// check for urn
+						ns = StringUtils.substringAfter(tnsStr, "urn:")
+						if (ns == null) {
+							println "No match for replacement found in wsdl file"
+							return
+						}
+						ns2pMap.put(tnsStr.replaceAll(':', /\\:/), ns.replace(':', '.').replaceAll(replacement[0], replacement[1]));
+					}
+				}
+			}
+			ns2pMap.keySet().each {
+				println "$it=${ns2pMap.get(it)}"
+			}
+		}		
+	}
+	
+	target (wsdls: "$WSDLS_TARGET_DESCRIPTION") {
+		depends(init)
+		println wsdls_description
+		def wsdlRootDir = new File(antProperty.'wsdl.root.dir')
+		def wsdlList = []
+		wsdlRootDir.eachFileRecurse{
+			if (it.isFile() && it.name.endsWith('.wsdl')) {
+				def wsdlFile = it.canonicalPath.replace('\\', '/')
+				def startIndex = wsdlFile.indexOf('/wsdl') + 1
+				def endIndex = wsdlFile.lastIndexOf('.')
+				String name = StringUtils.substringAfterLast(wsdlFile, '/')-'.wsdl'
+				def targetUrlList = []
+				it.eachLine {ln ->	
+					if (ln =~ /^\s.*<soap:address location/) {
+					    targetUrlList << ln.trim()
+					}
+				}
+				wsdlList << new WsdlInfo(name, wsdlFile.substring(startIndex + ".wsdl".length()), targetUrlList)
+			}
+		}
+		def sortedList = wsdlList.sort()
+		println()
+		String currentPrefix = ''
+		String lastPrefix = currentPrefix
+		sortedList.each {
+			currentPrefix = it.prefix
+			if (currentPrefix != lastPrefix) {
+				println()
+				lastPrefix = currentPrefix
+			}
+			println it
+		}
+		println()
+	}
+	
+	target (check: "$CHECK_TARGET_DESCRIPTION") {
+		depends(init)
+		if (wsdlRegexProvided) {
+			if (wsdlRegexOK) {
+				tools.webservices.wsdl.checker.WsdlChecker.main(wsdl)
+			}
+		}
+		else {
+			println "Checking all wsdl files in directory " + new File(antProperty.'wsdl.root.dir').absolutePath
+			tools.webservices.wsdl.checker.WsdlChecker.main('all', 'check')
+		}		
+	}
+	
+	target (validate: "$VALIDATE_TARGET_DESCRIPTION") {
+		depends(init)
+		if (wsdlRegexProvided) {
+			if (wsdlRegexOK) {
+				tools.webservices.wsdl.checker.WsdlChecker.main(wsdl, 'validate')
+			}
+		}
+		else {
+			println "Validating all wsdl files in directory " + new File(antProperty.'wsdl.root.dir').absolutePath
+			tools.webservices.wsdl.checker.WsdlChecker.main('all', 'validate')
+		}
+	}
+	
+	target (alljars: "$ALLJARS_TARGET_DESCRIPTION") {
+		if (!new File(antProperty.'client.jar.dir').exists()) {
+			new File(antProperty.'client.jar.dir').mkdir()
+		}
+		try {
+			println "Only Collect Jar files: ${collect}"
+		}
+		catch (Exception e) {
+			depends(javagen)
+		}
+		println alljars_description
+		new File(antProperty.'generated.code.dir').eachFileRecurse{
+			if (it.isFile()) {
+				if (it.name =~ /((.+\.jar$)|(.+\.zip$))/) {
+					Ant.copy(todir: "${antProperty.'client.jar.dir'}", file: it.absolutePath)
+				}
+			}
+		}
+	}
+	
+	target (compilegeneratedcode: "Compiles generated code"){
+		depends (javagen);
+		ant.mkdir(dir:'build/classes')
+  		ant.javac(srcdir: 'generatedSrc', compiler: 'modern', debug: 'true', target: '1.5', destdir: 'build/classes') {
+   		 	classpath {
+	     		 fileset(dir: 'lib') {
+	       		 include(name:'**/*.jar')
+      			}
+    		}
+  		}
+	}
+	target (compiletestcode: "Compiles test code"){
+		depends (compilegeneratedcode);
+		ant.mkdir(dir:'build/classes')
+  		ant.javac(srcdir: 'src', compiler: 'modern', debug: 'true', target: '1.5', destdir: 'build/classes') {
+   		 	classpath {
+	     		 fileset(dir: 'lib') {
+	       		 include(name:'**/*.jar')
+      			}
+    		}
+  		}
+	}
+	
+	
+	target (javagen: "$JAVAGEN_TARGET_DESCRIPTION") {
+		depends(init)
+		
+		
+		println javagen_description	
+		println "using data binding: ${antProperty.'cxf.data.binding'}"
+		new File("${antProperty.'output.axis.file'}").delete() 
+		new File("${antProperty.'error.axis.file'}").delete()
+
+		def modifyAxis2Client = { 
+			def javaSrcDirPath = new File(it)
+			javaSrcDirPath.eachFileRecurse{
+				if (it.isFile() && (it.name.endsWith('Stub.java'))) {
+					println()
+					print "\tModifying $it.name ..."
+					tools.webservices.wsdl.stubutil.ModifyingJavaParser.main(it.absolutePath)
+					println ' Done.'
+				}
+			}
+		}
+		
+		def compileAxis2Client = { jarfileName, srcDir ->
+			def classfileDir = srcDir-"/src" + '/classes'
+			new File(classfileDir).mkdir()
+			def java_compile_classpath = Ant.path {
+				pathelement(location: classfileDir)
+				fileset(dir: "${antProperty.'user.home'}/.groovy/lib") {
+					include(name: 'commons-*.jar')
+					include(name: 'japa.jar')
+				}
+				
+				fileset(dir: antProperty.'axis2.lib.dir') {
+					include(name: '*.jar')
+				}	
+			}
+			Ant.javac(destdir: classfileDir, 
+	  	        srcdir: srcDir, 
+	  	        classpath: java_compile_classpath,
+	  	  		debug: true,
+	        	source: '1.5',
+	        	target: '1.5',
+				failonerror: 'no'
+	    	)
+			def destDir = srcDir-"/src"
+			Ant.zip(zipfile: "${destDir}/${jarfileName}-src.zip", basedir: srcDir)
+			Ant.jar(destfile: "${destDir}/${jarfileName}.jar", basedir: classfileDir)		
+			if (antProperty.'axis.data.binding'.equals('xmlbeans')) {
+				def resourceDir = srcDir-"/src" + '/resources'
+				Ant.jar(destfile: "${destDir}/${jarfileName}-res.jar", basedir: resourceDir)
+			}
+		}
+		
+		def generateJavaDocumentation = { serviceName, srcDir ->
+			def classfileDir = srcDir-"/src" + '/classes'
+			Ant.copy(todir: srcDir) {
+				fileset(dir: "${antProperty.'java-parser.install.dir'}/src") {
+					include(name: 'tools/webservices/wsdl/stubutil/*.java')
+					exclude(name: 'tools/webservices/wsdl/stubutil/Modifying*.java')
+				}
+			}
+			Ant.copy(todir: classfileDir) {
+				fileset(dir: "${antProperty.'java-parser.install.dir'}/classes") {
+					include(name: 'tools/webservices/wsdl/stubutil/*.class')
+				}
+			}
+			
+			def javadocsDir = srcDir-"/src" + '/javadocs'
+			new File(javadocsDir).mkdir()
+			def javadoc_classpath = Ant.path {
+				pathelement(location: classfileDir)
+				fileset(dir: antProperty.'axis2.lib.dir') {
+					include(name: '*.jar')
+				}
+				fileset(dir: "${antProperty.'user.home'}/.groovy/lib") {
+					include(name: 'commons-*.jar')
+					include(name: 'japa.jar')
+				}
+			}
+			Ant.javadoc(destdir: javadocsDir,				
+				author: true,  
+				version: true, 
+				source: '1.5',
+				packagenames: antProperty.'javadoc.packageNames',
+				windowtitle: "Axis2 client - Version ${antProperty.'axis2.version'}",
+				doctitle: "Axis2 client (Version ${antProperty.'axis2.version'}) for service $serviceName",
+				nodeprecated: true,
+				bottom: antProperty.'project.copyright', 	
+				sourcepath: srcDir,
+				classpath: javadoc_classpath)
+				
+			def destDir = srcDir-"/src"			
+			Ant.zip(zipfile: "${destDir}/${serviceName}-doc.zip", basedir: javadocsDir)
+			Ant.delete(dir: "$destDir/src/tools") // delete the japa src part
+			Ant.delete(dir: "$destDir/classes/tools") // delete the japa bytecode part
+		}
+		
+		def processOneFile = { filename, wsdlFile, javaSrcDir, wsdlPackage ->
+			println()
+			println 'processing file: ' + filename
+			generateJavaCode(wsdlFile, javaSrcDir)
+			
+			if (Ant.project.properties."clientResult_$wsdlFile" == '0') {
+				modifyAxis2Client(javaSrcDir + '/' + wsdlPackage.replace('.', '/'))
+				compileAxis2Client(filename-'.wsdl', javaSrcDir)
+				if (antProperty.'javadoc.enabled'.equals("yes")) {
+					generateJavaDocumentation(filename-'.wsdl', javaSrcDir)
+				}
+			}
+			else {
+				println "     ERROR: cannot generate Java code for file $filename"
+			}
+			
+		}
+		
+		def wsdlPackage = "${antProperty.'stubs.package.prefix'}" 			
+		def wsdlRootDir = new File(antProperty.'wsdl.root.dir')
+		if (!wsdlRegexProvided) {
+			println "Generating code for all wsdl files in directory " + new File(antProperty.'wsdl.root.dir').absolutePath
+			Ant.delete(dir: "${antProperty.'generated.code.dir'}")
+			def wsdlList = []
+			wsdlRootDir.eachFileRecurse{
+				if (it.isFile() && it.name.endsWith('.wsdl')) {
+					wsdlList << it.canonicalPath.replace('\\', '/')
+				}
+			}
+			wsdlFilesMatchingRegexList = wsdlList.sort()
+			wsdlRegexOK = true; // continue as we would do with a regex wsdl entered by the user
+		}
+		if (wsdlRegexOK) {
+			wsdlFilesMatchingRegexList.each {
+				def filename = StringUtils.substringAfterLast(it, '/')
+				def serviceDir = "${antProperty.'generated.code.dir'}/" + filename - '.wsdl'
+				def javaSrcDir = "$serviceDir/src"
+				Ant.delete(dir: serviceDir)
+				processOneFile(filename, it, javaSrcDir, wsdlPackage)
+			}
+		}			
+					
+		long endTime = System.currentTimeMillis()
+		def duration = ((endTime - startTime) / 1000) // in seconds
+		println()
+		println("GANT PROCESSING SUCCESSFULL: $duration seconds")			
+   	}
+ 
+
+   	target (test: 'junit test') {
+		depends (compiletestcode);
+		ant.junit(printsummary: 'yes',
+		 fork: 'yes',
+		 haltonfailure: 'yes'){
+			classpath {
+	     		 fileset(dir: 'lib') {
+	       		 	include(name:'**/*.jar')
+      			}
+      			pathelement ( location : 'build/classes' )
+      			
+			}
+		formatter (type: 'plain')
+		batchtest (todir: 'build') {
+            fileset(dir: 'src') {
+                include(name: '**/*Test.java')
+            	}
+    	}				
+	}
+	
+	
+}

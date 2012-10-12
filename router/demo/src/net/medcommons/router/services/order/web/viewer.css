@@ -1,0 +1,36 @@
+html,body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px; 
+	text-align: left;
+	font-family: arial,verdana;
+}
+
+#buttonPanel button {
+	display: block;
+	width: 80%;
+	margin: 1em 10%;
+}
+
+div.ccrHeader {
+	text-align: center;
+}
+.yui-layout-hd a {
+	text-decoration: none;
+	color: white;
+}
+
+#lefttop {
+	padding: 1em;
+}
+
+.encounterRow img {
+	margin-right: 1em;
+}
+.encounterRow {
+	padding: 5px 0px;
+	border-bottom: solid 1px #aaa;
+}
+h2 {
+	font-size: 16px;
+}

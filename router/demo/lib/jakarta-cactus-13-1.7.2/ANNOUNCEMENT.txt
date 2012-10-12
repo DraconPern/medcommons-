@@ -1,0 +1,33 @@
+The Cactus project is pleased to announce the release of version 1.7.2.
+Cactus is a unit testing framework for testing server side java code.
+
+Goals
+-----
+
+This release was created just because the previous 1.7.x releases bundled an LGPL jar (jboss-j2ee.jar, necessary to run the samples), which is not alloweb by ASF policies.
+Other than that, the only technical change is a new feature on the Maven plugin (https://issues.apache.org/jira/browse/CACTUS-231).
+
+
+Main new features
+-----------------
+
+- Cactus now uses Cargo for the CactifyEar task
+- JDK 1.2 and 1.3 are no longer supported
+
+Changes
+-------
+
+Please check the Changes page at
+http://jakarta.apache.org/cactus/changes.html for a full list of the 
+changes in version 1.7.2 
+
+Known limitations and bugs:
+---------------------------
+
+See http://issues.apache.org/jira/browse/CACTUS .
+
+For more information about Cactus, please visit
+http://jakarta.apache.org/cactus/.
+
+Have fun,
+-The Cactus team

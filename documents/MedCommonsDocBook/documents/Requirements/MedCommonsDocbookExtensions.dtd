@@ -1,0 +1,43 @@
+<!-- MedCommons DocBook extensions -->
+<!ENTITY %  local.compound.class "|requirement|usecase|refRequirement">
+<!ENTITY % local.divcomponent.mix  "|requirement|usecase|refRequirement">
+<!ENTITY % local.refcomponent.mix "|requirement|usecase|refRequirement">
+<!--<!ENTITY % indexdivcomponent.mix "|requirement"> -->
+
+
+
+<!ENTITY % DocBookDTD PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                "docbookx.dtd">
+ %DocBookDTD;
+     
+<!ELEMENT requirement (reqTitle, reqDescription)>
+<!ELEMENT reqTitle    (#PCDATA)>
+<!ELEMENT reqDescription (%para.char.mix; | %para.mix;)*>
+<!-- Need to add status -->
+<!ATTLIST requirement
+%idreq.attrib;		%pagenum.attrib;		%remap.attrib;
+		%xreflabel.attrib;
+		%revisionflag.attrib;
+		%effectivity.attrib;
+		%anchor.role.attrib;
+		%local.anchor.attrib;
+>
+<!ATTLIST requirement status CDATA #IMPLIED>	
+<!ELEMENT usecase (useTitle, useDescription) >
+<!ELEMENT useTitle    (#PCDATA)>
+<!ELEMENT useDescription (%para.char.mix; | %para.mix;)*>
+<!ATTLIST usecase
+%idreq.attrib;		%pagenum.attrib;		%remap.attrib;
+		%xreflabel.attrib;
+		%revisionflag.attrib;
+		%effectivity.attrib;
+		%anchor.role.attrib;
+		%local.anchor.attrib;
+		>
+<!ATTLIST usecase status CDATA #IMPLIED>	
+	
+<!ELEMENT refRequirement (requirementId+) >
+<!ELEMENT  requirementId (#PCDATA)>
+
+<!ELEMENT refUsecase (usecaseId+) >
+<!ELEMENT  usecaseId (#PCDATA)>

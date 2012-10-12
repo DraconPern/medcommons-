@@ -1,0 +1,62 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: white;
+	background-image:url('images/bgStripes.gif');
+
+}
+#headerBox {
+ background-color:#000;
+ padding:0px 0px 0px 0px;
+ margin:10px;
+ width:900px;
+ height:70px;
+}
+
+#content {
+ background-color:#eaeaea;
+ padding:0px 0px 0px 10px;
+ margin:10px;
+ width:900px;
+
+}
+
+#footerBox {
+ background-color:#fff;
+ padding:0px 0px 0px 10px;
+ margin:10px;
+ width:900px;
+ height:35px;
+}
+
+ul
+{
+list-style-type: none;
+}
+
+a:link {color:#036; padding: 10px; display: block;}      /* unvisited link */
+a:visited {color:#036; padding: 10px; display: block;}  /* visited link */
+a:hover {color:#e37135; padding: 10px; display: block;}  /* mouse over link */
+a:active {color:#036; padding: 10px; display: block;}  /* selected link */
+
+
+p 
+{ margin: 10px; font-size:12px; }
+
+dt
+{
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+}
+dt
+{
+background-image: none;
+background-repeat: no-repeat;
+background-position: 0px 12px;
+padding-left: 14px;
+}
+
+#content dl dd {
+	font-size: small;
+}

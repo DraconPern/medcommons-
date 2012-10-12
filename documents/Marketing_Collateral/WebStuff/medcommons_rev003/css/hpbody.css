@@ -1,0 +1,77 @@
+/* CSS Document */
+
+#content {
+	padding:10px 0 0 50px;
+}
+.textmenu {
+	margin: 5px 205px 0 0;
+	padding:0;
+	right:0;
+	position:absolute;
+	color:#000;
+	font: 12px Arial, Helvetica, Sans-serif;
+	z-index:98;
+	}
+.textmenu li {
+	display:inline;
+	float:right;
+	font-weight:bold;
+	}
+.textmenu li a {
+	text-decoration:none;
+	color: #999;
+	font-weight:normal;
+	}
+.textmenu li a:hover {
+	text-decoration:underline;
+	color: #66CC00;	
+	}
+.rightcol {
+	position: relative;
+	border:0px;
+	margin:0 0 20px 0;
+	padding:0 0 50px 0;
+	width: 200px;	
+	float: right;
+	background-color: #A4B4B0;
+	clear:both;
+	z-index:99;
+	}
+.rightcol ul {
+	margin:0;
+	padding:0 0 0 5px;
+	list-style: none; 
+	}
+.rightcol li {
+	margin:0 5px 15px 20px;
+	list-style: none url('../images/bullet_pdf.gif') outside;	
+ 	padding: 0 0 0 5px;
+	margin:0 5px 20px 30px;
+}
+.rightcol a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:left;
+	line-height:20px;
+	}
+.rightcol a:link, .rightcol a:visited,  .rightcol a:active {
+color:#0000FF;
+}
+.rightcol a:hover {
+	text-decoration:underline;
+	color:#000000;
+	}
+li.bpic {
+	list-style-image: url('../images/bullet_pic.gif'); }
+li.bweb {
+	list-style-image: url('../images/bullet_web.gif'); }	
+li.btxt {
+	list-style-image: url('../images/bullet_wri.gif'); }	
+* html body {
+	width:100%;
+	margin:0 0 0 -17px;
+	}
+* html #content {
+	padding:10px 0 0 67px;
+	}

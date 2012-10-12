@@ -1,0 +1,85 @@
+#!/bin/bash
+
+rm -rf root ../MedCommons\ CXP ../cxp.dmg
+
+cd ../plugin &&\
+rm -rf build dist | true &&\
+python setup.py py2app &&\
+\
+cd ../sessionmgr &&\
+rm -rf build dist | true &&\
+python setup.py py2app &&\
+\
+cd ../installer &&\
+rm -rf root | true &&\
+mkdir root &&\
+cd root &&\
+\
+X="Library" &&\
+mkdir "$X" &&\
+chown root:admin "$X" &&\
+chmod 1775 "$X" &&\
+\
+X="Library/Application Support" &&\
+mkdir "$X" &&\
+chown root:admin "$X" &&\
+chmod 0775 "$X" &&\
+\
+X="Library/LaunchDaemons" &&\
+Y="net.medcommons.cxpcd.plist" &&\
+mkdir "$X" &&\
+chmod 0755 "$X" &&\
+cp "../../$Y" "$X" &&\
+chmod 0644 "$X/$Y" &&\
+chown -R root:wheel "$X" &&\
+\
+X="Library/Application Support/MedCommons" &&\
+Y="CXP Session Manager.app" &&\
+mkdir -p "$X/MochiKit" &&\
+chmod -R 0775 "$X" &&\
+cp -pR "../../sessionmgr/dist/$Y" "$X" &&\
+chmod -R g+w "$X/$Y" &&\
+cp ../../daemon/*.py "$X" &&\
+cp ../../daemon/*.html "$X" &&\
+cp ../../daemon/*.js "$X" &&\
+cp ../../daemon/*.gif "$X" &&\
+cp ../../daemon/MochiKit/*.js "$X/MochiKit" &&\
+chmod g+w "$X"/*.py &&\
+chmod +x "$X/cxpcd.py" &&\
+chown -R root:admin "$X" &&\
+\
+X="Library/Application Support/OsiriX" &&\
+mkdir "$X" &&\
+chown 501:admin "$X" &&\
+chmod 0775 "$X" &&\
+\
+X="Library/Application Support/OsiriX/Plugins" &&\
+Y="MedCommons.plugin" &&\
+mkdir "$X" &&\
+chmod 0775 "$X" &&\
+cp -pR "../../plugin/dist/$Y" "$X" &&\
+chmod -R g+w "$X/$Y" &&\
+chown -R 501:admin "$X" &&\
+\
+X=Users &&\
+mkdir "$X" &&\
+chown root:admin "$X" &&\
+chmod 1775 "$X" &&\
+\
+X=Users/Shared &&\
+mkdir "$X" &&\
+chown root:wheel "$X" &&\
+chmod 1777 "$X" &&\
+\
+X=Users/Shared/MedCommons &&\
+mkdir "$X" &&\
+chown root:wheel "$X" &&\
+chmod 0777 "$X" &&\
+\
+find . -type f | sed -e 's|\(.*\)|"\1"|' | xargs openssl sha1 > ../scripts/manifest &&\
+mkdir ../../MedCommons\ CXP &&\
+/Developer/Tools/packagemaker -build -p ../../MedCommons\ CXP/MedCommons\ CXP.pkg -proj ../package.pmproj &&\
+hdiutil create -anyowners -srcfolder ../../MedCommons\ CXP ../../cxp.dmg &&\
+hdiutil internet-enable -yes ../../cxp.dmg &&\
+\
+echo "mkpkg is successful!"

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+    <title>MedCommons Central Service Requirements </title>
+    
+    <articleinfo>
+        <invpartnumber>REQ-0009</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>March 29, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>
+           
+            
+            
+            
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para>
+        </para>
+    </sect1>
+    <sect1>
+        <title>Requirements</title>
+        <sect2>
+            <title>Data Requirements</title>
+            <requirement id="DATA-001">
+                <reqTitle>Data references must be kept on central.</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            <requirement id="DATA-002">
+                <reqTitle>Data objects encryption keys must be kept on the object level.</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            
+        </sect2>
+        <sect2>
+            <title>Registration</title>
+        </sect2>
+        <sect2>
+            <title>Command requirements</title>
+            <requirement id="COMMAND-001">
+                <reqTitle>MedCommons needs an extensible command system for remote control of gateways</reqTitle>
+                <reqDescription>
+                    
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-002">
+                <reqTitle>There needs to be two command systems: one for gateway-to-gateway commands; one for application-level commands</reqTitle>
+                <reqDescription>
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-003">
+                <reqTitle>The command systems must not be user extensible; they can only be extended via configuration or software upgrades from MedCommons.</reqTitle>
+                <reqDescription>
+                    The command systems are closed universes for the first versions of the system. This puts some boundaries on security and testing issues. This requirement may
+                    be relaxed in a future version.
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-004">
+                <reqTitle>Application-level functional requirements</reqTitle>
+                <reqDescription>
+                    Transfer.
+                    Notify
+                    
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-005">
+                <reqTitle>Gateway-level functional requirements</reqTitle>
+                <reqDescription>
+                    Update.
+                    Reboot.
+                    Upload logs.
+                    Delete data.
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-006">
+                <reqTitle>Command language must contain notification mechanism.</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>    
+            <requirement id="COMMAND-007">
+                <reqTitle>Command language must contain error handling mechanism.</reqTitle>
+                <reqDescription></reqDescription>
+            </requirement>
+            <requirement id="COMMAND-008">
+                <reqTitle>Command language must be capable of sequential operations</reqTitle>
+                <reqDescription>
+                       On the application layer a sequence of commands might include the transfer of a CCR and the documents that it refers to
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-009">
+                <reqTitle>Commands must be communicated in a secure and authenticated manner.</reqTitle>
+                <reqDescription>
+                    The MedCommons network is a closed network; commands can only come in from the central system or from an authenticated user. Third parties can not insert new commands
+                    except through APIs controlled by MedCommons; gateways should not excecute commands unless they are from an authenticated source and can be checked for tampering
+                    or corruption.
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-010">
+                <reqTitle>Commands must be cancellable by Central</reqTitle>
+                <reqDescription>
+                    Commands must be able to be terminated by central. This may be because the gateway is hung or it may be  because the task that triggered these commands 
+                    has itself been cancelled.
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-011">
+                <reqTitle>Execution of commands must be able to be monitored</reqTitle>
+                <reqDescription>The monitoring of commands is necessary for system support, debugging, and possibly both performance and security monitoring. The monitoring system
+                has no requirement that the logs or traces be made permanent.
+                </reqDescription>
+            </requirement>
+            <requirement id="COMMAND-012">
+                <reqTitle>No PHI may occur in any command.</reqTitle>
+                <reqDescription>No patient identifers should be </reqDescription>
+            </requirement>
+            
+        </sect2>
+        
+    </sect1>
+    
+    
+</article>

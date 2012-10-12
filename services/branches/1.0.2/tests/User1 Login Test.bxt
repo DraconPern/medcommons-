@@ -1,0 +1,347 @@
+<WebScriptTemplate>
+	<Variables>
+		<count>1</count>
+		<name>host</name>
+		<value>mc</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>true</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+	</Variables>
+	<TestItem v='3'>
+		<ver>13</ver>
+		<id>3</id>
+		<Summary v='3'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<childCount>3</childCount>
+		<ChildItems>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>2</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>3</childCount>
+				<ChildItems>
+					<CookieKiller v='1'>
+						<ver>13</ver>
+						<id>21</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+					</CookieKiller>
+					<Request v='10'>
+						<ver>13</ver>
+						<id>22</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<host>${host}</host>
+						<path>/acct/login.php</path>
+						<protocol>http</protocol>
+						<resource/>
+						<targetFrame/>
+						<isActive>1</isActive>
+						<label/>
+						<headers>Referer: http://mc/acct/login.php?prompt=login_required
+</headers>
+						<multipartBoundary/>
+						<Object>null</Object>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset>iso-8859-1</formCharset>
+						<method>1</method>
+						<waitForSubRequests>false</waitForSubRequests>
+					</Request>
+					<FormPopulator v='7'>
+						<ver>13</ver>
+						<id>36</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>67</id>
+								<name>mcid</name>
+								<value>user1@medcommons.net</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<formName>login</formName>
+						<submit>false</submit>
+						<formIndex>0</formIndex>
+						<ignoreHiddenFields>true</ignoreHiddenFields>
+						<useRegex>false</useRegex>
+					</FormPopulator>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Navigate to Login Page</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable/>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>1</expanded>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>255</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<FormPopulator v='7'>
+						<ver>13</ver>
+						<id>256</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<FormValue v='6'>
+								<ver>13</ver>
+								<id>257</id>
+								<name>password</name>
+								<value>thisisnotmypassword</value>
+								<matchVisibleText>false</matchVisibleText>
+								<sendEvents>false</sendEvents>
+								<retainFocus>false</retainFocus>
+							</FormValue>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<formName>login</formName>
+						<submit>false</submit>
+						<formIndex>0</formIndex>
+						<ignoreHiddenFields>true</ignoreHiddenFields>
+						<useRegex>false</useRegex>
+					</FormPopulator>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Set Password</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable/>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>1</expanded>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>251</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>2</childCount>
+				<ChildItems>
+					<Navigation v='7'>
+						<ver>13</ver>
+						<id>252</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<selectedReference>1</selectedReference>
+						<references>
+							<count>3</count>
+							<NameOrIdReference v='2'>
+								<value>loginsubmit</value>
+								<filter>Buttons</filter>
+							</NameOrIdReference>
+							<VisibleTextReference v='2'>
+								<value>Sign In</value>
+								<filter>Buttons</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.login.loginsubmit</value>
+								<filter>Buttons</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<Assertion v='10'>
+						<ver>13</ver>
+						<id>253</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ContentCheckItem v='1'>
+								<ver>13</ver>
+								<id>254</id>
+								<pattern>No such user/bad password </pattern>
+								<bUseRegex>false</bUseRegex>
+								<checkMessageBoxes>false</checkMessageBoxes>
+								<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+							</ContentCheckItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<failureAction>
+							<Object>null</Object>
+						</failureAction>
+						<captureScreenShot>true</captureScreenShot>
+						<scalingPercent>80</scalingPercent>
+						<captureDuplicates>false</captureDuplicates>
+						<scroll>false</scroll>
+						<waitToPass>false</waitToPass>
+					</Assertion>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Login</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable/>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>1</expanded>
+			</Step>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<Object>null</Object>
+		<title>Login with Incorrect Password</title>
+		<template/>
+		<expanded>1</expanded>
+	</TestItem>
+</WebScriptTemplate>

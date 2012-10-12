@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>MedPad BugList</string>
+		<key>scenes</key>
+		<array>
+			<dict>
+
+				<key>scene</key>
+				<string>0</string>
+
+				<key>name</key>
+				<string>
+					UIWebView and UISplitViewController Bugs
+				</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Bug List</string>
+
+				<key>largetitle</key>
+				<string>MedPad Bug List</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+
+				<key>blocks</key>
+				<array>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>bugs - landscape and rotating</string>
+						<key>toplabel</key>
+						<string>PDF - Hello MedPad!</string>
+						<key>label</key>
+						<string>Hello MedPad! - PDF</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/radreport.pdf
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>
+							truncation of margins on rotation
+						</string>
+						<key>toplabel</key>
+						<string>WebView - Apple/iPad</string>
+						<key>label</key>
+						<string>Apple/iPad - WebView</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>url</key>
+						<string>http://www.apple.com/ipad/</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>doesnt stop playing</string>
+						<key>toplabel</key>
+						<string>QuickTime - Hello MedPad!</string>
+						<key>label</key>
+						<string>Hello MedPad! - QuickTime</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Quicktime_X_Logo.png/64px-Quicktime_X_Logo.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/MedPadStrategery.mov
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>scales nicely in landscape</string>
+						<key>toplabel</key>
+						<string>
+							Test PNG - 500x555 from Wikipedia
+						</string>
+						<key>label</key>
+						<string>PNG - 500x555</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Wikipedia-logo.svg/600px-Wikipedia-logo.svg.png
+						</string>
+						<key>url</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/500px-Apple_Computer_Logo.svg.png
+						</string>
+					</dict>
+
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>scrolls only vertically</string>
+						<key>toplabel</key>
+						<string>
+							Test HTML - 500x555 from Wikipedia
+						</string>
+						<key>label</key>
+						<string>HTML5 - 500x555</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Wikipedia-logo.svg/600px-Wikipedia-logo.svg.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>scrolls only vertically</string>
+						<key>toplabel</key>
+						<string>
+							No Scale HTML - 500x555 from Wikipedia
+						</string>
+						<key>label</key>
+						<string>No Scale HTML5 - 500x555</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Wikipedia-logo.svg/600px-Wikipedia-logo.svg.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500noscale.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>scrolls both directions</string>
+						<key>toplabel</key>
+						<string>
+							Test PNG - 1000x1110 from Wikipedia
+						</string>
+						<key>label</key>
+						<string>PNG - 1000x1110</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Wikipedia-logo.svg/600px-Wikipedia-logo.svg.png
+						</string>
+						<key>url</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/1000px-Apple_Computer_Logo.svg.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>wont stay small</string>
+						<key>toplabel</key>
+						<string>
+							Test HTML5 - 1000x1110 from Wikipedia
+						</string>
+						<key>label</key>
+						<string>HTML5 - 1000x1110</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Wikipedia-logo.svg/600px-Wikipedia-logo.svg.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage1000.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>seems ok</string>
+						<key>toplabel</key>
+						<string>
+							No Scale HTML5 - 1000x1110 from Wikipedia
+						</string>
+						<key>label</key>
+						<string>No Scale HTML5 - 1000x1110</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Wikipedia-logo.svg/600px-Wikipedia-logo.svg.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage1000noscale.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>sample written by apple</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>toplabel</key>
+						<string>HTML5VideoPlayer</string>
+						<key>label</key>
+						<string>HTML5VideoPlayer</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/HTML5VideoPlayer
+						</string>
+					</dict>
+
+				</array>
+
+			</dict>
+		</array>
+	</dict>
+</plist>

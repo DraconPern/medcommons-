@@ -1,0 +1,485 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>FilterTestCase Principles</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="FilterTestCase Principles" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././writing/howto_testcase.html">Writing Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Writing Tests<ul>
+    
+<li>
+<a href=".././writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">General Principles</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">Testing Servlets</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus." class="currentPage">Testing Filters</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_jsp.html" title="How to write unit tests for JSP pages using Cactus.">Testing JSP Pages</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">Testing Taglibs</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">Testing EJBs</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Advanced Topics<ul>
+    
+<li>
+<a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">Integrating HttpUnit</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_security.html" title="">Using Authentication</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Reference<ul>
+    
+<li>
+<a href=".././api/framework-12/index.html" title="">Javadocs (J2EE 1.2)</a>
+</li>
+    
+<li>
+<a href=".././api/framework-13/index.html" title="">Javadocs (J2EE 1.3)</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>When to use?</h1>
+
+      
+<p>
+        Your test case class should extend <code>FilterTestCase</code>
+        whenever you are unit testing:
+      </p>
+      
+<ul>
+        
+<li>
+          Servlet Filters,
+        </li>
+        
+<li>
+          Any java code that uses Filter API objects
+          (<code>FilterConfig</code>, ...)
+        </li>
+      
+</ul>
+
+      
+<div class="note">
+        
+<b>As filters only exist in Servlet API 2.3, you must use the
+        Cactus version for Servlet API 2.3 if you wish to write tests for
+        them.</b>
+      
+</div>
+      
+<div class="note">
+        
+<b>Filter unit testing is only available in Cactus 1.2 and
+        above.</b>
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Provided Implicit Objects</h1>
+
+      
+<p>
+        Cactus automatically initializes the implicit objects for you and
+        they are made available to your <code>setUp()</code>,
+        <code>testXXX()</code> and <code>tearDown()</code> methods as
+        instance variables of the <code>FilterTestCase</code> class (and thus
+        as instance variables of your test case class as it extends
+        <code>FilterTestCase</code>).
+      </p>
+      
+<div class="note">
+        You may ask yourself how Cactus initializes these objects. The
+        mechanism is described in the <a href=".././how_it_works.html" title="High level view of the inner workings of Cactus.">How it
+        works</a> guide.
+      </div>
+
+      
+<p>
+        The provided implicit objects are:
+      </p>
+
+      
+<a name="filter_request">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>request</h2>
+
+        
+<p>
+         See <code>ServletTestCase</code><code>
+         <a href=".././writing/howto_testcase_servlet.html#servlet_request">request
+         </a></code> implicit object for documentation.
+       </p>
+
+      
+</div>
+
+      
+<a name="filter_response">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>response</h2>
+
+        
+<p>
+         See <code>ServletTestCase</code><code>
+         <a href=".././writing/howto_testcase_servlet.html#servlet_response">response
+         </a></code> implicit object for documentation.
+       </p>
+
+      
+</div>
+
+      
+<a name="filter_config">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>config</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>config</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>org.apache.cactus.server.FilterConfigWrapper
+              </code>, which inherits from
+              <code>javax.servlet.FilterConfig</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<p>
+          Cactus wraps the original Filter Config for two reasons:
+        </p>
+        
+<ul>
+          
+<li>
+            In order to provide additional methods. For example, it is
+            possible to initialise filter parameters without setting them in
+            <code>web.xml</code>, etc...,
+          </li>
+          
+<li>
+            So that it can return a wrapped Servlet Context instead of the
+            original one. This is because the Servlet Context is used
+            to perform forwards and includes and we need to pass to these
+            methods the original request and response. As we have wrapped
+            the request, we need to wrap the Servlet Context to pass the
+            original request (and not the wrapped one).
+          </li>
+        
+</ul>
+        
+<p>
+          The <code>config</code> implicit object will contain all
+          initialisation parameters defined in <code>web.xml</code>
+          under the Filter Redirector filter definition.
+        </p>
+        
+<p>
+          See the javadoc for the
+          <code>org.apache.cactus.server.FilterConfigWrapper</code>
+          class for all details. You should also look at the
+          samples provided in the Cactus distribution.
+        </p>
+
+        
+<div class="section">
+<h3>Additional methods</h3>
+
+          
+<p>
+            Additional methods provided:
+          </p>
+          
+<ul>
+            
+<li>
+              
+<code>setInitParameter()</code>: sets an initialisation
+              parameter (as if it has been defined in the <code>web.xml</code>
+              file),
+            </li>
+            
+<li>
+              
+<code>setFilterName()</code>: sets the Filter name that will be
+              returned by <code>getFilterName()</code> (if not set, the
+              Cactus Filter redirector name will be returned).
+            </li>
+          
+</ul>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="filter_filterChain">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>filterChain</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>filterChain</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>javax.servlet.FilterChain</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<div class="note">
+          Cactus does not wrap the filter chain.
+        </div>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Tips and Tricks</h1>
+
+      
+<div class="section">
+<h2>Simulating the next fitler in chain</h2>
+
+        
+<p>
+          As you are performing unit testing of your filter, you may wish
+          to simulate the next filter in the filter chain so that you can
+          decide, as part of your unit test, what this other filter returns
+          to your filter under test. Here is how you could do that:
+        </p>
+
+
+<div class="source">
+<pre>
+public void testDoFilterOK() throws ServletException, IOException
+{
+    SampleFilter filter = new SampleFilter();
+    filter.init(config);
+[...]
+
+    FilterChain mockFilterChain = new FilterChain() {
+        public void doFilter(ServletRequest theRequest,
+            ServletResponse theResponse) throws IOException, ServletException
+        {
+            PrintWriter writer = theResponse.getWriter();
+            writer.print("&lt;p&gt;some content&lt;/p&gt;");
+            writer.close();
+        }
+        public void init(FilterConfig theConfig)
+        {
+        }
+        public void destroy()
+        {
+        }
+    };
+
+    filter.doFilter(request, response, mockFilterChain);
+[...]
+}
+</pre>
+</div>
+
+        
+<p>
+          See the samples provided as part of the Cactus distribution.
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Sample</h1>
+
+      
+<p>
+        This is a very basic sample intended to give you a flavour of Filter
+        unit testing. Check the distribution samples for extensive
+        examples. The filter we are testing here simply adds a header and
+        a footer to the response. The header and footer texts are
+        defined as a parameter defined in <code>web.xml</code>.
+      </p>
+
+
+<div class="source">
+<pre>
+public void testXXX() throws ServletException, IOException
+{
+    SampleFilter filter = new SampleFilter();
+    config.setInitParameter("header", "&lt;h1&gt;header&lt;/h1&gt;");
+    config.setInitParameter("footer", "&lt;h1&gt;footer&lt;/h1&gt;");
+    filter.init(config);
+
+    FilterChain mockFilterChain = new FilterChain() {
+        public void doFilter(ServletRequest theRequest,
+            ServletResponse theResponse) throws IOException, ServletException
+        {
+            PrintWriter writer = theResponse.getWriter();
+            writer.print("&lt;p&gt;some content&lt;/p&gt;");
+            writer.close();
+        }
+        public void init(FilterConfig theConfig)
+        {
+        }
+        public void destroy()
+        {
+        }
+    };
+
+    filter.doFilter(request, response, mockFilterChain);
+}
+
+public void endXXX(WebResponse theResponse)
+{
+    assertEquals("&lt;h1&gt;header&lt;/h1&gt;&lt;p&gt;some content&lt;/p&gt;&lt;h1&gt;footer&lt;/h1&gt;",
+        theResponse.getText());
+}
+</pre>
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

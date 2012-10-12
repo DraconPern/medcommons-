@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>Hello MedPad!</string>
+		<key>scenes</key>
+		<array>
+			<dict>
+				<key>scene</key>
+				<string>0</string>
+
+				<key>name</key>
+				<string>Main Scene</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Hello MedPad!</string>
+
+				<key>largetitle</key>
+				<string>Hello MedPad!</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+				
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>bugs - landscape and rotating</string>
+						<key>toplabel</key>
+						<string>PDF - Hello MedPad!</string>
+						<key>label</key>
+						<string>Hello MedPad! - PDF</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/radreport.pdf
+						</string>
+					</dict>
+
+				</array>
+			</dict>
+		</array>
+	</dict>
+</plist>

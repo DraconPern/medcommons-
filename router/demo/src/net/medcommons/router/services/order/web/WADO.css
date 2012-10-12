@@ -1,0 +1,1090 @@
+/**
+ * Copyright 2004 MedCommons Inc.   All Rights Reserved.
+ */
+.FolderTab {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; HEIGHT: 25px
+}
+.FolderTop {
+	BORDER-LEFT-COLOR: #000000; BORDER-TOP-COLOR: #000000; BORDER-BOTTOM: #000000 1px solid; BORDER-RIGHT-COLOR: #000000
+}
+.FolderLeft {
+	BORDER-BOTTOM-COLOR: #000000; BORDER-LEFT: #000000 1px solid; BORDER-TOP-COLOR: #000000; BORDER-RIGHT-COLOR: #000000
+}
+.FolderHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; TEXT-INDENT: 4px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.TrackingField {
+	BORDER-RIGHT: #ccccff 1px solid; BORDER-TOP: #ccccff 1px solid; LEFT: 12px; BORDER-LEFT: #ccccff 1px solid; 
+: 270px; BORDER-BOTTOM: #ccccff 1px solid; POSITION: relative; TOP: 14px; HEIGHT: 25px; BACKGROUND-COLOR: #ffffff
+}
+.AccountFieldLeft {
+	LEFT: 5px; WIDTH: 110px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.AccountFieldLarge {
+	LEFT: 5px; WIDTH: 270px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.AccountFieldSmall {
+	LEFT: 0px; WIDTH: 40px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.AccountFieldRight {
+	LEFT: 0px; WIDTH: 96px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.FieldHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #999999; TEXT-INDENT: 5px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.CreditCardField {
+	LEFT: 5px; WIDTH: 150px; POSITION: relative; TOP: 0px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.CreditCardFieldRight {
+	LEFT: 5px; WIDTH: 100px; POSITION: relative; TOP: 0px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.HIPAAblock {
+	FONT-SIZE: 9px; LEFT: 5px; OVERFLOW: hidden; WIDTH: 270px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; POSITION: relative; TOP: 5px; HEIGHT: 40px; BACKGROUND-COLOR: #e1e3f0
+}
+.RightColHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.RightFieldHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.RightColTextField {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(/mc/images/fieldbackg_rightscreen.gif); OVERFLOW: hidden; BORDER-LEFT: medium none; WIDTH: 320px; LINE-HEIGHT: 30px; BORDER-BOTTOM: medium none; FONT-FAMILY: "Courier New", Courier, mono; POSITION: relative; TOP: 5px; HEIGHT: 150px
+}
+.RightColTextSmall {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 320px; BORDER-BOTTOM: medium none; POSITION: relative; HEIGHT: 30px; BACKGROUND-COLOR: #ffffff
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: auto; PADDING-TOP: 0px; BACKGROUND-COLOR: black;
+}
+
+body.editMode { background-color: #f9f9f6; }
+
+.ThumbLabel {
+	FONT-WEIGHT: bold; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.ThumbLabel div {
+	text-align: center;
+}
+.ThumbDescription {
+	FONT-WEIGHT: bold; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.ThumbTime {
+	FONT-WEIGHT: bold; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.ImageCount {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #cccccc; normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right
+}
+.FooterCell {
+	HEIGHT: 30px;FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #cccccc; TEXT-INDENT: 5px; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right
+}
+
+.MenuHighlight {
+	color: #0000FF; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-align: right
+}
+
+.MenuItems {
+	COLOR: #000000; font-size: 11px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right
+}
+
+.MenuDisabled {
+	color: #EEEEEE; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-align: right
+}
+
+.thumbCellBox, #mobilebtns { 
+  background-color: #89877d;
+}
+.thumbCellBox {
+  position: absolute;
+  font-size: 11px;
+ }
+
+.SelectedImage {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1px;
+  width: 140px;
+}
+
+.SelectedPagerLink {
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+.NotSelectedPagerLink {
+  font-weight: normal;
+  font-size: 11px;
+  color: gray;
+}
+
+#bodyFrame {
+  border-style: none;
+}
+
+.CCRThumbLabels {
+	font-size: 10px; 
+  font-weight: bold; 
+  color: #ffffff; 
+  font-family: Arial, Helvetica;
+}
+
+.CCRThumbContents {
+  font-size: 9px; 
+  font-weight: normal; 
+  color: #ffffff; 
+  font-family: Arial, Helvetica;
+  text-align: left;
+}
+
+.CCRTitle {
+  background-color: #454a4f;
+	font-size: 14px; 
+  font-weight: bold; 
+  font-family: Arial, Helvetica;
+  height: 25px;
+  width: 100%;
+  color: white;
+}
+
+.CCRDetailRow {
+  height: 17px;
+}
+
+#thumbCell0 {
+  background-color: #334455;
+  height: 140px;
+}  
+
+#errorPane {
+  font-family: Arial, Helvetica;
+ 	font-size: 12px; 
+  height: 30px;
+  position: absolute;
+  padding: 10px;
+  top: 0px;
+  background-color: #dd3322;
+  display: none;
+  text-align: center;
+}
+
+#cachedPane {
+  position: absolute;
+  top: 707px;
+  background-color: transparent;
+  display: none;
+}
+
+#cachedAmount {
+  font-family: Arial, Helvetica;
+ 	font-size: 1px; 
+  height: 6px;
+  color: white;
+  filter: alpha(opacity=70);
+  background-color: gray;
+  border-style: none;
+  display: block;
+}
+
+#cachedPercent {
+  position: absolute;
+  top: -2px;
+  left: 42px;
+  font-family: Arial, Helvetica;
+ 	font-size: 8px; 
+  height: 6px;
+  color: gray;
+  filter: alpha(opacity=70);
+  background-color: transparent;
+}
+
+#speedPane {
+  position: absolute;
+  top: 697px;
+  background-color: transparent;
+  display: none;
+}
+
+#speedAmount {
+  font-family: Arial, Helvetica;
+ 	font-size: 1px; 
+  height: 6px;
+  color: white;
+  filter: alpha(opacity=70);
+  background-color: white;
+  border-style: none;
+  display: block;
+}
+
+#speedPercent {
+  position: absolute;
+  top: -2px;
+  left: 42px;
+  font-family: Arial, Helvetica;
+ 	font-size: 8px; 
+  height: 6px;
+  color: white;
+  filter: alpha(opacity=70);
+  background-color: transparent;
+}
+
+#errorPaneMessage {
+  position: relative;
+}
+
+#mainImageZoomRect {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-color: white;
+  border-width: 1px;
+  z-index: 30;
+}
+
+#dragScrollOuter {
+  position: absolute;
+  top: 50px;
+  height: 470px;
+  width: 22px;
+  border-style: none;
+  border-width: 1px;
+  border-color: green;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+#dragScrollLine {
+    position: absolute;        
+    top: 0px;
+    left: 0px;
+	height: 100%;
+	width: 10px;
+	border-right: solid 2px #aaa;
+    z-index: 2;
+}
+
+#dragScrollPane { 
+  position: absolute;
+  border-style: none;
+  border-left: none;
+  border-right: none;
+  border-width: 1px;
+  border-color: gray;
+  background-color: #333;
+  height: 100%;
+  width: 100%;
+  cursor: n-resize;
+  z-index: 1000;
+}
+
+#dragScrollTab { 
+  position: absolute;
+  top: 190px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
+  background-color: black;
+  height: 20px;
+  width: 100%;
+  cursor:row-resize;
+}
+
+#dragScrollDisplay {
+  display: none;
+  position: absolute;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-right-style: none;
+  border-right-width: 0px;
+  border-right-color: transparent;
+  z-index: 10000;
+}
+
+/* Image number displayed & updated while user drags */
+#dragScrollImageNum {
+  position: relative;
+  display: none;
+  left: 4px;
+  color: white;
+  font-family: Arial, Helvetica;
+ 	font-size: 8px; 
+}
+
+/* Small icon displayed to show drag scroll region */
+#dragScrollIcon {
+  z-index: 60;
+}
+
+/* The label containing total images and dragScrollIcon */
+#dragScrollLabel {
+  position: absolute;
+  z-index: 60;
+}
+
+#dragScrollTotalImages {
+  position: relative;
+  top: -7px;
+  z-index: 60;
+  color: white;
+  font-family: Arial, Helvetica;
+ 	font-size: 10px; 
+}
+
+#xdsPleaseWait {
+  position: absolute;
+  top: 150px;
+  left: 450px;
+  height: 30px;
+  vertical-align: middle;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  background-color: #f0efe4;  
+  padding: 7px;
+  z-index: 200;
+  display: none;
+}
+
+#xdsAddReportForm {
+  position: absolute;
+  top: 150px;
+  left: 350px;
+  font-family: Arial, Helvetica;
+ 	font-size: 12px; 
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  padding: 10px;
+  display: none;
+  background-color: #f0efe4;  
+  z-index: 200;
+}
+
+.thumbAnnotation {
+  position: absolute;
+  left: 118px;
+  top: 2px;
+}
+
+#mainImage {
+  position: relative;
+  background-color: black;
+}
+
+.dialog h4 { 
+  margin: 0px 0px 0px 5px;
+}
+
+.dialog .hd { 
+  font-family: arial;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  background-color: #898770;
+  background-color: transparent;
+}
+
+.dialog .hd h4 { 
+  background-color: #898770;
+  margin: 0px;
+}
+
+.dialog { 
+  position: absolute;
+  width:620px; 
+  left: 205px;
+  min-width: 200px;
+  top: 50px;
+  z-index: 100000;
+  background-color: #e2e1d7;
+}
+
+#referralFormContainer, #patientCard {
+  margin-top: 10px;
+  background-color: #e2e1d7;
+}
+
+#quickReplyDlg {
+  background-color: transparent;
+}
+
+#quickReplyDlg .dlgContent {
+  background-color: #e2e1d7;
+}
+
+#quickReplyDlg button {
+  display: block;
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+#quickReplyDlg textarea {
+  width: 94%;
+  margin: 3%;
+}
+
+#replyStatus {
+  font-family: arial;
+  font-size: 13px;
+  margin-left: 15px;
+}
+
+#quickReplyDlg #ccrTable {
+  width: 600px;
+}
+
+#notificationsTableCache {
+  display: none;
+}
+
+.leftnav, table.ccrTable tr th {
+  width: 75px;
+}
+
+.secureImg {
+  display: none;
+}
+
+#sendStatusDiv {
+  /* Note: must be higher than .dialog */
+  z-index: 200000;
+  top: 40px;
+  left: 40px;
+}
+#wadoImageArea {
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+#wadoImage {
+  position: relative;
+}
+.wlTile {
+	position: absolute;
+	border: 1px solid #666;
+	background-color: black;
+	z-index: 10000;
+	overflow: hidden;
+}
+
+.wlTile .highlighted {
+	border: 1px solid orange;
+}
+
+div.textThumb {
+  color: white;
+  margin: 0px 12px;
+  padding: 10px 0px;
+}
+
+div.textThumb h3 {
+  margin: 7px 0px;
+}
+div.textThumb p {
+  margin: 5px 0px;
+  font-size: 12px;
+}
+div.textThumb a {
+  color: #ccccff;
+  text-decoration: underline;
+}
+.buffermsg {
+	font-size: 80%;
+	color: #ccc;
+}
+#bufferingMsg {
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width: 100%;
+	color: #aaa;
+	background-color: black;
+	padding: 4px;
+	font-size: 10px;
+	width: 8em;
+}
+#toolbarSensor {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 4px;
+	background-color: #aaa;
+	z-index: 100;
+}
+#dropdownToolbar {
+	background-color: transparent;
+	color: white;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	display: none;
+	text-align: center;
+	z-index: 100;
+}	
+.toolbarBackground {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	z-index: 50;
+}
+.toolbarContents {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	z-index: 75;
+	background-color: transparent;
+}
+#emailPanel {
+	position: relative;
+	background-color: #fec;
+	padding-top: 1em;
+	color: #333;
+}
+#emailPanel form {
+	margin-bottom: 0px;
+}
+#emailTo {
+	width: 20em;
+}
+#emailPanel img {
+	xborder: solid 2px blue;
+	position: absolute;
+	top: -9px;
+	left: 198px;
+}	
+.toolbarContents button {
+	margin: 15px 20px 10px 20px;
+}
+table.formTable td {
+	text-align: left;
+}
+table.formTable th {
+	font-size: 14px;
+	text-align: right;
+	padding-right: 1em;
+}
+.sectionbutton {
+	position: relative;
+	border: solid 1px #808080; 
+	border-width: 1px 1px;
+	background: url("yui-2.6.0/assets/skins/sam/sprite.png") repeat-x scroll left -10px #D8D8D8;
+	padding: 2px 10px;
+	float: left;
+	cursor: pointer;
+	color: #555;
+	font-size: 10px;
+	margin-top: 0px;
+}
+.sectionbutton.middle, .sectionbutton.right {
+	border-left-style: none;
+}
+
+div.sectionbutton:hover {
+	color: black;
+	background: url("yui-2.6.0/assets/skins/sam/sprite.png") repeat-x scroll left 0px #D8D8D8;
+}
+div.sectionbutton.active {
+	color: black;
+	background-color: white;
+	background: url("yui-2.6.0/assets/skins/sam/sprite.png") repeat-x scroll left -1500px #f0f0f0;
+}
+#ViewerArea, #EditArea {
+	clear: both;
+}
+.cornerDot {
+	background-color: #bbb;
+	position:absolute;
+	width:1px;
+	height:1px; 
+	z-index: 110;
+}
+#sectionButtons {
+	position: relative;
+	background-color: #828076;
+	background-color: #89877d;
+	border-bottom: 0px solid #333;
+	height: 24px;
+}
+#sectionButtonsInner {
+	position: absolute;
+	top: 4px;
+	right: 10px;
+}
+#contentLinks {
+	color: green;
+	background-color: #f0f0f0;
+	font-size: 10px;
+	height: 18px;
+	padding: 3px 0px 0px 0px;
+}
+
+
+#contentLinks a {
+	color: #345;
+	margin: 3px 2em;
+}
+#contentLinks a:hover, 
+#contentLinks a:active {
+	color: #8ac;
+}
+
+#ccrTabs .yui-content {
+	display: none;
+}
+
+#ccrTabs {
+	padding-top: 2px;
+	background-color: #fbf4e4;
+	background-color: #fbfaf0;
+	background-color: #E1DDCB;
+}
+.yui-skin-mc #ccrTabs .yui-nav a em {
+  font-weight: normal !important;
+  font-size: 12px;
+}
+.yui-skin-mc #ccrTabs .yui-nav .selected a {
+  position: relative;
+  top: 1px;
+  border-color: #888 !important;
+}
+.yui-skin-mc #ccrTabs .yui-nav a em {
+	color: white !important;
+}
+.yui-skin-mc #ccrTabs .yui-nav .selected a em {
+  font-weight: normal !important;
+  color: #333 !important;
+  border-color: #888 !important;
+}
+.yui-skin-mc #ccrTabs ul.yui-nav {
+  padding-left: 8px;
+  border-color: #87857a !important;
+  border-color: #777 !important;
+  border-bottom-width: 1px !important;
+}
+.yui-skin-mc #ccrTabs ul.yui-nav em {
+	position: relative !important;
+	padding-top: 3px !important;
+	padding-bottom: 0px !important;
+}
+
+.yui-skin-mc #ccrTabs ul.yui-nav .selected em {
+	padding-top: 5px !important;
+}
+#sectionButtons {
+	padding-top: 0px;
+	background-color: #89877d !important;
+}
+.yui-panel-container, .mask {
+	z-index: 1500 !important; 
+}
+.yui-skin-mc .yuimenubar {
+	font-size: 10px !important;
+	border-style: none !important;
+}
+.yuimenubaritemlabel {
+	border-style: none !important;
+}
+.yui-skin-mc .yuimenubar ul {
+	border-style: solid;
+	border-width: 1px 0 1px 0;
+	border-color: #808080;
+	margin-top: 3px;
+}
+.yui-skin-mc .yuimenubar ul li.yuimenubaritem {
+	padding: 3px 0px;
+}
+.yui-skin-mc #ccrTabs .yui-nav .selected a, .yui-skin-mc #ccrTabs .yui-nav .selected a:focus, .yui-skin-mc #ccrTabs .yui-nav .selected a:hover {
+	background-position: left 100px !important;
+	background-color: #f9f9f6 !important;
+}	
+.yui-skin-mc #ccrTabs .yui-nav a, .yui-skin-mc #ccrTabs #ccrTabs-top .yui-nav a {
+	background-position: left -1400px !important;
+}
+#toparea {
+	background-color: #f9f9f6;
+}
+#menus {
+	position: absolute;
+	z-index: 200;
+}
+
+.webReferenceThumbnail {
+	margin: 10px 30px;
+}
+
+/* Edit Mode */
+
+#referralFormContainer, #patientCard { 
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+
+
+#patientCard.expanded #patientNameBlock {
+  left: 60px;
+}
+
+div#patientCard .formInput {
+  background-color: white;
+  margin-top: 4px;
+  padding-left: 2px;
+}
+
+#patientMiddleNameBlock, #patientIdButtons, #patientIdUp {
+  display: inline;
+}
+
+#pcHeaderDob {
+  display: none;
+}
+
+#patientCard div.hd, #referralFormContainer div.hd {
+  height: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #898770;
+  padding-left: 10px;
+}
+
+div#patientCard .highlighted {
+  background-color: #ffffcc;
+}
+
+#patientCard div.bd {
+  padding-top: 5px;
+}
+
+div#patientCard h4,div#patientCard h5, .patientCardHeading {
+  font-size: 13px;
+}
+
+div#patientCard h4,div#patientCard h5 {
+  float: left;
+  width: 55px;
+  padding: 5px 0px 0px 0px;
+  margin:  0px 0px 0px 0px;
+}
+
+div#patientCard h5 {
+  margin-top: 3px;
+}
+
+div#patientCard h5, .smallPatientLabel {
+  font-weight: normal;
+  font-size: 10px;
+  font-style: italic;
+  text-align: right;
+  vertical-align: middle;
+}
+
+#patientCard,.patientCard {
+  position: relative;
+}
+
+#closePatientCardButton {
+  position: absolute;
+  right: 50px;
+  width: 60px;  
+}
+
+
+#patientNameBlock input {
+  font-weight: bold; 
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+div#patientCard h5,
+.smallPatientLabel,
+#patientGivenLabel, 
+#patientFamilyLabel {
+  color: #222;
+}
+
+#patientCard .bd, #patientCard .hd, #referralFormContainer .bd, #referralFormContainer .hd {
+  padding: 0px 10px;
+}
+
+#patientIdBreak {
+ clear: both;
+}
+
+#patientGivenLabel, #patientFamilyLabel {
+  position: absolute;
+  top: 24px;
+  font-size: 9px;
+  font-style: italic;
+  margin: 0px;
+  padding: 0px;
+}
+
+#patientIdUp,#patientIdDown {
+  position: relative;
+  cursor: pointer;
+}
+
+#patientIdUp {
+  top: -14px;
+}
+#patientIdDown {
+  top: -4px;
+  left: -15px;
+}
+#patientIdDown.collapsed {
+  top: -10px;
+  left: -2px;
+}
+
+
+/* Note: overridden for IE in html */
+#patientGivenLabel {
+  left: 65px;
+}
+/* Note: overridden for IE in html */
+#patientFamilyLabel {
+  left: 165px;
+}
+
+#patientIdLabel {
+  position: relative;
+  top: -2px;
+  font-size: 9px;
+  font-style: italic;
+  margin-left: 54px;
+}
+
+/*
+#patientIdLabel {
+  left: 67px;
+  top: 88px;
+}
+*/
+
+#pcAgeSex { 
+  display: none;
+}
+
+#addWebReferenceDiv {
+  padding-bottom: 10px;
+}
+
+#editPatientIdDiv  {
+}
+
+#editPatientIdDiv label {
+  float: left; 
+  text-align: right; 
+  width: 60px;
+}
+
+#ccrTable a:link, #ccrTable a:visited { 
+  font-family: verdana;
+  font-size: 12px;
+  color: #6b91ae;
+  text-decoration: none;
+}
+
+#ccrTable a:hover,#ccrTable  a:active { 
+  text-decoration: underline;
+}
+
+#ccrTable a.deleteLink {
+  color: #b64501;
+  font-weight: bold;
+  font-family: verdana;
+  font-size: 12px;
+}
+a.deleteLink:hover, a.deleteLink:active {
+  text-decoration: none;
+}
+
+
+table.referencesTable tr td {
+  border-color: black;
+  border-width: 1;
+  font-size: 12px;
+  padding-left: 25px;
+  padding-top: 5px;
+  vertical-align: middle;
+}
+
+table.referencesTable tr.referenceHeader td {
+    font-weight: bold;
+}
+
+#pinCell * {
+	display: none;
+}
+
+#editButtons {
+	background-color: #FFEEAA;
+	border-bottom: solid 1px #888;
+	margin-bottom: 1em;
+	height: 2.5em;
+	padding: 0 1em 0px 0px;
+}
+.editButton {
+	float: right;
+	margin:  0.5em;
+}
+#referralForm {
+	clear: both;
+}
+/* End Edit Mode */
+
+
+.toolPalette img.activeTool {
+	background-color: #FFFF2A;
+}
+
+#cautionThumb h3 {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-size: 14px;
+}
+
+#cautionThumb a {
+	margin-top: 10px;
+	font-size: 9px;
+}
+.crosshairs {
+	cursor: crosshair;
+}
+.movable {
+	cursor: move;
+}
+.zoomable { cursor: url(images/magnify.cur), -moz-zoom-in, pointer; }
+
+.invisible {
+	visibility: hidden;
+}
+
+.toolImage {
+	background-color: transparent;
+}
+.hurlExample {
+	font-style: italic;
+	color: #999;
+	font-size: 82%;
+}
+.thumbCell {
+	cursor: pointer;
+	background-color: black;
+}
+
+.toolPalette img {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+#thumbnailGrid {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 100001;
+	color: white;
+	background-color: #999;
+	width: 80%;
+	margin: 10%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;	
+    padding: 1em;
+}
+
+#thumbnailGrid .CCRTitle, #thumbnailGrid .thumbAnnotation {
+	visibility: hidden;
+}
+
+.thumbCellBox.gridThumb {
+	float: left;
+	position: relative;
+    background-color: transparent;
+    margin-top: 10px;
+}
+
+.thumbCellBox.gridThumb .ThumbLabel {
+	left: 0px;
+	top: 150px; 
+	width: 100%;
+	font-weight: normal;
+}
+.thumbCellBox.gridThumb .ThumbLabel div {
+	display: none;
+}
+
+.thumbnailsIconBox button {
+	font-size: 10px;
+    background-color: white;	
+    margin: 4px 5px 4px 0px;
+}
+.thumbnailsIconBox * {
+	vertical-align: middle;
+}
+
+img.thumbnailsIcon {
+	cursor: pointer;
+}
+#scrubberPreview {
+  position: absolute;
+}
+#scrubberPreviewBox {
+	
+	position: absolute;
+	top: -50px;
+	border: solid 1px #666;
+	width: 40px;
+	height: 40px;
+	padding: 2px;
+	overflow: hidden;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;    
+	background-color: black;
+}
+#scrubberPreviewBox.loading {
+}
+
+#scrubberPreviewNum {
+	position: absolute;
+	top: -65px;
+    left: 10px;	
+    color: white;
+    font-size: 9px;
+}
+#thumbOuter {
+	position: absolute;
+}
+#mobilebtns {
+	position: absolute;
+	width: 200px;
+	height: 50px;
+}
+#mobilebtns button {
+	width: 75px;
+	margin: 8px 8px 3px 4px;
+	
+    border-width: 0 6px;
+    padding: 10px 0;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: inherit;
+    color: white;	
+    background-color: transparent;
+    -webkit-border-image: url(iui/bigToolButton.png) 0 12 0 12;
+}
+#mobilebtns button.back {
+    border-width: 0 7px;
+    x-webkit-border-image: url(iui/backButton.png) 0 12 0 12;
+}

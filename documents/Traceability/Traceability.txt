@@ -1,0 +1,8 @@
+TRACEABILITY
+------------
+
+This folder should house the requirements traceability matrix.
+
+Requirements should be numbered.
+Tests should be numbered.
+Tests should be traced to requirements.

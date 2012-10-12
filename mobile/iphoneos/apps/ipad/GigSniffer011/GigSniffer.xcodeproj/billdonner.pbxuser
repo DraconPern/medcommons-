@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* GigSniffer */ = {
+		activeExec = 0;
+		executables = (
+			884580BB130C204700888009 /* GigSniffer */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Distribution;
+		activeExecutable = 884580BB130C204700888009 /* GigSniffer */;
+		activeSDKPreference = iphonesimulator4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* GigSniffer */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* GigSniffer */,
+		);
+		breakpoints = (
+			8843BA7D130C974800836FFC /* GigSnifferController.m:16 */,
+		);
+		codeSenseManager = 884580C1130C206500888009 /* Code sense */;
+		executables = (
+			884580BB130C204700888009 /* GigSniffer */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					866,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					826,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 319644600;
+			PBXWorkspaceStateSaveDate = 319644600;
+		};
+		perUserProjectItems = {
+			8843B86D130C34D900836FFC /* PBXTextBookmark */ = 8843B86D130C34D900836FFC /* PBXTextBookmark */;
+			8843B86E130C34D900836FFC /* PBXTextBookmark */ = 8843B86E130C34D900836FFC /* PBXTextBookmark */;
+			8843B93E130C409C00836FFC /* PBXTextBookmark */ = 8843B93E130C409C00836FFC /* PBXTextBookmark */;
+			8843BA7F130C974B00836FFC /* PlistBookmark */ = 8843BA7F130C974B00836FFC /* PlistBookmark */;
+			88FD2BD7130D63C700C780BF /* PBXTextBookmark */ = 88FD2BD7130D63C700C780BF /* PBXTextBookmark */;
+			88FD2BE4130D653200C780BF /* PBXTextBookmark */ = 88FD2BE4130D653200C780BF /* PBXTextBookmark */;
+		};
+		sourceControlManager = 884580C0130C206500888009 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {524, 342}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 264}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* GigSniffer_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1044, 592}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 189}";
+		};
+	};
+	8843B86D130C34D900836FFC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 884580C4130C207A00888009 /* GigSnifferDelegate.h */;
+		name = "GigSnifferDelegate.h: 1";
+		rLen = 0;
+		rLoc = 2;
+		rType = 0;
+		vrLen = 457;
+		vrLoc = 0;
+	};
+	8843B86E130C34D900836FFC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 884580C2130C207A00888009 /* GigSnifferController.h */;
+		name = "GigSnifferController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 367;
+		vrLoc = 0;
+	};
+	8843B93E130C409C00836FFC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 884580C5130C207A00888009 /* GigSnifferDelegate.m */;
+		name = "GigSnifferDelegate.m: 21";
+		rLen = 0;
+		rLoc = 494;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 0;
+	};
+	8843BA7D130C974800836FFC /* GigSnifferController.m:16 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 8843BAB2130D481F00836FFC /* GigSnifferController.m */;
+		functionName = "-init";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 16;
+		location = GigStand;
+		modificationTime = 319640231.321298;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	8843BA7F130C974B00836FFC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 884580C8130C20AC00888009 /* GigSniffer-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/billdonner/GigSniffer011/GigSniffer-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	8843BAB2130D481F00836FFC /* GigSnifferController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1030, 4940}}";
+			sepNavSelRange = "{7204, 19}";
+			sepNavVisRange = "{5697, 675}";
+		};
+	};
+	884580BB130C204700888009 /* GigSniffer */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = GigSniffer;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	884580C0130C206500888009 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	884580C1130C206500888009 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	884580C2130C207A00888009 /* GigSnifferController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = GigSnifferController.h;
+		path = /Users/billdonner/GigSniffer011/Classes/GigSnifferController.h;
+		sourceTree = "<absolute>";
+	};
+	884580C3130C207A00888009 /* GigSnifferController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = GigSnifferController.m;
+		path = /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1044, 4883}}";
+			sepNavSelRange = "{7679, 0}";
+			sepNavVisRange = "{3220, 987}";
+		};
+	};
+	884580C4130C207A00888009 /* GigSnifferDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1621, 978}}";
+			sepNavSelRange = "{2, 0}";
+			sepNavVisRange = "{0, 462}";
+		};
+	};
+	884580C5130C207A00888009 /* GigSnifferDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1044, 1349}}";
+			sepNavSelRange = "{494, 0}";
+			sepNavVisRange = "{0, 843}";
+		};
+	};
+	88FD2BD7130D63C700C780BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 884580C3130C207A00888009 /* GigSnifferController.m */;
+		name = "GigSnifferController.m: 253";
+		rLen = 0;
+		rLoc = 7679;
+		rType = 0;
+		vrLen = 987;
+		vrLoc = 3220;
+	};
+	88FD2BE4130D653200C780BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 884580C5130C207A00888009 /* GigSnifferDelegate.m */;
+		name = "GigSnifferDelegate.m: 21";
+		rLen = 0;
+		rLoc = 494;
+		rType = 0;
+		vrLen = 843;
+		vrLoc = 0;
+	};
+}

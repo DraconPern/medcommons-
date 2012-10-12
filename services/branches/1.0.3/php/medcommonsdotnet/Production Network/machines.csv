@@ -1,0 +1,7 @@
+name,type,attrs
+
+healthurl.medcommons.net,Healthurl Service (EC2/i-ca65baa3) <small><a target='_new'  href='https://healthurl.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/571610' title='(rs/aws)'>(rs/aws)</a></small>
+hot.medcommons.net,Development Server (EC2/i-084a9061) <small><a target='_new' href='https://hot.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/438326' title='(rs/aws)'>(rs/aws)</a></small>
+timc.medcommons.net,TIMC Node (EC2/i-572a6a3e) <small><a target='_new' href='https://timc.medcommons.net/router/SelfTest.action' title='(test)'>(test)</a></small> <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/1379569' title='(rs/aws)'>(rs/aws)</a></small>
+www.medcommons.net,Medcommons WWW (EC2/i-fc895395) <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/430311' title='(rs/aws)'>(rs/aws)</a></small>
+tenth.medcommons.net,DISABLED

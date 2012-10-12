@@ -1,0 +1,1366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Ant Integration</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Ant Integration" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Continuous integration</h1>
+
+      
+<div class="note">
+        
+<b>This tutorial was written when I wrote Cactus 1.2. Since then
+        I have improved my command of Ant. However this tutorial has not yet
+        been updated. I believe it still provides some very good
+        methodology on how to use Ant, although not the latest. If you wish to
+        keep track of the latest change, have a look at the Cactus build files,
+        found in the source distribution.</b>
+      
+</div>
+
+      
+<p>
+        A strong principle of eXtreme Programming (XP) is the continuous
+        integration aspect (see the
+        <a href="http://www.martinfowler.com/articles/continuousIntegration.html" title="">
+        Continuous Integration</a> article by Martin Fowler). The traditional
+        approach has been
+        to developing the code first, then test it and then integrate
+        it with other applications. The continuous integration principle is to
+        develop code, test and integrate at the same time, i.e. at any point
+        in time, you have a functioning code along with tests and integrated.
+      </p>
+      
+<p>
+        In order to be able to do continuous integration, you need to be able
+        to automatically run the build for your application, including passing
+        the unit tests (based on JUnit, Cactus, HttpUnit or others). Ant is
+        the perfect tool for this task.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Ant benefits</h1>
+
+      
+<p>
+        The benefits of using Ant for running unit tests are as follows:
+      </p>
+      
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+        
+<tr>
+          
+<th>
+            Benefits
+          </th>
+        
+</tr>
+        
+<tr>
+          
+<td>
+            Ant is written in Java and thus the same scripts can be used on
+            several systems (Windows and Unix for example). Is is therefore very
+            well suited for building java applications.
+          </td>
+        
+</tr>
+        
+<tr>
+          
+<td>
+            Ant provides enough built-in and optional tasks to be able to
+            achieve almost any needed build task without needing to use
+            system dependent scripts.
+          </td>
+        
+</tr>
+        
+<tr>
+          
+<td>
+            By being able to very quickly rerun unit test you can verify that
+            your tests still pass when you modify some part of your code (
+            regression testing)
+          </td>
+        
+</tr>
+        
+<tr>
+          
+<td>
+            As it is automated, it fits well in the continuous integration
+            principle and your tests can thus be ran automatically and
+            continously
+          </td>
+        
+</tr>
+      
+</table>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Writing an Ant build script tutorial</h1>
+
+      
+<p>
+        The sample Ant build file described below is taken from the
+        <a href="../.././downloads.html" title="Downloads of Cactus releases and nightly builds.">Cactus Sample for Servlet API 2.2
+        </a> project.
+      </p>
+
+      
+<div class="note">
+        This section is both a tutorial for automating builds and unit testing
+        with Ant and Cactus and also a best practice and methodology guide
+        for using Ant in general (independent of Cactus). This is an Ant
+        configuration that has been working for me on several project. Of course,
+        you are free to adapt/modify it to suit your needs.
+      </div>
+
+      
+<div class="section">
+<h2>Project directory structure</h2>
+
+        
+<p>
+          Create the following directories:
+        </p>
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<th>
+              Directory name
+            </th>
+            <th>
+              Content of the directory
+            </th>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>build</code>
+            </td>
+            <td>
+              The Ant build file and some other ancillary files (properties file, ...)
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>conf</code>
+            </td>
+            <td>
+              Configuration files for the project. These are the configuration
+              files that will <i>not</i> be put into the runtime jar. They
+              are configuration file that need to be visible and modifyable
+              by a user of the project. If they were bundled in the jar they
+              would be hard to modify. On the other hand, we don't want a
+              proliferation of configuration files, so all <i>technical</i>
+              configuration files (messages to display for errors, ...)
+              should be put in the <code>src</code> directory in correct java
+              packages.
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>conf/test</code>
+            </td>
+            <td>
+              Configuration files needed for testing the project only.
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>docs</code>
+            </td>
+            <td>
+              Project documentation.
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>docs/skins</code>
+            </td>
+            <td>
+              Documentation skin for Stylebook (if using Stylebook).
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>docs/xdocs</code>
+            </td>
+            <td>
+              Documentation files (XML files) for Stylebook (if using Stylebook).
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>src</code>
+            </td>
+            <td>
+              The project sources: java files + java test files +
+              properties files + test properties files + other files for
+              runtime or test (XML files, ...). Note that all test files
+              should begin by 'Test' or 'test' in order to easily separate them
+              from other files so that in an Ant target we'll be able to include
+              only the runtime files.
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <code>web</code>
+            </td>
+            <td>
+              The project web files: HTML, JSP, ... (if any)
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<div class="note">
+          An <code>out</code> directory will be created by the Ant build. All
+          build-generated files will be put in that directory (compiled classes,
+          generated javadoc documentation, test configuration files for running
+          an application server, ...).
+        </div>
+
+        
+<div class="note">
+          We don't have any <code>lib</code> directory because it is always
+          better not to include dependent jars in your project whenever
+          possible for the following reasons: better continuous integration
+          with other libraries (meaning they also evolve and you should test
+          as much as possible with the latest version to discover potential
+          problems early, more lightweight downloads, less jar proliferation
+          (you'll end up with tens of the same jars otherwise), more version
+          control and integration checks (if your project uses 2 external
+          libraries that need another third library but not in the same version
+          you are in trouble !), ...
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Ant Target List</h2>
+
+        
+<p>
+          Define the following targets in your <code>build.xml</code>.
+        </p>
+
+        
+<div class="note">
+          The <i>Type</i> column specify whether the target is an external
+          target that can be called by the user of the build file or if it is
+          an internal target, intended to be called internally by another
+          target inside the build script.
+        </div>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<th>
+              Target name
+            </th>
+            <th>
+              Description
+            </th>
+            <th>
+              Type
+            </th>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#init"><code>init</code></a>
+            </td>
+            <td>
+              Defines token filters, timestamp, display some information on
+              screen, ...
+            </td>
+            <td>
+              Internal
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#usage"><code>usage</code></a>
+            </td>
+            <td>
+              Display usage information about the targets.
+            </td>
+            <td>
+              External
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#prepare"><code>prepare</code></a>
+            </td>
+            <td>
+              Set up the output directory where build generated files will be
+              put and copy the java sources to this output directory,
+              replacing tokens with the values defined in the <code>init</code>
+              target.
+            </td>
+            <td>
+              Internal
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#compile"><code>compile</code></a>
+            </td>
+            <td>
+              Compile the java sources and put the result in the output
+              directory. All copies non java source files such as
+              <code>.properties</code> files, XML configuration files, ...
+            </td>
+            <td>
+              Internal
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#source"><code>source</code></a>
+            </td>
+            <td>
+              Generate a zipped file containing the full sources of the project
+              (i.e. the whole directory structure, excluding any build
+              generated files).
+            </td>
+            <td>
+              External
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#javadoc"><code>javadoc</code></a>
+            </td>
+            <td>
+              Generates the javadoc of the project. This javadoc will be part
+              of the project documentation, as generated by the <code>doc</code>
+              target.
+            </td>
+            <td>
+              Internal
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#doc"><code>doc</code></a>
+            </td>
+            <td>
+              Generates the full project documentation: javadoc + README files
+              + documentation web site (using Stylebook for example).
+            </td>
+            <td>
+              External
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#clean"><code>clean</code></a>
+            </td>
+            <td>
+              Remove any build generated files. In particular, delete the
+              output directory.
+            </td>
+            <td>
+              External
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#jar"><code>jar</code></a>,
+              <a href="#war"><code>war</code></a>,
+              <code>ear</code>, ...
+            </td>
+            <td>
+              Generate the project runtime. If the project is a framework, it
+              is usually a jar. If the project is a web application, it is
+              usually a war file. If the project is an EJB application, it is
+              usually either one or several jars or an ear file. Etc ...
+            </td>
+            <td>
+              External
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              <a href="#tests"><code>tests_XXX</code></a> where XXX is
+              the name of the servlet engine on which the tests run.
+            </td>
+            <td>
+              Run the Cactus unit tests.
+            </td>
+            <td>
+              External
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+      
+</div>
+
+      
+<a name="basedir">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 1: The Ant project basedir</h2>
+
+        
+<p>
+          You <code>build.xml</code> file being in located in
+          <code>build/</code> you should set the <code>project</code> tag
+          <code>basedir</code>
+          attribute to '<code>..</code>' so that all other paths are relative
+          to your project root directory. Indeed, the batch file (shell script)
+          that was used to bootstrap Ant is located in
+          <code>&lt;root&gt;/build</code>, so '<code>..</code>' is the root
+          directory.
+        </p>
+        
+<p>
+          Example:
+        </p>
+
+<div class="source">
+<pre>
+&lt;?xml version="1.0"?&gt;
+[...]
+&lt;project name="Cactus Sample" default="war" basedir=".."&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 2: initialization of project properties</h2>
+
+        
+<p>
+          You should define as properties all values that can be factorized
+          and which are used often in your build file such as source locations,
+          output locations, external jar locations and names, ... You can also
+          define useful file patterns there (see the sample below).
+        </p>
+
+        
+<p>
+          A good principle is to defined any properties that depend on your
+          environment (such as external jar locations) in a file (let's call
+          it <code>build.properties</code> located either where
+          <code>build.xml</code> is located or in your home directory. The
+          properties defined in this file will be loaded by
+          <code>build.xml</code> using the following code:
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!-- Give user a chance to override without editing this file
+         (and without typing -D each time it compiles it) --&gt;
+    &lt;property file="build/build.properties" /&gt;
+    &lt;property file="${user.home}/build.properties" /&gt;
+</pre>
+</div>
+
+        
+<p>
+          Here are our properties initializations:
+        </p>
+
+
+<div class="source">
+<pre>
+&lt;project name="Cactus Sample" default="war" basedir=".."&gt;
+
+    &lt;!-- Give user a chance to override without editing this file
+         (and without typing -D each time it compiles it) --&gt;
+    &lt;property file="build/build.properties" /&gt;
+    &lt;property file="${user.home}/build.properties" /&gt;
+
+    &lt;!-- Generic project properties --&gt;
+    &lt;property name="project.fullname" value="Cactus Sample"/&gt;
+    &lt;property name="project.version" value="1.7.2"/&gt;
+    &lt;property name="project.name" value="cactus-sample"/&gt;
+
+    &lt;!-- Miscellaneous settings --&gt;
+    &lt;property name="year" value="2000-2004"/&gt;
+    &lt;property name="debug" value="on"/&gt;
+    &lt;property name="optimize" value="off"/&gt;
+    &lt;property name="deprecation" value="off"/&gt;
+
+    &lt;!--
+       ========================================================================
+         Set the properties related to the source tree
+       ========================================================================
+    --&gt;
+    &lt;!-- Source locations for the build --&gt;
+    &lt;property name="src.dir" value="src"/&gt;
+    &lt;property name="src.java.dir" value="${src.dir}/share"/&gt;
+    &lt;property name="src.java.servlet.dir" value="${src.dir}/servlet@servlet.api@"/&gt;
+    &lt;property name="build.dir" value="build"/&gt;
+    &lt;property name="etc.dir" value="${build.dir}/etc"/&gt;
+    &lt;property name="lib.dir" value="lib"/&gt;
+    &lt;property name="conf.dir" value="conf"/&gt;
+    &lt;property name="conf.test.dir" value="conf/test"/&gt;
+    &lt;property name="web.dir" value="web"/&gt;
+
+    &lt;!--
+       ========================================================================
+         Set the properties related to the build area
+       ========================================================================
+    --&gt;
+    &lt;!-- Destination locations for the build (relative to the basedir as --&gt;
+    &lt;!-- specified in the basedir attribute of the project tag)          --&gt;
+    &lt;property name="out.dir" value="out"/&gt;
+    &lt;property name="out.dist.dir" value="${out.dir}/dist"/&gt;
+    &lt;property name="out.lib.dir" value="${out.dir}/lib"/&gt;
+    &lt;property name="out.test.dir" value="${out.dir}/test"/&gt;
+    &lt;property name="out.src.dir" value="${out.dir}/src"/&gt;
+    &lt;property name="out.classes.dir" value="${out.dir}/classes"/&gt;
+    &lt;property name="out.doc.dir" value="${out.dir}/doc"/&gt;
+    &lt;property name="out.javadoc.dir" value="${out.doc.dir}/javadoc"/&gt;
+    &lt;property name="out.conf.dir" value="${out.dir}/conf"/&gt;
+
+    &lt;!-- Names of deliverables --&gt;
+
+    &lt;!-- The Cactus Sample war file. This is the file that should be
+         used at runtime by end users (it excludes the test classes) --&gt;
+    &lt;property name="final.war.name" value="${out.dir}/${project.name}-@servlet.api@.war"/&gt;
+
+    &lt;!-- The full sources of Cactus Sample in a zip file --&gt;
+    &lt;property name="final.src.name" value="${out.dir}/${project.name}-src-@servlet.api@.zip"/&gt;
+
+    &lt;!-- The Cactus sample documentation in a zip file --&gt;
+    &lt;property name="final.doc.name" value="${out.dir}/${project.name}-doc-@servlet.api@.zip"/&gt;
+
+    &lt;!--
+       ========================================================================
+         Useful file patterns for targets
+       ========================================================================
+    --&gt;
+    &lt;!-- All source files of the projet. These source files will be copied
+         to the destination source directory in the prepare task --&gt;
+    &lt;patternset id="all.src.files"&gt;
+
+        &lt;!-- All java files --&gt;
+        &lt;include name="**/*.java"/&gt;
+
+        &lt;!-- All doc files --&gt;
+        &lt;include name="**/package.html"/&gt;
+        &lt;include name="**/overview.html"/&gt;
+
+        &lt;!-- All conf files (including test files) --&gt;
+        &lt;include name="**/*.txt"/&gt;
+        &lt;include name="**/*.xml"/&gt;
+        &lt;include name="**/*.properties"/&gt;
+
+    &lt;/patternset&gt;
+
+    &lt;!-- All non java files in the src directory --&gt;
+    &lt;patternset id="all.nonjava.files"&gt;
+
+        &lt;!-- All conf files (including test files) --&gt;
+        &lt;include name="**/*.txt"/&gt;
+        &lt;include name="**/*.xml"/&gt;
+        &lt;include name="**/*.properties"/&gt;
+
+    &lt;/patternset&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="init">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 3: 'init' target</h2>
+
+        
+<p>
+          Useful for initializing a timestamp (DSTAMP, TODAY, TSTAMP), defining
+          token filters, printing some information messages, registering
+          custom Ant tasks, ...
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Initialize the build. Must be called by all targets
+       ========================================================================
+    --&gt;
+    &lt;target name="init"&gt;
+
+        &lt;!-- So that we can use the ${TSTAMP}, ${DSTAMP}, ... time stamps
+             in targets, if need be --&gt;
+        &lt;tstamp/&gt;
+
+        &lt;echo message="--------- ${project.fullname} ${project.version} ---------"/&gt;
+        &lt;echo message=""/&gt;
+
+        &lt;echo message="java.class.path = ${java.class.path}"/&gt;
+        &lt;echo message=""/&gt;
+        &lt;echo message="java.home = ${java.home}"/&gt;
+        &lt;echo message="user.home = ${user.home}"/&gt;
+        &lt;echo message=""/&gt;
+        &lt;echo message="basedir = ${basedir}"/&gt;
+        &lt;echo message=""/&gt;
+        &lt;echo message="servlet.jar = ${servlet.jar}"/&gt;
+        &lt;echo message="cactus.jar = ${cactus.jar}"/&gt;
+        &lt;echo message="junit.jar = ${junit.jar}"/&gt;
+        &lt;echo message="cactus.ant.jar = ${cactus.ant.jar}"/&gt;
+
+        &lt;!-- Filters --&gt;
+        &lt;filter token="version" value="${project.version}"/&gt;
+        &lt;filter token="year" value="${year}"/&gt;
+
+        &lt;!-- Initialize custom Ant tasks needed for running the server tests --&gt;
+        &lt;taskdef resource="cactus.tasks"&gt;
+            &lt;classpath&gt;
+                &lt;pathelement location="${cactus.ant.jar}"/&gt;
+                &lt;pathelement path="${java.class.path}"/&gt;
+            &lt;/classpath&gt;
+        &lt;/taskdef&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="usage">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 4: 'usage' targets</h2>
+
+        
+<p>
+          Display a usage message.
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Help on usage. List available targets
+       ========================================================================
+    --&gt;
+    &lt;target name="usage" depends="init"&gt;
+
+        &lt;echo message=""/&gt;
+        &lt;echo message="${project.fullname} build file"/&gt;
+        &lt;echo message="------------------------------------------------------"/&gt;
+        &lt;echo message=""/&gt;
+        &lt;echo message=" Available targets are:"/&gt;
+        &lt;echo message=""/&gt;
+        &lt;echo message=" war    --&gt; generates the war file (default)"/&gt;
+        &lt;echo message=" clean  --&gt; cleans up the build directory"/&gt;
+        &lt;echo message=" source --&gt; generates source zip of the project"/&gt;
+        &lt;echo message=" doc    --&gt; generates the docs (javadoc, ...)"/&gt;
+        &lt;echo message=" all    --&gt; do it all at once"/&gt;
+        &lt;echo message="            (clean, war, source, doc)"/&gt;
+        &lt;echo message=""/&gt;
+        &lt;echo message=" Targets for running the tests for Servlet API 2.2:"/&gt;
+        &lt;echo message=""/&gt;
+        &lt;echo message=" tests_resin_12    --&gt; run tests for Resin 1.2"/&gt;
+        &lt;echo message=" tests_tomcat_32   --&gt; run tests for Tomcat 3.2"/&gt;
+        &lt;echo message=" tests_weblogic_51 --&gt; run tests for WebLogic 5.1"/&gt;
+        &lt;echo message=" tests_orion_14    --&gt; run tests for Orion 1.4"/&gt;
+        &lt;echo message=""/&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="prepare">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 5: 'prepare' target</h2>
+
+        
+<p>
+          This target is needed for both compiling and generating the javadoc.
+          It copies all the source files from their <code>src/</code> directory
+          to the <code>out</code> directory, replacing tokens in the source
+          code (replacing the <code>1.7.2</code> by the version number
+          for example).
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Prepare the output directory by copying the source files into it
+       ========================================================================
+    --&gt;
+    &lt;target name="prepare" depends="init"&gt;
+
+        &lt;mkdir dir="${out.src.dir}"/&gt;
+
+        &lt;!-- Copy all source files to destination dir. Apply the filters in
+             order to replace the tokens for the copyright year and the
+             version --&gt;
+        &lt;copy todir="${out.src.dir}" filtering="on"&gt;
+            &lt;fileset dir="${src.java.dir}"&gt;
+                &lt;patternset refid="all.src.files"/&gt;
+            &lt;/fileset&gt;
+            &lt;fileset dir="${src.java.servlet.dir}"&gt;
+                &lt;patternset refid="all.src.files"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="compile">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 6: 'compile' target</h2>
+
+        
+<p>
+          The <code>compile</code> target simply compiles the java files into
+          <code>.class</code> files and also copies the support files that are
+          in <code>src/</code> to the directory where the class file have been
+          generated.
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Compiles the source directory
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the compile target --&gt;
+    &lt;target name="prepare-compile" depends="prepare"&gt;
+
+        &lt;mkdir dir="${out.classes.dir}"/&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Run the java compilation --&gt;
+    &lt;target name="compile" depends="prepare-compile"&gt;
+
+        &lt;javac srcdir="${out.src.dir}"
+            destdir="${out.classes.dir}"
+            debug="${debug}"
+            deprecation="${deprecation}"
+            optimize="${optimize}"&gt;
+
+            &lt;!-- Exclude all files that are not .java source files --&gt;
+
+            &lt;!-- All doc files --&gt;
+            &lt;exclude name="**/package.html"/&gt;
+            &lt;exclude name="**/overview.html"/&gt;
+
+            &lt;!-- All conf files (including test files) --&gt;
+            &lt;exclude name="**/*.txt"/&gt;
+            &lt;exclude name="**/*.xml"/&gt;
+            &lt;exclude name="**/*.properties"/&gt;
+
+            &lt;classpath&gt;
+                &lt;pathelement path="${java.class.path}"/&gt;
+                &lt;pathelement location="${servlet.jar}"/&gt;
+                &lt;pathelement location="${cactus.jar}"/&gt;
+            &lt;/classpath&gt;
+
+        &lt;/javac&gt;
+
+        &lt;!-- Copies non java files that need to be in the classes directory --&gt;
+        &lt;copy todir="${out.classes.dir}"&gt;
+            &lt;fileset dir="${src.java.dir}"&gt;
+                &lt;patternset refid="all.nonjava.files"/&gt;
+            &lt;/fileset&gt;
+            &lt;fileset dir="${conf.test.dir}"&gt;
+                &lt;include name="cactus.properties"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="source">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 7: 'source' target</h2>
+
+        
+<p>
+          Zip up the sources for distribution.
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Generates source zip of the project
+       ========================================================================
+    --&gt;
+    &lt;target name="source" depends="prepare"&gt;
+
+        &lt;zip zipfile="${final.src.name}" basedir="."&gt;
+
+            &lt;exclude name="${out.dir}/**"/&gt;
+            &lt;exclude name="**/*.log"/&gt;
+            &lt;exclude name="**/*.bak"/&gt;
+            &lt;exclude name="**/*.class"/&gt;
+            &lt;exclude name="${build.dir}/build.properties"/&gt;
+
+        &lt;/zip&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="javadoc">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 8: 'javadoc' target</h2>
+
+        
+<p>
+          Generate the project's javadoc.
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Generate the javadoc
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the javadoc target --&gt;
+    &lt;target name="prepare-javadoc" depends="prepare"&gt;
+
+        &lt;mkdir dir="${out.javadoc.dir}"/&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the javadoc for the current Servlet API --&gt;
+    &lt;target name="javadoc" depends="prepare-javadoc"&gt;
+
+        &lt;javadoc
+            sourcepath="${out.src.dir}"
+            packagenames="org.apache.cactus.sample.*"
+            destdir="${out.javadoc.dir}"
+            author="true"
+            public="true"
+            version="true"
+            use="true"
+            windowtitle="${project.fullname} ${project.version} for Servlet @servlet.api@ API"
+            doctitle="${project.fullname} ${project.version} for Servlet @servlet.api@ API"
+            bottom="Copyright &amp;amp;copy; ${year} Apache Software Foundation. All Rights Reserved."&gt;
+
+            &lt;classpath&gt;
+                &lt;pathelement path="${java.class.path}"/&gt;
+                &lt;pathelement location="${servlet.jar}"/&gt;
+                &lt;pathelement location="${cactus.jar}"/&gt;
+            &lt;/classpath&gt;
+
+        &lt;/javadoc&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="doc">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 9: 'doc' target</h2>
+
+        
+<p>
+          Generate the project's documentation. It includes the javadoc,
+          additional README files (if any) and the documentation web site
+        </p>
+
+        
+<p>
+          Example:
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Generate the full documentation
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the doc target --&gt;
+    &lt;target name="prepare-doc" depends="javadoc"&gt;
+
+        &lt;mkdir dir="${out.doc.dir}"/&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the documentation --&gt;
+    &lt;target name="doc" depends="prepare-doc"&gt;
+
+        &lt;!-- Create the zipped documentation --&gt;
+        &lt;zip zipfile="${final.doc.name}" basedir="${out.doc.dir}"/&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<a name="clean">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 10: 'clean' target</h2>
+
+        
+<p>
+          Removes all build generated files.
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Remove all build generated files
+       ========================================================================
+    --&gt;
+    &lt;target name="clean" depends="init"&gt;
+
+        &lt;!-- Deletes all files ending with '~' --&gt;
+        &lt;delete&gt;
+            &lt;fileset dir="." includes="**/*~" defaultexcludes="no"/&gt;
+        &lt;/delete&gt;
+
+        &lt;!-- Remove the out directory --&gt;
+        &lt;delete dir="${out.dir}"/&gt;
+
+        &lt;!-- Delete log files --&gt;
+        &lt;delete&gt;
+            &lt;fileset dir="."&gt;
+                &lt;include name="**/*.log"/&gt;
+            &lt;/fileset&gt;
+        &lt;/delete&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 11: 'jar', 'war' targets</h2>
+
+        
+<a name="jar">
+<!--anchor--></a>
+
+        
+<div class="section">
+<h3>'jar' target</h3>
+
+          
+<p>
+            This target is useful if your project is a framework for example and
+            you need to deliver a jar file. We also include a manifest file
+            in the jar, with version information. We copy the manifest to the
+            output directory in order to replace the <code>1.7.2</code>
+            token with its value.
+          </p>
+
+          
+<p>
+            Example (from the Cactus build file):
+          </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Create the runtime jar file
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the jar target --&gt;
+    &lt;target name="prepare-jar" depends="compile"&gt;
+
+        &lt;mkdir dir="${out.conf.dir}"/&gt;
+        &lt;mkdir dir="${out.lib.dir}"/&gt;
+
+        &lt;!-- Copy the manifest in order to replace the version token filter --&gt;
+        &lt;copy todir="${out.conf.dir}" filtering="on"&gt;
+            &lt;fileset dir="${conf.dir}" &gt;
+                &lt;include name="manifest"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the jar file --&gt;
+    &lt;target name="jar" depends="prepare-jar"&gt;
+
+        &lt;jar jarfile="${final.jar.name}" basedir="${out.classes.dir}"
+            manifest="${out.conf.dir}/manifest"&gt;
+
+            &lt;!-- Do not include test files in the runtime jar --&gt;
+            &lt;exclude name="**/Test*.*"/&gt;
+            &lt;exclude name="**/test*.*"/&gt;
+
+        &lt;/jar&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+        
+</div>
+
+        
+<a name="war">
+<!--anchor--></a>
+
+        
+<div class="section">
+<h3>'war' target</h3>
+
+          
+<p>
+            This target is useful if you're building a web application.
+            We also include a manifest file in the war, with version
+            information. We copy the manifest to the output directory in order
+            to replace the <code>1.7.2</code> token with it's value.
+          </p>
+
+          
+<p>
+            Example (from the Cactus sample):
+          </p>
+
+
+<div class="source">
+<pre>
+    &lt;!--
+       ========================================================================
+         Create the runtime war file
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the war target --&gt;
+    &lt;target name="prepare-war" depends="compile"&gt;
+
+        &lt;mkdir dir="${out.conf.dir}"/&gt;
+
+        &lt;!-- Copy the manifest in order to replace the version token filter  --&gt;
+        &lt;copy todir="${out.conf.dir}" filtering="on"&gt;
+            &lt;fileset dir="${conf.dir}" &gt;
+                &lt;include name="manifest"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the war file --&gt;
+    &lt;target name="war" depends="prepare-war"&gt;
+
+        &lt;war warfile="${final.war.name}"
+             webxml="${conf.dir}/web.xml"
+             manifest="${out.conf.dir}/manifest"&gt;
+
+            &lt;classes dir="${out.classes.dir}"&gt;
+                &lt;!-- Do not include test files in the runtime jar --&gt;
+                &lt;exclude name="**/Test*.*"/&gt;
+                &lt;exclude name="**/test*.*"/&gt;
+
+                &lt;!-- Also exclude the test cactus.properties file --&gt;
+                &lt;exclude name="cactus.properties"/&gt;
+            &lt;/classes&gt;
+
+            &lt;fileset dir="${web.dir}"&gt;
+                &lt;exclude name="test/**"/&gt;
+            &lt;/fileset&gt;
+        &lt;/war&gt;
+
+    &lt;/target&gt;
+</pre>
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="tests">
+<!--anchor--></a>
+
+      
+<div class="section">
+<h2>Step 12: 'tests_XXX' target</h2>
+
+        
+<p>
+          The <code>tests_XXX</code> target is in charge of running the
+          Cactus unit tests. It must prepare the test environment for a
+          given servlet engine and package the tests, start that servlet
+          engine, run the tests by starting the JUnit runner and stop the
+          servlet engine.
+        </p>
+
+        
+<p>
+          See the <a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Using Cactus with
+          Ant</a> tutorial for details on to do this.
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

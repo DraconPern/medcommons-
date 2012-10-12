@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+    <title>Patient Centricity Requirements </title>
+    
+    <articleinfo>
+        <invpartnumber>REQ-0003</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>March 29, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para>
+            This document contains several princples that define user-centricity in MedCommons. They are not legally binding - although if we decide to 
+            make an explicit 'MedCommons Bill of Rights'
+            that was given to every user this would have legal implications. The requirements here define what the implementors need to build MedCommons or raise questions
+            about specific design decisions.
+            
+        </para>
+        <para>
+        (Nomenclature help needed here)
+            Users vs. Patients. We've recently emphasized that we don't have a mechanism for identifying providers in our system; I assume this also means we 
+            don't have a mechanism for identifying patients either. 
+            This means (I believe - but we need clarification) that there are four roles in the system for a every  piece of data:
+            <orderedlist>
+                <listitem>The owner of the data (typically the patient)</listitem>
+                <listitem>Persons who have been granted access to the data.</listitem>
+                <listitem>Creators of the data</listitem>
+                <listitem>MedCommons administrators</listitem>
+            </orderedlist>
+           
+        </para>
+    </sect1>
+    <sect1>
+        <title>Requirements</title>
+        <requirement id="PCENTRIC-001">
+            <reqTitle>
+                The MedCommons system must appear to be 'transparent'. 
+            </reqTitle>
+            <reqDescription>
+                Transparent in this context means that it is obvious from the user's inspection what is and isn't in the system. There are no hidden states or options that are relevant to the user. 
+                It must be very easy for a user to know what they have. 
+            </reqDescription>
+        </requirement>
+        <requirement id="PCENTRIC-002">
+            <reqTitle>The user is in control.</reqTitle>
+            <reqDescription>
+                The user has complete control over who sees their data. 
+            </reqDescription>
+        </requirement>
+        <requirement id="PCENTRIC-003">
+            <reqTitle>The user can see see who has seen their data.</reqTitle>
+            <reqDescription>
+                The user has easy access to see who has seen their data. One aspect of maintaining user trust is to permit the users to audit the MedCommons system at any time. 
+                All access to user data must be logged (see req xxx). Users are part of the layered security defense of a the MedCommons system.
+            </reqDescription>
+        </requirement>
+        <requirement id="PCENTRIC-004">
+            <reqTitle>The user can revoke access to their data</reqTitle>
+            <reqDescription>If a user grants access to their data to another MedCommons user they can also remove this access. There are some legal restrictions here for providers
+            that need to be accomodated: if a provider has been granted access to a medical record they must have access to this data in the future. How narrowly this is enforced is an unresolved
+                issue (e.g., if a user granted access to a doctor to see this data and we can show that the data was never viewed - can all access be removed? Can we limit future access to only those 
+                data items that the doctor has already viewed?). 
+            </reqDescription>
+        </requirement>
+        <requirement id="PCENTRIC-005">
+            <reqTitle>The user can delete references any of their data.</reqTitle>
+            <reqDescription>
+                The user has a limited control over the data in their system. References to data may be deleted or filtered out when data is being sent to a new user. 
+                Data is fixed can not be modified except by the source of the data; even then the earlier versions of the data must be kept in the system. 
+                 <itemizedlist>
+                     <listitem>If a provider sends data to the system they must be provided access to it in the future. Otherwise a patient could claim that the data never arrived.</listitem>
+                     <listitem>A user can't modify data that they did not create. This prevents forgeries. </listitem>
+                     <listitem>There may be cases where a user doesn't have access to data in their own account. One case: some data is put into their account because of an error.
+                     When this error is detected future access to this data may be prohibited from the user's account. 
+                     </listitem>
+                 </itemizedlist>
+            </reqDescription>
+        </requirement>
+        <requirement id="PCENTRIC-006">
+            <reqTitle>No  access to a user's data is permitted without explicit agreement.</reqTitle>
+            <reqDescription>
+                No third parties can query into the MedCommons system for information. Information must be sent by the user. This prevents data mining. 
+                
+                Agreements are in principle possible for automatic forwarding information to a user's contacts (a patient might want all of their records available to their primary care physician).
+                
+            </reqDescription>
+        </requirement>
+        
+        
+        
+    </sect1>
+    
+    
+</article>

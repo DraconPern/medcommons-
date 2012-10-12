@@ -1,0 +1,85 @@
+body {
+  font-family: arial;
+}
+
+p {
+  font-size: 12px;
+}
+
+table tr td {
+  font-size: 12px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.subheadblack {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.blacktext {
+  font-weight: bold;
+}
+
+.largeCard {
+  position: relative;
+  width: 310px;
+  height: 199px;
+  
+  background-image: url('images/large_black_card.gif');
+  background-repeat: no-repeat;
+}
+
+.emailText {
+  background-color: #fafafa;
+  padding: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  vertical-align: top;
+}
+
+.cardMcId {
+  position: absolute;
+  top: 75px;
+  left: 20px;
+  font-size:11.0pt;
+  font-family:Verdana;
+  color:white;
+}
+
+.cardName {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  font-size: 10px;
+  font-family: Arial;
+  color:white;
+}
+
+.emailBody {
+  font-size: 12px;
+}
+
+#noPinWarn {
+  margin-left: 100px;
+}
+
+table#statusTable tr th {
+  padding-right: 20px;
+  font-size: 12px;
+  text-align: right;
+}
+
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #527463;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+

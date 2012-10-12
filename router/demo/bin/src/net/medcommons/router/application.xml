@@ -1,0 +1,18 @@
+<application>
+  <display-name>MedCommons Router</display-name>
+  <module>
+    <java>router-services.wsr</java>
+  </module>
+  <module>
+  	<ejb>router-rcpmdb.jar</ejb>
+  </module>
+  
+  <module>
+  	<web>
+	  <web-uri>router-web.war</web-uri>
+	  <context-root>/router</context-root>
+	</web>
+  </module>
+ 
+</application>
+

@@ -1,0 +1,313 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		F56100AD116E8BDD000B5CA6 /* MCPatientID.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100A5116E8BDD000B5CA6 /* MCPatientID.h */; };
+		F56100AE116E8BDD000B5CA6 /* MCSOAPNote.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100A6116E8BDD000B5CA6 /* MCSOAPNote.h */; };
+		F56100AF116E8BDD000B5CA6 /* MCSOAPNotesListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100A7116E8BDD000B5CA6 /* MCSOAPNotesListViewController.h */; };
+		F56100B0116E8BDD000B5CA6 /* MCSOAPNotesProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100A8116E8BDD000B5CA6 /* MCSOAPNotesProvider.h */; };
+		F56100B1116E8BDD000B5CA6 /* MCSOAPNoteViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100A9116E8BDD000B5CA6 /* MCSOAPNoteViewController.h */; };
+		F56100B2116E8BDD000B5CA6 /* NSDictionary+MCShared.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100AA116E8BDD000B5CA6 /* NSDictionary+MCShared.h */; };
+		F56100B3116E8BDD000B5CA6 /* NSString+MCShared.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100AB116E8BDD000B5CA6 /* NSString+MCShared.h */; };
+		F56100B4116E8BDD000B5CA6 /* UIButton+MCShared.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100AC116E8BDD000B5CA6 /* UIButton+MCShared.h */; };
+		F56100C2116E8BF5000B5CA6 /* MCPatientID.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100B6116E8BF5000B5CA6 /* MCPatientID.m */; };
+		F56100C3116E8BF5000B5CA6 /* MCSOAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100B7116E8BF5000B5CA6 /* MCSOAPNote.m */; };
+		F56100C4116E8BF5000B5CA6 /* MCSOAPNotesListView.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100B8116E8BF5000B5CA6 /* MCSOAPNotesListView.h */; };
+		F56100C5116E8BF5000B5CA6 /* MCSOAPNotesListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100B9116E8BF5000B5CA6 /* MCSOAPNotesListView.m */; };
+		F56100C6116E8BF5000B5CA6 /* MCSOAPNotesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100BA116E8BF5000B5CA6 /* MCSOAPNotesListViewController.m */; };
+		F56100C7116E8BF5000B5CA6 /* MCSOAPNotesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100BB116E8BF5000B5CA6 /* MCSOAPNotesProvider.m */; };
+		F56100C8116E8BF5000B5CA6 /* MCSOAPNoteView.h in Headers */ = {isa = PBXBuildFile; fileRef = F56100BC116E8BF5000B5CA6 /* MCSOAPNoteView.h */; };
+		F56100C9116E8BF5000B5CA6 /* MCSOAPNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100BD116E8BF5000B5CA6 /* MCSOAPNoteView.m */; };
+		F56100CA116E8BF5000B5CA6 /* MCSOAPNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100BE116E8BF5000B5CA6 /* MCSOAPNoteViewController.m */; };
+		F56100CB116E8BF5000B5CA6 /* NSDictionary+MCShared.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100BF116E8BF5000B5CA6 /* NSDictionary+MCShared.m */; };
+		F56100CC116E8BF5000B5CA6 /* NSString+MCShared.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100C0116E8BF5000B5CA6 /* NSString+MCShared.m */; };
+		F56100CD116E8BF5000B5CA6 /* UIButton+MCShared.m in Sources */ = {isa = PBXBuildFile; fileRef = F56100C1116E8BF5000B5CA6 /* UIButton+MCShared.m */; };
+		F5E8A99911613A3B00F757DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E8A99811613A3B00F757DF /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libMCShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMCShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56100A5116E8BDD000B5CA6 /* MCPatientID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPatientID.h; sourceTree = "<group>"; };
+		F56100A6116E8BDD000B5CA6 /* MCSOAPNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSOAPNote.h; sourceTree = "<group>"; };
+		F56100A7116E8BDD000B5CA6 /* MCSOAPNotesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSOAPNotesListViewController.h; sourceTree = "<group>"; };
+		F56100A8116E8BDD000B5CA6 /* MCSOAPNotesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSOAPNotesProvider.h; sourceTree = "<group>"; };
+		F56100A9116E8BDD000B5CA6 /* MCSOAPNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSOAPNoteViewController.h; sourceTree = "<group>"; };
+		F56100AA116E8BDD000B5CA6 /* NSDictionary+MCShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MCShared.h"; sourceTree = "<group>"; };
+		F56100AB116E8BDD000B5CA6 /* NSString+MCShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MCShared.h"; sourceTree = "<group>"; };
+		F56100AC116E8BDD000B5CA6 /* UIButton+MCShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MCShared.h"; sourceTree = "<group>"; };
+		F56100B6116E8BF5000B5CA6 /* MCPatientID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPatientID.m; sourceTree = "<group>"; };
+		F56100B7116E8BF5000B5CA6 /* MCSOAPNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSOAPNote.m; sourceTree = "<group>"; };
+		F56100B8116E8BF5000B5CA6 /* MCSOAPNotesListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSOAPNotesListView.h; sourceTree = "<group>"; };
+		F56100B9116E8BF5000B5CA6 /* MCSOAPNotesListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSOAPNotesListView.m; sourceTree = "<group>"; };
+		F56100BA116E8BF5000B5CA6 /* MCSOAPNotesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSOAPNotesListViewController.m; sourceTree = "<group>"; };
+		F56100BB116E8BF5000B5CA6 /* MCSOAPNotesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSOAPNotesProvider.m; sourceTree = "<group>"; };
+		F56100BC116E8BF5000B5CA6 /* MCSOAPNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSOAPNoteView.h; sourceTree = "<group>"; };
+		F56100BD116E8BF5000B5CA6 /* MCSOAPNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSOAPNoteView.m; sourceTree = "<group>"; };
+		F56100BE116E8BF5000B5CA6 /* MCSOAPNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSOAPNoteViewController.m; sourceTree = "<group>"; };
+		F56100BF116E8BF5000B5CA6 /* NSDictionary+MCShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MCShared.m"; sourceTree = "<group>"; };
+		F56100C0116E8BF5000B5CA6 /* NSString+MCShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MCShared.m"; sourceTree = "<group>"; };
+		F56100C1116E8BF5000B5CA6 /* UIButton+MCShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MCShared.m"; sourceTree = "<group>"; };
+		F5E8A99811613A3B00F757DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				F5E8A99911613A3B00F757DF /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libMCShared.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* MCShared */ = {
+			isa = PBXGroup;
+			children = (
+				F56100A4116E8BDD000B5CA6 /* Headers */,
+				F56100B5116E8BF5000B5CA6 /* Private */,
+				F5E8A9BB11613CF400F757DF /* Resources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				F5E8A9BD11613CF400F757DF /* Tests */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = MCShared;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				F5E8A99811613A3B00F757DF /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F56100A4116E8BDD000B5CA6 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				F56100A5116E8BDD000B5CA6 /* MCPatientID.h */,
+				F56100A6116E8BDD000B5CA6 /* MCSOAPNote.h */,
+				F56100A7116E8BDD000B5CA6 /* MCSOAPNotesListViewController.h */,
+				F56100A8116E8BDD000B5CA6 /* MCSOAPNotesProvider.h */,
+				F56100A9116E8BDD000B5CA6 /* MCSOAPNoteViewController.h */,
+				F56100AA116E8BDD000B5CA6 /* NSDictionary+MCShared.h */,
+				F56100AB116E8BDD000B5CA6 /* NSString+MCShared.h */,
+				F56100AC116E8BDD000B5CA6 /* UIButton+MCShared.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		F56100B5116E8BF5000B5CA6 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				F56100B6116E8BF5000B5CA6 /* MCPatientID.m */,
+				F56100B7116E8BF5000B5CA6 /* MCSOAPNote.m */,
+				F56100B8116E8BF5000B5CA6 /* MCSOAPNotesListView.h */,
+				F56100B9116E8BF5000B5CA6 /* MCSOAPNotesListView.m */,
+				F56100BA116E8BF5000B5CA6 /* MCSOAPNotesListViewController.m */,
+				F56100BB116E8BF5000B5CA6 /* MCSOAPNotesProvider.m */,
+				F56100BC116E8BF5000B5CA6 /* MCSOAPNoteView.h */,
+				F56100BD116E8BF5000B5CA6 /* MCSOAPNoteView.m */,
+				F56100BE116E8BF5000B5CA6 /* MCSOAPNoteViewController.m */,
+				F56100BF116E8BF5000B5CA6 /* NSDictionary+MCShared.m */,
+				F56100C0116E8BF5000B5CA6 /* NSString+MCShared.m */,
+				F56100C1116E8BF5000B5CA6 /* UIButton+MCShared.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		F5E8A9BB11613CF400F757DF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F5E8A9BD11613CF400F757DF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56100AD116E8BDD000B5CA6 /* MCPatientID.h in Headers */,
+				F56100AE116E8BDD000B5CA6 /* MCSOAPNote.h in Headers */,
+				F56100AF116E8BDD000B5CA6 /* MCSOAPNotesListViewController.h in Headers */,
+				F56100B0116E8BDD000B5CA6 /* MCSOAPNotesProvider.h in Headers */,
+				F56100B1116E8BDD000B5CA6 /* MCSOAPNoteViewController.h in Headers */,
+				F56100B2116E8BDD000B5CA6 /* NSDictionary+MCShared.h in Headers */,
+				F56100B3116E8BDD000B5CA6 /* NSString+MCShared.h in Headers */,
+				F56100B4116E8BDD000B5CA6 /* UIButton+MCShared.h in Headers */,
+				F56100C4116E8BF5000B5CA6 /* MCSOAPNotesListView.h in Headers */,
+				F56100C8116E8BF5000B5CA6 /* MCSOAPNoteView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* MCShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "MCShared" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCShared;
+			productName = MCShared;
+			productReference = D2AAC07E0554694100DB518D /* libMCShared.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "MCShared" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* MCShared */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* MCShared */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56100C2116E8BF5000B5CA6 /* MCPatientID.m in Sources */,
+				F56100C3116E8BF5000B5CA6 /* MCSOAPNote.m in Sources */,
+				F56100C5116E8BF5000B5CA6 /* MCSOAPNotesListView.m in Sources */,
+				F56100C6116E8BF5000B5CA6 /* MCSOAPNotesListViewController.m in Sources */,
+				F56100C7116E8BF5000B5CA6 /* MCSOAPNotesProvider.m in Sources */,
+				F56100C9116E8BF5000B5CA6 /* MCSOAPNoteView.m in Sources */,
+				F56100CA116E8BF5000B5CA6 /* MCSOAPNoteViewController.m in Sources */,
+				F56100CB116E8BF5000B5CA6 /* NSDictionary+MCShared.m in Sources */,
+				F56100CC116E8BF5000B5CA6 /* NSString+MCShared.m in Sources */,
+				F56100CD116E8BF5000B5CA6 /* UIButton+MCShared.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/MCShared.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = MCShared;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/MCShared.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = MCShared;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "MCShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "MCShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

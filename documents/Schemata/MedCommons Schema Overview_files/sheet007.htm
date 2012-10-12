@@ -1,0 +1,230 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 10">
+<link id=Main-File rel=Main-File href="../MedCommons%20Schema%20Overview.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Edit-Time-Data href=editdata.mso>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(6);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../MedCommons%20Schema%20Overview.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]><!--[if gte mso 9]><xml>
+ <x:WorksheetOptions>
+  <x:Print>
+   <x:ValidPrinterInfo/>
+   <x:HorizontalResolution>300</x:HorizontalResolution>
+   <x:VerticalResolution>300</x:VerticalResolution>
+  </x:Print>
+  <x:Panes>
+   <x:Pane>
+    <x:Number>3</x:Number>
+    <x:RangeSelection>$1:$65536</x:RangeSelection>
+   </x:Pane>
+  </x:Panes>
+  <x:ProtectContents>False</x:ProtectContents>
+  <x:ProtectObjects>False</x:ProtectObjects>
+  <x:ProtectScenarios>False</x:ProtectScenarios>
+ </x:WorksheetOptions>
+</xml><![endif]-->
+</head>
+
+<body link=blue vlink=purple>
+
+<table x:str border=0 cellpadding=0 cellspacing=0 width=896 style='border-collapse:
+ collapse;table-layout:fixed;width:672pt'>
+ <col width=64 span=14 style='width:48pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 width=64 style='height:15.0pt;width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td class=xl26 width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=12 class=xl26 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=12 class=xl26 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl26 colspan=2 style='height:15.75pt;mso-ignore:colspan'>Selection</td>
+  <td class=xl26></td>
+  <td class=xl27></td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=8 style='mso-ignore:colspan'>A selection can appear on
+  a Selection Screen or in an Order Payload</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>Checksum</td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>string(64)</td>
+  <td class=xl26></td>
+  <td class=xl26 colspan=7 style='mso-ignore:colspan'>64 Byte crypto hash.
+  Could be used as the Selection ID</td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>Location</td>
+  <td class=xl26>string()</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=8 style='mso-ignore:colspan'>Optional - Look here
+  first. Selection ID is location independent index.</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=12 class=xl26 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26>Version</td>
+  <td class=xl26></td>
+  <td class=xl26>String()</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=3 style='mso-ignore:colspan'>The metadata schema</td>
+  <td colspan=3 class=xl26 style='mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>Nickname</td>
+  <td class=xl26>String()</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=3 style='mso-ignore:colspan'>e.g.: DICOM Study UID</td>
+  <td colspan=3 class=xl26 style='mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>Encoding</td>
+  <td class=xl26>String()</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>e.g.: MIME Type</td>
+  <td colspan=4 class=xl26 style='mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>DecryptionHints</td>
+  <td class=xl26>String()</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=3 style='mso-ignore:colspan'>Object decryption hints.</td>
+  <td colspan=3 class=xl26 style='mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>Time Stamps</td>
+  <td class=xl26>String()</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=5 style='mso-ignore:colspan'>Helps to manage storage
+  when available</td>
+  <td class=xl26></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26>Owner</td>
+  <td class=xl26></td>
+  <td class=xl26>String()</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=4 style='mso-ignore:colspan'>Avoid PHI whenever
+  possible.</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26>State</td>
+  <td class=xl26></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>enurermation</td>
+  <td colspan=7 class=xl26 style='mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl26 style='height:15.0pt'></td>
+  <td class=xl26>Object</td>
+  <td class=xl26></td>
+  <td class=xl28>BLOB</td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl26 colspan=2 style='mso-ignore:colspan'>Binary Data</td>
+  <td colspan=4 class=xl26 style='mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=12 class=xl26 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=12 class=xl26 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=12 class=xl26 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=64 style='width:48pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

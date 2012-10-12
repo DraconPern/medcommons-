@@ -1,0 +1,6 @@
+<binding>
+  <mapping name="transfer" class="net.medcommons.router.transfer.Transfer">
+    <value name="folder-guid" field="folderGuid" />
+    <value name="path" field="path" />
+  </mapping>
+</binding>

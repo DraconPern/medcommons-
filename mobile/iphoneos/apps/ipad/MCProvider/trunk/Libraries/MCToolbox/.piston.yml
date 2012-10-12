@@ -1,0 +1,8 @@
+--- 
+format: 1
+handler: 
+  piston:remote-revision: 30
+  piston:uuid: 2961d05d-b3b1-5387-b517-261ee28883f9
+lock: false
+repository_class: Piston::Svn::Repository
+repository_url: http://mctoolbox.googlecode.com/svn/trunk/Source

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContinuityOfCareRecord xmlns="urn:astm-org:CCR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR CCR_20051109.xsd">
+	<CCRDocumentObjectID />
+	<Language>
+		<Text>English</Text>
+	</Language>
+	<Version>V1.0</Version>
+	<DateTime>
+		<ExactDateTime>2005-11-14T18:21:04Z</ExactDateTime>
+	</DateTime>
+	<Patient>
+		<ActorID>Patient1</ActorID>
+	</Patient><From><ActorLink><ActorID>3163908852587568</ActorID></ActorLink></From><To><ActorLink><ActorID>9263644696219725</ActorID></ActorLink></To>
+	
+	
+	<Purpose>
+		<Description>
+			<Text>Request For Consult</Text>
+			<Code>
+				<Value />
+				<CodingSystem />
+				<Version />
+			</Code>
+		</Description>
+	</Purpose>
+	<Body>
+	</Body>
+	<Actors>
+		<Actor>
+			<ActorObjectID>AA0001</ActorObjectID>
+			<InformationSystem>
+				<Name>MedCommons </Name>
+				<Type>Repository</Type>
+				<Version>V1.0 BETA</Version>
+			</InformationSystem>
+			
+			
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0002</ActorObjectID>
+			<InformationSystem>
+				<Name>DICOM Source </Name>
+				<Type>DICOM CSTORE SCU</Type>
+				<Version>V1.0</Version>
+			</InformationSystem>
+			
+			
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>Patient1</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<Given>Alpha</Given>
+						<Family>Test-38615</Family>
+					</CurrentName>
+				</Name>
+				<DateOfBirth>					
+					<Age>
+						<Value>074Y</Value>
+					</Age>
+					
+				</DateOfBirth>
+				
+				<Gender>
+					<Text>Male</Text>
+				</Gender>
+			</Person>
+			<IDs>
+				<Type>
+					<Text>MedCommons Patient Id</Text>
+				</Type>
+				<ID />
+				<Source>
+					<Actor>
+						<ActorID>AA0001</ActorID>
+						<ActorRole>
+							<Text>Repository</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+			</IDs>
+			
+			<IDs>
+				<Type>
+					<Text>DICOM Patient Id</Text>
+				</Type>
+				<ID>1713806380</ID>
+				<Source> 
+					<Actor>
+						<ActorID>AA0002</ActorID>
+						<ActorRole>
+							<Text>DICOM Source</Text>
+						</ActorRole>
+					</Actor>
+				</Source>
+				
+			</IDs>
+			<Address>
+				<Type />
+				<Line1></Line1>
+				<Line2 />
+				<City></City>
+				<County />
+				<State />
+				<Country />
+				<PostalCode />
+				<Priority />
+				<Status />
+			</Address>
+			<Telephone>
+				<Value></Value>
+				<Type />
+				<Priority />
+				<Status />
+			</Telephone>
+			
+			<EMail>
+				<Value />
+				<Type />
+				<Priority />
+				<Status />
+			</EMail>
+			
+			<Source>
+				<Actor>
+					<ActorID>AA0002</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>To1</ActorObjectID>
+			<Address>
+				<Type />
+				<Line1 />
+				<Line2 />
+				<City />
+				<County />
+				<State />
+				<Country />
+				<PostalCode />
+				<Priority />
+				<Status />
+			</Address>
+			<Telephone>
+				<Value />
+				<Type />
+				<Priority />
+				<Status />
+			</Telephone>
+			<!--
+			<EMail>
+				<Value/>
+				<Type/>
+				<Priority/>
+				<Status/>
+			</EMail>
+			-->
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>From1</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<Given>Adrian</Given>
+						<Family>Gropper</Family>
+						<Title>Dr.</Title>
+					</CurrentName>
+				</Name>
+				<Gender>
+					<Text>Unknown</Text>
+				</Gender>
+			</Person>
+			<Address>
+				<Type />
+				<Line1 />
+				<Line2 />
+				<City />
+				<County />
+				<State />
+				<Country />
+				<PostalCode />
+				<Priority />
+				<Status />
+			</Address>
+			<Telephone>
+				<Value />
+				<Type />
+				<Priority />
+				<Status />
+			</Telephone>
+		
+			<EMail>
+				<Value />
+				<Type />
+				<Priority />
+				<Status />
+			</EMail>
+		
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		
+	<Actor>
+  <ActorObjectID>3163908852587568</ActorObjectID> 
+  <InformationSystem>
+    <Name>MedCommons Notification</Name> 
+    <Type>Repository</Type> 
+  </InformationSystem>
+  <EMail>
+    <Value>sdoyle@medcommons.org</Value> 
+  </EMail>
+  <Source>
+    <Actor>
+      <ActorID>3163908852587568</ActorID> 
+    </Actor>
+  </Source>
+</Actor><Actor>
+  <ActorObjectID>9263644696219725</ActorObjectID> 
+  <InformationSystem>
+    <Name>MedCommons Notification</Name> 
+    <Type>Repository</Type> 
+  </InformationSystem>
+  <EMail>
+    <Value>sdoyle@medcommons.org</Value> 
+  </EMail>
+  <Source>
+    <Actor>
+      <ActorID>9263644696219725</ActorID> 
+    </Actor>
+  </Source>
+</Actor></Actors>
+<References><Reference>
+			<ReferenceObjectID>REF0001</ReferenceObjectID>
+			<Type><Text>application/dicom</Text></Type>
+			<Source><ActorID>AA0002</ActorID></Source>
+			<Locations>
+				<Location>
+					<Description>
+						<ObjectAttribute>
+							<Attribute>URL</Attribute>
+							<AttributeValue>
+								<Value>mcid://790e1dd86c57cd997cf7571061091019f1fbf10c</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+						<ObjectAttribute>
+							<Attribute>DisplayName</Attribute>
+							<AttributeValue>
+								<Value>EVT +  2.0  B30f</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+					</Description>
+				</Location>
+			</Locations>
+</Reference><Reference>
+			<ReferenceObjectID>REF0001</ReferenceObjectID>
+			<Type><Text>application/dicom</Text></Type>
+			<Source><ActorID>AA0002</ActorID></Source>
+			<Locations>
+				<Location>
+					<Description>
+						<ObjectAttribute>
+							<Attribute>URL</Attribute>
+							<AttributeValue>
+								<Value>mcid://f021a6f7b0607ac52c5d972572136ab3335894e1</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+						<ObjectAttribute>
+							<Attribute>DisplayName</Attribute>
+							<AttributeValue>
+								<Value>3D Vessels</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+					</Description>
+				</Location>
+			</Locations>
+</Reference><Reference>
+			<ReferenceObjectID>REF0001</ReferenceObjectID>
+			<Type><Text>application/dicom</Text></Type>
+			<Source><ActorID>AA0002</ActorID></Source>
+			<Locations>
+				<Location>
+					<Description>
+						<ObjectAttribute>
+							<Attribute>URL</Attribute>
+							<AttributeValue>
+								<Value>mcid://ed4f4505123c0afc98480423af4d13b4546c3a07</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+						<ObjectAttribute>
+							<Attribute>DisplayName</Attribute>
+							<AttributeValue>
+								<Value>3D Bone</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+					</Description>
+				</Location>
+			</Locations>
+</Reference><Reference>
+			<ReferenceObjectID>REF0001</ReferenceObjectID>
+			<Type><Text>application/pdf</Text></Type>
+			<Source><ActorID>AA0002</ActorID></Source>
+			<Locations>
+				<Location>
+					<Description>
+						<ObjectAttribute>
+							<Attribute>URL</Attribute>
+							<AttributeValue>
+								<Value>mcid://a0e695f4c056ac21c04e90d1ca3a33a4434f0141</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+						<ObjectAttribute>
+							<Attribute>DisplayName</Attribute>
+							<AttributeValue>
+								<Value>Health CareProxy.pdf</Value>
+							</AttributeValue>
+						</ObjectAttribute>
+					</Description>
+				</Location>
+			</Locations>
+</Reference></References><Comments><Comment><CommentObjectID>0106378448232815</CommentObjectID><DateTime><ExactDateTime>2005-11-14T18:21:04Z</ExactDateTime></DateTime><Type><Text>MedCommons User Comment</Text></Type><Description><Text>Testing DICOM reply</Text></Description><Source><ActorID>3163908852587568</ActorID></Source></Comment></Comments></ContinuityOfCareRecord>

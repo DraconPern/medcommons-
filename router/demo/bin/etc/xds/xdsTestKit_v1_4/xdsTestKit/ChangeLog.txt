@@ -1,0 +1,157 @@
+CHANGES FOR V1.4b (patch) -----------------------
+Distributed 7 Dec 2004
+
+
+Updated patientId.txt to reflect current knowledge of how to encode & characters 
+in XML and more specifically the special encoding needed when using the 
+utility xdstest.
+
+Cleaned up names in example metadata. Effected entries are XdsDocumentEntry.patientId and
+XdsDocumentEntry.uniqueId. Change is cosmetic only. Updated 
+metadata_validation/validateNN.xsl (metadata analyser) to match these name changes.
+
+Documentation for the Java source code for the test client is out of date with respect to the 
+directory structure of the test kit.  It has been fixed.
+Files changed: doc/clientCode.doc  doc/install.doc
+
+CHANGES FOR V1.4a (patch) -----------------------
+Distributed 6 Dec 2004
+
+Bug in Metadata Validator.  Error message indicates Content Type Code is missing on 
+a document.  Content Type Code is an attribute of a Submission Set and not a document.
+The wording of the message has been corrected.
+Files affected: metadata_validation/validateNN.xsl
+
+CHANGES FOR V1.4 ------------------------
+Distributed 2 Dec 2004
+
+The metadata validator transform has been updated. It now runs on Microsoft platforms.
+
+doc/XDS Tests.doc requires the following update
+In the following documentation, the NIST Test Server is referred to as:
+	<NISTTestServer>
+In all cases replace <NISTTestServer> with 
+	http://www.hcxw2k1.nist.gov:8080/xdsServices/
+The port number was left off.
+
+Tests 11781 and 11782 is ready for testing (Document Consumer)
+
+Fixed error in doc/Metadata Cookbook.doc - in the section Adding a Document to a
+Submission Set, the association was missing that linked the ExtrinsicObject to
+the RegistryPackage. It has been added.
+
+Added new file to test kit, patientIds.txt which describes how to generate patient IDs that
+are private to one vendor.  This is to be used to support vendor's need to generate test data
+for their XDS based applications.
+
+Corrected format of Content-ID header field inside a multipart-mime (RFC2387 (multipart/related), RFC2045 (MIME) and RFC2046 (MIME
+parts)). Correct format is
+Content-ID: <id>
+The angle brackets had been left off.  This effects the following files and tests:
+sampleData/RepSubmitReq.txt
+test/11746/test.properties
+test/11752/test.properties
+
+
+CHANGES FOR V1.3 ------------------------
+Distributed 23 Nov 2004
+
+The name of two coding schemes were corrected so that all coding scheme names end in a
+plural - effects Connect-a-thon classCodes and Connect-a-thon contentTypeCodes and tests 
+11722, 11731, 11746, and 11752
+
+Cleaned up server coding regarding the parsing of metadata vs attachments in hope of fixing problem
+with test 11746
+
+codes/mimeTypes.xml now has same format as other codes files with name and value attributes.
+
+Updated time format from 20041225T21:20:10 to CCYYMMDDHHmmSS per discussion on mailing list. Change
+proposal to profile pending.
+
+Test 11710 - updated format of metadata.xml, to make generating XML easier. The older version with "caller" element will still work.
+
+The file doc/XDS Tests.doc has been renamed to doc/XDSNistTest.doc
+
+CHANGES FOR V1.2b  --------------------------
+Distributed 18 Nov 2004
+
+Reason: The formatCodes and mimeTypes lists were fixed in the prior release but the tables in the
+test kit were not updated.
+File: codes/formatCodes.xml
+File: codes/mimeTypes.xml
+
+
+CHANGES FOR V1.2a -----------------------------
+
+In test 11722, the supplied metadata.xml file had two errors, invalid mimetype and formatCode. Affected file is test/11722/metadata.xml.
+
+Changes for V1.2 (documentation update only)  ----------------------
+
+XDS Tests.doc/Test Case 11721 - the URL in step 3 should be
+<NISTTestServer>/registry/soap/test?testid=11721
+
+XDS Tests.doc/Test Case 11731 - the URL in step 1 should be
+<NISTTestServer>/registry/soap/test?testid=11731
+
+XDS Tests.doc/Test Case 11742 - the URL in step 1 should be
+<NISTTestServer>/registry/soap/test?testid=11742
+
+XDS Tests.doc/Test Case 11746 - the URL in step 1 should be
+<NISTTestServer>/registry/soap/test?testid=11746
+
+XDS Tests.doc/Test Case 11771 - the URL in step 3 should be
+<NISTTestServer>/registry/soap/test?testid=11771
+
+In the section titled 'NIST Test Server', the base URL should be
+http://hcxw2k1.nist.gov:8080/xdsServices/
+
+Batch script for running XDS tests from windows (donated by Keith Boone/Dictaphone)
+SET XDSTESTKIT=C:\xds_test_kit_v11
+%JAVA_HOME%\bin\java -cp %XDSTESTKIT%\lib -jar %XDSTESTKIT%\lib\xdstest.jar
+
+Change the first line to be the location of your test kit.  Assumes that
+JAVA_HOME is already set.
+
+
+Changes for V1.1
+
+
+Testing service is online!!
+
+Added doc/XdsRequestBean.java - support code for XdsServlet.java
+
+Added metadata_validation - a copy of the XDS metadata validation service.  Checks metadata for consistency against known rules.
+
+Following tests are ready:
+11710
+11719
+11720
+11721
+11722
+11731
+11741
+11742
+11746
+11752
+11761
+11762
+11763
+11764
+11771
+
+Rearranged tests 11720, 11721, 11722
+
+Following errors found in doc/UUIDs.xls
+	XDSDocumentEntry.code, should be XDSDocumentEntry.classCode
+	XDSDocumentEntry.eventCode, should be XDSDocumentEntry.eventCodeList
+	XDSSubmissionSet.code, should be XDSSubmissionSet.contentTypeCode
+	XDSDocumentEntry.practiceSettingCode, should be an external classscheme
+	XDSSubmissionSet.id should be XDSSubmissionSet.uniqueId
+	XDSDocumentEntry.typeCode, should be an external classscheme
+
+Added to sampleData
+	RegSubmitReq.txt -  protocol trace of a Registry Submission Request showing HTTP/SOAP encoding
+	RepSubmitReq.txt - protocol trace of a Registry Submission Request showing HTTP/SOAP encoding and attached document
+
+Metadata Validation
+	In previous version, formatCodes were missing and mimeTypes held formatCodes - fixed. 

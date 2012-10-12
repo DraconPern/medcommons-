@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cxpsoap", "cxpsoap.csproj", "{5B785D5F-E41A-4C69-BE11-B23778B61BEE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5B785D5F-E41A-4C69-BE11-B23778B61BEE}.Debug.ActiveCfg = Debug|.NET
+		{5B785D5F-E41A-4C69-BE11-B23778B61BEE}.Debug.Build.0 = Debug|.NET
+		{5B785D5F-E41A-4C69-BE11-B23778B61BEE}.Release.ActiveCfg = Release|.NET
+		{5B785D5F-E41A-4C69-BE11-B23778B61BEE}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

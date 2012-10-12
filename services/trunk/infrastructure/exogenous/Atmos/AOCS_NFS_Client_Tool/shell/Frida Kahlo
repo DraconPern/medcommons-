@@ -1,0 +1,10359 @@
+%!PS-Adobe-3.0
+%%Title: mauinfs
+%%For: boxer
+%%Creator: VIM - Vi IMproved 7.2 (2008 Aug 9)
+%%CreationDate: Wed May 12 17:55:44 2010
+%%DocumentData: Clean8Bit
+%%Orientation: Portrait
+%%Pages: (atend)
+%%PageOrder: Ascend
+%%BoundingBox: 59 49 564 800
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%DocumentSuppliedResources: procset VIM-Prolog 1.4 1
+%%+ encoding VIM-cp1252 1.0 0
+%%Requirements: duplex collate color
+%%EndComments
+%%BeginDefaults
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%PageMedia: A4
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset VIM-Prolog
+%%BeginDocument: C:\Program Files\Vim\vim72\print\prolog.ps
+%!PS-Adobe-3.0 Resource-ProcSet
+%%Title: VIM-Prolog
+%%Version: 1.4 1
+%%EndComments
+% Editing of this file is NOT RECOMMENDED.  You run a very good risk of causing
+% all PostScript printing from VIM failing if you do.  PostScript is not called
+% a write-only language for nothing!
+/packedarray where not{userdict begin/setpacking/pop load def/currentpacking
+false def end}{pop}ifelse/CP currentpacking def true setpacking
+/bd{bind def}bind def/ld{load def}bd/ed{exch def}bd/d/def ld
+/db{dict begin}bd/cde{currentdict end}bd
+/T true d/F false d
+/SO null d/sv{/SO save d}bd/re{SO restore}bd
+/L2 systemdict/languagelevel 2 copy known{get exec}{pop pop 1}ifelse 2 ge d
+/m/moveto ld/s/show ld /ms{m s}bd /g/setgray ld/r/setrgbcolor ld/sp{showpage}bd
+/gs/gsave ld/gr/grestore ld/cp/currentpoint ld
+/ul{gs UW setlinewidth cp UO add 2 copy newpath m 3 1 roll add exch lineto
+stroke gr}bd
+/bg{gs r cp BO add 4 -2 roll rectfill gr}bd
+/sl{90 rotate 0 exch translate}bd
+L2{
+/sspd{mark exch{setpagedevice}stopped cleartomark}bd
+/nc{1 db/NumCopies ed cde sspd}bd
+/sps{3 db/Orientation ed[3 1 roll]/PageSize ed/ImagingBBox null d cde sspd}bd
+/dt{2 db/Tumble ed/Duplex ed cde sspd}bd
+/c{1 db/Collate ed cde sspd}bd
+}{
+/nc{/#copies ed}bd
+/sps{statusdict/setpage get exec}bd
+/dt{statusdict/settumble 2 copy known{get exec}{pop pop pop}ifelse
+statusdict/setduplexmode 2 copy known{get exec}{pop pop pop}ifelse}bd
+/c{pop}bd
+}ifelse
+/ffs{findfont exch scalefont d}bd/sf{setfont}bd
+/ref{1 db findfont dup maxlength dict/NFD ed{exch dup/FID ne{exch NFD 3 1 roll
+put}{pop pop}ifelse}forall/Encoding findresource dup length 256 eq{NFD/Encoding
+3 -1 roll put}{pop}ifelse NFD dup/FontType get 3 ne{/CharStrings}{/CharProcs}
+ifelse 2 copy known{2 copy get dup maxlength dict copy[/questiondown/space]{2
+copy known{2 copy get 2 index/.notdef 3 -1 roll put pop exit}if pop}forall put
+}{pop pop}ifelse dup NFD/FontName 3 -1 roll put NFD definefont pop end}bd
+CP setpacking
+(\004)cvn{}bd
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%BeginResource: encoding VIM-cp1252
+%%BeginDocument: C:\Program Files\Vim\vim72\print\cp1252.ps
+%!PS-Adobe-3.0 Resource-Encoding
+%%Title: VIM-cp1252
+%%Version: 1.0 0
+%%EndComments
+/VIM-cp1252[
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quotesingle
+/parenleft /parenright /asterisk /plus /comma /minus /period /slash
+/zero /one /two /three /four /five /six /seven
+/eight /nine /colon /semicolon /less /equal /greater /question
+/at /A /B /C /D /E /F /G
+/H /I /J /K /L /M /N /O
+/P /Q /R /S /T /U /V /W
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+/grave /a /b /c /d /e /f /g
+/h /i /j /k /l /m /n /o
+/p /q /r /s /t /u /v /w
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef
+/Euro /.notdef /quotesinglbase /florin /quotedblbase /ellipsis /dagger /daggerdbl
+/circumflex /perthousand /Scaron /guilsinglleft /OE /.notdef /Zcaron /.notdef
+/.notdef /quoteleft /quoteright /quotedblleft /quotedblright /bullet /endash /emdash
+/tilde /trademark /scaron /guilsinglright /oe /.notdef /zcaron /Ydieresis
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /periodcentered
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis]
+/Encoding defineresource pop
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%EndProlog
+%%BeginSetup
+595 842 0 sps
+1 nc
+T F dt
+T c
+%%IncludeResource: font Courier
+/_F0 /VIM-cp1252 /Courier ref
+/F0 10 /_F0 ffs
+%%IncludeResource: font Courier-Bold
+/_F1 /VIM-cp1252 /Courier-Bold ref
+/F1 10 /_F1 ffs
+%%IncludeResource: font Courier-Oblique
+/_F2 /VIM-cp1252 /Courier-Oblique ref
+/F2 10 /_F2 ffs
+%%IncludeResource: font Courier-BoldOblique
+/_F3 /VIM-cp1252 /Courier-BoldOblique ref
+/F3 10 /_F3 ffs
+/UO -1 d
+/UW 0.5 d
+/BO -2.5 d
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 1)59.5 792.4 ms
+F0 sf
+0 0 1 r
+(#!/bin/bash )59.5 772.4 ms
+(#)59.5 762.4 ms
+(# chkconfig: 345 80 1)59.5 752.4 ms
+(# description: mount NFS to access maui)59.5 742.4 ms
+(#)59.5 732.4 ms
+(#)59.5 722.4 ms
+(# Authors: Bradley Goodman)59.5 712.4 ms
+(#          Arkady Kanevsky)59.5 702.4 ms
+(#          Anfernee Gui)59.5 692.4 ms
+(#)59.5 682.4 ms
+(# /etc/init.d/mauinfs)59.5 672.4 ms
+(#)59.5 662.4 ms
+(### BEGIN INIT INFO)59.5 652.4 ms
+(# Provides:       mauinfs)59.5 642.4 ms
+(# Required-Start: $network $portmapper)59.5 632.4 ms
+(# Required-Stop: $network $portmapper)59.5 622.4 ms
+(# Default-Start:  3 5)59.5 612.4 ms
+(# Default-Stop:)59.5 602.4 ms
+(# Description:    mount NFS to access Atmos)59.5 592.4 ms
+(### END INIT INFO)59.5 582.4 ms
+(# ################################################################)59.5 562.4 ms
+(# Copyright \(C\) 2009, All Rights Reserved, by)59.5 552.4 ms
+(# EMC Corporation, Hopkinton, MA.)59.5 542.4 ms
+(#)59.5 532.4 ms
+(# This software is furnished under a license under either the EMC Cloud)59.5 522.4 ms
+(# Infrastructure ISV Program Agreement, the EMC Velocity Atmos Partner)59.5 512.4 ms
+(# Program Agreement,or the Atmos OnLine Compute and Storage Service)59.5 502.4 ms
+(# Agreement \(License\) and may be used and copied only  in  accordance)59.5 492.4 ms
+(# with  the  terms  of such  License and with the inclusion of the above)59.5 482.4 ms
+(# copyright notice. This software or  any  other copies thereof may not)59.5 472.4 ms
+(# be provided or otherwise made available to any  other person.)59.5 462.4 ms
+(# No title to and ownership of  the  software  is  hereby transferred.)59.5 452.4 ms
+(#)59.5 442.4 ms
+(# The information in this software is subject to change without  notice)59.5 432.4 ms
+(# and  should  not be  construed  as  a commitment by EMC Corporation.)59.5 422.4 ms
+(#)59.5 412.4 ms
+(# EMC assumes no responsibility for the use or  reliability  of its)59.5 402.4 ms
+(# software on equipment which is not supplied by EMC.)59.5 392.4 ms
+(# ################################################################)59.5 382.4 ms
+(#)59.5 362.4 ms
+(#  This program is used in CaaS client vm.)59.5 352.4 ms
+(#  This program manages client VM for CaaS NFS service.)59.5 342.4 ms
+(#)59.5 332.4 ms
+(# This file should be put into /etc/init.d.)59.5 322.4 ms
+(# It is owned by root and chmod to 700.)59.5 312.4 ms
+0 0.502 0.502 r
+(SET_HOSTNAME)59.5 302.4 ms
+0 g
+(=)s
+1 0 1 r
+(0)s
+0 0.502 0.502 r
+(LOG_FILE)59.5 292.4 ms
+0 g
+(=/var/log/caas.log)s
+0 0 1 r
+(# Judge whether or not OS is in RedHat family)59.5 272.4 ms
+0 g
+(    )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( /etc/redhat-release )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 252.4 ms
+0 0 1 r
+(#echo "[caas_configurehostname] This OS is in RedHat Family, automatically c)s
+(onfigure hostname")59.5 242.4 ms
+0 g
+(        )59.5 232.4 ms
+0 0.502 0.502 r
+(SET_HOSTNAME)s
+0 g
+(=)s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 222.4 ms
+0 0 1 r
+(# Source function)s
+F1 sf
+0.502 0.251 0.251 r
+(. )59.5 212.4 ms
+F0 sf
+0 g
+(/etc/init.d/)s
+F1 sf
+0.502 0.251 0.251 r
+(functions)s
+F0 sf
+0 g
+(        )59.5 202.4 ms
+0 0 1 r
+(# Source network config)s
+0 g
+(    )59.5 192.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( /etc/sysconfig/network )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 182.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 172.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+(. )59.5 162.4 ms
+F0 sf
+0 g
+(/etc/sysconfig/network)s
+(    )59.5 142.4 ms
+0 0 1 r
+(# Check whether the network is up or not)s
+0 g
+(    )59.5 132.4 ms
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+(${NETWORKING})s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("no")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(&&)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 122.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( /etc/SuSE-release )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 112.4 ms
+0 0 1 r
+(#echo "[caas_configurehostname] This OS is in SuSE Family, automatically con)s
+(figure hostname")59.5 102.4 ms
+0 g
+(        )59.5 92.4 ms
+0 0 1 r
+(#)s
+0 g
+(        )59.5 82.4 ms
+0 0 1 r
+(# The "export HOME=" is to fix logging problem.)s
+0 g
+(        )59.5 72.4 ms
+0 0 1 r
+(# Otherwise, the following warning will be printed in log file:)s
+0 g
+(        )59.5 62.4 ms
+0 0 1 r
+(#)s
+0 g
+(        )59.5 52.4 ms
+0 0 1 r
+(#  Use of uninitialized value in concatenation \(.\) or string at)s
+re sp
+%%PageTrailer
+%%Page: 2 2
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 2)59.5 792.4 ms
+F0 sf
+(        )59.5 772.4 ms
+0 0 1 r
+(#  /usr/lib/perl5/vendor_perl/5.8.8/ycp.pm line 765 \(#1\))s
+0 g
+(        )59.5 762.4 ms
+0 0 1 r
+(#)s
+F1 sf
+0.502 0.251 0.251 r
+(export)59.5 752.4 ms
+F0 sf
+0 0.502 0.502 r
+( HOME=)s
+0 g
+(/root)s
+(    )59.5 742.4 ms
+(    )59.5 732.4 ms
+0 0.502 0.502 r
+(sles_version)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat /etc/SuSE-release )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(VERSION)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( awk )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+({print $3)s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0.416 0.353 0.804 r
+(})s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(    )59.5 722.4 ms
+0 0 1 r
+(#echo "$sles_version" )s
+0 g
+(    )59.5 712.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($sles_version)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(10)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 702.4 ms
+0 0 1 r
+(# SLES family \(SLES 10\))s
+0 g
+(        )59.5 692.4 ms
+0 0.502 0.502 r
+(SET_HOSTNAME)s
+0 g
+(=)s
+1 0 1 r
+(3)s
+0 g
+(        )59.5 682.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(SLES version )s
+0.627 0.125 0.941 r
+($sles_version)s
+1 0 1 r
+( and SET_HOSTNAME )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_)s
+(FILE)59.5 672.4 ms
+0 g
+(    )59.5 662.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($sles_version)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(11)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 652.4 ms
+0 0 1 r
+(# SLES family \(SLES 11\))s
+0 g
+(        )59.5 642.4 ms
+0 0.502 0.502 r
+(SET_HOSTNAME)s
+0 g
+(=)s
+1 0 1 r
+(2)s
+0 g
+(                )59.5 632.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(SLES version )s
+0.627 0.125 0.941 r
+($sles_version)s
+1 0 1 r
+( and SET_HOSTNAME )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)59.5 622.4 ms
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    )59.5 612.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(    )59.5 602.4 ms
+0 0 1 r
+(# SLES family \(treat as SLES 11\))s
+0 g
+(        )59.5 592.4 ms
+0 0.502 0.502 r
+(SET_HOSTNAME)s
+0 g
+(=)s
+1 0 1 r
+(2)s
+0 g
+(        )59.5 582.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(SLES version )s
+0.627 0.125 0.941 r
+($sles_version)s
+1 0 1 r
+( and treat as SLES 11 - SET_HOSTNAME )s
+0.627 0.125 0.941 r
+($SET)s
+(_HOSTNAME)59.5 572.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 552.4 ms
+0 0 1 r
+(# Source function)s
+F1 sf
+0.502 0.251 0.251 r
+(. )59.5 542.4 ms
+F0 sf
+0 g
+(/etc/rc.)s
+F1 sf
+0.502 0.251 0.251 r
+(status)s
+F0 sf
+0 g
+(    )59.5 532.4 ms
+0 0 1 r
+(# nfs config)s
+0 g
+(        )59.5 522.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( /etc/sysconfig/nfs )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            )59.5 512.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 502.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+(. )59.5 492.4 ms
+F0 sf
+0 g
+(/etc/sysconfig/nfs)s
+(    )59.5 482.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(        )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(This OS is not in RedHat nor in SuSE Family)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 462.4 ms
+0 0.502 0.502 r
+(SET_HOSTNAME)s
+0 g
+(=)s
+1 0 1 r
+(0)s
+0 g
+(    )59.5 452.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 0.502 0.502 r
+(NULL_FILE)59.5 422.4 ms
+0 g
+(=/dev/null)s
+0 0.502 0.502 r
+(PATH)59.5 412.4 ms
+0 g
+(=)s
+0.627 0.125 0.941 r
+($PATH)s
+0 g
+(:/sbin)s
+0 0 1 r
+(# Define constants)59.5 392.4 ms
+0 0.502 0.502 r
+(SERVER_ENDPOINT)59.5 382.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(https://compute.atmosonline.com/management)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(MOUNT_PATH)59.5 372.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/mnt/mauinfs)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(KT_FILE)59.5 362.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/krb5.keytab)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(CONF_FILE)59.5 352.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/krb5.conf)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(LDAP_CONF)59.5 342.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/ldap.conf)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(OPENLDAP_CONF)59.5 332.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/openldap/ldap.conf)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(OPENLDAP_PEM)59.5 322.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/openldap/cacerts/cacert.pem)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(CACERT_DIR)59.5 312.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/openldap/cacerts)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(SERVER_FILE)59.5 302.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/mauinfsserver)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(NFS_FILE)59.5 292.4 ms
+0 g
+(=)s
+0.627 0.125 0.941 r
+($SERVER_FILE)s
+0 0.502 0.502 r
+(SELF_FILE)59.5 282.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/mauiprivateip)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(ROUTE_SCRIPT)59.5 272.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(caas_add_static_route.sh)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(PROFILED_FILE)59.5 262.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/init.d/)s
+0.627 0.125 0.941 r
+($ROUTE_SCRIPT)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(CONF_CMD)59.5 252.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(caas_getkey)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(NFSSERVER_CMD)59.5 242.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(caas_getnfsserver)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(LDAP_CMD)59.5 232.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(caas_getldap)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(ID_FILE)59.5 222.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(/etc/idmapd.conf)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(TEMPFILE)59.5 212.4 ms
+0 g
+(=)s
+0.627 0.125 0.941 r
+($ID_FILE)s
+0 g
+(.tmp)s
+0 0.502 0.502 r
+(SYSCONFIG_NFS)59.5 202.4 ms
+0 g
+(=/etc/sysconfig/nfs)s
+0 0.502 0.502 r
+(function)59.5 182.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(processLine\(\){)s
+0 g
+(        )59.5 172.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($@)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(        )59.5 152.4 ms
+0 0.502 0.502 r
+(grep_domain)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(echo )s
+0.627 0.125 0.941 r
+($line)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^Domain)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 142.4 ms
+0 0.502 0.502 r
+(grep_nouser)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(echo )s
+0.627 0.125 0.941 r
+($line)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^Nobody-User)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 132.4 ms
+0 0.502 0.502 r
+(grep_nogrop)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(echo )s
+0.627 0.125 0.941 r
+($line)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^Nobody-Group)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 102.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($grep_domain)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 92.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(#)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+0.627 0.125 0.941 r
+($line)s
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+(                )59.5 82.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Domain = )s
+0.627 0.125 0.941 r
+($DOMAIN)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+(        )59.5 72.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 52.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($grep_nouser)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+re sp
+%%PageTrailer
+%%Page: 3 3
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 3)59.5 792.4 ms
+F0 sf
+(                )59.5 772.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(#)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+0.627 0.125 0.941 r
+($line)s
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+(                )59.5 762.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Nobody-User = nobody)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+(        )59.5 752.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 732.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($grep_nogrop)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 722.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Nobody-Group = nobody)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+(        )59.5 712.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 692.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($grep_nouser)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(&&)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($grep_nogrop)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(&&)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($grep_domain)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)59.5 682.4 ms
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 672.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+0.627 0.125 0.941 r
+($line)s
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+(        )59.5 662.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 0.502 0.502 r
+(})59.5 642.4 ms
+(function)59.5 622.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(prompt_file\(\) {)s
+0 g
+(    )59.5 612.4 ms
+0 0.502 0.502 r
+(FILE)s
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($@)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 602.4 ms
+0 0.502 0.502 r
+(default_back_loc)s
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($FILE)s
+1 0 1 r
+(.bak)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 592.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($FILE)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 582.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($FILE)s
+1 0 1 r
+( already exists. It will be over-written. Do you want to back )s
+(it up? y/n \(default: y\))59.5 572.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(        )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(read)s
+F0 sf
+0 g
+( back_kt)s
+(        )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($back_kt)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("n")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(             )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+0 0 1 r
+(#rm -f $FILE)s
+0 g
+(        )59.5 532.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(             )59.5 522.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Enter the backup location for )s
+0.627 0.125 0.941 r
+($FILE)s
+1 0 1 r
+(: \(default: )s
+0.627 0.125 0.941 r
+($default_back_l)s
+(oc)59.5 512.4 ms
+1 0 1 r
+(\))s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(             )59.5 502.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(read)s
+F0 sf
+0 g
+( back_loc)s
+(             )59.5 492.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($back_loc)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                 )59.5 482.4 ms
+0 0.502 0.502 r
+(back_loc)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($default_back_loc)s
+0 g
+(             )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(             yes )59.5 462.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( cp )s
+0.627 0.125 0.941 r
+($FILE)s
+0 g
+( )s
+0.627 0.125 0.941 r
+($back_loc)s
+0 g
+(        )59.5 452.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 442.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 0.502 0.502 r
+(})59.5 422.4 ms
+(function)59.5 402.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(prompt_server_up\(\) {)s
+0 g
+(    )59.5 392.4 ms
+0 0 1 r
+(# Prompt user to input server endpoint)s
+0 g
+(    )59.5 382.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Enter service endpoint\(default: )s
+0.627 0.125 0.941 r
+($SERVER_ENDPOINT)s
+1 0 1 r
+( - hit return to accept)s
+( the default or enter a different URL\):)59.5 372.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 362.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(read)s
+F0 sf
+0 g
+( SERVER)s
+(    )59.5 342.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($SERVER)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(       )59.5 332.4 ms
+0 0.502 0.502 r
+(SERVER)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($SERVER_ENDPOINT)s
+0 g
+(    )59.5 322.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 302.4 ms
+0 0 1 r
+(# Prompt to ask for CaaS username/password)s
+0 g
+(    )59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Enter your Compute Service username:)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 282.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(read)s
+F0 sf
+0 g
+( CAASUSER)s
+(    )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Enter your Compute Service password:)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    stty -)59.5 252.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+0 g
+(    )59.5 242.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(read)s
+F0 sf
+0 g
+( PASSWORD)s
+(    stty )59.5 232.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+0 g
+(    )59.5 222.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+(    )59.5 212.4 ms
+(    )59.5 202.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Enter your VM name:)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 192.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(read)s
+F0 sf
+0 g
+( VM)s
+(  )59.5 172.4 ms
+(    )59.5 162.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($CAASUSER)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($PASSWORD)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($VM)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 152.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Username, password and VM name cannot be empty!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 142.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 132.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    prompt_file )59.5 112.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($KT_FILE)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    prompt_file )59.5 102.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($CONF_FILE)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    prompt_file )59.5 92.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    prompt_file )59.5 82.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($OPENLDAP_CONF)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    prompt_file )59.5 72.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($OPENLDAP_PEM)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+re sp
+%%PageTrailer
+%%Page: 4 4
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 4)59.5 792.4 ms
+F0 sf
+0 0.502 0.502 r
+(})59.5 772.4 ms
+(insert_before_last\(\) {)59.5 752.4 ms
+(t)59.5 742.4 ms
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($1)s
+F1 sf
+0.502 0.251 0.251 r
+(";)s
+F0 sf
+0 g
+(awk -)59.5 732.4 ms
+0 0.502 0.502 r
+(vt)s
+0 g
+(=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($t)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+({a[NR]=$0} /}/{i=NR})s
+(END{)59.5 722.4 ms
+(    for\(o=1;o<=NR;o++\){)59.5 712.4 ms
+(        if \(o==i\){   print t; print a[o])59.5 702.4 ms
+(        }else{ print a[o]  })59.5 692.4 ms
+(    })59.5 682.4 ms
+(})59.5 672.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($2)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>)s
+F0 sf
+0 g
+( /tmp/temp_file)s
+F1 sf
+0.502 0.251 0.251 r
+(mv)59.5 662.4 ms
+F0 sf
+0 g
+( /tmp/temp_file )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($2)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 0.502 0.502 r
+(})59.5 652.4 ms
+(function)59.5 632.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(add_static_route\(\) {)s
+0 g
+(        )59.5 612.4 ms
+0 0 1 r
+(# Get private IP)s
+0 g
+(        )59.5 602.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($NFS_FILE)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 592.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Error: )s
+0.627 0.125 0.941 r
+($NFS_FILE)s
+1 0 1 r
+( not exists!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(2)s
+0 g
+(                )59.5 582.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 572.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SELF_FILE)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Error: )s
+0.627 0.125 0.941 r
+($SELF_FILE)s
+1 0 1 r
+( not exists!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(2)s
+0 g
+(                )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 532.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 522.4 ms
+0 0.502 0.502 r
+(self_ip)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($SELF_FILE)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( head )s
+1 0 1 r
+(-1)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 502.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$self_ip")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 492.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Error: Private IP not returned by App Server!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(2)s
+0 g
+(                )59.5 482.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 452.4 ms
+0 0 1 r
+(# List All eths)s
+0 g
+(        )59.5 442.4 ms
+0 0.502 0.502 r
+(eths)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(ifconfig )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^eth )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( awk )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+({print $1})s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 422.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(for )s
+F0 sf
+0 g
+(eth )s
+F1 sf
+0.502 0.251 0.251 r
+(in)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($eths)s
+F1 sf
+0.502 0.251 0.251 r
+(;)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(do)s
+F0 sf
+0 g
+(                )59.5 412.4 ms
+0 0.502 0.502 r
+(ip_addr)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(ifconfig )s
+0.627 0.125 0.941 r
+($eth)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(inet addr:)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( cut -d: -f2 )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( awk )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+({pr)s
+(int $1)59.5 402.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0.416 0.353 0.804 r
+(})s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(                )59.5 392.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($ip_addr)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$self_ip")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                        )59.5 382.4 ms
+0 0.502 0.502 r
+(PRIVATE_ETH)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($eth)s
+0 g
+(                        )59.5 372.4 ms
+0 0 1 r
+(# echo "Your private eth is $eth")s
+0 g
+(                        )59.5 362.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(break)s
+F0 sf
+0 g
+(                )59.5 352.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 342.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(done)s
+F0 sf
+0 g
+(        )59.5 322.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$PRIVATE_ETH")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 312.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Error: Can't find any nic which matches the private IP address)s
+( )59.5 302.4 ms
+0.627 0.125 0.941 r
+($self_ip)s
+1 0 1 r
+(! Probably caused by the wrong VM name input.)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(2)s
+0 g
+(                )59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 282.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 262.4 ms
+0 0 1 r
+(# set static route)s
+0 g
+(        )59.5 252.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Set static route to NFS through private network)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(        )59.5 242.4 ms
+0 0.502 0.502 r
+(NFS_HOST)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($NFS_FILE\))s
+0 g
+(        )59.5 232.4 ms
+0 0.502 0.502 r
+(NFS_IP)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(host )s
+0.627 0.125 0.941 r
+($NFS_HOST)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(has address)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( head )s
+1 0 1 r
+(-1)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( awk )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+({print $4})s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 222.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$NFS_IP")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 212.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(host cannot be resolved!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(                )59.5 202.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 192.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        ip )59.5 182.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(r)s
+F0 sf
+0 g
+( a )s
+0.627 0.125 0.941 r
+($NFS_IP)s
+0 g
+(/)s
+1 0 1 r
+(32)s
+0 g
+( dev )s
+0.627 0.125 0.941 r
+($PRIVATE_ETH)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(        cat )59.5 162.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($PROFILED_FILE)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(<< endline)s
+F0 sf
+1 0 1 r
+(#!/bin/sh)59.5 152.4 ms
+(#)59.5 142.4 ms
+(#chkconfig: 345 40 99)59.5 132.4 ms
+(#description: add static route to client vms)59.5 122.4 ms
+(# Authors: Bradley Goodman)59.5 102.4 ms
+(#          Arkady Kanevsky)59.5 92.4 ms
+(#          Anfernee Gui)59.5 82.4 ms
+(#)59.5 72.4 ms
+(# /etc/init.d/)59.5 62.4 ms
+(#)59.5 52.4 ms
+re sp
+%%PageTrailer
+%%Page: 5 5
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 5)59.5 792.4 ms
+F0 sf
+1 0 1 r
+(### BEGIN INIT INFO)59.5 772.4 ms
+(# Provides:       caas_add_static_route.sh)59.5 762.4 ms
+(# Required-Start: )59.5 752.4 ms
+0.627 0.125 0.941 r
+($mauinfs)s
+1 0 1 r
+(# Required-Stop: )59.5 742.4 ms
+0.627 0.125 0.941 r
+($mauinfs)s
+1 0 1 r
+(# Default-Start:  3 5)59.5 732.4 ms
+(# Default-Stop:)59.5 722.4 ms
+(# Description:    add static route to NFS VM)59.5 712.4 ms
+(### END INIT INFO)59.5 702.4 ms
+(# ################################################################)59.5 682.4 ms
+(# Copyright \(C\) 2009, All Rights Reserved, by)59.5 672.4 ms
+(# EMC Corporation, Hopkinton, MA.)59.5 662.4 ms
+(#)59.5 652.4 ms
+(# This software is furnished under a license under either the EMC Cloud)59.5 642.4 ms
+(# Infrastructure ISV Program Agreement, the EMC Velocity Atmos Partner)59.5 632.4 ms
+(# Program Agreement,or the Atmos OnLine Compute and Storage Service)59.5 622.4 ms
+(# Agreement \(License\) and may be used and copied only  in  accordance)59.5 612.4 ms
+(# with  the  terms  of such  License and with the inclusion of the above)59.5 602.4 ms
+(# copyright notice. This software or  any  other copies thereof may not)59.5 592.4 ms
+(# be provided or otherwise made available to any  other person.)59.5 582.4 ms
+(# No title to and ownership of  the  software  is  hereby transferred.)59.5 572.4 ms
+(#)59.5 562.4 ms
+(# The information in this software is subject to change without  notice)59.5 552.4 ms
+(# and  should  not be  construed  as  a commitment by EMC Corporation.)59.5 542.4 ms
+(#)59.5 532.4 ms
+(# EMC assumes no responsibility for the use or  reliability  of its)59.5 522.4 ms
+(# software on equipment which is not supplied by EMC.)59.5 512.4 ms
+(# ################################################################)59.5 502.4 ms
+(#)59.5 482.4 ms
+(#  This program is used in CaaS client vm.)59.5 472.4 ms
+(#)59.5 462.4 ms
+(LOG_FILE=/var/log/caas.log)59.5 442.4 ms
+(# Get private IP)59.5 422.4 ms
+(function start\(\) {)59.5 412.4 ms
+(RETRY_TIME=10)59.5 402.4 ms
+(        if [ ! -e )59.5 392.4 ms
+0.627 0.125 0.941 r
+($NFS_FILE)s
+1 0 1 r
+( ]; then)s
+(                echo "Error: )59.5 382.4 ms
+0.627 0.125 0.941 r
+($NFS_FILE)s
+1 0 1 r
+( not exists!")s
+(                exit 1)59.5 372.4 ms
+(        fi)59.5 362.4 ms
+(        if [ ! -e )59.5 352.4 ms
+0.627 0.125 0.941 r
+($SELF_FILE)s
+1 0 1 r
+( ]; then)s
+(                echo "Error: )59.5 342.4 ms
+0.627 0.125 0.941 r
+($SELF_FILE)s
+1 0 1 r
+( not exists!")s
+(                exit 1)59.5 332.4 ms
+(        fi)59.5 322.4 ms
+(        self_ip=)59.5 312.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(\(cat )s
+0.627 0.125 0.941 r
+($SELF_FILE)s
+1 0 1 r
+( | head -1\))s
+(        if [ "" = ")59.5 292.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(self_ip" ]; then)s
+(                echo "Error: Private IP not returned by App Server!")59.5 282.4 ms
+(                exit 1)59.5 272.4 ms
+(        fi)59.5 262.4 ms
+(        # List All eths)59.5 242.4 ms
+(    sleep 5)59.5 232.4 ms
+(    time1=1)59.5 222.4 ms
+(    while [ )59.5 202.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(time1 -lt )s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(RETRY_TIME ]; do)s
+(                echo "ifconfig not ready, wait 3 seconds, No )59.5 192.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(time1")s
+(                sleep 3)59.5 182.4 ms
+(                eths=)59.5 172.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(\(ifconfig | grep ^eth | awk '{print )s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(1}'\))s
+(        )59.5 162.4 ms
+(            for eth in )59.5 142.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(eths; do)s
+(                    ip_addr=)59.5 132.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(\(ifconfig )s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(eth | grep "inet addr:" | cut -d: -f2 | aw)s
+(k '{print )59.5 122.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(1'}\))s
+(                    if [ ")59.5 102.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(ip_addr" = ")s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(self_ip" ]; then)s
+(                            PRIVATE_ETH=)59.5 92.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(eth)s
+(                            echo "Your private eth is )59.5 82.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(eth" >> )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+1 0 1 r
+( 2>&1)s
+(                            break)59.5 72.4 ms
+(                    fi)59.5 62.4 ms
+(            done)59.5 52.4 ms
+re sp
+%%PageTrailer
+%%Page: 6 6
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 6)59.5 792.4 ms
+F0 sf
+1 0 1 r
+(            if [ "" = ")59.5 762.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(PRIVATE_ETH" ]; then)s
+(            time1=)59.5 752.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(\(\(time1+1\)\))s
+(            else)59.5 742.4 ms
+(            break)59.5 732.4 ms
+(        fi)59.5 722.4 ms
+(    done )59.5 702.4 ms
+(    if [ )59.5 682.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(time1 -eq )s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(RETRY_TIME ]; then )s
+(        echo "Error: Doesn't find eth which matches the private IP address )59.5 672.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(self_ip)s
+(!" >> )59.5 662.4 ms
+0.627 0.125 0.941 r
+($LOG_FILE)s
+1 0 1 r
+( 2>&1)s
+(                exit 1)59.5 652.4 ms
+(    fi )59.5 642.4 ms
+(    )59.5 632.4 ms
+(        # set static route)59.5 622.4 ms
+(        echo "Set static route to NFS through private network" >> )59.5 612.4 ms
+0.627 0.125 0.941 r
+($LOG_FILE)s
+1 0 1 r
+( 2>&1)s
+(        NFS_HOST=)59.5 602.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(\(cat )s
+0.627 0.125 0.941 r
+($NFS_FILE)s
+1 0 1 r
+(\))s
+(        NFS_IP=)59.5 592.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(\(host )s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(NFS_HOST | grep "has address" | head -1 | awk '{print )s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(4}')s
+(\))59.5 582.4 ms
+(        if [ "" = ")59.5 572.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(NFS_IP" ]; then)s
+(                echo "host cannot be resolved!" >> )59.5 562.4 ms
+0.627 0.125 0.941 r
+($LOG_FILE)s
+1 0 1 r
+( 2>&1)s
+(                exit 1)59.5 552.4 ms
+(        fi)59.5 542.4 ms
+(        ip r a )59.5 532.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(NFS_IP/32 dev )s
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(PRIVATE_ETH)s
+(})59.5 522.4 ms
+(function status\(\) {)59.5 502.4 ms
+(        echo "caas_add_static_route.sh: status done")59.5 492.4 ms
+(})59.5 482.4 ms
+(function stop\(\) {)59.5 462.4 ms
+(        echo "caas_add_static_route.sh: stop done")59.5 452.4 ms
+(})59.5 442.4 ms
+(case ")59.5 422.4 ms
+0.416 0.353 0.804 r
+(\\$)s
+1 0 1 r
+(1" in)s
+(  start\))59.5 412.4 ms
+(        start)59.5 402.4 ms
+(        ;;)59.5 392.4 ms
+(  stop\))59.5 382.4 ms
+(        stop)59.5 372.4 ms
+(        ;;)59.5 362.4 ms
+(  status\))59.5 352.4 ms
+(        status)59.5 342.4 ms
+(        ;;)59.5 332.4 ms
+(  *\))59.5 322.4 ms
+(        echo $"Usage: caas_add_static_route.sh \(start|stop|status\)")59.5 312.4 ms
+(        exit 1)59.5 302.4 ms
+(esac)59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(endline)59.5 272.4 ms
+(chmod)59.5 252.4 ms
+F0 sf
+0 g
+( +x )s
+0.627 0.125 0.941 r
+($PROFILED_FILE)s
+0 g
+(chkconfig )59.5 242.4 ms
+0.627 0.125 0.941 r
+($ROUTE_SCRIPT)s
+0 g
+( on)s
+0 0.502 0.502 r
+(})59.5 232.4 ms
+0 0 1 r
+(# from /etc/init.d/nfs)59.5 212.4 ms
+0 0.502 0.502 r
+(mount_rpc_pipefs\(\) {)59.5 202.4 ms
+0 g
+(    )59.5 192.4 ms
+0 0 1 r
+(# See if the file system is there yet)s
+0 g
+(    )59.5 182.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(case)s
+F0 sf
+0 g
+( )s
+0.416 0.353 0.804 r
+(`stat -c )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(%t)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+( -f /var/lib/nfs/rpc_pipefs`)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(in)s
+F0 sf
+0 g
+(    *67596969*)59.5 172.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+F0 sf
+0 g
+(        )59.5 162.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(return)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+F1 sf
+0.502 0.251 0.251 r
+(;;)s
+F0 sf
+0 g
+(    )59.5 152.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(esac)s
+F0 sf
+0 g
+(    mount -t rpc_pipefs rpc_pipefs /var/lib/nfs/rpc_pipefs)59.5 142.4 ms
+0 0.502 0.502 r
+(})59.5 132.4 ms
+(umount_rpc_pipefs\(\) {)59.5 112.4 ms
+0 g
+(    )59.5 102.4 ms
+0 0 1 r
+(# See if the file system is there)s
+0 g
+(    )59.5 92.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(case)s
+F0 sf
+0 g
+( )s
+0.416 0.353 0.804 r
+(`stat -c )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(%t)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+( -f /var/lib/nfs/rpc_pipefs`)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(in)s
+F0 sf
+0 g
+(    *67596969*)59.5 82.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+F0 sf
+0 g
+(        umount /var/lib/nfs/rpc_pipefs)59.5 72.4 ms
+(    )59.5 62.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(esac)s
+F0 sf
+0 0.502 0.502 r
+(})59.5 52.4 ms
+re sp
+%%PageTrailer
+%%Page: 7 7
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 7)59.5 792.4 ms
+F0 sf
+0 0.502 0.502 r
+(function)59.5 762.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(start_gssd\(\) {)s
+0 g
+(    /sbin/modprobe rpcsec_gss_krb5)59.5 752.4 ms
+(    mount_rpc_pipefs)59.5 742.4 ms
+(    startproc /usr/sbin/rpc.gssd)59.5 732.4 ms
+(    )59.5 722.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(return)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 0.502 0.502 r
+(})59.5 712.4 ms
+(function)59.5 692.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(stop_gssd\(\) {)s
+0 g
+(    )59.5 682.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(stopping gssd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    killproc /usr/sbin/rpc.gssd )59.5 672.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    )59.5 662.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(return)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 0.502 0.502 r
+(})59.5 652.4 ms
+(function)59.5 632.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(start_idmapd\(\) {)s
+0 g
+(    mount_rpc_pipefs)59.5 622.4 ms
+(    )59.5 602.4 ms
+0 0 1 r
+(# check if there is already a idmapd running)s
+0 g
+(    )59.5 592.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if )s
+F0 sf
+0 g
+(checkproc /usr/sbin/rpc.idmapd )s
+F1 sf
+0.502 0.251 0.251 r
+(&&)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(test)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( /var/lock/subsys/nfsserver-rpc.idma)s
+(pd)59.5 582.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(;)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 572.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(idmapd is running; stoping it)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(killproc)s
+F0 sf
+0 g
+( -HUP /usr/sbin/rpc.idmapd  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(  )s
+(    startproc /usr/sbin/rpc.idmapd )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>)s
+F0 sf
+0 g
+( /var/lock/subsys/nfs-rpc.idmapd)s
+(    )59.5 532.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(return)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 0.502 0.502 r
+(})59.5 522.4 ms
+(function)59.5 502.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(stop_idmapd\(\) {)s
+0 g
+(    )59.5 492.4 ms
+0 0 1 r
+(# stop idmapd)s
+0 g
+(    )59.5 482.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if test)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( /usr/sbin/rpc.idmapd)s
+F1 sf
+0.502 0.251 0.251 r
+(;)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 472.4 ms
+0 0 1 r
+(# only stop idmapd if it is not needed by server)s
+0 g
+(                )59.5 462.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if test)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($IDMAPD_SERVER_STATE)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(;)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                    )59.5 452.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(stopping idmapd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(                    )59.5 442.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(killproc)s
+F0 sf
+0 g
+( /usr/sbin/rpc.idmapd )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 432.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(           )59.5 422.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(NOT stopping idmapd NFS Server is running)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(                )59.5 412.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(                )59.5 402.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(rm)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( /var/lock/subsys/nfs-rpc.idmapd)s
+(            )59.5 392.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 0.502 0.502 r
+(})59.5 382.4 ms
+(function)59.5 362.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(modify_idmapd\(\) {)s
+0 g
+(   )59.5 352.4 ms
+0 0 1 r
+(# Modify /etc/idmapd.conf)s
+0 g
+(        )59.5 342.4 ms
+0 0.502 0.502 r
+(DOMAIN)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(hostname -d)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 332.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Configuring /etc/idmapd.conf ...)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(        )59.5 322.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( Your domain name is )s
+0.627 0.125 0.941 r
+($DOMAIN)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(        )59.5 302.4 ms
+0 0 1 r
+(# Copy line by line)s
+0 g
+(        )59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(rm)s
+F0 sf
+0 g
+( -f )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+(        )59.5 272.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exec)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(3)s
+F1 sf
+0.502 0.251 0.251 r
+(<&0)s
+F0 sf
+0 g
+(        )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exec)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+F1 sf
+0.502 0.251 0.251 r
+(<)s
+F0 sf
+0.627 0.125 0.941 r
+($ID_FILE)s
+0 g
+(        )59.5 242.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(while read line)s
+(        do)59.5 232.4 ms
+F0 sf
+0 g
+(                processLine )59.5 222.4 ms
+0.627 0.125 0.941 r
+($line)s
+0 g
+(        )59.5 212.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(done)s
+F0 sf
+0 g
+(        )59.5 192.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exec)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+F1 sf
+0.502 0.251 0.251 r
+(<&3)s
+F0 sf
+0 g
+(        )59.5 172.4 ms
+0 0 1 r
+(# replace the old file)s
+0 g
+(        )59.5 162.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(mv)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($TEMPFILE)s
+0 g
+( )s
+0.627 0.125 0.941 r
+($ID_FILE)s
+0 g
+( -f)s
+0 0.502 0.502 r
+(})59.5 152.4 ms
+(function)59.5 132.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(configure\(\) {)s
+0 g
+(    )59.5 122.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(configuring mauinfs)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(   )59.5 112.4 ms
+(    )59.5 102.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(shutting down kerberos)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    service kadmin )59.5 92.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    chkconfig kadmin off  )59.5 82.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    service krb524 )59.5 72.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    chkconfig krb524 off  )59.5 62.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    service krb5kdc )59.5 52.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+re sp
+%%PageTrailer
+%%Page: 8 8
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 8)59.5 792.4 ms
+F0 sf
+(    chkconfig krb5kdc off  )59.5 772.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    )59.5 762.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(shutting down ldap)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    service ldap )59.5 752.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    chkconfig ldap off  )59.5 742.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    )59.5 722.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(shutting down mauinfs)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    service mauifs )59.5 712.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    chkconfig mauifs off  )59.5 702.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    service mauinfs )59.5 692.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    chkconfig mauinfs off  )59.5 682.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    )59.5 672.4 ms
+0 0 1 r
+(# Prompt )59.5 662.4 ms
+0 g
+(    prompt_server_up)59.5 652.4 ms
+(    )59.5 632.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Configuring...)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 612.4 ms
+0 0 1 r
+(# Modify /etc/sysconfig/nfs)s
+0 g
+(    )59.5 602.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Add SECURE GSS for NFS in )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    )59.5 592.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 582.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            )59.5 572.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^)s
+0 0.502 0.502 r
+(SECURE_NFS)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(            )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                    )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(SECURE_NFS=yes)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0 g
+(            )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(                    cat )59.5 532.4 ms
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+(s/^SECURE_NFS=[\\t a-zA-Z0-9]*/SECURE_N)s
+(FS=yes/g)59.5 522.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0 g
+(.bak)s
+(                    yes )59.5 512.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( cp )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0 g
+(.bak )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0 g
+(        )59.5 502.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 492.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(2)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(3)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 482.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^)s
+0 0.502 0.502 r
+(NFS_SECURITY_GSS)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+(\))s
+F1 sf
+0.502 0.251 0.251 r
+(;)s
+F0 sf
+0 g
+(                )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                        )59.5 462.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(NFS_SECURITY_GSS=)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(yes)s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+0 g
+(                )59.5 452.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(                        )59.5 442.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+(s/^NFS_SECURITY_GSS=.*/NFS_SECURITY_GSS="yes"/g)s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SY)s
+(SCONFIG_NFS)59.5 432.4 ms
+0 g
+(                )59.5 422.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 412.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(        )59.5 402.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Error: unknown OS version)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 392.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 382.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 372.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(        )59.5 362.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Error: )s
+0.627 0.125 0.941 r
+($SYSCONFIG_NFS)s
+1 0 1 r
+( not exists!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 352.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 342.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 322.4 ms
+0 0 1 r
+(# link libgssapi_krb5 to the right file)s
+0 g
+(    )59.5 312.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Creating symbolic link for libgssapi_krb5.so)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    )59.5 302.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( /usr/lib64/libgssapi_krb5.so )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        ln )59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(-s)s
+F0 sf
+0 g
+( /usr/lib64/libgssapi_krb5.so.)s
+1 0 1 r
+(2)s
+0 g
+(.)s
+1 0 1 r
+(2)s
+0 g
+( /usr/lib64/libgssapi_krb5.so  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG)s
+(_FILE)59.5 282.4 ms
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 272.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-e)s
+F0 sf
+0 g
+( /usr/lib/libgssapi_krb5.so )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        ln )59.5 252.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(-s)s
+F0 sf
+0 g
+( /usr/lib/libgssapi_krb5.so.)s
+1 0 1 r
+(2)s
+0 g
+(.)s
+1 0 1 r
+(2)s
+0 g
+( /usr/lib/libgssapi_krb5.so  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FIL)s
+(E)59.5 242.4 ms
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 232.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 212.4 ms
+0 0 1 r
+(# Configure NFS client)s
+0 g
+(    )59.5 202.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Configuring NFS server location and private IP address)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&1)s
+F0 sf
+0 g
+(    )59.5 192.4 ms
+(    )59.5 182.4 ms
+0 0 1 r
+(# mount Atmos through NFSv4 to Mountpath)s
+0 g
+(    )59.5 172.4 ms
+0.627 0.125 0.941 r
+($NFSSERVER_CMD)s
+0 g
+( -s )s
+0.627 0.125 0.941 r
+($SERVER)s
+0 g
+( -u )s
+0.627 0.125 0.941 r
+($CAASUSER)s
+0 g
+( -p )s
+0.627 0.125 0.941 r
+($PASSWORD)s
+0 g
+( -c )s
+0.627 0.125 0.941 r
+($SERVER_FILE)s
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FIL)s
+(E)59.5 162.4 ms
+0 g
+(    )59.5 152.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 142.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Getting NFS server failed)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 132.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 122.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 102.4 ms
+0 0 1 r
+(# Get VM's private IP address)s
+0 g
+(    )59.5 92.4 ms
+0.627 0.125 0.941 r
+($NFSSERVER_CMD)s
+0 g
+( -s )s
+0.627 0.125 0.941 r
+($SERVER)s
+0 g
+( -u )s
+0.627 0.125 0.941 r
+($CAASUSER)s
+0 g
+( -p )s
+0.627 0.125 0.941 r
+($PASSWORD)s
+0 g
+( -c )s
+0.627 0.125 0.941 r
+($SELF_FILE)s
+0 g
+( -v )s
+0.627 0.125 0.941 r
+($VM)s
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LO)s
+(G_FILE)59.5 82.4 ms
+0 g
+(    )59.5 72.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 62.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Getting private IP failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 52.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+re sp
+%%PageTrailer
+%%Page: 9 9
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                       Page 9)59.5 792.4 ms
+F0 sf
+(    )59.5 772.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 752.4 ms
+0 0 1 r
+(# add static route)s
+0 g
+(    add_static_route)59.5 742.4 ms
+(    )59.5 722.4 ms
+0 0 1 r
+(# Configure hostname and modify /etc/hosts)s
+0 g
+(    caas_configurehostname  )59.5 712.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    )59.5 702.4 ms
+0.627 0.125 0.941 r
+(HOSTNAME)s
+F1 sf
+0.502 0.251 0.251 r
+(=)s
+F0 sf
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(hostname -f)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(    )59.5 682.4 ms
+0 0 1 r
+(# Configure NFS client)s
+0 g
+(    )59.5 672.4 ms
+0 0 1 r
+(#echo "Configuring NFS client for kerberos key")s
+0 g
+(    )59.5 652.4 ms
+0 0 1 r
+(# Invoke CaaS REST interface for kerberos token)s
+0 g
+(    )59.5 642.4 ms
+0.627 0.125 0.941 r
+($CONF_CMD)s
+0 g
+( -s )s
+0.627 0.125 0.941 r
+($SERVER)s
+0 g
+( -u )s
+0.627 0.125 0.941 r
+($CAASUSER)s
+0 g
+( -p )s
+0.627 0.125 0.941 r
+($PASSWORD)s
+0 g
+( -t )s
+0.627 0.125 0.941 r
+($HOSTNAME)s
+0 g
+( -k )s
+0.627 0.125 0.941 r
+($KT_FILE)s
+0 g
+( -c )s
+0.627 0.125 0.941 r
+($CONF)s
+(_FILE)59.5 632.4 ms
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    )59.5 622.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+( )s
+(        )59.5 612.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Configuring kerberos failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 602.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 592.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(      )s
+(    )59.5 572.4 ms
+0 0 1 r
+(# Invoke CaaS REST interface for Ldap configuration files)s
+0 g
+(    )59.5 562.4 ms
+0 0 1 r
+(# Check for cacerts directory)s
+0 g
+(    )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-d)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CACERT_DIR)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(mkdir)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CACERT_DIR)s
+0 g
+(        )59.5 532.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Created /etc/openldap/cacerts)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    )59.5 522.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 512.4 ms
+0.627 0.125 0.941 r
+($LDAP_CMD)s
+0 g
+( -s )s
+0.627 0.125 0.941 r
+($SERVER)s
+0 g
+( -u )s
+0.627 0.125 0.941 r
+($CAASUSER)s
+0 g
+( -p )s
+0.627 0.125 0.941 r
+($PASSWORD)s
+0 g
+( -c )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+( -o )s
+0.627 0.125 0.941 r
+($OPENLDAP_CONF)s
+0 g
+(  )s
+(-a )59.5 502.4 ms
+0.627 0.125 0.941 r
+($OPENLDAP_PEM)s
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    )59.5 492.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 482.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Configuring ldap failed.)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 462.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 442.4 ms
+0 0 1 r
+(# chmod )s
+0 g
+(    chown root )59.5 432.4 ms
+0.627 0.125 0.941 r
+($KT_FILE)s
+0 g
+(    )59.5 422.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(chmod)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(640)s
+0 g
+( )s
+0.627 0.125 0.941 r
+($KT_FILE)s
+0 g
+(    )59.5 412.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(chmod)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(600)s
+0 g
+( )s
+0.627 0.125 0.941 r
+($SERVER_FILE)s
+0 g
+(    )59.5 392.4 ms
+0 0 1 r
+(# Modify /etc/idmapd.conf)s
+0 g
+(    modify_idmapd)59.5 382.4 ms
+(    )59.5 362.4 ms
+0 0 1 r
+(# Modify /etc/nsswitch.conf)s
+0 g
+(    )59.5 352.4 ms
+0 0 1 r
+(#echo "Modifying /etc/nsswitch.conf")s
+0 g
+(    )59.5 342.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    cat /etc/nsswitch.conf )59.5 332.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+(s/ldap//g)s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0 g
+( \\)s
+(        )59.5 322.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+(s/)s
+0.416 0.353 0.804 r
+(\\\()s
+1 0 1 r
+(passwd:)s
+0.416 0.353 0.804 r
+(\\\)\\\()s
+1 0 1 r
+([\\t a-zA-Z]*)s
+0.416 0.353 0.804 r
+(\\\))s
+1 0 1 r
+(/& ldap/g)s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0 g
+(\\)s
+(        )59.5 312.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+(s/)s
+0.416 0.353 0.804 r
+(\\\()s
+1 0 1 r
+(shadow:)s
+0.416 0.353 0.804 r
+(\\\)\\\()s
+1 0 1 r
+([\\t a-zA-Z]*)s
+0.416 0.353 0.804 r
+(\\\))s
+1 0 1 r
+(/& ldap/g)s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0 g
+(\\)s
+(        )59.5 302.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+(s/)s
+0.416 0.353 0.804 r
+(\\\()s
+1 0 1 r
+(group:)s
+0.416 0.353 0.804 r
+(\\\)\\\()s
+1 0 1 r
+([\\t a-zA-Z]*)s
+0.416 0.353 0.804 r
+(\\\))s
+1 0 1 r
+(/& ldap/g)s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>)s
+F0 sf
+0 g
+( /etc/nsswitch.conf.back)s
+(    yes )59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( cp )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( /etc/nsswitch.conf.back /etc/nsswitch.conf)s
+(    )59.5 282.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(2)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(3)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 272.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/passwd.*/passwd: files compat/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( /etc/nsswitch.conf)s
+(    )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/group.*/group: files compat/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( /etc/nsswitch.conf)s
+(    )59.5 252.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 232.4 ms
+0 0.502 0.502 r
+(LDAPSERVER)s
+0 g
+(=)s
+0.416 0.353 0.804 r
+(`awk )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+({if \($1 == "URI"\) {print $2}})s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0.416 0.353 0.804 r
+( /etc/ldap.conf`)s
+F1 sf
+0.502 0.251 0.251 r
+(;)s
+F0 sf
+0 g
+(    )59.5 222.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(2)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(3)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 212.4 ms
+0 0.502 0.502 r
+(LDAPSERVER)s
+0 g
+(=)s
+0.416 0.353 0.804 r
+(`echo )s
+0.627 0.125 0.941 r
+($LDAPSERVER)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+(s/ldap:\\/\\/)s
+0.416 0.353 0.804 r
+(\\\()s
+1 0 1 r
+(.*)s
+0.416 0.353 0.804 r
+(\\\))s
+1 0 1 r
+(\\//\\1/)s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0.416 0.353 0.804 r
+(`)s
+0 g
+(    )59.5 202.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 192.4 ms
+0 0.502 0.502 r
+(LDAPBASE)s
+0 g
+(=)s
+0.416 0.353 0.804 r
+(`awk )s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+1 0 1 r
+({if \($1 == "BASE"\) {print $2}})s
+F1 sf
+0.502 0.251 0.251 r
+(')s
+F0 sf
+0.416 0.353 0.804 r
+( /etc/ldap.conf`)s
+F1 sf
+0.502 0.251 0.251 r
+(;)s
+F0 sf
+0 g
+(    )59.5 172.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($LDAPSERVER)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 162.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Could not read LDAP server name from /etc/ldap.conf)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 152.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 142.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 132.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($LDAPBASE)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 122.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Could not read LDAP Base DN name from /etc/ldap.conf)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        )59.5 112.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 102.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 92.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 82.4 ms
+0 0 1 r
+(# RHEL family)s
+0 g
+(        )59.5 72.4 ms
+0 0 1 r
+(#echo "authconfig enablekrb5...")s
+0 g
+(    authconfig --enablekrb5 --update)59.5 62.4 ms
+(    )59.5 52.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+re sp
+%%PageTrailer
+%%Page: 10 10
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                      Page 10)59.5 792.4 ms
+F0 sf
+(        )59.5 772.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(authconfig enablekrb5 failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(            )59.5 762.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 752.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 732.4 ms
+0 0 1 r
+(#echo "authconfig enableldap...")s
+0 g
+(        authconfig --enableldap --)59.5 722.4 ms
+0 0.502 0.502 r
+(ldapserver)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($LDAPSERVER)s
+0 g
+( --)s
+0 0.502 0.502 r
+(ldapbasedn)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($LDAPBASE)s
+0 g
+( --en)s
+(ableldaptls --update)59.5 712.4 ms
+(        )59.5 702.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            )59.5 692.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(authconfig enabledldap failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(            )59.5 682.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 672.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 652.4 ms
+0 0 1 r
+(#echo "authconfig disablelocauthorize ...")s
+0 g
+(        authconfig --disablelocauthorize --update)59.5 642.4 ms
+(        )59.5 632.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            )59.5 622.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(authconfig disablelocauthorize failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(            )59.5 612.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 602.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 582.4 ms
+0 0 1 r
+(#echo "restarting rpcgssd...")s
+0 g
+(    chkconfig rpcgssd on)59.5 572.4 ms
+(        service rpcgssd )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(restart)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(restarting rpcgssd failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(            )59.5 532.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 522.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 502.4 ms
+0 0 1 r
+(#echo "restarting rpcidmapd...")s
+0 g
+(    chkconfig rpcidmapd on)59.5 492.4 ms
+(        service rpcidmapd )59.5 482.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(restart)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            )59.5 462.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(restarting rpcidmapd failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(            )59.5 452.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 442.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 432.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(2)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 422.4 ms
+0 0 1 r
+(# SLES family \(SLES 11\))s
+0 g
+(    )59.5 412.4 ms
+(    /sbin/yast2 kerberos pam )59.5 402.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(enable)s
+F0 sf
+0 g
+( )s
+0 0.502 0.502 r
+(ssh_support)s
+0 g
+(=yes )s
+0 0.502 0.502 r
+(ignore_unknown)s
+0 g
+(=yes verbose )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($L)s
+(OG_FILE)59.5 392.4 ms
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    /sbin/yast2 kerberos summary  )59.5 382.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 372.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/debug.*/debug = true/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0 g
+(        )59.5 362.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^external)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 352.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                insert_before_last )59.5 342.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+(\\t)s
+1 0 1 r
+(external = sshd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($CONF_FILE)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(        )59.5 332.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(                )59.5 322.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/external.*/external = sshd/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0 g
+(        )59.5 312.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 302.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^use_shmem)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                insert_before_last )59.5 282.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+(\\t)s
+1 0 1 r
+(use_shmem = sshd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($CONF_FILE)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(        )59.5 272.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(                )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/use_shmem.*/use_shmem = sshd/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0 g
+(        )59.5 252.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        /sbin/yast2 kerberos summary  )59.5 242.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    /sbin/yast2 ldap pam )59.5 222.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(enable)s
+F0 sf
+0 g
+( )s
+0 0.502 0.502 r
+(server)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($LDAPSERVER)s
+0 g
+( )s
+0 0.502 0.502 r
+(base)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($LDAPBASE)s
+0 g
+( )s
+0 0.502 0.502 r
+(tls)s
+0 g
+(=yes verbose )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )59.5 212.4 ms
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    /sbin/yast2 ldap summary  )59.5 202.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 182.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/pam_password.*/pam_password md5/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(    )59.5 172.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat /etc/ldap.conf )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^tls_cacertdir)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 162.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 152.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(tls_cacertdir /etc/openldap/cacerts)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(        )59.5 142.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(                )59.5 132.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/tls_cacertdir.*/tls_cacertdir )s
+0.627 0.125 0.941 r
+($CACERT_DIR)s
+1 0 1 r
+(/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(        )59.5 122.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    /sbin/yast2 ldap summary  )59.5 112.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 92.4 ms
+0 0 1 r
+(#echo "restarting gssd...")s
+0 g
+(    )59.5 82.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(stopping gssd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    stop_gssd)59.5 72.4 ms
+(    )59.5 62.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(starting gssd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        start_gssd )59.5 52.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+0.416 0.353 0.804 r
+({)s
+re sp
+%%PageTrailer
+%%Page: 11 11
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                      Page 11)59.5 792.4 ms
+F0 sf
+(        rc_status -v)59.5 772.4 ms
+(        )59.5 762.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(starting rpc.gssd failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(                rc_exit)59.5 752.4 ms
+(        )59.5 742.4 ms
+0.416 0.353 0.804 r
+(})s
+0 g
+(        )59.5 732.4 ms
+(    )59.5 722.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(stopping idmapd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        stop_idmapd)59.5 712.4 ms
+(        )59.5 702.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(starting idmapd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        start_idmapd )59.5 692.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+0.416 0.353 0.804 r
+({)s
+0 g
+(                rc_status -v)59.5 682.4 ms
+(                )59.5 672.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(starting rpc.idmapd failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(                rc_exit)59.5 662.4 ms
+(        )59.5 652.4 ms
+0.416 0.353 0.804 r
+(})s
+0 g
+(    )59.5 642.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(3)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 632.4 ms
+0 0 1 r
+(# SLES family \(SLES 10\))s
+0 g
+(        /sbin/yast2 kerberos pam )59.5 612.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(enable)s
+F0 sf
+0 g
+( verbose )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        /sbin/yast2 kerberos summary  )59.5 602.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 592.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/debug.*/debug = true/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0 g
+(    )59.5 582.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^external)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(    )59.5 572.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        insert_before_last )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+(\\t)s
+1 0 1 r
+(external = sshd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($CONF_FILE)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(        )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/external.*/external = sshd/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0 g
+(    )59.5 532.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 522.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^use_shmem)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 512.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            insert_before_last )59.5 502.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.416 0.353 0.804 r
+(\\t)s
+1 0 1 r
+(use_shmem = sshd)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($CONF_FILE)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(        )59.5 492.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(            )59.5 482.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/use_shmem.*/use_shmem = sshd/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($CONF_FILE)s
+0 g
+(        )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        /sbin/yast2 kerberos summary  )59.5 462.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        /sbin/yast2 ldap configure )59.5 442.4 ms
+0 0.502 0.502 r
+(server)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($LDAPSERVER)s
+0 g
+( )s
+0 0.502 0.502 r
+(base)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($LDAPBASE)s
+0 g
+( verbose )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG)s
+(_FILE)59.5 432.4 ms
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 422.4 ms
+(    /sbin/yast2 ldap pam )59.5 412.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(enable)s
+F0 sf
+0 g
+( verbose )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        /sbin/yast2 ldap summary  )59.5 402.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 392.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/ssl.*/ssl start_tls/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(        )59.5 382.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/pam_password.*/pam_password md5/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(        )59.5 372.4 ms
+0 0.502 0.502 r
+(line)s
+0 g
+(=)s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat /etc/ldap.conf )s
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0.416 0.353 0.804 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0.416 0.353 0.804 r
+( ^tls_cacertdir)s
+0.627 0.125 0.941 r
+(\))s
+0 g
+(        )59.5 362.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+("")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+("$line")s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(            )59.5 352.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(tls_cacertdir /etc/openldap/cacerts)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(    )59.5 342.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(            )59.5 332.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/tls_cacertdir.*/tls_cacertdir )s
+0.627 0.125 0.941 r
+($CACERT_DIR)s
+1 0 1 r
+(/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(        )59.5 322.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        )59.5 312.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(sed)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-i)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(s/tls_checkpeer.*/tls_checkpeer no/g)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LDAP_CONF)s
+0 g
+(        /sbin/yast2 ldap summary  )59.5 302.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 282.4 ms
+0 0 1 r
+(# Need to stop gssd service in order to restart idmapd one)s
+0 g
+(    )59.5 272.4 ms
+0 0 1 r
+(# Bug 10818)s
+0 g
+(        )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(stopping gssd...)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    service gssd )59.5 252.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 232.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(restarting idmapd...)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(        service idmapd )59.5 222.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(restart)s
+F0 sf
+0 g
+(  )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 212.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 202.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(restarting idmapd failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(                )59.5 192.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 182.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    chkconfig idmapd on  )59.5 172.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(        )59.5 152.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(starting gssd...)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    service gssd )59.5 142.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(start)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 132.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(                )59.5 122.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(starting gssd failed!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(                )59.5 112.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(        )59.5 102.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(        chkconfig gssd on )59.5 92.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 82.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(    )59.5 72.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Unknown Linux type!)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+(    )59.5 62.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 52.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+re sp
+%%PageTrailer
+%%Page: 12 12
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                      Page 12)59.5 792.4 ms
+F0 sf
+(    )59.5 762.4 ms
+0 0 1 r
+(# echo success or fail)s
+0 g
+(    )59.5 752.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 742.4 ms
+0 0 1 r
+(# add to chkconfig list)s
+0 g
+(        chkconfig mauinfs on)59.5 732.4 ms
+(    )59.5 712.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Configure successful.)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 702.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(else)s
+F0 sf
+0 g
+(    )59.5 692.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Configure failed.)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(>>)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($LOG_FILE)s
+0 g
+( )s
+1 0 1 r
+(2)s
+F1 sf
+0.502 0.251 0.251 r
+(>&)s
+F0 sf
+1 0 1 r
+(1)s
+0 g
+(    )59.5 682.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 0.502 0.502 r
+(})59.5 672.4 ms
+(function)59.5 642.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(start\(\)  {)s
+0 g
+(    )59.5 632.4 ms
+0 0 1 r
+(# Test if the mount path exists)s
+0 g
+(    )59.5 622.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-d)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($MOUNT_PATH)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 612.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(mkdir)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($MOUNT_PATH)s
+0 g
+(    )59.5 602.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 582.4 ms
+0 0 1 r
+(# Test if the nfs server conf file exists)s
+0 g
+(    )59.5 572.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-f)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SERVER_FILE)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 562.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($SERVER_FILE)s
+1 0 1 r
+( not exists.)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(        )59.5 552.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+(    )59.5 542.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 522.4 ms
+0 0 1 r
+(# mount Atmos through NFSv4 to Mountpath)s
+0 g
+(    )59.5 512.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    action $)59.5 502.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Starting Mauinfs service)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( mount )s
+F1 sf
+0.502 0.251 0.251 r
+(-t)s
+F0 sf
+0 g
+( nfs4 )s
+F1 sf
+0.502 0.251 0.251 r
+(-o)s
+F0 sf
+0 g
+( )s
+0 0.502 0.502 r
+(sec)s
+0 g
+(=krb5 )s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($SERVER_FILE\))s
+0 g
+(:/ )59.5 492.4 ms
+0.627 0.125 0.941 r
+($MOUNT_PATH)s
+0 g
+(    )59.5 482.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(2)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(3)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 472.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Starting Mauinfs service)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+( )s
+0 g
+(    hostname )59.5 462.4 ms
+0.416 0.353 0.804 r
+(`cat /etc/)s
+0.627 0.125 0.941 r
+(HOSTNAME)s
+0.416 0.353 0.804 r
+(`)s
+0 g
+(    mount )59.5 452.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(-t)s
+F0 sf
+0 g
+( nfs4 )s
+F1 sf
+0.502 0.251 0.251 r
+(-o)s
+F0 sf
+0 g
+( )s
+0 0.502 0.502 r
+(sec)s
+0 g
+(=krb5 )s
+0.627 0.125 0.941 r
+($\()s
+0.416 0.353 0.804 r
+(cat )s
+0.627 0.125 0.941 r
+($SERVER_FILE\))s
+0 g
+(:/ )s
+0.627 0.125 0.941 r
+($MOUNT_PATH)s
+0 g
+(    rc_status )59.5 442.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(-v)s
+F0 sf
+0 g
+(    )59.5 432.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(    )59.5 412.4 ms
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-ne)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(&&)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+(    )59.5 402.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(touch)s
+F0 sf
+0 g
+( /var/lock/subsys/mauinfs)s
+0 0.502 0.502 r
+(})59.5 382.4 ms
+(function)59.5 362.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(stop\(\) {)s
+0 g
+(    )59.5 352.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    action $)59.5 342.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Shutting down Mauinfs service)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(  umount )s
+0.627 0.125 0.941 r
+($MOUNT_PATH)s
+0 g
+(    )59.5 332.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(elif)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(2)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(||)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($SET_HOSTNAME)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(==)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(3)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(    )59.5 322.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( -n )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Shutting down Mauinfs service)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    umount )59.5 312.4 ms
+0.627 0.125 0.941 r
+($MOUNT_PATH)s
+0 g
+(    rc_status )59.5 302.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(-v)s
+F0 sf
+0 g
+(    )59.5 292.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 0 1 r
+(#   [ $? -ne 0 ] && exit $?)59.5 272.4 ms
+0 g
+(    )59.5 262.4 ms
+F1 sf
+0.502 0.251 0.251 r
+([)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(-ne)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(])s
+F0 sf
+0 g
+(    )59.5 252.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(rm)s
+F0 sf
+0 g
+( -rf /var/lock/subsys/mauinfs)s
+0 0.502 0.502 r
+(})59.5 242.4 ms
+(function)59.5 222.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(restart\(\) {)s
+0 g
+(    )59.5 212.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(    start)59.5 202.4 ms
+0 0.502 0.502 r
+(})59.5 192.4 ms
+(function)59.5 172.4 ms
+0 g
+( )s
+0 0.502 0.502 r
+(status\(\) {)s
+0 g
+(        )59.5 162.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Mauinfs status:)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 152.4 ms
+(    )59.5 142.4 ms
+0 0 1 r
+(# check the fs being mounted)s
+0 g
+(    mount )59.5 132.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(|)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(grep)s
+F0 sf
+0 g
+( mauinfs)s
+(    )59.5 122.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(if [)s
+F0 sf
+0 g
+( )s
+0.627 0.125 0.941 r
+($?)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(!=)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(0)s
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(];)s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(then)s
+F0 sf
+0 g
+(        )59.5 112.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Mauinfs is not mounted.)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 102.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(fi)s
+F0 sf
+0 g
+(  )s
+0 0.502 0.502 r
+(})59.5 92.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(case)59.5 62.4 ms
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0.627 0.125 0.941 r
+($1)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+( )s
+F1 sf
+0.502 0.251 0.251 r
+(in)s
+F0 sf
+0 g
+(  configure)59.5 52.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+re sp
+%%PageTrailer
+%%Page: 13 13
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(mauinfs                                                                      Page 13)59.5 792.4 ms
+F0 sf
+(    configure)59.5 772.4 ms
+(    )59.5 762.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(;;)s
+F0 sf
+0 g
+( )s
+(  start)59.5 752.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+F0 sf
+0 g
+(    )59.5 742.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(start)s
+F0 sf
+0 g
+(    )59.5 732.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(;;)s
+F0 sf
+0 g
+(  stop)59.5 722.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+F0 sf
+0 g
+(    )59.5 712.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(stop)s
+F0 sf
+0 g
+(    )59.5 702.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(;;)s
+F0 sf
+0 g
+(  status)59.5 692.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+F0 sf
+0 g
+(    )59.5 682.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(status)s
+F0 sf
+0 g
+(    )59.5 672.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(;;)s
+F0 sf
+0 g
+(  restart)59.5 662.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+F0 sf
+0 g
+(    )59.5 652.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(restart)s
+F0 sf
+0 g
+(    )59.5 642.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(;;)s
+F0 sf
+0 g
+(  *)59.5 632.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(\))s
+F0 sf
+0 g
+(    )59.5 622.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(echo)s
+F0 sf
+1 0 1 r
+( $)s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+1 0 1 r
+(Usage: mauinfs \(configure|start|stop|status|restart\))s
+F1 sf
+0.502 0.251 0.251 r
+(")s
+F0 sf
+0 g
+(    )59.5 612.4 ms
+F1 sf
+0.502 0.251 0.251 r
+(exit)s
+F0 sf
+0 g
+( )s
+1 0 1 r
+(1)s
+F1 sf
+0.502 0.251 0.251 r
+(esac)59.5 602.4 ms
+re sp
+%%PageTrailer
+%%Trailer
+%%Pages: 13
+%%EOF
+

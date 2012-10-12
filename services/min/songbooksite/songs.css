@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.song {
+clear: both;
+font-size:20px;background-color:white;border: 1px solid black;
+padding: 10px;margin: 10px;
+height: 112px;
+}
+.last,.next {font-size: 10px; color:grey;  font-weight:300; text-align:right;}
+.num,.desc { display: inline; float: right; font-size: 20px; color: grey; }
+.desc {text-align:right}
+.tune {font-size:24px; color:blue;}
+.key  {font-size:14px; color: grey; font-weight:300; }
+.chords {clear:both; padding-top: 5px; font-size: 24px; color: black; }
+.break {page-break-after: always}

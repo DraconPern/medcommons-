@@ -1,0 +1,625 @@
+<WebScriptTool>
+	<DisplayName>Create a User with Services</DisplayName>
+	<Step v='4'>
+		<ver>12</ver>
+		<id>16205</id>
+		<Summary v='2'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<childCount>8</childCount>
+		<ChildItems>
+			<Request v='10'>
+				<ver>12</ver>
+				<id>16206</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>7</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>16207</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16209</id>
+						<name>givenName</name>
+						<value>Test</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16210</id>
+						<name>familyName</name>
+						<value>Patient-1</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16211</id>
+						<name>auth</name>
+						<value>84547f4c4a7085a8c9960883d0fc60e06556604a</value>
+						<sendEquals>false</sendEquals>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16212</id>
+						<name>password</name>
+						<value>tester</value>
+						<sendEquals>false</sendEquals>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16213</id>
+						<name>createCCR</name>
+						<value>false</value>
+						<sendEquals>false</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16214</id>
+						<name>email</name>
+						<value>onemctest%2Bbadboytest@gmail.com</value>
+						<sendEquals>false</sendEquals>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${gw}</host>
+				<path>/router/NewPatient.action</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset>windows-1252</formCharset>
+				<method>1</method>
+				<waitForSubRequests>false</waitForSubRequests>
+			</Request>
+			<Execute v='3'>
+				<ver>12</ver>
+				<id>16215</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<name>set account id, auth</name>
+				<script>var x = eval(&apos;x=&apos;+document.body.innerText);
+badboy.setVariable(&apos;to_auth&apos;, x.auth);
+badboy.setVariable(&apos;to_accid&apos;, x.patientMedCommonsId);
+</script>
+				<imageId>4294967295</imageId>
+				<pluginAccess>false</pluginAccess>
+				<frameName/>
+			</Execute>
+			<Request v='10'>
+				<ver>12</ver>
+				<id>16216</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>4</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>16217</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16219</id>
+						<name>mcid</name>
+						<value>%24%7Bto_accid%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16220</id>
+						<name>password</name>
+						<value>tester</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>16221</id>
+						<name>next</name>
+						<value>http%3A%2F%2F%24%7Bhost%7D%2Facct%2Fhome.php%3Fexpand%3Dworklist</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${host}</host>
+				<path>/acct/login.php</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset/>
+				<method>1</method>
+				<waitForSubRequests>false</waitForSubRequests>
+			</Request>
+			<Timer v='4'>
+				<ver>12</ver>
+				<id>16222</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<waitMs>2000</waitMs>
+				<cascade>false</cascade>
+				<lowerMs>1000</lowerMs>
+				<upperMs>2000</upperMs>
+			</Timer>
+			<Assertion v='8'>
+				<ver>12</ver>
+				<id>16223</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ContentCheckItem v='1'>
+						<ver>12</ver>
+						<id>16224</id>
+						<pattern>Welcome to MedCommons</pattern>
+						<bUseRegex>false</bUseRegex>
+						<checkMessageBoxes>false</checkMessageBoxes>
+						<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+					</ContentCheckItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<failureAction>
+					<Object>null</Object>
+				</failureAction>
+				<captureScreenShot>true</captureScreenShot>
+				<scalingPercent>50</scalingPercent>
+				<captureDuplicates>false</captureDuplicates>
+			</Assertion>
+			<Navigation v='7'>
+				<ver>12</ver>
+				<id>16225</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>16226</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<targetFrame/>
+				<continueOnFailure>true</continueOnFailure>
+				<references>
+					<count>2</count>
+					<VisibleTextReference v='2'>
+						<value>Enable Services</value>
+						<filter>Buttons</filter>
+					</VisibleTextReference>
+					<JavascriptReference v='2'>
+						<value>document.forms[1].getElementsByTagName(&apos;INPUT&apos;)[1]</value>
+						<filter>Buttons</filter>
+					</JavascriptReference>
+				</references>
+				<isPassive>false</isPassive>
+				<passiveTimeoutMs>1000</passiveTimeoutMs>
+				<useRegex>false</useRegex>
+			</Navigation>
+			<Assertion v='8'>
+				<ver>12</ver>
+				<id>16446</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ContentCheckItem v='1'>
+						<ver>12</ver>
+						<id>16447</id>
+						<pattern>You don&apos;t have any patients yet. To get started, try the following</pattern>
+						<bUseRegex>false</bUseRegex>
+						<checkMessageBoxes>false</checkMessageBoxes>
+						<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+					</ContentCheckItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<failureAction>
+					<Object>null</Object>
+				</failureAction>
+				<captureScreenShot>true</captureScreenShot>
+				<scalingPercent>65</scalingPercent>
+				<captureDuplicates>false</captureDuplicates>
+			</Assertion>
+			<Step v='4'>
+				<ver>12</ver>
+				<id>16232</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>5</childCount>
+				<ChildItems>
+					<Navigation v='7'>
+						<ver>12</ver>
+						<id>16233</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>12</ver>
+								<id>16234</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>2</count>
+							<VisibleTextReference v='2'>
+								<value>Services</value>
+								<filter>Links</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.getElementById(&apos;navlist&apos;).getElementsByTagName(&apos;LI&apos;)[2].getElementsByTagName(&apos;A&apos;)[0]</value>
+								<filter>Links</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<Execute v='3'>
+						<ver>12</ver>
+						<id>16235</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<name>set template</name>
+						<script>document.getElementById(&apos;svctemplatenum&apos;).selectedIndex = 1;</script>
+						<imageId>4294967295</imageId>
+						<pluginAccess>false</pluginAccess>
+						<frameName/>
+					</Execute>
+					<Navigation v='7'>
+						<ver>12</ver>
+						<id>16236</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>12</ver>
+								<id>16237</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>3</count>
+							<NameOrIdReference v='2'>
+								<value>svctemplatenum</value>
+								<filter>All</filter>
+							</NameOrIdReference>
+							<VisibleTextReference v='2'>
+								<value> Select a TemplateNew Generic Service sonogram online mamogram online Tumor Metrics Diagnostic Imaging Release Results Report</value>
+								<filter>All</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.getElementById(&apos;svctemplatenum&apos;);</value>
+								<filter>All</filter>
+							</JavascriptReference>
+						</references>
+						<eventType>1</eventType>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<FormPopulator v='7'>
+						<ver>12</ver>
+						<id>16238</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<FormValue v='3'>
+								<ver>12</ver>
+								<id>16239</id>
+								<name>suggestedprice</name>
+								<value>1.00</value>
+								<matchVisibleText>false</matchVisibleText>
+							</FormValue>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<formName>svcsetupform</formName>
+						<submit>false</submit>
+						<formIndex>0</formIndex>
+						<ignoreHiddenFields>true</ignoreHiddenFields>
+						<useRegex>false</useRegex>
+					</FormPopulator>
+					<Navigation v='7'>
+						<ver>12</ver>
+						<id>16240</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>12</ver>
+								<id>16241</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>2</count>
+							<VisibleTextReference v='2'>
+								<value>Add Service</value>
+								<filter>Buttons</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.svcsetupform.getElementsByTagName(&apos;DIV&apos;)[11].getElementsByTagName(&apos;SPAN&apos;)[1].getElementsByTagName(&apos;INPUT&apos;)[0]</value>
+								<filter>Buttons</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>true</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<name>Add a Service</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>email</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>2</expanded>
+			</Step>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<name>Create a User with Services</name>
+		<repetitions>1</repetitions>
+		<repeatType>1</repeatType>
+		<repeatVariable>email</repeatVariable>
+		<incrementAutomatically>true</incrementAutomatically>
+		<incrementAll>true</incrementAll>
+		<expanded>1</expanded>
+	</Step>
+</WebScriptTool>

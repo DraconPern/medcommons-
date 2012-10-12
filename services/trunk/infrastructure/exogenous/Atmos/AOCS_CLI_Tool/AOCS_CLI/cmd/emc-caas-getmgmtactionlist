@@ -1,0 +1,3 @@
+#!/bin/sh
+CLOUD_HOME=${CLOUD_HOME:?CLOUD_HOME is not set}
+$CLOUD_HOME/cmd/emc-caas-cmd getMgmtActionList "$@"

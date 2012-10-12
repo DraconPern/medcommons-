@@ -1,0 +1,47 @@
+home page
+download now button mislabelled
+
+Download.php
+Welcome back - you are logged in as "Username"
+First link goes to installer screens
+Paragraph of text before each linkl - make them look like buttons
+
+HIPAAA log 
+HIPAA log 4 is the page title
+add web page header
+
+read screen size and make it automatic
+
+viewer.php
+lose a thumbnail 
+
+swap horiz/vert into menu
+http://medcommons.net:9080/router/TestForm.jsp?guid=59b5be93b8a1782277b0ffec44cbf168&name=Joseph%20B%20Doe&tracking=771EF&address=123%20Lucky%20St&state=MT&city=Butte&zip=83132&cardnumber=7817574478133225&amount=150.00&tax=12.00&charge=162.00&expiration=12/09&copyto=agropper@medcommons.org&comments=%20CERVICAL%20SPINE%20&history=%3cunknown%3e&signature1=MedCommons%20%3confile%3e&signature2=Joes%20Imaging%20Centres%20Inc%20%3confile
+use icons in toolbar
+also patient labelling and bottom form should match
+and in landscape version - compression tewst 1 should be patient name
+tool that says x go to hipaa log
+referrer is coming from outside of website - go to black on x click - 
+"i" returns to hipaa log
+add about in dropdown - menu has about option - pulls up rev number in javascript popup
+add help in dropdown - user guide
+instant action on the dropdown
+
+order.php
+tracking number bolder
+HIPAA header - hipaa signatures
+hipaa fields: medcommons, sender, recipient
+add send and print button
+email sends link to doctor indicate action with javascript okay box
+tracking num and sender's name in email
+print button - send to printer
+
+selection screen.php
+add header
+
+contact.php
+send email to adrian
+
+register.php
+change submit form button -> register
+rip out reset button

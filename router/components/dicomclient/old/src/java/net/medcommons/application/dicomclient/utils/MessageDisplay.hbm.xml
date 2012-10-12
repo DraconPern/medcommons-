@@ -1,0 +1,15 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="net.medcommons.application.dicomclient.utils">
+<class name="net.medcommons.application.dicomclient.utils.MessageDisplay" table="MESSAGEDISPLAY"> 
+	<id name="id" column="OBJECT_ID"> 
+       <generator class="native"/> 
+     </id> 
+	<property name="message"/>
+	<property name="messageType"/>
+	<property name="messageTime"/>
+</class> 
+</hibernate-mapping> 

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+   
+<!-- __CR__
+     Copyright (c) 2009 EMC Corporation
+     All Rights Reserved
+   
+     This software contains the intellectual property of EMC Corporation
+     or is licensed to EMC Corporation from third parties.  Use of this
+     software and the intellectual property contained therein is expressly
+     limited to the terms and conditions of the License Agreement under which
+     it is provided by or on behalf of EMC.
+     __CR__ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:caas="http://www.emc.com/caas"
+	targetNamespace="http://www.emc.com/caas"
+	elementFormDefault="qualified" >
+	<!--  data type definitions   --> 
+	<xs:complexType name="ManagedObject" abstract="true">
+		<xs:sequence /> 	
+		<!--  generic object attributes: id, name  -->
+			<xs:attribute name="id" type="xs:string" />
+			<xs:attribute name="name" type="xs:string" />
+	</xs:complexType>
+	<xs:complexType name="ManagedObjectRef">
+		<xs:attribute name="href" type="xs:anyURI"/>
+	</xs:complexType>
+
+	
+		
+	<!--  simple types used in the schema  -->
+	<xs:simpleType name="VmManagementAction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="power-off"/>
+			<xs:enumeration value="reset"/>
+			<xs:enumeration value="power-on"/>
+			<xs:enumeration value="suspend"/>
+			<xs:enumeration value="resume"/>
+			<xs:enumeration value="rename"/>
+			<xs:enumeration value="clone-to-vm"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VmStatus">
+		<xs:restriction base="xs:string">
+    		 <xs:enumeration value="powered-off"/>
+     		 <xs:enumeration value="being-powered-off"/>
+     		 <xs:enumeration value="powered-on"/>
+    		 <xs:enumeration value="being-powered-on"/>
+    		 <xs:enumeration value="suspended"/>
+    		 <xs:enumeration value="being-suspended"/>
+    		 <xs:enumeration value="being-resumed" />
+    		 <xs:enumeration value="cloning-in-process"/>
+    		 <xs:enumeration value="being-cloned"/>
+  		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VmInstanceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="large"/>
+			<xs:enumeration value="medium"/>
+			<xs:enumeration value="small"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="IpAddress">
+		<xs:restriction base="xs:string">
+		   <xs:pattern value="(0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.(0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.(0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.(0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>	
+	<xs:simpleType name="ValidName">
+		<xs:restriction base="xs:string">
+		  <xs:pattern value="^[a-zA-Z0-9]{3,12}$"></xs:pattern>
+		  <xs:minLength value="3"/>		  
+		  <xs:maxLength value="12"/>
+		</xs:restriction>				
+	</xs:simpleType>
+
+	<xs:complexType name="ResourceConstraint">
+			<xs:sequence>
+				<xs:element  name="value" type="xs:long" />
+			</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FileResourceConstraint">
+		<xs:complexContent>
+			<xs:extension base="caas:ResourceConstraint">
+			<xs:sequence/> 
+			<xs:attribute name="unit" type="caas:FileResourceUnit"/>
+			</xs:extension>
+   		</xs:complexContent>
+    </xs:complexType>  
+    
+    <xs:simpleType name="FileResourceUnit">
+		<xs:restriction base="xs:string">	
+				<xs:enumeration value="byte"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	
+	<!--  ErrorMessage  -->
+	<xs:complexType name="ErrorMessage">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

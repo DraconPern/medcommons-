@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeDesigner_V6.0" APIVersion="1.4.4057.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2004-04-17T07:36:38Z" uuid="7a6160d9-25f7-417c-b106-740b2e415d45">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.1/">
+   <subform layout="tb" locale="en_US" name="form1">
+      <pageSet>
+         <pageArea id="Page1" name="Page1">
+            <contentArea h="10.5in" w="8in" x="0.25in" y="0.25in"/>
+            <medium long="11in" short="8.5in" stock="letter"/>
+         </pageArea>
+      </pageSet>
+      <subform h="10.5in" w="8in">
+         <field access="readOnly" h="7.5mm" name="TrackingNum" w="55mm" x="2.12mm" y="257.44mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>TrackingNum</p></body>
+                  </exData>
+               </value>
+            </caption>
+            <value>
+               <text>12345678</text>
+            </value>
+         </field>
+         <field h="13.2632mm" name="Button1" w="43.1249mm" x="71.7mm" y="141.55mm">
+            <ui>
+               <button/>
+            </ui>
+            <caption>
+               <value>
+                  <text>Button</text>
+               </value>
+               <para hAlign="center" vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+            </caption>
+            <border>
+               <edge stroke="raised"/>
+               <fill>
+                  <color value="212,208,200"/>
+                  <radial/>
+               </fill>
+            </border>
+            <bind match="none"/>
+            <event activity="click">
+               <submit format="xml" target="http://medcommons.net:8080/central/OrderProcessorServlet" textEncoding="UTF-8"/>
+            </event>
+         </field>
+         <field access="readOnly" h="7.5mm" name="FormName" presence="hidden" w="55mm" x="136.79mm" y="29.63mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <value>
+               <text>SimpleForm1</text>
+            </value>
+         </field>
+         <field access="readOnly" h="7.5mm" name="Recipe" presence="hidden" w="55mm" x="71.17mm" y="23.81mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <value>
+               <text>BasicVanillaRecipe</text>
+            </value>
+         </field>
+         <draw minH="8.4765mm" minW="63.2454mm" name="StaticText1" x="72.76mm" y="19.05mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>options - no annotations, no pdf,<span style="xfa-spacerun:yes"> </span></p><p>no digital signature, no template</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <draw minH="15.7421mm" minW="61.9127mm" name="StaticText3" x="138.11mm" y="6.09mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>TestOrderMsg</p><p style="font-size:8pt">041404<span style="font-size:24pt"> XML DATA</span></p></body>
+               </exData>
+            </value>
+            <font size="24pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <draw minH="6.0067mm" minW="54.1623mm" name="StaticText5" x="70.64mm" y="79.11mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>these fields are for user input, some are also re-written by central</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <draw minH="7.4986mm" minW="36.6029mm" name="StaticText2" x="71.97mm" y="4.5mm">
+            <ui>
+               <textEdit>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>there are 2 hidden fids - FormName and Recipe</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <field h="7.5mm" name="LastName" w="55mm" x="1.59mm" y="1.32mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>LastName</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="FirstName" w="55mm" x="1.59mm" y="12.17mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>FirstName</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="MiddleInitial" w="55mm" x="1.59mm" y="23.02mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>MiddleInitial</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="Prefix" w="55mm" x="1.59mm" y="33.87mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Prefix</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="Suffix" w="55mm" x="1.59mm" y="44.71mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Suffix</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="DateOfBirth" w="55mm" x="1.59mm" y="55.56mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>DateOfBirth</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="Street" w="55mm" x="1.59mm" y="66.41mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Street</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="City" w="55mm" x="1.59mm" y="77.26mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>City</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="State" w="55mm" x="1.59mm" y="87.84mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>State</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="ZIP" w="55mm" x="1.59mm" y="98.95mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>ZIP</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="Sex" w="55mm" x="1.59mm" y="109.54mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Sex</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="AccountNum" w="55mm" x="1.59mm" y="120.65mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>AccountNum</p></body>
+                  </exData>
+               </value>
+            </caption>
+            <bind>
+               <picture>999 999 999</picture>
+            </bind>
+         </field>
+         <field h="7.5mm" name="CardType" w="55mm" x="1.59mm" y="131.23mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>CardType</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <draw h="0.3175mm" name="Line1" w="193.479mm" x="0.79mm" y="219.08mm">
+            <value>
+               <line>
+               </line>
+            </value>
+         </draw>
+         <field h="7.5mm" name="ExpirationDate" w="55mm" x="1.59mm" y="142.08mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>ExpirationDate</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="CreditCardNum" w="55mm" x="1.59mm" y="152.93mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>CreditCardNum</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5mm" name="Amount" w="55mm" x="1.59mm" y="163.78mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Amount</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5001mm" name="SendCopyTo1" w="191.1898mm" x="1.06mm" y="196.59mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>SendCopyTo</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5001mm" name="SendCopyTo2" w="191.1898mm" x="1.06mm" y="207.43mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>SendAnotherTo</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5001mm" name="Selection1" w="191.1898mm" x="1.06mm" y="174.89mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Selection 1</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field h="7.5001mm" name="Selection2" w="191.1898mm" x="1.06mm" y="185.74mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Selection 2</p></body>
+                  </exData>
+               </value>
+            </caption>
+         </field>
+         <field access="readOnly" h="7.5mm" name="CCReceiptNum" w="55mm" x="2.12mm" y="246.4166mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>CCReceipt</p></body>
+                  </exData>
+               </value>
+            </caption>
+            <value>
+               <text>8787cd76aaaa</text>
+            </value>
+         </field>
+         <field access="readOnly" h="7.5mm" name="Total" w="55mm" x="1.85mm" y="235.3933mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Total</p></body>
+                  </exData>
+               </value>
+            </caption>
+            <value>
+               <text>555555</text>
+            </value>
+         </field>
+         <field access="readOnly" h="7.5mm" name="Tax" w="55mm" x="2.12mm" y="224.37mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="20mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Tax</p></body>
+                  </exData>
+               </value>
+            </caption>
+            <value>
+               <text>8.25</text>
+            </value>
+         </field>
+         <draw name="StaticText6" x="81.76mm" y="240.24mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>These fields are output only</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <draw minH="12.1849mm" name="StaticText7" w="96.8495mm" x="70.0392mm" y="158.22mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p style="font-size:12pt">if you press this button it will post to<span style="xfa-spacerun:yes"> </span></p><p style="font-size:12pt">http://medcommons.net:8080/central/OrderProcessorServlet</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <field h="30.4mm" name="OutputImage" w="25.4mm" x="137.05mm" y="232.3mm">
+            <ui>
+               <imageEdit/>
+            </ui>
+            <value>
+               <image contentType="image/jpg" href="http://www.medcommons.net:6666/svn/documents/Management/Bios%20Biz%20Cards%20and%20Logos/Logos/MedCommons%20logo-84.jpg"/>
+            </value>
+            <caption placement="bottom" reserve="5mm">
+               <font size="8pt" typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text>Image Field</text>
+               </value>
+            </caption>
+         </field>
+         <draw h="17.8741mm" name="StaticImage1" w="40.3218mm" x="87.58mm" y="49.21mm">
+            <value>
+               <image aspect="none" contentType="image/bmp" href="..\..\icons\icons.bmp"/>
+            </value>
+         </draw>
+         <draw minH="8.1136mm" name="StaticText8" w="62.7101mm" x="130.44mm" y="53.71mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>this is just a static image which seems to only be insertable as a local file<span style="xfa-spacerun:yes"> </span></p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <draw minH="16.6271mm" name="StaticText9" w="31.22mm" x="171.98mm" y="237.07mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>this image is set by URL and should be controllable by central</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+      </subform>
+   </subform>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?templateDesigner DefaultRunAt client?>
+   <?templateDesigner XDCFile acrobat6.xdc?>
+   <?templateDesigner Zoom 114?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/1.0/">
+   <agent name="designer">
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </agent>
+   <present>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+      <pdf name="pdf">
+         <version>1.5</version>
+         <creator>Adobe Designer 6.0</creator>
+         <producer>Adobe Designer 6.0</producer>
+         <scriptModel>XFA</scriptModel>
+         <interactive>1</interactive>
+         <tagged>1</tagged>
+         <compression>
+            <level>6</level>
+         </compression>
+      </pdf>
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </present>
+   <agent name="acrobat">
+      <common>
+         <locale/>
+         <data>
+            <incrementalLoad/>
+            <adjustData/>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+         <template>
+            <relevant/>
+            <base/>
+            <uri/>
+         </template>
+      </common>
+   </agent>
+</config>
+<xfa:datasets xmlns="" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+</xfa:datasets>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.1/">
+   <locale desc="English (United States)" name="en_US">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">MMM D, YYYY</datePattern>
+         <datePattern name="long">M/D/YY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">MMMM D, YYYY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A</timePattern>
+         <timePattern name="long">h:MM A</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM:SS A Z</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="minus">-</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+   </locale>
+</localeSet>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+   <annots/>
+</xfdf></xdp:xdp>

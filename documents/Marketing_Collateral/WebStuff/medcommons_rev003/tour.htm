@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MedCommons</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="icon" href="favicon.gif" type="image/gif">  
+<link rel="shortcut icon" href="favicon.gif" type="image/gif">
+<link href="css/header.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+function picChange(numslide) {
+for (x=1;x<9;x++) {
+	var MessageBlock=document.getElementById("text" + x);
+	var PicBlock=document.getElementById("tourpic" + x);
+	if (x==numslide) {
+	MessageBlock.className = 'current_slide';
+	PicBlock.className = 'show';
+	}
+	else {
+	MessageBlock.className = null;
+	PicBlock.className = 'hide';
+	}
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div class="menu">
+<ul>
+<li id="mmenu1"><a href="hp.html"><img src="images/mmtab_off_01.gif" border="0"></a></li>
+<li id="mmenu2"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20sign%20a%20consent%20form."><img src="images/mmtab_off_02.gif" border="0"></a></li>
+<li id="mmenu3"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20create%20or%20view%20a%20CCR."><img src="images/mmtab_off_03.gif" border="0"></a></li>
+<li id="mmenu4"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20access%20your%20personalized%20desktop."><img src="images/mmtab_off_04.gif" border="0"></a></li>
+<li id="mmenu5"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20view%20images."><img src="images/mmtab_off_05.gif" border="0"></a></li>
+<li id="mmenu6"><a href="memberservice/logon.php"><img src="images/mmtab_off_06.gif" border="0"></a></li>
+</ul>
+</div>
+<div id="topframe"><a href="hp.html" target="_top"><img id="logo" src="images/logo_leftcorner.gif" border="0" alt="MedCommons" width="364" height="69"></a></div><iframe id="trkframe" src="trackform.php" scrolling="no"></iframe>
+<div class="textmenu"><ul>
+  <li><a href="terms_of_use.htm">Terms of Use</a></li>
+  <li><a href="about.htm">About Us</a>&nbsp;&nbsp;||&nbsp;&nbsp;</li>
+  <li><a href="faq.htm">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;</li>
+  <li>Tour&nbsp;&nbsp;||&nbsp;&nbsp;</li>
+</ul></div>
+
+
+
+<!-- Begin Page Content //-->
+
+
+
+<link href="css/tour.css" rel="stylesheet" type="text/css">
+<div id="content">
+<br><br><br>
+<div id="tour">
+<image id="tourpic1" class="show" src="images/tourshot_1.jpg" width="500" height="600">
+<image id="tourpic2" class="hide" src="images/tourshot_2.jpg" width="500" height="600">
+<image id="tourpic3" class="hide" src="images/tourshot_3.jpg" width="500" height="600">
+<image id="tourpic4" class="hide" src="images/tourshot_4.jpg" width="500" height="600">
+<image id="tourpic5" class="hide" src="images/tourshot_5.jpg" width="500" height="600">
+<image id="tourpic6" class="hide" src="images/tourshot_6.jpg" width="500" height="600">
+<image id="tourpic7" class="hide" src="images/tourshot_7.jpg" width="500" height="600">
+<image id="tourpic8" class="hide" src="images/tourshot_8.jpg" width="500" height="600">
+<h2 id="text1" class="current_slide">
+<a href="javascript:picChange(1);">
+1. MedCommons Overview
+</a><br>
+With MedCommons you can create CCR's (Continuity of Care Records), attach PDF's and images to patient records for referrals (no registration required).
+<br><br>Preview these features with Demo Data >>
+</h2>
+<h2  id="text2">
+<a href="javascript:picChange(2);">
+2. Enter Patient ID Number
+</a><br>
+Entering a patient ID number will start the CCR creation process. Registered users need do this only once, as previously created CCR's are available on their desktop.
+</h2>
+<h2 id="text3">
+<a href="javascript:picChange(3);">
+3. Enter Email Addresses for Recipient of Referral
+</a><br>
+Sending a referral is as easy as sending an email. MedCommons will send an email to the referring physician along with notes and a link to the patient CCR online.
+</h2>
+<h2 id="text4">
+<a href="javascript:picChange(4);">
+4. Attach Notes
+</a><br>
+Notes can be attached to CCR's as well as PDF's and images (for registered users)
+</h2>
+<h2 id="text5">
+<a href="javascript:picChange(5);">
+5. Send Notification Email
+</a><br>
+To notify a referring physician, an email is generated out of MedCommons with a tracking number and corresponding PIN.
+</h2>
+<h2 id="text6">
+<a href="javascript:picChange(6);">
+6. Record and Transmit PIN
+</a><br>
+A PIN is recorded separately and transmitted to the referring doctor via fax or phone. This practice is in compliance with HIPAA privacy standards.
+</h2>
+<h2 id="text7">
+<a href="javascript:picChange(7);">
+7. Notification Email is received
+</a><br>
+When a referring physician receives a notification email from MedCommons, they can click a link to access a login page specific to the CCR that was forwarded. With the PIN they have received by fax or phone, they can log in, make notations, view images, and then send back to the primary physician as easily as if they were a registyered user.
+</h2>
+<h2 id="text8">
+<a href="javascript:picChange(8);">
+8. Conclusion
+</a><br>
+With MedCommons, physicians benefit from the ease, portability, and capability of MedCommons. Patients benefit because they can allow any physician anywhere to view their medical history. MedCommons eReferrals make patient records make sense.
+</h2>
+</div>
+</div>
+<div id="footer">&copy; 2005 MedCommons all rights reserved.&nbsp;&nbsp;&nbsp;page last modified:&nbsp;<script type="text/javascript"> document.write(document.lastModified); </script></div>
+
+
+
+<!-- End Page Content //-->
+
+
+
+</body>
+</html>

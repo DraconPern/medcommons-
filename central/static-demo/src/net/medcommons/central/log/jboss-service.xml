@@ -1,0 +1,5 @@
+<server>
+  <mbean code="net.medcommons.central.log.LogService" name="medcommons:service=LogService">
+  	<depends>jboss:service=Naming</depends>
+  </mbean>
+</server>

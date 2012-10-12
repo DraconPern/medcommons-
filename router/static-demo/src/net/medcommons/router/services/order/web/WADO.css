@@ -1,0 +1,11 @@
+.SelectedImage {
+  BORDER-STYLE: solid;
+  BORDER-WIDTH: 1px;
+}
+
+.NotSelectedImage {
+  BORDER-STYLE: solid;
+  BORDER-WIDTH: 1px;
+  BORDER-COLOR: #003366;
+  BORDER-TOP-COLOR: #000000;
+}

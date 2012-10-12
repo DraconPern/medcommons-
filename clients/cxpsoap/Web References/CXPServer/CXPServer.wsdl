@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:BeanService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:BeanService">
+      <s:import namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" />
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element name="opcode" nillable="true" type="s:string" />
+          <s:element name="pin" nillable="true" type="s:string" />
+          <s:element name="reason" nillable="true" type="s:string" />
+          <s:element name="response" nillable="true" type="s:string" />
+          <s:element name="status" type="s:int" />
+          <s:element name="trackingNumber" nillable="true" type="s:string" />
+          <s:element name="uid" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer">
+      <s:import namespace="urn:BeanService" />
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="CXPException">
+        <s:sequence />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getVersionRequest" />
+  <wsdl:message name="getRequest1">
+    <wsdl:part name="trackingNumber" type="s:string" />
+    <wsdl:part name="pin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="putRequest1">
+    <wsdl:part name="ccrXml" type="s:string" />
+    <wsdl:part name="pin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CXPException">
+    <wsdl:part name="fault" type="tns:CXPException" />
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="getVersionReturn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getResponse1">
+    <wsdl:part name="getReturn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRequest">
+    <wsdl:part name="xmlData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="putResponse">
+    <wsdl:part name="putReturn" type="s0:Response" />
+  </wsdl:message>
+  <wsdl:message name="putRequest">
+    <wsdl:part name="ccrXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="putResponse1">
+    <wsdl:part name="putReturn" type="s0:Response" />
+  </wsdl:message>
+  <wsdl:message name="getResponse">
+    <wsdl:part name="getReturn" type="s:string" />
+  </wsdl:message>
+  <wsdl:portType name="CXPServer">
+    <wsdl:operation name="put" parameterOrder="ccrXml">
+      <wsdl:input name="putRequest" message="tns:putRequest" />
+      <wsdl:output name="putResponse" message="tns:putResponse" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="put" parameterOrder="ccrXml pin">
+      <wsdl:input name="putRequest1" message="tns:putRequest1" />
+      <wsdl:output name="putResponse1" message="tns:putResponse1" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="get" parameterOrder="xmlData">
+      <wsdl:input name="getRequest" message="tns:getRequest" />
+      <wsdl:output name="getResponse" message="tns:getResponse" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="get" parameterOrder="trackingNumber pin">
+      <wsdl:input name="getRequest1" message="tns:getRequest1" />
+      <wsdl:output name="getResponse1" message="tns:getResponse1" />
+      <wsdl:fault name="CXPException" message="tns:CXPException" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input name="getVersionRequest" message="tns:getVersionRequest" />
+      <wsdl:output name="getVersionResponse" message="tns:getVersionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CXPServerSoapBinding" type="tns:CXPServer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="put">
+      <soap:operation soapAction="" />
+      <wsdl:input name="putRequest">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="putResponse">
+        <soap:body use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="put">
+      <soap:operation soapAction="" />
+      <wsdl:input name="putRequest1">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="putResponse1">
+        <soap:body use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="get">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getRequest">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getResponse">
+        <soap:body use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="get">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getRequest1">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getResponse1">
+        <soap:body use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CXPException">
+        <soap:fault use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="" />
+      <wsdl:input name="getVersionRequest">
+        <soap:body use="encoded" namespace="http://cxp.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="encoded" namespace="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CXPServerService">
+    <wsdl:port name="CXPServer" binding="tns:CXPServerSoapBinding">
+      <soap:address location="http://gateway001.private.medcommons.net:9080/router/services/CXPServer" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

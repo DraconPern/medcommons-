@@ -1,0 +1,3 @@
+This sample application demonstrates:
+- how to write Cactus test cases (Servlet, Taglibs and Filters)
+- how to use the Ant Integration from your own Ant build file

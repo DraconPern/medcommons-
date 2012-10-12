@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <session-config>
+    <session-timeout>240</session-timeout>
+  </session-config>
+
+	<servlet>
+		<servlet-name>ServiceServlet</servlet-name>
+		<servlet-class>net.medcommons.services.rest.ServiceServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>CxpServlet</servlet-name>
+		<servlet-class>net.medcommons.cxp.http.CxpServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServiceServlet</servlet-name>
+    	<url-pattern>/ServiceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CxpServlet</servlet-name>
+		<url-pattern>/CxpServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
+

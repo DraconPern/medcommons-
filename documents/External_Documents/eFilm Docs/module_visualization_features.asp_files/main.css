@@ -1,0 +1,53 @@
+.bodytext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+.bodyhead {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #470B6C;
+	font-size: 17px;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+
+}
+.bodysubhead {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #007884;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: none;
+
+}
+.bodytextbold {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	font-weight: bold;
+
+}
+.formlist { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-weight: normal; list-style-type: disc ; color: #FFFFFF; background-color: #3399CC}
+.fontbox { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 11px; line-height: 13px; font-weight: 500 ; color: #6666CC}
+.formlist2 { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; list-style-type: disc ; background-color: #f0f0f0; color: #6666cc}
+FORM {margin-top: 0px; margin-bottom: 0px}
+.searchbox {
+	font-family: "Courier New", Courier, mono;
+	font-size: 10px;
+	font-style: italic;
+}
+.bodyfusionsubheaders {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #993333;
+	font-weight: bold;
+	text-transform: uppercase;
+
+}
+
+.MainText
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial,Helvetica,Verdana,Sans Serif
+}

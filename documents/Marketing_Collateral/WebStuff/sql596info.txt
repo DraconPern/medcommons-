@@ -1,0 +1,38 @@
+Access info:
+
+Admin panel:
+
+https://admin.1and1.com
+Customer ID: 6611944
+Master password: zYNtM4uG
+
+
+FTP:
+ftp://autocyt.com/
+user:u35537815
+pass:zYNtM4uG
+
+
+How do I stop the man command?
+
+CREATE TABLE medusers (  id tinyint(4) DEFAULT '0' NOT NULL AUTO_INCREMENT,  name varchar(50),  
+company varchar(100),  email varchar(150), comments varchar(255),  PRIMARY KEY (id),  UNIQUE id (id));\
+
+SECURE SHELL ACCESS:
+Host name s90214570.onlinehome.us 
+User name u35537815 
+Password zYNtM4uG 
+
+MySQL ACCESS:
+Database Name db100827707 
+User Name dbo100827707 
+Password meddemo 
+Host Name db95.perfora.net 
+
+Use the following credentials for accessing Subversion. Please ask your
+manager for the URL of the repository where you should be working.
+
+login:    abeuscher
+password: t6!ty732
+
+no robots tag

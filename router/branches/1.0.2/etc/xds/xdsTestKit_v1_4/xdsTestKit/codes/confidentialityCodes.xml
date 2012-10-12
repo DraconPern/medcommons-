@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : confidentialityCodes.xml
+    Created on : October 13, 2004, 11:24 PM
+    Author     : bill
+    Description:
+        Purpose of the document follows.
+-->
+
+<codes name="Connect-a-thon confidentialityCodes">
+<code value="C" name="Celebrity"/>
+<code value="D" name="Clinician"/>
+<code value="I" name="Individual"/>
+<code value="N" name="Normal"/>
+<code value="R" name="Restricted"/>
+<code value="S" name="Sensitive"/>
+<code value="T" name="Taboo"/>
+</codes>

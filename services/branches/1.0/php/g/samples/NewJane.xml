@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>New Jane Hernandez</string>
+		<key>once</key>
+		<string>
+			https://healthurl.medcommons.net/router/currentccr?a=1013062431111407&amp;aa=1117658438174637&amp;g=3642665a324059089d0b989286eb9a9ced046e54&amp;t=&amp;m=&amp;c=&amp;auth=c3faf3705e0e98c0984d1f86b96a789f3dba2638&amp;at=c3faf3705e0e98c0984d1f86b96a789f3dba2638
+		</string>
+		<key>leftLineStyle</key>
+		<string>narrow</string>
+		<key>rightDetailSM</key>
+		<dict>
+			<key>width</key>
+			<string>400</string>
+			<key>buttons</key>
+			<array>
+				<dict>
+					<key>blocktype</key>
+					<string>leftright</string>
+					<key>url</key>
+					<string>
+						http://portal.medcommons.net/portal/samples/testpage1000.html
+					</string>
+					<key>label</key>
+					<string>Home</string>
+					<key>toptitle</key>
+					<string>Home test page</string>
+				</dict>
+				<dict>
+					<key>blocktype</key>
+					<string>leftright</string>
+					<key>url</key>
+					<string>
+						http://portal.medcommons.net/portal/samples/testpage1000.html
+					</string>
+					<key>label</key>
+					<string>SOAP</string>
+					<key>toptitle</key>
+					<string>SOAP test page</string>
+				</dict>
+				<dict>
+					<key>blocktype</key>
+					<string>leftright</string>
+					<key>url</key>
+					<string>
+						http://portal.medcommons.net/portal/samples/testpage1000.html
+					</string>
+					<key>label</key>
+					<string>Thumbnails</string>
+					<key>toptitle</key>
+					<string>Thumbnails test page</string>
+				</dict>
+				<dict>
+					<key>blocktype</key>
+					<string>leftright</string>
+					<key>url</key>
+					<string>
+						http://portal.medcommons.net/portal/samples/testpage1000.html
+					</string>
+					<key>label</key>
+					<string>Activity</string>
+					<key>toptitle</key>
+					<string>Activity test page</string>
+				</dict>
+
+				<dict>
+					<key>blocktype</key>
+					<string>leftright</string>
+					<key>url</key>
+					<string>
+						http://portal.medcommons.net/portal/samples/testpage1000.html
+					</string>
+					<key>label</key>
+					<string>Edit</string>
+					<key>toptitle</key>
+					<string>Edit test page</string>
+				</dict>
+			</array>
+		</dict>
+		<key>leftRootSM</key>
+		<dict>
+			<key>width</key>
+			<string>100</string>
+			<key>buttons</key>
+			<array>
+			
+				<dict>
+					<key>blocktype</key>
+					<string>newscene</string>
+					<key>blabel</key>
+					<string>bugs - landscape and rotating</string>
+					<key>toptitle</key>
+					<string>Inbox</string>
+					<key>label</key>
+					<string>Inbox</string>
+					<key>imageurl</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>url</key>
+					<string>0</string>
+				</dict>
+			</array>
+		</dict>
+		<key>rightRootSM</key>
+		<dict>
+			<key>width</key>
+			<string>100</string>
+			<key>buttons</key>
+			<array>
+				<dict>
+					<key>blocktype</key>
+					<string>newscene</string>
+					<key>blabel</key>
+					<string>bugs - landscape and rotating</string>
+					<key>toptitle</key>
+					<string>Episodes</string>
+					<key>label</key>
+					<string>Episodes</string>
+					<key>imageurl</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>url</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>blocktype</key>
+					<string>newscene</string>
+					<key>blabel</key>
+					<string>bugs - landscape and rotating</string>
+					<key>toptitle</key>
+					<string>Forms</string>
+					<key>label</key>
+					<string>Forms</string>
+					<key>imageurl</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>url</key>
+					<string>2</string>
+				</dict>
+
+			</array>
+		</dict>
+		<key>bottomRootSM</key>
+		<dict>
+			<key>width</key>
+			<string>300</string>
+			<key>buttons</key>
+			<array>
+				<dict>
+
+					<key>blocktype</key>
+					<string>leftright</string>
+					<key>url</key>
+					<string>
+						http://portal.medcommons.net/portal/samples/testpage1000.html
+					</string>
+					<key>label</key>
+					<string>agropper</string>
+					<key>toptitle</key>
+					<string>t1000 test page</string>
+				</dict>
+				<dict>
+
+					<key>blocktype</key>
+					<string>leftright</string>
+					<key>url</key>
+					<string>
+						http://portal.medcommons.net/portal/samples/testpage500.html
+					</string>
+					<key>label</key>
+					<string>Settings</string>
+					<key>toptitle</key>
+					<string>Settings</string>
+				</dict>
+				<dict>
+					<key>blocktype</key>
+					<string>newscene</string>
+					<key>blabel</key>
+					<string>bugs - landscape and rotating</string>
+					<key>toplabel</key>
+					<string>Logout</string>
+					<key>label</key>
+					<string>Logout</string>
+					<key>imageurl</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>url</key>
+					<string>0</string>
+				</dict>
+
+			</array>
+		</dict>
+		<key>scenes</key>
+		<array>
+			<dict>
+
+				<key>scene</key>
+				<string>0</string>
+
+
+				<key>name</key>
+				<string>Inbox</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Inbox</string>
+
+				<key>largetitle</key>
+				<string>Inbox</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+		<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Inbox</string>
+						<key>height</key>
+						<string>600</string>
+						<key>url</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/pagefor.php?p=placeholders/patientlist01.png
+						</string>
+						<key>label</key>
+						<string>Inbox</string>
+						<key>blabel</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/placeholders/patientlist01.png
+						</string>
+						<key>imageurl</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/pagefor.php?p=placeholders/groupchooser01.png
+						</string>
+					</dict>
+
+
+				</array>
+
+			</dict>
+			<dict>
+
+				<key>scene</key>
+				<string>1</string>
+
+
+				<key>name</key>
+				<string>Episodes</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Episodes</string>
+
+				<key>largetitle</key>
+				<string>Episodes</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+		<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Episodes</string>
+						<key>height</key>
+						<string>600</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/placeholders/episodes01.png
+						</string>
+						<key>label</key>
+						<string>Episodes</string>
+						<key>blabel</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/placeholders/episodes01.png
+						</string>
+						<key>imageurl</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/pagefor.php?p=placeholders/episodes01.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Current Episode Test</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Current</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>CCR March 1, 2010</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>CCR March 1, 2010</string>
+						<key>url</key>
+						<string>
+							https://healthurl.medcommons.net/router/DisplayCCR.action?ccrIndex=0&amp;guid=4684673561427334
+						</string>
+						<key>blabel</key>
+						<string>
+							this is the merged - up to date CCR
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/steth.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Radiology Report Jan 15,2009</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/radreport.pdf
+						</string>
+						<key>label</key>
+						<string>Radiology Report - PDF</string>
+						<key>blabel</key>
+						<string>
+							http://portal.medcommons.net/tests/About.pdf
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>3D Bone Jan 13,2009</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>3D Bone Jan 13,2009</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/3DBone.html
+						</string>
+						<key>blabel</key>
+						<string>3D Bone Series MGH</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Ct with Contrast Jan 3, 2009</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>Ct with Contrast Jan 3, 2009</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb2.png
+						</string>
+
+						<key>blabel</key>
+						<string>this came from Jane H</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb2.png
+						</string>
+
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>newscene</string>
+						<key>toplabel</key>
+						<string>Ankle Injury</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Ankle Injury</string>
+
+						<key>scene</key>
+						<string>4</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>newscene</string>
+						<key>toplabel</key>
+						<string>Combine 2009</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Combine 2009</string>
+
+						<key>scene</key>
+						<string>5</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>newscene</string>
+						<key>toplabel</key>
+						<string>Knee Sprain</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Knee Sprain</string>
+
+						<key>scene</key>
+						<string>6</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>newscene</string>
+						<key>toplabel</key>
+						<string>6 Hidden Episodes</string>
+						<key>nesting</key>
+						<string>4</string>
+						<key>label</key>
+						<string>--6 Hidden Episodes--</string>
+
+						<key>scene</key>
+						<string>7</string>
+					</dict>
+
+				</array>
+
+			</dict>
+
+			<dict>
+
+				<key>scene</key>
+				<string>2</string>
+
+
+				<key>name</key>
+				<string>Forms</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Forms</string>
+
+				<key>largetitle</key>
+				<string>Forms</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+		<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Forms</string>
+						<key>height</key>
+						<string>600</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/placeholders/forms01.png
+						</string>
+						<key>label</key>
+						<string>Forms</string>
+						<key>blabel</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/placeholders/forms01.png
+						</string>
+						<key>imageurl</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/pagefor.php?p=placeholders/forms01.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Reply Test</string>
+						<key>label</key>
+						<string>Reply</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Order Test</string>
+						<key>label</key>
+						<string>Order</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Fax Covers Test</string>
+						<key>label</key>
+						<string>Fax Covers</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Print Fax CoverTest</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>- Print Fax Cover</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Email Fax Cover Test</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>- Email Fax Cover</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+
+					</dict>
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Fax a Fax Cover Test</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>- Fax Fax Cover</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Share Test</string>
+						<key>label</key>
+						<string>Share</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Email Share Test</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>- Send Invitation by Email</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>SMS Share Test</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>- Send Invitation by SMS</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+
+					</dict>
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Fax Share Test</string>
+						<key>nesting</key>
+						<string>1</string>
+						<key>label</key>
+						<string>- Send Invitation by Fax</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+				</array>
+
+			</dict>
+
+			<dict>
+
+				<key>scene</key>
+				<string>3</string>
+
+
+				<key>name</key>
+				<string>Edit</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Edit</string>
+
+				<key>largetitle</key>
+				<string>Edit</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+		<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Edit</string>
+						<key>height</key>
+						<string>600</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/placeholders/edit01.png
+						</string>
+						<key>label</key>
+						<string>Edit</string>
+						<key>blabel</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/placeholders/edit01.png
+						</string>
+						<key>imageurl</key>
+						<string>
+						http://portal.medcommons.net/portal/samples/pagefor.php?p=placeholders/edit01.png
+						</string>
+					</dict>
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>New Episode</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>New Episode</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Edit Episode Label</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Edit Episode Label</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Merge Into Current</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Merge Into Current</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Delete Episode</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Delete Episode</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Set as Home View</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Set as Home View</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Set As Emergency CCR</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Set As Emergency CCR</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Set as Current</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Set as Current</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Hide Episode</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Hide Episode</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Add PDF Document</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Add PDF Document</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Add Web Reference</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Add Web Reference</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Import HealthURL</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Import HealthURL</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Import Voucher</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Import Voucher</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Import CCR</string>
+						<key>nesting</key>
+						<string>0</string>
+						<key>label</key>
+						<string>Import CCR</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+
+
+
+
+
+				</array>
+
+			</dict>
+			<dict>
+
+				<key>scene</key>
+				<string>4</string>
+
+
+				<key>name</key>
+				<string>Ankle</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Ankle</string>
+
+				<key>largetitle</key>
+				<string>Ankle Injury 2009</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Radiology Report Jan 15,2009</string>
+			
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/radreport.pdf
+						</string>
+						<key>label</key>
+						<string>Radiology Report - PDF</string>
+						<key>blabel</key>
+						<string>
+							http://portal.medcommons.net/tests/About.pdf
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>3D Bone Jan 13,2009</string>
+				
+						<key>label</key>
+						<string>3D Bone Jan 13,2009</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/3DBone.html
+						</string>
+						<key>blabel</key>
+						<string>3D Bone Series MGH</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>Ct with Contrast Jan 3, 2009</string>
+				
+						<key>label</key>
+						<string>Ct with Contrast Jan 3, 2009</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb2.png
+						</string>
+
+						<key>blabel</key>
+						<string>this came from Jane H</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb2.png
+						</string>
+
+					</dict>
+
+
+				</array>
+
+			</dict>
+			<dict>
+
+				<key>scene</key>
+				<string>5</string>
+
+
+				<key>name</key>
+				<string>Combine 2009</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Combine 2009</string>
+
+				<key>largetitle</key>
+				<string>Combine 2009</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+		<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb0.png
+						</string>
+						<key>label</key>
+						<string>Alpha Test - 38615</string>
+						<key>blabel</key>
+						<string>1713806360 has motion</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb0.png
+						</string>
+						<key>toplabel</key>
+						<string>DICOM Alpha Test - 38615</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>toplabel</key>
+						<string>3D Bone Jan 13,2009</string>
+			
+						<key>label</key>
+						<string>3D Bone Jan 13,2009</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/3DBone.html
+						</string>
+						<key>blabel</key>
+						<string>3D Bone Series MGH</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/images/janesPhonePhotos.png
+						</string>
+						<key>label</key>
+						<string>Photo Series from iPhone</string>
+						<key>toplabel</key>
+						<string>PhotoSeries</string>
+						<key>blabel</key>
+						<string>these come from the iPhone</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/portal/images/iPhone.png
+						</string>
+					</dict>
+
+
+				</array>
+
+			</dict>
+			<dict>
+
+				<key>scene</key>
+				<string>6</string>
+
+
+				<key>name</key>
+				<string>Knee Sprain</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Knee Sprain</string>
+
+				<key>largetitle</key>
+				<string>Knee Sprain 2007</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+
+				<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb3.png
+						</string>
+						<key>label</key>
+						<string>Fourth Series</string>
+						<key>toplabel</key>
+						<string>Forth:=) Series</string>
+						<key>blabel</key>
+						<string>this came from Keith B</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb3.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb4.png
+						</string>
+						<key>label</key>
+						<string>Yet another series</string>
+						<key>toplabel</key>
+						<string>DICOM - The Final Series</string>
+						<key>blabel</key>
+						<string>214 iimages</string>
+						<key>imageurl</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb4.png
+						</string>
+					</dict>
+
+
+				</array>
+
+			</dict>
+
+
+		</array>
+	</dict>
+</plist>

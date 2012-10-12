@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>JBuilder 4 Integration</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="JBuilder 4 Integration" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Forewords and Requirements</h1>
+      
+<p>
+        First of all, you need to download the
+        <a href=".././downloads.html" title="Downloads of Cactus releases and nightly builds.">Cactus distribution</a>
+      
+</p>
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 1: Create JBuilder libraries</h1>
+
+      
+<p>
+        Let's assume the following conventions:
+        <b><code>{Cactus dir}</code></b> is the directory where you
+        have unzipped the Cactus distribution or sources.
+        Let's also assume <b><code>{Tomcat dir}</code></b> to be the Tomcat directory.
+      </p>
+
+      
+<div class="figure">
+<img alt="jbuilder libraries" src=".././images/jb_libraries.gif"></div>
+
+      
+<div class="section">
+<h2>Create the JUnit library</h2>
+
+        
+<p>
+          Create a JUnit library and include <code>junit.jar</code>.
+        </p>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Create the Cactus library</h2>
+
+        
+<p>
+          Create a Cactus library containing <code>cactus.jar</code> and
+          <code>aspectjrt.jar</code> (you can actually create a separate
+          library for AspectJ if you wish).
+        </p>
+
+        
+<div class="note">
+          You can also add the source file directories in the source tab.
+          This way, you will be able to debug inside cactus sources.
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Create the tomcat library</h2>
+        
+<p>
+          Create another library named <code>tomcat</code>
+          and add all the jar files from <code>{Tomcat dir}/lib</code>.
+        </p>
+
+        
+<div class="note">
+          If you use JBuilder 4 Enterprise or JBuilder 4 Professionnal, you don't need to create
+          this library because Tomcat 3.1 is provided with those versions.
+        </div>
+
+      
+</div>
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 2: Set up the cactus.properties file</h1>
+
+      
+<p>
+        Edit a new file named <code>cactus.properties</code>
+        (see the <a href=".././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a>
+        tutorial for more details on <code>cactus.properties</code>).
+      </p>
+      
+<p>
+        Copy your <code>cactus.properties</code> file to a directory present
+        in your classpath. You can copy it to a directory and add this
+        directory in the class tab of the cactus library.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 3: Configure Tomcat Environment</h1>
+
+      
+<div class="section">
+<h2>Create a cactus webapp</h2>
+
+        
+<p>
+          Create and edit the file
+          <code>{Tomcat dir}/webapps/cactus/WEB-INF/web.xml</code>. Here is an
+          example for Servlet API 2.2:
+        </p>
+
+
+<div class="source">
+<pre>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+&lt;!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+    "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd"&gt;
+
+&lt;web-app&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.apache.cactus.server.ServletTestRedirector&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/ServletRedirector&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="note">
+        You can edit <code>{Tomcat dir}/conf/web.xml</code> instead if you
+        prefer. <br>
+        You can also edit the <code>web.xml</code> file of the webapp where is
+        located the servlet(s) you want to test. <br>
+        Don't forget to modify <code>cactus.properties</code> file accordingly.
+      </div>
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 4: Configure your project</h1>
+      
+<ol>
+        
+<li>
+          Put <code>-classic -Dtomcat.home="{Tomcat dir}"</code> as the VM
+          parameters for your project and
+          <code>org.apache.tomcat.startup.Tomcat</code> as the main class.
+        </li>
+        
+<li>
+          Add the following libraries in the <code>Required Libraries</code>
+          tab in the project properties:
+          <ul>
+            
+<li>tomcat</li>
+            
+<li>servlet</li>
+            
+<li>junit</li>
+            
+<li>cactus</li>
+          
+</ul>
+          
+<div class="figure">
+<img alt="jbuilder libraries" src=".././images/jb_paths.gif"></div>
+        
+</li>
+      
+</ol>
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 5: Test and debug your servlet</h1>
+
+      
+<div class="section">
+<h2>Test your servlet</h2>
+        
+<ol>
+          
+<li>
+            Start Tomcat using the <code>Run/Run Project</code> menu.
+          </li>
+          
+<li>
+            Run your unit tests: right click on the file containing your test
+            case and click on <code>run</code>
+          
+</li>
+        
+</ol>
+      
+</div>
+
+      
+<div class="section">
+<h2>Debug your servlet and your tests</h2>
+        
+<p>
+          You can easily print the results of the methods on the server-side
+          itself.
+        </p>
+        
+<p>
+          You can also start Tomcat in debug mode (<code>Run/debug
+          project</code>). This way, you can stop at breakpoints on methods
+          that are executed on the server side (<code>void testXXX()</code> for
+          example)
+        </p>
+        
+<p>
+          If you right click on the file containing your test case and click
+          on <code>debug</code>, you can stop at breakpoints on methods that
+          are executed on the client side like
+          <code>void endXXX(WebResponse)</code> or
+          <code>void beginXXX(WebRequest)</code>
+        
+</p>
+      
+</div>
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

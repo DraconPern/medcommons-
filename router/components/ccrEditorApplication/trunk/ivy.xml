@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ivy-module version="1.3">
+  <info organisation="medcommons" module="ccrEditorTestApplication"/>
+	<publications>
+       <artifact  name="medcommons-ccreditortest-application"/>
+  </publications>
+ <dependencies>
+	<dependency org="junit" name="junit"      rev="4.4" conf="default" />
+	<dependency org="jdom" name="jdom" rev="1.0" conf="default" />
+	<dependency org="apache" name="log4j"     rev="1.2.8" conf="default" />
+	<dependency org="apache" name="xerces"     rev="2.6.2" conf="default" />
+	<dependency org="apache" name="commons-logging"     rev="1.1.1" conf="default" />
+	<dependency org="apache" name="commons-httpclient"     rev="3.0.1" conf="default" />
+	<dependency org="apache" name="commons-codec"     rev="1.3" conf="default" />
+	<dependency org="apache" name="commons-collections"     rev="3.2" conf="default" />
+	<dependency org="apache" name="dom4j"  rev="1.4" conf="default" />
+	<dependency org="medcommons" name="ccrxmlbean"  rev="latest.integration" conf="default" />
+	<dependency org="medcommons" name="medcommons-crypto"  rev="1.0.2" conf="default" />
+	<dependency org="sun" name="jnlp"  rev="6.2" conf="default" />
+  </dependencies>
+</ivy-module>

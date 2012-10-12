@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:es="http://www.medcommons.net/editsession11" 
+    targetNamespace="http://www.medcommons.net/editsession11"
+    elementFormDefault="qualified" attributeFormDefault="unqualified"
+    >
+    <!-- 
+        Changes from EditSession10.xsd:
+        1. Changed Profiles/Profiles to Profiles/Profile
+        2. Removed AuthorizationToken 
+        3. Added OriginalURI
+        4. Added UploadReferenceCopy
+        5. Added DocumentDownloadRootURI
+  
+        
+    -->
+<xs:element name="EditSession" type="es:EditSessionType">
+    <xs:annotation>
+        <xs:documentation>
+            Defines an edit session with a server. This message contains REST URIs for
+            GETting and PUTting content back to5 the server and some status information; 
+            it also contains some other values which can be used for application display
+            (patient name, patient pictures, application title), application features 
+            (select alternative profile). Lastly - other the values (i.e., SessionToken) 
+            can be used to create other secure URIs based on the contents of the CCR 
+            (such as downloading a reference).
+        </xs:documentation>
+    </xs:annotation>
+    
+</xs:element>
+<xs:complexType name="EditSessionType">
+    <xs:sequence>
+        
+        <xs:element name="SessionToken" type="xs:string"  minOccurs="1"  maxOccurs="1">
+            <xs:annotation><xs:documentation>The session handle which identifies this session</xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="ContentType" type="xs:string"  minOccurs="1" maxOccurs="1">
+            <xs:annotation><xs:documentation>The ContentType of the SessionURI.</xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="SessionURI" type="xs:string"  minOccurs="1" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                This is the URI which defines the resource being edited. Initially it is 
+                retrieved with a HTTP GET; changes are pushed back via a PUT.
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="Alias" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                Human-readable alias for the session. Typically something like "Current CCR" or "Emergency CCR".
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="PersonName" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                The name of the person to whom the resource refers to (typically the patient).
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="PersonImage" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                A base64 encoded PNG image of the person to whom the resource refers to (typically the patient).
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="ApplicationTitle" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+               The name that the launched application displays (typically in a title bar).
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="Status" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                The status of the transaction. Status codes here match HTTP semantics - codes in the 200-299 range
+                mean success; 300 means redirection; 500 means server error, &amp;etc.
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="Reason" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                A text field linked to status. For a Status of 200 - the reason is typically 'OK'. For an error 
+                it contains some details of the error which can be displayed to the user.
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="RedirectURI" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                If the status code is in the 300-399 range then the calling application should redirect 
+                the user to this URI. Typically this is due to a authentication or transaction failure and
+                the user must use the browser to re-establish credentials or create a new transaction.
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="OriginalURI" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+              Optional value to re-launch application with the original URI which created this document. Note
+              that if the browser launches with this URI that they may be redirected to an authentication or login
+              page.
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="DocumentDownloadRootURI" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                Optional value which permits the download of documents that are contained within a CCR
+                Reference element using an 'mcid' protocol URL.
+                This value is only the root of the value needed in the URI - the calling
+                application must append the mcid value at the end to obtain a specific document.
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="UploadReferenceCopy" type="xs:boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation>
+                Optional value to PUT the CCR back after the initial GET. This provides a reference
+                copy on the server for performing element-by-element differences of subsequent calls 
+                to PUT (we assume here that the calling application transforms the CCR upon import which 
+                makes differences harder to calculate on the server after the user has changed elements).
+            </xs:documentation></xs:annotation>
+        </xs:element>
+        
+        <xs:element name="Profiles" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="Profile" type="es:ProfileType" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+    
+    <xs:complexType name="ProfileType">
+        <xs:annotation>
+            <xs:documentation>
+                A profile is a Alias/RequestSessionURI pair which are used for creating alternative sessions. 
+                A typical application will display the alias values in a menu and when the user
+                selects them an alternative session is requested via the RequestSessionURI.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Alias" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="RequestSessionURI" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

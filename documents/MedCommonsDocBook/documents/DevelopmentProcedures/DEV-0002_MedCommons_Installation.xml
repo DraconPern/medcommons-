@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="en-US">
+    <title>MedCommons Gateway Installation on Linux</title>
+    <articleinfo>
+        <invpartnumber>DEV-0002</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                <date>May 10, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para> This document describes how to install a MedCommons Gateway in Red Hat Linux. The
+            document was tested against Fedora Core 3. No problems with other Linux distros are
+            anticipated. Other versions of Unix should work as well although MacOSX will not work
+            until JDK 1.5 is released for this OS. </para>
+        <para> There are three types of installation. <orderedlist>
+                <listitem> Standard installation. This is the simplest installation; it's what would
+                    be installed at a customer site. Controlled versions of the software are
+                    installed via a manual process. </listitem>
+                <listitem> Continuous build installation. This automatically builds an installation
+                    from the Subversion source tree after new files are checked into the repository.
+                    This is useful for several reasons: it tests to see that the build process
+                    works; it makes available the latest software without having to manually install
+                    it. </listitem>
+                <listitem> Demo software installation. This is identical to the continuous build
+                    installation except that the installation is manually triggered instead of when
+                    software is checked in. This is useful for getting the latest software running
+                    on a demo site which does not temporarily 'disappear' when a software developer
+                    checks in new code. </listitem>
+            </orderedlist> The reasons for having these separate distributions is that: <orderedlist>
+                <listitem>
+                    <para>The standard build is good for church/state separation – when we get
+                        audited by the FDA it’s imperative to show that there is a clean handoff for
+                        generating a distro and that it’s repeatable. The creation of a standard
+                        build is part of a release process that is controlled. </para>
+                </listitem>
+                <listitem>
+                    <para>For the continuous build and demo installations - we avoid the upload time
+                        – which can be long for a 20+MB installer. The typical software uploads to
+                        the Subversion repository are a few K bytes; the downloads are fast; the
+                        build is also pretty fast. This lightweight build/deploy is very good for
+                        iterative rapid development.</para>
+                </listitem>
+            </orderedlist>
+        </para> All three of these installations have the same basic outline: <orderedlist>
+            <listitem>Installation prerequisites. Create the user's account; download and install
+                necessary software</listitem>
+            <listitem>Configure the system (.bashrc, MedCommonsBootParameters.properties)</listitem>
+            <listitem>Run the installer.</listitem>
+        </orderedlist>
+        <sect2>
+            <title>Distribution lockbox</title>
+            <para>All MedCommons installers, associated software (Java), and standard document
+                content for installing gateways must be in the distribution lockbox. Unlike the
+                mcpurple06 continuous build machine only certified components can be placed in the
+                lockbox.</para>
+            <para/>
+            <para>The current location of the lockbox is the ftp server on virtual01.medcommons.net
+                in the anon_ftp/pub directory. <emphasis> This should change to some other (more
+                    controlled) location. </emphasis> For the moment the ant software is at this
+                location. </para>
+        </sect2>
+        <sect2>
+            <title>Issues in this document and process</title>
+            <itemizedlist>
+                <listitem> Distribution lockbox needs a permanent home instead of being on
+                    virtual01.medcommons.net in an FTP directory. </listitem>
+                <listitem>
+                    <para>I’ve taken Michael’s installation notes for the old JBoss server distro
+                        and modified them to fit the new Tomcat installation and added some details
+                        on how to install the sample image set to the server. <emphasis> All
+                            meta-comments like this are in italics – after we rev this document a
+                            few times all of these comments should be removed.</emphasis>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>Each time the contents of the lockbox are changed release notes must be
+                        generated [TBD]. Need to point to a process document here.</para>
+                    <para/>
+                </listitem>
+                <listitem>
+                    <para> When a standard build is created there are two options: a patch
+                        installation or a full installation. Only the full is described in this
+                        document. Upgrade/patch installers are much smaller and fast to apply.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para> Should more software be installed on these machines? One example would be
+                        monitoring software such as Zabbix. </para>
+                </listitem>
+                <listitem>
+                    <para>Installation of the continuous build isn't covered - Simon will have to fill this in. I believe it's probably something like putting the call to ./bin/ci.sh in a cron script but I'm not sure.</para>
+                </listitem>
+                <orderedlist>
+                    <listitem>
+                        <para>The modality simulator bash script needs to be fixed. This would make the text
+                            more readable.</para>
+                    </listitem>
+                    <listitem>
+                        <para>The modality simulator program needs to be cleaned up:</para>
+                        <orderedlist>
+                            <listitem>
+                                <para>The DICOM URL is ugly – needs to be broken up into the separate DICOM
+                                    components (ip address, port, AE titles…). </para>
+                            </listitem>
+                            <listitem>
+                                <para>Error handling should be a little more subtle.</para>
+                            </listitem>
+                            <listitem>
+                                <para>Needs to be part of the gateway distro.</para>
+                            </listitem>
+                            <listitem>
+                                <para>Probably some static help pages should be added to the gateway for how
+                                    to use tools like the modality simulator with examples.</para>
+                            </listitem>
+                        </orderedlist>
+                    </listitem>
+                    <listitem>
+                        <para>More information on error messages and troubleshooting.</para>
+                    </listitem>
+                    <listitem>
+                        <para>More information on what the logs should look like for a successful gateway
+                            startup.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Need a similar document for the build process and how the installer is
+                            built.</para>
+                    </listitem>
+                    
+                    <listitem>
+                        <para>Most importantly – this needs to be put into our process documents, cataloged
+                            with a document number, put under source control, and have the document formally
+                            reviewed.</para>
+                    </listitem>
+                </orderedlist>
+            </itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Installation prerequisites</title>
+        <sect2>
+            <title>Creating the Account</title>
+            <para>Every deployed gateway instance should be self-contained within a Linux account.
+                Potentially there will be more than a single account on a single Linux machine. Each
+                gateway account should contain all of the dependencies required for that gateway
+                instance to operate. This means that if there are two gateways installed on a
+                machine that there are two complete JDK installations as well. This keeps the
+                installations separate and permits multiple versions of software to be run in
+                parallel.</para>
+            <para>
+                <emphasis>This section is largely the way that Quigley wrote it. Keith – can you
+                    make a proposal for how these accounts are created and what their permissions
+                    are? I did none of the steps in this section – I just used the account you gave
+                    me on virtual05.</emphasis>
+            </para>
+            <para>Use ssh to log into the server using an account which has 'sudo' privileges.
+                Typically this</para>
+            <para>should be your user account, but a shared administrator account will work, too.</para>
+            <para>Execute the 'useradd' command to create the account:</para>
+            <para>$ sudo useradd -m demo</para>
+            <para>Assign a password to the account:</para>
+            <para>$ sudo passwd demo</para>
+            <para>Changing password for user demo.</para>
+            <para>New password:</para>
+            <para>Retype new password:</para>
+            <para>passwd: all authentication tokens updated successfully.</para>
+        </sect2>
+        <sect2>
+            <title>What software needs to be installed</title>
+            <sect3>
+                <title>Basic software for all installation types</title>
+                <informaltable frame="all">
+                    <tgroup cols="2">
+                        <tbody>
+                            <row>
+                                <entry>
+                                    <para>File</para>
+                                </entry>
+                                <entry>
+                                    <para>Contents</para>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <para>CTACOW.zip</para>
+                                </entry>
+                                <entry>
+                                    <para>Demo DICOM CT images</para>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry>
+                                    <para>jdk-1_5_0_01-linux-i586.bin</para>
+                                </entry>
+                                <entry>
+                                    <para>Blessed version of Java</para>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </informaltable>
+            </sect3>
+            <sect3>
+                <title/>
+                <para> The standard distro itself is here: <informaltable frame="all">
+                        <tgroup cols="2">
+                            <tbody>
+                                <row>
+                                    <entry>
+                                        <para>MedcommonsSetup-W.X.Y.Z.sh</para>
+                                    </entry>
+                                    <entry>
+                                        <para>Gateway installer for version W.X.Y.Z. Current version
+                                            is 1.0.0.5.</para>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry>
+                                        <para>simulator.zip</para>
+                                    </entry>
+                                    <entry>
+                                        <para>Modality Simulator<footnote>
+                                                <para>This will disappear shortly; the modality
+                                                  simulator will be folded into the installer for
+                                                  the gateway.</para>
+                                            </footnote>
+                                        </para>
+                                    </entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </informaltable> Note that neither of these two pieces of software need to be
+                    downloaded for the continuous and demo software installations. </para>
+            </sect3>
+            <sect3>
+                <title/>
+                <para> For the continuous build and demo software installations the following
+                    software needs to be installed in addition to the software required for the
+                    standard build. <informaltable frame="all">
+                        <tgroup cols="2">
+                            <tbody>
+                                <row>
+                                    <entry>
+                                        <para>File</para>
+                                    </entry>
+                                    <entry>
+                                        <para>Contents</para>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry>
+                                        <para>apache-ant-1.6.3-bin.tar.gz</para>
+                                    </entry>
+                                    <entry>
+                                        <para>Apache Ant Build tool (only required for installations
+                                            that build the application directly from the source
+                                            code)</para>
+                                    </entry>
+                                </row>
+                                <row>
+                                    <entry>Subversion (aka 'svn')</entry>
+                                    <entry>Subversion source code client software. This can be
+                                        installed via Yum.</entry>
+                                </row>
+                                <row>
+                                    <entry>xsltproc</entry>
+                                </row>
+                                <row>
+                                    <entry/>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </informaltable>
+                </para>
+            </sect3>
+        </sect2>
+    </sect1>
+    <sect2>
+        <title>Copying the Software to the Account</title>
+        <para>
+            <emphasis>This section is also pretty much what Quigley wrote. Keith should say if this
+                is what he wants or if there are changes to make this be faster and more repeatable.
+            </emphasis> I didn’t follow these steps – instead I did the following: </para>
+        <orderedlist>
+            <listitem>
+                <para>Logged into virtual05 via ssh.</para>
+            </listitem>
+            <listitem>
+                <para>Created directory ~/local</para>
+            </listitem>
+            <listitem>
+                <para>Changed directory to ~/local</para>
+            </listitem>
+            <listitem>
+                <para>Ftp’ed to virtual01.medcommons.net, /anon_ftp/pub, did an mget * <footnote>
+                        Actually - only the software defined in the tables needs to be read down.
+                        For a hosted site this probably doesn't matter because the I/O is so fast -
+                        but for a continuous build machine there is no reason to download the
+                        standard build installer. </footnote>.</para>
+            </listitem>
+        </orderedlist>
+        <para/>
+        <para>Note: the directory structure described in the examples below reflects this ~/local
+            directory – all this will need to be changed after we agree what the structure should
+            be.</para>
+        <para/>
+        <para>Next, we must get the required software onto the account. Typically you'll want to use
+            'scp' to copy these items from the lockbox onto the new account.</para>
+        <para/>
+        <para>From the location containing the items, you'll need to use scp to copy these files:</para>
+        <para>$ scp jdk-1_5_0_01-linux-i586.bin demo@your.server.com:</para>
+        <para>demo@your.server.com's password:</para>
+        <para>jdk-1_5_0_01-linux-i586.bin 100% 45MB 2.6MB/s 00:17</para>
+        <para/>
+        <para>Copy the CTACOW.zip, simulator.zip, and MedcommonsSetup-W.X.Y.Z.sh to the demo machine
+            as well.</para>
+        <para/>
+    </sect2>
+    <sect2>
+        <title>Place sample images in the correct directory</title>
+        <para>DICOM images must be installed on the local disk. Create a new directory ~/testimages.
+            Unzip CTACOW.zip into this directory. This location is the default needed by the
+            continuous build and demonstration installations. </para>
+    </sect2>
+    <sect2>
+        <title>Configuring the Account</title>
+        <para>
+            <emphasis>Again –this is verbatim from Quigley. Keith should define this section
+            </emphasis>
+        </para>
+        <para>Log into the account using ssh:</para>
+        <para>$ ssh demo@your.server.com</para>
+        <para>demo@your.server.com's password:</para>
+        <para>$</para>
+        <para>The remainder of the commands will be executed from this account.</para>
+        <para/>
+        <sect3>
+            <title>Installing prerequisite software</title>
+            <para>The ‘local’ directory was created when the software was downloaded above. Now the
+                software needs to be installed there.</para>
+            <para/>
+            <para>Install the Java Development Kit:</para>
+            <para>$ cd ~/local</para>
+            <para>$ sh ~/jdk-1_5_0_01-linux-i586.bin (acknowledge the prompts and accept the
+                defaults)</para>
+            <para/>
+        </sect3>
+        <sect3>
+            <title>Configuring .bashrc for standard build</title>
+            <para>The '.bashrc' file contains the shell configuration settings for the account. By
+                default it</para>
+            <para>contains something similar to the following:</para>
+            <para># .bashrc</para>
+            <para># User specific aliases and functions</para>
+            <para># Source global definitions</para>
+            <para>if [ -f /etc/bashrc ]; then</para>
+            <para>. /etc/bashrc</para>
+            <para>fi</para>
+            <para/>
+            <para>Two new lines need to be added to the file:</para>
+            <para>export JAVA_HOME=~/local/jdk1.5.0_01</para>
+            <para>export PATH=$JAVA_HOME/bin:$PATH</para>
+            <para/>
+            <para/>
+            <para>Now, reload the shell configuration from '.bashrc':</para>
+            <para>$ source ~/.bashrc</para>
+            <para>Verify that java is correctly located in your path:</para>
+            <para>$ which java</para>
+            <para>~/local/jdk1.5.0_01/bin/java</para>
+            <para>The path shown by 'which' should be similar to the above. This shows that the
+                shell properly located the java executable in the accounts 'local' subtree.</para>
+        </sect3>
+        <sect3>
+            <title>Configuring .bashrc for continuous build</title>
+            <para>The '.bashrc' file contains the shell configuration settings for the account. By
+                default it</para>
+            <para>contains something similar to the following:</para>
+            <para># .bashrc</para>
+            <para># User specific aliases and functions</para>
+            <para># Source global definitions</para>
+            <para>if [ -f /etc/bashrc ]; then</para>
+            <para>. /etc/bashrc</para>
+            <para>fi</para>
+            <para/>
+            <para>Three new lines need to be added to the file:</para>
+            <para>export ANT_HOME=/home/apache/htdocs/local/apache-ant-1.6.3</para>
+            <para>export JAVA_HOME=/home/apache/htdocs/local/jdk1.5.0_01</para>
+            <para>export PATH=${PATH}:${ANT_HOME}/bin:${JAVA_HOME}/bin</para>
+            <para/>
+            <para/>
+            <para>Now, reload the shell configuration from '.bashrc':</para>
+            <para>$ source ~/.bashrc</para>
+            <para>Verify that java is correctly located in your path:</para>
+            <para>$ which java</para>
+            <para>~/local/jdk1.5.0_01/bin/java</para>
+            <para>The path shown by 'which' should be similar to the above. This shows that the
+                shell properly located the java executable in the accounts 'local' subtree.</para>
+        </sect3>
+        <sect3>
+            <title>Install the MedCommons Gateway Distribution</title>
+            <para>Put the MedcommonsSetup-W.X.Y.Z.sh file that was loaded to the machine earlier
+                into the ~/local directory. </para>
+            <para>You can do this with:</para>
+            <para>$ cd ~/local/</para>
+            <para>$sh MedcommonsSetup-W.X.Y.Z.sh</para>
+            <para>Answer yes to make a new directory, no to install on bootup [This should be
+                changed to a yes in the future – but I believe that I need root access to say yes
+                here and I don’t on virtual05. Keith – your recommendations would be helpful here.
+                Simon wrote the installer script so we have a lot of flexibility here.]</para>
+            <para>Now, all of the software is properly loaded on the machine. If this is the only
+                instance of</para>
+            <para>the gateway on this server, you can just adjust the
+                MedCommonsBootParameters.properties</para>
+            <para>file following the instructions below, and you're done.</para>
+            <para/>
+            <para/>
+            <para/>
+        </sect3>
+    </sect2>
+    <sect2>
+        <title>Configuring MedCommonsBootParameters.properties</title>
+        <para>If there is only one instance of the gateway<footnote>
+                <para>This installation guide does not describe how to run multiple instances of the
+                    gateway on a single machine. Quigley’s earlier document describes how to do this
+                    for JBoss which is a more complex problem than Tomcat. A later version of this
+                    document may include how to configure multiple instances.</para>
+            </footnote> running on this Linux machine then all of the required configurations are
+            located in the MedCommonsBootParameters.properties file located in the
+            ~/local/medcommons/tomcat/conf/ directory.</para>
+        <para/>
+        <para># Contains all configurable parameters for</para>
+        <para># gateway initialization.</para>
+        <para>#</para>
+        <para># Most gateway parameters are stored on the pink box. However -</para>
+        <para># the purple box needs a few parameters to get started.</para>
+        <para>#</para>
+        <para>#PinkBoxURL=http://virtual01.medcommons.net/pink9/</para>
+        <para># Which pink box is the controller for this box?</para>
+        <para>PinkBoxURL=http://virtual01.medcommons.net/rsna/</para>
+        <para># What is this node's identity?</para>
+        <para>WhoAmI=GATEWAY001</para>
+        <para># Are automatic transfers enabled?</para>
+        <para>AutomaticTransfersEnabled=false</para>
+        <para># Are automatically created orders</para>
+        <para>PinkBoxInsertOrders=true</para>
+        <para># Future preferences: DICOM port #s. Currently hard-coded.</para>
+        <para>PurpleBoxTarget=http://localhost:9080/router/</para>
+        <para># Polls routing queue for transfer tasks to perform.</para>
+        <para>PollForTasks=false</para>
+        <para># How often to poll</para>
+        <para>PollerInterval=30000</para>
+        <para># True turns anonymization scrambling on</para>
+        <para>AnonymizationScrambling=true</para>
+        <para># DICOM CSTORE PORT</para>
+        <para>CSTOREPort=3002</para>
+        <para># DICOM CALLED AE TITLE</para>
+        <para>CSTORE_CALLED_AE_TITLE=MEDCOMO5</para>
+        <para># DICOM CALLING AE TITLES - Add AE titles of DICOM clients separated</para>
+        <para># by commas. Example: CSTORE_CALLING_AE_TITLES=WKSTN,PR12,GEMR01</para>
+        <para># will set the gateway to accept CSTOREs from DICOM devices with the</para>
+        <para># AE titles WKSTN, PR12, and GEMR01.</para>
+        <para>CSTORE_CALLING_AE_TITLES=WKSTN</para>
+        <para>CSTORE_TARGET_HOSTNAME=192.168.0.7</para>
+        <para>CSTORE_TARGET_AETITLE=OSIRIX</para>
+        <para>CSTORE_TARGET_PORT=4096</para>
+        <para># Set to true/false - slight performance drain, will count all the bytes sent for
+            encoded images</para>
+        <para>CountEncodedImageBytes=true</para>
+        <para>## NIST public server</para>
+        <para>XDSQueryURL=http://hcxw2k1.nist.gov:8080/xdsServices/registry/soap/portals/query</para>
+        <para>XDSRepositoryURL=http://hcxw2k1.nist.gov:8080/xdsServices/registry/soap/portals/repository</para>
+        <para>RemoteAccessAddress=mcpurple01.homeip.net:8443</para>
+        <para/>
+        <para/>
+        <para>For a typical installation only the parameters in bold font above need be edited. The
+            values that they have are:</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+                <tbody>
+                    <row>
+                        <entry>
+                            <para>Parameter</para>
+                        </entry>
+                        <entry>
+                            <para>Value</para>
+                        </entry>
+                        <entry>
+                            <para>Comments</para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>PinkBoxURL</para>
+                        </entry>
+                        <entry>
+                            <para>http://virtual01.medcommons.net/rsna/</para>
+                        </entry>
+                        <entry>
+                            <para>This is the base URL of the Central web services. </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>WhoAmI</para>
+                        </entry>
+                        <entry>
+                            <para>Names are assigned by Bill. Suggested convention: for machines
+                                gatewayxyz.medcommons.net the name should be GATEWAYXYZ.</para>
+                        </entry>
+                        <entry>
+                            <para>This is the name that the gateway uses to identify itself to
+                                central. It must be unique. </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>CSTOREPort</para>
+                        </entry>
+                        <entry>
+                            <para>3002<footnote>
+                                    <para>Simon has set the default on his machine to be port 6002
+                                        because of a port conflict; the two ‘traditional’ DICOM
+                                        ports are 104 and 3002. There is no policy on which is the
+                                        ‘right’ port – but it’s important for the modality simulator
+                                        below that the port number on the server side here here
+                                        agrees with the client port number that the modality
+                                        simulator is connecting to.</para>
+                                </footnote>
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>This is the DICOM port that images are sent to. It must match the
+                                value used in the modality simulator below.</para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>RemoteAccessAddress</para>
+                        </entry>
+                        <entry>
+                          <para>&lt;Externally visible hostname or ip address for machine&gt;:8443</para>
+                        </entry>
+                        <entry>
+                          <para>When this gateway generates emails with links or other content
+                            that must be accessbile externally, it will use this hostname/ip address.
+                            If you don't enter this then the hostname associated with the local adaptor
+                            will be used, which may or may not be correct.</para>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+        <para/>
+    </sect2>
+    <sect1>
+        <title>Running the Standard Installation Gateway</title>
+        <para>The gateway is currently a single Java process. The top level process container is the
+            Tomcat web server; MedCommons components are installed </para>
+        <sect2>
+            <title>Starting the Gateway</title>
+            <para>To start the instance, do the following:</para>
+            <para>$ cd ~/local/</para>
+            <para>[v05scp@virtual05 local]$ medcommons/bin/start.sh</para>
+            <para/>
+            <para>MedCommons Router started.</para>
+            <para/>
+            <para>Check the log file in /home/apache/htdocs/local/medcommons/log/medcommons.log for
+                progress.</para>
+            <para>After a short interval check the final line of the log to see that the server has
+                started up properly:</para>
+            <para>[v05scp@virtual05 htdocs]$ tail
+                /home/apache/htdocs/local/medcommons/log/medcommons.log</para>
+            <para>10:04:48,527 INFO [CStoreSCP] CSTORE Calling AE Title:DCMSND,WKSTN(the AE titles
+                of other devices permitted to send to</para>
+            <para>this gateway)</para>
+            <para>10:04:48,535 INFO [CStoreSCP] Version:1.0.0.3Rev: 370M, build time: 2005-02-02
+                21:50:16</para>
+            <para>10:04:48,570 INFO [CStoreSCP] Starting CSTORE SCP on port 3002</para>
+            <para>10:04:48,906 INFO [Metric] Registered Metric bytesEncoded of type
+                net.medcommons.router.util.metrics.SimpleCounter</para>
+            <para>10:04:48,908 INFO [Metric] Registered Metric imageBytesPerSecond of type
+                net.medcommons.router.util.metrics.TimeSampled</para>
+            <para>Metric</para>
+            <para>10:04:48,909 INFO [ReadyServlet] Startup Completed.</para>
+            <para>Feb 4, 2005 10:04:49 AM org.apache.coyote.http11.Http11Protocol start</para>
+            <para>INFO: Starting Coyote HTTP/1.1 on http-9080</para>
+            <para>Feb 4, 2005 10:04:49 AM org.apache.catalina.startup.Catalina start</para>
+            <para>INFO: Server startup in 4931 ms</para>
+            <para/>
+            <para/>
+            <para>There should be no exceptions during the startup of the instance. If there are,
+                you've likely missed a step outlined previously in this document. Two important
+                pieces of output from the log above should be noted:</para>
+            <orderedlist>
+                <listitem>
+                    <para>[CStoreSCP] Starting CSTORE SCP on port 3002Means that the DICOM CSTORE
+                        service is listening on port 3002</para>
+                </listitem>
+                <listitem>
+                    <para>INFO: Server startup in 4931 msMeans that Tomcat is up and running.</para>
+                </listitem>
+            </orderedlist>
+            <para/>
+            <para/>
+            <para/>
+            <para/>
+            <para>You can also check that the software is running with ps:</para>
+            <para>$ ps -x</para>
+            <para>[virtual03/demo]~/local/medcommons/tomcat/conf$ ps -x</para>
+            <para>PID TTY STAT TIME COMMAND</para>
+            <para>23715 ? S 0:01 /usr/sbin/sshd</para>
+            <para>23716 pts/0 S 0:01 -bash</para>
+            <para>23852 pts/0 S 6:13 /home/apache/htdocs/local/jdk1.5.0_01/bin/java
+                -Djava.awt.headless=true -Djava.endorsed.dirs=/home/demo</para>
+            <para>1083 cd</para>
+            <para>27821 pts/0 R 0:00 ps -x</para>
+            <para/>
+            <para>The /home/apache/htdocs/local/jdk1.5.0_01… process is the Tomcat instance running
+                the Gateway.</para>
+            <para/>
+            <para>You can also check the process log:</para>
+            <para>tail medcommons/log/medcommons.log</para>
+        </sect2>
+        <sect2>
+            <title>Stopping the Gateway</title>
+            <para>To stop the instance, execute the following command:</para>
+            <para/>
+            <para>$ cd ~/local/</para>
+            <para>$ ./medcommons/bin/stop.sh</para>
+            <para/>
+            <para/>
+        </sect2>
+        <sect2>
+            <title>Using the Modality Simulator to send DICOM images to the Gateway</title>
+            <para>In DICOM-ese – a modality device is the device that generates images and sends
+                them to other DICOM devices. A CT or MR scanner is a modality device. The modality
+                simulator is a simple program that takes DICOM images on disk and sends them to a
+                DICOM device as if it had just created them.</para>
+            <para/>
+            <para>The modality simulator program will be built into the gateway distribution soon.
+                This probably will not happen before HIMSS. This section describes how to
+                download/install the current very imperfect mechanism.</para>
+            <para/>
+            <para>First – the modality simulator must be installed. The modality simulator is a
+                simple Java program – all that is required for it to run is:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Java must be installed on the machine. This should already have been done
+                        in the steps above – but it is possible to install the simulator on a
+                        machine without the gateway.</para>
+                </listitem>
+                <listitem>
+                    <para>The simulator.zip file must be unzipped. Place the simulator.zip file in
+                        ~/local and enter$unzip simulator.zip</para>
+                </listitem>
+            </orderedlist>
+            <para/>
+            <para>Running the simulator is ugly. The existing modality-simulator.sh file does not
+                work. The example below also does not work because of something odd about bash
+                expansion – it’s probably trivial but I don’t know what’s wrong:</para>
+            <para>#!/bin/bash</para>
+            <para>#</para>
+            <para># modality-simulator.bat &lt;DICOM URL&gt; &lt;directory&gt;</para>
+            <para>echo DICOM url "$1"</para>
+            <para>echo Image directory "$2"</para>
+            <para>java -classpath
+                "./lib/modality-simulator.jar:./lib/getopt.jar:./lib/log4j.jar:./lib/dcm4che.jar:./lib/log4j-boot.jar"</para>
+            <para>net.medcommons.simulator.Modality "$1" "$2"</para>
+            <para/>
+            <para>Running this in a brute force manual way works just fine when entered as a single
+                line:</para>
+            <para>java -classpath "./lib/modality-simulator.jar:./lib/getopt.jar:./lib/log4j</para>
+            <para>.jar:./lib/dcm4che.jar:./lib/log4j-boot.jar" net.medcommons.simulator.Modality
+                dicom://ARCHIVE:DCMSND@127.0.0.1:3002 ~/testimages</para>
+            <para/>
+            <para> Note that there are going to be a number of obnoxious but innocuous error
+                messages of the following sort: </para>
+            <para>22:33:55,178 ERROR - Unrecogniced format of ~/test-images/&lt;filename&gt;<footnote>
+                    <para>The error message here is innocuous – it simply means that there was a
+                        non-DICOM file in the folder and that it couldn’t send it – so it went onto
+                        the next file.</para>
+                </footnote>
+            </para>
+            <para>22:33:55,186 ERROR - Image could not be sent
+                    &lt;filename&gt;<footnote>This means that it can't send non-dicom
+                files</footnote>
+            </para>
+            <para>22:33:55,322 INFO - Reading part 10 file &lt;dicom filename 1&gt;</para>
+            <para>22:33:55,876 INFO - Reading part 10 file &lt;dicom filename 2&gt;</para>
+            <para>… for all of the images in the ~/testimages directory.</para>
+            <para>Here’s what the parameters mean:</para>
+            <informaltable frame="all">
+                <tgroup cols="3">
+                    <tbody>
+                        <row>
+                            <entry>
+                                <para>classpath</para>
+                            </entry>
+                            <entry>
+                                <para>The jar files containing java classes for running the
+                                    simulator</para>
+                            </entry>
+                            <entry>
+                                <para>Long list –just cut and paste from above. </para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <para>Classname</para>
+                            </entry>
+                            <entry>
+                                <para>net.medcommons.simulator.Modality</para>
+                            </entry>
+                            <entry>
+                                <para>The name of the main java class</para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <para>DICOM URL</para>
+                            </entry>
+                            <entry>
+                                <para>dicom://ARCHIVE:DCMSND@127.0.0.1:3002</para>
+                            </entry>
+                            <entry>
+                                <para>ARCHIVE is the CALLED AE title, DCMSND is the CALLING AE
+                                    title, 127.0.0.1 is the IP Address, and 3002 is the port that
+                                    the server is listening on. This port number needs to match the
+                                    port number in the MedCommonsBootParameter.proproperties
+                                file</para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <para>Directory</para>
+                            </entry>
+                            <entry>
+                                <para>~/testimages</para>
+                            </entry>
+                            <entry>
+                                <para>This is the name of the directory containing image files. The
+                                    modality simulator recursively goes into subfolders looking for
+                                    DICOM files and sends them to the DICOM location specified in
+                                    the DICOM URL.</para>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </informaltable>
+            <para/>
+            <para>You can check that the images were really received by going to </para>
+            <para>http://&lt;servername&gt;:9080/router/initSelection.do</para>
+            <para>and seeing that the study arrived and that when selected the images appear in the
+                WADO viewer.</para>
+            <para/>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Installing and running the Demo Installation Gateway</title>
+        <sect2>
+            <title>Download all files from Subversion</title>
+            <para> The first time that the continuous build or demo installation gateway software is
+                run it must be manually checked out of subversion. This downloads all of the files
+                needed for the build onto your machine:
+                <literallayout>
+                    mkdir local
+                    cd local
+                    svn co http://svn.medcommons.net:6666/svn/router
+                </literallayout>
+                When the script returns the gateway should be up and running with the test images in
+                ~/testimages available for viewing. </para>
+        </sect2>
+        <sect2>
+            <title>Building and installing the gateway</title>
+            <para>
+                <literallayout>
+                    cd ~/local/router/demo
+                    ./bin/ci.sh
+                </literallayout>
+            </para>
+        </sect2>
+        <sect2>
+            <title>Reinstalling a new demonstration gateway</title>
+            <para>
+                <literallayout>
+                    cd ~/local/router/demo
+                    ./bin/ci.sh
+                </literallayout>
+                When the script returns the gateway should be up and running with the test images in
+                ~/testimages available for viewing. </para>
+        </sect2>
+        <sect2>
+            <title>Validating that installation of a demonstration gateway</title>
+            <para>
+                <orderedlist>
+                    <listitem>Launch a browser on any machine</listitem>
+                    <listitem>
+                        <para>Enter the following URL:
+                            http://&lt;hostname&gt;:9080/router/platform.jsp
+                                <footnote>Either the hostname or the IP address of the machine may
+                                be used.</footnote>
+                        </para>
+                    </listitem>
+                    <listitem> Click on the demo tab of the resulting page. </listitem>
+                    <listitem> Select the study that is in the selection screen. If images appear in
+                        the WADO viewer then installation is successful. </listitem>
+                </orderedlist>
+            </para>
+            <para> If images do not appear then you have to look at the log files. </para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Things to fix in this document and process.</title>
+     
+        <para/>
+        <para/>
+        <para/>
+    </sect1>
+</article>

@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>WebXmlMerge Ant Task</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="WebXmlMerge Ant Task" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus." class="currentPage">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+  
+<div class="section">
+<h1>WebXmlMerge Task</h1>
+
+    
+<p>
+      The task <b>webxmlmerge</b> provides a convenient way 
+      to inject external definitions into a web deployment descriptor
+      (<code>web.xml</code>) from an Ant build. It's primary intended use is to
+      include the definition of the Cactus redirectors into the application's
+      descriptor to enable testing the application with Cactus.
+    </p>
+
+    
+<div class="note">
+      This task currently merges only a subset of the definitions in a 
+      descriptor, based on the most common usage scenarios:
+      <ul>
+        
+<li>
+          Context parameters: Any &lt;context-param&gt;
+          element get inserted into the resulting descriptor verbatim.
+        </li>
+        
+<li>
+          Servlets and Filters: Both the actual definition
+          of the servlet/filter as well as the mappings to URL patterns are
+          merged. If the servlet or filter to inject is already present in the
+          source descriptor, the initialization parameters are merged.
+        </li>
+        
+<li>
+          Resource References and Resource Environment References
+          : Any &lt;resource-ref&gt; or &lt;resource-env-ref&gt;
+          elements get inserted into the resulting descriptor verbatim.
+        </li>
+        
+<li>
+          Security Constraints: Any
+          &lt;security-constraint&gt; elements get inserted into the resulting
+          descriptor verbatim.
+        </li>
+        
+<li>
+          Login Configuration: If a &lt;login-config&gt;
+          element is present, it will replace the corresponding element in the
+          source descriptor.
+        </li>
+        
+<li>
+          Security Roles: Any &lt;security-role&gt;
+          elements that are not already defined in the source descriptor
+          are inserted into the resulting descriptor.
+        </li>
+        
+<li>
+          Environment Entries: Any &lt;env-entry&gt;
+          elements get inserted into the resulting descriptor verbatim.
+        </li>
+        
+<li>
+          EJB References: Any &lt;ejb-ref&gt; or
+          &lt;ejb-local-ref&gt; elements get inserted into the resulting
+          descriptor verbatim.
+        </li>
+      
+</ul>
+    
+</div>
+
+    
+<div class="section">
+<h2>Parameters</h2>
+
+      
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+        
+<tr>
+          
+<th>Name</th>
+          <th>Description</th>
+          <th>Required</th>
+        
+</tr>
+        
+<tr>
+          
+<td>srcfile</td>
+          <td>
+            The original deployment descriptor.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>destfile</td>
+          <td>
+            The destination file.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>mergefile</td>
+          <td>
+            The descriptor containing the definitions that should be merged
+            into the descriptor.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>encoding</td>
+          <td>
+            The character encoding of the destination file. If this attribute is
+            ommitted, the character encoding of the source file will be applied.
+          </td>
+          <td>No</td>
+        
+</tr>
+        
+<tr>
+          
+<td>force</td>
+          <td>
+            By default the task checks the modification times of the files
+            before performing the merge. Set this attribute to
+            <code>false</code> to perform the merge regardless of whether the
+            destination file seems to be up to date.
+          </td>
+          <td>No</td>
+        
+</tr>
+        
+<tr>
+          
+<td>indent</td>
+          <td>
+            Whether the resulting XML should be indented when written to the
+            destination file.
+          </td>
+          <td>No, the default is <code>false</code></td>
+        
+</tr>
+      
+</table>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Nested Elements</h2>
+
+      
+<div class="section">
+<h3>xmlcatalog</h3>
+
+        
+<p>
+          The <code>xmlcatalog</code> element can be used to perform Entity and
+          URI resolution. This is a built-in Ant type. See the
+          <a href="http://ant.apache.org/" title="">Ant documentation</a> for details.
+        </p>
+
+        
+<div class="note">
+          The <b>webxmlmerge</b> task resolves the DTDs of web-app
+          descriptors (version 2.2 as well as 2.3) automatically to copies
+          stored in the JAR. So normally, you shouldn't need to specify a
+          nested <code>xmlcatalog</code> element. Further, actually
+          specifying it will disable the default behaviour, and you'll need
+          to provide the web-app DTDs yourself.
+        </div>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Examples</h2>
+
+      
+<p>
+        The following example demonstrates the simplest-possible use of the
+        task.
+      </p>
+
+      
+<div class="source">
+<pre>
+&lt;webxmlmerge srcfile="${src.conf.dir}/web.xml"
+    destfile="${build.conf.dir}/web.xml"
+    mergefile="${cactus.ant.home}/confs/web.xml"/&gt;
+</pre>
+</div>
+
+      
+<p>
+        To improve speed of the parsing process and enable offline operation,
+        you should specify local paths to the web-app DTDs using a nested
+        <code>xmlcatalog</code> element:
+      </p>
+
+      
+<div class="source">
+<pre>
+&lt;webxmlmerge srcfile="${src.conf.dir}/web.xml"
+    destfile="${build.conf.dir}/web.xml"
+    mergefile="${cactus.ant.home}/confs/web.xml"&gt;
+  &lt;xmlcatalog&gt;
+    &lt;dtd publicid="-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+        location="${src.dtd.dir}/web-app_2_2.dtd"/&gt;
+    &lt;dtd publicid="-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        location="${src.dtd.dir}/web-app_2_3.dtd"/&gt;
+  &lt;/xmlcatalog&gt;
+&lt;/webxmlmerge&gt;
+</pre>
+</div>
+
+      
+<p>
+        The following example demonstrates using an <code>xmlcatalog</code>
+        by reference, so that it can also be used in other tasks (for 
+        example to validate the descriptors). In addition, the
+        <code>indent</code> attribute is set to <code>yes</code> to achieve
+        better readability of the resulting descriptor.
+      </p>
+
+      
+<div class="source">
+<pre>
+&lt;xmlcatalog id="j2ee.dtds"&gt;
+  &lt;dtd publicid="-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+      location="${src.dtd.dir}/web-app_2_2.dtd"/&gt;
+  &lt;dtd publicid="-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+      location="${src.dtd.dir}/web-app_2_3.dtd"/&gt;
+&lt;/xmlcatalog&gt;
+
+&lt;webxmlmerge srcfile="${src.conf.dir}/web.xml"
+    destfile="${build.conf.dir}/web.xml"
+    mergefile="${cactus.ant.home}/confs/web.xml"
+    indent="yes"&gt;
+  &lt;xmlcatalog refid="j2ee.dtds"/&gt;
+&lt;/webxmlmerge&gt;
+</pre>
+</div>
+
+    
+</div>
+
+  
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

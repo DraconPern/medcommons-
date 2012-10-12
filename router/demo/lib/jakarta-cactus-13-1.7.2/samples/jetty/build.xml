@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+
+<!--
+  =============================================================================
+    Build file for the Cactus Jetty Sample subproject (it shows how to use
+    Cactus and Jelly in an integrated way for unit testing the Servlet API : 
+    Servlets, Fitlers, Taglibs).
+
+    The following Ant tasks need to be available in your ant installation (i.e.
+    the Ant task themselves and their dependent jars need to be put in
+    ANT_HOME/lib) :
+
+        junit                  [REQUIRED] JUnit Ant task
+
+    The mandatory and optional Ant properties are defined in
+    build.properties.sample. Please read and edit that file.
+
+    This script should be started with the following command line :
+
+        ant <target>
+
+    Run "ant -projecthelp" to get a list of available targets. The default
+    target is "dist"
+  =============================================================================
+-->
+<project name="Cactus Jetty Sample" default="test" basedir=".">
+
+  <!-- Give user a chance to override without editing this file
+       (and without typing -D each time it compiles it) -->
+  <property file="build.properties" />
+  <property file="${user.home}/build.properties" />
+
+  <!-- Global project properties -->
+  <property name="project.name.text" value="Cactus Jetty Sample"/>
+  <property name="project.name.file" value="sample-jetty"/>
+  <property name="project.version" value="1.7.2"/>
+
+  <!-- Prefix to add to all distributable files -->
+  <property name="project.prefix" value="jakarta-"/>
+
+  <!-- Generic properties -->
+  <property name="year" value="2000-2004"/>
+  <property name="debug" value="on"/>
+  <property name="optimize" value="off"/>
+  <property name="deprecation" value="off"/>
+
+  <!-- Properties for the Cactus tests -->
+  <property name="cactus.port" value="8080"/>
+  <property name="tools.jar" location="${java.home}/../lib/tools.jar"/>
+
+  <!--
+     ========================================================================
+       Set the properties related to the source tree.
+     ========================================================================
+  -->
+  <property name="src.dir" location="src"/>
+  <property name="src.java.dir" location="${src.dir}/java"/>
+  <property name="src.conf.dir" location="${src.dir}/conf"/>
+  <property name="src.cactus.dir" location="${src.dir}/test-cactus"/>
+  <property name="src.webapp.dir" location="${src.dir}/webapp"/>
+
+  <!--
+     ========================================================================
+       Set the properties related to the target area
+     ========================================================================
+  -->
+  <!-- Destination locations for the build -->
+  <property name="target.dir" location="target"/>
+  <property name="target.classes.dir" location="${target.dir}/classes"/>
+  <property name="target.classes.java.dir"
+      location="${target.classes.dir}/java"/>
+  <property name="target.classes.cactus.dir"
+      location="${target.classes.dir}/cactus"/>
+  <property name="target.testreports.dir"
+      location="${target.dir}/test-reports"/>
+
+  <!-- Distribution directory, i.e. where the expanded distibutable files
+       are located -->
+  <property name="dist.dir" location="dist"/>
+
+  <!--
+     ========================================================================
+       Set the properties related to the required libraries
+     ========================================================================
+  -->
+
+  <!-- Libraries required for the sample project -->
+  <property name="servlet.jar"
+      location="../../lib/servletapi-2.3.jar"/>
+  <path id="project.classpath">
+    <pathelement location="${servlet.jar}"/>
+  </path>
+
+  <!-- Libraries required for the Cactus tests -->
+  <property name="aspectjrt.jar"
+      location="../../lib/aspectjrt-1.2.1.jar"/>
+  <property name="cactus.jar"
+      location="../../lib/cactus-1.7.2.jar"/>
+  <property name="cargo.jar"
+      location="../../lib/cargo-0.5.jar"/>
+  <property name="commons.httpclient.jar"
+      location="../../lib/commons-httpclient-2.0.2.jar"/>
+  <property name="commons.logging.jar"
+      location="../../lib/commons-logging-1.0.4.jar"/>
+  <property name="jasper-compiler.jar"
+      location="../../lib/jasper-compiler-4.1.30.jar"/>
+  <property name="jasper-runtime.jar"
+      location="../../lib/jasper-runtime-4.1.30.jar"/>
+  <property name="jetty.jar"
+      location="../../lib/org.mortbay.jetty-4.2.17.jar"/>
+  <property name="junit.jar"
+      location="../../lib/junit-3.8.1.jar"/>
+
+  <path id="cactus.classpath">
+    <path refid="project.classpath"/>
+    <pathelement location="${aspectjrt.jar}"/>
+    <pathelement location="${cactus.jar}"/>
+    <pathelement location="${cargo.jar}"/>
+    <pathelement location="${commons.httpclient.jar}"/>
+    <pathelement location="${commons.logging.jar}"/>
+    <pathelement location="${jasper-compiler.jar}"/>
+    <pathelement location="${jasper-runtime.jar}"/>
+    <pathelement location="${jetty.jar}"/>
+    <pathelement location="${junit.jar}"/>
+    <pathelement location="${clover.jar}"/>
+  </path>
+
+  <!--
+     ========================================================================
+       Initialize the build. Must be called by all targets
+     ========================================================================
+  -->
+  <target name="init">
+
+    <condition property="properties.ok">
+      <and>
+        <available file="${servlet.jar}"/>
+      </and>
+    </condition>
+    <fail unless="properties.ok">Missing property or property pointing to an invalid file
+(check your build.properties file)</fail>
+
+    <tstamp/>
+
+  </target>
+
+  <!--
+     ========================================================================
+       Compiles the sources
+     ========================================================================
+  -->
+  <!-- Compiles the java sources -->
+  <target name="compile.java" depends="init">
+
+    <mkdir dir="${target.classes.java.dir}"/>
+    <javac destdir="${target.classes.java.dir}"
+        deprecation="${deprecation}" optimize="${optimize}">
+      <src path="${src.java.dir}"/>
+      <classpath>
+        <path refid="project.classpath"/>
+      </classpath>
+    </javac>
+
+  </target>
+
+  <!-- Compiles the Cactus test sources -->
+  <target name="compile.cactus" depends="compile.java">
+
+    <mkdir dir="${target.classes.cactus.dir}"/>
+    <javac destdir="${target.classes.cactus.dir}"
+        deprecation="${deprecation}" optimize="${optimize}">
+      <src path="${src.cactus.dir}"/>
+      <classpath>
+        <path refid="cactus.classpath"/>
+        <pathelement location="${httpunit.jar}"/>
+        <pathelement location="${target.classes.java.dir}"/>
+      </classpath>
+    </javac>
+
+  </target>
+
+  <target name="compile" depends="compile.java, compile.cactus"
+      description="Compile the sources"/>
+
+  <!--
+     ========================================================================
+       Create the runtime war file
+     ========================================================================
+  -->
+  <target name="war" depends="compile.java"
+      description="Generate the runtime war">
+
+    <war warfile="${target.dir}/${project.name.file}.war"
+         webxml="${src.webapp.dir}/WEB-INF/web.xml">
+      <classes dir="${target.classes.java.dir}"/>
+    </war>
+
+  </target>
+
+  <!--
+     ========================================================================
+       Generate the distributable files
+     ========================================================================
+  -->
+  <target name="dist" depends="clean, war, test"
+      description="Generate the distributable files">
+
+    <copy todir="${dist.dir}"
+        file="${target.dir}/${project.name.file}.war"/>
+
+  </target>
+
+  <!--
+     ========================================================================
+       Clean generated files (including distributables)
+     ========================================================================
+  -->
+  <target name="clean" depends="init" description="Clean all generated files">
+
+    <delete dir="${target.dir}"/>
+    <delete dir="${dist.dir}"/>
+
+  </target>
+
+  <!--
+     ========================================================================
+       Run the tests on Jetty.
+     ========================================================================
+  -->
+  <target name="test" depends="compile">
+
+    <mkdir dir="${target.testreports.dir}"/>
+
+    <junit fork="yes" failureproperty="tests.failed">
+      <sysproperty key="cactus.contextURL"
+          value="http://localhost:${cactus.port}/test"/>
+      <sysproperty key="cactus.jetty.resourceDir" file="${src.webapp.dir}"/>
+      <sysproperty key="cactus.jetty.config" file="${src.conf.dir}/jetty.xml"/>
+      <classpath>
+        <path refid="cactus.classpath"/>
+        <pathelement location="${target.classes.java.dir}"/>
+        <pathelement location="${target.classes.cactus.dir}"/>
+        <pathelement location="${tools.jar}"/>
+      </classpath>
+      <formatter type="brief" usefile="false"/>
+      <formatter type="xml"/>
+      <test todir="${target.testreports.dir}"
+          name="org.apache.cactus.sample.jetty.TestJettyAll"/>
+    </junit>
+
+    <junitreport todir="${target.testreports.dir}">
+      <fileset dir="${target.testreports.dir}" includes="TEST-*.xml"/>
+      <report todir="${target.testreports.dir}" format="frames"/>
+    </junitreport>
+
+    <fail if="tests.failed">At least one test failed!</fail>
+
+  </target>
+
+</project>

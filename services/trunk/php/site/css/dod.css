@@ -1,0 +1,24 @@
+@import url('/css/medCommonsStyles.css');
+
+.dicomUploadPage #topheader {margin-top: 20px;}
+.dicomUploadPage #footer {border-top:1px solid #ddd; color:#d7d7d9; font-size:10px;} 
+.dicomUploadPage #footer a { color: #d7d7d9}
+.dicomUploadPage .listinlinetiny{ margin:0; padding:0; }
+.dicomUploadPage #topheader {margin-top: 20px;}
+.dicomUploadPage #footer {border-top:1px solid #ddd; color:#d7d7d9; font-size:10px;} 
+.dicomUploadPage #footer a { color: #d7d7d9}
+.dicomUploadPage .listinlinetiny{ margin:0; padding:0; }
+body.dicomUploadPage {
+ padding-left:100px; padding-right:100px; margin:0; 
+ background-color: #fff;
+ font: 1em arial, sans-serif;
+ color: #000;
+}
+
+.dicomUploadPage #content #upload h2,  #topmid h2 { font: 1.6em arial, sans-serif;color : #b3b3b3; }
+.dicomUploadPage .appfeatures { border: 1px solid; padding:30px; margin-top:20px;margin-bottom:20px;  }
+
+.dicomUploadPage #main h2 { /* override content from main template due to modified heading size */
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+}

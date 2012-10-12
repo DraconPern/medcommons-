@@ -1,0 +1,124 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,img,a,b,abbr,acronym,big,cite,code,del,em,i,ins,small,strike,strong,u,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td 
+{background:transparent;font-size:100%;vertical-align:baseline;padding:0;outline:0;border:0;margin:0;}
+body {color:#333;font:.75em/150% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+a,a:link,a:active,a:visited {color: #5987ac;text-decoration:none;outline:none;}
+a:focus {outline:none;}
+
+.left {float:left;}
+.right {float:right;}
+.clear {clear:both;}
+.note {font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;}
+.highlight {background-color:#f7f8b6;}
+.nomargin,#xs_main .nomargin {margin:0;}
+.noclear {clear:none;}
+.nopadding {padding:0;}
+ 
+body {background-color:#fff; padding-top:6px; padding-left:10px; width:760px;}
+body.break {background-color:#fff;}
+
+#ContentBoxInterior   { padding-top: 2px;     padding-left: 0px;    margin-bottom: 5px;    text-align: left;    float:left;   }
+#ContentBoxInterior p { margin-left: 20px;  margin-right: 10px;}
+#ContentBoxInterior a:hover {text-decoration:underline;}
+.tfm, #ContentBoxInterior h1,#ContentBoxInterior h2,#ContentBoxInterior h3,#ContentBoxInterior h4,#ContentBoxInterior h5,#ContentBoxInterior h6 {color:#3b5269;font:100% Rockwell,Georgia,"Times New Roman",Times,serif;margin-bottom:.5em;}
+#ContentBoxInterior h1 {font-size:240%;}
+#ContentBoxInterior h2 {font-size:170%;margin-top:1em;}
+#ContentBoxInterior h2 span {color:#999;font:70% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+#ContentBoxInterior h2.first {margin-top:0;}
+.tfm , #ContentBoxInterior h3 {font:bold 120% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+#ContentBoxInterior p,#ContentBoxInterior ul,
+#ContentBoxInterior ol,#ContentBoxInterior blockquote {margin-bottom:1.2em;}
+#ContentBoxInterior small {color:#555;font-size:85%;}
+#ContentBoxInterior big {font-size:130%;}
+#ContentBoxInterior hr {height:1px;color:#ccc;background-color:#ccc;border:none;margin:2.5em 0;}
+#ContentBoxInterior ul {list-style-type:disc;list-style-position:inside;padding-left: 60px;}
+#ContentBoxInterior ul li { padding-bottom:.1em;}
+
+#ContentLeft{    padding: 0px 10px 0px 0px;     width:534px;      float: left;    border-right: 1px dashed #F2E9DA; }
+#ContentRight {  float: left;    width: 166px;     margin-left: 10px;    line-height: 10px;    font-size: 9px;    text-align: left;    position: relative;}
+#ContentRight h4 { line-height: 14px;    font-size: 12px;    text-align: left;    margin-left: 0px;    color: #5987ac;}
+#ContentRight img {  margin-top: 5px;    text-align: right}
+#ContentRight p {margin-left: 6px;    margin-right: 4px;}
+#ContentBottom{    float: left;    margin-top: 15px;    clear: both;}
+
+.flushleft {    text-align: left;}
+#poweredby {    text-align: center;    vertical-align: middle;}
+
+#sample_healthUrl a {    background: url(images/example_healthURL.gif) no-repeat left top;}
+#sample_healthUrl a:hover {    background: url(images/example_healthURL_ON.gif) no-repeat left top;}
+
+.errorAlert{    color: red; }
+
+.bottom_table                  {    padding: 0;    margin: 0 ;    border: none; }
+.bottom_table td             {    background-color: #fbf4e4;    color: Black;    padding: 7px;}
+.bottom_table .table_col {    background-color: #898770;    color: White;    padding: 7px;}
+.bottom_table .table_row {    background-color: #958f6d;    color: White;    padding: 7px;}
+
+/* added for good looking form input */
+div.f {  clear: both;  padding-top: 10px;  }
+div.f span.n {   float: left;  margin-left:50px;  width: 150px;  text-align: right;  }
+div.f span.q {  float: left; margin-left: 10px;  width: 400px;  text-align: left;  } 
+div.f span.q span.r {  padding: 10px; font-size: .8em;  }
+div.f span.q  a{cursor: pointer  } 
+  
+.pic  {text-align: left; margin-top: 0px;margin-bottom: 0px;padding: 0px;  }
+.pic a img {  padding-top: 7px;  border:  none; }
+  
+li.picsec {    color: #6D7E74;    font-weight: bold;    line-height: 17px;    list-style:none;    padding-top:10px;  }
+  
+ c3 { padding-left: 40px; font-size:.9em; }
+ 
+#footer {clear:both; color:#000;background:transparent;font-size:95%;  margin-top: 15px; border-top: 7px solid #494949;}
+#footer h3 {color:#000;background:transparent none no-repeat 0px 22px;font:140% Rockwell,Georgia,"Times New Roman",Times,serif;padding:12px 0 0 0;}
+#footer p {color:#000;background:transparent none no-repeat 0px 12px;font: 90% Rockwell,Georgia,"Times New Roman",Times,serif;padding:12px 0 0 0;}
+#footer h3, #footer p {margin-bottom:8px;}
+#footer ul {list-style:none;}
+#footer ul li {padding-left: 0px; padding-bottom:.1em;}
+#footer a {color: #5987ac;}
+#footer a:hover {text-decoration:underline;}
+#footer div.column-group {clear:both;width:760px;text-align:left;margin:0 auto;}
+#footer div.column {float:left;width:140px;padding-bottom:30px;}
+#footer div.last-child {float:right;text-align:right;padding-top:20px;}
+
+.screenshots h3 {margin-top:10px;}
+
+.listinline li {display: inline;}
+.listinlinetiny li {font-size: .8em; display: inline;}
+
+xmp {color: blue; background-color: #eee;}
+.custompiece {color: black; padding:10px; border: 1px solid;}
+.inperr {color:red;}
+.registerbox {color:blue; background-color: #ffc;}
+.registerbox p {clear:both;}
+
+
+.ablock h1,.ablock h2,.ablock h3 { display:inline;}
+.ablock {padding-top: 40px;}
+
+.big {font-size: 1.6em;background-color:black; color:white; margin-top:20px;}
+
+table#svctable {margin-top:20px;  border-collapse: collapse; border: 3px outset gray;}
+table#svctable td {border:1px solid gray; padding: 0.5em;}
+
+table#svctotals {margin-top:20px;  border-collapse: collapse; border:1px outset blue;}
+table#svctotals td {border:1px solid blue; padding: 0.5em;}
+
+.closed {display:none;}
+
+/* these come from the cover.css in MOD, thrown in here temporarily */
+.thead {font-size:1.2em; font-weight: 700; padding-top: 30px;}
+.tfm {margin-top:20px; margin-bottom:20px;}
+td.lcol {width: 200px;}
+td.rcol {width: 560px;}
+
+.tinst {clear: both; border:1px solid; padding: 10px; margin-top: 20px; margin-bottom: 10px;  background-color:#EEE;}
+
+#amzpay {padding-left:200px; padding-top:20px; padding-bottom:20px;}
+
+/* this is for the top headers on the standard MOD pages and website */
+#topleft img {border:0px; vertical-align:top; padding-top:2px;}
+#topleft right {border:0px; vertical-align:top;}
+#topleft  {text-align: left;vertical-align:top;}
+#topright  {text-align: right;vertical-align:top;}
+#outerbuttons form {display: inline;}
+#outerbuttons input{display: inline;}
+#voucherimg {width:60%; height: 60%; padding-left:30px; padding-top:20px; border:1px solid;}

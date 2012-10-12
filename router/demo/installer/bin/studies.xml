@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<studies>
+	<study id="873-22-7244">
+	  <patient>Dukakis, Michael - M52</patient>
+	  <time-stamp>2003-12-14 10:22</time-stamp>
+	  <description>CT Abdomen 4 series 740 Images</description>
+	  <status>Complete</status>
+	</study>	
+	
+	<study id="173-22-7244">
+	  <patient>John Carter</patient>
+	  <time-stamp>2003-12-14 10:22</time-stamp>
+	  <description>Mars Rover Landing - 620 Images</description>
+	  <status>Complete</status>
+	</study>
+	
+	<study id="873-22-7245">
+	  <patient>Kerry Weaver</patient>
+	  <time-stamp>2003-12-11 10:25</time-stamp>
+	  <description>Mental Health Exam</description>
+	  <status>Doubtful</status>
+	</study>
+	
+	<study id="873-22-7246">
+	  <patient>Robert Romano</patient>
+	  <time-stamp>2003-12-14 10:29</time-stamp>
+	  <description>Colonoscopy Results</description>
+	  <status>Complete</status>
+	</study>
+	
+	<study id="873-22-7247">
+	  <patient>Doug Ross</patient>
+	  <time-stamp>2003-12-14 15:00</time-stamp>
+	  <description>Life Force Extraction - 30 Images </description>
+	  <status>Processing</status>
+	</study>				
+</studies>

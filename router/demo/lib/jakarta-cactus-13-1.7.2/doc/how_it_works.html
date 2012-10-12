@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>Cactus Architecture</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Cactus Architecture" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus.">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list.">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus." class="currentPage">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>How it works</h1>
+
+      
+<p>
+        Click <a href="./how_it_works_uml.html" title="High level view of the inner workings of Cactus as a UML sequence diagram.">here</a> for a UML
+        sequence diagram.
+      </p>
+
+      
+<div class="figure">
+<img alt="Cactus Architecture" src="./images/archi.jpg"></div>
+
+      
+<div class="note">
+        Cactus provides several <code>TestCase</code> classes that extends the
+        JUnit <code>Testcase</code> and it also provides several kind of
+        redirectors (Servlet Redirector, JSP Redirector, ...). The diagram
+        above is a generic diagram which serves to explain the principles.
+        You'll find details for a specific redirector proxy in the next
+        section.
+      </div>
+      
+<div class="note">
+        YYYTestCase = ( ServletTestCase | FilterTestCase | JspTestCase )
+      </div>
+      
+<div class="note">
+        XXX is the name of the test case. Each YYYTestCase class contains
+        several test cases.
+      </div>
+
+      
+<p>
+        Let's go through the different steps to understand how it works. Here
+        is what happens for each <code>testXXX()</code> method in your
+        test case class (derived from <code>YYYTestCase</code>):
+      </p>
+      
+<ol>
+        
+<li>
+          The JUnit Test Runner calls a <code>YYYTestCase.runTest()</code>
+          method. This method first looks for a <code>begin(WebRequest)</code>
+          method and executes it if found. Note that this method is called 
+          before each test. The <code>WebRequest</code> parameter passed to 
+          the <code>beginXXX()</code> method is used to set the HTTP headers, 
+          the HTTP parameters, ... that will be sent in step 2 to the Redirector 
+          proxy. The <code>runTest()</code> method then looks for a 
+          <code>beginXXX(WebRequest)</code> method and executes it if
+          found.
+        </li>
+        
+<li>
+          The <code>YYYTestCase.runTest()</code> method then opens an HTTP
+          connection to the Redirector proxy. All the parameters set up
+          in the <code>beginXXX()</code> method are sent in the HTTP request
+          (HTTP headers, HTTP parameters, ...)
+        </li>
+        
+<li>
+          The Redirector proxy acts as a proxy on the server side for your
+          test case class. It means that your test case class is instantiated
+          twice: once on the client side (by the JUnit Test Runner) and once
+          on the server side (by the Redirector proxy). The client side
+          instance is used for executing the
+          <code>begin()</code>, <code>beginXXX()</code>, <code>endXXX()</code> 
+          and <code>end()</code> methods (see
+          steps 1 and 8) and the server side instance is used for executing
+          the <code>testXXX()</code> methods (see step 4). The Redirector
+          proxy does the following:
+          <ul>
+            
+<li>
+              creates an instance of your test class using reflection. It
+              then sets specific implicit objects (which are class
+              variables of <code>YYYTestCase</code>). These implicit objects
+              depend on the redirector proxy (see next section).
+            </li>
+            
+<li>
+              creates instances of Cactus wrappers for some server objects
+              (<code>HttpServletRequest</code>, <code>ServletConfig</code>,
+              <code>ServletContext</code>, ...). This is to be able to
+              to override some methods in order to return simulated values.
+              For example, the Cactus framework can simulate an URI (i.e.
+              act as if this URI was called instead of the Redirector proxy
+              URI). Thus, the <code>getServerName()</code>,
+              <code>getServerPort()</code>,
+              <code>getRequestURI()</code>, ... methods return values based
+              on the simulated URI (if there is any defined by the user).
+            </li>
+            
+<li>
+              creates an HTTP Session if the user has expressed the wish
+              (using the
+              <code>WebRequest.setAutomaticSession(boolean)</code>
+              code in the <code>beginXXX()</code> method. By default a session
+              is always created) and the redirector fills by reflection the
+              <code>session</code> implicit object.
+            </li>
+          
+</ul>
+        
+</li>
+        
+<li>
+          The <code>setUp()</code>, <code>testXXX()</code>
+          and <code>tearDown()</code> methods of your test class are executed
+          (in that order). They are called by the Redirector proxy using
+          reflection. Of course, <code>setUp()</code> and
+          <code>tearDown()</code> are optional (same as in JUnit).
+        </li>
+        
+<li>
+          Your <code>testXXX()</code> method calls your server
+          side code to test, executing the test and using the JUnit assert API
+          to assert the result (<code>assert()</code>,
+          <code>assertEquals()</code>, <code>fail()</code>, ...)
+        </li>
+        
+<li>
+          If the test fails, your <code>testXXX()</code> methods
+          throws exceptions which are caught by the Redirector proxy.
+        </li>
+        
+<li>
+          If an exception has been raised, the Redirector proxy returns the
+          information about the exception (its name, class, stack trace) back
+          to the client side. Information about the exception will then be
+          printed by JUnit in its Test Runner console.
+        </li>
+        
+<li>
+          If no exception occurred, the <code>YYYTestCase.runTest()</code>
+          method looks for an <code>endXXX(org.apache.cactus.WebResponse)</code>
+          or <code>endXXX(com.meterware.httpunit.WebResponse)</code> method (this
+          signature is used for <a href="./writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">HttpUnit
+          integration</a>) and executes it if found. At this stage,
+          you have the opportunity to check returned HTTP headers, Cookies and
+          the servlet output stream in the <code>endXXX()</code> method, again
+          using JUnit asserts and helper utility classes provided by Cactus.
+          Then the <code>runTest()</code> methods looks for an
+          <code>end(org.apache.cactus.WebResponse)</code> or
+          <code>end(com.meterware.httpunit.WebResponse)</code> method and calls
+          it if found. This <code>end()</code> method is called after each test.
+        </li>
+      
+</ol>
+
+      
+<div class="section">
+<h2>Redirector Proxies</h2>
+
+        
+<p>
+          Cactus provides 3 implementations of Redirector Proxies
+          (see the <a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">TestCase Howto</a>
+          tutorial for more details on how to use these redirectors):
+        </p>
+        
+<ul>
+          
+<li>
+            
+<i>A Servlet Redirector</i>. This redirector is a servlet that
+            should be used for unit testing servlet methods or any java class
+            that uses servlet objects (<code>HttpServletRequest</code>, ...)
+          </li>
+          
+<li>
+            
+<i>A JSP Redirector</i>. This redirector is a JSP page that
+            should be used for unit testing server code that need access to
+            JSP implicit objects (<code>PageContext</code>, ...). The JSP
+            Redirector should be used to unit test custom Tag libraries.
+          </li>
+          
+<li>
+            
+<i>A Filter Redirector</i>. This redirector is a Servlet Filter
+            that should be uses for unit testing Servlet Filters or any java
+            class that uses filter objects (<code>FilterConfig</code>, ...).
+          </li>
+        
+</ul>
+
+        
+<div class="section">
+<h3>Servlet Redirector Proxy</h3>
+
+          
+<div class="figure">
+<img alt="Servlet Redirector Architecture" src="./images/archi_servlet.jpg"></div>
+
+          
+<p>
+            The client side opens 2 HTTP connections to the Servlet redirector.
+            Once to execute the tests and retrieve the servlet output stream and
+            a second time to get the test result. This is to be able to get
+            the exception data (message, stack trace, ...) if the test failed.
+            The test results are stored in a variable which is put in the
+            <code>ServletContext</code> and then retrieved on the second HTTP
+            connection.
+          </p>
+
+        
+</div>
+
+        
+<div class="section">
+<h3>JSP Redirector Proxy</h3>
+
+          
+<div class="figure">
+<img alt="JSP Redirector Architecture" src="./images/archi_jsp.jpg"></div>
+
+          
+<p>
+            The client side opens 2 HTTP connections to the JSP redirector.
+            Once to execute the tests and retrieve the servlet output stream and
+            a second time to get the test result. This is to be able to get
+            the exception data (message, stack trace, ...) if the test failed.
+            The test results are stored in a variable which is put in the
+            <code>ServletContext</code> and then retrieved on the second HTTP
+            connection.
+          </p>
+
+        
+</div>
+
+        
+<div class="section">
+<h3>Filter Redirector Proxy</h3>
+
+          
+<div class="figure">
+<img alt="Filter Redirector Architecture" src="./images/archi_filter.jpg"></div>
+
+          
+<p>
+            The client side opens 2 HTTP connections to the Filter redirector.
+            Once to execute the tests and retrieve the servlet output stream and
+            a second time to get the test result. This is to be able to get
+            the exception data (message, stack trace, ...) if the test failed.
+            The test results are stored in a variable which is put in the
+            <code>ServletContext</code> and then retrieved on the second HTTP
+            connection.
+          </p>
+
+        
+</div>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

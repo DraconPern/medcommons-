@@ -1,0 +1,345 @@
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+ Copyright 2004 MedCommons Inc.   All Rights Reserved.
+-->
+  <head>
+    <title>XDS Submit Document</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+      body {
+        font-family: arial,helvetica;
+      }
+
+      td {
+        font-size: 12px;
+        text-align: left;
+      }
+    </style>
+    <script language="Javascript">
+      function checkClose() {
+        
+      }
+    </script>
+  </head>
+  <body style="position: relative; left: 10px;" onload="checkClose();">
+    
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#7F9991">
+        <tr><td align="left" valign=" top" rowspan=3 height=50 width=246>
+          <img src="images/MEDcommons_logo_246x50.gif" height="50" width="246"></td>
+        </tr>
+
+        <tr><td align="right" valign="bottom" class =" text">&nbsp;</td></tr>
+        <tr>
+          <td align="right" valign="bottom"><p>
+          
+          </p></td>
+        </tr>
+   </table>
+<h1> XDS Document Submission </h1>
+
+<h3 class="headline"> Provide and Register document to XDS Repository </h3>
+<form method="post" name="submitDocument" action="/router/XdsSubmitDocument" enctype="multipart/form-data">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="500">
+<tbody>
+<tr> 
+  <td align="right">sourcePatientId</td>
+  <td><input name="sourcePatientId" type="text"></td>
+</tr>
+<tr> 
+  <td align="right">sourcePatientInfo</td>
+  <td><input name="sourcePatientInfo" type="text"></td>
+</tr>
+<tr> 
+  <td align="right">authorPerson</td>
+  <td><input name="authorPerson" type="text" value="^Welby^Marcus^^^Dr^MD"></td>
+</tr>
+<tr> 
+  <td align="right">authorDepartment</td>
+  <td><input name="authorDepartment" type="text" value="Laboratory"></td>
+</tr>
+<tr> 
+  <td align="right">authorInstitution</td>
+  <td><input name="authorInstitution" type="text" value="MedCommons Clinic"></td>
+</tr>
+<tr> 
+  <td align="right">legalAuthenticator</td>
+  <td><input name="legalAuthenticator" type="text" value="^Welby^Marcus^^^Dr^MD"></td>
+</tr>
+<tr> 
+  <td align="right">folderName</td>
+  <td><input name="folderName" type="text" value="FOLDER"></td>
+</tr>
+<tr> 
+  <td align="right">folderDescription</td>
+  <td><input name="folderDescription" type="text" value="Test Folder"></td>
+</tr>
+<tr> 
+  <td align="right">folderUuid</td>
+  <td><input name="folderUuid" type="text" value="theFolder"></td>
+</tr>
+
+<tr> 
+  <td align="right">servicesStartTime</td>
+  <td><input name="servicesStartTime" type="text" value="20050101125959"></td>
+</tr>  	
+<tr> 
+  <td align="right">servicesStopTime</td>
+  <td><input name="servicesStopTime" type="text" value="20050102125959"></td>
+</tr> 
+<tr> 
+  <td align="right">creationTime</td>
+  <td><input name="creationTime" type="text" value="20050101120000"></td>
+</tr>  	
+<tr> 
+  <td align="right">languageCode</td>
+  <td><input name="languageCode" type="text" value="en-us"></td>
+</tr> 
+
+
+<tr> 
+  <td align="right">id</td>
+  <td><input name="id" type="text" value=""></td>
+</tr> 	
+<tr> 
+  <td align="right">uniqueIdentifier</td>
+  <td><input name="uniqueIdentifier" type="text" value="36784664"></td>
+</tr> 
+<tr> 
+  <td align="right">contentTypeCode</td>
+  <td><SELECT name="contentTypeCode">
+	<OPTION value="Communication">Communication
+    <OPTION value="Evaluation and management">Evaluation and management
+    <OPTION value="Conference">Conference
+    <OPTION value="Case conference">Case conference
+    <OPTION value="Consult">Consult
+    <OPTION value="Confirmatory consultation">Confirmatory consultation
+    <OPTION value="Counseling">Counseling
+    <OPTION value="Group counseling">Group counseling
+    <OPTION value="Education">Education
+    <OPTION value="History and Physical">History and Physical
+    <OPTION value="Admission history and physical">Admission history and physical
+    <OPTION value="Comprehensive history and physical">Comprehensive history and physical
+    <OPTION value="Targeted history and physical">Targeted history and physical
+    <OPTION value="Initial evaluation">Initial evaluation
+    <OPTION value="Admission evaluation">Admission evaluation
+    <OPTION value="Pre-operative evaluation and management">Pre-operative evaluation and management
+    <OPTION value="Subsequent evaluation">Subsequent evaluation
+    <OPTION value="Summarization of episode">Summarization of episode
+    <OPTION value="Transfer summarization">Transfer summarization
+    <OPTION value="Discharge summarization">Discharge summarization
+    <OPTION value="Summary of death">Summary of death
+    <OPTION value="Transfer of care referral">Transfer of care referral
+    <OPTION value="Supervisory direction">Supervisory direction
+    <OPTION value="Telephone encounter">Telephone encounter
+    <OPTION value="Interventional Procedure">Interventional Procedure
+    <OPTION value="Operative">Operative
+    <OPTION value="Pathology Procedure">Pathology Procedure
+    <OPTION value="Autopsy">Autopsy
+    </SELECT>
+</td>
+</tr>  	
+<tr> 
+  <td align="right">healthCareFacilityTypeCode</td>
+  <td>
+  	<SELECT name="healthCareFacilityTypeCode">
+    <OPTION value="Home">Home 
+    <OPTION value="Assisted Living">Assisted Living 
+    <OPTION value="Home Health Care">Home Health Care 
+    <OPTION value="Hospital Setting">Hospital Setting 
+    <OPTION value="Acute care hospital">Acute care hospital 
+    <OPTION value="Hospital Unit">Hospital Unit 
+    <OPTION value="Critical Care Unit">Critical Care Unit 
+    <OPTION value="Emergency Department">Emergency Department 
+    <OPTION value="Observation Ward">Observation Ward 
+    <OPTION value="Rehabilitation hospital">Rehabilitation hospital 
+    <OPTION value="Nursing Home">Nursing Home 
+    <OPTION value="Skilled Nursing Facility">Skilled Nursing Facility 
+    <OPTION value="Outpatient" SELECTED>Outpatient 
+    </SELECT>
+    </td>
+</tr> 
+<tr> 
+  <td align="right">confidentialityCode</td>
+  <td>
+  <SELECT NAME="confidentialityCode">
+  <OPTION value="C">Celebrity 
+<OPTION value="D">Clinician 
+<OPTION value="I">Individual 
+<OPTION value="N">Normal 
+<OPTION value="R">Restricted 
+<OPTION value="S">Sensitive 
+<OPTION value="T" SELECTED>Taboo 
+</SELECT>
+</td>
+</tr>  	
+<tr> 
+  <td align="right">practiceSettingCode</td>
+  <td>
+  <SELECT NAME="practiceSettingCode">
+    <OPTION VALUE="Case Manager">Case Manager 
+    <OPTION VALUE="Chemotherapy">Chemotherapy 
+    <OPTION VALUE="Chiropractic">Chiropractic 
+    <OPTION VALUE="Critical Care">Critical Care 
+    <OPTION VALUE="Diabetology">Diabetology 
+    <OPTION VALUE="Dialysis">Dialysis 
+    <OPTION VALUE="Emergency">Emergency 
+    <OPTION VALUE="Endocrinology">Endocrinology 
+    <OPTION VALUE="Gastroenterology">Gastroenterology 
+    <OPTION VALUE="General Medicine">General Medicine 
+    <OPTION VALUE="General Surgery">General Surgery 
+    <OPTION VALUE="Labor and Delivery">Labor and Delivery 
+    <OPTION VALUE="Laboratory">Laboratory 
+    <OPTION VALUE="Multidisciplinary">Multidisciplinary 
+    <OPTION VALUE="Neonatal Intensive Care">Neonatal Intensive Care 
+    <OPTION VALUE="Neurosurgery">Neurosurgery 
+    <OPTION VALUE="Nursery">Nursery 
+    <OPTION VALUE="Nursing">Nursing 
+    <OPTION VALUE="Obstetrics">Obstetrics 
+    <OPTION VALUE="Occupational Therapy">Occupational Therapy 
+    <OPTION VALUE="Ophthalmology">Ophthalmology 
+    <OPTION VALUE="Optometry">Optometry 
+    <OPTION VALUE="Orthopedics">Orthopedics 
+    <OPTION VALUE="Otorhinolaryngology">Otorhinolaryngology 
+    <OPTION VALUE="Pathology">Pathology 
+    <OPTION VALUE="Perioperative">Perioperative 
+    <OPTION VALUE="Pharmacacy">Pharmacacy 
+    <OPTION VALUE="Physical Medicine">Physical Medicine 
+    <OPTION VALUE="Plastic Surgery">Plastic Surgery 
+    <OPTION VALUE="Podiatry">Podiatry 
+    <OPTION VALUE="Psychiatry">Psychiatry 
+    <OPTION VALUE="Pulmonary">Pulmonary 
+    <OPTION VALUE="Radiology">Radiology 
+    <OPTION VALUE="Social Services">Social Services 
+    <OPTION VALUE="Speech Therapy">Speech Therapy 
+    <OPTION VALUE="Thyroidology">Thyroidology 
+    <OPTION VALUE="Tumor Board">Tumor Board 
+    <OPTION VALUE="Urology">Urology 
+    <OPTION VALUE="Veterinary Medicine">Veterinary Medicine 
+    </SELECT>
+ </td>
+  
+</tr>  
+<tr> 
+  <td align="right">classCode</td>
+  <td><SELECT NAME="classCode">
+
+    <OPTION VALUE="Communication" SELECTED>Communication
+    <OPTION VALUE="Evaluation and management">Evaluation and management
+    <OPTION VALUE="Conference">Conference
+    <OPTION VALUE="Case conference">Case conference
+    <OPTION VALUE="Consult">Consult
+    <OPTION VALUE="Confirmatory consultation">Confirmatory consultation
+    <OPTION VALUE="Counseling">Counseling
+    <OPTION VALUE="Group counseling">Group counseling
+    <OPTION VALUE="Education">Education
+    <OPTION VALUE="History and Physical">History and Physical
+    <OPTION VALUE="Admission history and physical">Admission history and physical
+    <OPTION VALUE="Comprehensive history and physical">Comprehensive history and physical
+    <OPTION VALUE="Targeted history and physical">Targeted history and physical
+    <OPTION VALUE="Initial evaluation">Initial evaluation
+    <OPTION VALUE="Admission evaluation">Admission evaluation
+    <OPTION VALUE="Pre-operative evaluation and management">Pre-operative evaluation and management
+    <OPTION VALUE="Subsequent evaluation">Subsequent evaluation
+    <OPTION VALUE="Summarization of episode">Summarization of episode
+    <OPTION VALUE="Transfer summarization">Transfer summarization
+    <OPTION VALUE="Discharge summarization">Discharge summarization
+    <OPTION VALUE="Summary of death">Summary of death
+    <OPTION VALUE="Transfer of care referral">Transfer of care referral
+    <OPTION VALUE="Supervisory direction">Supervisory direction
+    <OPTION VALUE="Telephone encounter">Telephone encounter
+    <OPTION VALUE="Interventional Procedure">Interventional Procedure
+    <OPTION VALUE="Operative">Operative
+    <OPTION VALUE="Pathology Procedure">Pathology Procedure
+    <OPTION VALUE="Autopsy">Autopsy
+    </SELECT>
+
+ <tr>
+ <td>
+ 	Select file #1
+ </td>
+ <td>
+ 	<input type="file" name="uploadedFile1" size="100" value="">
+ </td>
+ 
+
+ 
+ </tr>
+ <tr> 
+  <td align="right">mimeType1</td>
+  <td>
+  <SELECT name="mimeType1">
+  <OPTION value="application/pdf" SELECTED>application/pdf
+    <OPTION value="text/x-cdar1+xml">text/x-cdar1+xml
+    <OPTION value="application/x-ccr+xml">application/x-ccr+xml
+    <OPTION value="application/x-hl7">application/x-hl7
+  </SELECT>
+  </td>
+</tr> 
+<tr> 
+  <td align="right">formatCode1</td>
+  <td>
+  <SELECT name="formatCode1">
+  	<OPTION value="PDF/IHE 1.x" SELECTED>PDF/IHE 1.x
+    <OPTION value="CDA/IHE 1.0">CDA/IHE 1.0
+    <OPTION value="CCR/IHE 0.9">CCR/IHE 0.9
+  
+  </SELECT>
+  </td>
+</tr>  	
+
+  <tr>
+ <td>
+ 	Select file #2
+ </td>
+ <td>
+ 	<input type="file" name="uploadedFile2" size="100" value="">
+ </td>
+  
+
+ </tr>
+
+<tr> 
+  <td align="right">mimeType2</td>
+  <td>
+  <SELECT name="mimeType2">
+  <OPTION value="application/pdf" SELECTED>application/pdf
+    <OPTION value="text/x-cdar1+xml">text/x-cdar1+xml
+    <OPTION value="application/x-ccr+xml">application/x-ccr+xml
+    <OPTION value="application/x-hl7">application/x-hl7
+  </SELECT>
+  </td>
+</tr> 
+<tr> 
+  <td align="right">formatCode2</td>
+  <td>
+  <SELECT name="formatCode2">
+  	<OPTION value="PDF/IHE 1.x" SELECTED>PDF/IHE 1.x
+    <OPTION value="CDA/IHE 1.0">CDA/IHE 1.0
+    <OPTION value="CCR/IHE 0.9">CCR/IHE 0.9
+  
+  </SELECT>
+  </td>
+</tr>  	
+
+</tr>
+	<tr>
+	<td>
+	<INPUT TYPE=SUBMIT VALUE=Send>
+	</td>
+	</tr>
+  </tbody></table>
+<input name="stylesheet" value="ObjectNodes.xsl" type=hidden>
+</form>
+            
+
+</body>
+</html>

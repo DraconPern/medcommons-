@@ -1,0 +1,16 @@
+<jnlp spec="1.0+">
+    <information>
+        <title>DDL Channel</title>
+        <vendor>MedCommons</vendor>
+    </information>
+    <resources>
+        <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se" />
+        <jar href="ddlchannelapplet.jar" main="true" />
+    </resources>
+  <applet-desc 
+      name="DDL Channel"
+      main-class="DDLChannelApplet"
+      width="400"
+      height="200">
+  </applet-desc>
+</jnlp>

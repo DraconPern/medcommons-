@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================
+     $Id: build.xml 237 2004-08-06 04:23:15Z mquigley $
+     ====================================================================== -->
+
+<project name="router" default="world">
+
+  <!-- === globals ======================================================== -->
+
+  <property name="build.compiler" value="modern" />
+
+  <path id="compile.path">
+    <pathelement location="${build.compile.dir}" />
+    <fileset dir="lib/medcommons/common/" />
+    <fileset dir="lib/jboss/" />
+    <fileset dir="lib/dcm4che/" />
+    <fileset dir="lib/struts/" />
+  	<fileset dir="lib/commons-httpclient/" />
+  	<fileset dir="lib/jibx/" />
+  </path>
+  
+  <!-- === world ========================================================== -->
+
+  <target name="world" depends="jibx,compile,package" />
+
+  <target name="package" depends="package-services,package-ear" />
+  <target name="package-services" depends="package-config-sar,package-poller-sar,package-dmgr-sar,package-transferclient-sar" />
+  
+  <target name="package-wsr" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-services.wsr">
+      <metainf dir="src/net/medcommons/router/ws/">
+        <include name="web-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/ws/study/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-war" depends="compile">
+    <mkdir dir="build/dist/" />
+    <war destfile="build/dist/router-web.war"  webxml="src/net/medcommons/router/ws/WEB-INF/web.xml">
+	  <webinf dir="src/net/medcommons/router/ws/WEB-INF/" />
+      <lib dir="lib/struts">
+        <include name="*.jar"/>
+      </lib>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/configuration/**" />
+      	<include name="net/medcommons/router/ws/transferendpoint/**" />
+      	<include name="net/medcommons/router/transfer/**" />
+      	<exclude name="net/medcommons/router/transfer/client/**" />
+      </fileset>    	
+      <fileset dir="etc/configurations/" />
+    </war>
+  </target>
+  
+  <target name="package-config-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-config.sar">
+      <metainf dir="src/net/medcommons/router/configuration/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/configuration/**" />
+      </fileset>
+      <fileset dir="etc/configurations/" />
+    </jar>
+  </target>
+  
+  <target name="package-rcpmdb-jar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-rcpmdb.jar">
+      <metainf dir="src/net/medcommons/router/control/processor/">
+        <include name="*.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/control/processor/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-poller-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-poller.sar">
+      <metainf dir="src/net/medcommons/router/control/poller/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/control/poller/**" />
+      </fileset>      
+    </jar>
+  </target>
+  
+  <target name="package-dmgr-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-dmgr.sar">
+      <metainf dir="src/net/medcommons/router/data/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/data/**" />
+      </fileset>
+    </jar>
+  </target>
+	
+  <target name="package-transferclient-sar" depends="compile">
+  	<mkdir dir="build/dist/" />
+  	<jar destfile="build/dist/router-transferclient.sar">
+  	  <metainf dir="src/net/medcommons/router/transfer/client/">
+  	    <include name="jboss-service.xml" />
+  	  </metainf>
+  	  <fileset dir="build/classes/">
+	    <include name="net/medcommons/router/transfer/**" />
+	  </fileset>
+  	</jar>
+  </target>
+    
+  <target name="package-ear" depends="package-wsr,package-rcpmdb-jar,package-war">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router.ear">
+      <metainf dir="src/net/medcommons/router/">
+        <include name="application.xml" />
+      </metainf>
+      <fileset dir="build/dist/">
+        <include name="router-services.wsr" />
+        <include name="router-rcpmdb.jar" />
+        <include name="router-web.war" /> 
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-server" depends="jboss,deploy">
+    <mkdir dir="build/dist/" />
+    <zip destfile="build/dist/router-server.zip">
+      <fileset dir="stage/jboss-3.2.3/server/router/" />
+    </zip>
+  </target>
+	
+  <taskdef name="bind" classname="org.jibx.binding.ant.CompileTask">
+    <classpath>
+      <pathelement location="lib/jibx/bcel.jar"/>
+	  <pathelement location="lib/jibx/jibx-bind.jar"/>
+	  <pathelement location="lib/jibx/jibx-run.jar"/>
+	  <pathelement location="lib/jibx/xpp3.jar"/>  
+    </classpath>
+  </taskdef>  
+	  
+  <target name="jibx" depends="compile">
+    <bind verbose="false" load="true" binding="src/net/medcommons/router/transfer/jibx-binding.xml">
+	  <classpathset dir="build/classes/" />
+	  <classpathset dir="lib/jibx/jibx-run.jar" />
+	</bind>    
+  </target>
+
+  <target name="compile">
+    <mkdir dir="build/classes/" />
+	<javac srcdir="src/" destdir="build/classes/" debug="true">
+	  <classpath refid="compile.path" />
+	</javac>
+  </target>	
+
+  <!-- === jboss ========================================================= -->
+  
+  <target name="jboss" depends="clean-jboss">
+  	<mkdir dir="stage/" />
+    <unzip src="etc/jboss/dist/jboss-3.2.3.zip" dest="stage/" />
+    <copy todir="stage/jboss-3.2.3/server/router/">
+      <fileset dir="etc/jboss/router/" />
+    </copy>
+  </target>
+  
+  <target name="deploy" depends="world,deploy-ear">   
+    <copy todir="stage/jboss-3.2.3/server/router/deploy/">
+      <fileset dir="build/dist/">
+        <include name="router-config.sar" />
+        <include name="router-dmgr.sar" />
+      	<include name="router-transferclient.sar" />
+      </fileset>
+    </copy>
+                    
+    <mkdir dir="stage/jboss-3.2.3/server/router/deploy/deploy.last/" />
+    <copy todir="stage/jboss-3.2.3/server/router/deploy/deploy.last/">
+      <fileset dir="build/dist/">
+        <include name="router-poller.sar" />
+      </fileset>
+    </copy>
+
+    <copy todir="stage/jboss-3.2.3/server/router/lib/">
+      <fileset dir="lib/medcommons/common/">
+        <include name="common.jar" />
+      </fileset>
+      <fileset dir="lib/dcm4che/">
+        <include name="dcm4che.jar" />
+      </fileset>
+      <fileset dir="lib/commons-httpclient/">
+    	<include name="commons-httpclient-2.0.1.jar" />
+      </fileset>
+      <fileset dir="lib/jibx/">
+      	<include name="jibx-run.jar" />
+      	<include name="xpp3.jar" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="deploy-ear" depends="world">    
+    <mkdir dir="stage/jboss-3.2.3/server/router/deploy/" />
+     <copy todir="stage/jboss-3.2.3/server/router/deploy/">
+      <fileset dir="build/dist/">
+        <include name="router.ear" />
+      </fileset>
+    </copy>
+  </target>
+                    
+  <target name="clean-jboss" depends="clean">
+    <delete dir="stage/" />
+  </target>
+
+  <!-- === doc =========================================================== -->
+
+  <target name="doc" depends="xmldoc,javadoc" />
+
+  <target name="xmldoc">
+    <mkdir dir="build/doc/" />
+    <xslt basedir="doc/src/" destdir="build/doc/" extension=".html" style="doc/lib/docbook-xsl/html/docbook.xsl">
+      <param name="chapter.autolabel" expression="1" />
+      <param name="section.autolabel" expression="1" />
+      <param name="section.label.includes.component.label" expression="1" />
+    </xslt>
+  </target>
+
+  <target name="javadoc">
+  	<mkdir dir="build/doc/api/" />
+    <javadoc destdir="build/doc/api/" author="true" version="false" use="true" windowtitle="Zabbix/J" classpathref="compile.path">
+      <packageset dir="src/" defaultexcludes="yes">
+        <include name="net/medcommons/router/**" />
+      </packageset>
+
+      <doctitle><![CDATA[<h1>MedCommons Router API Docs</h1>]]></doctitle>
+      <bottom><![CDATA[<i>Copyright &#169; 2004 MedCommons, Inc. All Rights Reserved.</i>]]></bottom>
+    </javadoc>
+  </target>
+
+  <!-- === clean ========================================================== -->
+
+  <target name="clean">
+    <delete dir="build/" />
+  </target>
+  
+</project>

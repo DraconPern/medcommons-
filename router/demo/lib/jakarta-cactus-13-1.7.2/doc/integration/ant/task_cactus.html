@@ -1,0 +1,2340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Cactus Ant Task</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Cactus Ant Task" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus." class="currentPage">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+  
+<div class="section">
+<h1>Cactus Task</h1>
+
+    
+<p>
+      The task <b>cactus</b> is an extension of the
+      <b>junit</b> task that is included in Ant as an optional task.
+      <b>cactus</b> extends <b>junit</b> to enable
+      in-container tests. It features built-in support for a variety of
+      containers, but also allows testing in custom containers.
+    </p>
+
+    
+<p>
+      Here are the different steps peformed automatically by the 
+      <code>cactus</code> task:
+    </p>
+    
+<ol>
+      
+<li>
+        Deploy the cactified WAR/EAR into the target container,
+      </li>
+      
+<li>
+        If the container is not already started, start it. Otherwise, leave
+        it running,
+      </li>
+      
+<li>
+        Run the Cactus tests,
+      </li>
+      
+<li>
+        If the container was started by the <code>cactus</code> task the
+        stop it. Otherwise, leave it running.
+      </li>
+    
+</ol>
+
+    
+<p>
+      Currently the following containers are supported out of the box:
+      <ul>
+        
+<li>
+<a href="#tomcat3x">Apache Tomcat 3.x</a>
+</li>
+        
+<li>
+<a href="#tomcat4x">Apache Tomcat 4.x</a>
+</li>
+        
+<li>
+<a href="#tomcat5x">Apache Tomcat 5.x</a>
+</li>
+        
+<li>
+<a href="#jboss3x">JBoss Application Server 3.x</a>
+</li>
+        
+<li>
+<a href="#orion1x">Orion Application Server 1.x</a>
+</li>
+        
+<li>
+<a href="#orion2x">Orion Application Server 2.x</a>
+</li>
+        
+<li>
+<a href="#resin2x">Resin Server 2.x</a>
+</li>
+        
+<li>
+<a href="#resin3x">Resin Server 3.x</a>
+</li>
+        
+<li>
+<a href="#weblogic7x">WebLogic 7.x</a>
+</li>
+      
+</ul>
+    
+</p>
+    
+<p>
+      In addition if your favorite container is not in the above list, you
+      can use the <a href="#generic">Generic</a> container.
+    </p>
+
+    
+<div class="section">
+<h2>Parameters</h2>
+
+      
+<p>
+        As this task is an extension of the <b>junit</b> task, it
+        also supports all attributes that the <b>junit</b> task
+        supports. In addition, the following parameters are supported:
+      </p>
+
+      
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+        
+<tr>
+          
+<th>Name</th>
+          <th>Description</th>
+          <th>Required</th>
+        
+</tr>
+        
+<tr>
+          
+<td><b>warfile</b></td>
+          <td>
+            The web application archive that should be tested. The archive must
+            already contain everything needed for running Cactus tests (it must
+            be <i><a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">cactified</a></i>).
+          </td>
+          <td>Yes, unless the <i>earfile</i> attribute is specified</td>
+        
+</tr>
+        
+<tr>
+          
+<td><b>earfile</b></td>
+          <td>
+            The enterprise application archive that should be tested. The
+            archive must contain a web module that already contains everything
+            needed for running Cactus tests (it must be
+            <i><a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">cactified</a></i>).
+          </td>
+          <td>Yes, unless the <i>warfile</i> attribute is specified</td>
+        
+</tr>
+      
+</table>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Nested Elements</h2>
+
+      
+<p>
+        As this task is an extension of the <b>junit</b> task, it
+        also supports all the nested elements supported by the
+        <b>junit</b> task. In addition, the following nested 
+        elements are supported:
+      </p>
+
+      
+<div class="section">
+<h3>cactusproperty</h3>
+      
+        
+<p>
+          The <b>cactusproperty</b> element lets you specify the
+          name of a property file. All the properties specified in this file
+          will be read and set as System properties.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="note">
+            The <b>cactusproperty</b> element supports the following
+            parameters:
+          </div>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td>server</td>
+              <td>
+                Specifies whether the properties should be added in the Cactus
+                server side JVM ("<code>true</code>") or the Cactus client side 
+                JVM ("<code>false</code>").
+              </td>
+              <td>Yes</td>
+            
+</tr>
+          
+</table>
+</div>
+
+          
+<p>
+            Example (used for enabling Cactus logging):
+          </p>      
+
+
+<div class="source">
+<pre>
+&lt;!-- Configure the cactus task for logging --&gt;
+&lt;cactusproperty server="false"
+    propertiesFile="${target.dir}/logging_client.properties"/&gt;
+&lt;cactusproperty server="true"
+    propertiesFile="${target.dir}/logging_server.properties"/&gt;
+</pre>
+</div>
+              
+        
+</div>
+        
+      
+</div>
+
+      
+<div class="section">
+<h3>containerset</h3>
+
+        
+<p>
+          The <b>containerset</b> element lets you specify which
+          containers the tests should run against. Every element nested inside
+          this element corresponds to a container. See below for a list of 
+          container elements supported in this element.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="note">
+            The <b>containerset</b> element supports the following
+            parameters:
+          </div>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td>timeout</td>
+              <td>
+                Specifies the timeout in milliseconds after which starting up
+                a container should be given up. If the timeout is reached
+                before the container starts responding with a successful HTTP
+                status code, the build will fail.
+              </td>
+              <td>No, default is <i>3 minutes</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>proxyport</td>
+              <td>
+                By specifying this attribute it is possible to insert some
+                application that acts as a local TCP/IP proxy between the
+                test runner and the actual containers. Most importantly, that
+                includes applications that record and display the HTTP
+                transactions, which can be helpful in tracking down tricky 
+                problems.
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h3>containerclasspath</h3>
+        
+<p>
+          The optional <b>containerclasspath</b> element lets you 
+          specify additional jars that will be added to the container 
+          classpaths that are used to start/stop the containers. This is in 
+          addition to the container jars which are automatically added by the
+          <code>&lt;cactus&gt;</code> task. The <code>containerclasspath</code>
+          element behaves exactly the same as the Ant <code>classpath</code>
+          element. In most cases you will not need to use this element.
+        </p>
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Supported Containers</h2>
+
+      
+<p>
+        All elements nested in the <b>containerset</b> element
+        represent specific containers.
+      </p>
+
+      
+<p>
+        Specific container elements provide attributes and nested elements
+        as appropriate.
+      </p>
+
+      
+<div class="section">
+<h3>Common Parameters</h3>
+
+        
+<p>
+          Here is a list of parameters that are common to all containers.
+        </p>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<th>Name</th>
+            <th>Description</th>
+            <th>Required</th>
+          
+</tr>
+          
+<tr>
+            
+<td>protocol</td>
+            <td>
+              Protocol to use for communication, one of http or https. Note that
+              https will only work, if a.) JSSE is installed b.) the proper
+              certificates are installed.
+            </td>
+            <td>No, default is http</td>
+          
+</tr>
+          
+<tr>
+            
+<td>server</td>
+            <td>
+              Host name or ip of the machine running the server. Note, that
+              the built in deployment support will not work for remote hosts.
+            </td>
+            <td>No, default is localhost</td>
+          
+</tr>
+          
+<tr>
+            
+<td>port</td>
+            <td>
+              The TCP port that the container should listen to
+            </td>
+            <td>No, default is 8080</td>
+          
+</tr>
+        
+</table>
+</div>
+
+      
+</div>
+
+      
+<a name="generic">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>generic</h3>
+
+        
+<p>
+          The <b>generic</b> container supports custom containers by
+          allowing you to specify targets to be called, or tasks to executed,
+          in order to start up and shut down the container.
+        </p>
+        
+<p>
+          Note that the attributes of the <code>&lt;cactus&gt;</code> and
+          <code>&lt;containerset&gt;</code> elements are currently not used 
+          by the <code>&lt;generic&gt;</code> element.
+        </p>
+ 
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td>name</td>
+              <td>
+                A name for the container that is displayed when the tests are
+                run.
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>startuptarget</td>
+              <td>
+                The name of a target that should be called to perform the
+                starting up of the container.
+              </td>
+              <td>
+                Yes, unless there's a nested <b>startup</b> element
+              </td>
+            
+</tr>
+            
+<tr>
+              
+<td>shutdowntarget</td>
+              <td>
+                The name of a target that should be called to perform the
+                shutting down of the container.
+              </td>
+              <td>
+                Yes, unless there's a nested <b>shutdown</b> element
+              </td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>generic</b> container supports the following nested
+            elements:
+          </p>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant <i>PatternSets</i> or <i>FileSets</i> to
+              exclude specific tests from running in the container.
+            </p>
+
+          
+</div>
+
+          
+<div class="section">
+<h5>startup</h5>
+
+            
+<p>
+              A single <b>startup</b> element can be nested inside a 
+              <b>generic</b> element. Using this element, you can
+              implement the startup of the container, either by specifying a 
+              target name in the <b>target</b> attribute, or by
+              directly embedding the required Ant tasks inside the
+              <b>startup</b> element.
+            </p>
+
+          
+</div>
+
+          
+<div class="section">
+<h5>shutdown</h5>
+
+            
+<p>
+              A single <b>shutdown</b> element can be nested inside a 
+              <b>generic</b> element. Using this element, you can
+              implement the shutdown of the container, either by specifying a 
+              target name in the <b>target</b> attribute, or by
+              directly embedding the required Ant tasks inside the
+              <b>shutdown</b> element.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="jboss3x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>jboss3x</h3>
+
+        
+<p>
+          The nested element <b>jboss3x</b> allows running the tests
+          against the JBoss 3.x application server.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the JBoss 3.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>config</td>
+              <td>
+                The name of the JBoss server configuration to use. The 
+                files in this server configuration will be copied to the
+                tmp directory used to start the container.
+              </td>
+              <td>No, the default is <i>default</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that will be used to poll the server to
+                verify if it is running. Note that this port value is
+                not used to tell JBoss on what port it should listen
+                to, as is the case for the other containers (this may 
+                be implemented in the future).
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jndiport</td>
+              <td>
+                The JNDI server port on which the JBoss server has been
+                started. This attribute is only used for shutting down JBoss
+                and should only be used if you are running JBoss on a custom
+                JNDI port.
+              </td>
+              <td>No, default is 1099</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>
+                No (by default the <code>[JBOSS_HOME]/server/cactus</code> 
+                temporary directory is used)
+              </td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>jboss3x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="orion1x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>orion1x</h3>
+
+        
+<p>
+          The nested element <b>orion1x</b> allows running the tests
+          against the Orion Application Server 1.x.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the Orion 1.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>orion1x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="orion2x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>orion2x</h3>
+
+        
+<p>
+          The nested element <b>orion1x</b> allows running the tests
+          against the Orion Application Server 2.x.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the Orion 2.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>orion2x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="resin2x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>resin2x</h3>
+
+        
+<p>
+          The nested element <b>resin2x</b> allows running the tests
+          against the Resin Server 2.x.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the Resin 2.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>resinconf</td>
+              <td>
+                The configuration file to use instead of the default one
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>resin2x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="resin3x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>resin3x</h3>
+
+        
+<p>
+          The nested element <b>resin3x</b> allows running the tests
+          against the Resin Server 3.x.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the Resin 3.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>resinconf</td>
+              <td>
+                The configuration file to use instead of the default one
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>resin3x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="tomcat3x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>tomcat3x</h3>
+
+        
+<p>
+          The nested element <b>tomcat3x</b> allows running the tests
+          against the Apache Tomcat 3.x servlet container.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the Tomcat 3.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>serverxml</td>
+              <td>
+                The server configuration file to use instead of the default one
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>tomcat3x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>conf</h5>
+
+            
+<p>
+              An Ant Fileset that can be used to specify the set of files that
+              should be placed into the <b>conf</b> directory of the
+              installation directory. This fileset should not include the
+              <code>server.xml</code> file (it will be excluded if you add it)
+              as you must use the <code>serverxml</code> attribute to specify a
+              custom version of it.
+            </p>
+
+          
+</div>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="tomcat4x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>tomcat4x</h3>
+
+        
+<p>
+          The nested element <b>tomcat4x</b> allows running the tests
+          against the Apache Tomcat 4.x servlet container.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the Tomcat 4.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>serverxml</td>
+              <td>
+                The server configuration file to use instead of the default one
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>contextxml</td>
+              <td>
+                An optional <a href="http://jakarta.apache.org/tomcat/tomcat-4.1-doc/config/context.html" title="">context xml</a> 
+                file to use. Any file specified here will be copied into
+                the <code>webapps/</code> directory.
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>tomcat4x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>conf</h5>
+
+            
+<p>
+              An Ant Fileset that can be used to specify the set of files that
+              should be placed into the <b>conf</b> directory of the
+              installation directory. This fileset should not include the
+              <code>server.xml</code> file (it will be excluded if you add it)
+              as you must use the <code>serverxml</code> attribute to specify a
+              custom version of it.
+            </p>
+
+          
+</div>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="tomcat5x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>tomcat5x</h3>
+
+        
+<p>
+          The nested element <b>tomcat5x</b> allows running the tests
+          against the Apache Tomcat 5.x servlet container.
+        </p>
+
+        
+<p>
+          Note: For Tomcat 5.x, there is no <code>contextxml</code> attribute as
+          it is not required. Tomcat 5.x requires the context file to be put 
+          under the <code>conf/</code> directory (see the 
+          <a href="http://jakarta.apache.org/tomcat/tomcat-5.0-doc/config/context.html" title="">context documentation page</a>).
+          Thus you'll simply need to use the nested <code>&lt;conf&gt;</code>
+          element. Alternatively you should be able to also put your context 
+          file in <code>META-INF/context.xml</code>.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of the Tomcat 5.x server
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td>serverxml</td>
+              <td>
+                The server configuration file to use instead of the default one
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>tomcat5x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>conf</h5>
+
+            
+<p>
+              An Ant Fileset that can be used to specify the set of files that
+              should be placed into the <b>conf</b> directory of the
+              installation directory. This fileset should not include the
+              <code>server.xml</code> file (it will be excluded if you add it)
+              as you must use the <code>serverxml</code> attribute to specify a
+              custom version of it.
+            </p>
+
+          
+</div>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="weblogic7x">
+<!--anchor--></a>
+      
+<div class="section">
+<h3>weblogic7x</h3>
+
+        
+<p>
+          The nested element <b>weblogic7x</b> allows running the 
+          tests against the WebLogic 7.x J2EE container.
+        </p>
+
+        
+<div class="section">
+<h4>Parameters</h4>
+
+          
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+            
+<tr>
+              
+<th>Name</th>
+              <th>Description</th>
+              <th>Required</th>
+            
+</tr>
+            
+<tr>
+              
+<td><b>dir</b></td>
+              <td>
+                The installation directory of WebLogic 7.x. Note that this
+                should not be the the bea home directory. For example:
+                <code>c:\bea\weblogic700</code>.
+              </td>
+              <td>Yes</td>
+            
+</tr>
+            
+<tr>
+              
+<td><b>beahome</b></td>
+              <td>
+                The bea home directory. By default Cactus tries to guess the
+                bea home directory by taking the parent directory of the
+                <code>dir</code> directory (i.e. where WebLogic 7.x is
+                installed). You only need to use the <code>beahome</code> if
+                you have put your bea home directory somewhere else.
+              </td>
+              <td>No, defaults to the parent directory of dir</td>
+            
+</tr>
+            
+<tr>
+              
+<td>configXml</td>
+              <td>
+                The Weblogic <code>config.xml</code> configuration file to use 
+                instead of the default one.
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>port</td>
+              <td>
+                The TCP port that the container should listen to
+              </td>
+              <td>No, default is 8080</td>
+            
+</tr>
+            
+<tr>
+              
+<td>tmpdir</td>
+              <td>
+                The directory to which the container will be installed for the
+                tests.
+              </td>
+              <td>No (by default the system temporary directory is used)</td>
+            
+</tr>
+            
+<tr>
+              
+<td>output</td>
+              <td>
+                Name of a file to write the output of the container to. If not
+                specified, the standard output will be used
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>append</td>
+              <td>
+                Whether output should be appended to or overwrite an existing
+                file.
+              </td>
+              <td>No, default is <i>false</i></td>
+            
+</tr>
+            
+<tr>
+              
+<td>if</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name exists in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>unless</td>
+              <td>
+                Tests will only be run in the container if a property of the
+                given name doesn't exist in the current project
+              </td>
+              <td>No</td>
+            
+</tr>
+            
+<tr>
+              
+<td>jvmArgs</td>
+              <td>
+                Arguments to be passed to the JVM running the container (for
+                instance, -Xms256m -Xmx800m)
+              </td>
+              <td>No</td>
+            
+</tr>
+          
+</table>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h4>Nested Elements</h4>
+
+          
+<p>
+            The <b>tomcat4x</b> container supports the following
+            nested elements:
+          </p>
+
+          
+<div class="section">
+<h5>conf</h5>
+
+            
+<p>
+              A fileset that can be used to specify the set of files that
+              should be placed into the <b>conf</b> directory of the
+              installation directory. This fileset should not include the
+              <code>serverxml</code> file.
+            </p>
+
+          
+</div>
+
+          
+<div class="section">
+<h5>exclude</h5>
+
+            
+<p>
+              Multiple <b>exclude</b> elements can be used as in
+              standard Ant PatternSets or FileSets to exclude specific tests
+              from running in the container.
+            </p>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Examples</h2>
+
+      
+<p>
+        The following example demonstrates how to run a suite of Cactus tests
+        against three contains with builtin support (JBoss 3, Resin 2 and
+        Tomcat 4).
+      </p>
+
+      
+<div class="source">
+<pre>
+&lt;cactus warfile="${test.dir}/test.war"
+    printsummary="yes" failureproperty="tests.failed"&gt;
+  &lt;classpath&gt;
+    &lt;path refid="cactus.classpath"/&gt;
+    &lt;pathelement location="${build.classes.dir}"/&gt;
+    &lt;pathelement location="${test.classes.dir}"/&gt;
+  &lt;/classpath&gt;
+  &lt;containerset&gt;
+    &lt;jboss2x dir="${jboss3x.home}" config="default"
+        todir="${test.reports.dir}/jboss3x"/&gt;
+    &lt;resin2x dir="${resin2x.home}" port="8080"
+        todir="${test.reports.dir}/resin2x"/&gt;
+    &lt;tomcat4x dir="${tomcat4x.home}" port="8080"
+        todir="${test.reports.dir}/tomcat4x"/&gt;
+  &lt;/containerset&gt;
+  &lt;formatter type="xml"/&gt;
+  &lt;batchtest&gt;
+    &lt;fileset dir="${src.test.dir}"&gt;
+      &lt;include name="**/Test*.java"/&gt;
+      &lt;exclude name="**/TestAll.java"/&gt;
+    &lt;/fileset&gt;
+  &lt;/batchtest&gt;
+&lt;/cactus&gt;
+</pre>
+</div>
+
+      
+<p>
+        The next example shows the use of the <b>generic</b>
+        container element for starting/stopping a custom container. You need
+        to define the two targets <i>mycontainer.start</i> and
+        <i>mycontainer.stop</i>, so that the container is started up (on 
+        port 8080) before the tests are run, and shut down after the tests
+        completed. How these targets are implemented is highly dependant on
+        the container. Most likely you'll need to copy some files and use
+        the <b>&lt;java&gt;</b> task to invoke a container-provided
+        Java class that can start/stop the container.
+      </p>
+
+      
+<div class="source">
+<pre>
+&lt;cactus warfile="${test.dir}/test.war"
+    printsummary="yes" failureproperty="tests.failed"&gt;
+  &lt;classpath&gt;
+    &lt;path refid="cactus.runtime.classpath"/&gt;
+    &lt;pathelement location="${build.classes.dir}"/&gt;
+    &lt;pathelement location="${test.classes.dir}"/&gt;
+  &lt;/classpath&gt;
+  &lt;containerset&gt;
+    &lt;generic name="My Container" port="8080"&gt;
+      &lt;startup target="mycontainer.start"/&gt;
+      &lt;shutdown target="mycontainer.stop"/&gt;
+    &lt;/generic&gt;
+  &lt;/containerset&gt;
+  &lt;formatter type="xml"/&gt;
+  &lt;batchtest&gt;
+    &lt;fileset dir="${src.test.dir}"&gt;
+      &lt;include name="**/Test*.java"/&gt;
+      &lt;exclude name="**/TestAll.java"/&gt;
+    &lt;/fileset&gt;
+  &lt;/batchtest&gt;
+&lt;/cactus&gt;
+</pre>
+</div>
+
+    
+</div>
+
+  
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

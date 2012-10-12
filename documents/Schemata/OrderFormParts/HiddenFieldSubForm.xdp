@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeDesigner_V6.0" APIVersion="1.4.4057.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2004-04-23T18:32:58Z" uuid="15db6eee-6f36-4c48-9a00-660376a63a23">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.1/">
+   <subform name="form1" layout="tb" locale="en_US">
+      <pageSet>
+         <pageArea name="Page1" id="Page1">
+            <contentArea x="0.25in" y="0.25in" w="8in" h="10.5in"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform w="8in" h="10.5in">
+         <subform x="43.13mm" y="59.8mm" w="45.2049mm" h="34.0876mm">
+            <area x="0mm" y="0mm">
+               <field name="FormName" y="3.0246mm" x="0mm" w="44.4098mm" h="3.266mm" access="readOnly">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="4pt" typeface="Arial"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="14.82mm">
+                     <font size="4pt" typeface="Arial"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>TemplateName</text>
+                     </value>
+                  </caption>
+                  <value>
+                     <text>BasicOrderForm</text>
+                  </value>
+               </field>
+               <field name="Recipe" y="22.863mm" x="0mm" w="44.8676mm" h="3.266mm" access="readOnly">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="4pt" typeface="Arial"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="15.08mm">
+                     <font size="4pt" typeface="Arial"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Recipe</text>
+                     </value>
+                  </caption>
+                  <value>
+                     <text>BasicOrderRecipe</text>
+                  </value>
+               </field>
+               <field name="SignatureField1" y="6.2209mm" x="0mm" w="44.632mm" h="6.3954mm">
+                  <ui>
+                     <signature>
+                        <border>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </signature>
+                  </ui>
+                  <font size="4pt" typeface="Arial"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="14.82mm">
+                     <font size="4pt" typeface="Arial"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>MedCommons Template Signature</text>
+                     </value>
+                  </caption>
+               </field>
+               <field name="DropDownList1" y="26.0592mm" x="0mm" w="45.1483mm" h="8.0284mm">
+                  <ui>
+                     <choiceList>
+                        <border>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </choiceList>
+                  </ui>
+                  <font size="4pt" typeface="Arial"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="15.08mm">
+                     <font size="4pt" typeface="Arial"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Recipe Param Fields</text>
+                     </value>
+                  </caption>
+               </field>
+               <field name="SignatureField1" y="16.4769mm" x="0mm" w="44.632mm" h="6.3954mm">
+                  <ui>
+                     <signature>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </signature>
+                  </ui>
+                  <font size="4pt" typeface="Arial"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="14.82mm">
+                     <font size="4pt" typeface="Arial"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Partner Form  Signature</text>
+                     </value>
+                  </caption>
+               </field>
+               <draw name="StaticText1" y="0mm" x="0mm" minW="40.1467mm" minH="3.1637mm">
+                  <ui>
+                     <textEdit>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <text> Hidden Fields - normally invisible but shown here for  discussion</text>
+                  </value>
+                  <font size="4pt" typeface="Arial" weight="bold"/>
+                  <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               </draw>
+               <field name="FormName2" y="12.9471mm" x="0mm" w="45.2049mm" h="3.3915mm" access="readOnly">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="4pt" typeface="Arial"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="14.82mm">
+                     <font size="4pt" typeface="Arial"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>TemplateName</text>
+                     </value>
+                  </caption>
+                  <value>
+                     <text>BasicOrderForm</text>
+                  </value>
+               </field>
+            </area>
+         </subform>
+      </subform>
+   </subform>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?templateDesigner DefaultRunAt client?>
+   <?templateDesigner XDCFile acrobat6.xdc?>
+   <?templateDesigner Zoom 84?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/1.0/">
+   <agent name="designer">
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </agent>
+   <present>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+</xfa:datasets>
+<sourceSet xmlns="http://www.xfa.org/schema/xfa-source-set/1.0/"/>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.1/"/>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.1/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">MMM D, YYYY</datePattern>
+         <datePattern name="long">M/D/YY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">MMMM D, YYYY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A</timePattern>
+         <timePattern name="long">h:MM A</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM:SS A Z</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="minus">-</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+   </locale>
+</localeSet></xdp:xdp>

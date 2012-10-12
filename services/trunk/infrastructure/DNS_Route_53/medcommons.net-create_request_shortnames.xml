@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ChangeResourceRecordSetsRequest xmlns="https://route53.amazonaws.com/doc/2010-10-01/">
+<ChangeBatch>
+
+<Comment>
+MedCommons Dot Net DNS Database (imported from v.medcommons.net:/var/named/medcommons.net.db_030111@0235)
+</Comment>
+
+<Changes>
+
+<Change>
+
+<Comment>
+AWS i-846ac3e9 (ami-eebd4a87-ebs/boxer-prod-20091225-keypair/us-e-1d - 102910@2135)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name></Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.73.235.153</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+Postmark DKIM
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>pm._domainkey</Name>
+	<TYPE>TXT</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>"k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhAIJDOey/XAHDqfWBY1VUv4Dn9IjUKkdwPUJa/7xTzdFTEwZSlYjBuzyuvg8IuX1ualCiuoIJowqkixhKUTWBWVQYEk1QBGgvxVAPcce/MSidyk+W6DToR8IxPeEO1OuRDwIDAQAB"</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+Postmark MX
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name></Name>
+	<TYPE>TXT</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>"v=spf1 a mx include:spf.mtasv.net ~all"</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+JohnCo s000
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>ns1</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>69.55.236.141</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+JohnCo s000 (previously aka www)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>v</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>69.55.236.141</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+JohnCo s000 (previously aka www)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>j0000</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>69.55.236.141</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+ns2c.johncompanies.com
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>ns2</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>69.55.225.225</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>media</Name>
+	<TYPE>CNAME</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>s3.amazonaws.com.</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>appliance</Name>
+	<TYPE>CNAME</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>s3.amazonaws.com.</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>timcappliance</Name>
+	<TYPE>CNAME</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>s3.amazonaws.com.</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>fedora</Name>
+	<TYPE>CNAME</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>s3.amazonaws.com.</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>tst00</Name>
+	<TYPE>CNAME</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>s3.amazonaws.com.</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>adrian</Name>
+	<TYPE>CNAME</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>agropper.wordpress.com.</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+Medcommons
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>spoon</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>74.94.173.177</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS (not medcommons)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>don</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.25.86</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS (not medcommons)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>unknown</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>72.44.44.59</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+Adrian's home network
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>taco</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.189.250.201</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+The silver mine in which I live
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>beggarstomb</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>74.104.172.169</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+The silver mine in which I live
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>zs0200</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>74.104.172.169</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>home</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>globals</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>apps</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>nycbigapps</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>fb01</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>fb02</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>dev</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>spool</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>ondemand</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-fc895395 (ami-21e20648/nva-20080808-keypair/us-e-1a - 082208@1502)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0024</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.30.246</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-de8f82b5 (ami-8de90de4/boxer-prod-20091225-keypair/us-e-1b - 060810@0014)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>healthurl</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>75.101.199.153</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-de8f82b5 (ami-8de90de4/boxer-prod-20091225-keypair/us-e-1b - 060810@0014)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0068</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>75.101.199.153</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-084a9061 (ami-8de90de4/nva-20080630-keypair/us-e-1b - 082508@2355)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>piwik</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+		<Value>72.44.53.143</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-084a9061 (ami-8de90de4/nva-20080630-keypair/us-e-1b - 082508@2355)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>hot</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>72.44.53.143</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-084a9061 (ami-8de90de4/nva-20080630-keypair/us-e-1b - 082508@2355)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0026</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>72.44.53.143</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-74923f1d (ami-8de90de4/nva-20080808-keypair/us-e-1b - 100708@0154)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>svn</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.58.94</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-74923f1d (ami-8de90de4/nva-20080808-keypair/us-e-1b - 100708@0154)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>box</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.58.94</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-74923f1d (ami-8de90de4/nva-20080808-keypair/us-e-1b - 100708@0154)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>mantis</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.58.94</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-74923f1d (ami-8de90de4/nva-20080808-keypair/us-e-1b - 100708@0154)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0043</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.58.94</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-c08322a9 (ami-8de90de4/adrian-keypair/us-e-1a - 091708@0744)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>forge</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.38.199</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-c08322a9 (ami-8de90de4/adrian-keypair/us-e-1a - 091708@0744)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0044</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>67.202.38.199</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-a8fc76c1 (ami-6bf41302/none:WinNT/us-e-1c - 021209@0027)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>badboy</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>174.129.163.49</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-a8fc76c1 (ami-6bf41302/none:WinNT/us-e-1c - 021209@0027)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0053</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>174.129.163.49</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-69ba3602 (ami-8de90de4/boxer-timc-20091225-keypair/us-e-1c - 040110@1240)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>timc</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>174.129.158.221</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-69ba3602 (ami-8de90de4/boxer-timc-20091225-keypair/us-e-1c - 040110@1240)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0068</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>174.129.158.221</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Comment>
+Instances eNNNN have ebs roots (can be stopped/started). Their public/private IPs are volative (change when the instance is stopped/started).
+The ``-eip'' annotation on the AWS id indicates the IP address is an eip (elastic IP) associated with the instance. This association is also
+volatile and needs to be reassociated after the instance is restarted but the addresses themselves persist s.t. (up to the limit of available
+eips) eip associated instances can have constant ip addresses.
+</Comment>
+
+<Change>
+
+<Comment>
+AWS i-3716315d (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1b - 091210@2212)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>c0d00</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.218.174</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-3716315d (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1b - 091210@2212)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>e0062</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.218.174</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-991631f3 (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1c - 091210@2213)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>c0d01</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.218.146</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-991631f3 (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1c - 091210@2213)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0059</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.218.146</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-c7ecb3ad (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1a - 090910@1843)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>c0g000</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.217.109</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-c7ecb3ad (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1a - 090910@1843)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>e0060</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.217.109</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-bf7821d5 (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1d - 091010@1057)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>c0g001</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.217.240</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-bf7821d5 (ami-8de90de4-clone-ebs-eip/boxer-prod-20091225-keypair/us-e-1d - 091010@1057)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>e0061</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.72.217.240</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-e5c8208e (ami-8de90de4/boxer-prod-20091225-keypair/us-e-1d - 021710@2014)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>portal</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>174.129.188.158</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-e5c8208e (ami-8de90de4/boxer-prod-20091225-keypair/us-e-1d - 021710@2014)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>s0066</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>174.129.188.158</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Comment>
+Four Stooges (blotted IPs are offline/shut-down -- insert new public IPs on activation and local IPs in their /etc/hosts)
+moe			2m	in	a	*.*.*.*	; AWS i-c9ffa7a3 (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1a - 091010@2343)
+e0070		2m	in	a	*.*.*.*	; AWS i-c9ffa7a3 (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1a - 091010@2343)
+larry		2m	in	a	*.*.*.*	; AWS i-7d194217 (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1d - 091011@0031)
+e0071		2m	in	a	*.*.*.*	; AWS i-7d194217 (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1d - 091011@0031)
+curley		2m	in	a	*.*.*.*	; AWS i-e7def98d (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1b - 091013@0040)
+e0072		2m	in	a	*.*.*.*	; AWS i-e7def98d (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1b - 091013@0040)
+shemp		2m	in	a	*.*.*.*	; AWS i-d7dff8bd (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1c - 091013@0038)
+e0073		2m	in	a	*.*.*.*	; AWS i-d7dff8bd (ami-c29d68ab-ebs/boxer-prod-20091225-keypair/us-e-1c - 091013@0038)
+</Comment>
+
+<Change>
+
+<Comment>
+AWS i-88e3c0e5 (ami-eebd4a87-ebs-rcvd/boxer-prod-20091225-keypair/us-e-1d - 120810@1730)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>www</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.73.235.153</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Change>
+
+<Comment>
+AWS i-88e3c0e5 (ami-eebd4a87-ebs-rcvd/boxer-prod-20091225-keypair/us-e-1d - 120810@1730)
+</Comment>
+
+<Action>CREATE</Action>
+<ResourceRecordSet>
+	<Name>e0080</Name>
+	<TYPE>A</TYPE>
+	<TTL>120</TTL>
+	<ResourceRecords>
+		<ResourceRecord>
+			<Value>184.73.235.153</Value>
+		</ResourceRecord>
+	</ResourceRecords>
+</ResourceRecordSet>
+</Change>
+
+<Comment>
+More Stooges
+lithium		2m	in	a	*.*.*.*		; AWS i-b42046d9 (ami-1c3dca75-ebs/boxer-prod-20091225-keypair/us-e-1b - 111610@0048)
+e0078		2m	in	a	*.*.*.*		; AWS i-b42046d9 (ami-1c3dca75-ebs/boxer-prod-20091225-keypair/us-e-1b - 111610@0048)
+beryllium	2m	in	a	*.*.*.*		; AWS i-b893fdd5 (ami-6c708705-ebs/default-AWS-US-East-keypair/us-e-1c - 111810@1548)
+e0079		2m	in	a	*.*.*.*		; AWS i-b893fdd5 (ami-6c708705-ebs/default-AWS-US-East-keypair/us-e-1c - 111810@1548)
+</Comment>
+
+</Changes>
+</ChangeBatch>
+</ChangeResourceRecordSetsRequest>

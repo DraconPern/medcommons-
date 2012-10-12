@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang='en'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CCR Editor Test Application</title>
+<meta http-equiv="content-language" content="en">
+<meta name="collection" content="reference">
+
+<meta name="description" content="CCR EDITOR TEST APPLICATION">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="archive" content="FALSE">
+
+<SCRIPT language="javascript">
+var detect = navigator.userAgent.toLowerCase();
+var windowsIE = (checkPlatform("msie") && checkPlatform("win"));
+
+var host=  window.location.host;
+var protocol = window.location.protocol;
+var jnlpURL = protocol + "//" + host + "/CCREditorTest/app/ccrEditorTestApplication.jnlp"; 
+
+function launchApp() {
+
+if (windowsIE) {
+  document.write("<OBJECT CODEBASE=http://java.sun.com/update/1.6.0/jinstall-6-windows-i586.cab#Version=6,0,0,0 CLASSID=clsid:5852F5ED-8BF4-11D4-A245-0080C6F74284 HEIGHT=0 WIDTH=0>");
+  document.write("<PARAM NAME=app VALUE=" + jnlpURL + ">");
+  document.write("<PARAM NAME=back VALUE=false>");
+  document.write("</OBJECT>");
+  }
+  else {
+        if (navigator.mimeTypes && navigator.mimeTypes.length) {
+
+            if (!webstartVersionCheck("1.5")) {
+               alert("Java Web Start not installed");
+               // Java Web Start not installed; open browser window to install site
+               window.open("http://jdl.sun.com/webapps/getjava/BrowserRedirect?locale=en&host=java.com",
+               "needdownload");
+	           return;
+            }
+           window.open(jnlpURL);
+        }
+		else{
+			alert("Debug: no navigator.mimeTypes");
+		}
+    }
+}
+function webstartVersionCheck(versionString) {
+    navigator.plugins.refresh(true);
+    // First, determine if Webstart is available
+    if (navigator.mimeTypes['application/x-java-jnlp-file']) {
+        // Next, check for appropriate version family
+        for (var i = 0; i < navigator.mimeTypes.length; ++i) {
+           var pluginType = navigator.mimeTypes[i].type;
+          // alert("Plugin type:" + pluginType);
+           if (pluginType == "application/x-java-applet;version=" +  versionString) {
+               return true;
+           }
+       }
+    }
+}
+
+function checkPlatform(string) {
+place = detect.indexOf(string) + 1;
+thestring = string;
+return place;
+}
+</SCRIPT>
+</head>
+	<style type="text/css" media="all">
+@import "medCommonsStyles.css";
+</style>
+<!--stopindex-->
+
+<body id="ContentBox">
+
+<h2>CCR Editor Test Application</h2>
+	<br><i>
+	Build Time: @BuildTime@
+	</i>
+	</br>
+	<br>
+	<FONT SIZE="-2">
+	Build version:
+	@BuildVersion@
+	</FONT>
+	</br>
+<p>
+This is a test application for third party editing of CCRs. 
+
+</p>
+<P>
+Click on the link below to launch the application. If Java is not
+already installed on the client machine, it will automatically download and
+start the install of Java 6, and then after the install, it will launch the
+ Application automatically.
+</P>
+<p>
+The current application is when a web browser with mime-type "application/x-healthbook-url" is returned. The application GETs the 
+CCR 
+</p>
+
+<INPUT onclick="launchApp()" type="button" value="Install and Launch CCR Editor Test" border="0"  alt="Launch">
+<P>
+If you are prompted with a certificate challenge - select 'trust' to trust Sun (for Java) and MedCommons.
+
+If your browser can not detect that Java6 Java Web Start has been installed (e.g., MacOSX) - you may directly invoke the launch file <a href="app/ccrEditorTestApplication.jnlp">here</a>. 
+</p>
+
+<h2>Credits</h2>
+The CCR Test Edit application is an  open source application which is built on top of several other open source projects.
+<ul>
+
+<li>xmlbeans </li>
+<li>Apache (commons-logging, commons-httpclient, ...)</li>
+
+<li> ... need complete list.
+</ul>
+	 <table id="minfooter">
+          <tr>
+                <td><a href='https://www.medcommons.net/'>
+                <img alt="Powered by MedCommons" src="/images/PBMC_138x30.png" width="138" height="30"/>
+        </a></td>
+        </tr>
+     </table>
+</body>
+</html>
+
+

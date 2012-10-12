@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:astm-org:ccr" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="urn:astm-org:ccr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:astm-org:ccr">
+      <s:element name="ccr">
+        <s:complexType mixed="true">
+          <s:sequence>
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CCRResponse" type="tns:CCRResponse" />
+      <s:complexType name="CCRResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UUID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SubmitCCRSoapIn">
+    <wsdl:part name="ccr" element="tns:ccr" />
+  </wsdl:message>
+  <wsdl:message name="SubmitCCRSoapOut">
+    <wsdl:part name="SubmitCCRResult" element="tns:CCRResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CCRServiceSoap">
+    <wsdl:operation name="SubmitCCR">
+      <wsdl:input message="tns:SubmitCCRSoapIn" />
+      <wsdl:output message="tns:SubmitCCRSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CCRServiceSoap" type="tns:CCRServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="SubmitCCR">
+      <soap:operation soapAction="urn:astm-org:ccr:SubmitCCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CCRService">
+    <wsdl:port name="CCRServiceSoap" binding="tns:CCRServiceSoap">
+      <soap:address location="http://127.0.0.1:9080/router/services/CCRServiceSoap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

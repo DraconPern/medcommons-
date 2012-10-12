@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MedCommons iPad Test Page 1000px</title>
+<meta name="viewport"
+	content="minimum-scale=0.6, width=device-width, maximum-scale=1.6, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="YES">
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	background: white;
+}
+
+img {
+	border: 2px solid red;
+	padding: 0;
+margin: 20px;
+}
+</style>
+</head>
+<body>
+<center><img
+	src='http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/1000px-Apple_Computer_Logo.svg.png' />
+</center>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "www/base.html" %} 
+{% block head %}
+<style type='text/css'>
+  table tr { height: 2.3em; }
+  td.usertools * { vertical-align: middle; }
+  td.usertools .icon { position: relative; top: -2px; }
+  td { padding-left: 5px; }
+</style>
+{% endblock head %}
+{% block main %}
+
+<div id='content'>
+  <h2>MedCommons Public Access Appliance</h2>
+    <p>
+         This is a MedCommons Appliance, running as a free publicly accessible service. Use for sending and receiving CCRs and DICOM subject to our 
+          <a href="tu.html">terms of use</a>.
+        For information on how you can optionally customize and run your own appliance within
+        your enterprise, or at a hosting site, please visit the <a href="http://www.medcommons.net/">
+            MedCommons</a> website.</p>
+            
+    <p style='font-weight: bold;'>To get started in just minutes as a service provider, register your group or practice on 
+    the <a href='acct/groupsetup.php'>Practice Registration Page</a>.</p>
+       
+    <p style='font-weight: bold;'>To upload a CD to a secure temporary HealthURL and share access via voucher use the Upload Form
+    <a href='acct/dod.php'>Upload Form</a>.</p>
+       
+    <p style='font-weight: bold;'>To claim or access a voucher that you have been issued, enter the Voucher ID on 
+    the <a href='mod/voucherclaim.php'>Voucher Claim Page</a>.</p>
+       
+    
+    <div id='notloggedon'>
+
+    </div>
+</div>
+
+{% endblock main %} 

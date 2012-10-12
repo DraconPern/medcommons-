@@ -1,0 +1,11 @@
+[release-dist]
+name=Release Dist
+baseurl=http://appliance.medcommons.net/0.4.01/dist/$basearch/
+enabled=1
+gpgcheck=0
+
+[testing-dist]
+name=Testing Dist
+baseurl=http://appliance.medcommons.net/0.4.01/test/$basearch/
+enabled=0
+gpgcheck=0

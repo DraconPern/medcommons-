@@ -1,0 +1,2162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.2  (Win32)">
+	<META NAME="CREATED" CONTENT="20091005;11331500">
+	<META NAME="CHANGEDBY" CONTENT="Simon Sadedin">
+	<META NAME="CHANGED" CONTENT="20100730;16572700">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 21.59cm 27.94cm; margin-left: 2cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.71cm }
+		P { margin-bottom: 0.21cm }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt }
+		H1.cjk { font-family: "MS Mincho"; font-size: 16pt }
+		H1.ctl { font-family: "Tahoma"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Arial", sans-serif; font-size: 16pt; font-style: italic }
+		H2.cjk { font-family: "MS Mincho"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm }
+		H3.western { font-family: "Arial", sans-serif }
+		H3.cjk { font-family: "MS Mincho" }
+		H4 { margin-bottom: 0.21cm }
+		H4.western { font-family: "Arial", sans-serif; font-size: 11pt; font-style: italic }
+		H4.cjk { font-family: "MS Mincho"; font-size: 11pt; font-style: italic }
+		H4.ctl { font-size: 11pt; font-style: italic }
+		H5 { margin-bottom: 0.21cm }
+		H5.western { font-size: 11pt; font-weight: normal }
+		H5.cjk { font-family: "MS Mincho"; font-size: 11pt }
+		H5.ctl { font-size: 11pt }
+		TD P { margin-bottom: 0cm }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1 CLASS="western">MedCommons TIMC Requirements</H1>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=569 BORDER=0 CELLPADDING=3 CELLSPACING=0>
+	<COL WIDTH=132>
+	<COL WIDTH=138>
+	<COL WIDTH=138>
+	<COL WIDTH=138>
+	<TR>
+		<TD WIDTH=132>
+			<P ALIGN=LEFT><B>Date </B>
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT><B>Revision </B>
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT><B>Author </B>
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT><B>Comments </B>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=132>
+			<P ALIGN=LEFT>26 October 2009 
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT>A 
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT STYLE="margin-bottom: 0cm">Simon Sadedin</P>
+			<P ALIGN=LEFT>Susan Belanich</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT>Initial Draft 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=132>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=138>
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.49cm; page-break-after: avoid"><BR><BR>
+</P>
+<DIV ID="Table of Contents1" DIR="LTR">
+	<DIV ID="Table of Contents1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Table
+		of Contents</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm">MedCommons TIMC Requirements	1</P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><A HREF="#__RefHeading__4421_1350600508">1</A>
+	Introduction	4</P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><A HREF="#__RefHeading__4423_1350600508">2</A>
+	Use Cases	4</P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">2.1 Actors	<A HREF="#__RefHeading__4425_1350600508">4</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.1.1 MedCommons
+	Administrator	<A HREF="#__RefHeading__4427_1350600508">4</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.1.2 Uploader	<A HREF="#__RefHeading__4429_1350600508">4</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.1.3 TIMC Order
+	System	<A HREF="#__RefHeading__4431_1350600508">4</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.1.4 DDL	<A HREF="#__RefHeading__4433_1350600508">4</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.1.5 Polling
+	DDL	<A HREF="#__RefHeading__4435_1350600508">4</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.1.6 TIMC PACS	<A HREF="#__RefHeading__4437_1350600508">4</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.1.7 Image
+	Analyst	<A HREF="#__RefHeading__4439_1350600508">4</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">2.2 Definitions 	<A HREF="#__RefHeading__4441_1350600508">5</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">2.3 Use Cases 	<A HREF="#__RefHeading__4443_1350600508">6</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.3.1 Upload
+	Images	<A HREF="#__RefHeading__4445_1350600508">6</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">2.3.2 Polling DDL
+	Forwards Image Data to PACS	<A HREF="#__RefHeading__4447_1350600508">6</A></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><A HREF="#__RefHeading__4449_1350600508">3</A>
+	Requirements	8</P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.1 General	<A HREF="#__RefHeading__4451_1350600508">8</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.2 Login and
+	Authorization	<A HREF="#__RefHeading__4453_1350600508">8</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.2.1 Log In	<A HREF="#__RefHeading__4455_1350600508">8</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.3 Registration	<A HREF="#__RefHeading__27555517">9</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.4 Dashboard	<A HREF="#__RefHeading__4457_1350600508">9</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.4.1
+	Navigation	<A HREF="#__RefHeading__4459_1350600508">10</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.4.2 Patient
+	List	<A HREF="#__RefHeading__4461_1350600508">10</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.5 DDL Control
+	Page	<A HREF="#__RefHeading__4463_1350600508">13</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.5.1 Header
+	Link	<A HREF="#__RefHeading__4465_1350600508">13</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.5.2 Shutdown
+	Function	<A HREF="#__RefHeading__4467_1350600508">13</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.5.3 Start DDL
+	Function	<A HREF="#__RefHeading__4469_1350600508">13</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.6 Settings	<A HREF="#__RefHeading__4471_1350600508">13</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.6.1 Tabbed
+	Display	<A HREF="#__RefHeading__4473_1350600508">13</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.6.2 Personal
+	Details	<A HREF="#__RefHeading__4475_1350600508">14</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.6.3 Password
+	Management	<A HREF="#__RefHeading__36655376">14</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.6.4 Group Tab	<A HREF="#__RefHeading__4477_1350600508">15</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.6.5 Group
+	Invitation Dialog	<A HREF="#__RefHeading__27386121">16</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.6.6 Change Name
+	Page	<A HREF="#__RefHeading__4479_1350600508">17</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.6.7 Change Email
+	Page	<A HREF="#__RefHeading__4481_1350600508">17</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.7 HealthURL and
+	Current CCR	<A HREF="#__RefHeading__32476312">18</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.7.1 CCRs	<A HREF="#__RefHeading__4483_1350600508">18</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.7.2 HealthURL	<A HREF="#__RefHeading__4485_1350600508">18</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.8 Patient
+	Information Page (PIP)	<A HREF="#__RefHeading__36672827">18</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.8.1 Header	<A HREF="#__RefHeading__4487_1350600508">18</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.8.2 Activity Log
+	Section	<A HREF="#__RefHeading__4489_1350600508">18</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.8.3 Consents
+	Display 	<A HREF="#__RefHeading__4491_1350600508">20</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.8.4 Share by
+	Phone	<A HREF="#__RefHeading__4493_1350600508">21</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.8.5 Share with
+	Open ID	<A HREF="#__RefHeading__4495_1350600508">22</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.9 Activity Logs	<A HREF="#__RefHeading__4497_1350600508">23</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.9.1 General	<A HREF="#__RefHeading__4499_1350600508">23</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.10 DICOM Upload
+	Page	<A HREF="#__RefHeading__4501_1350600508">23</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.10.1 Callers
+	Order Reference	<A HREF="#__RefHeading__4503_1350600508">23</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.10.2 Install
+	Java	<A HREF="#__RefHeading__4505_1350600508">23</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.10.3 Start
+	DDL	<A HREF="#__RefHeading__4507_1350600508">24</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.10.4 DICOM
+	Source	<A HREF="#__RefHeading__35522464">24</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.10.5 Image
+	Selection &ndash; TIMC Order	<A HREF="#__RefHeading__35584491">24</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.10.6 Send
+	Content	<A HREF="#__RefHeading__4509_1350600508">25</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.10.7 Problem
+	Reports	<A HREF="#__RefHeading__4511_1350600508">27</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.11 Vouchers	<A HREF="#__RefHeading__4513_1350600508">27</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.11.1 Claim	<A HREF="#__RefHeading__36534265">27</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.11.2 Access	<A HREF="#__RefHeading__4515_1350600508">27</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.11.3
+	Dashboard	<A HREF="#__RefHeading__4517_1350600508">28</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.11.4 Settings	<A HREF="#__RefHeading__4519_1350600508">28</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.12 Order
+	Management	<A HREF="#__RefHeading__4521_1350600508">29</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.12.1 Order
+	Creation	<A HREF="#__RefHeading__4523_1350600508">29</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.12.2 Status
+	Display	<A HREF="#__RefHeading__4525_1350600508">30</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.12.3
+	Notifications	<A HREF="#__RefHeading__4527_1350600508">31</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.12.4 Security &ndash;
+	TIMC	<A HREF="#__RefHeading__4529_1350600508">32</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.13 Viewer	<A HREF="#__RefHeading__4531_1350600508">32</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.1 Menus 	<A HREF="#__RefHeading__4533_1350600508">32</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.2 Header	<A HREF="#__RefHeading__4535_1350600508">32</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.3 CCR	<A HREF="#__RefHeading__4537_1350600508">33</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.4 CCRs and
+	Tabs	<A HREF="#__RefHeading__4539_1350600508">33</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.5 Thumbnails
+	and Scrolling	<A HREF="#__RefHeading__4541_1350600508">33</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.6 Main Image
+	Display Area	<A HREF="#__RefHeading__4543_1350600508">35</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.7 Overlays	<A HREF="#__RefHeading__34313479">35</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.13.8
+	Window/Level Presets	<A HREF="#__RefHeading__4545_1350600508">36</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.14 DDL	<A HREF="#__RefHeading__4547_1350600508">36</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.14.1 Start
+	Poller Page	<A HREF="#__RefHeading__4549_1350600508">36</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.14.2 Polling	<A HREF="#__RefHeading__39246642">37</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.14.3
+	Configuration	<A HREF="#__RefHeading__4551_1350600508">37</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.14.4 Proxy	<A HREF="#__RefHeading__4553_1350600508">38</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.14.5 Automatic
+	Restart	<A HREF="#__RefHeading__4555_1350600508">38</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.14.6 Transfer	<A HREF="#__RefHeading__4557_1350600508">38</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.14.7 Security	<A HREF="#__RefHeading__4559_1350600508">39</A></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm">3.15 Formats	<A HREF="#__RefHeading__4561_1350600508">39</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.15.1 Relative
+	Date Time	<A HREF="#__RefHeading__37511964">39</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.15.2 Full Date
+	Time	<A HREF="#__RefHeading__37232529">39</A></P>
+	<P STYLE="margin-left: 1.5cm; margin-bottom: 0cm">3.15.3 MedCommons
+	Account ID	<A HREF="#__RefHeading__4563_1350600508">40</A></P>
+</DIV>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western" STYLE="page-break-before: always"><A NAME="__RefHeading__4421_1350600508"></A>
+1Introduction</H2>
+<P>This document defines requirements for the subset of features that
+will go live for clinical use in the MedCommons TIMC project.</P>
+<H2 CLASS="western"><A NAME="__RefHeading__4423_1350600508"></A>2Use
+Cases</H2>
+<H3 CLASS="western"><A NAME="__RefHeading__4425_1350600508"></A>2.1Actors</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4427_1350600508"></A>2.1.1MedCommons
+Administrator</H4>
+<P>Staff from MedCommons may access the system in order to provide
+support, resolve issues, or perform account maintenance activities
+that may not be supported by the default features in the product.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4429_1350600508"></A>2.1.2Uploader</H4>
+<P>An Uploader is typically a doctor or imaging center personnel.  
+They do not usually  have an account or any formal identity within
+MedCommons.   They interact with upload screens to send images to
+TIMC via MedCommons.   They install DDL software on their computer to
+perform uploads.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4431_1350600508"></A>2.1.3TIMC
+Order System</H4>
+<P>The TIMC Order system calls MedCommons to create new orders, and
+to query status of existing orders.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4433_1350600508"></A>2.1.4DDL</H4>
+<P>A DDL is a software component installed by an end user.   Both
+Patients and Doctors may install a DDL.   The DDL is usually
+controlled by the Actor who installed it, however there are use cases
+where a DDL may initiate actions on its own.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4435_1350600508"></A>2.1.5Polling
+DDL</H4>
+<P>A polling DDL queries the MedCommons system for information about
+new orders and downloads them when they appear.   It will typically
+(but not necessarily) forward those orders to a PACS.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4437_1350600508"></A>2.1.6TIMC
+PACS</H4>
+<P>A PACS is computer system that receives images that are downloaded
+from MedCommons.   A Workstation may also receive images in place of
+a PACS;  in this document we will use PACS to refer to both of these
+types of systems as they both provide the same interface to
+MedCommons, which is a DICOM end-point (SCU).</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4439_1350600508"></A>2.1.7Image
+Analyst</H4>
+<P>An image analyst is a person who views images for clinical
+reasons.   Image analysts look at images through a workstation or
+examine patient information in a PACS.  Image analysts will not
+interact directly with MedCommons, however they may receive emails
+from MedCommons that serve as reminders or notifications about image
+uploads.</P>
+<H3 CLASS="western"><A NAME="__RefHeading__4441_1350600508"></A>2.2Definitions	</H3>
+<H5 CLASS="western">2.2.1.1<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">HealthURL</SPAN></SPAN><I><B>
+- </B></I>The group of CCRs that belong to a Patient and the
+transitive set of all the data they reference are known collectively
+as the Patient's <I><B>HealthURL</B></I>.</H5>
+<H5 CLASS="western">2.2.1.2Group  -  A collection of users who share
+visibility of a shared set of Patients</H5>
+<H5 CLASS="western">2.2.1.3Consent &ndash; information about whether
+an entity is allowed to access a Patient account in a particular way.
+  
+</H5>
+<H5 CLASS="western">2.2.1.4External Share &ndash; a link to an
+identity of an entity outside of MedCommons</H5>
+<H5 CLASS="western">2.2.1.5Appliance &ndash; a single logical
+instance of a MedCommons system consisting of Accounts, Console and
+one or more Gateways.   May be spread across many physical computers.</H5>
+<H5 CLASS="western">2.2.1.6Series &ndash; a DICOM Series.  A set of
+DICOM images from a single imaging operation conducted by a radiology
+device.</H5>
+<H5 CLASS="western">2.2.1.7Order &ndash; a set of information
+associated with a set of DICOM images about it's handling and
+processing</H5>
+<H5 CLASS="western">2.2.1.8Claim -  the granting of ownership of a
+Patient account to an entity claiming to be the Patient or an agent
+of the Patient</H5>
+<H5 CLASS="western">2.2.1.9Voucher &ndash; a temporary authorization
+that allows a 3<SUP>rd</SUP> party to Claim an account using a
+Voucher ID and PIN</H5>
+<H5 CLASS="western">2.2.1.10Temporary Account &ndash; a MedCommons
+Account associated with a Voucher</H5>
+<H5 CLASS="western">2.2.1.11Tracking Number &ndash; A 12 digit number
+identifying a specific, saved, CCR</H5>
+<H3 CLASS="western" STYLE="page-break-before: always"><A NAME="__RefHeading__4443_1350600508"></A>
+2.3Use Cases 
+</H3>
+<P>The following use cases motivate requirements.   They describe the
+fundamental interactions that generate the requirement.   However
+they purely descriptive and don't completely cover all requirements.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4445_1350600508"></A>2.3.1Upload
+Images</H4>
+<OL>
+	<LI><P>Image Uploader logs into TIMC web site, navigates to order
+	screen</P>
+</OL>
+<UL>
+	<LI><P>TIMC order entry page shows</P>
+</UL>
+<OL START=2>
+	<LI><P>Image Uploader fills in fields and creates new order</P>
+</OL>
+<UL>
+	<LI><P>Popup window opens and displays DICOM Upload Page</P>
+	<LI><P>Screen shows &ldquo;Detecting DDL&rdquo; message  and
+	eventually Start DDL button</P>
+</UL>
+<OL START=3>
+	<LI><P>Image Uploader Starts DDL</P>
+</OL>
+<UL>
+	<LI><P>DDL downloads and begins running</P>
+	<LI><P>Shows button allowing user to select folders</P>
+</UL>
+<OL START=4>
+	<LI><P>Image Uploader Selects CD</P>
+</OL>
+<UL>
+	<LI><P>Folder Selection dialog shows 
+	</P>
+	<LI><P>Image Uploader selects a CD</P>
+	<LI><P>System scans CD, showing progress / status message until scan
+	is complete</P>
+	<LI><P>System displays information about contents of CD, allows
+	selection of Study and Series to send</P>
+</UL>
+<OL START=5>
+	<LI><P>Image Uploader Sends Images</P>
+</OL>
+<UL>
+	<LI><P>System creates HealthURL</P>
+	<LI><P>System uploads images to HealthURL</P>
+	<LI><P>System displays progress until finished</P>
+</UL>
+<OL START=6>
+	<LI><P>Image Uploader Clicks HealthURL to Verify Upload in Viewer</P>
+</OL>
+<UL>
+	<LI><P>System displays window showing MedCommons Viewer with patient
+	details and images 
+	</P>
+</UL>
+<H4 CLASS="western"><A NAME="__RefHeading__4447_1350600508"></A>2.3.2Polling
+DDL Forwards Image Data to PACS</H4>
+<OL>
+	<LI><P>Polling DDL queries Appliance for recent orders</P>
+</OL>
+<UL>
+	<LI><P>Appliance responds with XML containing recent orders</P>
+</UL>
+<OL START=2>
+	<LI><P>Polling DDL examines recent orders and determines that there
+	are new Orders.  Polling DDL requests download of new order from
+	Appliance</P>
+</OL>
+<UL>
+	<LI><P>Appliance sends image data to Polling DDL</P>
+	<LI><P>Appliance notifies Image Analysts that new Image Data is
+	available</P>
+</UL>
+<OL START=3>
+	<LI><P>Polling DDL stores image data to local computer</P>
+	<LI><P>Polling DDL performs DICOM CSTORE to send image data to
+	remote PACS</P>
+</OL>
+<UL>
+	<LI><P>remote PACS receives data, updates patient information</P>
+</UL>
+<P><BR><BR>
+</P>
+<H4 CLASS="western"></H4>
+<H2 CLASS="western"><A NAME="__RefHeading__4449_1350600508"></A>3Requirements</H2>
+<H3 CLASS="western"><A NAME="__RefHeading__4451_1350600508"></A>3.1General</H3>
+<H5 CLASS="western">3.1.1.1Unless otherwise specified, pages will
+load within 15 seconds on a broadband internet connection.</H5>
+<H5 CLASS="western">3.1.1.2Supported platforms are PC or Mac that
+with Java 5 (1.5) or better and IE 7+ or FF 3+.  Other browsers and
+platforms are not supported.</H5>
+<H5 CLASS="western">3.1.1.3All DICOM related functions work for CT,
+MR and PET images, both compressed and uncompressed</H5>
+<H3 CLASS="western"><A NAME="__RefHeading__4453_1350600508"></A>3.2Login
+and Authorization</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4455_1350600508"></A>3.2.1Log
+In</H4>
+<H5 CLASS="western">3.2.1.1All pages that access PHI or control
+settings that affect the accessibility of PHI in any way  are
+Restricted Pages.    Restricted Pages require a login session in
+order to access them.</H5>
+<H5 CLASS="western">3.2.1.2A login session can be  initiated by
+entering an email address and the correct password on the login page.</H5>
+<H5 CLASS="western">3.2.1.3Attempting to access a Restricted Page
+without a valid login session displays the login page.</H5>
+<H5 CLASS="western">3.2.1.4A logged in user who is inactive for more
+than 15 minutes is automatically logged out and their login session
+is no longer valid.</H5>
+<H5 CLASS="western">3.2.1.5Entering an incorrect password on the
+login page increments a login counter on the user record that was
+accessed if the last login attempt was less than 5 minutes ago.  If
+the last login attempt for that account was more than 5 minutes ago
+then the login counter is reset to zero.  Successful creation of a
+login session also causes the counter to reset to zero.</H5>
+<H5 CLASS="western">3.2.1.6A login attempt that increases the login
+counter to more than 3, or any login attempt while the counter is
+more than 3,  is rejected and a message is displayed to the user
+asking them to wait for 5 minutes to try again.   
+</H5>
+<H5 CLASS="western">3.2.1.7During a Login session a Logout link is
+displayed at the top of all pages except the Viewer.  Clicking Logout
+ends the user's login session and returns them to the state of an
+unlogged in user.</H5>
+<H5 CLASS="western">3.2.1.8During a Login session, a &ldquo;Login
+Stamp&rdquo; consisting of the user's photo, their First and Last
+name, MedCommons Account Id and email is displayed in the top right
+hand corner on all pages except the Viewer</H5>
+<H3 CLASS="western"><A NAME="__RefHeading__27555517"></A>3.3Registration</H3>
+<H5 CLASS="western">3.3.1.1A user cannot login until they are
+registered</H5>
+<H5 CLASS="western">3.3.1.2A user must supply a valid email address
+and password in order to register</H5>
+<H5 CLASS="western">3.3.1.3Password &ndash; the user must supply a
+password of 8 or more characters</H5>
+<H5 CLASS="western">3.3.1.4Password Verification &ndash; the user
+must enter their chosen password twice.  Registration is not accepted
+unless both passwords match.</H5>
+<H5 CLASS="western">3.3.1.5Users are informed during registration
+that sharing passwords is not permitted</H5>
+<H5 CLASS="western">3.3.1.6Terms of Use &ndash; the user must check a
+box to indicate they understand and agree to the Terms of Use</H5>
+<H5 CLASS="western">3.3.1.7A link to the Terms of Use is displayed to
+the user prior to registering.  Clicking the link opens the current
+Terms of Use in a popup window</H5>
+<H5 CLASS="western">3.3.1.8Email Confirmation - to complete
+registration a user must confirm their email address by responding to
+a cryptographically secure link sent to their email address.    Until
+the confirmation link is clicked login is refused using the
+registered credentials.</H5>
+<H5 CLASS="western">3.3.1.9Verification Page &ndash; when the user
+clicks the registration verification link they are shown a page
+containing</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>their registered name (if any)</P>
+			<LI><P>their email address</P>
+			<LI><P>the domain of the appliance they registered the account at</P>
+			<LI><P>their MedCommons Account ID</P>
+			<LI><P>12 recovery passwords</P>
+		</OL>
+	</OL>
+</OL>
+<P><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="__RefHeading__4457_1350600508"></A>3.4Dashboard</H3>
+<P>This section describes the Dashboard for a user who is a member of
+a Group.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4459_1350600508"></A>3.4.1Navigation</H4>
+<H5 CLASS="western">3.4.1.1The header section contains links to the
+Dashboard, Settings and Logout</H5>
+<H5 CLASS="western">3.4.1.2The footer section contains a link to the
+Contact Us page</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4461_1350600508"></A>3.4.2Patient
+List</H4>
+<H5 CLASS="western">3.4.2.1The Patient List includes all Patients
+that have been created by DICOM uploads to the user's Group</H5>
+<H5 CLASS="western">3.4.2.2Patients are ordered in the order that
+patient uploads were initiated, in descending order (newest first).</H5>
+<H5 CLASS="western">3.4.2.3When the number of patients that would be
+displayed exceeds a configurable limit, only the first page of
+patients is displayed and a list of page links is displayed, one for
+each page of patients that are available</H5>
+<H5 CLASS="western">3.4.2.4When a list of page links is displayed the
+user may click any link to see the corresponding page of patients.   
+ When such a page is displayed, the patient list still updates in
+real time and stays on the corresponding page.</H5>
+<H5 CLASS="western">3.4.2.5The list of displayed patients updates in
+&ldquo;real time&rdquo;, ie: without any manual action on the user's
+part.    Displayed data should experience a maximum delay of 30
+seconds compared to the same data displayed by refreshing the page.</H5>
+<H5 CLASS="western"><A NAME="__RefHeading__32403446"></A>3.4.2.6The
+Patient List displays information for each Patient as follows:</H5>
+<OL TYPE=a>
+	<LI><P>Patient Name in the format First Name followed by Last Name</P>
+	<LI><P>Date of most recent update, displayed as a Relative Date Time
+	(see Section 3.15.1)</P>
+	<LI><P>Purpose &ndash; a textual description of the primary reason
+	for the patient data.  When the patient data is in the system as a
+	result of DICOM imaging, the text is the description extracted from
+	the meta data in the first DICOM series.</P>
+	<LI><P>Status &ndash; when a patient was created in association with
+	an order in the TIMC system the status field is populated with the
+	status of the order using following text descriptions for the DICOM
+	order states:</P>
+	<UL>
+		<LI><P>DDL_ORDER_ACCEPTED =&gt; New</P>
+		<LI><P>DDL_ORDER_MATCHED =&gt; Uploading</P>
+		<LI><P>DDL_ORDER_XMITING =&gt;  Uploading</P>
+		<LI><P>DDL_ORDER_UPLOAD_COMPLETE =&gt; Uploaded</P>
+		<LI><P>DDL_ORDER_DOWNLOAD_COMPLETE =&gt; Downloaded</P>
+		<LI><P>DDL_ORDER_COMPLETE =&gt; Stored</P>
+		<LI><P>DDL_ORDER_ERROR =&gt; Error</P>
+	</UL>
+</OL>
+<P STYLE="margin-left: 2.58cm; text-indent: -0.1cm">If the patient is
+not associated with a TIMC order then the status field is blank.</P>
+<OL TYPE=a START=5>
+	<LI><P>DICOM Icon &ndash; when a patient is associated with a TIMC
+	Order and DICOM has been successfully uploaded, an icon will display
+	indicating one of three states:</P>
+</OL>
+<OL>
+	<OL>
+		<LI><P>the data has never been manually downloaded</P>
+		<LI><P>the data is currently downloading</P>
+		<LI><P>the data has been downloaded at least once</P>
+	</OL>
+</OL>
+<P STYLE="margin-left: 2.5cm; text-indent: 0.03cm">Clicking on the
+icon in states (1) and (3) initiates a download.  This action is
+defined below in Section 3.4.2.13.</P>
+<P STYLE="margin-left: 2.5cm; text-indent: 0.03cm">If a patient is
+not associated with a TIMC order then this field is blank.</P>
+<OL TYPE=a START=6>
+	<LI><P>Download Progress &ndash; if a manual download initiated by
+	clicking on the DICOM Icon is in progress then an approximate
+	indicator of the progress of the download is displayed in a separate
+	icon in the form of a pie chart.  This indicator will not lag more
+	than  60 seconds from actual data and will not have worse than 15%
+	precision.</P>
+</OL>
+<H5 CLASS="western">3.4.2.7Patient Count.   The total number of
+patients is displayed at the bottom of the Patient List as well as
+the number visible on the current screen in the form &ldquo;Showing x
+of X Patients&rdquo; where x is the number currently visible and X is
+the total number of viewable patients.</H5>
+<H5 CLASS="western">3.4.2.8Links to HealthURLs.   Each patient name
+in the patient list is also a link which when clicked opens the
+Viewer showing the Patient's HealthURL with the Current CCR (see
+Section 3.7) displayed as the active CCR.  The HealthURL is displayed
+in a new window.</H5>
+<H5 CLASS="western">3.4.2.9Whenever a Patient's HealthURL is opened
+from the Dashboard,  the Patient Information Page for that Patient
+displays in the lower section of the Dashboard.</H5>
+<H5 CLASS="western">3.4.2.10If a window showing  Patient's HealthURL
+is closed, the Dashboard closes any Patient Information Page for the
+Patient that is displayed within it.</H5>
+<H5 CLASS="western">3.4.2.11Patient Messages 
+</H5>
+<OL TYPE=a>
+	<LI><P>When a message exists concerning a particular patient, an
+	icon is displayed in the Patient List indicating the presence of the
+	message</P>
+	<LI><P>Clicking on the icon for a Patient Message causes a message
+	pane to open below the Patient List which displays the message</P>
+	<LI><P>Clicking on a cross in the corner of the message pane closes
+	the message pane</P>
+</OL>
+<H5 CLASS="western">3.4.2.12DDL Messages</H5>
+<OL TYPE=a>
+	<LI><P>A DDL message is associated with a group and is shown only to
+	to members of the group it is associated with.</P>
+	<LI><P>If current DDL messages exist, then a message pane is
+	displayed below the Patient List with details of the messages.  If
+	the DDL message pane is not already displayed then it opens
+	automatically when a DDL message occurs.    If it is already
+	displayed then new messages appear automatically appended to the
+	bottom of older messages.</P>
+	<LI><P>A message is current if all the of the following are
+	satisfied: 
+	</P>
+</OL>
+<UL>
+	<UL>
+		<LI><P>it occurred within 1 hour of the current time</P>
+		<LI><P>it occurred after the user opened their browser window</P>
+		<LI><P>it occurred after the user last closed the DDL message pane</P>
+	</UL>
+</UL>
+<OL TYPE=a START=4>
+	<LI><P>If there are no current DDL messages then the DDLmessage pane
+	is not shown</P>
+	<LI><P>The DDL Message Pane has a Close icon in the top right hand
+	corner.  When clicked, the DDL message pane closes.</P>
+	<LI><P>The DDL Message Pane reflects DDL Messages within 1 minute of
+	when they are sent by the sending DDL</P>
+</OL>
+<H5 CLASS="western"><A NAME="__RefHeading__32485173"></A>3.4.2.13Download
+DICOM.    Clicking a Download DICOM icon (see Section 3.4.2.6) causes
+the DICOM for the corresponding Patient to download to the viewer's
+DDL.   See Section Error: Reference source not found for definition
+of this function.</H5>
+<H3 CLASS="western"><A NAME="__RefHeading__4463_1350600508"></A>3.5DDL
+Control Page</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4465_1350600508"></A>3.5.1Header
+Link</H4>
+<H5 CLASS="western">3.5.1.1When a user visits either the dashboard or
+the DDL Upload page and has a DDL running on their computer, a &ldquo;DDL&rdquo;
+link is displayed at the top of the page.  Clicking the link takes
+the user to the DDL Control Page</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4467_1350600508"></A>3.5.2Shutdown
+Function</H4>
+<H5 CLASS="western">3.5.2.1If the user has a DDL running on their
+computer then a &ldquo;Shutdown DDL&rdquo; button is shown on the DDL
+Control page.   
+</H5>
+<H5 CLASS="western">3.5.2.2Clicking the Shutdown DDL button causes:</H5>
+<UL>
+	<UL>
+		<UL>
+			<UL>
+				<OL TYPE=a>
+					<LI><H5 CLASS="western">A confirmation dialog to display giving
+					the user an option to cancel the decision to shut down their
+					DDL, or OK to continue</H5>
+					<LI><H5 CLASS="western">If OK is selected,  DDL stops running on
+					the user's computer.</H5>
+					<LI><H5 CLASS="western">After the DDL stops running, the page
+					refreshes and the page shows as described in 3.5.3.1</H5>
+				</OL>
+			</UL>
+		</UL>
+	</UL>
+</UL>
+<H4 CLASS="western"><A NAME="__RefHeading__4469_1350600508"></A>3.5.3Start
+DDL Function</H4>
+<H5 CLASS="western"><A NAME="__RefHeading__27575478"></A>3.5.3.1If
+the user views the DDL Control Page and does not have a DDL running
+then it shows a message &ldquo;No DDL was detected running on your
+computer.&rdquo;, and a button &ldquo;Start DDL&rdquo; is displayed.</H5>
+<H5 CLASS="western">3.5.3.2Clicking the Start DDL button  causes DDL
+to download and run on the user's computer.</H5>
+<H5 CLASS="western">3.5.3.3After the DDL has started running the DDL
+Control page redisplays and detects the DDL in running state.</H5>
+<H3 CLASS="western"><A NAME="settings"></A><A NAME="__RefHeading__4471_1350600508"></A>
+3.6Settings</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4473_1350600508"></A>3.6.1Tabbed
+Display</H4>
+<H5 CLASS="western">3.6.1.1The settings page displays a tabbed
+interface showing a series of tabs:</H5>
+<OL TYPE=a>
+	<LI><P>Personal Details</P>
+	<LI><P>Password Management</P>
+	<LI><P>Group Management</P>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4475_1350600508"></A>3.6.2Personal
+Details</H4>
+<H5 CLASS="western">3.6.2.1The Name of the user is displayed, with a
+link to the 'Change Name' page next to it</H5>
+<H5 CLASS="western">3.6.2.2The email address of the user is displayed
+with a link to the 'Change Email' page next to it</H5>
+<H5 CLASS="western">3.6.2.3If the user has uploaded a picture then
+the user's picture is displayed.  If they have not uploaded a picture
+then dummy image is shown with the words 'No photo' overlaid on it.</H5>
+<H5 CLASS="western"><A NAME="__RefHeading__28402235"></A>3.6.2.4A
+file upload field and Browse button are shown.  Clicking the button
+allows selection of a file to upload as the user's photo</H5>
+<H5 CLASS="western">3.6.2.5A 'Change Picture' button causes the file
+selected in 3.6.2.4 to be uploaded and set as the user's photo</H5>
+<H5 CLASS="western">3.6.2.6After changing the photo, the login stamp
+shows the updated photo</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__36655376"></A>3.6.3Password
+Management</H4>
+<H5 CLASS="western">3.6.3.1Masked Text Fields are displayed for</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>Current Password</P>
+			<LI><P>New Password</P>
+			<LI><P>New Password (again)</P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western">3.6.3.2A &ldquo;Change Password&rdquo; button is
+displayed.   Clicking the Change Password button causes the fields to
+be validated as follows:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>All fields must be longer than 6 characters</P>
+			<LI><P>The value supplied in &ldquo;Current Password&rdquo; must
+			match the current password set for the user</P>
+			<LI><P>The values supplied in &ldquo;New password&rdquo;  and &ldquo;New
+			password again&rdquo; must be identical</P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western">3.6.3.3If one or more fields fails to validate
+then the page is redisplayed and an error message is displayed
+indicating at least one of the errors in validation.</H5>
+<H5 CLASS="western">3.6.3.4If all fields are validated successfully
+then the user's password is changed to the value in the &ldquo;New
+password&rdquo; field and the message &ldquo;Password successfully
+updated&rdquo; is displayed.</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4477_1350600508"></A>3.6.4Group
+Tab</H4>
+<H5 CLASS="western">3.6.4.1The name of the Group is displayed and may
+be edited and saved by clicking a button.   When updated, a
+confirmation message is shown.</H5>
+<H5 CLASS="western">3.6.4.2The Account ID of the user's active group
+is displayed</H5>
+<H5 CLASS="western">3.6.4.3New users can be added to the group by
+entering the MedCommons Account ID of the user to be added and
+clicking an &ldquo;Add&rdquo; button.</H5>
+<P STYLE="margin-left: 1.74cm">When the Add button is clicked, the
+&ldquo;Account ID&rdquo; field is validated to contain a valid format
+for a MedCommons Account ID  (see 3.15.3.2).     If the format is not
+valid, a popup box is displayed asking the use to enter the correct
+format.   If the format is valid, the specified user is added to the
+Group, and the Group Members table is updated to include the new
+user.</P>
+<H5 CLASS="western">3.6.4.4The Group Invitation Dialog can be invoked
+via an Invite button (see 3.6.5)</H5>
+<H5 CLASS="western">3.6.4.5A table listing all members of the user's
+active Group is displayed.   Each row in the table lists a single
+Group member or pending group member and contains the following
+information:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>First Name and Last Name for Group members, &ldquo;Invitation
+			Sent&rdquo; for pending Group members</P>
+			<LI><P>Email</P>
+			<LI><P>MedCommons Account ID</P>
+			<LI><P>A checkbox for selecting the user</P>
+		</OL>
+	</OL>
+</OL>
+<P STYLE="margin-left: 1.81cm">A Group member is &ldquo;pending&rdquo;
+if they have been sent an invitation but have not accepted the
+invitation.</P>
+<H5 CLASS="western">3.6.4.6An account can be removed from the Group
+by selecting it in the table and clicking on a 'Delete User' icon</H5>
+<H5 CLASS="western">3.6.4.7A link to a page allowing the user to
+start a DDL Poller is displayed (see 3.14.1).</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__27386121"></A>3.6.5Group
+Invitation Dialog</H4>
+<H5 CLASS="western">3.6.5.1One or more email addresses can be entered</H5>
+<H5 CLASS="western">3.6.5.2The user can click Cancel to dismiss the
+dialog</H5>
+<H5 CLASS="western">3.6.5.3The user can click OK to submit the dialog
+in which case:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>Each entered email address is verified to be correct
+			format.  If a value is not in the correct format for an email
+			address then a message is displayed to the user and they are
+			returned to the dialog</P>
+			<LI><P>If all entered addresses are in correct format then emails
+			inviting the recipient to join the group are sent to each entered
+			address (see 3.6.5.4).    The dialog is dismissed.</P>
+		</OL>
+	</OL>
+</OL>
+<P><BR><BR>
+</P>
+<H5 CLASS="western"><A NAME="__RefHeading__27406865"></A>3.6.5.4The
+Group Invitation Email contains a cryptographically secure link that
+allows them to accept the invitation.   When clicked:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>If the email is already registered to a MedCommons Account
+			on the Appliance then the user is added to the Group and taken to
+			the Dashboard with the Group as their active Group.</P>
+			<LI><P>If the email is not already registered to a MedCommons
+			Account then the user is shown a page allowing them to register
+			(see 3.3).   After registering they are added to the group and
+			shown the Dashboard with the group as their active Group.</P>
+		</OL>
+	</OL>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4479_1350600508"></A>3.6.6Change
+Name Page</H4>
+<H5 CLASS="western">3.6.6.1Two editable text fields containing the
+First Name and Last Name are shown below the current name of the user</H5>
+<H5 CLASS="western">3.6.6.2A button 'Change Name' is shown.   When
+clicked, the First Name and Last Name of the user are updated to the
+values entered.</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4481_1350600508"></A>3.6.7Change
+Email Page</H4>
+<H5 CLASS="western">3.6.7.1The user's current email address is
+displayed, and an editable text field below it is also displayed
+allowing entry of a new email address</H5>
+<H5 CLASS="western">3.6.7.2A &ldquo;Change Email Address&rdquo;
+button is displayed.   When clicked, the button validates that the
+value entered matches the format of an email address.</H5>
+<H5 CLASS="western">3.6.7.3If validation fails, the page is
+redisplayed with the message &ldquo;Please enter a valid email
+address&rdquo;.</H5>
+<H5 CLASS="western">3.6.7.4If validation succeeds a verification
+email containing a cryptographically secure link is sent to the
+user's email address</H5>
+<H5 CLASS="western">3.6.7.5If the user clicks the link then the email
+address for the user's account is updated</H5>
+<H5 CLASS="western">3.6.7.6After updating email address, the new
+email address may be used to log in.   Log in with the old email
+address for the user is denied</H5>
+<P><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="__RefHeading__32476312"></A>3.7HealthURL
+and Current CCR</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4483_1350600508"></A>3.7.1CCRs</H4>
+<H5 CLASS="western">3.7.1.1A Patient has one or more of CCRs that
+record their health information.   
+</H5>
+<H5 CLASS="western">3.7.1.2A Patient has a CCR identified as their
+Current CCR</H5>
+<H5 CLASS="western">3.7.1.3The Current CCR is created when the
+corresponding Patient account is created</H5>
+<H5 CLASS="western">3.7.1.4When the patient is created from a DICOM
+Order the Current CCR has the same name for the Patient as is
+recorded in the DICOM associated with the DICOM order</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4485_1350600508"></A>3.7.2HealthURL</H4>
+<H5 CLASS="western">3.7.2.1Links to HealthURLs are identified with a
+specific recognizable icon throughout the system</H5>
+<P><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="__RefHeading__36672827"></A>3.8Patient
+Information Page (PIP)</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4487_1350600508"></A>3.8.1Header</H4>
+<H5 CLASS="western">3.8.1.1The Patient Name is displayed in the
+header of the PIP in the format First Name followed by Last Name - 
+AgeSex, where AgeSex is: the Patient's age if known or blank
+otherwise concatenated with  'M' or 'F' corresponding to the
+Patient's sex if known or blank otherwise.</H5>
+<H5 CLASS="western">3.8.1.2HealthURL Link &ndash; opens the Patient's
+HealthURL in a new window</H5>
+<P><BR><BR>
+</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4489_1350600508"></A>3.8.2Activity
+Log Section</H4>
+<H5 CLASS="western">3.8.2.1The top section of the PIP shows the
+activity log for the Patient</H5>
+<H5 CLASS="western">3.8.2.2The activity log display contains 4
+columns:</H5>
+<OL TYPE=a>
+	<LI><P>Date &ndash;  when the activity occurred as a Relative Date
+	Time (see Section 3.15.1).   Displayed only for rows that represent
+	sessions (see 3.8.2.3).</P>
+	<LI><P>Activity -  description of the nature of the activity (see 3.8.2.6)</P>
+	<LI><P>By &ndash; who performed the activity (see 3.8.2.9)</P>
+	<LI><P>Tracking Number / PIN &ndash; a Tracking Number identifying
+	CCR displayed or affected by the activity and, if a PIN was
+	allocated, the PIN for accessing the content</P>
+</OL>
+<H5 CLASS="western"><A NAME="__RefHeading__37672071"></A>3.8.2.3Sessions
+ &ndash;  the Activity Log display is divided into Sessions.   Each
+session is a continuous set of accesses by a single individual.  
+Accesses are continuous if:</H5>
+<OL TYPE=a>
+	<LI><P>The accesses are performed using the same login session<BR><BR>or</P>
+	<LI><P>The accesses are performed in separate login sessions but by
+	the same individual and within an hour of each other</P>
+</OL>
+<H5 CLASS="western">3.8.2.4When first shown the Activity Log display
+shows only sessions.   Each session is a single row in the table. 
+</H5>
+<H5 CLASS="western">3.8.2.5Session rows have a '+' symbol on the far
+left side.   Clicking the '+' symbol causes the rows representing the
+accesses that occurred in the session to show underneath the row for
+the session, and the '+' to change to a '-'.   If the '-' is clicked
+then the access rows are hidden, and the '-' changes back to a '+'.</H5>
+<H5 CLASS="western"><A NAME="__RefHeading__27521745"></A>3.8.2.6Descriptions
+for Access rows &ndash;   the description for access rows shows a
+description of the nature of the access.   When one of the following
+events occurs it is always clearly indicated in the description:</H5>
+<OL TYPE=a>
+	<LI><P>the Patient's PHI was modified by the access</P>
+	<LI><P>a new entity was authorized to access the Patient's PHI</P>
+</OL>
+<H5 CLASS="western">3.8.2.7Descriptions for Session Rows &ndash; the
+description for rows representing sessions is counts of the number of
+each type of event belonging to the most critical category of access
+contained in the sessions.    Events belonging to each access
+category are, in order of criticality:</H5>
+<OL TYPE=a>
+	<LI><P>Inbound Fax</P>
+	<LI><P>Consent Update, PHR Sent, PHR Updated, PHR Exported</P>
+	<LI><P>CXP Import</P>
+	<LI><P>PHR Viewed</P>
+</OL>
+<P STYLE="margin-left: 1.77cm; text-indent: -0.03cm">When multiple
+accesses occur belonging to different categories only the counts of
+events in the highest category are shown.   If  the highest category
+contains multiple accesses of different types then the count of
+events for every access type is displayed.</P>
+<P STYLE="margin-left: 1.77cm; text-indent: -0.03cm"><BR><BR>
+</P>
+<DIV ID="Frame1" DIR="LTR" STYLE="float: left; width: 12.47cm; height: 1.88cm; border: 1px solid #000000; padding: 0.15cm; background: #e6e6e6">
+	<P CLASS="frame-contents">Example:     A session contains 2 read
+	accesses and 3 updates to the patient's CCR and 1 send to another
+	individual.     The session row should show:</P>
+	<P CLASS="frame-contents">3 Updates, 1 Send</P>
+	<P CLASS="frame-contents"><BR><BR>
+	</P>
+</DIV>
+<P STYLE="margin-left: 1.77cm; text-indent: -0.03cm"><BR><BR>
+</P>
+<OL TYPE=a START=4>
+	<P></P>
+</OL>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<H5 CLASS="western">3.8.2.8When a Session row contains only a single
+access the description for the the session row is replaced by the
+access description.</H5>
+<H5 CLASS="western"><A NAME="__RefHeading__27531328"></A>3.8.2.9The
+By columns shows the identity of the entity that accessed the Patient
+PHI.   When the entity has a MedCommons Account the identity is
+displayed:</H5>
+<OL TYPE=a>
+	<LI><P>If there is an email address associated with the account then
+	the email address is displayed</P>
+	<LI><P>Otherwise the 16 digit MedCommons Account ID itself is
+	displayed</P>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4491_1350600508"></A>3.8.3Consents
+Display	</H4>
+<H5 CLASS="western">3.8.3.1The lower portion of the PIP section is a
+pane showing consents (authorizations to access) the Patient account.</H5>
+<H5 CLASS="western">3.8.3.2Consents are displayed as a series of
+tables which are of three kinds:  Group, Application, and Individual.
+ 
+</H5>
+<H5 CLASS="western">3.8.3.3 For all Groups,  if the group itself or
+any individual member of it has a Consent relevant to the Patient
+then a table of Consents for that Group is displayed in the Consents
+section.</H5>
+<H5 CLASS="western">3.8.3.4Group Table Header &ndash; the header row
+of a Consent table for a Group shows 
+</H5>
+<OL TYPE=a>
+	<LI><P>The name of the group</P>
+	<LI><P>The URL of the appliance upon which the Group is hosted,
+	followed by a '?' symbol that when clicked, shows a popup dialog
+	with details about the Group</P>
+	<LI><P>A Consent Selector (see 3.8.3.9)</P>
+</OL>
+<H5 CLASS="western"><A NAME="__RefHeading__28456880"></A>3.8.3.5The
+table of Individual Consents is displayed below the tables showing
+Group Consents.    Consents relevant to the Patient that are
+associated with individuals are displayed in this table.    The
+Individual Consents table has a header row with the title
+&ldquo;Individuals&rdquo; in the first column and no Consent
+Selector.</H5>
+<H5 CLASS="western">3.8.3.6For all Applications, if an Application
+has an OAuth Authorization to access the Patient account then a table
+consisting only of a header row is displayed, containing the
+Application name in the first column, the URL of the application in
+the second column folled by a '?' that displays details about the
+Application, and a Consent Selector (see 3.8.3.9) in the third
+column.</H5>
+<H5 CLASS="western">3.8.3.7Consent tables contain a detail row for
+each Consent relevant to the Patient for the entity that the table is
+displaying consents for.</H5>
+<H5 CLASS="western">3.8.3.8A Consent Detail Row shows the identity of
+the the entity who has the access.  Identity is expressed in the
+following ways:</H5>
+<OL TYPE=a>
+	<LI><P>If the entity is identified by a MedCommons Account ID then
+	the first and last name are displayed, followed by the email address
+	of the entity.   If either the name or email are unknown then they
+	are left blank.   If neither the name nor email are known then the
+	MedCommons Account ID is displayed.</P>
+	<LI><P>If the entity is not associated with a MedCommons Account ID
+	then the External Share information is displayed:</P>
+</OL>
+<UL>
+	<LI><P>A PIN based Consent shows the Tracking Number and the PIN
+	that was allocated to grant access to it</P>
+	<LI><P>A Phone based Consent shows the name entered when the Phone
+	consent was created and the phone number to which Consent was
+	granted</P>
+	<LI><P>For all other External Shares the First Name and Last Name of
+	the recipient of the Consent are shown and, if known, the Email
+	Address.</P>
+</UL>
+<H5 CLASS="western"><A NAME="__RefHeading__28355209"></A>3.8.3.9Consent
+Selectors are a dropdown control containing 4 options:</H5>
+<OL TYPE=a>
+	<LI><P>None</P>
+	<LI><P>W</P>
+	<LI><P>RW</P>
+	<LI><P>R</P>
+</OL>
+<P STYLE="margin-left: 1.74cm">When first displayed, the consent
+selector has the option representing the current authorization level
+that the corresponding entity has to access the Patient PHI.</P>
+<H5 CLASS="western">3.8.3.10When a new option is selected in a
+Consent Selector, the Patient's consents are automatically updated to
+reflect the new option in the background.    A confirmation message
+(&ldquo;Consents updated successfully&rdquo;) is briefly shown after
+the update has completed.</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4493_1350600508"></A>3.8.4Share
+by Phone</H4>
+<H5 CLASS="western">3.8.4.1The Individuals section in the Consents
+display (see 3.8.3.5) contains an icon to invite the user to Share
+access to the Patient by Phone</H5>
+<H5 CLASS="western">3.8.4.2The Share By Phone icon displays the Share
+By Phone dialog, which contains fields:</H5>
+<OL TYPE=a>
+	<LI><P>Name  (first and last as separate fields)</P>
+	<LI><P>Phone Number</P>
+	<LI><P>Carrier (dropdown with cariers including:  AT&amp;T, Verizon,
+	Sprint PCS, T-Mobile) 
+	</P>
+	<LI><P>OK and Cancel buttons</P>
+</OL>
+<H5 CLASS="western">3.8.4.3All the fields on the Share By Phone
+dialog are required.   When OK is clicked, validation is performed to
+ensure fields are populated correctly.  If a field contains incorrect
+or blank contents then the incorrect fields are highlighted and
+invitation does not proceed.</H5>
+<H5 CLASS="western">3.8.4.4When Cancel is clicked the dialog is
+dismissed.</H5>
+<H5 CLASS="western">3.8.4.5When OK is clicked and all fields are
+valid:</H5>
+<OL TYPE=a>
+	<LI><P>A random PIN is generated 
+	</P>
+	<LI><P>An External Share is created with the same level of consent
+	as the current user to access the Patient.   The share is associated
+	to the specified Phone Number and Name.</P>
+	<LI><P>The random PIN is displayed to the user</P>
+	<LI><P>An SMS is sent to the specified phone number containing the
+	PIN and instructions for accessing the Patient HealthURL.</P>
+	<LI><P>The dialog is dismissed</P>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4495_1350600508"></A>3.8.5Share
+with Open ID</H4>
+<H5 CLASS="western">3.8.5.1The Individuals section in the Consents
+display (see 3.8.3.5) contains an icon to invite the user to Share
+access to the Patient with an Open ID</H5>
+<H5 CLASS="western">3.8.5.2The Share with Open ID icon shows a dialog
+with a field containing the Open ID icon allowing entry of an Open ID
+URL.</H5>
+<H5 CLASS="western"><A NAME="__RefHeading__38425962"></A>3.8.5.3Clicking
+OK in the Share with Open ID dialog first validates that the URL is a
+valid OpenID end point.   If it is not, the user receives an error
+message and is asked to check their OpenID. If the OpenID is valid,
+the system creates an External Share with the same level of consent
+to access the Patient PHI as the user performing the invitation.  
+The share is associated to the OpenID URL.</H5>
+<H5 CLASS="western">3.8.5.4Once HealthURL is successfully shared with
+an Open ID as specified in 3.8.5.3 
+</H5>
+<OL TYPE=a>
+	<LI><P>an entity can access the HealthURL for the Patient without
+	explicit login if they are authenticated to the specified Open ID.</P>
+	<LI><P>If not authenticated to the specified Open ID, an entity can
+	enter the Open ID URL in response to a login prompt when attempting
+	to access the HealthURL.  This causes Open ID authentication to
+	occur, after which, if successful, the entity is able to access the
+	HealthURL</P>
+</OL>
+<H3 CLASS="western"><A NAME="__RefHeading__4497_1350600508"></A>3.9Activity
+Logs</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4499_1350600508"></A>3.9.1General</H4>
+<H5 CLASS="western">3.9.1.1Anything that results in an entity
+(whether machine or human) seeing or modifying PHI belonging to a
+Patient generates an event in the Activity Log for the Patient</H5>
+<H5 CLASS="western">3.9.1.2The Activity Log contains the following
+information:</H5>
+<OL TYPE=a>
+	<LI><P>Date and time of the access, accurate to at least 1 second</P>
+	<LI><P>Identity of the accessor in the form of the MedCommons login
+	account of the user</P>
+	<LI><P>Description of the reason for the access</P>
+	<LI><P>Whether the access caused the PHI to be modified ('Write'
+	access)</P>
+	<LI><P>Whether the access caused the PHI to be accessible to any new
+	person or entity.</P>
+	<LI><P>A tracking number identifying the specific content that was
+	accessed in the following manner:</P>
+</OL>
+<UL>
+	<UL>
+		<LI><P>If an update occurred, the tracking number identifies the
+		new, updated CCR</P>
+		<LI><P>If no update occurred the tracking number identifies the CCR
+		that was viewed</P>
+	</UL>
+</UL>
+<P><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="__RefHeading__4501_1350600508"></A>3.10DICOM
+Upload Page</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4503_1350600508"></A>3.10.1Callers
+Order Reference</H4>
+<H5 CLASS="western">3.10.1.1A parameter, 'callers_order_reference' is
+accepted as input to the page.   When the parameter is provided, the
+system checks that an order with the same order reference number
+exists for the group for which the upload is occurring and loads it
+as the Order to be associated with the DICOM Upload.</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4505_1350600508"></A>3.10.2Install
+Java</H4>
+<H5 CLASS="western">3.10.2.1The Upload Page detects whether the user
+has has Java installed.  If Java 5 or higher is not installed then a
+link is displayed to allow installation of Java on their computer.</H5>
+<H5 CLASS="western">3.10.2.2If the user clicks the Install Java link
+then:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<LI><P>the page displays a message advising them that they may need
+		to restart their browser and a button to reload the page when the
+		installation has finished.</P>
+		<LI><P>A window is opened to the official Java installation web
+		page</P>
+	</OL>
+</OL>
+<P><BR><BR>
+</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4507_1350600508"></A>3.10.3Start
+DDL</H4>
+<H5 CLASS="western">3.10.3.1When a user visits the Upload Page and
+does not have a DDL Running:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>The user can click a button to Install or Start the DDL</P>
+			<LI><P>While startup and / or download is proceeding, a message is
+			displayed indicating that DDL is starting up</P>
+			<LI><P>When DDL has started the user is shown instructions for
+			selecting DICOM as detailed in 3.10.4.</P>
+		</OL>
+	</OL>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__35522464"></A>3.10.4DICOM
+Source</H4>
+<H5 CLASS="western"><STRIKE><FONT SIZE=3>3.10.4.1DELETED </FONT></STRIKE>
+</H5>
+<H5 CLASS="western"><STRIKE><FONT SIZE=3>3.10.4.2DELETED</FONT></STRIKE></H5>
+<H5 CLASS="western"><A NAME="__RefHeading__2089_488077310"></A>3.10.4.3A
+list of instructions for how to enter a CD for upload is presented
+with a 'Select CD' button at the bottom.  Clicking 'Select CD' allows
+the user to browse on their computer to select a CD, DVD or a folder
+to upload.   
+</H5>
+<H5 CLASS="western">3.10.4.4When a folder is selected by the user:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>A 'Scanning' indicator is shown while the DICOM Source is
+			scanned for images</P>
+			<LI><P>When scanning is complete, all the image data found begins
+			uploading automatically and text explaining that the upload is
+			proceeding in the background is displayed.  The upload proceeds as
+			described in Section 3.10.6.</P>
+		</OL>
+	</OL>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__35584491"></A><STRIKE>3.10.5[DELETED]
+Image Selection &ndash; TIMC Order</STRIKE></H4>
+<P><STRIKE>This section is specific to when the user is uploading
+content for a TIMC Order.   Generic uploads: TODO.</STRIKE></P>
+<H5 CLASS="western"><STRIKE>3.10.5.1DELETED</STRIKE></H5>
+<H5 CLASS="western"><STRIKE>3.10.5.2DELETED</STRIKE></H5>
+<H5 CLASS="western"><STRIKE>3.10.5.3DELETED</STRIKE></H5>
+<H5 CLASS="western"><STRIKE>3.10.5.4DELETED</STRIKE></H5>
+<H5 CLASS="western"><STRIKE>3.10.5.5DELETED</STRIKE></H5>
+<H5 CLASS="western"><STRIKE>3.10.5.6DELETED</STRIKE></H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4509_1350600508"></A>3.10.6Send
+Content</H4>
+<H5 CLASS="western"><STRIKE>3.10.6.1DELETED</STRIKE></H5>
+<H5 CLASS="western"><STRIKE>3.10.6.2DELETED</STRIKE></H5>
+<H5 CLASS="western"><A NAME="__RefHeading__36653911"></A>3.10.6.3When
+the upload begins:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P> a Patient account is created.   The Current CCR for the
+			Patient has the name and date of birth extracted from the DICOM,
+			and contains the comment and Callers Order Reference as a
+			Procedure element.</P>
+			<LI><P><STRIKE>DELETED </STRIKE>
+			</P>
+			<LI><P>An email notification is sent to cmo@medcommons.net
+			containing details about the HealthURL created,  the ip address
+			and host name of the user sending the content and the comment
+			entered by the user.</P>
+			<LI><P>if an Order is associated with the upload then:</P>
+		</OL>
+	</OL>
+</OL>
+<UL>
+	<UL>
+		<UL>
+			<UL>
+				<LI><P>status for the Order is changed to DDL_ORDER_XMITING</P>
+				<LI><P>the Group associated with the Order is granted RW consent
+				to access the Patient</P>
+				<LI><P>the Patient is added to the Patient List associated with
+				the Group</P>
+				<LI><P>the comment entered (if any) is saved on the Order</P>
+			</UL>
+		</UL>
+	</UL>
+</UL>
+<P><BR><BR>
+</P>
+<H5 CLASS="western">3.10.6.4A Voucher ID and randomly generated 5
+digit PIN are assigned to the created Patient Account.  The Voucher
+is set to expire in 30 days from the current date.</H5>
+<H5 CLASS="western"><STRIKE>3.10.6.5DELETED </STRIKE>
+</H5>
+<H5 CLASS="western"><STRIKE>3.10.6.6DELETED</STRIKE></H5>
+<H5 CLASS="western"><A NAME="__RefHeading__35414964"></A><STRIKE>3.10.6.7DELETED</STRIKE></H5>
+<H5 CLASS="western"><STRIKE>3.10.6.8DELETED</STRIKE></H5>
+<H5 CLASS="western">3.10.6.9When the upload is complete, if an Order
+is associated with the upload then status for the order is changed to
+DDL_ORDER_UPLOAD_COMPLETE.</H5>
+<H5 CLASS="western">3.10.6.10When the upload is complete, a 'Done'
+button is displayed.   Clicking the 'Done' button clears existing
+state and reloads the page at the step of selecting the  DICOM Source
+(see 3.10.4).</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4511_1350600508"></A>3.10.7Problem
+Reports</H4>
+<H5 CLASS="western">3.10.7.1The user can file a Problem Report in the
+form of details of their session including a free text comment to
+MedCommons describing any problem they have had.</H5>
+<H5 CLASS="western">3.10.7.2When a Problem Report is filed an email
+notification about the problem report is sent to a MedCommons
+representative.</H5>
+<H3 CLASS="western"><A NAME="__RefHeading__4513_1350600508"></A>3.11Vouchers</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__36534265"></A>3.11.1Claim</H4>
+<H5 CLASS="western">3.11.1.1A Temporary Account may be Claimed by
+accessing the Voucher Claim page and entering the Voucher ID and PIN
+for the Voucher</H5>
+<H5 CLASS="western">3.11.1.2A Temporary Account can only be claimed
+once.  After the account is claimed the Voucher ID and PIN can no
+longer be used to access or claim the account again. 
+</H5>
+<H5 CLASS="western">3.11.1.3When Claiming a Temporary Account the
+claiming user must enter a password for the account of at least 5
+characters in length</H5>
+<H5 CLASS="western">3.11.1.4The Claiming user must agree to a HIPAA
+transfer agreement in the process of claiming the account</H5>
+<H5 CLASS="western">3.11.1.5An account cannot be Claimed after it's
+Voucher has expired</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4515_1350600508"></A>3.11.2Access</H4>
+<H5 CLASS="western">3.11.2.1After a  Temporary Account is Claimed the
+Voucher ID and the password entered when the account was Claimed can
+be entered on the Voucher Claim page to log in to the Temporary
+Account, as long as the Voucher for the Temporary Account has not
+expired.</H5>
+<H5 CLASS="western">3.11.2.2Login to a Temporary Account is refused
+after its Voucher has expired.</H5>
+<H5 CLASS="western">3.11.2.3PHI belonging to a Temporary Account
+cannot be accessed from another account after the Voucher for the
+account has expired</H5>
+<H5 CLASS="western">3.11.2.4PHI data belonging to a Temporary Account
+is physically erased, both from backup and physical storage within 1
+month of the expiry of the corresponding Voucher</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4517_1350600508"></A>3.11.3Dashboard</H4>
+<H5 CLASS="western">3.11.3.1The Temporary Account Dashboard is shown
+after accessing or claiming a  Temporary Account</H5>
+<H5 CLASS="western">3.11.3.2A  Temporary Account Dashboard displays:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>A link to open the HealthURL for the account</P>
+			<LI><P>A link to download all the documents for the account</P>
+			<LI><P>A link to the Change Password page (see 3.6.3)</P>
+			<LI><P>The Patient Information Page (PIP) for the Temporary
+			Account (see 3.8).</P>
+		</OL>
+	</OL>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4519_1350600508"></A>3.11.4Settings</H4>
+<H5 CLASS="western">3.11.4.1A  Temporary Account has access to only
+the Password Management section of the Settings page</H5>
+<H3 CLASS="western" STYLE="page-break-before: always"><A NAME="__RefHeading__4521_1350600508"></A>
+3.12Order Management</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4523_1350600508"></A>3.12.1Order
+Creation</H4>
+<H5 CLASS="western">3.12.1.1An order can be created by calling a web
+service.   The web service accepts parameters as described in Table
+1.    Where a field is indicated as required in Table 1 and is not
+specified, or where the constraints on the field specified in Table 1
+are not satisfied an order will NOT be created and an error response
+will be returned.  Otherwise, an Order will be created and saved.</H5>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=649 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=2 CELLSPACING=0 STYLE="page-break-after: avoid">
+	<COL WIDTH=129>
+	<COL WIDTH=76>
+	<COL WIDTH=164>
+	<COL WIDTH=261>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 HEIGHT=24 BGCOLOR="#b0b3b2">
+				<P ALIGN=CENTER STYLE="background: transparent; font-style: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: avoid">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B><SPAN STYLE="background: transparent">Field</SPAN></B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#b0b3b2">
+				<P ALIGN=CENTER STYLE="background: transparent; font-style: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: avoid">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B><SPAN STYLE="background: transparent">Required</SPAN></B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#b0b3b2">
+				<P ALIGN=CENTER STYLE="background: transparent; font-style: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: avoid">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B><SPAN STYLE="background: transparent">Type</SPAN></B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#b0b3b2">
+				<P ALIGN=CENTER STYLE="background: transparent; font-style: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: avoid">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B><SPAN STYLE="background: transparent">Notes</SPAN></B></FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>callers_order_reference</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>yes</FONT></P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>A(100)</FONT></P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>always unique, guaranteed by TIMC, accession
+				number for order</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>protocol_id</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>yes </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>NF1, NF2, VS </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>Drop-down of registered TIMC protocols. This is
+				periodically updated as new protocols emerge</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>patient_id</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>yes </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>numeric </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>Patient registration number in TIMC. Usually
+				non-Partners institution MRN. Updated as new patients registered.</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>modality</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">yes
+				</SPAN></FONT></FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>PT, CT, MR </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>this can be read from DICOM</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>scan_date</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>yes </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>MM/DD/YYYY </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>this can be read from DICOM</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>scan_time</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>yes </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>time </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>this can be read from DICOM</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>due_date</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>yes </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>MM/DD/YYYY </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>User specified date of analysis due</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>due_time</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">yes
+				</SPAN></FONT></FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>time </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>User specified time of analysis due</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>order_comments</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>no</FONT></P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>free text</FONT></P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<BR>
+				</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>baseline</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">yes</SPAN></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">Y/N</SPAN></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>Y=this is a 1st scan for the patient</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>email</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">no</SPAN></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">Text</SPAN></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>Comma separated email addresses</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>user_email</FONT></P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">no</SPAN></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P ALIGN=LEFT STYLE="background: transparent; font-style: normal; font-weight: normal; page-break-inside: auto; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto">
+				<FONT COLOR="#000000"><FONT FACE="Helvetica, Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="background: transparent">Text</SPAN></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>Comma separated email addresses</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=129 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>status_callback </FONT>
+				</P>
+			</TD>
+			<TD WIDTH=76 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>no</FONT></P>
+			</TD>
+			<TD WIDTH=164 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>URLENCODED TEXT(255)</FONT></P>
+			</TD>
+			<TD WIDTH=261 BGCOLOR="#ffffff">
+				<P><FONT SIZE=2>if set, Posts status to application upon status
+				changes</FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P ALIGN=CENTER STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Table 1:
+Description of Input fields for Order Creation</I></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western">3.12.1.2When an Order is created it is set to
+DDL_ORDER_ACCEPTED state.</H5>
+<H5 CLASS="western">3.12.1.3If a parameter 'source' is provided to
+the web service call and the parameter has any value other than
+'MedCommons' then an order will NOT be created and an error will be
+returned.</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4525_1350600508"></A>3.12.2Status
+Display</H4>
+<H5 CLASS="western">3.12.2.1Order Status Values &ndash; an Order has
+a status which is a value from the following set:</H5>
+<OL TYPE=a>
+	<UL>
+		<LI><P>DDL_ORDER_NEW</P>
+		<LI><P>DDL_ORDER_ACCEPTED 
+		</P>
+		<LI><P>DDL_ORDER_MATCHED</P>
+		<LI><P>DDL_ORDER_XMITING 
+		</P>
+		<LI><P>DDL_ORDER_UPLOAD_COMPLETE 
+		</P>
+		<LI><P>DDL_ORDER_UPLOAD_TIMEOUT</P>
+		<LI><P>DDL_ORDER_DOWNLOAD_COMPLETE</P>
+		<LI><P>DDL_ORDER_COMPLETE</P>
+	</UL>
+</OL>
+<H5 CLASS="western">3.12.2.2A status page can be invoked to display
+the status of an order at a URL of the form:</H5>
+<UL>
+	<UL>
+		<UL>
+			<LI><P>&lt;Appliance base
+			URL&gt;/timc/orderstatus?callers_order_reference=&lt;reference&gt;</P>
+		</UL>
+	</UL>
+</UL>
+<P><BR><BR>
+</P>
+<P STYLE="margin-left: 1.25cm">Example:  
+https://timc.medcommons.net/timc/orderstatus?callers_order_reference=1234</P>
+<H5 CLASS="western"><A NAME="__RefHeading__37315242"></A><A NAME="order"></A>
+3.12.2.3The status page for an order shows the following fields:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>Callers order reference (as supplied when order was
+			created)</P>
+			<LI><P>Status &ndash; the status of the order, one of the values 
+			</P>
+			<LI><P>Patient ID (as supplied when order was created)</P>
+			<LI><P>Protocol (as supplied when order was created)</P>
+			<LI><P>Modality (as supplied when order was created, or, if DICOM
+			has been associated with the order, as extracted from the DICOM)</P>
+			<LI><P>Scanned Date (as supplied when order was created, or, if
+			DICOM has been associated with the order, as extracted from the
+			DICOM)</P>
+			<LI><P>Due Date (as supplied when order was created)</P>
+			<LI><P>Comments (as supplied when order was created, or as updated
+			when order DICOM uploaded, see 3.10.6.3)</P>
+			<LI><P>Error Code -  If the order has status DDL_ORDER_ERROR,
+			otherwise blank.   Actual possible error codes are not defined in
+			this document.</P>
+			<LI><P>Baseline (as supplied when order was created)</P>
+			<LI><P>Created &ndash; the full date and time when the order was
+			first created</P>
+			<LI><P>Notification -  email addresses supplied in 'email' field
+			when order was created (if any)</P>
+		</OL>
+	</OL>
+</OL>
+<P STYLE="margin-left: 1.77cm">All date / time fields in the above
+list are displayed as Full Date Times (see 3.15.2).</P>
+<H5 CLASS="western">3.12.2.4Order History &ndash; the status page
+displays a table of history for the order containing a row for every
+time the Order Status has changed.   
+</H5>
+<H5 CLASS="western">3.12.2.5Order History - each Order History row
+contains:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>The Order Status that was changed to</P>
+			<LI><P>A description of interaction that caused the change
+			(optional, free text)</P>
+			<LI><P>The date and time at which the change happened</P>
+			<LI><P>The ip address of the computer that instigated the change 
+			</P>
+			<LI><P>The user name of the user that instigated the change
+			(optional, free text)</P>
+		</OL>
+	</OL>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4527_1350600508"></A>3.12.3Notifications</H4>
+<H5 CLASS="western">3.12.3.1Download Notification - If an Order
+changes status to DDL_ORDER_DOWNLOAD_COMPLETE and the 'email'
+parameter was supplied in the original Order creation then a
+notification email is sent to the email addresses supplied in the
+email field originally submitted with the order (if any).   The email
+contains:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>The URL of the Appliance that sent the notifications</P>
+			<LI><P>The HealthURL of the patient associated with the Order</P>
+			<LI><P>The Callers Order Reference parameter supplied in the
+			original Order creation</P>
+			<LI><P>Scanned Date &ndash; the Scan Date Time of the order (as
+			displayed on Status Page, see 3.12.2.3)</P>
+			<LI><P>Comments &ndash; the comments (as displayed on Status Page,
+			see 3.12.2.3).</P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western">3.12.3.2Upload Notification - a notification is
+sent for every order when the upload stage completes according to the
+following rules:</H5>
+<OL TYPE=a>
+	<LI><P>The notification goes to all email addresses mentioned in the
+	'email' field</P>
+	<LI><P>The notification goes to all email addresses mentioned in the
+	'user_email' field</P>
+	<LI><P>The notification goes to all email addresses entered in the
+	'Order Notifications' field on the Settings Page for the Group that
+	is associated with the order</P>
+	<LI><P>The notification is sent immediately when the order enters
+	any of the following statuses: DDL_ORDER_UPLOAD_COMPLETE,
+	DDL_ORDER_CANCELLED, DDL_ORDER_ERROR, DDL_ORDER_UPLOAD_TIMEOUT</P>
+</OL>
+<P STYLE="margin-left: 2.5cm; text-indent: -0.64cm"><BR><BR>
+</P>
+<H5 CLASS="western">3.12.3.3Timeouts &ndash; If an order stays in
+DDL_ORDER_NEW, DDL_ORDER_ACCEPTED, or DDL_ORDER_XMITTING state for
+more than 1 hour then it is automatically transitioned to
+DDL_ORDER_UPLOAD_TIMEOUT state, causing a notification to be sent</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4529_1350600508"></A>3.12.4Security
+&ndash; TIMC</H4>
+<H5 CLASS="western">3.12.4.1When an appliance is deployed to TIMC,
+order management functions are restricted by ip address.   Pages will
+only be accessible to a specific set of allowed ip addresses. 
+Attempting to access from other ip addresses returns no response or
+an error.</H5>
+<H5 CLASS="western">3.12.4.2Allowed ip addresses can be specified in
+the mcproperties table in MySQL on the Appliance.</H5>
+<H3 CLASS="western"><A NAME="__RefHeading__4531_1350600508"></A>3.13Viewer</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__4533_1350600508"></A>3.13.1Menus
+</H4>
+<H5 CLASS="western">3.13.1.1Download CCR &ndash; A menu option allows
+the users to download the CCR corresponding to the tab currently
+selected in the viewer to save as a file on their computer.  The file
+is given a unique name incorporating the patient name and the current
+date and time.</H5>
+<H5 CLASS="western">3.13.1.2Change DICOM Overlay  -  causes the state
+of DICOM Overlays to move to the next state in the sequence of
+overlay states specified in 3.13.7.</H5>
+<H5 CLASS="western">3.13.1.3Print &ndash; if a CCR is displayed in
+the image area then causes the Print dialog to show, enabling the
+user to print a copy of the CCR.     If non-CCR content is displayed
+in the image area, does nothing.</H5>
+<H5 CLASS="western">3.13.1.4Download DICOM &ndash; causes all DICOM
+referenced by the active tab to begin downloading to the user's
+computer.   If DDL is not running, causes a popup message advising
+the user that they need to start the DDL and enabling them to open
+the DDL Control Page (see Section ?). 
+</H5>
+<H5 CLASS="western">3.13.1.5CCR Section Menu &ndash; 
+</H5>
+<OL TYPE=a>
+	<LI><P>Contains a menu item for each type of body section defined in
+	the CCR specification.  
+	</P>
+	<LI><P>When the user selects an item from the CCR Section menu,  the
+	CCR jump to the appropriate section.   If the CCR does not have a
+	corresponding section to the one selected then nothing happens.</P>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4535_1350600508"></A>3.13.2Header</H4>
+<H5 CLASS="western">3.13.2.1At the top of the Viewer window there is
+a notice that this is a temporary HealthURL which will expire in
+(initially) 4 days. This counter  will decrease each day until it has
+expired. The HealthURL should no longer be accessible after the
+expiration date.</H5>
+<H5 CLASS="western">3.13.2.2Header Fields  - the header displays the
+following fields:</H5>
+<OL TYPE=a>
+	<LI><P>Date/time when image data was uploaded</P>
+	<LI><P>First and family names, age/sex, DOB corresponding to the
+	image data if they were available in the uploaded data</P>
+	<LI><P>MedCommons ID of the Patient account</P>
+</OL>
+<P STYLE="margin-left: 2.5cm; text-indent: -0.64cm"><BR><BR>
+</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4537_1350600508"></A>3.13.3CCR</H4>
+<H5 CLASS="western">3.13.3.1The CCR contains a Patient Actor with the
+patient name, data of birth, and sex as extracted from the DICOM
+Image data  uploaded.  The Patient Actor also has a MedCommons ID
+associated with it corresponding to the Patient Account.</H5>
+<H5 CLASS="western">3.13.3.2The study description and the sender's
+email address are populated if entered upon upload. The sender's
+email address appears in the IS System section. Description appears
+in the Description section.</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4539_1350600508"></A>3.13.4CCRs
+and Tabs</H4>
+<H5 CLASS="western">3.13.4.1Each CCR in the Patient's HealthURL that
+is in a visible state is shown as a tab in the Viewer</H5>
+<H5 CLASS="western">3.13.4.2When the viewer is opened using a
+HealthURL link the active tab is the Current CCR tab</H5>
+<H5 CLASS="western">3.13.4.3The tab containing the Current CCR for
+the Patient is labeled &ldquo;Current CCR&rdquo;</H5>
+<H5 CLASS="western">3.13.4.4Tabs corresponding to CCRs other than the
+Current CCR are labeled according to the date they were created in
+MM/DD/YYYY format</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4541_1350600508"></A>3.13.5Thumbnails
+and Scrolling</H4>
+<H5 CLASS="western">3.13.5.1The standard HTML rendering of the CCR is
+displayed in the Main Image Area when a CCR is opened in the Viewer</H5>
+<H5 CLASS="western">3.13.5.2The Viewer displays four Thumbnails to
+the left of the display and a Main Image Area to the right</H5>
+<H5 CLASS="western">3.13.5.3The first thumbnail position is occupied
+by a Terms of Use warning</H5>
+<H5 CLASS="western">3.13.5.4The 2<SUP>nd</SUP>, 3<SUP>rd</SUP>, and
+4<SUP>th</SUP> thumbnails contain images or icons representing the
+three references corresponding to the active page of references
+selected in the Reference List (see 3.13.5.11).</H5>
+<H5 CLASS="western">3.13.5.5Clicking on any of the lower three
+thumbnails 
+</H5>
+<OL TYPE=a>
+	<LI><P>opens the Reference associated with that thumbail in the main
+	viewer</P>
+	<LI><P>highlights the thumbnail by surrounding it with a border</P>
+</OL>
+<H5 CLASS="western">3.13.5.6DICOM Reference Thumbnail Images -  when
+a Thumbnail corresponds to a DICOM Reference the thumbnail displays a
+scaled down version of the an image representing that DICOM Series. 
+The image displayed is</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>If the Reference is currently displayed in the Main Image
+			Area then the thumbnail image is the same as the displayed image. 
+			 If the image in the Main Image Area changes then the thumbnail
+			changes to match.</P>
+			<LI><P>otherwise the thumbnail image is the first image from the
+			series</P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western">3.13.5.7DICOM Reference Labeling -  For
+thumbnails corresponding to DICOM references:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>The the textual description of the series extracted from
+			the DICOM is displayed underneath the DICOM Series.</P>
+			<LI><P>If the DICOM is currently displayed in the viewer, then the
+			sequence number of the current image on display is indicated along
+			with the image total in the form &ldquo;Image 1 / 256&rdquo;.   If
+			the DICOM is not currently displayed in the viewer then only the
+			total number of images is displayed, in the form &ldquo;256
+			Images&rdquo;.</P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western">3.13.5.8DICOM Image Scrolling &ndash; when a
+DICOM Series is displayed in the Main Image Area the user can scroll
+sequentially forward and backward between images in the series by
+using:</H5>
+<OL TYPE=a>
+	<LI><P>the mouse scroll wheel</P>
+	<LI><P>UP and DOWN arrow keys on the keyboard</P>
+</OL>
+<P STYLE="margin-left: 1.79cm">If the user scrolls past the last
+image in the sequence then the sequence &ldquo;wraps around&rdquo;
+and displays the first image.   If they scroll to before the first
+image then the last image is displayed.</P>
+<P STYLE="margin-left: 1.79cm"><BR><BR>
+</P>
+<H5 CLASS="western">3.13.5.9Drag Scrolling -  when a DICOM Series is
+displayed in the Main Image Area an area 20 pixels wide and 360
+pixels high becomes a &ldquo;drag scroll&rdquo; region.  
+</H5>
+<OL TYPE=a>
+	<LI><P>when the mouse hovers over this region the mouse cursor
+	changes to a double headed up / down arrow</P>
+	<LI><P>if the user presses and holds the left mouse button while
+	hovering over the drag scroll area then a dotted line is displayed,
+	stretching from the initial mouse position to the current vertical
+	position of the mouse as it is dragged.  The sequence number of the
+	image at the proportionate position in the sequence according to the
+	how much of a 360 pixel height they have dragged over is indicated
+	above the initial mouse position.   As the mouse is moved downwards
+	the image number increases until it reaches the maximum image number
+	and then it &ldquo;wraps&rdquo; around back to the first image.   
+	</P>
+	<LI><P>when the user releases the mouse as after dragging as
+	described in b), the image corresponding to the sequence number
+	dragged to is displayed in the viewer Main Image Area</P>
+</OL>
+<H5 CLASS="western">3.13.5.10PDF References &ndash; when a reference
+corresponds to a PDF, the file name of the PDF document, if known, is
+displayed near the top of the thumbnail.   PDF Thumbnails are given a
+title of &ldquo;Document&rdquo;.</H5>
+<H5 CLASS="western"><A NAME="__RefNumPara__37384526"></A>3.13.5.11References
+List - a list of numbers corresponding to References appears below
+the thumbnails.   The References numbers are divided into groups of
+three, representing &ldquo;pages&rdquo;.   Clicking on  a Reference
+number causes</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>the page containing the Reference becomes the active page,
+			and to be highlighted with an underline under the Reference index
+			numbers corresponding to that page</P>
+			<LI><P>the Reference corresponding to the index number is
+			displayed in the Main Image Area</P>
+			<LI><P>the thumbnail corresponding to the reference is 'selected'
+			by highlighting it with a white border</P>
+		</OL>
+	</OL>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__4543_1350600508"></A>3.13.6Main
+Image Display Area</H4>
+<H5 CLASS="western">3.13.6.1Image Area Size - the main image display
+area displays the image as scaled to 750x750 pixels.</H5>
+<H5 CLASS="western">3.13.6.2Any part of the image which does not fit
+in the specified browser space can be viewed by scrolling the window.
+</H5>
+<H5 CLASS="western">3.13.6.3Zoom Function - images may be magnified
+by drawing a rectangular box on the image display area.   When an
+area has been zoomed, the portion of the image selected now appears
+in the main image display area.</H5>
+<H5 CLASS="western">3.13.6.4Zoom Limitation - the user cannot zoom in
+such that either horizontal of vertical dimension displayed in the
+viewer is less than 25% of the original. (That is, 1/4 of either x or
+y. ) A warning appears when an area is too large to zoom, saying
+&ldquo;Zoom magnitude too great. Please select a larger area.&rdquo;</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__34313479"></A>3.13.7Overlays</H4>
+<H5 CLASS="western">3.13.7.1When the viewer is first invoked and a
+DICOM Image is shown in the viewer, by default all available DICOM
+Overlay information is displayed in the viewer (the ALL state),
+rendered on top of the image</H5>
+<H5 CLASS="western"><A NAME="__RefHeading__34614023"></A>3.13.7.2DICOM
+Overlay States - the following sequence of DICOM Overlay states is
+supported:</H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P>All overlay information shown (ALL) &ndash; includes
+			Patient Demographics (first and last name, age, sex, Date of
+			Birth) in the top right corner, and  Image dimensions in pixels,
+			Magnification, Sequence Number (index within series), KVP
+			(Kilovoltage Peak) and Slice Thickness in the bottom left corner. 
+			 Where an element of the aforementioned is unavailable, that
+			information is omitted entirely from display.  In addition,
+			Localization Information is displayed as specified in 3.13.7.3.</P>
+			<LI><P>No overlay information shown (NONE 1)</P>
+			<LI><P>Only Localization Information (LOCALIZERS) &ndash; see 3.13.7.3</P>
+			<LI><P>No overlay information shown (NONE 2)</P>
+		</OL>
+	</OL>
+</OL>
+<P STYLE="margin-left: 1.76cm">Selecting the &ldquo;Change DICOM
+Overlay&rdquo; option causes the DICOM Overlay state to move from one
+of these states to the next.</P>
+<H5 CLASS="western"><A NAME="__RefNumPara__34615252"></A>3.13.7.3Localization
+Information &ndash; when Localization Information is displayed
+(LOCALIZERS or ALL state) and the information about patient
+orientation is available in the DICOM being viewed, the patient
+orientation is marked on the right and bottom edge of the image using
+standard DICOM identifiers:  A (anterior), P (posterior), R (right),
+L (left), H (head), F (foot).</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4545_1350600508"></A>3.13.8Window/Level
+Presets</H4>
+<H5 CLASS="western">3.13.8.1If the DICOM images being viewed contain
+Window / Level preset information then a Window / Level menu is
+displayed in the menus.   Each preset embedded in the image is
+displayed in the menu</H5>
+<H5 CLASS="western">3.13.8.2Selection of Window / Level Preset -
+selecting a Window / Level Preset entry from the menu causes the
+viewer to display the image using the specified Window / Level
+values.  
+</H5>
+<H5 CLASS="western">3.13.8.3Window / Level Value lifetime - once
+selected, Window Level values stay in use until the user selects a
+different series or other content in the main viewing area</H5>
+<H3 CLASS="western"><A NAME="__RefHeading__4547_1350600508"></A>3.14DDL</H3>
+<H4 CLASS="western"><A NAME="__RefNumPara__25242564"></A><A NAME="__RefHeading__4549_1350600508"></A>
+3.14.1Start Poller Page</H4>
+<H5 CLASS="western">3.14.1.1A button is displayed allowing<FONT SIZE=3>
+the user to start a DDL Poller.   When clicked:</FONT></H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P><FONT SIZE=3>If a DDL is already running on the user's
+			computer, that DDL begins polling the currently active Group for
+			new DICOM orders</FONT></P>
+			<LI><P><FONT SIZE=3>If no DDL is already running on the user's
+			computer then the DDL is downloaded and started, and polling
+			begins on the currently active Group.</FONT></P>
+		</OL>
+	</OL>
+</OL>
+<H4 CLASS="western"><A NAME="__RefHeading__39246642"></A><FONT SIZE=3>3.14.2Polling</FONT></H4>
+<H5 CLASS="western"><FONT SIZE=3>3.14.2.1When a Poller is running in
+the context of a Group and DICOM image data is uploaded in
+association with a new DICOM Order for that group,  the DDL Poller
+will download the DICOM image data to the computer on which the DDL
+Poller is running.</FONT></H5>
+<H5 CLASS="western"><FONT SIZE=3>3.14.2.2Download Notification  &ndash;
+when a DDL begins downloading DICOM Image data for a DICOM Order, a
+notification message is displayed on the user's computer (eg:  in the
+Notification Area). </FONT>
+</H5>
+<H5 CLASS="western"><FONT SIZE=3>3.14.2.3Update Order Status after
+Download  &ndash; when a DDL completes downloading DICOM Image data
+for a DICOM Order, the Order status is updated to:</FONT></H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P><FONT SIZE=3>DDL_ORDER_DOWNLOAD_COMPLETE if the content was
+			successfully downloaded</FONT></P>
+			<LI><P><FONT SIZE=3>DDL_ORDER_ERROR if a problem occurred in
+			downloading the data</FONT></P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western"><A NAME="__RefHeading__38522524"></A><FONT SIZE=3>3.14.2.4Transfer
+&ndash; if a DDL successfully downloads DICOM Image data then it
+processes the data in one of two ways:</FONT></H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P><FONT SIZE=3>If the DDL is configured with the FILE export
+			method then the DICOM Images are saved onto the local computer in
+			the configured Export Directory (see </FONT><FONT SIZE=3>3.14.3.4</FONT><FONT SIZE=3>).</FONT></P>
+			<LI><P><FONT SIZE=3>If the DDL is configured with CSTORE export
+			method then the DICOM Images are sent using DICOM CSTORE protocol
+			to the configured remote DICOM destination</FONT></P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western">3.14.2.5<FONT SIZE=3>Order Status after Transfer
+&ndash; after a DDL transfers DICOM as specified in </FONT><FONT SIZE=3>3.14.2.4</FONT><FONT SIZE=3>,
+it updates the status of the Order to:</FONT></H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P><FONT SIZE=3>DDL_ORDER_COMPLETE if the transfer occurred
+			successfully</FONT></P>
+			<LI><P><FONT SIZE=3>DDL_ORDER_ERROR if a problem occurred in
+			executing the transfer</FONT></P>
+		</OL>
+	</OL>
+</OL>
+<P><BR><BR>
+</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4551_1350600508"></A><FONT SIZE=3>3.14.3Configuration</FONT></H4>
+<H5 CLASS="western"><FONT SIZE=3>3.14.3.1Page - the user can access a
+configuration page that displays the DDL configuration settings</FONT></H5>
+<H5 CLASS="western"><FONT SIZE=3>3.14.3.2Remote DICOM Device
+Configuration &ndash; editable fields are displayed for the following
+settings:</FONT></H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P><FONT SIZE=3>AE TITLE  (default: UNKNOWN)</FONT></P>
+			<LI><P><FONT SIZE=3>Host Name (default: localhost)</FONT></P>
+			<LI><P><FONT SIZE=3>Port &ndash; allows numbers only from 1 to
+			65535  (default: 11112)</FONT></P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western"><FONT SIZE=3>3.14.3.3Export Method  - a drop down
+selection is displayed for choosing between the values FILE and
+CSTORE  (default:  FILE)</FONT></H5>
+<H5 CLASS="western"><A NAME="__RefHeading__39125421"></A><FONT SIZE=3>3.14.3.4Export
+Directory &ndash; an editable text field is displayed for entering
+the Export Directory folder (default: folder DDL/DICOMExport inside
+user's home directory on their computer).</FONT></H5>
+<H5 CLASS="western"><FONT SIZE=3>3.14.3.5Proxy &ndash; editable
+fields are displayed for the following settings:</FONT></H5>
+<OL TYPE=a>
+	<OL TYPE=a>
+		<OL TYPE=a>
+			<LI><P><FONT SIZE=3>Proxy Address  (default: blank, constraint: 
+			valid hostname or ip address)</FONT></P>
+			<LI><P><FONT SIZE=3>Proxy Password  (default: blank)</FONT></P>
+			<LI><P><FONT SIZE=3>Proxy User Name  (default: blank)</FONT></P>
+		</OL>
+	</OL>
+</OL>
+<H5 CLASS="western"><FONT SIZE=3>3.14.3.6Update &ndash; the user may
+click a button to cause changes to the settings to be saved.  When
+the button is clicked, all fields are checked for valid data and if
+valid, changes are saved.  If invalid data is present changes are not
+saved and a message is displayed indicating which field(s) were
+invalid and the invalid fields are highlighted.</FONT></H5>
+<P><BR><BR>
+</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4553_1350600508"></A><FONT SIZE=3>3.14.4Proxy</FONT></H4>
+<H5 CLASS="western"><FONT SIZE=3>3.14.4.1If a value is saved in the
+configuration for the Proxy Address then the DDL will perform all
+communications through the specified proxy.   If a user name and
+password are provided for authentication then it will authenticate
+using those credentials to the proxy.</FONT></H5>
+<P><BR><BR>
+</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4555_1350600508"></A>3.14.5Automatic
+Restart</H4>
+<H5 CLASS="western">3.14.5.1When the DDL is running a Poller (see 3.14.2)
+an option is available to cause it to automatically start up when the
+user starts their computer and logs in.</H5>
+<H5 CLASS="western">3.14.5.2When the Automatic Restart option is
+enabled, the DDL automatically starts up and resumes polling when the
+user logs into their computer.</H5>
+<H4 CLASS="western"><A NAME="__RefHeading__4557_1350600508"></A>3.14.6Transfer</H4>
+<P>TODO</P>
+<P><BR><BR>
+</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4559_1350600508"></A>3.14.7Security</H4>
+<H5 CLASS="western">3.14.7.1The first time a DDL is first installed
+on a computer it does not show security alerts about the commands
+being sent to it or domain name of the host it is communicating with
+by the first web page that accesses it.</H5>
+<H5 CLASS="western">3.14.7.2When a user accesses a web page that
+interacts with DDL, and the web page is served by a domain that has
+not previously been used before with the DDL on that computer, the
+DDL will show a warning to the user that allows them to cancel the
+interaction with the domain and prevent the DDL from communicating
+with that web page.</H5>
+<OL TYPE=a>
+	<LI><P>If the user clicks 'OK' then the interaction is allowed and
+	future interactions are allowed without warning for that domain</P>
+	<LI><P>If the user clicks 'Cancel' then the interaction does not
+	occur and the DDL displays an error message.  Future interactions
+	continue to cause warnings to show.</P>
+</OL>
+<H5 CLASS="western">3.14.7.3When a user uses a different browser to
+interact with DDL, or if the user clears cookies from the same
+browser they have used before, the DDL will show them a warning that
+allows them to prevent the interaction from occurring</H5>
+<OL TYPE=a>
+	<LI VALUE=1><P>If the user clicks 'OK' then the interaction is
+	allowed and future interactions are allowed without warning</P>
+	<LI><P>If the user clicks 'Cancel' then the interaction does not
+	occur and the DDL displays an error message.  Future interactions
+	continue to cause warnings to show.</P>
+</OL>
+<H3 CLASS="western"><A NAME="__RefHeading__4561_1350600508"></A>3.15Formats</H3>
+<H4 CLASS="western"><A NAME="__RefHeading__37511964"></A>3.15.1Relative
+Date Time</H4>
+<P STYLE="text-indent: -0.03cm">Relative Dates and Times are 
+displayed as a date in format MM/DD/YY if the date was more than 7
+days ago,  &ldquo;X days ago&rdquo; if the date was between 1 and 7
+days ago (X replaced by number of days),  &ldquo;X hours ago&rdquo;
+if the date was between 1 and 24 hours ago (X replaced by number of
+hours) and &ldquo;X mins ago&rdquo; if the date was between 1 and 60
+minutes ago.  If less than one minute, the text &ldquo;less than 1
+minute ago&rdquo; is displayed, or alternatively &ldquo;0 mins ago&rdquo;
+(either one can be used depending on space availability on the page.)</P>
+<H4 CLASS="western"><A NAME="__RefHeading__37232529"></A>3.15.2Full
+Date Time</H4>
+<P>A Full Date Time is displayed in the format:</P>
+<P STYLE="margin-left: 0.61cm">YYYY-MM-DD HH:mm:ss</P>
+<P>Full Date Times are displayed relative to the local time zone
+where the appliance is running.   This is US EST / EDT by default and
+for the TIMC appliance.</P>
+<H4 CLASS="western"><A NAME="__RefHeading__4563_1350600508"></A>3.15.3MedCommons
+Account ID</H4>
+<H5 CLASS="western">3.15.3.1Display &ndash; Unless otherwise noted,
+MedCommons Account IDs are displayed as 4 sets of  4 digits separated
+by dashes.</H5>
+<H5 CLASS="western"><A NAME="__RefHeading__39126393"></A>3.15.3.2Entry
+&ndash; Unless otherwise noted, MedCommons Account IDs are entered as
+16 digit numbers, optionally separated by dashes or spaces.</H5>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<P STYLE="margin-top: 0.5cm; margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

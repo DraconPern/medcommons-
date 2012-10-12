@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mapping file to map CCR 0.9 Spec values to the MedCommons internal values.
+
+  Copyright 2005 MedCommons Inc.   All Rights Reserved.
+-->
+<paths>
+  <path name="toEmail">/ContinuityOfCareRecord/To/EMail/Value</path>
+  <path name="sourceEmail">/ContinuityOfCareRecord/Source/Actor/EMail/Value</path>
+  <path name="patientEmail">/ContinuityOfCareRecord/Patient/EMail/Value</path>
+  <path name="bodySectionCount">count(//Body/*[local-name()=translate($section,' ','')])</path>
+  <path name="sourceName">concat(//Source/Actor/Person/Name/CurrentName/Given,' ',//Source/Actor/Person/Name/CurrentName/Family)</path>
+  <path name="patientName">concat(/ContinuityOfCareRecord/Patient/Person/Name/CurrentName/Given,' ',/ContinuityOfCareRecord/Patient/Person/Name/CurrentName/Family)</path>
+  <path name="patientGivenName">/ContinuityOfCareRecord/Patient/Person/Name/CurrentName/Given</path>
+  <path name="patientFamilyName">/ContinuityOfCareRecord/Patient/Person/Name/CurrentName/Family</path>
+  <path name="trackingNumber">/ContinuityOfCareRecord/@ID</path>
+  <path name="ccrDateTime">/ContinuityOfCareRecord/DateTime/ExactDateTime</path>
+  <path name="ccrPurpose">/ContinuityOfCareRecord/Purpose/Description/Code/Value</path>
+  <path name="purposeText">/ContinuityOfCareRecord/Purpose/Description/Text</path>
+  <path name="patientDateOfBirth">/ContinuityOfCareRecord/Patient/Person/DateOfBirth/ApproximateDateTime/Text</path>
+  <path name="patientGender">/ContinuityOfCareRecord/Patient/Person/Gender</path>
+  <path name="patientMedCommonsId">/ContinuityOfCareRecord/Patient/ExternalIdentifiers/ExternalID/ID[../IDType/Text='MedCommons Patient Id']</path>
+
+  <!-- Source title and name -->
+  <path name="sourceTitle">/ContinuityOfCareRecord/Source/Actor/Person/Name/CurrentName/Title</path>
+  <path name="sourceFamilyName">/ContinuityOfCareRecord/Source/Actor/Person/Name/CurrentName/Family</path>
+  <path name="sourceGivenName">/ContinuityOfCareRecord/Source/Actor/Person/Name/CurrentName/Given</path>
+
+  <!-- The value of the first patient phone number -->
+  <path name="patientPhoneNumber">/ContinuityOfCareRecord/Patient/Telephone[1]/Value</path>
+
+  <!-- location of various people within the CCR -->
+  <path name="patientPerson">/ContinuityOfCareRecord/Patient/Person</path>
+  <path name="sourcePerson">/ContinuityOfCareRecord/Source/Actor/Person</path>
+  <path name="toPerson">/ContinuityOfCareRecord/To/Person</path>
+
+  <!-- Details of a Person : all relative to the Person element -->
+  <path name="personName">concat(./Name/CurrentName/Given,' ',./Name/CurrentName/Family)</path>
+  <path name="personMedCommonsId">../ExternalIdentifiers/ExternalID/ID[../IDType/Text='MedCommons Patient Id']</path>
+  <path name="personOrg">../../Actor/Organization/Name</path>
+  <path name="personAddress1">../Address/Line1</path>
+  <path name="personCityStatePostal">concat(../Address/City,',',../Address/State,' ',../Address/PostalCode)</path>
+  <path name="personPhoneList">../Telephone</path>
+  <path name="personEmail">../EMail/Value[../Status='Active']</path>
+
+  <!-- Details of a telephone number : relative to Telephone -->
+  <path name="telephoneNumber">Value</path>
+  <path name="telephoneNumberType">Type</path>
+
+</paths>
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!--
+  This version of the config file is loaded and used by junit tests
+ -->
+<beans>
+  <bean id="mergePolicy" class="net.medcommons.router.services.ccrmerge.PatientDemoGraphicMatchMergePolicy">
+  </bean>
+
+  <bean id="ccrXPathCache" class="net.medcommons.phr.db.xml.XPathCache">
+    <property name="XPathMappingFile" value="etc/configurations/xpaths-ccr-1.0.xml"/>
+  </bean>
+
+  <bean id="systemServicesFactory" class="net.medcommons.modules.services.client.rest.RESTProxyServicesFactory">
+    <constructor-arg><value>token:Gateway</value></constructor-arg>
+  </bean>
+
+  <bean id="nodeKeyProvider" class="net.medcommons.router.configuration.tomcat.RegisterNodeTask">
+  </bean>
+
+  <bean id="profilesService" class="net.medcommons.router.services.profiles.XmlProfileService">
+  </bean>
+
+  <bean id="smallFileBackupService" class="net.medcommons.modules.backup.FileSystemBackupService">
+  </bean>
+
+  <bean id="documentIndexService" class="net.medcommons.router.services.index.DBDocumentIndexService">
+  </bean>
+
+  <bean id="dicomStatusService" factory-bean="systemServicesFactory" factory-method="getDICOMStatusService">
+  </bean>
+  
+  <bean id="s3Factory" class="net.medcommons.modules.backup.S3Factory" autowire="constructor">
+  </bean>
+
+  <bean id="backupService" class="net.medcommons.modules.backup.FileSystemBackupService" autowire="constructor">
+  </bean>
+  
+
+</beans>

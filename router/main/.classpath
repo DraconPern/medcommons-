@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/jboss/servlet.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/mail.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/jboss-j2ee.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/common"/>
+	<classpathentry kind="lib" path="lib/jboss/scheduler-plugin.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/axis.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/dcm4che/dcm4che.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/jboss.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/getopt.jar"/>
+	<classpathentry kind="lib" path="lib/jboss/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/struts/struts.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient/commons-httpclient-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jibx/jibx-run.jar"/>
+	<classpathentry kind="output" path=".eclipse"/>
+</classpath>

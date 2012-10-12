@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mccxp.css" type="text/css"?>
+
+<window
+    id="progresswindow"
+    title="CCR Sending Progress"
+    xmlns:h="http://www.w3.org/1999/xhtml"    
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"    
+    >
+
+    <script src="MochiKit.js"/>
+    <script src="xpath.js"/>
+    <script src="misc.js"/>
+    <script src="dom.js"/>
+    <script src="mccxp.js"/>
+
+    <label class="infoheading" value="Send Progress"/>
+    <vbox align="start" pack="start" id="sendResults">
+      <h:table id="statusTable" border="0" cellspacing="0" cellpadding="0">
+        <h:tr><h:th width="120">Status:</h:th><h:td width="150"><label id="status" value="Transmitting ..."/></h:td></h:tr>
+        <h:tr id="txIdRow"><h:th>Transaction Id:</h:th><h:td> <h:input id="txid" type="text" style="border: none; margin-left: 5px; background-color: transparent; font-size: 10px;" readonly="true" value="-"/></h:td></h:tr>
+        <h:tr id="pinRow"><h:th>MedCommons PIN:</h:th><h:td><h:input id="pin" type="text" style="border: none; margin-left: 5px; background-color: transparent; font-size: 10px;" readonly="true" value="-"/></h:td></h:tr>
+     <h:tr id="reasonRow"><h:th>Reason:</h:th><h:td><h:input id="reason" type="textarea" cols="300" rows="100" wrap="SOFT" style="border: none; margin-left: 5px; background-color: transparent; font-size: 10px;" readonly="true" value="-"/></h:td></h:tr>
+      </h:table>
+    </vbox> 
+    <spacer height="40"/>
+    
+    <hbox flex="1" align="start" pack="end"   style="">
+        <button id="cancelButton" label="Close" oncommand="window.close()"/>
+    </hbox> 
+</window>
+

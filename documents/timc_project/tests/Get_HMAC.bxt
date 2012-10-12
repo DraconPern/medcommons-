@@ -1,0 +1,34 @@
+<WebScriptTool>
+	<DisplayName>Get HMAC</DisplayName>
+	<Execute v='4'>
+		<ver>13</ver>
+		<id>720</id>
+		<Summary v='3'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName>email in, hmac out</itemName>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<Object>null</Object>
+		<name>get accid, hmac</name>
+		<script>var accid = get_mc_attribute(&apos;mcid&apos;);
+var hmac = hex_hmac_sha1(&apos;secret&apos;, 
+  accid+badboy.getVariable(&apos;email&apos;));
+badboy.setVariable(&apos;hmac&apos;,hmac);
+badboy.setVariable(&apos;accid&apos;,accid);</script>
+		<imageId>4294967295</imageId>
+		<pluginAccess>false</pluginAccess>
+		<frameName/>
+		<sourceFile/>
+	</Execute>
+</WebScriptTool>

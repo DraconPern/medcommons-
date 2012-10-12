@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>Testing JSP with Cactus</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Testing JSP with Cactus" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././writing/howto_testcase.html">Writing Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Writing Tests<ul>
+    
+<li>
+<a href=".././writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">General Principles</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">Testing Servlets</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus.">Testing Filters</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_jsp.html" title="How to write unit tests for JSP pages using Cactus." class="currentPage">Testing JSP Pages</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">Testing Taglibs</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">Testing EJBs</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Advanced Topics<ul>
+    
+<li>
+<a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">Integrating HttpUnit</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_security.html" title="">Using Authentication</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Reference<ul>
+    
+<li>
+<a href=".././api/framework-12/index.html" title="">Javadocs (J2EE 1.2)</a>
+</li>
+    
+<li>
+<a href=".././api/framework-13/index.html" title="">Javadocs (J2EE 1.3)</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>JSP Testing in Cactus</h1>
+
+      
+<p>
+        This tutorial explains how Cactus can be used to test JSP.        
+      </p>
+	  
+<p>
+	  	There are different kibds of tests that you can implement with
+	  	Cactus for testing JSP:
+	  </p>
+	  
+<ul>
+	  	
+<li>
+          
+<a href="#jsp_type1">type 1</a>:
+          You may simply want to verify the result of the JSP processing,
+	  	  i.e. the HTML, XML or other format it returns.
+	  	</li>
+	  	
+<li>
+          
+<a href="#jsp_type2">type 2</a>:
+          You may want to unit test your JSP taglibs.
+	    </li>
+	    
+<li>
+          
+<a href="#jsp_type2">type 3</a>:
+	      You may want to test your JSP in isolation by being able to 
+	      execute it without the java logic being present. This is often 
+	      the case when the team is split into 2: one group for page 
+	      development and another group for the java logic.
+	    </li>
+	  
+</ul>
+	      
+    
+</div>
+
+    
+<a name="jsp_type1">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Type 1: verifying JSP result</h1>
+
+      
+<p>
+      	This is easily done by implementing a
+      	<code>endXXX(WebResponse)</code> method as described in the
+      	<a href=".././writing/howto_testcase.html#endxxx">TestCase tutorial</a>.
+      </p>
+      
+<p>
+      	Your test case class will also need to extend 
+      	<code>ServletTestCase</code> and forward the request to your JSP
+      	page, as in the following example:
+      </p>
+
+
+<div class="source">
+<pre>
+public class MyTest extends ServletTestCase
+{
+    [...]
+    
+    public void testXXX()
+    {
+        RequestDispatcher rd = theConfig.getServletContext().
+            getRequestDispatcher("/path/to/test.jsp");
+        rd.forward(theRequest, theResponse);
+    }
+    
+    public void endXXX(WebResponse)
+    {
+        // Assert result
+        [...]
+    }
+    
+    [...]
+}        
+</pre>
+</div>
+      
+    
+</div>
+
+    
+<a name="jsp_type2">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Type 2: testing JSP taglibs</h1>
+
+      
+<p>
+      	This is easily done by creating a test case class that extends
+      	<code>JspTestCase</code>. See the 
+      	<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">Taglib TestCase 
+        tutorial</a>.
+      </p>
+      
+    
+</div>
+
+    
+<a name="jsp_type3">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Type 3: testing JSP in isolation</h1>
+
+      
+<p>
+        This type of testing depends mostly on your architecture. The general
+        idea is that you would normally have an MVC implementation with a
+        controller (usually a Servlet) that inspect the HTTP request, 
+        potentially gather some other data from the Session, ServletContext or
+        some storage and based on this information decides to call some 
+        business code logic, and then forward the call to a given JSP page.
+      </p>
+      
+<p>
+      	Thus, one solution to unit test your JSP in isolation is to succeed
+      	in either bypassing the controller altogether or in telling it to use
+      	some mock code logic that you would write for your tests.
+      </p>
+      
+      
+<div class="section">
+<h2>Example1</h2>
+
+
+<div class="source">
+<pre>
+public class MyTestCase extends JspTestCase
+{
+[...]
+
+    public void beginXXX(WebRequest webRequest)
+    {
+        webRequest.addParameter("cacheId", "1");
+    }
+	
+    public void testXXX() throws Exception 
+	{
+        PageBean bean = new PageBean();
+        bean.setName("kevin");
+        request.setAttribute("pageBean", bean);
+        pageContext.forward("/test.jsp");
+	}
+	
+    public void endXXX(com.meterware.httpunit.WebResponse theResponse)
+    {
+        WebTable table = theResponse.getTables()[0];
+        assertEquals("rows", 4, table.getRowCount());
+        assertEquals("columns", 3, table.getColumnCount());
+        assertEquals("links", 1, table.getTableCell(0, 2).getLinks().length);
+       [...]
+    }
+}
+</pre>
+</div>
+
+        
+<p>
+          In <code>testXXX()</code>, we populate a bean with values for our
+          test and put this bean in the request.  Normally this would have
+          been performed by the controller but we're bypassing it for the
+          test. Then we call our JSP page, which looks like:
+        </p>
+
+
+<div class="source">
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;test.jsp&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+  &lt;BODY&gt;
+    &lt;P&gt;&lt;BR&gt;
+      &lt;jsp:useBean id="pageBean" class="PageBean" scope="request"/&gt;
+    &lt;/P&gt;
+    &lt;P&gt;
+      &lt;%= pageBean.getName() %&gt;
+    &lt;/P&gt;&lt;BR&gt;
+    
+    Place test.jsp's content here
+  &lt;/BODY&gt;
+&lt;/HTML&gt;
+</pre>
+</div>
+        
+      
+</div>
+      
+      
+<div class="section">
+<h2>Example2: Struts application</h2>
+
+        
+<p>
+          See the 
+          <a href="http://strutstestcase.sourceforge.net/" title="">StrutsTestCase</a>
+          project.
+        </p>
+        
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

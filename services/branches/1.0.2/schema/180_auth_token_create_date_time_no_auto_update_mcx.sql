@@ -1,0 +1,1 @@
+alter table authentication_token modify column at_create_date_time timestamp DEFAULT CURRENT_TIMESTAMP;

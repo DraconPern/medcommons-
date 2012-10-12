@@ -1,0 +1,13 @@
+<ul>
+    <li>This test relies on the <a href='/acct/testdata.php' target='_new'>Base Test Data</a> being created. 
+        Make sure the test data scripts have been run.</li>
+    <li>This test exercises the connection to S3.  Check that S3 credentials are correct in the console.</li>
+    <li>Check that the console configuration has been published.</li>
+    <li>Check that S3 credentials have been successfully published to /opt/gateway/conf/LocalBootParameters.properties</li>
+    <li>You may need to restart the gateway if you have published new S3 credentials.</li>
+    <li>It is possible this test may fail if the backup is very slow to occur (takes more than 6 seconds).
+        Try the test again, or look at the <a href='status.do'>Gateway Status Page</a> to see 
+        what the current backup latency is.  If this occurs persistently you can increase the time
+        that is allowed for backups to occur in this test by adjusting the configuration parameter
+        "BackupsSelfTestWaitTimeMs" in the LocalBootParameters.properties file.</li>
+</ul>

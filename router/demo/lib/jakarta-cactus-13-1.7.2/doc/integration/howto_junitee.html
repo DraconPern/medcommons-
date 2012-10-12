@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>JUnitEE Howto</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="JUnitEE Howto" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE." class="currentPage">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>JUnitEE, a TestRunner inside the Container</h1>
+
+      
+<div class="note">
+        Since Version 1.4 Cactus contains a new Servlet Test Runner that
+        enables the same features than the JUnitEE was providing, but in an
+        even easier way. Please check the
+        <a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">TestRunner Howto</a> tutorial.
+      </div>
+
+      
+<p>
+        You can use the
+        <a href="http://www.junitee.org/" title="">JUnitEE</a> user
+        interface to run your all your tests inside the Container. JUnitEE is
+        a JUnit TestRunner that has been written as a servlet with the user
+        interface in HTML format.
+      </p>
+
+      
+<p>
+        You cannot achieve all features of Cactus using JUnitEE as
+        part of them depend on being executed on the client side.
+        Executing JUnitEE from ANT commands will probably not be possible.
+        Some benefits however of JUnitEE are:
+      </p>
+
+      
+<ul>
+        
+<li>
+          
+<b>All class files are in one place</b>:  Install all your
+          TestCase class-files only in your container classpath. Both
+          TestCases derived from
+          <code>junit.framework.TestCase</code> and from
+          <code>org.apache.cactus.JspTestCase</code>
+          will be located in the same place and only once.
+        </li>
+        
+<li>
+          
+<b>Run all TestCases in the container</b>: You can mix
+          both types of TestCases mentioned above in your test. All tests are
+          executed inside the Container. You can use testcases derived from
+          <code>junit.framework.TestCase</code> to test methods that do not
+          require the http objects such as the
+          <code>HttpServletRequest</code> or
+          <code>HttpServletResponse</code> objects.
+        </li>
+      
+</ul>
+
+      
+<p>
+        Using JUnitEE is (relatively) simple. Assuming you have a container
+        such as Weblogic, Tomcat or Orion functioning and you know how to
+        configure Servlets and adding libraries to the Containers classpath and
+        you are familiar with the basics of Cactus then the rest is easy.
+      </p>
+
+      
+<ul>
+        
+<li>
+          One good reason to use JUnitEE would be when you want to try Cactus
+          quickly and are not concerned with automatic unit testing.
+      </li>
+        
+<li>
+          Usage of standard JUnit testrunner (textui,swingui, ...) will not be
+          possible if cactus is configured this way and thus the ant junit task
+          cannot be used to automate the test.
+        </li>
+      
+</ul>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>How to install JUnitEE</h1>
+
+      
+<p>
+        Download the <a href="http://www.junitee.org/" title="">JUnitEE</a>
+        zip-file. Add a reference to <code>junitee.jar</code> to your Container
+        classpath. Add also references to
+        <code>junit.jar</code>,
+        <code>httpunit.jar</code>
+        <code>cactus.jar</code> and
+        <code>aspectjrt.jar</code> if you have not
+        already done that.
+      </p>
+
+      
+<div class="note">
+        add
+        <code>junitee.jar</code> in the same way as cactus.jar is added.
+      </div>
+
+      
+<p>
+        Configure TestServlet in your Container. You may use the example servlet
+        <code>org.infohazard.servlet.TestServlet</code> that
+        comes with JUnitEE. Check JUnitEE documentation. TestServlet extends
+        <code>junit.htmlui.TestServletBase</code> that executes
+        <code>junit.htmlui.TestRunner</code>
+        i.e. the JUnitEE interface.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Executing the tests with JUnitEE</h1>
+      
+<p>
+        You request the tests from an html-page in your container. You can
+        write the name of your testclasses according to the examples with
+        JUnitEE as:
+      </p>
+
+      
+<ul>
+        
+<li>
+          a commandstring parameter such as "
+          <code>/TestServlet?suite=fi.iki.kaila.MyTests&amp;list=yes</code>"
+        </li>
+        
+<li>
+          as input using
+          <code>&lt;input type="text" name="suite" size=60 /&gt;</code> in
+          a form element that requests TestServlet
+        </li>
+        
+<li>
+          as one or more option elements in a select element in the
+          form-element
+        </li>
+      
+</ul>
+    
+</div>
+
+    
+<div class="section">
+<h1>Tell JUnitEE to use Cactus redirector</h1>
+
+      
+<p>
+        The
+        <code>cactus.properties</code> file must be located so that your
+        container can find it e.g. in your containers classpath.
+      </p>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

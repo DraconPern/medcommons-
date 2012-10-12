@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="description" content="MedCommons Website Version 1.0B Page $$$htmltitle$$$" />
+    <meta name="keywords" 
+    content="medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr"/>
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=320" />
+    <title>$$$htmltitle$$$</title>
+    <link rel="shortcut icon" href="/images/favicon.gif" type="image/gif" />
+    <link media="all"
+	href="/css/medCommonsStyles.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+  
+            function toggle(id)
+    {
+    	if (document.getElementById( id ))
+    	{
+    	if  (document.getElementById( id ).style.display == 'none')
+    	document.getElementById( id ).style.display = 'block'; else
+    	document.getElementById( id ).style.display = 'none';
+    	}
+    	return false;
+    		
+    }
+      function setvalue(id,innerhtml)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).innerHTML =innerhtml;
+    }
+    /* shows a particlur div */
+    function showinline(id)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).style.display = 'inline';
+    }
+    function showblock(id)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).style.display = 'block';
+    }
+    function dontshow(id)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).style.display = 'none';
+    }
+    /**
+    * gets the value of the specified cookie.
+    */
+    function getCookie(name)
+    {
+    	var dc = document.cookie;
+    	var prefix = name + "=";
+    	var begin = dc.indexOf("; " + prefix);
+    	if (begin == -1) {
+    		begin = dc.indexOf(prefix);
+    		if (begin != 0) return null;
+    	}
+    	else {
+    		begin += 2;
+    	}
+    	var end = document.cookie.indexOf(";", begin);
+    	if (end == -1) {
+    		end = dc.length;
+    	}
+    	return unescape(dc.substring(begin + prefix.length, end));
+    }
+
+    // This function is included to overcome a bug in Netscape's implementation
+    // of the escape () function:
+
+    function myunescape (str)
+    {
+    	str = '' + str;
+    	while (true)
+    	{
+    		var i = str . indexOf ('+');
+    		if (i < 0)
+    		break;
+    		str = str . substring (0, i) + ' ' + str . substring (i + 1, str . length);
+    	}
+    	return unescape (str);
+    }
+
+    // This function creates the args [] array and populates it with data
+    // found in the URL's search string:
+
+    var args;
+
+    function args_init ()
+    {
+    	args = new Array ();
+    	var argstring = window . location . search;
+    	if (argstring . charAt (0) != '?')
+    	return;
+    	argstring = argstring . substring (1, argstring . length);
+    	var argarray = argstring . split ('&');
+    	var i;
+    	var singlearg;
+    	for (i = 0; i < argarray . length; ++ i)
+    	{
+    		singlearg = argarray [i] . split ('=');
+    		if (singlearg . length != 2)
+    		continue;
+    		var key = myunescape (singlearg [0]);
+    		var value = myunescape (singlearg [1]);
+    		args [key] = value;
+    	}
+    }
+
+    var signed_on;
+
+    function wsinit()
+    {
+    	args_init();
+    	var logout = '';
+
+    	if(getCookie('mc_openid_auth') || getCookie('mc'))
+    	logout = '<li><a class=menu_nil    href="https://tenth.medcommons.net/acct/logout.php?next=https://www.medcommons.net/" >Logout</a></li>';
+    	else
+    	logout = '<li ><a class=menu_nil  href="https://tenth.medcommons.net/acct/login.php?next=https://tenth.medcommons.net/mod/index.php" >Sign In</a></li>';
+
+    	if (getCookie('mc'))	{
+
+    		signed_on = true;
+    	              menu = 
+    		'<li><a class=menu_how href="/howdoi.php">Help</a></li>&nbsp;&nbsp;|&nbsp;&nbsp;'+
+    		'<li><a class=menu_dashboard href="https://tenth.medcommons.net/acct/home.php">Dashboard</a></li>&nbsp;&nbsp;|&nbsp;&nbsp;'+
+    		'<li><a class=menu_settings href="https://tenth.medcommons.net/acct/password.php">Settings</a></li>&nbsp;&nbsp;|&nbsp;&nbsp;'+
+    		'<li><a class=menu_setup href="https://tenth.medcommons.net/mod/svcsetup.php">Services</a></li>&nbsp;&nbsp;|&nbsp;&nbsp;'+
+    		'<li><a class=menu_list  href="https://tenth.medcommons.net/mod/voucherlist.php">Vouchers</a></li>&nbsp;&nbsp;|&nbsp;&nbsp;'+
+    		'<li><a class=menu_list  href="https://tenth.medcommons.net/acct/logout.php?next=https://tenth.medcommons.net/site/index.php">Logout</a></li>'
+    		setvalue('navcontainer',    '<ul id="navlist" class="listinlinetiny" >'+menu+'</ul>');
+    		showblock('loggedon');
+    		dontshow('notloggedon');
+    		showinline('visi');
+    	
+
+    	}
+    	else
+    	{
+    		signed_on = false;
+    		              menu = 
+    		'<li><a class=menu_how href="/howdoi.php">Help</a></li>&nbsp;&nbsp;|&nbsp;&nbsp;'+
+    		      '<li ><a class=menu_nil  href="/personal.php" >Sign In</a></li>'; 
+    		setvalue('navcontainer',    '<ul id="navlist" class="listinlinetiny" >'+menu+'</ul>');
+    	
+    		showblock('notloggedon');    		dontshow('loggedon');    		dontshow('visi');
+        
+    	}
+
+    	for (ix = 0; ix<10 ; ++ ix)
+    	{
+    		if (args['e'+ix])
+    	
+    		if (args['p'+ix])
+    		{
+    			p = args['p'+ix];
+    			document.getElementById(p).innerHTML = '** ' + args['e'+ix] + '**';
+    		}
+    		
+    	}
+    }
+
+    </script>
+</head>
+<body  id='$$$pageid$$$' >
+<table id='topheader'><tr>
+<td id ='topleft' >
+<a href='/index.php' title='MedCommons Homepage'><img  border="0" src="/images/MEDcommons_logo_246x50.gif" /></a><div id="navcontainer"></div></td>
+<td width=100% >&nbsp;</td>
+  <td  id='topright' ><span id='visi' class=right >
+                <a href='/acct/home.php'><img alt='' border=0 id='stamp' src='/acct/stamp.php'  /></a>
+ </span>
+</td>
+ </tr></table>

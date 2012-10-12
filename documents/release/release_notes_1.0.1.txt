@@ -1,0 +1,13 @@
+#############################Consolidated Log##############################
+  -  -------: Prevent session expiry on DICOM Upload Form
+  -  -------: Anon-auth cookie not being set, preventing access to HealthURL by Uploader (REGRESSION)
+  -  -------: Retries for status updates for better reliability
+  -  -------: Changed some "DICOM Service" wording to be "Transfer Utility" in more places for consistency
+  -  -------: Fixed incorrect footer in upload form
+  -  0000939: BLOCKING: Hand Crafted URL can Download All Documents without Authorization
+  -  0000890: Upload Form is HTTP (Insecure)
+  -  0000928: Ugly and Confusing Security Warnings in IE8
+  -  0000929: Show Help when DDL Fails to Start Instead of Showing Spinning Graphic Forever
+  -  0000940: Display of HealthURL on Order Status Page
+  -  0000941: A Sequence # should make it easy to reference a particular order the way Mantis case # are used
+  -  0000942: Include Patient ID and Protocol ID in Folder Name Exported to By DDL

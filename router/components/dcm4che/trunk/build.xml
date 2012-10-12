@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id$
+     ====================================================================== -->
+<project name="dcm4che2" default="world" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+
+  <target name="world">
+  </target> 
+ 
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+     - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+      <echo message="Initializing build ..." />
+      <ivy:configure file="ivy-settings.xml" />
+	  <!-- <ivy:resolve file="ivy.xml"/> -->
+		<available file="lib/dcm4che-2.0.9" type="dir" property="dcm4che.unzipped" value="true"/>
+      <ivy:retrieve /> 
+    </target>
+ 
+	<target name="unzip-dcm4che" unless="dcm4che.unzipped">
+      <unzip dest="lib" src="lib/dcm4che-2.0.9-bin.zip"/>
+    </target>
+	
+    <target name="move" depends="unzip-dcm4che">
+    <mkdir dir="build"/>
+    <mkdir dir="build/dist"/>
+    <copy todir="build/dist">
+    <fileset dir="lib/dcm4che-2.0.9/lib">
+        <include name="dcm4che-core-2.0.9.jar" />
+		<include name="dcm4che-net-2.0.9.jar" />
+		<include name="slf4j-api-1.2.jar"/>
+		<include name="slf4j-log4j12-1.2.jar"/>
+    </fileset>
+    </copy>
+    </target>
+
+    <target name="publish" depends="move, init">
+      <delete file="build/dist/ivy.xml"/>
+      <!-- You will get an error when publishing unless you increment the version number below -->
+      <ivy:publish resolver="public" pubrevision="2.0.9">
+        <artifacts pattern="build/dist/[artifact]-[revision].[ext]" /> 
+		<artifacts pattern="build/dist/[artifact].[ext]" />
+      </ivy:publish>
+    </target>
+
+    <target name="clean">
+     <delete dir="build"/>
+    </target>
+</project>

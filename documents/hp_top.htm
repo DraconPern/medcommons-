@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MedCommons</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="icon" href="favicon.gif" type="image/gif">  
+<link rel="shortcut icon" href="favicon.gif" type="image/gif">
+<link href="css/header.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="bchecker.js"></script>
+<script language="javascript">
+function showCaption(msgnum) {
+	for(i=1;i<6;i++) {		
+	var theCaption = document.getElementById("msg" + i);
+	theCaption.className = (i==msgnum) ? 'show' : 'hide';
+	var theImage = document.getElementById("img" + i);
+	theImage.style.borderColor = (i==msgnum) ? '#000000' : '#527463';
+	}
+	var theCaption = document.getElementById("msg6");
+	theCaption.className = 'hide';
+	if (msgnum==3) {
+	var theCaption = document.getElementById("msg6");
+	theCaption.className = 'show';
+	}	
+		
+}
+</script>
+</head>
+
+<body>
+<div class="menu">
+<ul>
+<li id="mmenu1"><img src="images/mmtab_off_01.gif" border="0"></li>
+<li id="mmenu2"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20sign%20a%20consent%20form." target="_top"><img src="images/mmtab_off_02.gif" border="0"></a></li>
+<li id="mmenu3"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20create%20or%20view%20a%20CCR." target="_top"><img src="images/mmtab_off_03.gif" border="0"></a></li>
+<li id="mmenu4"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20access%20your%20personalized%20desktop." target="_top"><img src="images/mmtab_off_04.gif" border="0"></a></li>
+<li id="mmenu5"><a href="memberservice/logon.php?err=You%20must%20be%20logged%20in%20to%20view%20images." target="_top"><img src="images/mmtab_off_05.gif" border="0"></a></li>
+<li id="mmenu6"><a href="memberservice/logon.php" target="_top"><img src="images/mmtab_off_06.gif" border="0"></a></li>
+</ul>
+</div>
+<div id="topframe"><a href="hp.htm" target="_top"><img id="logo" src="images/logo_leftcorner.gif" border="0" alt="MedCommons" width="364" height="69"></a>
+</div>
+<iframe id="trkframe" src="trackform.php" scrolling="no"></iframe>
+</body>
+</html>

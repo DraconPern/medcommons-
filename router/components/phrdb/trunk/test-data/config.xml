@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean id="xmlPhrDbConfig" class="net.medcommons.phr.db.xml.XMLPHRDBConfig">
+    <property name="fileStoreRoot" value="test-data/xmldb"/>
+    <property name="schemaPath" value="conf/CCR_20051109.xsd"/>
+  </bean>
+  <bean id="xmlPhrDbBuilder" singleton="false" class="net.medcommons.phr.ccr.CCRBuilder">
+  </bean>
+  <bean id="ccrXPathCache" class="net.medcommons.phr.db.xml.XPathCache">
+    <property name="XPathMappingFile" value="conf/xpaths-ccr-1.0.xml"/>
+  </bean>
+  <bean id="JdbcPhrDbConfig" class="net.medcommons.phr.db.sqlite.JDBCPHRDBConfig">
+    <property name="fileStoreRoot" value="test-data/sqldb"/>
+    <property name="driverClass" value="org.sqlite.JDBC"/>
+    <property name="connectUrl" value="jdbc:sqlite:test-data/sqldb/{dbname}.db"/>
+  </bean>
+
+</beans>

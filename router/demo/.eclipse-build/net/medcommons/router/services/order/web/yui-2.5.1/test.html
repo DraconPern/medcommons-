@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="reset-fonts-grids/reset-fonts-grids.css">
+    <link rel="stylesheet" type="text/css" href="menu/assets/skins/sam/menu.css"> 
+    <link rel="stylesheet" type="text/css" href="button/assets/skins/sam/button.css" />
+       
+    <!-- Dependencies -->  
+    <script type='text/javascript' src='yahoo/yahoo.js'></script>
+    <script type="text/javascript" src="yahoo-dom-event/yahoo-dom-event.js"></script> 
+    <script type="text/javascript" src="container/container_core-min.js"></script> 
+     
+    <!-- Source File --> 
+    <script type='text/javascript' src='menu/menu.js'></script>
+    <script>
+    function init() {
+      //var m = new YAHOO.widget.MenuBar('menu');
+      window.m = new YAHOO.widget.MenuBar('m');
+
+      m.render();
+      
+    }
+    </script>
+  </head>
+  <body onload='init();'  class="yui-skin-sam">
+    <h2>Menu Test Page</h2>
+    <div id="m" class="yuimenubar yuimenubarnav">
+        <div class="bd">
+            <ul class="first-of-type">
+                <li class="yuimenubaritem first-of-type"><a class="yuimenubaritemlabel" href="#">Communication</a></li>
+                <li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="http://shopping.yahoo.com">Shopping</a></li>
+                <li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="http://entertainment.yahoo.com">Entertainment</a></li>
+                <li class="yuimenubaritem"><a class="yuimenubaritemlabel" href="#">Information</a></li>
+            </ul>
+        </div>
+    </div>
+  </body>
+</html>

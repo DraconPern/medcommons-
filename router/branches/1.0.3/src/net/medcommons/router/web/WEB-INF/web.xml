@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<!--
+		Note: to remove the SOAPMonitorApplet display both the servlet and servlet-mapping 
+		references below should be commented out on the released version of the product.
+	-->
+
+	<filter>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>net.medcommons.security.SessionFilter</filter-class>
+	</filter>
+  
+  <filter>
+    <display-name>Stripes Filter</display-name>
+    <filter-name>StripesFilter</filter-name>
+    <filter-class>net.sourceforge.stripes.controller.StripesFilter</filter-class>
+    <init-param>
+      <param-name>ActionResolver.UrlFilters</param-name>
+      <param-value>WEB-INF/classes,WEB-INF/lib/medcommons-publicapi.jar</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ActionResolver.Packages</param-name>
+      <param-value>net.medcommons.router.services.wado.stripes,net.medcommons.modules</param-value>
+    </init-param>
+    <init-param>
+        <param-name>ExceptionHandler.Class</param-name>
+        <param-value>net.medcommons.router.web.stripes.ExceptionHandler</param-value>
+    </init-param>
+    <init-param>
+        <param-name>Configuration.Class</param-name>
+        <param-value>net.medcommons.router.web.stripes.StripesConfiguration</param-value>
+    </init-param>
+    <init-param>
+        <param-name>ActionBeanContext.Class</param-name>
+        <param-value>net.medcommons.router.web.stripes.ActionBeanContext</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Interceptor.Classes</param-name>
+      <param-value>net.medcommons.router.web.stripes.ConfigCheckInterceptor,net.sourceforge.stripes.controller.BeforeAfterMethodInterceptor</param-value>
+    </init-param>
+    <init-param>
+   	 	<param-name>MultipartWrapper.Class</param-name>
+    	<param-value>net.sourceforge.stripes.controller.multipart.CommonsMultipartWrapper</param-value>
+    </init-param>
+    <init-param>
+   	 	<param-name>FileUpload.MaximumPostSize</param-name>
+    	<param-value>100mb</param-value>
+    </init-param>
+    <!--  TODO - this breaks right now because we dona't put Spring context under the WEB-INF folder
+          which is where stripes etc. expect to find it.
+          see http://blog.jdevelop.eu/2008/07/06/access-the-spring-applicationcontext-from-everywhere-in-your-application/
+          for some possibly helpful info
+    <init-param>
+        <param-name>Extension.Packages</param-name>
+        <param-value>net.sourceforge.stripes.integration.spring</param-value>
+    </init-param>
+      -->
+  </filter>
+  
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<!-- servlet-name>jsp</servlet-name -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+  <filter-mapping>
+    <filter-name>StripesFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  
+  <filter-mapping>
+    <filter-name>StripesFilter</filter-name>
+    <servlet-name>action</servlet-name>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>StripesFilter</filter-name>
+    <servlet-name>StripesDispatcher</servlet-name>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<listener>
+		<listener-class>org.apache.axis.transport.http.AxisHTTPSessionListener</listener-class>
+		<!--  Removed until apache commons io update?
+		<listener-class>org.apache.commons.fileupload.servlet.FileCleanerCleanup</listener-class>
+		-->
+	</listener>
+	<servlet>
+		<servlet-name>Configuration</servlet-name>
+		<servlet-class>net.medcommons.router.configuration.tomcat.ConfigurationServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!--
+	<servlet>
+		<servlet-name>Derby</servlet-name>
+		<servlet-class>net.medcommons.router.data.DerbyRunnerServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+		-->
+	<servlet>
+		<servlet-name>PersonalBackup</servlet-name>
+		<servlet-class>net.medcommons.modules.personalbackup.http.PersonalBackup</servlet-class>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+    <servlet>
+		<servlet-name>DocumentEditSession</servlet-name>
+		<servlet-class>net.medcommons.modules.publicapi.DocumentEditSessionServlet</servlet-class>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/actions.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+  <servlet>
+    <servlet-name>StripesDispatcher</servlet-name>
+    <servlet-class>net.sourceforge.stripes.controller.DispatcherServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>CCRSummary</servlet-name>
+    <servlet-class>net.medcommons.router.services.qa.CCRDataElementSummaryServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadAccountFiles</servlet-name>
+    <servlet-class>net.medcommons.modules.publicapi.UploadAccountFilesServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>net.medcommons.router.services.transfer.web.UploadServlet</servlet-class>
+		<load-on-startup>7</load-on-startup>
+	</servlet>
+  <servlet>
+    <servlet-name>ZipServlet</servlet-name>
+    <servlet-class>net.medcommons.router.services.wado.utils.ZipServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+	<!--
+	<servlet>
+		<servlet-name>UploadMetadataServlet</servlet-name>
+		<servlet-class>net.medcommons.router.services.transfer.web.UploadMetadataServlet</servlet-class>
+		<load-on-startup>8</load-on-startup>
+	</servlet>
+		-->
+	<servlet>
+		<servlet-name>Ready</servlet-name>
+		<servlet-class>net.medcommons.router.services.tomcat.ReadyServlet</servlet-class>
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+	<!--
+	<servlet>
+		<servlet-name>EditCCRServlet</servlet-name>
+		<servlet-class>net.medcommons.router.services.ccr.servlets.EditCCRServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	-->
+	<servlet>
+		<servlet-name>CxpServlet</servlet-name>
+		<servlet-class>net.medcommons.cxp.http.CxpServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>CxpRestServlet</servlet-name>
+		<servlet-class>net.medcommons.cxp.http.CxpRestServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>DataOnCallServlet</servlet-name>
+		<servlet-class>net.medcommons.fax.http.DataOnCallServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<!--
+    Axis Support
+    -->
+	<servlet>
+		<servlet-name>AxisServlet</servlet-name>
+		<display-name>Apache-Axis Servlet</display-name>
+		<servlet-class> org.apache.axis.transport.http.AxisServlet </servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminServlet</servlet-name>
+		<display-name>Axis Admin Servlet</display-name>
+		<servlet-class> org.apache.axis.transport.http.AdminServlet </servlet-class>
+		<load-on-startup>100</load-on-startup>
+	</servlet>
+	<!-- Security issue: this service should be commented out in the released version of the 
+         product.
+	<servlet>
+		<servlet-name>SOAPMonitorService</servlet-name>
+		<display-name>SOAPMonitorService</display-name>
+		<servlet-class> org.apache.axis.monitor.SOAPMonitorService </servlet-class>
+		<init-param>
+			<param-name>SOAPMonitorPort</param-name>
+			<param-value>9001</param-value>
+		</init-param>
+		<load-on-startup>100</load-on-startup>
+	</servlet>
+    -->
+
+  <servlet>
+    <servlet-name>freemarker</servlet-name>
+    <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
+      
+    <!-- FreemarkerServlet settings: -->
+    <init-param>
+      <param-name>TemplatePath</param-name>
+      <param-value>/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>NoCache</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ContentType</param-name>
+      <param-value>text/html</param-value>
+    </init-param>
+      
+    <!-- FreeMarker settings: -->
+    <init-param>
+      <param-name>template_update_delay</param-name>
+      <param-value>0</param-value> <!-- 0 is for development only! Use higher value otherwise. -->
+    </init-param>
+    <init-param>
+      <param-name>default_encoding</param-name>
+      <param-value>ISO-8859-1</param-value>
+    </init-param>
+    <init-param>
+      <param-name>number_format</param-name>
+      <param-value>0.##########</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <description>An ATOM-protocol logging servlet</description>
+    <servlet-name>Logging</servlet-name>
+    <servlet-class>net.medcommons.router.web.http.LoggingServlet</servlet-class>
+    <load-on-startup>10</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>An ATOM-protocol test</description>
+    <servlet-name>AtomTest</servlet-name>
+    <servlet-class>net.medcommons.router.web.http.AtomServlet</servlet-class>
+    <load-on-startup>10</load-on-startup>
+  </servlet>
+  <!--
+  <servlet>
+    <description>HTTP File Upload of documents to account</description>
+        <servlet-name>AccountDocument</servlet-name>
+    <servlet-class>net.medcommons.modules.publicapi.AccountDocument</servlet-class>
+    <load-on-startup>8</load-on-startup>
+  </servlet>
+    
+  -->
+  <servlet>
+       <description>This is the servlet needed for cache.type servlet, returns the packed resources</description>
+       <display-name>PackServlet</display-name>
+       <servlet-name>PackServlet</servlet-name>
+       <servlet-class>net.sf.packtag.servlet.PackServlet</servlet-class>
+  </servlet>
+  
+ 
+
+  <servlet-mapping>
+    <servlet-name>freemarker</servlet-name>
+    <url-pattern>*.ftl</url-pattern>
+  </servlet-mapping>  
+
+	<!--
+    Struts Support
+    -->
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StripesDispatcher</servlet-name>
+    <url-pattern>*.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/access</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/put/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/currentccr</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/phr/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/v2/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/viewer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/viewer/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/view</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/form/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/share/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/wado/*</url-pattern>
+  </servlet-mapping>
+  <!--
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/access/*</url-pattern>
+  </servlet-mapping>
+  -->
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/ccrs/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/status/*</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/faxsimulator</url-pattern>
+  </servlet-mapping>
+
+   <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/getPHREditSession/*</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/ddl/*</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/uploadAccountDocuments/*</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/getDocument/*</url-pattern>
+  </servlet-mapping> 
+   <servlet-mapping>
+      <servlet-name>StripesDispatcher</servlet-name>
+      <url-pattern>/document/*</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>StripesDispatcher</servlet-name>
+    <url-pattern>/rss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ZipServlet</servlet-name>
+    <url-pattern>/zip</url-pattern>
+  </servlet-mapping>
+  <!--
+  <servlet-mapping>
+    <servlet-name>UploadMetadataServlet</servlet-name>
+    <url-pattern>/UploadMetadataServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>EditCCRServlet</servlet-name>
+    <url-pattern>/EditCCRServlet</url-pattern>
+  </servlet-mapping>
+  -->
+  <servlet-mapping>
+    <servlet-name>CxpServlet</servlet-name>
+    <url-pattern>/CxpServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CxpRestServlet</servlet-name>
+    <url-pattern>/CxpRestServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DataOnCallServlet</servlet-name>
+    <url-pattern>/DataOnCallServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PersonalBackup</servlet-name>
+    <url-pattern>/PersonalBackup/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DocumentEditSession</servlet-name>
+    <url-pattern>/DocumentEditSession/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CCRSummary</servlet-name>
+    <url-pattern>/CCRSummary/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadAccountFiles</servlet-name>
+    <url-pattern>/UploadAccountFiles/*</url-pattern>
+  </servlet-mapping>
+  <!--
+  <servlet-mapping>
+    <servlet-name>AccountDocument</servlet-name>
+    <url-pattern>/AccountDocument/*</url-pattern>
+  </servlet-mapping>
+  -->
+
+  <!--
+    Axis Support
+    -->
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/servlet/AxisServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>*.jws</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	<!-- Security issue: this servlet should be commented out in the released version of the 
+         product.
+	<servlet-mapping>
+		<servlet-name>SOAPMonitorService</servlet-name>
+		<url-pattern>/SOAPMonitor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/servlet/AdminServlet</url-pattern>
+	</servlet-mapping>
+    -->
+
+  <servlet-mapping>
+       <servlet-name>PackServlet</servlet-name>
+       <url-pattern>*.pack</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+		<servlet-name>Logging</servlet-name>
+		<url-pattern>/Logging</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet-mapping>
+		<servlet-name>AtomTest</servlet-name>
+		<url-pattern>/feed/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- currently the W3C havent settled on a media type for WSDL;
+      http://www.w3.org/TR/2003/WD-wsdl12-20030303/#ietf-draft
+      for now we go with the basic 'it's XML' response -->
+	<mime-mapping>
+		<extension>wsdl</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xsd</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/wadoError.jsp</location>
+  </error-page>
+
+	<!-- Define a Security Constraint on this Application -->
+	<!-- ssadedin commented out constraint 10/16/2004 -->
+	<!--
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Entire Application</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>public</role-name>
+			<role-name>manager</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>router</realm-name>
+	</login-config>
+
+	<security-role>
+		<description>The role that is required to log in to 
+                    the Manager Application</description>
+		<role-name>public</role-name>
+	</security-role>
+
+	<security-role>
+		<description>The role that is required to log in to 
+                    the Manager Application</description>
+		<role-name>manager</role-name>
+	</security-role>
+  -->
+</web-app>

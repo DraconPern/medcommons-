@@ -1,0 +1,741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to MedCommons</title>
+<link rel="stylesheet" type="text/css" href="stylesCorp.css">
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body onload="MM_preloadImages('images/tabs/tabs_patientOver.png','images/tabs/tabs_doctorOver.png','images/tabs/tabs_groupOver.png','images/tabs/tabs_urlOver.png','images/tabs/tab_conceptOver.png','images/tabs/tab_platformArchOver.png','images/tabs/tab_platformOperationsOver.png','images/tabs/tab_platformAppsOver.png','images/tabs/tab_benefitsOver.png')">
+
+<!-- Nav Table -->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+<td>
+<div id="topnav">
+<ul class="nav">
+<img src="images/logoHeader.gif" alt="medCommons Logo" width="166" height="35"/>
+<br />
+
+	<li><a rel="tab" href="index.html"><em>MedCommons Home</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="ondemand/index.html"><em>On Demand Service</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="integrators/platform.html"><em>Platform</em></a></li>
+    	<li><em>|</em></li>
+    
+    	<li><a rel="tab" href="resources.html"><em>Resources</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="pickUp.html" target="popUp"><em>Pickup Records</em></a></li>	
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="signIn.html" target="popUp"><em>Sign In</em></a></li>
+	
+</ul>
+
+</div>
+
+</td>
+  </tr>
+  
+  <tr>
+<td bgcolor="#336699"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+</table>
+
+
+
+<!-- Content Table-->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="75">&nbsp;</td>
+    <td width="750" class="header2">MedCommons User Manual</td>
+    <td width="75">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td valign="top">
+<b>DICOM On Demand User Manual</b>
+<br>
+June 26, 2009</font>
+<br>
+<b>CONTENTS</b>
+<br>
+
+<ul>
+    <li><a href="#Inital_Registration_1540591155" target="_self">Initial Registration</a></li>
+    
+    <li><a href="#DICOM_Networking_6789281184393" target="_self">DICOM Networking</a></li>
+   
+    <li><a href="#Automatic_Routing_511499787742" target="_self">Automatic Routing to a DICOM Destination</a></li>
+   
+    <li><a href="#Custom_Forms_00434739530374495_733763903153536" target="_self">Customized Upload Forms are Available for your Workflow</a></li>
+  
+    <li><a href="#System_Requirements_8825524515" target="_self">System Requirements</a></li>
+    
+    <li><a href="#Attach_Documents_1575087436361" target="_self">Attach PDF Documents, Photos or CCR-standard Health Records</a></li>
+   
+    <li><a href="#Download_Documents_74206484235" target="_self">Download all Documents (DICOM, PDF, CCR) to Your Computer</a></li>
+</ul>
+
+
+
+Copyright © 2009 MedCommons, Inc.<br>
+<br>
+<hr class="pb"><a id="Inital_Registration_1540591155" name="Inital_Registration_1540591155"></a><hr size="2">
+<h3>
+  <b>Initial Registration</b>
+</h3>
+<br>
+<div style="margin-left: 40px;">
+  The first user to register picks a name for the practice.
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <br>
+  <div id="jknc" style="text-align: left; margin-left: 40px;">
+    <img src="images/images_manual/ddv3wjrd_39g46m4hcx_b.png" style="width: 450px; height: 612px;"><br>
+    <br>
+  </div>
+  <div id="z8rb" style="text-align: left;">
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+<div id="hjee" style="text-align: left;">
+  <b>Check your email for your Dropbox link and a registration confirmation</b><br>
+</div>
+<div style="margin-left: 40px;">
+  <br>
+  Your Web Dropbox is at <a href="https://ci.myhealthespace.com/9002333833323331/upload" id="szf:" style="font-family: Courier New;" title="https://ci.myhealthespace.com/9002333833323331/upload">https://ci.myhealthespace.com/9002333833323331/upload</a><br>
+  <br>
+Please copy this link and use it on your practice web site or in emails
+to referring physicians and even your patients. Anyone who uses this
+link will be able to send you imaging and associated health records in
+minutes with only 4 clicks.<br>
+  <br>
+  This link can also be found on the Settings &gt; Group tab after you sign-in.<br>
+  <div style="margin-left: 40px;">
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+<b>Use the Dropbox to receive health records for your practice</b><br>
+<br>
+<div style="margin-left: 40px;"> After email verification, a private,
+HIPAA-compatible group will be created for your practice. Invitations
+will be sent to any users you listed to allow them to create their own
+passwords for HIPAA-compliance.<br>
+  <br>
+  Once you Sign In, you will be able to see a live patient list and manage access by your practice colleagues to this list.<br>
+  <br>
+  Every user can see the HealthURL and images directly in their Web browser or iPhone.<br>
+  <br>
+Optionally, users that have a DICOM professional workstation or PACS
+can have patients automatically appear on the workstation by installing
+a receiving DICOM Data Liberator (DDL). On the receiving side, (1) you
+install DDL and (2) set it up to automatically send to a DICOM
+destination. The receiving DDL can also be set to automatically run
+when the hosting computer is restarted and the user logs in (3). Please
+see <a href="http://docs.google.com/Doc?id=ddv3wjrd_41czwtnqcn" id="j8ib" title="DICOM Workstation and PACS Options">DICOM Workstation and PACS Options</a>.<br>
+  <br>
+  <br>
+</div>
+<br>
+<hr class="pb"> <a id="DICOM_Networking_6789281184393" name="DICOM_Networking_6789281184393"></a><hr size="2">
+<h3>
+  <b>DICOM Networking</b>
+</h3>
+<br>
+<div style="text-align: left;">
+  <div id="l8:h" style="text-align: left;">
+    <div id="lhqz" style="text-align: left;">
+      <div id="vv.d" style="text-align: left;">
+        <i><b><font size="3"> <font size="2">1 - Get the DICOM parameters for your workstation or PACS<br>
+        </font> </font></b></i><br>
+        <ul style="margin-left: 40px;">
+          <li>
+            Each system hides these differently. You may need to contact your PACS administrator.
+          </li>
+          <li>
+            The three parameters to remember are:
+          </li>
+          <ul>
+            <li>
+              <b>AETitle</b>&nbsp; (e.g.: OSIRIX_AG-M_ADRI)<br>
+            </li>
+            <li>
+              <b>Port</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (e.g.: 11112)
+            </li>
+            <li>
+              <b>IP Address</b> or Host Name&nbsp;&nbsp; (e.g.: 192.168.101.38)<br>
+            </li>
+          </ul>
+          <li>
+            Many PACS and some workstations do not accept DICOM from strangers.<br>
+          </li>
+          <ul>
+            <li>
+              They will need to be configured with the DICOM parameters of the DDL.
+            </li>
+            <li>
+These parameters are displayed by the Configure DDL screen as
+Hostaddress, dicomLocalAeTitle, dicomLocalPort (see Fig 8).<br>
+            </li>
+          </ul>
+        </ul>
+        <br>
+        <div id="laqt" style="text-align: left;">
+          <img src="images/images_manual/ddv3wjrd_12dthfcqfd_b.png" style="width: 640px; height: 228.066px;"><br>
+          <br>
+          <br>
+        </div>
+        <i><b><font size="3"><font size="2"><hr class="pb">2 - Select Configure DDL<br>
+        </font> </font></b></i><br>
+        <ul style="margin-left: 40px;">
+          <li>
+DDL installation and startup are automatic and take about a minute.
+Check and accept any security warnings that pop up. </li>
+          <ul>
+            <li>
+              If installation seems to take too long, check your desktop for hidden Java windows asking for permission.<br>
+            </li>
+          </ul>
+          <li>
+If there are already Orders on the queue the DDL Poller will grab them
+before you have a chance to configure DICOM. This will be improved in a
+future release. </li>
+          <li>
+            The DDL icon will be in the system tray (PC) or the system bar (Mac).<br>
+          </li>
+        </ul>
+        <br>
+        <div id="jci4" style="text-align: left;">
+          <div style="margin-left: 80px;">
+            <img src="images/images_manual/ddv3wjrd_11drjdz4c7_b.png" style="width: 193px; height: 203px;"><br>
+          </div>
+          <br>
+          <br>
+          <font size="2"><i><b><hr class="pb">3 - Set the DICOM Remote Parameters to match your workstation or PACS (from Step 1)</b></i></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <ul>
+              <li>
+                Enter the parameters<br>
+              </li>
+              <ul>
+                <li>
+                  <b>dicomRemoteAeTitle</b> gets AETitle
+                </li>
+                <li>
+                  <b>dicomRemoteHost</b> gets IP Address<br>
+                </li>
+                <li>
+                  <b>dicomRemotePort</b> gets Port
+                </li>
+              </ul>
+              <li>
+                Set the exportMethod
+              </li>
+              <ul>
+                <li>
+                  <b>CSTORE</b>
+                </li>
+              </ul>
+              <li>
+                Click <b>Update Configuration</b>
+              </li>
+              <li>
+                When the page refreshes, DICOMEcho should report success.<br>
+              </li>
+            </ul>
+            <br>
+          </div>
+          <div id="cnrk" style="text-align: left;">
+            <img src="images/images_manual/ddv3wjrd_14gwtdzhdw_b.png" style="width: 640px; height: 696.423px;"><br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="lm66" style="text-align: left;">
+  <br>
+  <hr class="pb"><a id="Automatic_Routing_511499787742" name="Automatic_Routing_511499787742"></a><hr size="2">
+  <h3>
+    <b>Automatic Routing to a DICOM Destination</b>
+  </h3>
+  <div style="margin-left: 80px;">
+    <br>
+  </div>
+  <br>
+  <div style="margin-left: 40px;">
+Optionally, users that have a DICOM professional workstation or PACS
+can have patients automatically appear on the workstation by installing
+a receiving DICOM Data Liberator (DDL). On the receiving side, (1) you
+install DDL and (2) set it up to automatically send to a DICOM
+destination. The receiving DDL can also be set to automatically run
+when the hosting computer is restarted and the user logs in (3).
+Details below...<br>
+  </div>
+  <div style="margin-left: 120px;">
+    <br>
+  </div>
+  <b><br>
+  <br>
+  1 - Start Automatic Poll<br>
+  <br>
+  </b><br>
+  <ul>
+    <li>
+      Shut down any existing DDL - find the DDL icon in your System tray and right click / select 'Shutdown'<br>
+      <img alt="" src="images/images_manual/EXTERN_0000.gif">
+    </li>
+    <li>
+      Go to&nbsp; <a href="https://timc.medcommons.net/acct/login.php" target="_blank">https://healthurl.medcommons.net/acct/login.php</a>
+    </li>
+    <li>
+      Log In
+    </li>
+    <li>
+      Click on 'Settings' link in the top section of the page<br>
+    </li>
+    <li>
+      Click on Group Tab
+    </li>
+    <li>
+      Click on the 'local service' link:<br>
+      <img alt="" src="images/images_manual/EXTERN_0001.gif"><br>
+    </li>
+  </ul>
+  <br>
+  <div style="margin-left: 40px;">
+    This will start a DDL poller pointed at <a href="http://timc.medcommons.net/" target="_blank">timc.medcommons.net</a>.<br>
+  </div>
+  <br>
+  <br>
+  <b><br>
+  2 - DICOM Configuration</b><br>
+  <br>
+  <div style="margin-left: 40px;">
+    This should point to your workstation or PACS.<br>
+    <br>
+    <a href="http://dicomondemand.com/instructions_dicom_networking.php" id="jy68" title="http://dicomondemand.com/instructions_dicom_networking.php">http://dicomondemand.com/instructions_dicom_networking.php</a><br>
+  </div>
+  <br>
+  <div style="margin-left: 40px;">
+    Free, open source workstations are available for both PC (<a href="http://www.clearcanvas.ca/" id="qw-v" title="ClearCanvas">ClearCanvas</a>, <a href="http://www.k-pacs.net/" id="loed" title="K-PACS">K-PACS</a>) and Macintosh (<a href="http://www.osirix-viewer.com/" id="gezj" title="OsiriX">OsiriX</a>). OsiriX is particularly full-featured and available in FDA-cleared and supported versions.<br>
+  </div>
+  <br>
+  <br>
+  <br>
+  <b><hr class="pb">3 - Auto Restart</b><br>
+  <br>
+  <div style="margin-left: 40px;">
+    Auto DDL Restart is available on WinXP or Vista. Run at Startup is enabled by default (see below).&nbsp;<br>
+    <br>
+Also notice the Pause icon. Use this to pause polling temporarily while
+you test an alternate poller that might conflict or if you are testing
+related PACS workflows. Uploaded studies that were not downloaded by
+another poller will be downloaded as soon as Pause us un-checked.<br>
+    <br>
+Stop will disable polling while leaving DDL oprerational for uploads or
+manual downloads. You will need to reload DDL by signing into your
+Group and requesting the Polling DDL again in order to restart polling.<br>
+  </div>
+  <div>
+    <br>
+    <br>
+    <div id="bqn4" style="text-align: left; margin-left: 40px;">
+      <img src="images/images_manual/ddv3wjrd_32hg2tbpgs_b.png" style="width: 394px; height: 222px;">
+    </div>
+    <br>
+    <br>
+    <hr class="pb"><a id="Custom_Forms_00434739530374495_733763903153536" name="Custom_Forms_00434739530374495_733763903153536"></a><hr size="2">
+    <h3>
+      <b>Customized Upload Forms are Available for your Workflow</b>
+    </h3>
+    <br>
+    <div style="margin-left: 40px;">
+Practices with high volumes or special workflows can deploy Web
+droboxes with custom forms in support of teleradiology, laboratory
+services and integration with legacy health records and practice
+management systems. Please contact us at info@medcommons.net<br>
+      <br>
+A typical example, designed to serve a 3D image processing service for
+oncology specialists is shown below. Referring physicians or patients
+that place orders using the service's interactive web site:<br>
+    </div>
+    <br>
+    <ul style="margin-left: 40px;">
+      <li>
+        Select CD
+      </li>
+      <li>
+        Select a CD or DICOM folder and click Open or Choose (as below, lower right corner)<br>
+      </li>
+    </ul>
+    <br>
+    <div id="wb7l" style="text-align: left;">
+      <img src="images/images_manual/ddv3wjrd_36gf6ddff9_b.png" style="width: 648px; height: 424.19px;"><br>
+      <br>
+    </div>
+    <hr class="pb"><br>
+    <ul>
+      <li>
+        Check the demographics - override any mismatch if appropriate
+      </li>
+      <li>
+        Accept the upload of the entire study if appropriate
+      </li>
+      <li>
+        Click Upload
+      </li>
+    </ul>
+    <br>
+    Here is the custom DOD Upload Form as it appears after a successful transfer:<br>
+    <br>
+    <div id="kx-a" style="text-align: left;">
+      <div id="m_2e" style="text-align: left;">
+        <img src="images/images_manual/ddv3wjrd_35d2hvg9dc_b.gif" style="width: 648px; height: 603.561px;">
+      </div>
+      <hr class="pb"><br>
+    </div>
+    <div style="margin-left: 40px;">
+      Numbers (above) indicate the sequence of activity on the Upload Form:<br>
+      <br>
+    </div>
+    <ol style="margin-left: 40px;">
+      <li>
+        Select the image source (select CD even if you intend to send a DICOM folder)
+      </li>
+      <li>
+        Notice the patient's name as read from the DICOM Study
+      </li>
+      <li>
+        Review the match between the DICOM info and the custom order info
+      </li>
+      <li>
+        Click Upload to confirm the match
+      </li>
+      <li>
+        Note progress. You do not need to wait for 100%. Close this form anytime.
+      </li>
+      <li>
+        Close the form. Print is optional if you would like a receipt.
+      </li>
+      <li>
+        Click here to report problems. Tell us how to reach you if you want to be contacted.
+      </li>
+    </ol>
+    <div style="margin-left: 40px;">
+      <br>
+      <br>
+That's it. The study is on it way and, if a Polling DDL is enabled as
+in Steps 1-3, it will automatically appear on the destination
+workstation or PACS.<br>
+      <br>
+Click the MedC link on the TIMC Order Page to see a status report.
+Notice the four separate status transitions that are logged as Order
+History (below) by a succesful transfer.<br>
+    </div>
+    <br>
+    <div id="fobb" style="text-align: left;">
+      <img src="images/images_manual/ddv3wjrd_33sc7xw7hm_b.png" style="width: 648px; height: 509.262px;">
+    </div>
+    <br>
+    <br>
+    <br>
+    <hr class="pb">
+  </div>
+</div>
+<a id="System_Requirements_8825524515" name="System_Requirements_8825524515"></a><hr size="2">
+<h3>
+  <b>System Requirements</b>
+</h3>
+<br>
+<div style="margin-left: 40px;"> DICOM On Demand uses a Java-based
+utility, the MedCommons DDL, to connect DICOM protocol to a HealthURL
+in the Cloud. DDL will install automatically on most Windows, Mac and
+Linux computers. To ensure continuity of large transfers, DDL will
+continue running in the system tray even if the Web browser is closed.
+DDL will not restart automatically.<br>
+  <br>
+  DDL Requires Java 6 (aka 1.6) or later.<br>
+  <br>
+  Macintosh Java 1.6 Installation<br>
+</div>
+<br>
+<ul>
+  <ul>
+    <li>
+      Intel Mac, 64-bit capable (Core 2 or later) only, OS X 10.5 or later
+    </li>
+  </ul>
+</ul>
+<br>
+<div id="psp0" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_6p9456cxq_b.png" style="width: 312px; height: 380px;"><br>
+  <br>
+</div>
+<hr class="pb"><br>
+<ul>
+  <li>
+    Check the current version with Java Preferences
+  </li>
+</ul>
+<br>
+<div id="fhju" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_3gsrt6bdm_b.png" style="width: 394px; height: 206px;"><br>
+  <br>
+  <br>
+</div>
+<ul>
+  <li>
+    Navigate to the Apple Java for Mac OS X 10.5 Upgrade <a href="http://www.apple.com/downloads/macosx/apple/application_updates/javaformacosx105update1.html" id="onc0" title="page">page</a>
+  </li>
+</ul>
+<br>
+<div id="viok" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_4dczcscwb_b.png" style="width: 640px; height: 621.387px;"><br>
+  <br>
+  <br>
+</div>
+<ul>
+  <li>
+    Download and Install
+  </li>
+</ul>
+<hr class="pb"><br>
+<ul>
+  <li> Navigate to Applications &gt; Java Preferences and make
+sure Java 6 is at the top of both lists. You can drag Java SE 6 to the
+top of the list if necessary. </li>
+</ul>
+<br>
+<div id="y:9e" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_5f3swh4dd_b.png" style="width: 568px; height: 431px;"><br>
+  <br>
+</div>
+<div style="margin-left: 40px;">
+  Now try DICOM On Demand!<br>
+</div>
+<br>
+<hr class="pb"><a id="Attach_Documents_1575087436361" name="Attach_Documents_1575087436361"></a><hr size="2">
+<h3>
+  <font size="3"><b>Attach PDF Documents, Photos or CCR-standard Health Records</b></font>
+</h3>
+<br>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2">Click the </font><font size="2">Access URL link near the bottom of the upload form:</font><br>
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <div id="e8iz" style="text-align: left;">
+    <img src="images/images_manual/ddv3wjrd_9chhwdqhg_b.png" style="width: 617px; height: 466px;">
+  </div>
+</div>
+<hr class="pb"><br>
+<div style="margin-left: 40px;">
+  <font size="2">Click the Edit link on the HealthURL upper right corner:</font><br>
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <div id="f_0y" style="text-align: left;">
+    <img src="images/images_manual/ddv3wjrd_10dspngvhd_b.png" style="width: 648px; height: 492.514px;">
+  </div>
+  <br>
+  <br>
+</div>
+<div style="margin-left: 40px;">
+  <font size="2"><hr class="pb">Select ADD PDF Document:</font><br>
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <div id="vmwe" style="text-align: left;">
+    <img src="images/images_manual/ddv3wjrd_12cgzjz8cj_b.png" style="width: 648px; height: 305.824px;">
+  </div>
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2">Select the file to attach. PDF documents, PNG and JPEG photos can also be attached.</font><br>
+</div>
+<br>
+<div id="u.ly" style="text-align: left;">
+  <div id="dcpr" style="text-align: left; margin-left: 40px;">
+    <img src="images/images_manual/ddv3wjrd_14gzbsxbhp_b.png" style="width: 549px; height: 238px;">
+  </div>
+  <br>
+  <br>
+  <div style="margin-left: 40px;">
+    <font size="2"><hr class="pb">The document is added as a CCR Reference. </font><font size="2">The message in red is an optional reminder to verify that the correct document was attached. </font><font size="2">Click the ! to view the document. </font><font size="2">Note: You can Save an un-confirmed attachment but the warning will remain.</font><br>
+  </div>
+  <br>
+  <div id="uylh" style="text-align: left; margin-left: 40px;">
+    <img src="images/images_manual/ddv3wjrd_15f8tt87gq_b.png" style="width: 648px; height: 297.858px;">
+  </div>
+  <br>
+  <div style="margin-left: 40px;">
+    <font size="2"><br>
+    <hr class="pb">The new document will be displayed in context. Click the ! to complete verification.</font><br>
+  </div>
+  <br>
+  <div id="b8ei" style="text-align: left; margin-left: 40px;">
+    <img src="images/images_manual/ddv3wjrd_13cwdsqkg8_b.png" style="width: 648px; height: 581.392px;">
+  </div>
+  <br>
+  <br>
+  <div style="margin-left: 40px;">
+    <font size="2">The warning will be removed and the updated health record will be saved - ready to share or download.</font><br>
+  </div>
+  <br>
+</div>
+<div id="jnjq" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_16g4rjh8cp_b.png" style="width: 151px; height: 144px;">
+</div>
+<br>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2"> <hr class="pb">If
+the hospital or clinic provides a clinical summary in standard CCR
+format, use the Import &gt; CCR command to update the patient's Current
+CCR.</font><br>
+</div>
+<br>
+<div id="d_:8" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_17wwhrttc9_b.png" style="width: 648px; height: 295.342px;">
+</div>
+<br>
+<br>
+<br>
+<hr class="pb"><a id="Download_Documents_74206484235" name="Download_Documents_74206484235"></a><hr size="2">
+<h3>
+  <font size="3"><b>Download all Documents (DICOM, PDF, CCR) to Your Computer</b></font>
+</h3>
+<br>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2">The recipient of the Voucher:</font><br>
+</div>
+<br>
+<div id="v6sd" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_3f78fcbv8_b.png" style="width: 370px; height: 55px;">
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2">Claims the contents using the one-time PIN:</font><br>
+</div>
+<br>
+<div id="cjvm" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_4hpdp77dw_b.png" style="width: 648px; height: 191.721px;">
+</div>
+<br>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2">Sets a password and gains access to the voucher page:</font><br>
+</div>
+<br>
+<div id="qr47" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_5hdr3rk38_b.png" style="width: 648px; height: 416.432px;">
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2"><hr class="pb">Download all Documents sends a standard compressed file:</font><br>
+</div>
+<br>
+<div id="genk" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_6fcbs35c6_b.png" style="width: 648px; height: 373.351px;">
+</div>
+<br>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2">The file expands to a simple folder with health records, documents and DICOM imaging:</font><br>
+</div>
+<br>
+<div id="wpnp" style="text-align: left; margin-left: 40px;">
+  <img src="images/images_manual/ddv3wjrd_7gww843g7_b.png" style="width: 648px; height: 200.317px;">
+</div>
+<br>
+<div style="margin-left: 40px;">
+  <font size="2">The links in the
+Utils folder can display CCR files in your Web browser and the DICOM
+folder can be imported by any standard workstation or PACS. Backup or
+burn a CD of your voucher contents at any time.</font><br>
+
+</div>
+
+</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<br />
+
+
+
+<!-- footer Table wrapper -->
+<table width="900" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+<tr>
+<td colspan="2"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+  <tr>
+<td>
+<div id="footernav">
+<ul class="nav">
+
+	<li><a rel="tab" href="about.html"><em>About Us</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="privacy.html"><em>Privacy Policy</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="terms.html"><em>Terms of Use</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="hipaa.html"><em>HIPAA</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="contact.html"><em>Contact</em></a></li>
+	
+</ul>
+</div>
+</td>
+ 
+    <td width="457" align="right" class="footerLink"><b>© MedCommons Inc. 2009</b></td>
+  
+  </tr>
+</table>
+</body>
+</html>

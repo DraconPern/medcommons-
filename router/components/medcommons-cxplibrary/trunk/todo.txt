@@ -1,0 +1,16 @@
+Create project to compile cxp modules (both client and server).
+Put in some unit tests? How to do this when there is no server implementation. Perhaps there is a mock server that
+can be built with xfire?
+Remove xfire dependencies from other places; here's where the version is set.
+
+Build transfer app based on the client.
+
+get org.astm files here.
+generate?
+Get ddl subset of signed jar files.
+Perhaps create jars with signed contents with different names in ivy. 
+Instead of version "1.2.3" it would be "mc_signed1.2.3"
+Check ddl names
+
+
+

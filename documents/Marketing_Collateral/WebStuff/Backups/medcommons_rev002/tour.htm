@@ -1,0 +1,224 @@
+<!--
+PAGE REVISON : 2.3
+LAST UPDATED : 7.19.2005
+BY : ALEX BEUSCHER
+//-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Introduction to MedCommons</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h-30)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable, toolbar=yes, menubar=yes'
+win = window.open(mypage,myname,settings)
+if(!win==""){win.window.focus();}
+}
+function ShowCaption(numMessage) {
+for (x=1;x<9;x++) {
+	var TitleBlock=document.getElementById("tourstep" + x);
+	var MessageBlock=document.getElementById("tourtext" + x);
+	var PicBlock=document.getElementById("tourpic" + x);
+	TitleBlock.className = 'TourTitle';
+	MessageBlock.className = 'TourDescHide';
+	PicBlock.className = 'Hide';
+	}
+  var TitleBlock=document.getElementById("tourstep" + numMessage);	
+  var MessageBlock=document.getElementById("tourtext" + numMessage);
+  var PicBlock=document.getElementById("tourpic" + numMessage);
+  TitleBlock.className = "TourTitleSel";
+  PicBlock.className = "TourPicShow";
+  MessageBlock.className = "TourDescShow";
+
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.TourTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #006666;
+	width: 200px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+}
+.TourPicShow {
+	display: block;
+	}
+.TourDescHide {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+	width: 185px;
+	margin-left: 10px;
+	margin-right: 5px;
+	line-height: 14px;
+	clear: none;
+	height: 30px;
+	overflow: hidden;
+	z-index: 0;
+	font-style: italic;
+	margin-top: 0px;
+}
+.Hide {
+	display: none;
+}
+.TourDescShow {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	width: 185px;
+	margin-left: 10px;
+	margin-right: 5px;
+	line-height: 14px;
+	clear: both;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+a:link {
+    color: #527463;
+	text-decoration: none;
+}
+a:visited {
+    color: #527463;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a:active {
+    color: #FF0000;
+	text-decoration: underline;
+}
+.TourTable {
+	border: 3px double #999999;
+	background-color: #FFFFFF;
+	height: 600px;
+	margin-left: 10px;
+}
+.LeftBorder {
+	border-left-width: 3px;
+	border-left-style: double;
+	border-left-color: #999999;
+}
+.TourTitleSel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF0000;
+	width: 200px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	text-decoration: underline;
+}
+body {
+	background-color: #000000;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.TextMenu {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #5E7D6D;
+}
+.style2 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #CCCCCC; }
+.style3 {color: #FFFFFF}
+.style4 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; }
+-->
+</style>
+</head>
+<body> 
+<table width="100%"  border="0" cellspacing="0" cellpadding="0"> 
+  <tr> 
+    <td><div id="TopBody" class="PageContent"> 
+        <iframe name="HeaderFrame" width="100%" height="100" src="hptop.html" frameborder="0"></iframe> 
+    </div></td> 
+  </tr> 
+  <tr align="right"> 
+    <td colspan="2"><p><span class="style2">take a tour</span> <span class="style3">||</span> <a href="about.html" target="_top" class="TextMenu">about us</a> <span class="style3">||</span> <a href="faq.html" target="_top" class="TextMenu">faq</a> <span class="style3">||</span> <a href="termsofuse.html" target="_top" class="TextMenu">terms of use</a>&nbsp;&nbsp;&nbsp;</p></td> 
+  </tr> 
+  <tr> 
+    <td align="left" valign="top"><table class="TourTable" width="730" border="0" cellspacing="0" cellpadding="0"> 
+        <tr valign="top"> 
+          <td width="500"><div id="tourpic1" class="TourPicShow"><img src="images/tourshot_1.jpg" width="500" height="600"></div> 
+            <div id="tourpic2" class="Hide"><img src="images/tourshot_2.jpg" width="500" height="600"></div> 
+            <div id="tourpic3" class="Hide"><img src="images/tourshot_3.jpg" width="500" height="600"></div> 
+            <div id="tourpic4" class="Hide"><img src="images/tourshot_4.jpg" width="500" height="600"></div> 
+            <div id="tourpic5" class="Hide"><img src="images/tourshot_5.jpg" width="500" height="600"></div> 
+            <div id="tourpic6" class="Hide"><img src="images/tourshot_6.jpg" width="500" height="600"></div> 
+            <div id="tourpic7" class="Hide"><img src="images/tourshot_7.jpg" width="500" height="600"></div> 
+            <div id="tourpic8" class="Hide"><img src="images/tourshot_8.jpg" width="500" height="600"></div></td> 
+          <td width="230" class="LeftBorder"><a href="javascript:ShowCaption('1');"> 
+            <div id="tourstep1" class="TourTitleSel">1. MedCommons Overview</div> 
+            </a> 
+            <div id="tourtext1" class="TourDescShow">With MedCommons you can create CCR's (Continuity of Care Records), attach PDF's and images to patient records for referrals (no registration required).<br> 
+              <a href="memberservice/logon.php">Preview these features with Demo Data &gt;&gt;</a> </div> 
+            <a href="javascript:ShowCaption('2');"> 
+            <div id="tourstep2" class="TourTitle">2. Enter Patient ID Number</div> 
+            </a> 
+            <div id="tourtext2" class="TourDescHide">Entering a patient ID number will start the CCR creation process. Registered users need do this only once, as previously created CCR's are available on their desktop.</div> 
+            <a href="javascript:ShowCaption('3');"> 
+            <div id="tourstep3" class="TourTitle">3. Enter Email Addresses for Recipient of Referral</div> 
+            </a> 
+            <div id="tourtext3" class="TourDescHide">Sending a referral is as easy as sending an email. MedCommons will send an email to the referring physician along with notes and a link to the patient CCR online.</div> 
+            <a href="javascript:ShowCaption('4');"> 
+            <div id="tourstep4" class="TourTitle">4. Attach Notes</div> 
+            </a> 
+            <div id="tourtext4" class="TourDescHide">Notes can be attached to CCR's as well as PDF's and images (for registered users)</div> 
+            <a href="javascript:ShowCaption('5');"> 
+            <div id="tourstep5" class="TourTitle">5. Send Notification Email</div> 
+            </a> 
+            <div id="tourtext5" class="TourDescHide">To notify a referring physician, an email is generated out of MedCommons with a tracking number and corresponding PIN.</div> 
+            <a href="javascript:ShowCaption('6');"> 
+            <div id="tourstep6" class="TourTitle">6. Record and Transmit PIN</div> 
+            </a> 
+            <div id="tourtext6" class="TourDescHide">A PIN is recorded separately and transmitted to the referring doctor via fax or phone. This practice is in compliance with HIPAA privacy standards.</div> 
+            <a href="javascript:ShowCaption('7');"> 
+            <div id="tourstep7" class="TourTitle">7. Notification Email is received</div> 
+            </a> 
+            <div id="tourtext7" class="TourDescHide">When a referring physician receives a notification email from MedCommons, they can click a link to access a login page specific to the CCR that was forwarded. With the PIN they have received by fax or phone, they can log in, make notations, view images, and then send back to the primary physician as easily as if they were a registyered user.</div> 
+            <a href="javascript:ShowCaption('8');"> 
+            <div id="tourstep8" class="TourTitle">8. Conclusion</div> 
+            </a> 
+            <div id="tourtext8" class="TourDescHide">With MedCommons, physicians benefit from the ease, portability, and capability of MedCommons. Patients benefit because they can allow any physician anywhere to view their medical history. MedCommons eReferrals make patient records make sense.</div></td> 
+        </tr> 
+      </table><br><br>
+      <p align="right" class="style4">&copy;2005 MedCommons, Inc. all rights reserved &nbsp;</p></td> 
+  </tr> 
+</table> 
+</body>
+</html>

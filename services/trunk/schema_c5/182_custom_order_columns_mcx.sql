@@ -1,0 +1,10 @@
+alter table dicom_order add column custom_00 varchar(255);
+alter table dicom_order add column custom_01 varchar(255);
+alter table dicom_order add column custom_02 varchar(255);
+alter table dicom_order add column custom_03 varchar(255);
+alter table dicom_order add column custom_04 varchar(255);
+alter table dicom_order add column custom_05 varchar(255);
+alter table dicom_order add column custom_06 varchar(255);
+alter table dicom_order add column custom_07 varchar(255);
+alter table dicom_order add column custom_08 varchar(255);
+alter table dicom_order add column custom_09 varchar(255);

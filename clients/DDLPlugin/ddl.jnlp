@@ -1,0 +1,80 @@
+
+<jnlp spec="1.5+" codebase="http://ci.myhealthespace.com/DDL/app/" href="http://ci.myhealthespace.com/DDL/app/ddl.jnlp">
+  <information>
+    <title>DICOM Data Liberator</title>
+    <vendor>MedCommons, Inc.</vendor>
+    <homepage href="http://medcommons.net"/>
+    <description>DICOM CSTORE SCP/SCU to CXP-enabled appliances. </description>
+    <description kind="short">DICOM Data Liberator </description>
+    <icon href="http://ci.myhealthespace.com/DDL/app/medcommons_w296_h256.png" kind="splash"/>
+    <icon href="http://ci.myhealthespace.com/DDL/app/medcommons_w81_h67.png" kind="shortcut"/>
+    <icon href="http://ci.myhealthespace.com/DDL/app/medcommons_w81_h67.png" kind="default"/>
+    <shortcut online="true">
+      <desktop/>
+      <menu submenu="DICOM Data Liberator"/>
+    </shortcut>
+    <association extensions="download-hurl" mime-type="application/x-healthurl-download"/>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <update check="timeout" policy="always"/>
+  <resources>
+    <java version="1.5+"/>
+    <extension href="http://ci.myhealthespace.com/DDL/app/activation.jnlp" name="Activation"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/medcommons-dicomclient-application.jar" download="eager" main="true"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/log4j.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/hibernate3.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/antlr.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/asm-attrs.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/asm.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/ccrxmlbean.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/cglib.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/commons-codec.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/commons-collections.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/commons-httpclient.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/commons-logging-api.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/commons-logging.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/cos.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/dcm4che-core.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/dcm4che-net.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/dom4j.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/ehcache.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/hsqldb.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jdom.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jetty-util.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jetty.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jnlp.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jsp.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jsp-api.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jsr173_api.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/jta.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/mail.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/gateway-interfaces.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/medcommons-crypto.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/medcommons-cxp-client.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/medcommons-transfer-application.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/medcommons-utils.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/saxon-dom.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/saxon.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/servlet-api.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/slf4j-api.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/slf4j-log4j12.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/stripes.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/wsdl4j.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/wstx-asl.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/xbean.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/xbean_xpath.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/xercesImpl.jar" download="eager" main="false"/>
+    <jar href="http://ci.myhealthespace.com/DDL/app/xfire-all.jar" download="eager" main="false"/>
+    <property name="ddl.configuration" value="http://ci.myhealthespace.com/DDL/app//DDL.properties"/>
+    <property name="gatewayRoot" value="http://ci.myhealthespace.com"/>
+    <property name="defaultDICOMRemoteAETitle" value="UNKNOWN"/>
+    <property name="defaultDICOMRemoteDicomPort" value="UNKNOWN"/>
+    <property name="defaultDICOMRemoteHost" value="UNKNOWN"/>
+    <property name="defaultDICOMLocalAETitle" value="MCDICOM"/>
+    <property name="defaultDICOMLocalDicomPort" value="3002"/>
+  </resources>
+  <application-desc main-class="net.medcommons.application.dicomclient.DICOMClient"/>
+</jnlp>

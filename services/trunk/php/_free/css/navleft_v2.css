@@ -1,0 +1,92 @@
+.noMargin {
+		margin: 0; 
+		padding: 0; 
+		list-style-type: none;
+	}
+	.leftTabActive 	{
+		position: relative;
+		background-color: white;
+		color: black;
+		margin: 0;
+		font-size: 1.15em;
+		line-height: 1.25em;
+		font-weight: normal;
+	}
+	#leftTabActiveContent {
+		text-indent: -1em;
+		padding: 10px;
+		margin: -10px 0;
+		margin-left: 1.1em;
+		font-weight: normal;
+		font-size: 1.15em;
+		line-height: 1.25em;
+	}
+	#leftTabActiveTop { 
+		position: relative;
+		margin: 0px;	
+		padding: 0px; 
+		vertical-align: top;
+		line-height: 1.25em;
+		font-size: 1.15em;
+		font-weight: normal;
+	}
+	#leftTabActiveBottom 	{ 
+		position: relative;
+		margin: 0px; 
+		padding: 0px; 
+		vertical-align: bottom;
+		margin-bottom: -2px;
+		line-height: 1.25em;
+		font-size: 1.15em;
+		font-weight: normal;
+}
+	ul#leftTab1	{ 
+		margin: 0; 
+		padding: 0px 0px 0px 0px;
+		list-style-type: none;
+	}
+	
+	
+	.leftTab { 
+		margin: 0; 
+		padding: 0px;
+		color: #ffffff;
+		line-height: 1.25em;
+		font-size: 1.15em;
+		font-weight: normal;
+	}
+	.whiteLeftTabTopHover	{visibility: hidden; border: 0px; margin: 0px; padding: 0px; vertical-align: top;!margin-top: -3px;}
+	.whiteLeftTabBottomHover {visibility: hidden; border: 0px; margin: 0px; padding: 0px; vertical-align: bottom;!margin-bottom: -3px;}
+	
+	.leftTab a{ 
+		text-indent: -1.1em;
+		font-size: 1.15em;
+		line-height: 1.25em;
+		color: #ffffff;
+		display:block;
+		width: 105px;
+		height: 100%;
+		margin: -10px 0;
+		padding: 10px;
+		margin-left: 1.1em;
+		_margin-left: 0;
+		_padding-left: 25px;
+		font-weight: normal;
+	}
+	
+	.leftTab a:visited {
+		color: #ffffff;
+	}
+    .leftTab:hover { background-image: url(../images/white-left-tab-middle_hover.gif); background-repeat: repeat-y;}
+    .leftTab:hover a	{ 
+		color:#1a73b8;
+	}
+    .leftTab:hover .navNumber	{ color:#1a73b8;}
+	.leftTab:hover .navContent	{ color:#1a73b8;}
+	.leftTab a:hover {
+		color: #1a73b8;
+		_color: white;
+	}
+	
+    li:hover .whiteLeftTabBottomHover	{ visibility: visible;}
+    li:hover .whiteLeftTabTopHover  	{ visibility: visible;}

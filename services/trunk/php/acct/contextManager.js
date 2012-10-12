@@ -1,0 +1,523 @@
+/**
+ * contextManager.js
+ * <p>
+ * This library facilitates communication between a local application
+ * running on the user's computer and a browser instance the user is 
+ * looking at.   Currently there are two such applications:  
+ * <p>
+ *    - the DDL / DICOM Service
+ *    - Osirix 
+ * <p> 
+ * In the current implementation, communication is effected by
+ * adding script tags to the page which allow JSON responses
+ * to be sent back to the page with return data from the DDL.
+ * <p>
+ * When a page that wishes to use the DDL loads it should initiate
+ * communications with the DDL by executing the pingDDL function.
+ * This will cause a repetitive call to go to the DDL, checking
+ * it's status.
+ * <p>
+ * Commands are typically sent to the DDL using the sendCommand 
+ * function.
+ * <p>
+ * There are some useful event objects:
+ * <ul>
+ *      <li>ddlEvents   -   receive notifications about DDL 
+ *                          starting, stopping and other things
+ *      <li>commands    -   receive results of commands
+ *                          you send to the DDL.
+ * </ul>
+ * <p>
+ * It is important to understand that all commands are handled asynchronously
+ * by the DDL and thus all responses to the initial command sent are
+ * instantaneous.   Although JSONP is supported to receive notifications
+ * about whether your command launched successfully, it typically won't have
+ * any useful result. The only way to see results of completion of a command
+ * is to bind to the commands event object using the MochiKit signal library.
+ * <p>
+ * To bind to the command object to receive a result, connect to the 'complete'
+ * event by using an event with name [event]Complete, eg:
+ * <p>
+ * <code>connect(commands, 'getcddrivesComplete', function(result) { ...});</code>
+ */
+var portNumber = true;
+
+var baseURL = "http://localhost:16092/";
+
+/**
+ * A proxy is required to send most commands to the DDL.
+ * The hosting page must initialize this value based on the 
+ * current appliance / gateway.  A normal value looks like
+ * 
+ *   https://somehost.com/router/ddl
+ */
+var commandProxyBaseURL = null;
+var windowProxy = null;
+
+var ddlRunning = null;
+var pingTimer = null;
+var pongTimer = null;
+var noping = false;
+var pingIntervalMs = 3000;
+var ddlId = getCookie('ddlid');
+var pingTimeoutMs = 4000;
+var useFlashTransport = false;
+
+
+/**
+ * Sends a 'ping' command to the local DDL to test if it is 
+ * alive and get current status info in reply.
+ */
+function pingDDL(callback,timeoutMs) {
+    
+    if(!timeoutMs)
+        timeoutMs = pingTimeoutMs;
+
+    if(noping) {
+        setTimeout(pingDDL,5000);
+        return;
+    }
+
+    if(pongTimer) {
+        clearTimeout(pongTimer);
+        pongTimer = null;
+    }
+
+    sendCommand("ping", {jsonp: 'pongDDL'});
+    
+    pingTimer = setTimeout(partial(pingTimeout,callback),timeoutMs);
+}
+
+/**
+ * Object to be the target of command results from DDL.
+ * Event listeners should bind to this object to receive asynchronous
+ * command results.
+ */
+var commands = {};
+
+/**
+ * Object to which various events are bound relating to UI changes
+ * and progress.
+ */
+var ddlEvents = {};
+
+/**
+ * Handles a response from a DDL to a 'ping'.  Decodes any command results
+ * in the 'pong' and converts them to MochiKit signals in the form
+ * <command name>Complete.
+ */
+function pongDDL(response) {
+    log("pong => events= " + response.events + ", commands= " + response.result );
+    
+    clearTimeout(pingTimer);
+    pingTimer = null;
+
+    if(pongTimer) { // already in pong phase ... must have been a timeout
+        return;
+    }
+    
+    window.response = response;
+    
+    if(response.events) {
+        forEach(response.events.split(','),function(e) {
+            signal(window,e);
+        });
+    }
+    
+    processCommandResults(response);
+    
+    signal(ddlEvents,'pong', response);
+
+    if(!ddlRunning) {
+        
+        // Check version
+        if(response.version) {
+            ddlVersion = parseInt(response.version,10);
+        }
+            
+        
+        if((typeof requiredDDLVersion != 'undefined') && (ddlVersion < requiredDDLVersion)) {
+            signal(ddlEvents,'restartRequired', response);
+        }
+        else {
+            log("DDL started");
+            signal(ddlEvents,'ddlStarted');
+        }
+        setCookie('mcddl','true', new Date( new Date().getTime() + 24 * 3600 * 1000 * 30), '/');
+	    if(window.render_top_nav)
+	        render_top_nav();
+        
+    }
+    ddlRunning = true;
+    
+    pongTimer = setTimeout(pingDDL,pingIntervalMs);
+}
+
+function processCommandResults(response) {
+    if(response.result) {
+        for(var c in response.result) {
+            signal(commands, c + 'Complete', response.result[c]);
+        };
+    }
+}
+
+function pingTimeout(callback) {
+
+    if(noping)
+        return;
+
+    log("Ping timeout at " + (new Date()).getTime());
+    
+    if(ddlRunning) {
+        log("DDL stopped"); 
+        signal(ddlEvents,'ddlStopped');
+    }
+    ddlRunning = false;
+    
+    if(callback && (typeof callback == 'function')) {
+        callback();
+    }
+    
+    signal(ddlEvents, 'pingTimeout');
+    
+    pongTimer = setTimeout(pingDDL,3000);
+    setCookie('mcddl','false',null, '/');
+    if(window.render_top_nav)
+        render_top_nav();
+}
+
+/**
+ * A unique id for this window so that multiple windows can talk to a single
+ * DDL and not get commands or their results confused.
+ */
+var ctxMgrWindowId = (new Date().getTime()) + parseInt(Math.random() *100000);
+
+function initContextManager() {
+  appendChildNodes(
+    document.body, 
+      DIV( {'style':'display:none'}, 
+          createDOM('iframe',{'id':'ctxf1','name':'contextFrame'}), 
+          createDOM('iframe',{'id':'ctxf2','name':'loadFrame'})
+      )
+  );
+}
+
+/**
+ * Sets the Authorization context. Currently this is simply the MedCommons ID 
+ * of the authenticated user; perhaps something more complex will be needed in
+ * the future. It is typically called from the body's onload handler.
+ */
+function setAuthorizationContext (accountId) {
+	//alert ("Authorization Context: " + accountId);
+	setContextURL(baseURL + "setAuthorizationContext?accountId="
+		+ accountId);
+ 	return (true);
+}
+
+/**
+ * loadDocument is a utility function that sets the document focus and then 
+ * requests the context manager to download a particular document from  
+ * a gateway.
+*/
+function loadDocument(storageId, guid, cxpprotocol, cxphost, cxpport, cxppath){
+	 //          setDocumentFocus( storageId, guid, cxpprotocol, cxphost, cxpport, cxppath);
+	downloadDocumentAttachments( storageId, guid, cxpprotocol, cxphost, cxpport, cxppath);
+	//triggerLoad();
+}
+
+/**
+ * setDocumentFocus sets the document focus of the context manager.
+ * The focus includes all parameters needed to access a particular document.
+ * These are:
+ * storageId - the MedCommonsID where the data is stored.
+ * guid - the document's SHA-1 identifier within the context of that storageId.
+ * cxphost - the hostname for a particular gateway.
+ * cxpport - the port that the gateway is using.
+ * 
+ * Note: perhaps need to specify protocol (http vs. https) as for the cxp endpoint
+ * as well. 
+*/
+function setDocumentFocus (storageId,guid, cxpprotocol, cxphost, cxpport, cxppath, applianceRoot) {
+	
+	if(!applianceRoot)
+		applianceRoot = '';
+
+	setContextURL(baseURL + "setDocumentFocus?storageId=" + storageId +
+		"&guid=" + guid +
+		"&cxpprotocol=" + cxpprotocol +
+		"&cxphost=" + cxphost +
+		"&cxpport=" + cxpport +
+		"&cxpport=" + cxpport +
+		"&applianceRoot=" + applianceRoot
+		);
+	return(true);
+}
+
+function downloadDocumentAttachments (storageId,guid, cxpprotocol, cxphost, cxpport, cxppath) {
+
+	setContextURL(baseURL + "downloadDocument?storageId=" + storageId +
+		"&guid=" + guid +
+		"&cxpprotocol=" + cxpprotocol +
+		"&cxphost=" + cxphost +
+		"&cxpport=" + cxpport +
+		"&cxppath=" + cxppath
+		);
+	return(true);
+}
+
+var currentCommandResult = null;
+
+/**
+ * Start listening for events to relay through this window.
+ */
+function startWindowProxy() {
+    ce_connect('ddl_command', function(url) {
+        log("Sending command received from proxy client: " + url);
+        
+        // If there is a JSONP parameter then we have to remove it
+        // because it will be targeted at the original page instead
+        // of this one!
+        if(url.indexOf('?')>=0 && url.indexOf('&jsonp=')>0) {
+            var parts = url.split('?');
+            var params = parseQueryString(parts[1]);
+            var jsonp = params.jsonp;
+            params.jsonp='currentCommandResult="'+jsonp+'";relayCommandResult';
+            url = parts[0] + '?' + queryString(params);
+        }
+        loadContextManagerURL(url);
+    });
+}
+
+function relayCommandResult(result) {
+    log("got command result for command " + currentCommandResult + ": " + serializeJSON(result));
+    
+    // Scan Folder commands can send back too much data, so 
+    // we remove that property
+    if(result.result && result.result.scanfolder) {
+        log("command payload contains scanfolder result: removing studies for compactness");
+        delete result.result.scanfolder.studies;
+    }
+    ce_signal("ddl_command_result", currentCommandResult, serializeJSON(result));
+}
+
+var listeningToWindow = false;
+function listenForWindowProxyCommandResults() {
+    if(listeningToWindow)
+        return;
+    ce_connect('ddl_command_result', function(currentCommandResult,json) {
+        var result = evalJSON(json);
+        log("Got json result via proxy for command " + currentCommandResult + " : " + json);
+        eval(currentCommandResult+'('+json+')');
+    });
+    listeningToWindow = true;
+}
+
+/**
+ * Send the given command to the local DDL.
+ * <p>
+ * If opts is supplied then will be passed as parameters.
+ * <p>
+ * If opt 'gwUrl' is provided then it will be parsed and translated
+ * into constituent parts.
+ * <p>
+ * Supports jsonp = supply opts in form { jsonp: 'someFunctionToCall'}
+ */
+function sendCommand(cmd, opts) {
+  var args = [];
+  if(opts) {
+    if(opts.gwUrl) 
+      parseCXPUrl(opts.gwUrl, opts);
+    for(var i in opts) {
+      args.push(i + '=' + encodeURIComponent(opts[i]));
+    }
+  }
+  args.push("rand="+(new Date().getTime()) + Math.round(Math.random()*10000));
+  args.push("windowId="+ctxMgrWindowId);
+  args.push("ddlid="+ddlId);
+  
+  var url = baseURL + "CommandServlet/";
+  
+  // If possible, use a proxy
+  var usingCommandProxy = false;
+  if(commandProxyBaseURL && ddlId && cmd != "ping" && cmd != "queryid") {
+      url = commandProxyBaseURL;
+      usingCommandProxy = true;
+  }
+  else
+  if(!ddlId) 
+      log("Unable to use command proxy because no ddlId set");
+  
+  url += "?command="+cmd + '&' + args.join('&');
+  if(!usingCommandProxy && windowProxy) {
+      ce_signal('ddl_command', url);
+      listenForWindowProxyCommandResults();
+  }
+  else
+  if(!usingCommandProxy && useFlashTransport) {
+      sendCommandViaFlash(url);
+  }
+  else {
+      // sendCommandViaApplet(cmd, opts);
+      loadContextManagerURL(url);
+  }
+}
+
+function sendCommandViaApplet(cmd, opts) {
+    var cmdArgs = [];
+    for(var i in opts) {
+        cmdArgs.push(i);
+        cmdArgs.push(opts[i]);
+    }
+    cmdArgs.unshift(cmd);
+    $('vcheck').sendCommand(cmdArgs);
+}
+
+function parseCXPUrl(gwUrl,opts) {
+  var host = /:\/\/([^\/]*)\//.exec(gwUrl)[1];
+  var path = /:\/\/([^\/]*)(\/.*$)/.exec(gwUrl)[2];
+  var protocol =   gwUrl.substring(0,gwUrl.indexOf(':'));
+  opts.cxpprotocol = protocol;
+  opts.cxphost = host.match(":")?host.substring(0,host.indexOf(':')) : host;
+  opts.cxpport = host.match(":")?host.substring(host.indexOf(':')+1) : (protocol=='https'?'443':'80')
+  opts.cxppath = path;
+  return opts;
+}
+
+/**
+ * Sets the account focus
+ */
+function setAccountFocus(accountId, groupAccountId, groupName, auth, host, port, protocol, path, callback) {
+	
+  if(!callback)
+	  callback = "confirmAccountFocus";
+
+  var url = baseURL + "setAccountFocus/?"+
+    "accountId=" + accountId +
+    "&auth=" + auth +
+    "&groupAccountId=" + groupAccountId +
+    "&groupName=" + groupName +
+    "&cxpprotocol=" + protocol +
+    "&cxphost=" + host +
+    "&cxpport=" + port +
+    "&cxppath=" + path +
+    "&jsonp=confirmAccountFocus"
+    ;
+
+  loadContextManagerURL(url);
+	return true;
+}
+
+var vacuumTimer = null;
+
+/**
+ * Load the specified URL in a script tag
+ */
+function loadContextManagerURL(url) {
+  log('loading url: ' + url);
+  var script = document.createElement("script");
+  script.setAttribute("type", "text/javascript");
+  script.setAttribute("src", url);
+  script.className = 'ctxmgr';
+  var head = document.getElementsByTagName("head").item(0);
+  head.appendChild(script);
+  if(!vacuumTimer) {
+      vacuumTimer = setInterval(vacuumContextManagerScripts, 300000);
+  }
+}
+
+var DDL_FLASH_CONFIG = {
+          id: 'flash',
+          src:'/yui/3.2.0/io/io.swf?stamp=' + new Date().valueOf().toString()
+};
+
+var flashCmdId=0;
+
+/**
+ * Support for sending commands via Flash.  This
+ * DEPENDS on YUI's flash support being initialized
+ * which in general is done by the two lines:
+ * 
+ *    Y.io.transport(DDL_FLASH_CONFIG);
+ *    Y.on('io:xdrReady', function() {
+ *       ... 
+ *       sendCommandViaFlash(...);
+ *    });
+ */
+function sendCommandViaFlash(url) {
+    Y.use('io-xdr','io-queue', function(Y) {
+      // Initialize the define transport
+      var cmdId = '' + (flashCmdId++);
+      Y.io.queue(url, {
+          method: "GET",
+          xdr: { use: 'flash' },
+          on: {
+              start: function() { log("flash start " + cmdId + ": " + url); },
+              success: function(id, o, args) { 
+                  log("flash: " + cmdId + ":" + o.responseText);
+                  eval(o.responseText);
+              },
+              failure: function() { log("fail " + url); }
+          },
+          responseXML:false 
+      });
+      Y.io.queue.start();
+    });
+}
+
+function vacuumContextManagerScripts() {
+    var scripts = filter(function(s) {return s.className == 'ctxmgr';},
+		            document.getElementsByTagName('script'));
+    
+    // Leave two scripts in case they are still active
+    scripts.pop();
+    scripts.pop();
+    
+	forEach(scripts, removeElement);
+	log("Vacuumed " + scripts.length + " scripts");
+	scripts = null;
+}
+
+var ddlDetected = false;
+
+function confirmAccountFocus(result) {
+  ddlDetected = true;
+  if(window.onDDLDetected)
+    onDDLDetected();
+}
+
+/**
+ * Clears the currentAuthorization context.
+*/
+function clearAuthorizationContext(){
+	setContextURL(baseURL + "clearAuthorizationContext");
+}
+
+/**
+ * Clears the current document focus.
+*/
+function clearDocumentFocus(){
+	setContextURL(baseURL + "clearDocumentFocus");
+}
+
+/**
+ * Utility method for communication with the contextFrame
+ */
+function setContextURL(url){
+  if(!window.contextFrame) {
+    initContextManager();
+  }
+	//alert(url);
+	contextFrame.location.href=url;
+}
+
+/**
+ * Utility method for communication with the loadframe.
+*/
+/*
+function triggerLoad(){
+  if(!window.loadFrame) {
+    initContextManager();
+  }
+	loadFrame.location.href=baseURL + "tnum";
+}
+*/

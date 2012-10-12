@@ -1,0 +1,12 @@
+<application>
+  <display-name>MedCommons Central</display-name>
+  <module>
+    <java>central-ws.wsr</java>
+  </module>
+  <module>
+  	<web>
+	  <web-uri>central-web.war</web-uri>
+	  <context-root>/central</context-root>
+	</web>
+  </module>
+</application>

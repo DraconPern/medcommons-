@@ -1,0 +1,9 @@
+Information on the files stored in this folder
+
+sampleCCR.xml
+-------------
+This file validates with the latest XSD (still need to check against the latest implmentation guide)
+
+sampleCCR_v2.xml
+-------------
+This is a modification of sampleCCR.xml that contains <Insurance> data.  I have a question in to the CCR authors about the cardinality of <IDs>.  In the XSD it is 0..1, but the implementation guide is written as 0...unbound.

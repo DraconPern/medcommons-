@@ -1,0 +1,39 @@
+<html>
+<head>
+<META http-equiv="Content-Style-Type" content="text/css">
+<title>CXP Session Manager</title>
+<style type="text/css">
+<!--
+body { background-color:rgb(172,170,180) }
+td.x { background-color:white }
+th { text-align:right }
+div.x { background-color:white; width:128px }
+-->
+</style>
+<script type="text/javascript">
+<!--
+var job = %(job)s
+-->
+</script>
+<script type="text/javascript" src="MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="sessmgr.js"></script>
+</head>
+<body onload="test()">
+<table>
+<thead>
+<tr><th /><td id="action">&nbsp;</td></tr>
+</thead>
+<tfoot>
+<tr><th /><td>Button</td>
+</tfoot>
+<tbody>
+<tr><th>Status</th><td class="x" id="status">&nbsp;</td></tr>
+<tr><th>Detail</th><td class="x" id="detail">&nbsp;</td></tr>
+<tr><th>Progress</th><td>
+  <div class="x" id="bardiv"><img id="barimg" src="bar.gif" height="16" /></div>&nbsp;
+  <div id="pctdiv">&nbsp;</div>
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

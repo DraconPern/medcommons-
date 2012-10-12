@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- __CR__
+     Copyright (c) 2009 EMC Corporation
+     All Rights Reserved
+
+     This software contains the intellectual property of EMC Corporation
+     or is licensed to EMC Corporation from third parties.  Use of this
+     software and the intellectual property contained therein is expressly
+     limited to the terms and conditions of the License Agreement under which
+     it is provided by or on behalf of EMC.
+     __CR__ -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:caas="http://www.emc.com/caas"
+           targetNamespace="http://www.emc.com/caas">
+  <!-- basic caas types -->
+  <xs:include schemaLocation="caas-mo-types.xsd" />
+
+  <!-- top-level datatypes -->
+  <xs:complexType name="PublicIpAddressList">
+	<xs:sequence>
+	  <xs:element name="public-ip-address" type="caas:PublicIpAddress" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PublicIpAddress">
+	<xs:sequence>
+	  <xs:element name="ip-address" type="caas:IpAddress" minOccurs="0" maxOccurs="1"/>
+	  <xs:element name="assigned" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+	  <xs:element name="vm-name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	  <xs:element name="nic-name" type="xs:string" minOccurs="0" maxOccurs="1"/>  
+	</xs:sequence>
+  </xs:complexType>
+
+ </xs:schema>

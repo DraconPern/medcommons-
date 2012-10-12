@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>Running Cactus tests from a browser</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Running Cactus tests from a browser" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser." class="currentPage">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Running Cactus tests from a browser</h1>
+
+      
+<div class="note">
+        This section only applies for Cactus 1.4 and greater.
+      </div>
+
+      
+<div class="section">
+<h2>Step 1: Setting up the classpath</h2>
+
+        
+<p>
+          In order to run Cactus tests from a browser you need to have a webapp
+          containing your classes to test and your test classes. In addition,
+          both Cactus client side and server side jar classes must be able to be
+          loaded from your webapp (i.e located in your <code>WEB-INF/lib</code>
+          directory or in a location available through your container Context
+          class loader (refer to your container documentation).
+        </p>
+
+        
+<div class="note">
+          Refer to the <a href=".././integration/manual/howto_classpath.html" title="Information on how to set up the classpath for running Cactus tests.">Classpath Howto</a>
+          guide for the exact list of jars.
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 2: Mapping the Cactus Servlet Test Runner</h2>
+
+        
+<p>
+          Then, in addition to the Cactus redirectors that you have mapped in
+          your <code>web.xml</code> (see the
+          <a href=".././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration howto</a>), you also
+          need to map the Cactus Servlet Test Runner, as follows:
+        </p>
+
+
+<div class="source">
+<pre>
+[...]
+&lt;servlet&gt;
+    &lt;servlet-name&gt;ServletTestRunner&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;
+        org.apache.cactus.server.runner.ServletTestRunner
+    &lt;/servlet-class&gt;
+&lt;/servlet&gt;
+[...]
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;ServletTestRunner&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/ServletTestRunner&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+[...]
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Step 3: Executing the tests</h2>
+
+        
+<p>
+          Open a browser and type <code>http://server:port/mywebapp/ServletTestRunner?suite=mytestcase</code>
+          where:
+        </p>
+        
+<ul>
+          
+<li>
+            
+<code>server:port</code> is the name of your server machine and
+            port on which your container is running
+          </li>
+          
+<li>
+            
+<code>mywebapp</code> is the name of your webapp (usually the name
+            of your war file)
+          </li>
+          
+<li>
+            
+<code>mytestcase</code> is the fully qualified name (i.e. with
+            packages) of your <code>TestCase</code> class containing a
+            <code>suite()</code> method listing all the tests, in standard
+            JUnit fashion.
+          </li>
+        
+</ul>
+
+        
+<p>
+          Here is an example of what you will get:
+        </p>
+
+        
+<div class="figure">
+<img alt="XML output of ServletTestRunner" src=".././images/servlettestrunner_xml.jpg"></div>
+
+        
+<div class="note">
+          If you see a blank page, click on the View source option of your 
+          browser. It means your browser doesn't know how to display XML data.
+        </div>
+        
+        
+<p>
+          Ok, that's nice ... But what if I want HTML instead of XML? Don't
+          worry there is a solution. Grab the following
+          <a href=".././misc/cactus-report.xsl" title="">XSLT stylesheet</a>
+          (based on the stylesheet used by the
+          <b>&lt;junitreport&gt;</b> Ant task), drop it in your
+          webapp and name it <code>cactus-report.xsl</code> (in the root
+          directory for example). Then, open a browser and type
+          <code>http://server:port/mywebapp/ServletTestRunner?suite=mytestcase&amp;xsl=cactus-report.xsl</code>.
+          You should see the following:
+        </p>
+
+        
+<div class="figure">
+<img alt="HTML output of ServletTestRunner" src=".././images/servlettestrunner_html.jpg"></div>
+
+        
+<div class="note">
+          This will work with Internet Explorer as the XSL transformation is
+          performed on the client side (i.e by the browser). I'm not sure
+          about other browsers.
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Enabling Server-Side XSLT Transformations</h2>
+
+        
+<p>
+          In the previous section, the XSLT transformation was performed on the 
+          client. This requires a browser capable of doing XSLT transformations 
+          in a standards-compliant manner, and requires adding the location of 
+          the stylesheet as a request parameter.
+        </p>
+
+        
+<p>
+          Since Cactus 1.5, the ServletTestRunner can also perform the 
+          transformation on the server-side. To enable that feature, make sure
+          that a JAXP compliant XSLT processor (such as 
+          <a href="http://xml.apache.org/xalan-j/" title="">Xalan</a>) is available to the 
+          web-application.
+        </p>
+
+        
+<p>
+          In addition, the location of the XSLT stylesheet needs to specified as
+          initialization parameter of the ServletTestRunner. For example:
+        </p>
+
+    
+<div class="source">
+<pre>
+[...]
+&lt;servlet&gt;
+    &lt;servlet-name&gt;ServletTestRunner&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;
+        org.apache.cactus.server.runner.ServletTestRunner
+    &lt;/servlet-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;xsl-stylesheet&lt;/param-name&gt;
+        &lt;param-value&gt;styles/cactus-report.xsl&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/servlet&gt;
+[...]
+</pre>
+</div>
+
+        
+<p>
+          The specified path is relative to the root of the web-application. Of 
+          course, the stylesheet needs to exist at that location. In contrast to
+          client-side transformations, the stylesheet may be placed somewhere
+          inside the <code>WEB-INF</code> directory, because clients do not need
+          to access it directly.
+        </p>
+
+        
+<p>
+          If all of the above is correctly set up, you can enable the actual
+          transformation by including a <code>transform</code> parameter with
+          the request (the value of the parameter does not matter). For example
+        </p>
+
+    
+<div class="source">
+<pre>
+http://server:port/mywebapp/ServletTestRunner?suite=mytestcase&amp;transform=yes
+</pre>
+</div>
+
+        
+<div class="note">
+          The stylesheet specified as initialization parameter is loaded when 
+          the ServletTestRunner gets initialized. Changes to the stylesheet will
+          not get picked up until the web-application is reloaded.
+        </div>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

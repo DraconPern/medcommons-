@@ -1,0 +1,49 @@
+<html>
+   <head>
+      <title>Notes for editing generated SQL from DBDesigner 4 for use in Derby</title>
+   </head>
+   <body>
+      <p>
+      The SQL output of DBDesigner4 isn't directly usable by Derby; apparently it works well with
+      MySQL. After generation of the SQL the following steps are required so that it can be inserted into 
+      the Derber <i>ij</i> utility.
+      </p>
+      
+      <ol>
+							<li>Replace " NOT NULL," with ","</li>
+							<li>Replace " NULL," with ","</li>
+							<li>Replace "UNSIGNED" with ""</li>
+							<li>Replace " ," with ","</li>
+							<li>
+							Edit trailing commas out for each table on last row:
+							<pre>
+ CREATE TABLE DocumentLocation (
+  Documents_GUID VARCHAR(64),
+  Nodes_NodeID BIGINT,
+  IntegrityCheck TIMESTAMP,
+  IntegrityStatus INTEGER,
+);
+
+							</pre>
+							becomes (see IntegrityStatus row)
+
+							<pre>
+CREATE TABLE DocumentLocation (
+  Documents_GUID VARCHAR(64),
+  Nodes_NodeID BIGINT,
+  IntegrityCheck TIMESTAMP,
+  IntegrityStatus INTEGER
+);
+							
+							</pre>
+							</li>
+	</ol>
+      
+
+<p>
+Also, note that the type BOOL  doesn't appear to be supported.
+</p>
+
+
+   </body>
+</html>

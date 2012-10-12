@@ -1,0 +1,32 @@
+Patient IDs for online XDS testing.
+
+
+Vendor Code     Vendor Name
+
+ETM             ETIAM
+ALS             Allscripts
+DTP             Dictaphone
+NIST            NIST
+
+
+PatientID is constructed as:
+
+<vendor-code>-<id>^^^&1.3.6.1.4.1.21367.2005.1.1&ISO^PI
+
+but remember that & is a special character in XML so it must be escaped.  When submitting metadata
+escape the & as follows:
+
+<vendor-code>-<id>^^^&amp;1.3.6.1.4.1.21367.2005.1.1&amp;ISO^PI
+
+When constructing a query, esacpe the & as follows:
+
+<vendor-code>-<id>^^^&amp;amp;1.3.6.1.4.1.21367.2005.1.1&amp;amp;ISO^PI
+
+where
+<vendor-code> comes from the above vendor table
+<id> is a private ID assigned by the vendor to be used in testing
+1.3.6.1.4.1.21367.2005.1.1 is the OID assigned as identifying the affinity domain to be used for this 
+    year's connectathon.
+
+The inclusion of the private ID enables vendors to generate private test data in the 
+NIST Registry to support their testing.

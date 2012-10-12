@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+    <title>Repository I/O Requirements </title>
+    
+    <articleinfo>
+        <invpartnumber>REQ-0006</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>April 21, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>
+            
+            
+            
+            
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    
+    <sect1>
+        <title>Overview</title>
+       
+       
+            
+        <orderedlist>
+            <listitem>XDS</listitem>
+            <listitem>WebDAV</listitem>
+            <listitem>Programatic API?</listitem>
+        </orderedlist>
+        
+    </sect1>
+    <sect1>
+        <title>General repository</title>
+        
+        <requirement id="REPOS-0001">
+            <reqTitle>Needs to store data and retrieve data without
+              modification</reqTitle>
+            <reqDescription>Data needs to be able to be put into the system and
+              retrieved from it. Current protocols are DICOM and XDS; HL7 or
+              others may be required in the future</reqDescription>
+        </requirement>
+        <requirement id="REPOS-0002">
+            <reqTitle>Must support an extensible set of protocols</reqTitle>
+            <reqDescription>Current protocols are DICOM and XDS; HL7 or
+              others may be required in the future</reqDescription>
+        </requirement>
+        <requirement id="REPOS-0003">
+            <reqTitle>Lossless Transfer</reqTitle>
+            <reqDescription>Data must be transportable between gateways without
+              loss or alteration. Data may be encrypted, compressed, fragmented -
+              but when it arrives via whatever protocol on a remote gateway it must
+              be bitwise identical to when it first arrived in the
+              system.</reqDescription>
+        </requirement>
+       
+        <requirement id="REPOS-0004">
+            <reqTitle>Data in Repository must be encrypted</reqTitle>
+            <reqDescription>Symmetric keys must be used. See (put in reference
+              to security requirements) </reqDescription>
+        </requirement>
+        <requirement id="REPOS-0005">
+            <reqTitle>Data in Repository must have identifier that matches the
+              a useful clinical unit of data.</reqTitle>
+            <reqDescription>Series for DICOM. </reqDescription>
+        </requirement>
+    </sect1>
+    <sect1>
+        <title></title>
+       
+        </sect1>
+    <sect1>
+        <title>Repository I/O</title>
+        <para>Need to describe differences between Repository and Enterprise gateway here.</para>
+    </sect1>
+   
+    
+</article>

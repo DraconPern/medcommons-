@@ -1,0 +1,487 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>EJB Testing with J2EE RI</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="EJB Testing with J2EE RI" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././writing/howto_testcase.html">Writing Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Writing Tests<ul>
+    
+<li>
+<a href=".././writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">General Principles</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">Testing Servlets</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus.">Testing Filters</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_jsp.html" title="How to write unit tests for JSP pages using Cactus.">Testing JSP Pages</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">Testing Taglibs</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">Testing EJBs</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Advanced Topics<ul>
+    
+<li>
+<a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">Integrating HttpUnit</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_security.html" title="">Using Authentication</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Reference<ul>
+    
+<li>
+<a href=".././api/framework-12/index.html" title="">Javadocs (J2EE 1.2)</a>
+</li>
+    
+<li>
+<a href=".././api/framework-13/index.html" title="">Javadocs (J2EE 1.3)</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+  
+<div class="section">
+<h1>Forewords</h1>
+
+    
+<p>
+      This tutorial shows how to write test cases for unit testing
+      EJB methods. The EJB used in this example is a simple Session Bean.
+    </p>
+    
+<p>
+      This tutorial assumes the reader has already understood how to use
+      Cactus to test Servlet. To test an EJB, you need to prepare a war to
+      contain the cactus setting and test cases, and then prepare a jar of
+      your ejb. You need to match the JNDI name in the ejb jar and the war.
+    </p>
+
+    
+<div class="note">
+      This is an EJB 1.1 example but the same principles are valid for
+      EJB 2.0
+    </div>
+
+  
+</div>
+
+  
+<div class="section">
+<h1>EJB Jar</h1>
+
+    
+<div class="section">
+<h2>Step 1: Prepare the Sample EJB</h2>
+
+      
+<p>
+        The EJB used in this tutorial is a simple Session Bean with a method
+        for converting Yen to Dollar.
+      </p>
+
+      
+<div class="section">
+<h3>EJB Remote</h3>
+
+
+<div class="source">
+<pre>
+package org.apache.cactus.sample.ejb;
+
+import java.rmi.*;
+import javax.ejb.*;
+
+public interface Converter extends EJBObject
+{
+    public double convertYenToDollar(double theYenAmount) throws RemoteException;
+}
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h3>EJB Home</h3>
+
+
+<div class="source">
+<pre>
+package org.apache.cactus.sample.ejb;
+
+import java.rmi.*;
+import javax.ejb.*;
+
+public interface ConverterHome extends EJBHome
+{
+    public Converter create() throws RemoteException, CreateException;
+}
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h3>EJB Bean</h3>
+
+
+<div class="source">
+<pre>
+package org.apache.cactus.sample.ejb;
+
+import javax.ejb.*;
+
+public class ConverterEJB implements SessionBean
+{
+    private SessionContext context;
+
+    public double convertYenToDollar(double theYenAmount)
+    {
+        return theYenAmount / 100.0;
+    }
+
+    public ConverterEJB()
+    {
+    }
+
+    public void ejbCreate() throws CreateException
+    {
+    }
+
+    public void setSessionContext(SessionContext theContext)
+    {
+        this.context = theContext;
+    }
+
+    public void ejbActivate()
+    {
+    }
+
+    public void ejbPassivate()
+    {
+    }
+
+    public void ejbRemove()
+    {
+    }
+}
+</pre>
+</div>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Step 2: Prepare EJB Deployment Descriptor (ejb-jar.xml)</h2>
+
+      
+<p>
+        Prepare the standard EJB Deployment Descriptor for the Session EJB:
+      </p>
+
+
+<div class="source">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!DOCTYPE ejb-jar PUBLIC
+'-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 1.1//EN'
+'http://java.sun.com/j2ee/dtds/ejb-jar_1_1.dtd'&gt;
+
+&lt;ejb-jar&gt;
+  &lt;display-name&gt;testejb&lt;/display-name&gt;
+  &lt;enterprise-beans&gt;
+    &lt;session&gt;
+      &lt;description&gt;Converter Session Bean&lt;/description&gt;
+      &lt;display-name&gt;Converter&lt;/display-name&gt;
+      &lt;ejb-name&gt;Converter&lt;/ejb-name&gt;
+      &lt;home&gt;org.apache.cactus.sample.ejb.ConverterHome&lt;/home&gt;
+      &lt;remote&gt;org.apache.cactus.sample.ejb.Converter&lt;/remote&gt;
+      &lt;ejb-class&gt;org.apache.cactus.sample.ejb.ConverterEJB&lt;/ejb-class&gt;
+      &lt;session-type&gt;Stateless&lt;/session-type&gt;
+      &lt;transaction-type&gt;Container&lt;/transaction-type&gt;
+    &lt;/session&gt;
+  &lt;/enterprise-beans&gt;
+  &lt;assembly-descriptor&gt;
+    &lt;container-transaction&gt;
+      &lt;method&gt;
+	&lt;ejb-name&gt;Converter&lt;/ejb-name&gt;
+	&lt;method-intf&gt;Remote&lt;/method-intf&gt;
+	&lt;method-name&gt;*&lt;/method-name&gt;
+      &lt;/method&gt;
+      &lt;trans-attribute&gt;NotSupported&lt;/trans-attribute&gt;
+    &lt;/container-transaction&gt;
+  &lt;/assembly-descriptor&gt;
+&lt;/ejb-jar&gt;
+</pre>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Step 3: Prepare EJB Runtime (only valid for J2EE RI)</h2>
+
+
+<div class="source">
+<pre>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+&lt;j2ee-ri-specific-information&gt;
+  &lt;server-name&gt;&lt;/server-name&gt;
+  &lt;rolemapping /&gt;
+
+  &lt;enterprise-beans&gt;
+    &lt;ejb&gt;
+      &lt;ejb-name&gt;Converter&lt;/ejb-name&gt;
+      &lt;jndi-name&gt;ejb/Converter&lt;/jndi-name&gt;
+    &lt;/ejb&gt;
+  &lt;/enterprise-beans&gt;
+
+&lt;/j2ee-ri-specific-information&gt;
+</pre>
+</div>
+
+    
+</div>
+
+  
+</div>
+
+  
+<div class="section">
+<h1>Cactus Web Application</h1>
+
+    
+<div class="section">
+<h2>Step 1: Prepare test code</h2>
+
+
+<div class="source">
+<pre>
+package org.apache.cactus.sample.ejb;
+
+import javax.naming.*;
+import javax.rmi.*;
+import junit.framework.*;
+
+import org.apache.cactus.*;
+
+public class ConverterTest extends ServletTestCase
+{
+    private Converter converter;
+
+    public ConverterTest(String name)
+    {
+        super(name);
+    }
+
+    public static Test suite()
+    {
+        return new TestSuite(ConverterTest.class);
+    }
+
+    public void setUp()
+    {
+        Context ctx = new InitialContext();
+        ConverterHome home = (ConverterHome)
+            PortableRemoteObject.narrow(ctx.lookup("java:comp/ejb/Converter"),
+            ConverterHome.class);
+        this.converter = home.create();
+    }
+
+    public void testConvert() throws Exception
+    {
+        double dollar = this.converter.convertYenToDollar(100.0);
+        assertEquals("dollar", 1.0, dollar, 0.01);
+    }
+}
+</pre>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Step 2: Prepare Web Application Deployment Descriptor (web.xml)</h2>
+
+
+<div class="source">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+    "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd"&gt;
+
+&lt;web-app&gt;
+
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.apache.cactus.server.ServletTestRedirector&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/ServletRedirector&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+
+[...]
+
+    &lt;ejb-ref&gt;
+        &lt;ejb-ref-name&gt;ejb/Converter&lt;/ejb-ref-name&gt;
+        &lt;ejb-ref-type&gt;Session&lt;/ejb-ref-type&gt;
+        &lt;home&gt;org.apache.cactus.sample.ejb.ConverterHome&lt;/home&gt;
+        &lt;remote&gt;org.apache.cactus.sample.ejb.Converter&lt;/remote&gt;
+    &lt;/ejb-ref&gt;
+
+&lt;/web-app&gt;
+</pre>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Step 3: Package Web Application</h2>
+
+      
+<p>
+        Package the web application into a war and then deploy it. Please
+        note that the <code>ejb-ref-name</code> in the deployment descriptor
+        need to match with the JNDI name of the test EJB.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Step 4: (Only valid to J2EE RI 1.2.1): War Runtime</h2>
+
+
+<div class="source">
+<pre>
+&lt;j2ee-ri-specific-information&gt;
+
+  &lt;server-name/&gt;
+  &lt;rolemapping/&gt;
+
+  &lt;web&gt;
+    &lt;display-name&gt;test&lt;/display-name&gt;
+    &lt;context-root&gt;test&lt;/context-root&gt;
+    &lt;ejb-ref&gt;
+      &lt;ejb-ref-name&gt;ejb/Converter&lt;/ejb-ref-name&gt;
+      &lt;jndi-name&gt;ejb/Converter&lt;/jndi-name&gt;
+    &lt;/ejb-ref&gt;
+  &lt;/web&gt;
+
+&lt;/j2ee-ri-specific-information&gt;
+</pre>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Step 5: Deploy</h2>
+
+      
+<p>
+        You need to deploy the war and the <code>ejb-jar.xml</code> based on
+        the deployment procedure of your servlet container and your ejb
+        container.
+      </p>
+
+    
+</div>
+
+  
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

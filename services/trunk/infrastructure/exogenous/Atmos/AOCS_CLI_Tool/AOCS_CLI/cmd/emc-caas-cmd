@@ -1,0 +1,30 @@
+#!/bin/sh
+# 'Globals'
+CLOUD_HOME=${CLOUD_HOME:?CLOUD_HOME is not set}
+LIBDIR=$CLOUD_HOME/lib
+
+# Check our Java env
+JAVA_HOME=${JAVA_HOME:?JAVA_HOME is not set}
+
+# If a classpath exists preserve it
+CP=${CLASSPATH}
+#add cloud classpath
+for jar in $(ls $LIBDIR/*.jar) ; do
+	CP=${CP}:$jar
+done
+
+if [ "$1" = "" ] ; then
+	echo "This command is not supposed to run."
+	exit 1
+fi
+
+CMD=$1
+shift
+# Check for CLOUD_ENDPOINT
+if [ ${CLOUD_ENDPOINT} ] ; then
+"$JAVA_HOME/bin/java" -Djava.util.logging.config.file=$CLOUD_HOME/src/logging.properties -DCLOUD_ENDPOINT=${CLOUD_ENDPOINT} -classpath "$CP" com.emc.caas.restclient.$CMD "$@" 
+else
+"$JAVA_HOME/bin/java" -Djava.util.logging.config.file=$CLOUD_HOME/src/logging.properties -classpath "$CP" com.emc.caas.restclient.$CMD "$@" 
+fi
+
+

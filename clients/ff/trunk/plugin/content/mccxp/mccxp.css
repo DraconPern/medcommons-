@@ -1,0 +1,141 @@
+#mainwindow {
+      font-family: arial helvetica, sans-serif; 
+      padding-right: 0px; 
+      padding-left: 0px; 
+      padding-bottom: 0px; 
+      margin: 0px; padding-top: 0px; 
+      background-color: #ffffff;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.headline {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-weight: bold;
+	color: #527463;
+  margin-bottom: 10px;
+}
+
+
+.infoheading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #527463;
+}
+
+.bordered {
+  border-style: solid; 
+  border-color: green; 
+  border-width: 1px;
+}
+
+.txt {
+  margin-left: 5px;
+}
+
+#patientTable {
+  margin-top: 10px;
+}
+
+#patientTable tr {
+  margin-top: 10px;
+  height: 10px;
+}
+
+#patientTable tr td {
+  width: 200px;
+  text-align: center;
+}
+
+#patientTable tr th {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#statusTable {
+  margin-left: 30;
+}
+
+#statusTable tr td {
+  text-align: left;
+}
+
+#statusTable tr th {
+  text-align: right;
+  padding-left: 5;
+  padding-right: 10;
+}
+
+#txid input {
+  border: none; 
+  background-color: transparent;
+  font-size: 10px;
+}
+
+#pin input {
+  border: none;
+}
+
+#history {
+  width: 90%;
+}
+
+#historyTable listitem listcell {
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.guidLink {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#historyWindow {
+}
+
+.bd {
+  border-style: solid;
+  border-color: blue;
+  border-width: 1px;
+}
+
+.fakeLink {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#problemLink {
+  color: blue;
+  text-decoration: underline;
+}
+
+#activityTable {
+  padding-left: 20;
+}
+
+.footnote {
+  font-size: xx-small;
+}
+
+#getOptionGroup {
+  margin-left: 30px;
+}
+
+#sendCCRGrid {
+  margin-left: 10px;
+}
+
+#deleteButton {
+  
+}
+
+#getSendTab {
+  margin-left: 8px;
+  margin-right: 8px;
+}

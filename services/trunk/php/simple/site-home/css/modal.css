@@ -1,0 +1,44 @@
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index: 9000;
+  background-color: #FFFFFF;
+  display:none;
+}
+  
+#boxes .window {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 400px;
+  display: none;
+  z-index: 9999;
+  background-color: #fffbbf;
+  border: solid 1px #b2a9a5;
+  overflow: hidden;
+}
+
+#boxes .window .modal-titlebar 
+{
+    padding: 5px;
+    padding-top: 10px;
+    text-align: right;
+    background-image: url(/images/window-closebg.gif);
+    height: 27px;
+}
+
+#boxes .window .modal-content
+{
+    padding: 20px;
+    padding-bottom: 15px;
+    overflow: auto;
+    height: 310px;
+    text-align: left;
+}
+
+#boxes .window .modal-titlebar a 
+{
+	color: #105191;
+}

@@ -1,0 +1,47 @@
+fieldset {
+  border: 1px solid #333;
+  padding: 1em;
+}
+#registerContents {
+  border: 1px solid #553;
+  padding: 1em 3em 1em 1em;
+}
+label {
+  font-weight: normal;
+}
+p {
+  margin: 0.5em 0px;
+}
+#registerContents table tr th {
+  text-align: left;
+}
+#registerContents table tr td {
+  padding-top: 0.4em;
+}
+#registerContents table {
+  border-spacing: 2em 0.4em;
+}
+td input {
+  width: 13em;
+}
+td.error,div.error {
+  color: red;
+}
+#main h2 {
+ margin-top: 0.2em;
+ margin-bottom: 0.5em;
+ padding-bottom: 0px;
+}
+
+#tablewrapper {
+  max-width: 700px;
+  clear: both;
+  padding-top: 1px; /* prevent margins overlapping */
+}
+
+table.tinst {
+  margin: 30px 1em 1em 0;
+}
+table.tinst td, table.tinst th {
+  padding: 10px;
+}

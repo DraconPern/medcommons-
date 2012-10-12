@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+
+	<head>
+		<title>DICOM Data Liberator (DDL) Manual</title>
+	</head>
+	<body>
+<h2>Overview</h2>
+
+Describe what DDL is: a DICOM CSTORE SCP/SCU which is also a CXP Client for uploading/downloading  data to a patient's account.
+
+How it works:
+<ol>
+	<li>MedCommons organizes documents using the ASTM CCR standard. This provides clinical context for the DICOM studies.</li>
+	<li>The DDL can add DICOM to an existing CCR by adding additional document references and uploading these references to a MedCommons appliance via CXP.
+	<i>Note: this feature is not in the current release.</i></li>
+    <li>The DDL can generate a new CCR from the contents of a DICOM study by extracting demographics from the DICOM 
+	header.</li>
+	<li>The DDL can download a CCR with embedded DICOM references from a MedCommons appliance and CSTORE the DICOM objects to 
+		a designated DICOM target.</li>
+	<li>All data files are cached locally on upload or download from the MedCommons appliance; DICOM transfers are processed
+		as quickly as the network and disk permit.
+		</li>
+</ol>
+<h2>Installation</h2>
+		<p>
+Installation should be automatic for Windows and perhaps Linux via JavaWebStart; MacOSX needs more work.
+		</p>
+		<p></p>
+		When the application launches for the first time - the DDL tries to load the file DDL.properties from your 
+		&lt;HOME&gt;/MedCommons directory. If this file does not exist it is created with the values "UNKNOWN" for the DICOM 
+		device that the DDL sends images to  (there is an UNKNOWN for the hostname, port, and AE title). These values must be
+		replaced using a standard text editor (like TextEdit) with values appropriate for your network.
+		</p>
+		<p>
+			Additionally - the default port for the DDL is 3002 and the default AE title is MCDICOM. These values may be used as is
+			or you may change them to fit your network's policies.
+		</p>
+		<p>
+			After editing the DDL.properties file it will look something like this:
+			<pre>
+# MedCommons DDL Configuration file
+
+## Local device. This is the DICOM information for the DDL
+## itself. Third party devices use this information to send
+## data to the DDL. These need not be changed unless your site
+## requires different different values. 
+DICOMLocalAETitle=MCDICOM
+DICOMLocalDicomPort=3002
+
+# Edit all lines below which contain the string UNKNOWN to contain valid values for your DICOM configuration.
+
+
+DICOMRemoteAETitle=OSIRIX_CAUD_MESO
+DICOMRemoteHost=localhost
+DICOMRemotePort=4096
+
+### DO NOT EDIT THE FOLLOWING LINES ###
+ConfigVersion=1696M
+SenderAccountId=1117658438174637
+			</pre>
+			</p>
+
+<h2>Starting</h2>
+In Windows and Linux there are shortcuts installed by JavaWebStart onto the desktop and program menus. Selecting these items launches DDL.
+
+In MacOSX - the implementation of JavaWebStart under Java6 is broken. The application must be run via the <a href="/DDL/index.html"> Installer Page </a>. Note that the application is not re-installed - it's just a little awkward.
+
+When DDL has been launched a traffic-light 
+icon <img src="images/TrafficOff.png" alt="traffic idle" title="traffic idle"/> will appear in the system tray (in Windows) or the application menu bar (in MacOSX). 
+
+<h2>Running DDL </h2>
+In Windows - the traffic icon menus are accessed via the right-mouse button. In MacOSX - hold down the CTRL key while clicking on the icon.
+
+<h3> Testing the installation </h3>
+Click on the icon and select the "About DDL" menu item. This will display some summary information in a web browser.
+
+In the web browser - click on the link for "DICOM Target Configuration". This will display information about the DICOM device that DDL will send data to. The last row of the configuration table displays the result of a DICOM ECHO to the target device. If this returns 'success' - then the DDL is ready to download DICOM from a MedCommons appliance and send it to this device.
+<h3>Menu Commands </h3>
+<h4>About DDL</h4>
+<h4>Show Status</h4>
+<h4>DICOM Echo</h4>
+<h4>Shutdown</h4>
+
+<h3>Typical Use Cases</h3>
+Each one of these needs a paragraph. Should describe the various popup messages which occur on major state changes.
+<h4>Sending DICOM to DDL</h4>
+<h4>Attaching DICOM to an existing CCR </h4>
+<h4>Downloading DICOM from an Appliance</h4>
+
+<h3>Configuring third party products to interact with DDL</h3>
+TBD: Do screen captures to show how to configure and run applications with DDL.
+<h4>DICOMReader</h4>
+<h4>Osirix</h4>
+
+
+<h3>MacOSX Installation</h3>
+	<a name="MACOSX">The DDL requires Java6, </a>	but Java6 has not been officially released by Apple. If you are a member of the Apple Developer Connection
+		there is developer preview of Java6 which can be downloaded for testing purposes. The following steps are needed
+		to use the DDL under MacOSX:
+		<ol>
+			<li>Install Java6 from <a href="http://developer.apple.com/java/">Apple's java page</a></li>
+			<li>Make sure that the Java Preferences are set for Java SE 6 in the "Java Applications Runtime Settings". If this is not
+				done there are CAFE version errors thrown at startup:
+								<pre>
+					java.io.IOException: Corrupted pack file: magic/ver = CAFED00D/160.1 should be CAFED00D/150.7
+				</pre>
+				</li> 
+			<li>There may be some Java Web Start files installed by default that are invalid. 
+				If these are deleted Java will reinitialize
+				them correctly. If there are errors in the Java console upon launch - please send console logs to MedCommmons.
+			</li>
+			<li>
+				On MacOSX - sometimes the following error occurs:
+				<pre>
+		Java Web Start splash screen process exiting .....
+		Bad installation. No JRE found in configuration file
+					</pre>
+				Sometimes this error is fixed by deleting the file ~/Library/Caches/Java/deployment.properties. 
+				</li>
+			
+		</ol>
+<h2>Known bugs </h2>
+<ol>
+	<li>On MacOSX the popup windows over the DDL icon do not disappear automatically (as they do in Windows). [Mantis 586]</li>
+	<li>MacOSX: browsers can not detect existing JavaWebStart installation.</li>
+</ol>
+<h2>FAQ</h2>
+<h3>Troubleshooting - how do I look at the DDL log?</h3>
+		Currently the DDL log is simply the Java log. Open the Java Control panel and set the console to be visible:
+		<ol>
+			<li>Open the Java Control Panel</li>
+			<li>Select the Advanced tab</li>
+			<li>Expand the control for <i>Java console</i></li>
+			<li>Select the radio button for "Show Console"</li>
+		</ol>
+		The console appears 
+		when DDL is launched. The contents of the log can be saved via cut&amp;paste.
+<h3>What does the message <i>Warning: This is not a supported Operating System</i> mean?</h3>
+		When you install Java on your machine it checks to see if the OS is supported by Java. Typically the reason that this message
+		is displayed is because the version of the operating system is out of date. It may be displayed if the operating system does not
+		have current system packs installed (e.g., Windows XP SP 1 instead of Windows XP SP 2). DDL may work properly - but it probably would 
+		be best to upgrade the underlying system.
+	</body>
+	
+</html>

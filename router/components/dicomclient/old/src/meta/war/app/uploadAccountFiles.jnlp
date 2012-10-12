@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for Upload Files Application -->
+<jnlp
+  spec="1.5+"
+	codebase="$$codebase"
+	href="uploadAccountFiles.jnlp">
+  <information>
+    <title>Upload Account Files</title>
+    <vendor>MedCommons, Inc.</vendor>
+
+    <homepage href="http://medcommons.net" />
+    <description>Uploads files to an account on MedCommons</description>
+    <description kind="short">Upload MedCommons Account Files </description>
+    <icon  href="ehChartSplash.png"/>
+    <icon  kind="shortcut" href="Active.png"/>
+    <association 
+    	extensions="upload-hurl" 
+    	mime-type="application/x-healthurl-upload" 
+    	description="Application for uploading files to a specified MedCommons account" />
+    <offline-allowed />
+
+    <update check="always" policy="prompt-update"/>
+
+    <shortcut online="true">
+         <menu submenu="MedCommons Upload Account Files"/>
+         <desktop/>
+      </shortcut>
+
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+
+ <j2se version="1.5+" />
+
+	<extension name="Activation" href="activation.jnlp"/> <!-- Hack for getting around jar signed by another entity -->
+	<jar href="medcommons-dicomclient-application.jar" main="true"/>
+	<!--
+	<jar href="medcommons-uploadAccountFiles-application.jar" main="true"/>
+	-->
+    <jar href="log4j.jar" download="eager"/>
+    
+    <jar href="ccrxmlbean.jar" download="eager"/>
+    
+    <jar href="commons-codec.jar" download="eager"/>
+    <jar href="commons-collections.jar" download="eager"/>
+    <jar href="commons-httpclient.jar" download="eager"/>
+    <jar href="commons-logging-api.jar" download="eager"/>
+    <jar href="commons-logging.jar" download="eager"/>
+    <jar href="cos.jar" download="eager"/>
+
+    <jar href="dom4j.jar" download="eager"/>
+    <jar href="ehcache.jar" download="eager"/>
+   
+    <jar href="jnlp.jar" download="eager"/>
+    
+    <jar href="gateway-interfaces.jar" download="eager"/>
+    <jar href="medcommons-crypto.jar" download="eager"/>
+    <jar href="medcommons-cxplibrary.jar" download="eager"/>
+    <jar href="medcommons-transfer.jar" download="eager"/>
+    <jar href="medcommons-utils.jar" download="eager"/>
+    
+    <jar href="saxon-dom.jar" download="eager"/>
+    <jar href="saxon.jar"download="eager"/>
+    
+    <jar href="wsdl4j.jar" download="eager"/>
+    <jar href="wstx-asl.jar" download="eager"/>
+    <jar href="xbean.jar" download="eager"/>
+    <jar href="xbean_xpath.jar" download="eager"/>
+    <jar href="xercesImpl.jar" download="eager"/>
+
+
+
+	<property name="gatewayRoot"
+	    value="$$site" />
+ 	<property name="storageId"
+    	value="UNKNOWN"/>
+
+    
+
+  </resources>
+
+  <application-desc main-class="net.medcommons.application.upload.UploadAccountFiles" />
+
+
+</jnlp>
+

@@ -1,0 +1,121 @@
+#!/bin/sh
+#
+
+#
+#  This program is used in CaaS client vm.
+#
+#  This shell script should be owned by root and chmod to 700.
+#  This script configures client VM hostname.
+#
+
+# ################################################################
+# Copyright (C) 2009, All Rights Reserved, by
+# EMC Corporation, Hopkinton, MA.
+#
+# This software is furnished under a license under either the EMC Cloud
+# Infrastructure ISV Program Agreement, the EMC Velocity Atmos Partner
+# Program Agreement,or the Atmos OnLine Compute and Storage Service
+# Agreement (License) and may be used and copied only  in  accordance
+# with  the  terms  of such  License and with the inclusion of the above
+# copyright notice. This software or  any  other copies thereof may not
+# be provided or otherwise made available to any  other person.
+# No title to and ownership of  the  software  is  hereby transferred.
+#
+# The information in this software is subject to change without  notice
+# and  should  not be  construed  as  a commitment by EMC Corporation.
+#
+# EMC assumes no responsibility for the use or  reliability  of its
+# software on equipment which is not supplied by EMC.
+# ################################################################
+
+SET_HOSTNAME=0
+SELF_IP_FILE=/etc/mauiprivateip
+
+# print hostname by ip address
+function printhostbyaddr() {
+python -c "import socket, sys
+try:
+        hostname = socket.gethostbyaddr('$1')
+except socket.error, e:
+        print >> sys.stderr, e
+        sys.exit(-1)
+print hostname[0]"
+}
+
+    # Judge whether or not OS is in RedHat family
+    if [ -e /etc/redhat-release ]; then
+        echo "[caas_configurehostname] This OS is in RedHat Family, automatically configure hostname"
+        SET_HOSTNAME=1
+    elif [ -e /etc/SuSE-release ]; then
+        echo "[caas_configurehostname] This OS is in SuSE Family, automatically configure hostname"
+        SET_HOSTNAME=2
+    else
+        echo "[caas_configurehostname] This OS is not in RedHat nor SuSE Family" 
+        SET_HOSTNAME=0
+    fi
+
+
+	# get hostname from rev dns
+
+        #  Cannot assume the first nic is private nic
+        # ip_addr=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | grep -v '192.168' | cut -d: -f2 | awk '{ print $1}' | head -n 1)
+	if [ ! -e $SELF_IP_FILE ]; then 
+		echo "Cannot get Private IP of the client. Configure Failed!" >&2
+		exit 1
+	fi
+        ip_addr=$(cat $SELF_IP_FILE)
+        # echo "Your private IP address is $ip_addr"
+
+	hostname=$(printhostbyaddr $ip_addr)
+    	if [ "" = "$hostname" ]; then
+        	echo "Cannot get FQDN of the client. Configuration Failed!" >&2
+        	exit 1
+    	fi
+
+        # use hostname to set hostname
+        hostname $hostname
+
+        # set HOSTNAME
+        HOSTNAME=$hostname
+        export HOSTNAME
+
+        # Add hostname to /etc/hosts
+        sed -i "s/127\.0\.0\.1.*/127\.0\.0\.1 $hostname localhost.localdomain localhost/g" /etc/hosts
+	# In addition for SuSE family
+        sed -i "s/127\.0\.0\.2.*/127\.0\.0\.2 $hostname/g" /etc/hosts
+
+    # Set hostname
+    if [ $SET_HOSTNAME = 1 ]; then
+        # Set hostname
+        # echo "Configuring hostname..."
+
+
+        # modify /etc/sysconfig/network
+        #  Only for REDHAT
+	line=$(cat /etc/sysconfig/network | grep ^HOSTNAME\s*=)
+	if [ "" == "$line" ]; then
+		echo HOSTNAME= >> /etc/sysconfig/network
+	fi
+	sed -i "s/HOSTNAME\s*=.*/HOSTNAME=$HOSTNAME/g" /etc/sysconfig/network
+    elif [ $SET_HOSTNAME = 2 ]; then
+	# Set hostname
+        # echo "Configuring hostname..."
+
+        mv /etc/HOSTNAME /etc/HOSTNAME.back -f
+        touch /etc/HOSTNAME
+        echo $HOSTNAME > /etc/HOSTNAME
+        chown root:root /etc/HOSTNAME
+
+	line=$(cat /etc/sysconfig/network/dhcp | grep ^DHCLIENT_SET_HOSTNAME\s*=)
+	if [ "" == "$line" ]; then
+		echo DHCLIENT_SET_HOSTNAME= >> /etc/sysconfig/network/dhcp
+	fi
+	sed -i 's/DHCLIENT_SET_HOSTNAME\s*=.*/DHCLIENT_SET_HOSTNAME=\"no\"/g' /etc/sysconfig/network/dhcp
+    else
+        # Print instruction for user
+        echo "Please make sure your hostname is EXACTLY the same as private Nic's DNS name. Otherwise you cannot access Atmos through NFS. Your could follow the following steps to configure your virtual machine." >&2
+	echo " (a) Run ifconfig to get your private nic's IP address." >&2
+	echo " (b) Run nslookup <ip> or host <ip> to your private nic's DNS name."  >&2
+	echo " (c) Run hostname <DNS name> to set hostname." >&2
+	echo " (d) Add corresponding script in your config file to make sure the hostname affect after rebooting." >&2
+    fi

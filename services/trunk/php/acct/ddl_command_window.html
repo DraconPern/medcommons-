@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>MedCommons DDL</title>
+    <link media="all" href="../css/medCommonsStyles.css" type="text/css" rel="stylesheet" />
+    <script type='text/javascript' src='acct_all.js'></script>
+    <script type='text/javascript' src='contextManager.js'></script>
+    <script type='text/javascript'>
+        var count = 0;
+        ce_connect('ddl_command', function(url) {
+           count++;
+           replaceChildNodes('commands', 'Commands Processed: ' + count);
+        });
+        ce_connect('ddl_close_window', function() {
+            window.onbeforeunload ='';
+            window.close();
+        });
+        addLoadEvent(startWindowProxy);
+        window.blur();
+        window.onfocus = function() { window.blur(); }
+        window.onbeforeunload = function() {
+            return "This window facilitates communication of commands to your MedCommons DDL";
+        };
+        ce_signal('ddl_command_window_ready');
+    </script>
+</head>
+<body>
+    <p>Please keep this window open!</p>
+    <div id='commands' style='color: #ccc; font-size: 8px;'>
+    </div>
+</body>
+</html>

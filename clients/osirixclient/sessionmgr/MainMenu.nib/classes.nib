@@ -1,0 +1,29 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = MeterView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {CLASS = RecvMeterView; LANGUAGE = ObjC; SUPERCLASS = MeterView; }, 
+        {CLASS = SendMeterView; LANGUAGE = ObjC; SUPERCLASS = MeterView; }, 
+        {CLASS = Session; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {cancel = id; }; 
+            CLASS = SessionController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                action = NSBox; 
+                detail = NSTextField; 
+                log = NSTextView; 
+                progress = NSProgressIndicator; 
+                recvMeter = MeterView; 
+                recvRate = NSTextField; 
+                sendMeter = MeterView; 
+                sendRate = NSTextField; 
+                session = Session; 
+                status = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

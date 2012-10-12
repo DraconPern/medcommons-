@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" style="border-style: none;">
+  <head>
+    <title>IFrame Test Harness</title>
+    <style type='text/css'?>
+    body {
+      background-color: #f0ece6;
+      font-family: arial,verdana;
+      font-size: 12px;
+    }
+    #example {
+        background-color: #ffe;
+        margin: 2em 0px;
+        padding: 1em;
+    }
+    </style>
+  </head>
+<body>
+  <div id='body'>
+    <h2>MedCommons Standard Embeddable IFrame</h2>
+    <p>This page shows how you can embed an iframe containing your MedCommons Dashboard in another page and 
+       achieve single sign-on with an Open ID provider such as Verisign PIP with just a small snippet of
+       HTML.  All you need to do is to paste the fragment of HTML below into your page and make one small customization:</p>
+    <pre id='example'>
+&lt;iframe 
+  src='https://healthurl.medcommons.net/dashboard_iframe.php?openid_url=http://youropenid.pip.verisignlabs.com' 
+  width='100%'  
+  frameborder='0' scrolling='no' 
+  height='330px'&gt;&lt;/iframe&gt;
+    
+    </pre>
+    <h4>Customization</h4>
+    <p>You must customize the URL for the iframe to contain the OpenID for user that you wish to show the
+       the dashboard for by replacing the openid_url=... portion with the correct OpenID.</p>
+    <h4>Limitations</h4>
+    <ul>
+	    <li>All links will open in a new window</li> 
+	    <li>To access functions such as creating new accounts, consents, logging in or out you must click the 
+	        Open Full Size Dashboard link which opens a new window.</li>
+	    <li>If you are not logged in to either MedCommons or your OpenID when you display the IFrame you may 
+	        be taken to the Open ID provider web site automatically and the IFrame may be lost.  You should 
+	        avoid displaying the IFrame in a situation where the user is not already logged in.</li>
+        <li>The iframe requires 330px of vertical height.  This should be specified as the fixed height
+	        in your HTML source for the iframe (as in the above example).</li>
+	    <li>The OpenID that you use must already be linked to a MedCommons Account.  Use the Settings page
+	        to link to your MedCommons account prior to loading the IFrame.</li>
+	    <li>Although Single-Sign-On is supported, Single-Sign-Out is not supported.  As a result, logging out of
+	        MedCommons will <b>not</b> log you out of the OpenID provider.  Care needs to be taken in your user
+	        interface to handle this.
+	       </li>
+    </ul>
+    
+    <h4>Example - View Source to see Details</h4>
+    <p>The frame below is set to load a Dashboard for OpenID URL http://onemctest.pip.verisignlabs.com.</p>
+    <p>You can log into the Verisign account at Verisign using credentials:  onemctest / 1mctest.</p>
+    <p><b>Note: if you are not logged into Verisign with the above credentials you will be taken to the Verisign page to log in. 
+       After that, you can come back to this page.</b></p>
+    <button onclick='document.getElementById("exampleframe").src="dashboard_iframe.php?openid_url=http://onemctest.pip.verisignlabs.com"'>Show Example</button>
+    <div id='example'>
+    <iframe name='exampleframe' id='exampleframe' example_src='dashboard_iframe.php?openid_url=http://onemctest.pip.verisignlabs.com' 
+            width='100%'  
+            frameborder='0' scrolling='no' 
+            height='330px'>Your browser doesn't support iframes.</iframe>
+    </div>
+  </div>
+</body>
+</html>

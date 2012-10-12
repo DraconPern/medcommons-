@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="description" content="MedCommons Website Version 1.0"/>
+    <meta name="keywords" 
+    content="medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr"/>
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=960" />
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+     {% block meta %} {% endblock %} 
+     {% block favicon %}
+    <link rel="shortcut icon" href="../images/favicon.gif" type="image/gif" />
+     {% endblock %}
+     <link media="all" href="{% if StyleSheet %}{% if not isStyleSheetAbsolute %}{{Site}}{% endif %}{{StyleSheet}}{% else %}{{Site}}/zip/yui/2.8.0r4/reset-fonts-grids/reset-fonts-grids.css,yui/2.8.0r4/base/base-min.css,css/medCommonsStyles.css{% endif %}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+    var signed_on = false;
+    var MAX_IDLE_TIME = {{ SessionTimeoutSeconds }} * 1000;
+    function getCookie(n) {
+        var dc = document.cookie;
+        var prefix = n+"=";
+        var begin = dc.indexOf("; " + prefix);
+        if (begin == -1) {
+            begin = dc.indexOf(prefix);
+            if (begin != 0) return null;
+        }
+        else 
+            begin += 2;
+        
+        var end = dc.indexOf(";", begin);
+        if (end == -1) 
+            end = dc.length;
+        
+        return unescape(dc.substring(begin + prefix.length, end));
+    }    
+    function get_mc_attribute(att) {
+      var mc = getCookie('mc');
+      if(!mc)
+        return null;
+      var atts = mc.split(',');
+      for(var i=0; i<atts.length; ++i) { 
+        if(atts[i].match(new RegExp('^'+att+'='))) {
+          return atts[i].split('=')[1];
+        }
+      }
+      return null;
+    }
+    var top_nav = [
+      { text: 'FAQ', href: '/help/info.html', target: '_new' },
+      {% if features.services_menu %}
+      { text: 'Services', href: '{{ Site }}/mod/svcsetup.php', hidden: true },
+      {% endif %}
+      { text: 'Inbox', href: '{{ Site }}/acct/', hidden: function() { return !signed_on;} },
+      { text: 'Settings', href: '{{ Site }}/acct/settings.php' },
+      { text: 'Simtrak Admin', href: '{{ Site }}/simtrak/', hidden: true },
+      { text: 'DDL', href: '/acct/ddl.php', hidden: function() {return !getCookie('mcddl') || (getCookie('mcddl')=='false');} },
+      { text: 'Sign In', href: '{{ Site }}/acct/login.php', hidden: true },
+      { text: 'Logout', href: '{{ Site }}/acct/logout.php', render: 
+          function() { return 'Logout ' + get_mc_attribute('email').replace(/([a-zA-Z0-9]{5,})(.*$)/,'$1').replace(/(.{12})(.*$)/,'$1...'); }}
+    ];
+</script>
+    {% block head %}{% endblock %}
+    </head>
+<body {% block body %}{% endblock %}>
+
+<div id="doc3" class="yui-t7 yui-skin-sam">
+   <div id="hd" role="banner">
+       <div id="navcontainer"></div> 
+      {% block logo %}
+      <a href="{{ HomePage }}" title="{{ Alt }}">
+      <script type='text/javascript'>
+    	if(getCookie('mc') && (get_mc_attribute('s')&64))	{
+         document.write('<img  border="0" src="/acct/logo.php"  id="logoImg"/>');
+    	}
+    	else
+         document.write('<img  border="0" width=246 height=50 src="{{ Logo }}"  id="logoImg"/>');
+      </script>
+      </a>
+      {% endblock logo %} 
+   </div>
+   <div id="bd" role="main">
+    <div id="yui-main">
+    <div class="yui-b">
+      <div class="yui-g">
+        <div id='main'>
+               {% block main %} {% endblock main %}
+        </div>
+
+      </div>
+    </div>
+    </div>
+   <div id="ft" role="contentinfo">
+     {% block footer %}
+     <ul>
+       <li>&copy; MedCommons 2010</li>
+       <li><a href='http://www.medcommons.net/privacy.html'>Privacy Policy</a></li>
+       <li><a href='http://www.medcommons.net/terms.html'>Terms of Use</a></li>
+       <li><a href='/feedback/feedback-form.html'>Feedback</a></li>
+     </ul>
+     {% endblock %}
+   </div>
+</div>
+  <script type="text/javascript">
+  if(getCookie('mc'))
+    document.write("<style type='text/css'> #loggedon, #visi { display: block; }</style>");
+  </script>
+  <script type='text/javascript' src='{{Site}}/zip/yui/3.2.0/simpleyui/simpleyui-min.js,piwik.js,root.js'></script>
+  <script type="text/javascript">
+  var u = "https://piwik.medcommons.net/piwik/";
+  setTimeout(function() {
+  try {
+    var piwikTracker = Piwik.getTracker(u + "piwik.php", 1);
+    piwikTracker.trackPageView();
+    } catch( err ) {alert(err);}},100);
+  </script>
+  {% block endjs %} {% endblock %}
+</body>
+</html>

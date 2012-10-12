@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../Requirements/MedCommonsDocbookExtensions.dtd">
+<article>
+    <title> MedCommons Repository Data Model and I/O</title>
+    <articleinfo>
+        <invpartnumber>SS-0006</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                <date>April 27, 2005</date>
+                <authorinitials>SWD, SS</authorinitials>
+                <revdescription>
+                    <para>Initial Draft</para>
+                </revdescription>
+            </revision>
+        </revhistory>
+        <legalnotice><para>Copyright 2005 MedCommons, Inc.</para></legalnotice>
+    </articleinfo>
+    <sect1>
+      <title>Overview</title>      
+      <para>
+        The MedCommons system is fundamentally based around storage and retrieval of documents, and most
+        importantly, doing this in a secure, private and scalable way.  In addition to this there is a strong
+        need to support a series of standardized interfaces that will allow MedCommons
+        software to interoperate with other medical systems.
+      </para>
+
+      <para>
+        In order to achieve this MedCommons will 
+        implement an abstracted interface to it's document repository.   This
+        document describes the interface
+        and underlying data model assoicated with the design.
+      </para>
+    </sect1>
+    <sect1 id="genericModel">
+      <title>Generic Model</title>
+      <para>
+        This section describes the general model that would apply to all
+        documents stored in the repository.  This is
+        an attempt to unify the models of the various different
+        repositories to create a common form where documents can be
+        stored and retrieved via any of the required protocols.
+      </para>
+      <para>
+          <sect2 id="genericDataModel">
+            <title>Data Model</title>
+            <para>
+              The generic data model is described below.  This model is designed to accommodate the requirements of the
+              various protocols known to be required at this time.   Each separate protocol will need to be
+              mapped to this model in order to be stored in the MedCommons system.
+            </para>
+            <para>
+              The figure below shows structure of the generic data model:
+              <mediaobject>
+                  <imageobject>
+                      <imagedata fileref="images/genericDataModel.png"/>/>
+                  </imageobject>
+              </mediaobject>
+
+              The entities in this model are each briefly described below:
+              
+              <sect3 id="document">
+                <title>Document</title>
+                <para>
+                   The Document is the fundamental unit of storage.  In
+                   physical terms it is a blob of bits representing encoded data
+                   for a stored item.  Examples of a document would be:
+                   <itemizedlist>
+                     <listitem> An ASTM CCR Document  </listitem>
+                     <listitem> A DICOM Image </listitem>
+                     <listitem> An arbitrary PDF document </listitem>
+                   </itemizedlist>
+                   The fundamental identifier of a Document is its guid.  Documents are immutable - that is 
+                   they are stored once and forever and may not be updated.
+                </para>
+              </sect3>
+              <sect3 id="documentSeries">
+                <title>DocumentSeries</title>
+                <para>DocumentSeries is an ordered sequence of Documents.  Note that the
+                  collection as a whole may have a contentType which would usually reflect the
+                  same contentType as the Document objects in its sequence, but
+                  it might instead reflect a different content type that represents the collection
+                  as a whole.  Note that each document belongs to one and only one DocumentSeries.</para>
+              </sect3>
+              <sect3 id="documentCollection">
+                <title>DocumentCollection</title>
+                <para>DocumentCollection is an arbitrary collection of DocumentSeries. The series
+                  are not ordered and may belong to more than one DocumentCollection.
+                </para> 
+              </sect3>
+              <sect3 id="documentTransfer">
+                <title>DocumentTransfer</title>
+                <para>DocumentTransfer represents a transfer of a collection between gateways.</para> 
+              </sect3>
+              <sect3 id="persona">
+                <title>Persona</title>
+                <para>A persona is a virtual identity held by a real person.</para> 
+              </sect3>
+              <sect3 id="patient">
+                <title>Patient</title>
+                <para>A Patient holds the real world information about a
+                  person. A Patient may have many Personas.  It may
+                  be that we choose not to store Patient information in the
+                  gateway.  However, to support disconnected operation
+                  it may be necessary to have patient data held locally.</para> 
+              </sect3>
+            </para>
+          </sect2>
+          <sect2 id="api">
+            <title>API</title>
+            <para>
+              This section describes the API for storing and retrieving documents.
+            </para>
+            <para>
+              <sect3 id="query">
+                <title>Query</title>
+                <para>
+                  <funcsynopsis>
+                    <funcprototype>
+                      <funcdef>List&lt;DocumentCollection&gt; <function>queryCollection</function></funcdef>
+                      <paramdef>[in] string<parameter>patientId</parameter> - defines the patient Id to be queried.</paramdef>
+                    </funcprototype>
+                  </funcsynopsis>
+                  Queries the repository for all DocumentCollections belonging to the given patient.
+                </para>
+                <para>
+                  <funcsynopsis>
+                    <funcprototype>
+                      <funcdef>Document <function>queryDocument</function></funcdef>
+                      <paramdef>string<parameter>guid</parameter> - the guid of the Document to be retrieved</paramdef>
+                    </funcprototype>
+                  </funcsynopsis>
+                  Queries the repository for a specific document and returns it.
+                </para>
+                <para>
+                  <funcsynopsis>
+                    <funcprototype>
+                      <funcdef>DocumentTransfer <function>queryTransfer</function></funcdef>
+                      <paramdef>string<parameter>trackingId</parameter> - the qualifying id for the tracking number.</paramdef>
+                      <paramdef>string<parameter>trackingNumber</parameter> - the tracking number to find the transfer for.</paramdef>
+                    </funcprototype>
+                  </funcsynopsis>
+                </para>
+              </sect3>
+              <sect3 id="store">
+                <title>Store</title>
+                <para>
+                <funcsynopsis>
+                  <funcprototype>
+                    <funcdef>string <function>store</function></funcdef>
+                    <paramdef>string<parameter>collection</parameter> -
+                      The guid of the collection in which to store the Document</paramdef>
+                    <paramdef>string<parameter>series</parameter> -
+                      The guid of the series in which to store the Document</paramdef>
+                    <paramdef>DataSource<parameter>dataSource</parameter> -
+                      A data source yielding the stream and content type for the Document's raw data
+                    </paramdef>
+                    <paramdef>Document<parameter>document</parameter> -
+                      The Document to store</paramdef>
+                  </funcprototype>
+                </funcsynopsis>
+                Stores the requested document in the repository. The Document is added to the supplied series.  If
+                the series and/or collection are not in the respository then they are created. 
+                Returns the guid of the newly created Document.
+              </para>
+            </sect3>
+            </para>
+          </sect2>
+      </para>
+    </sect1>
+    <sect1>
+        <title>XDS support</title>
+        <para>
+            The XDS protocol is in development; its data model doesn't match the MedCommons model directly:
+            <itemizedlist>
+                <listitem>
+                    Object identity is on a different level; in MedCommons
+                    DICOM (and presumably other compound objects) identity is
+                    on the level of a series, 
+                    in XDS it is on the level of a document (an image for DICOM). Each document in XDS has its own UUID.
+                </listitem>
+                <listitem>
+                    XDS has no notion of distributed documents - once something
+                    is on a repository it's on it and can't be cached or
+                    replicated other places. The hostname of the repository 
+                    is burnt into the registry.
+                    MedCommons will do this better (cross fingers..)
+                </listitem>
+                <listitem>
+                    XDS registries are inherently insecure. There's lots of
+                    metadata that itself is useful for medical data purposes.
+                </listitem>
+            </itemizedlist>
+            
+        </para>
+        <sect2>
+            <title>XDS Storage</title>
+        
+        
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/XDSStorage.jpg"/>/>
+                </imageobject>
+            </mediaobject>
+            Note that the in the XDS Provide and Register Transaction the XDS
+            Document Source sends documents plus a bunch of metadata to the XDS
+            Repository. The XDS Repository basically strips the documents off
+            the
+            message and then adds two new fields: the SHA-1 hash of each
+            document and the URL of the location that the document is stored
+            at.  The Registry then stores all this metadata and generates a
+            UUID for each 
+            document that has been stored. Note that the Repository does not
+            need to store the UUIDs nor any of the metadata that it doesn't
+            want to. It only has to have an addressable URL for each document.
+        </para>
+            <para>
+            </para>
+        </sect2>
+        <sect2>
+        <title>XDS Retrieval</title>
+        <para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/XDSRetrieval.jpg"/>/>
+                </imageobject>
+            </mediaobject>
+            When a XDS document consumer wants a document an ebXML message is
+            generated to the XDS Registry; this returns a URL that is then used
+            to retrieve the document. 
+        </para>
+            <para>
+                Perhaps the MC repository should just be accessed directly here
+                - does the XDS repository layer add anything here? It's just an
+                HTTP GET here.
+                
+            </para>
+            <para>
+                This means that each document (a CCR or DICOM image) needs a URL. The URLs for DICOM might be of the form:
+                <ulink url=" http://blah.blah.blah:8080/router/wado?seriesGUID=09806987233&amp;">
+                    http://blah.blah.blah:8080/router/wado?seriesGUID=09806987233&amp;imagename=23434/233.DCM&amp;contentType=DICOM
+                </ulink>
+                   This means that WADO has to implement a raw DICOM stream (this is pretty simple - just read the stuff off of disk; this is defined in the WADO spec). 
+            </para>
+            
+        </sect2>
+        
+    </sect1>
+    <sect1>
+        <title>DICOM</title>
+        <sect2>
+            <title>Data Model</title>
+        </sect2>
+        <sect2>
+            <title>Database</title>
+        </sect2>
+        <sect2>
+            <title>Data flow</title>
+            <para>
+                If the MC Repository can store data using the same API that we have for XDS then we're home free.
+            </para>
+        </sect2>
+        
+        
+    </sect1>
+    
+</article>

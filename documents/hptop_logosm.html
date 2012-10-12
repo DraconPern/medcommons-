@@ -1,0 +1,91 @@
+<!--
+PAGE REVISON : 2.3
+LAST UPDATED : 7.19.2005
+BY : ALEX BEUSCHER
+//-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MedCommons</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {font-size: 9px}
+body {
+	overflow: hidden;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function SubmitTrackForm() {
+	
+	if (document.TrackForm.trackingForm.trackingNumber.value=="") {
+		
+		alert("please enter a tracking number");
+		document.TrackForm.trackingForm.trackingNumber.focus();
+		
+	}
+		else {
+		
+		document.TrackForm.trackingForm.submit();
+		
+	}
+	}
+//-->
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('images/topmenu_over_03.gif','images/topmenu_over_04.gif','images/topmenu_over_05.gif','images/diagram_over_03.gif','images/diagram_over_05.gif','images/diagram_over_08.gif','images/diagram_over_14.gif','images/diagram_over_15.gif')">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="400"><table width="400" height="35" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="8" background="images/spacer_dkteal.gif"><img src="images/spacer_dkteal.gif" width="1" height="16"></td>
+    </tr>
+  <tr>
+    <td><img src="images/topmenu_off_02.gif" width="48" height="19"></td>
+    <td><a href="hp.html" target="_top" onMouseOver="MM_swapImage('Image4','','images/viewertabs_over_01.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/viewertabs_off_01.gif" name="Image4" width="61" height="19" border="0"></a></td>	
+	<td><a href="hp.html" target="_top" onMouseOver="MM_swapImage('Image5','','images/viewertabs_over_02.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/viewertabs_off_02.gif" name="Image5" width="66" height="19" border="0"></a></td>
+    <td><a href="hp.html" target="_top" onMouseOver="MM_swapImage('Image6','','images/viewertabs_over_03.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/viewertabs_off_03.gif" name="Image6" width="43" height="19" border="0"></a></td>    
+    <td><a href="hp.html" target="_top" onMouseOver="MM_swapImage('Image7','','images/viewertabs_over_04.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/viewertabs_off_04.gif" name="Image7" width="68" height="19" border="0"></a></td>
+    <td><a href="hp.html" target="_top" onMouseOver="MM_swapImage('Image8','','images/viewertabs_over_05.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/viewertabs_off_05.gif" name="Image8" width="49" height="19" border="0"></a></td>    
+    <td><a href="memberservice/logon.php" target="_top" onMouseOver="MM_swapImage('Image9','','images/viewertabs_over_06.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/viewertabs_off_06.gif" name="Image9" width="51" height="19" border="0"></a></td>
+    <td><img src="images/topmenu_off_08.gif" width="14" height="19"></td>
+  </tr>
+</table>
+</td>
+        <td width="100%" align="right" background="images/spacer_dkteal.gif"><img src="images/spacer_dkteal.gif" width="1" height="1"><a href="hp.html" target="_top"><img src="images/logo_small.gif" width="166" height="35" border="0"></a></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

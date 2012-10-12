@@ -1,0 +1,85 @@
+Table of Contents
+11/30/04
+
+README.txt - first file to read
+
+bin - executables
+      xdstest Ð A script used to execute the jar file xdstest.jar in the lib directory.
+
+codes - xml files defining code values for each External Classification. Each file 
+            represents a different code used in XDS.
+	classCodes.xml - Acceptable values for XDSDocumentEntry.classCode
+	confidentialityCodes.xml - Acceptable values for XDSDocumentEntry.confidentialityCodes
+	contentTypeCodes.xml - Acceptable values for XDSSubmissionSet.contentTypeCode
+	externalIdentifiers.xml - External identifiers used in XDS
+	healthCareFacilityTypeCodes.xml - Acceptable values for XDSDocumentEntry.healthCareFacilityTypeCode
+	mimeTypes.xml - Acceptable mime types for XDS
+	practiceSettingCodes.xml - Acceptable values for XDSDocumentEntry.practiceSettingCode
+
+doc - general documentation files
+	clientCode.doc - discussion on building a SOAP client using SAAJ
+	install.doc - instructions on installing and running the XDS test client
+	Metadata Cookbook.doc - how to write metadata for XDS
+	server_documentation.doc - discussion on building a SOAP/WEB server using SAAJ and Tomcat
+	Test_Requirements.xls - which actors require which tests
+	UUIDS.xls - UUIDs established for XDS
+	XDS Test Specification.doc - goals of each test
+	XDS Tests.doc - how to run each test
+	XDSRequestBean.java - support code for XdsServlet.java - parses input stream
+	XdsServlet.java - source code for Tomcat/SAAJ servlet that is basis for XDS
+
+
+lib Ð Contains the executable jar for this application and all the dependency jars.
+      activation.jar
+      commons.logging.jar
+      dom4j.jar
+      dom.jar
+      jaxp-api.jar
+      mail.jar
+      saaj-api.jar
+      saaj-impl.jar
+      xalan.jar
+      xdstest.jar
+      xercesImpl.jar
+      xml-apis.jar
+
+
+mainClass - This file specifies the classpath and the location of the main Class for the 
+jar file xdstest.jar.
+
+makeJar
+      xdsSoapRequest.java Ð The source code for the executable jar
+      xdstest.class Ð The compiled source class.
+
+metadata_validation
+	XSLT transform with secondary files. This can be used to validate metadata against 
+            XDS rules. The main XSLT file is validateNN.xsl.  It assumes that namespaces 
+            have already been stripped off.
+
+patientIds.txt - instructions on how to generate patient IDs for testing.  This set of 
+    instructions applies to Internet testing and Connectathon testing only.
+
+sampleData - registry metadata
+	initialize.xml - a registry SubmitObjectsRequest to initialize an ebXML Registry 
+            to operate as an XDS Registry.  Creates Classifications, ObjectTypes etc.
+	metadata.xml - example SubmitObjectsRequest (Registry Submission Request)
+	RegSubmitReq.txt -  protocol trace of a Registry Submission Request showing 
+            HTTP/SOAP encoding
+	RepSubmitReq.txt - protocol trace of a Registry Submission Request showing 
+            HTTP/SOAP encoding and attached document
+
+schema - ebXML Registry schema files
+
+tests - each sub-directory is named for a test. doc/XDS Tests.doc explains how to run each test
+	11742 (typical test directory)
+		metadata.xml  - typical metadata file
+		test.properties - property file used by xdstest executable
+
+TOC.txt - the file you are reading
+
+xdsSOAPclientCompile - A script used to set the classpath and compile the source code 
+    xdsSoapRequest.java in the makejar directory.
+
+
+xdstest.jar - copy of xdstest.jar located in lib directory, result of build a new jar 
+    with tools discussed above. See doc/install.doc for details.

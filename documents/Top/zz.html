@@ -1,0 +1,29 @@
+<html><head><title>interface and test case page</title></head><body>
+<h3>working on these aug 5, pm</h3>
+<p><b>registerDocument</b>
+// urlcallformat:
+// docid = /ws/registerDocument.php?mcid=xxx&guid=yyy
+<small><a href=testcase.php>testcase 1</a></small>
+<p>    Adds a document and adds initial rights for the given user based on their MedCommons Id. The initial rights are a default set that give "ownership" type rights to the given user.
+
+    Note1: a registered document must have locations stored in the document_locations table in central. Thus in registering a new document central must know which Node is making the call so that it can add the association between the Node and the Document. The Node is not included in the argument list below because it is assumed that in other layers of security the calling gateway has established its identity with Central and thus the Node is already known. In the short term however, it may be necessary to add a NodeId parameter to this call.
+
+    Note2: in a simple POPS scenario we may wish to accept documents from a user who does not have a MedCommons Id. There could be a version of this call that allows the mcId parameter to be optional and creates a MedCommons Id as a side effect. If we wish to do that then we might replace the document id return value (which is not needed in current use cases) with the newly created MedCommons Id.
+
+<p><b>trackDocument</b>
+// urlcallformat:
+//guid = ../ws/trackDocument.php?guid=xxx&pinHash=yyy
+<small><a href=testcase.php>testcase 1</a></small>
+<p>    Allocates a new, unique tracking number for the given document guid and adds rights for the tracking number to view the document.
+
+    Note1: possibly we should require the document to first be registered via DocumentService.registerDocument. If not then a side effect of this call must be to register the Document in MedCommons as otherwise rights cannot be granted to the tracking number. If this latter methodology is adopted then it may be necessary to add the MedCommons Id of the sender to the arguments.
+
+    Note2: a post condition of this call is that calling validate() and passing the returned tracking number and pinHash will return the MedCommons Id for the document.
+
+<p><b>validate</b>
+//
+// mcid = .../ws/validate.php?trackingNumber=xxx&pinHash=yyy
+<small><a href=testcase.php>testcase 1</a></small>
+<p>    Validates the given trackingNumber and pin combination. If valid, returns the MedCommons Id for that combination. If not valid, returns an error.
+
+</body></html>

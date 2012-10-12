@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TIMC - MedCommons Interace Specification</title>
+</head>
+<body>
+<h1>TIMC - MedCommons Http Post/Get Name/Value(Forms) Specification</h1>
+This note discusses how TIMC and MedCommons communicate by sending HTML forms back and forth as containers for name-value pairs. A subsequent revision of TIMC and MedCommons may support XML or JSON data interchange, but version 1.0 is HTML Forms-based.
+
+<h2>EndPoints</h2>
+TIMC and MedCommons communicate back and forth for a variety of reasons, currently the placing of orders with MedCommons at URL http://timc.medcommons.net/orders.jsp
+and the posting of order status updates back to TIMC at URL http://timc.mgh.org/postStatus.aspx
+<h2>TIMC Sends Order Requests to MedCommons</h2>
+An Order Request to MedCommons can be sent from via either Http POST or Http GET allowing placement of a form or links within TIMC as needed.
+<p>Each order returns an immediate status of DDL_ORDER_ACCEPTED or DDL_ORDER_ERROR. If an error, an additional field is returned with the error code</p>
+
+<p>The required fields to get MedCommons to place an order are:</p>
+<ul>
+<li>STATUSCALLBACK =  URLENCODED TEXT(255) - where to post status (see below)</li>
+<li>PROTOCOL = A(100) - Instructions for technician</li>
+<li>PATIENTID = A(15) - TIMC patient ID</li>
+<li>SOURCE = A(10), eg 'CD' or 'PACS'</li>
+</ul>
+<p>The following additonal fields can also be supplied:</p>
+<ul>
+<li>ORDERCOMMENTS = URLENCODED TEXT(255 ) - will just be displayed by MedCommons</li>
+<li>VOUCHERID = A(11) - for opening an existing DOD case</li>
+<li>VOUCHERPIN = A(5) - for opening an existing DOC case</li>
+</ul>
+<h3>Sample Order as a Form to POST</h3>
+You can try the form which isnt doing much right now.
+<p>
+<form action = 'http://timc.medcommons.net/orders.jsp' method='POST' >
+<input type=hidden name=STATUSCALLBACK value = 'http://timc.mgh.org/postStatus.aspx' size=255 />
+<input type=hidden name=PROTOCOL value = 'FullBodyDiag' size=100 />
+<input type=hidden name=PATIENTID value = '28392839219784748' size=15 />
+<input type=hidden name=SOURCE value = 'PACS' size=10 />
+<textarea name=ORDERCOMMENTS rows=6 cols=42 >Handle with Special Care</textarea>
+<input type=submit name=SUBMIT value='Enter Order' />
+</form>
+
+<code>
+&lt;form action = 'http://timc.medcommons.net/orders.jsp' method='POST' &gt;<br/>
+&lt;input type=hidden name=STATUSCALLBACK value = 'http://timc.mgh.org/postStatus.aspx' size=255 /&gt;<br/>
+&lt;input type=hidden name=PROTOCOL value = 'FullBodyDiag' size=100 /&gt;<br/>
+&lt;input type=hidden name=PATIENTID value = '28392839219784748' size=15 /&gt;<br/>
+&lt;input type=hidden name=SOURCE value = 'PACS' size=10 /&gt;<br/>
+&lt;textarea name=ORDERCOMMENTS rows=6 cols=42 &gt;Handle with Special Care&lt;/textarea&gt;<br/>
+&lt;input type=submit name=SUBMIT value='Enter Order' /&gt;<br/>
+&lt;/form&gt;<br/>
+</code>
+<h3>Sample Order as GET</h3>
+
+You can try this link, it wont go anywhere, but you can see the arguments in the browser address bar.
+
+<p>
+<a href ='http://timc.medcommons.net/orders.jsp?STATUSCALLBACK=http://timc.mgh.org/postStatus.aspx
+			&PROTOCOL=FullBodyDiag&PATIENTID=28392839219784748
+			&SOURCE=PACS&ORDERCOMMENTS=Handle+With+Special+Care'>
+			click to submit order
+</a>
+</p>
+<code>
+&lt;a href ='http://timc.medcommons.net/orders.jsp?STATUSCALLBACK=http://timc.mgh.org/postStatus.aspx<br/>
+			&PROTOCOL=FullBodyDiag&PATIENTID=28392839219784748<br/>
+			&SOURCE=PACS&ORDERCOMMENTS=Handle+With+Special+Care'&gt;<br/>
+			click to submit order
+&lt;/a&gt;
+</code>
+
+<h2>MedCommons Posts Status to TIMC</h2>
+<p>All accepted orders will ultimately transition from DDL_ORDER_ACCEPTED thru a variety of intermediate status until finally achieving DDL_ORDER_ARCHIVED or DDL_ORDER_CANCELLED after
+all MedCommons processing is done or some error occurs that cant be resolved in MedCommons</p>
+<p>Each order status transition results in the posting status information back into TIMC to the status postback url eg. http://timc.mgh.org/postStatus.aspx
+The field names and their meanings are:</p>
+<ul>
+<li>PATIENTID = A(15) - TIMC patient ID</li>
+<li>STATUS = A(10) - status(eg DDL_ORDER_ACCEPTED) </li>
+<li>ERROR = A(10), eg 'USERABORT'</li>
+</ul>
+<h3>Sample Status POST</h3>
+<code>
+&lt;form action = 'http://timc.mgh.org/postStatus.aspx' method='POST' &gt;<br/>
+&lt;input type=hidden name=PATIENTID value = '28392839219784748' size=15 /&gt;<br/>
+&lt;input type=hidden name=STATUS value = 'DDL_ORDER_MATCHED' size=15 /&gt;<br/>
+&lt;input type=hidden name=ERROR value = '0' size=10 /&gt;<br/>
+&lt;/form&gt;<br/>
+</code>
+</body>
+</html>

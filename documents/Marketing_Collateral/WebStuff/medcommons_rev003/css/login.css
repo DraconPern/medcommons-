@@ -1,0 +1,66 @@
+/* CSS Document */
+#content {
+	padding: 65px 0 0 50px;
+}
+#err {
+	font-size:14px;
+	font-weight:bold;
+	color:#FF0000;
+	}
+#loginblock {
+	position:relative;
+	margin: 5px 0 0 0px;
+	padding:0;
+	width:216px;
+	height:130px;
+	background:url('../images/bg_login.gif') no-repeat 0 0;
+	}
+#loginblock h1 {
+	font-size:12px;
+	color:#CCC;
+	font-weight:bold;
+	margin:0; padding:0;
+	}
+#loginblock form {
+	padding:5px;
+	line-height:24px;
+	}
+#tracknum, #pword {
+	border: 1px solid #CCC;
+	width:200px;
+	}
+#tracknum {
+	margin: 23px 0 0 3px;
+	}
+#pword {
+	margin: 17px 0 0 3px;
+	}
+#logbutton {
+	border:0;
+	width:50px;
+	height:35px;
+	font-weight:bold;
+	background: transparent url('../images/logbutton_over.gif') no-repeat 0 0;
+	margin:5px 0 0 153px;
+	}
+	
+#logbutton a:hover img {
+		filter:alpha(opacity=0);
+		-moz-opacity:0.0;	
+	}
+#help {
+	position:relative;
+	float:left;
+	margin:12px 0 0 10px;
+	font-size:8px;
+	height:15px;
+	width:30px;
+}
+#help a:link, #help a:visited, #help a:active {
+	text-decoration: none;
+	color:#66FF00;
+	}
+#help a:hover {
+	text-decoration:underline;
+	color:#FFF;
+	}

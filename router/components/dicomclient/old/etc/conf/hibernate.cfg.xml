@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+
+
+<hibernate-configuration>
+
+
+
+    <session-factory>
+
+
+
+        <!-- Database connection settings -->
+
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+
+		<!-- Note that this setting is overwritten in DICOMClient. -->
+
+		<property name="connection.url">jdbc:hsqldb:file:medcommons</property>
+		<!--<property name="connection.url">jdbc:hsqldb:hsql//localhost/</property> -->
+
+        <property name="connection.username">sa</property>
+
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+
+        <property name="connection.pool_size">5</property>
+
+
+
+        <!-- SQL dialect -->
+
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+
+
+        <!-- Enable Hibernate's automatic session context management -->
+
+        <property name="current_session_context_class">thread</property>
+
+
+
+        <!-- Disable the second-level cache  -->
+
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+
+
+        <!-- Echo all executed SQL to stdout -->
+
+        <property name="show_sql">false</property>
+
+
+
+        <!-- Drop and re-create the database schema on startup -->
+
+        <property name="hbm2ddl.auto">update</property>
+
+
+
+        <mapping resource="net/medcommons/application/dicomclient/utils/DicomMetadata.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/utils/DicomTransaction.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/utils/DicomOutputTransaction.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/utils/CxpTransaction.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/utils/MessageDisplay.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/utils/PixIdentifierData.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/utils/PixDemographicData.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/transactions/CCRReference.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/transactions/DownloadQueue.hbm.xml"/>
+		<mapping resource="net/medcommons/application/dicomclient/transactions/ContextState.hbm.xml"/>
+
+
+
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
+
+  <RDF:Seq about="urn:mozilla:package:root">
+    <RDF:li resource="urn:mozilla:package:mccxp"/>
+  </RDF:Seq>
+
+  <RDF:Description about="urn:mozilla:package:mccxp"
+        chrome:displayName="MedCommons CXP Client"
+        chrome:author="Simon Sadedin, MedCommons Inc."
+        chrome:name="mccxp"
+        chrome:extension="true"
+        chrome:description="A simple demonstration Firefox extension to demonstrate CXP."
+        />
+
+	<RDF:Seq about="urn:mozilla:overlays">
+		<RDF:li resource="chrome://browser/content/browser.xul"/>
+	</RDF:Seq>
+
+	<!-- FireFox -->
+	<RDF:Seq about="chrome://browser/content/browser.xul">
+		<RDF:li>chrome://mccxp/content/cxpOverlay.xul</RDF:li>
+	</RDF:Seq>
+	
+
+</RDF:RDF>
+

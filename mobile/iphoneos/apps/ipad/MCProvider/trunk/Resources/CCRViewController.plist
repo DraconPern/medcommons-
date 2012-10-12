@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ImageNames</key>
+	<dict>
+		<key>arrow</key>
+		<string>ToolButtonArrow-48x48.png</string>
+		<key>magnify</key>
+		<string>ToolButtonMagnify-48x48.png</string>
+		<key>magnify_active</key>
+		<string>ToolButtonMagnifyActive-48x48.png</string>
+		<key>next_image</key>
+		<string>ToolButtonNextImage-48x48.png</string>
+		<key>next_series</key>
+		<string>ToolButtonNextSeries-48x48.png</string>
+		<key>overlay</key>
+		<string>ToolButtonOverlay-48x48.png</string>
+		<key>pan</key>
+		<string>ToolButtonPan-48x48.png</string>
+		<key>pan_active</key>
+		<string>ToolButtonPanActive-48x48.png</string>
+		<key>pause</key>
+		<string>ToolButtonPause-48x48.png</string>
+		<key>play_full</key>
+		<string>ToolButtonPlayFull-48x48.png</string>
+		<key>play_half</key>
+		<string>ToolButtonPlayHalf-48x48.png</string>
+		<key>prev_image</key>
+		<string>ToolButtonPrevImage-48x48.png</string>
+		<key>prev_series</key>
+		<string>ToolButtonPrevSeries-48x48.png</string>
+		<key>reset</key>
+		<string>ToolButtonReset-48x48.png</string>
+		<key>wl</key>
+		<string>ToolButtonWL-48x48.png</string>
+		<key>wl_active</key>
+		<string>ToolButtonWLActive-48x48.png</string>
+		<key>wlpreset</key>
+		<string>ToolButtonWLPreset-48x48.png</string>
+	</dict>
+</dict>
+</plist>

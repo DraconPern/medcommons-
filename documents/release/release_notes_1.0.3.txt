@@ -1,0 +1,10 @@
+  -  0000956: Selecting 'Change' and then Cancel in Upload Form Leaves Change Disabled
+  -  0000922: Incorrect log-in counter doesn't really force you to wait 5 minutes for a re-try.
+  -  0000957: Authentication API not Protected Against Excessive Authentication Attempts
+  -  0000958: Consents Incorrectly Applied in Some Situations Allowing Access to Patient Data even though Consent not Granted    
+  -  0000959: Send Order Complete Notification to both Sender and TIMC Help Desk for Every Order
+  -  0000960: Session Expiry May Cause Upload Failure / Javascript Errors
+  -  0000961: Support for Configuration of Default Notification Address for Orders on Setting Page
+  -  0000964: Simplify Upload Form
+  -  0000962: DDL Java Process Sometimes Crashes / Silently Exits when Select Folder Button Pressed
+  -  0000963: Remove Obsolete Options from DDL Notification Area Menu

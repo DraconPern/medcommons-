@@ -1,0 +1,120 @@
+STEPS IN SETTING UP A NEW CI MACHINE
+====================================
+
+1. install necessary build tools.  You need:  ant,gant,groovy,grails,svn,ivy
+
+  cd /opt
+  wget http://dist.groovy.codehaus.org/distributions/groovy-binary-1.7.1.zip
+  unzip ../groovy-binary-1.7.1.zip 
+  ln -s groovy-1.7.1/ groovy
+
+  wget http://dist.codehaus.org/gant/distributions/gant-1.9.1-_groovy-1.7.0.tgz
+  tar -xzvf gant-1.9.1-_groovy-1.7.0.tgz 
+  ln -s gant-1.9.1 gant
+
+  wget http://ci.myhealthespace.com/grails-bin-1.1.1.tar.gz
+  tar -xzf grails-bin-1.1.1.tar.gz 
+  ln -s grails-1.1.1 grails
+
+  wget http://apache.wildit.net.au/ant/binaries/apache-ant-1.8.0-bin.tar.bz2
+  tar -xjvf apache-ant-1.8.0-bin.tar.bz2 
+  ln -s apache-ant-1.8.0 ant
+  cd ant/lib
+  wget http://ci.myhealthespace.com/ivy-2.1.0-rc2.jar
+
+  yum install svn
+
+2. add a ci user to do builds
+
+  useradd ci
+  passwd ci
+  usermod -G wheel,mc_admin  ci
+
+3. set .bashrc for ci user
+
+  su - ci
+
+  echo '
+  # User specific aliases and functions
+  export JAVA_HOME=/usr/java/default
+  export GROOVY_HOME=/opt/groovy/
+  export GANT_HOME=/opt/gant
+  export ANT_HOME=/opt/ant
+  export GRAILS_HOME=/opt/grails
+
+  export PATH="$PATH":$JAVA_HOME/bin:$GROOVY_HOME/bin:$GANT_HOME/bin:$ANT_HOME/bin:$GRAILS_HOME/bin
+  export IDENTITY_WORK=/home/ci/build/identity
+  export CONFIG_WORK=/home/ci/build/config
+  export ORDERS_WORK=/home/ci/build/TIMC
+  export MYSQL_USER=root
+  export MYSQL_PASSWORD=TODO
+
+  ' >> ~/.bashrc
+
+  After executing this, go edit the MySQL password (TODO) and replace it with
+  the real root password, which you can get from the .my.cnf for the root user.
+
+4. checkout source
+
+  mkdir /home/ci/build
+  cd /home/ci/build
+  svn co --username ssadedin https://svn.medcommons.net/svn/services/trunk/php central
+  svn co https://svn.medcommons.net/svn/router/demo
+  svn co https://svn.medcommons.net/svn/router/components
+  svn co https://svn.medcommons.net/svn/services/apps/TIMC
+  svn co https://svn.medcommons.net/svn/services/trunk/schema
+  svn co https://svn.medcommons.net/svn/services/trunk/console
+  svn co https://svn.medcommons.net/svn/services/trunk/java/identity
+
+5. put main ci build scripts in place
+
+  cd /home/ci
+  svn co https://svn.medcommons.net/svn/services/trunk/upgrade
+
+5.1 Add groovy library dependencies 
+
+  mkdir ~/.groovy/lib -p
+  cp ~/upgrade/*.jar ~/.groovy/lib
+
+6. Add permissions for the scripts so they can do stuff as root / deploy
+
+  a) Set up sudo
+    sudo su - 
+    visudo
+
+  add these lines:
+
+    ci      ALL= NOPASSWD: /var/www/console/publish
+    ci      ALL= NOPASSWD: /etc/init.d/gateway, /etc/init.d/tomcat, /usr/bin/unzip, /bin/rm -rf /opt/gateway/data, /bin/chown gateway -R /opt/gateway/data, /bin/cp identity.war /var/apache-tomcat/webapps, /bin/rm -rf /var/apache-tomcat/webapps/identity/,  /bin/rm -rf /opt/gateway/webapps/gateway/*, /bin/rm -rf /opt/gateway/webapps/router/*, /usr/bin/python /home/ci/build/central/deploy.py verbose 
+
+    ## Needed for update_console.sh
+    ci      ALL= NOPASSWD: /usr/bin/svn --force export console /var/www/console/, /etc/init.d/httpd restart, /bin/cp -R site /var/www/html/, /bin/cp -R login /var/www/html/
+    ci      ALL= NOPASSWD: /usr/bin/jar xf /home/ci/build/components/dicomclient/trunk/build/jnlp/DDL.war, /bin/mkdir /opt/gateway/webapps/DDL, /bin/rm -rf /opt/gateway/webapps/DDL /opt/gateway/webapps/DDL.war, /bin/cp /home/ci/build/demo/etc/configurations/log4j.xml /opt/apache-tomcat/common/classes
+    ci      ALL= NOPASSWD: /home/ci/build/TIMC/deploy.sh orders, /home/ci/build/TIMC/deploy.sh timc
+    ci      ALL= (gateway) NOPASSWD: /usr/bin/unzip, /bin/rm, /bin/cp
+
+
+  b) Some custom permissinos
+
+    chown root:mc_admin /opt/gateway
+    chmod ug+rwx /opt/gateway/
+    chown gateway:mc_admin *.properties *.xml
+    chmod ug+rw *.properties *.xml
+
+7. if the machine is hosting the ivy repo, add a build.properties file and set up symlinks to it
+  
+  cd ~/build
+  echo '
+    # This file is symlinked to the various components so that they are all controled from one place
+    mc.ivy.repo=/var/www/html/repo
+    build.buildnumber.disable=true
+  '
+
+  for i in *;  do if [ -d $i ]; then echo $i; ln -s /home/ci/build/components/build.properties $i/trunk/build.properties; fi; done
+  
+
+8. a few fiddly things to do with unit tests:
+  
+  follow instructions in /home/ci/build/components/services-api/trunk/UNIT_TEST_README.txt
+
+  

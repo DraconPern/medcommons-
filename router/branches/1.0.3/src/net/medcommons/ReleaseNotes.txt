@@ -1,0 +1,799 @@
+  ========= Release 1.0.0.5 ===========
+
+  * Desktop now displays real MedCommons Patient Id if
+  passed as parameter (mcid)
+  * Desktop now displays real MC Track# if passed as
+  parameter (tn)
+  * Added hack workaround for date parsing error where
+  dates < 19 chars
+
+  * Added popup dialog for codeType and Purpose text for
+  add report function
+  * Changed display of CCR Purpose on folder to include
+  code type
+
+  * Fixed WADO scroll problems (probably specific to IE)
+
+  * Fixed javascript errors causing synchronizing b/w
+  thumb and main image to fail
+
+  * Fixed FF javascript errors preventing panning from
+  working
+
+  * Extended externally links query to be for multiple
+  uuids
+
+  * Fix broken build
+
+  * Patient desktop now sorts folders by time
+
+  * Increased session timeout
+
+  * Folders now sorted by time; now cache URLs in memory
+  (HIMSS hack)
+
+  * XDS query caching (primitive version)
+
+  * WADO 'Add Report' function now displays icons for
+  added CCR and CDA
+
+  * Added better handling for hipaa log errors
+
+  * Attempt to fix javascript error occurring only for Sean
+
+  * XDS cache now configurable: OFF, STATIC, ALL. Default
+  is OFF
+
+  * Added debug alert to help diagnose randomly appearing
+  Javascript problem in WADO
+
+  * Added sensing of when there are no updates and skipping
+  the build in that case
+
+  * Added writing to HIPAA log to WADO initialization
+  and AddReportAction
+  * Adjusted slight offset in FF of body section bg image
+
+  * Fixed silly blooper causing all builds to be skipped
+
+  * Added new file types & dirs
+
+  * Fixed problem causing hang of continuous build script
+
+  * Changed dir used for sensing location so that installer
+  can be made without stage dir existing
+
+  * Test checkin.  Ignore.
+
+  * Test checkin.  Ignore.
+
+  * changed to not spam for skipped builds
+
+  * Added boot params flag to allow/disallow hipaa log
+  errors
+
+  * Test checkin.  Ignore.
+
+  * Folders now show all body sections and those present
+  are highlighted
+  * Links within the folders now rollover highlight to
+  red if the section is present
+
+  * More fiddling with build script to e-mail when
+  successful
+
+  * Test checkin.  Ignore.
+
+  * added check to see if running flag really gets removed
+
+  * Test checkin.  Ignore.
+
+  * weird weird error - added tests to try and figure
+  it out
+
+  * Test checkin.  Ignore.
+
+  * test
+
+
+  * Removed sean from spam list because it's going nuts.
+
+
+  * fixed spamming for skipped builds
+
+  * Test checking.  Please ignore.
+
+  * finally worked out the spamming problem
+
+  * Test checking.  Please ignore.
+
+  * Added 'editOnLoad' parameter to show add report screen
+  immediately on load
+  * (for demos)
+
+  * Added sean back to spam list
+
+  * Fixed incorrect rendering of Email field
+
+  * Added sean back to spam list
+
+
+  * Changed desktop to have one open folder and all others
+  stay in closed
+
+  * Added ability to fool around with colors for
+  highlighted folders
+
+  * Added a couple more shades and colors
+
+  * minor fixes for ff
+
+  * Fixed NullPointerException when XDS cache is turned off
+
+  * Added first cut of contacts bar to patient desktop
+
+  * Added missing image for contacts bar
+
+  * Added display of business card to contacts
+  * Added alternating colors, highlighting on click
+  of contact
+
+  * Added real handling of organization names
+  * Added use of organization instead of email on contact
+  list
+  * Prevented adding of blank contacts with no name
+
+  * New CCR stylesheet from Ted
+
+  * Fixed problem with 8 digit tracking numbers
+
+  * Another fix for tracking numbers
+
+  * Added smarter handling of blank tracking numbers
+
+  * Removed order thumbnail, replaced with CCR thumbnail
+  * Added Send CCR Button
+  * Enabled creation of CCR on-the-fly when study selected
+  on selection screen
+
+  * Fixed location of send ereferral button
+
+  * Made closed folders not show in single folder view
+
+  * fixed failure to show CCR when navigating straight
+  from selection screen
+
+  * New CCR schema file added - this is the 1.0 version
+  for ballot
+
+  * Added notification form
+  * Added email confirmation page
+  * Better handling if CCR not found.
+
+  * Added creation of medcommons ids and tracking numbers
+
+
+
+  * Fixed confirm button not showing warning for new
+  MedCommons Id
+
+  * Fixed verbose logging of image encoding failure
+  exceptions
+  * Fixed caching invalid images (ccr urls) by WADO
+  * Changed sel screen to launch wado in same window
+  * Changed tooltips for buttons and tools
+
+  * Changed notification form to new ereferral letter style
+
+  * Added centralised XPath handling utils and tags
+  * Fixed problem rendering WADO with < 3 series
+
+  * test
+
+  * test
+
+  * test
+
+  * test
+
+  * Extracted nearly all remaining CCR paths to xpaths.xml
+  file in preparation for migration to 1.0 schema.
+  * Converted ccrFolder xsl to JSP form.
+
+  * Added svn log statement to show comments for changes
+  in build in build log.
+
+  * slight formatting improvement to ci build log.
+
+  * Extracted numerous paths to xpaths file
+  * Fixed number of small bugs in xpaths file handling
+  * Migrated xpaths to 1.0 schema
+
+  * Added some more options to ci.sh
+
+  * Removed accidental early exit
+
+  * Converted ccr stylesheet to 1.0 format
+
+  * Added awk statement to strip incorrect svn change from
+  build log
+
+  * converted CCR folder to look like ereferral letter
+  * fixed bug causing dates to default to 1/1/1970
+  * fixed problems with contacts not showing up
+  * fixed age not being displayed
+
+  * Added ability to toggle folder background color b/w
+  white and transparent with w key
+
+  * fixed screwup causing incorrect svn logs in build logs
+
+  * Changed default backround for folder to white
+  * Widened left nav so that headings don't wrap
+  * Divided letter to 2 sections, added Enclosures label
+  * Address1 and DICOM patient Id are displayed/editable
+
+
+
+  * Added firefox layout and rendering fixes
+  * Added references count to notification form/ereferral
+  letter
+
+  * Fixed blooper causing CCR 1.0 stylesheet to fail
+  to render
+
+  * Fixed bug: opening new study carries over values
+  from previous
+  * Fixed failures when no studies found
+  * Fixed failures when navigating straight to Desktop
+  from WADO without visiting referral form.
+  * Moved ereferral button
+
+  * Added model and documentation for schema versioning
+  process
+
+  * Added example batch script to setup ODBC
+
+  * Added code to link orders to ccrs
+  * Added code to check schema version on startup
+
+  * Added script to run ij under windows
+
+  * Added missing schema script to build.xml
+
+  * Added schema version recognition to installer
+  * Added handling to prevent db corruption when installing
+  on top of existing db
+
+
+
+  * Added tabbed frame to gateway
+
+  * Added missing logon page
+
+  * fixed references to localhost
+
+  * Added nearly final CCR 1.0 xsd
+
+  * Added consent form
+  * fixed tab problems
+  * emphasised tables more
+
+  * Added missing action class
+
+  * Added prototype tool palette
+
+  * added onload js so that internal navigations highlight
+  correct tabs automatically
+
+  * Fixed problem viewing CCR's with no images in WADO
+  * Added hotbuild target to do quick hot deploy builds
+  * Fixed problems doing hot deploys due to
+  non-serializable classes
+  * Fixed ugly null pointer when version info missing
+
+  * Fixes to make derby survive a hotbuild
+
+  * Added checking of pin and track# from login page
+  * Changed open text fields to password fields
+  * Fixed bug sending raw bytes instead of hex coded vals
+  to central
+  * Added separate TrackAction from LogonAction
+
+  * Fixed error due to missing PIN class
+
+  * Fixed PIN lookup to use new lookup service
+  * Added tracking page supporting deep linking into tabbed
+  interface facilitating redirect from central.
+
+  * Fix for javascript error on logon form
+  * added title and implemented some tools in tool palette
+  * tool palette now only shows after login
+
+  * Added SSL support to build
+
+  * Changed hipaa to log host with SSL port
+
+  * Unsuccessful hacks to prevent derby exploding on
+  hotdeploy
+  * Added filtering so that tracked study shows only
+  relevant study
+  * Changed referral to copy DICOM order instead of reusing
+  existing one
+
+  * Fixed CCR content failing to update when switching tabs
+
+  * Made tool window dynamically change depending on
+  window content
+
+  * Added code to implement some of the menu options in
+  tool window
+  * Made tool window links not change color after visited
+
+  * Test no change
+
+  * Added sha1 password calculation to logon page
+
+  * Added support for autologin from central
+
+  * Added missing exception class
+
+  * Fixed login failing to set mcId
+  * Fixed login failing to hash correct field
+
+  ========= Release 1.0.0.4 ===========
+
+  * Added action and jsp to report purple status
+  * Added missing version jsp file
+
+  * Fixed ant script for recreating schema
+
+  * Fixes for DICOM CSTORE SCU transfer configuration
+
+  * Added PinkBoxUrl to status output
+  * Added facility to read config properties
+
+  * Added MedCommons Copyright to miscellaneous items
+
+
+  * Added MedCommons Copyright to miscellaneous items
+  * Fixed misspelling in existing copyright
+
+  * Fixed NoClassDef error for unix installs due to
+  no DISPLAY
+  * Fixed installer finding incorrect java distro in
+  install (gcj)
+
+  * Fix in CStoreSCP: if new DICOM series arrive for an
+  existing study a new order is made
+
+  * added retry when incorrect root password entered
+
+  * Added etc/xds for NIST test toolkit
+
+  * Updated NIST xds toolkit to 1.4 patch b
+
+  * Modify /etc/xds to 1.4 patch c
+
+  * Fixed xds metadata to pass test 11722
+
+  * Initial conversion of build to pure tomcat
+  * Addition of EncoderMananger to throttle connections
+
+  * Added missing tomcat loop script
+
+  * Added a new script to run tomcat
+
+  * Fixed missing setting of init flag
+
+  * Added line to modify perms in case the are reset to
+  non-executable
+
+  * Changed tomcat scripts to executable type
+
+  * Changed to use exploded deployment for tomcat war file
+
+  * Handling for session timeout with nice message
+
+  * Added metrics framework and display of bytes sent on
+  encoder statistics page
+
+  * Added LD_ASSUME_KERNEL=2.4.1 to linux start script
+
+  * Excluded several unnecessary jars from installer to
+  make it smaller
+  * Excluded derby log file which seems to be unnecessary
+  and is > 1.0M
+  * Added setting of file permissions to install script
+  to ensure things are executable
+  * Added commit to database init SQL to ensure that
+  installer database is not corrupted by killed process
+
+  * Excluded non-jar files in hibernate directory from
+  compile path
+
+  * Excluded non-jar files in derby directory from
+  compile path
+
+  * Excluded non-jar files in tomcat directory from
+  compile path
+
+  * Excluded non-jar files in tomcat directory from
+  compile path
+
+  * Added scripts to do continous test/integration cycle
+  on a build
+
+  * dos2unixed all the sh files to prevent unix problems
+  running them
+
+  * changed pkill to killproc to work on unix
+
+  * Added executable flag to shell script
+
+  * DELIBERATE breakage of file to test build script and
+  cron job
+
+  * Fixed deliberate breakage
+
+  * added sean to breakage e-mail
+
+  * fixed minor bugs in ci script, modified email addresses
+
+  * Fixed failure to shutdown due to non-daemon threads
+  * Fixed incorrect shutdown command in windows system
+  monitor
+
+  * Added deployment, running and image loading to
+  automated testing
+
+  * made modality simulator script executable in svn
+
+  * Added sleep to let log be created before greping it
+
+  * Fixed missing reference to CSTORE Port variable
+
+  * Added Badboy regression test
+
+  * Attempt to fix derby startup problems due to corrupted
+  logs
+
+  * Removed deletion of log files from derby - seems to
+  cause more problems
+  * Added running badboy to ci script
+
+  * Changed purple04 to purple01
+
+  * Attempt to fix freaky derby error
+
+  * Attempt to fix freaky derby error
+  * Added Badboy failure as reason to spam
+
+  * Attempt to fix freaky derby error
+
+  * Added more messages to ci log
+
+  * Added success e-mail when fixed
+
+  * fixed dumb syntax error
+
+  * Added Sean back into spam list
+
+  * Added support for Firefox/Mozilla mouse wheel scrolling
+
+  * Removed debug alert left in by accident
+
+  * Fixed javascript error in IE
+  * Fixed whole frame scrolling in Mozilla
+
+  * Fixed frame scrolling when up/down arrows pressed
+  in Mozilla
+
+  * Fixed incorrect directory location for drop-schema
+
+  * Added asserts
+
+  * Added unit test support in build and several tests in
+  test-src directory
+  * Added more metrics and converted existing metrics
+
+  * Added simple check to prevent multiple ci instances
+  from running in parallel if one becomes stuck.
+
+  * Changed assertion to not popup if triggered
+
+  * Fixed JSP breakage and added throughput in KB/Sec to
+  encoder status page
+
+  * Added display of KBytes/Sec to WADO
+
+  * Attempt to fix problem with order of initialization
+  causing incorrect Metrics to get registered
+
+  * added XDS query; updated several XML jar files
+
+  * Reenabled status bar, slightly shrunk WADO window
+
+  * Added some missing pieces of unit tests
+
+  * fixed dependency build.xml file with schema generation
+
+  * Added ability to add and display PDF & other document
+  types in WADO
+
+  * Added ability to add and display PDF & other document
+  types in WADO (added missing file)
+
+  * Added ability to add and display PDF & other document
+  types in WADO (added missing file)
+
+  * Corrected misspelling in identity.xsl stylesheet name;
+  added new stripNamespaces.xsl file
+
+  * XDS upload checked in; XDS query stylesheets much
+  improved
+
+  * Stylesheet tranforms now applied to CDA and CCR
+  documents; Form-based uploads to XDS registry now working
+
+  * Test mail server
+
+  * Fixed deliberate breakage
+
+  * Moved XDS server URLs to
+  MedCommonsBootParameters.properties
+
+  * Added XDS parameters to
+  MedCommonsBootParameters.properties
+
+  * XDS submission form now supports multiple documents
+  to same folder
+
+  * Added replace document handling to XDS
+
+  * Fixed multiple document upload (again); initial support
+  for XDS folder query
+
+  * Folder queries now working better
+
+  * Improved stylesheet for rendering XDS folders and
+  documents
+
+  * Neatened up thumbnail images for documents
+  * Added ability to show specialized thumbnails for
+  specific mime-types
+  * Cleaned up WADO js code, made more generic
+
+  * Intermediate checkin for XDS replacement code
+
+  * #300 - Move KB/Sec display from Status Bar to Overlay
+  WADO Viewer
+
+  * Fixed javascript error occurring when speed width goes
+  below 0
+
+  * #301 - Layout too large for 1024x768 display
+
+  * #301 - Layout too large for 1024x768 display
+
+  * #288 - Add a visual cue for the series scroll gesture
+
+  * Fixed bad error message in modality simulator
+
+  * XDS checkin: new ccr stylesheet plus css/images;
+  fixes to replacment document logic
+
+  * XDS changes in top level html pages
+
+  * Minor formatting changes in XDS patient query page
+
+  * #288 - Add a visual cue for the series scroll gesture
+
+  * #288 - Add a visual cue for the series scroll gesture
+  (added missing image)
+
+  * Added label showing number of images next to scroll
+  drag cursor label
+
+  * XDS top level patient query for 'all documents' created
+
+  * Added some initial XSLT for folder viewing
+
+  * Added some initial XSLT for folder viewing
+
+
+
+  * relieving sean of spam until i fix the ci script
+
+  * Added check that java procs are successfully killed
+
+  * Minor doco and format adjustments
+
+  * Made folders display staggered and fixed invalid html
+  * Added patient query form
+
+  * fixed loophole that let scripts run multiple times
+  when previous was hung
+
+  * more debug info in ci script
+
+  * Fixed silly mixed up argument mistake
+
+  * Added more debug info to explain strange ci.sh behavior
+
+  * Increased sleep time after killing java procs
+
+
+  * Fixed removal of wasrunning flag in incorrect place
+
+  * Converted XDS Folders prototype to use real graphics
+
+  * added checkboxes to folder view
+
+  * Moved save so that it happens even if assertion fails
+
+  * Added statement to ensure that inserting orders is
+  turned off in test install
+
+  * Checked in some CCR work (still unfinished) and
+  xmlbeans libraries
+
+  * Removed <?xml-stylesheet ..?> from SampleCCR.xml
+
+  * - added live dates at top of folders
+  * - changed WADO to launch in same window
+  * - added selected CCR to session on WADO launch
+
+
+  * Updated gif file for CCR and stylesheet for rendering
+  CDA documents
+
+  * - added handling of overflow (too many series)
+  * - fixed problem with unclickable thumbnails
+  (overlapping divs)
+  * - added fake tracking number
+
+
+  * Added new HIMSS stylesheets from Steve Moore
+
+  * EditCCRServlet now sets MedCommons ID and sets a
+  hard-coded physician source for HIMSS
+
+  * Added ability to show CCR and CDA documents in WADO
+  * Added "Add Report" in wado menu and made it perform
+  simple modification on document.
+
+  * Added <To> elements to HIMSS edited CCR
+
+  * Fixes for setting CCR <To> field
+
+  * Disabled running of Badboy in regression tests (so
+  that they do not interfere with HIMMS)
+
+  * Disabled running of Badboy tests (for HIMMS)
+
+
+  * just reformated to make easier to read - no functional
+  changes
+
+  * Added some submission set logic to the
+  ShowPatientFoldersAction and related subroutines
+
+  * Added sean back to spam list
+
+  * Added missing XDSDocument.java
+
+  * Added missing XDSDocument.java
+
+  * CCR's and CDA's now save as part of the Add Report
+  function
+
+  * Patient folders now reflect XDS registry data
+
+  * Typo
+
+  * Make CCR top  document in series list
+
+  * Fixed problem with black on black background color
+  in FF
+
+  * Fixed problems with missing element ids causing
+  failures in FF
+
+  * More metadata added to xds submission from WADO;
+  date format handling more robust
+
+  * Removed log of CCR xml on display of patient desktop
+
+  * Added thumbnail images for HL7
+
+  * Added setting of Patient Name in CDA for Add Report
+  function
+
+  * Patient name now set propertly in CDA; removed bad
+  setting of patient name in CCR for demo
+
+  * Removed comment from patientQuery.jsp page
+
+  * Added comment
+
+  * HL7 text documents now displayed; Purpose fields in
+  CCR set to hard-coded values
+
+  * Hack for bad CCR creation time documents at HIMSS
+
+  * Fixed XDS configs in
+  MedCommonsBootParameters.properties
+
+  * Added code to hide submit button when not needed
+  * Added "Please Wait..." message while submit is
+  occuring.
+
+  * Added HIPAA log to top of patient desktop
+
+  * Added transfer to eRefferal for click on checkboxes
+
+  ========= Release 1.0.0.3 ===========
+
+  * Fixed incorrect detection of JAVA_HOME in unix
+  installer
+
+  * Stopped patch installs from overwriting
+  MedCommonsBootParameters
+
+  * trimmed version string to fix javascript errors from
+  newlines
+
+  * fixed script incorrectly overwriting patch installer
+  with full installer
+
+  * Fixes for Mantis 255, 294, 295, 296, 297. Mostly
+  work on DICOM configurations, database integrity,
+  anonymization improvements
+
+  * Modality simulator now ignores certain errors on
+  sending a file and continues to the next file
+
+  * Removed old conf/Anon*.txt files from distribution;
+  not used in new anonymization scheme
+
+  * Added rudimentary support for CSTORE SCU. Patched HTTP
+  transfer problem for RSNA.
+
+  * Inserted missing file
+
+  * Added missing make_version script
+
+  ========= Release 1.0.0.2 ===========
+
+  * Reset 'CYPHER' default value back to its proper
+    value'UNKNOWN' for WhoAmI field
+
+  * Now update byte transfer count on pink
+    database;DICOM port and aetitle configurations now in
+    MedCommonsBootParameters.properties; error handling and
+    log messages improved
+
+  * Fixed failure to create database in package-server
+    ant target
+
+  * Added linux installer
+
+  * Added script to start in debug mode
+
+  * Added initial entry.
+
+  * Added automatic release notes
+
+  * Added router page displaying version and release notes
+
+  * Added display of release notes and version to installer
+
+  ========= Release 1.0.0.1 ===========
+
+  * Changed name of installers to 'MedcommonsSetup'
+
+  ========= Release 1.0.0.0 ===========
+
+  * Initial MedCommons Release
+

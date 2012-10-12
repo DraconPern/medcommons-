@@ -1,0 +1,130 @@
+<html>
+   <head>
+      <title>MedCommons CCR Client Release Notes</title>
+   </head>
+   <body>
+      <h1>MedCommons CCR Client Release Notes</h1>
+      <table>
+							<tbody>
+								<tr>
+									<th>Version</th>	<th>Date</th><th>Author</th><th>Description</th>
+								</tr>
+								<tr>
+									<td>0.9.16</td>
+									<td>2005/09/26</td>
+									<td>sdoyle</td>
+									<td>Initial demonstration</td>
+								</tr>
+							
+							</tbody>
+						</table>
+						
+		<h2>Changes from last version of MedCommons CCR Client </h2>
+		<ol>
+			<li>Generated CCRs are now valid (as measured by both the CCR_20050808.xsd and <a href="http://chit.dyndns.org:8080/CCRValidate2/">http://chit.dyndns.org:8080/CCRValidate2/ </a>service.</li>
+			<li>Attachments now supported.</li>
+			<li>Added notification email reply</li>
+			<li>History list now selectable to download CCR or to view it in the MedCommons viewer</li>
+			<li>CXP Protocol used to return success or failure; now uses HTTP codes and a reason field for a broader range of messages. All codes from 200 through 299 are 'success', 400 through 499 are 'client error' and 500 through 599 are 'server error'. This is defined in greater detail in the CXP Protocol Specification.</li>
+		</ol>
+		
+      <h2>Behavior</h2>
+ 
+<h3>Notifications</h3>
+<ol>
+	<li>Notifications can be edited by any time before transmitting a CCR by editing the text in the <b>Notify:</b> textbox. The default value is the result of this XPath expression applied to the CCR:
+	<pre>
+	"/c:ContinuityOfCareRecord/c:Actors/c:Actor[c:ActorObjectID=/c:ContinuityOfCareRecord/c:To/c:ActorLink[1]/c:ActorID]/c:EMail/c:Value"
+	</pre>
+	</li>
+	<li>Notifications are only sent when the CXP server can unambiguously determine to whom they are going to be sent. 
+	<ol>
+		<li>If no Actors with EMail addresses are referenced in the &lt;To&gt; section, then no notifications are sent. A return code of 200 is returned by the server.</li>
+		<li>If only one Actor with an EMail address is referenced in the &lt;To&gt; section then a notification is sent to that email address. A return code of 200 is returned by the server.</li>
+		<li>If there are multiple Actors with EMail addresses refernced in the  &lt;To&gt; section then
+		<ol>
+			<li>The server's return code is 210.</li>
+			<li>A text 'Reason' is returned with a list of the matching email addresss</li>
+			<li>No notification is sent. </li>
+			<li>A valid tracking number/PIN is displayed</li>
+		</ol>
+		</li>
+	</ol>
+	Note that in all of these cases that the CCR Client displays the tracking number and PIN; this means that if the notification is not sent out that the user can manually transmit this to their intended recipients.
+	</li>
+</ol>
+    
+Server warning/error messages will be defined in the CXP Protocol Specification.
+
+   <h2>Adherence to ASTM CCR Specification</h2>
+   The MedCommons CCR Client generates valid CCR documents from valid CCR inputs. 
+   <h2>CCR transforms</h2>
+     Any modifications of a CCR require that at least two fields be changed: 
+     <ol>
+						<li>/ContinuityOfCareRecord/ccr:CCRDocumentObjectID</li>
+						<li>/ContinuityOfCareRecord/ccr:DateTime/ccr:ExactDateTime</li>
+	</ol>
+	The MedCommons CCR client modifies an existing CCR in the following ways:
+	<ul>
+		<li>Adding notification email messages. If the user specifies text in the  "Notify" or
+		"CCR From email address" then Actor and ActorLink elements are inserted into the CCR (or modified in place f the CCR already has notification elements).
+		 </li>
+		<li>Adding references to attach external documents. </li>
+	</ul>
+   <h3>Notification implementation</h3>
+   The ASTM CCR specfication does not describe a notification nor a notification reply mechanism. MedCommons has implemented the following mechanism: an Actor is defined with an email Address and an ActorLink is placed into either the &lt;To&gt; or &lt;From&gt; sections. A notification email is sent to the Actor specified in the &lt;To&gt section; replies are routed to the email  specified in the Actor specified in the &lt;From&gt section.
+   
+  <p/>
+  For example - when the CCR Client has an entry in the <b>Notify:</b> dialog box  containing the text 'johndoe@gmail.com' the following data is inserted into the CCR.  An ActorLink is put into the &lt;To&gt section:
+   <pre>
+   
+&lt;ActorLink&gt;
+	&lt;ActorID&gt;AA662904095&lt;/ActorID&gt;
+	&lt;ActorRole&gt;
+		&lt;Text&gt;Notification&lt;/Text&gt;
+	&lt;/ActorRole&gt;
+&lt;/ActorLink&gt;
+
+	</pre>	
+	And the following &lt;Actor&gt; is placed into the &lt;Actors&gt; section.
+	<pre>
+	
+&lt;Actor&gt;
+	&lt;ActorObjectID&gt;AA662904095&lt;/ActorObjectID&gt;
+	&lt;InformationSystem&gt;
+		&lt;Name&gt;MedCommons Notification&lt;/Name&gt;
+			&lt;Type&gt;Repository&lt;/Type&gt;
+		&lt;Version&gt;0.9.16&lt;/Version&gt;
+	&lt;/InformationSystem&gt;
+	&lt;EMail&gt;
+		&lt;Value&gt;johndoe@gmail.com&lt;/Value&gt;
+	&lt;/EMail&gt;
+	&lt;Source&gt;
+		&lt;Actor&gt;
+			&lt;ActorID&gt;AA662904095&lt;/ActorID&gt;
+		&lt;/Actor&gt;
+	&lt;/Source&gt;
+&lt;/Actor&gt;
+	</pre>
+	
+	<h3>Attachments</h3>
+	Documents are 'attached' to a CCR via the &lt;References&gt; section. The format required by MedCommons is defined in the CXP Protocol Specification.
+
+<h2>Known issues</h2>
+<h3>Behavior</h3>
+<ol>
+	<li>The Reply function in the viewer  sometimes puts in unexpected (but editable) values when there are multiple matches for a "From" email address to reply to.
+	</li>
+	<li>If there are multiple email addresses specifed in the &lt;To&gt; section the CXP server will return a code of 210 and with the 'reason' that multiple notifications are not yet well defined. A valid Tracking number and PIN are generated which can be sent by the user to his destination.</li>
+</ol>
+<h3>Bugs</h3>
+<ol>
+	<li>Invalid CCRs may generate DOM errors; more helpful error messages would be useful.</li>
+	<li>Signed CCRs not yet supported. These CCRs would be modified by adding Notification</li>
+	<li>Encrypted CCRs not yet supported. Although it would be simple to use CXP to send an encrypted CCR the </li>
+	<li>The  <a href="https://secure.private.medcommons.net/DemoInstructions.htm>demo instructions </a> are out of date.</li>
+	<li>Error or warning messages from the CXP server are placed in a text area too small to read.</li>
+	
+</ol>
+</body>
+</html>

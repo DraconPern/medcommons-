@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s1="http://medcommons.net:8080/jboss-net/services/StudyService" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://net.jboss.org/jmx" xmlns:s2="http://study.services.central.medcommons.net" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://medcommons.net:8080/jboss-net/services/StudyService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://net.jboss.org/jmx">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:simpleType name="ObjectNameType" />
+    </s:schema>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://medcommons.net:8080/jboss-net/services/StudyService">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="ArrayOf_xsd_string">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute d7p1:arrayType="s:string[]" ref="soapenc:arrayType" xmlns:d7p1="http://schemas.xmlsoap.org/wsdl/" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://study.services.central.medcommons.net">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StudyServiceException">
+        <s:sequence />
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="retrieveStudyDataRequest">
+    <part name="studyGuid" type="s:string" />
+  </message>
+  <message name="retrieveStudyDataResponse">
+    <part name="retrieveStudyDataReturn" type="s:string" />
+  </message>
+  <message name="selectStudyGuidsResponse">
+    <part name="selectStudyGuidsReturn" type="s1:ArrayOf_xsd_string" />
+  </message>
+  <message name="selectStudyGuidsRequest">
+    <part name="selectionSpec" type="s:string" />
+  </message>
+  <message name="StudyServiceException">
+    <part name="fault" type="s2:StudyServiceException" />
+  </message>
+  <portType name="StudyService">
+    <operation name="selectStudyGuids" parameterOrder="selectionSpec">
+      <input name="selectStudyGuidsRequest" message="s1:selectStudyGuidsRequest" />
+      <output name="selectStudyGuidsResponse" message="s1:selectStudyGuidsResponse" />
+    </operation>
+    <operation name="retrieveStudyData" parameterOrder="studyGuid">
+      <input name="retrieveStudyDataRequest" message="s1:retrieveStudyDataRequest" />
+      <output name="retrieveStudyDataResponse" message="s1:retrieveStudyDataResponse" />
+      <fault name="StudyServiceException" message="s1:StudyServiceException" />
+    </operation>
+  </portType>
+  <binding name="StudyServiceSoapBinding" type="s1:StudyService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="selectStudyGuids">
+      <soap:operation soapAction="" />
+      <input name="selectStudyGuidsRequest">
+        <soap:body use="encoded" namespace="http://study.services.central.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output name="selectStudyGuidsResponse">
+        <soap:body use="encoded" namespace="http://medcommons.net:8080/jboss-net/services/StudyService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="retrieveStudyData">
+      <soap:operation soapAction="" />
+      <input name="retrieveStudyDataRequest">
+        <soap:body use="encoded" namespace="http://study.services.central.medcommons.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output name="retrieveStudyDataResponse">
+        <soap:body use="encoded" namespace="http://medcommons.net:8080/jboss-net/services/StudyService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+      <fault name="StudyServiceException">
+        <soap:fault use="encoded" namespace="http://medcommons.net:8080/jboss-net/services/StudyService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="StudyServiceService">
+    <port name="StudyService" binding="s1:StudyServiceSoapBinding">
+      <soap:address location="http://medcommons.net:8080/jboss-net/services/StudyService" />
+    </port>
+  </service>
+</definitions>

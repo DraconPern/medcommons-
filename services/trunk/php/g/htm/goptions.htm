@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MedCommons Practice Options Page</title>
+ <link rel="stylesheet" type="text/css"  href="css/gstyle.css"/>
+        <link rel="shortcut icon" href="images/favicon.gif" type="image/gif"/>
+<meta name="viewport" content="minimum-scale=0.6, width=device-width, maximum-scale=1.6, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="mcportal.png">
+
+</head>
+<body><img src='$$$logourl$$$' onClick="window.location='?home&h=$$$practiceind$$$'"/>
+<div><span id=hospital>$$$practice$$$</span>&nbsp;<span id=program>$$$program$$$</span></div>
+<br/>$$$crumbs$$$
+<h3>Practice Options Chooser</h3>
+<form id=payment method=post action=''>
+		<div class='_errormainclass' >_errormaintext</div> 
+		<input id=h name=h value='$$$practiceind$$$' type=hidden />
+			<input id=d name=d value='$$$serviceind$$$' type=hidden />
+				<input id=v name=v value='$$$program$$$' type=hidden />
+		<input id=handler name=handler value='prohandler' type=hidden />
+	<fieldset>
+		<legend>Choose Fields for MedCommons Upload Display Panel</legend>
+		<ol>
+			<li>
+         <fieldset>
+					<legend>MedCommons will display only the selected field data during upload:</legend>
+					<ol>
+						<li>
+						<input id=showCustomLogo name=showCustomLogo type=checkbox value='0'  >
+						<label for=showCustomLogo>Logo URL</label>
+						<label for=logoURL>&nbsp;</label>
+						<input id=logoURL name=logoURL type=text >
+						</li>
+						<li>
+						<input id=showPracticeName name=showPracticeName type=checkbox value='0'  >
+						<label for=showPracticeName>Practice Name</label>
+						</li>
+							<li>
+						<input id=showService name=showService type=checkbox value='0'  >
+						<label for=showService>Service</label>
+						</li>
+							<li>
+						<input id=showConsultant name=showConsultant type=checkbox value='0'  >
+						<label for=showConsultant>Consultant</label>
+						</li>
+							<li>
+						<input id=showRefHospital name=showRefHospital type=checkbox value='0'  >
+						<label for=showRefHospital>Referring Hospital</label>
+						</li>
+								<li>
+						<input id=showRefPhys name=showRefPhys type=checkbox value='0'  >
+						<label for=showRefPhys>Referring Physician</label>
+						</li>		<li>
+						<input id=showRefPhone name=showRefPhone type=checkbox value='0'  >
+						<label for=showRefPhone>Referring Phone Contact and Preference</label>
+						</li>		<li>
+						<input id=showRefEmail name=showRefEmail type=checkbox value='0'  >
+						<label for=showRefEmail>Referring Email Contact</label>
+						</li>		<li>
+						<input id=showWebConf name=showWebConf type=checkbox value='0'  >
+						<label for=showWebConf>Referring Web Conference Contact</label>
+						</li>		<li>
+						<input id=showClinicalHistory name=showClinicalHistory type=checkbox value='0'  >
+						<label for=showClinicalHistory>Clinical History</label>
+						</li>	
+					</ol>
+				</fieldset>	
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Choose Options for Logged In Consultants</legend>
+		<ol>
+			<li>
+         <fieldset>
+				
+					<ol>
+			<li>
+						<input id=showMALFooter name=showMALFooter type=checkbox value='0'  >
+						<label for=showMALFooter>MedCommons Account Link in Footer</label>
+						</li>
+	</ol>
+	</fieldset>
+
+</ol>
+	</fieldset>
+
+	<fieldset>
+		<button type=submit>$$$buttonlabel$$$</button>
+	</fieldset>
+</form>
+</body>
+</html>

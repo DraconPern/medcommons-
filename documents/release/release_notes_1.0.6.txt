@@ -1,0 +1,9 @@
+
+=============================Consolidated Log==============================
+
+  -  0000889: DDL Shows Web Start Security Warning about Partially Unsigned Content on Install
+  -  0000981: Better Handling of Proxy Authentication Settings and Proxy Diagnostics
+                     - DDL now Probes for Proxy Settings on Startup and Prompts User  if cannot access MedCommons servers using configured settings
+  -  #---------:  Support for remote admin diagnostic engine to help resolve issues (DISABLED, will not run as shipped, but included for testing purposes)
+  -  0000982: Command Poller and Group Poller can Exit Unexpectedly Causing DDL to Stop Polling or Receiving Commands 
+

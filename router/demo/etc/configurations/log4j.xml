@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- $Id: log4j.xml,v 1.13.2.8 2003/09/23 14:16:27 slaboure Exp $ -->
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  Log4j Configuration                                                  -->
+<!--                                                                       --> 
+<!-- ===================================================================== -->
+
+<!--
+  ===========================================================================
+  =
+  =  MedCommons - this file gets deployed to several places in a standard
+  =  appliance image.  The only important one is:
+  =  
+  =     /opt/apache-tomcat/common/classes              
+  =
+  =  Note that this is outside the gateway hierarchy; ie: it's there because 
+  =  CATALINA_HOME is defined as /opt/apache-tomcat even though CATALINA_BASE
+  =  is set to be /opt/gateway.
+  =
+  ===========================================================================
+--> 
+
+<!--
+   | For more configuration infromation and examples see the Jakarta Log4j
+   | owebsite: http://jakarta.apache.org/log4j
+ -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+   <!-- ================================= -->
+   <!-- Preserve messages in a local file -->
+   <!-- ================================= -->
+
+   <!-- A time/date based rolling appender -->
+<!--
+   <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+     <param name="File" value="logs/server.log"/>
+     <param name="Append" value="false"/>
+     <param name="Threshold" value="INFO"/>
+
+      <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+         <param name="ConversionPattern" value="%d %-5r %-5p [%c] (%t:%x) %m%n"/>
+      </layout>
+   </appender>
+-->
+
+   <!-- ============================== -->
+   <!-- Append messages to the console -->
+   <!-- ============================== -->
+
+   <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+      <param name="Target" value="System.out"/>
+      <param name="Threshold" value="ERROR"/>
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <!-- The default pattern: Date Priority [Category] Message\n -->
+         <param name="ConversionPattern" value="%d{ABSOLUTE} [%x] %-5p %c{1} %m%n"/>
+      </layout>
+   </appender>
+
+
+    <appender name="ROLLING" class="org.apache.log4j.RollingFileAppender">
+	  <param name="File" value="logs/server.log"/>
+	  <param name="MaxFileSize" value="50000KB"/>
+	  <param name="MaxBackupIndex" value="10"/>
+	  <param name="Threshold" value="INFO"/>
+	  <layout class="org.apache.log4j.PatternLayout">
+	     <param name="ConversionPattern" value="%d{ABSOLUTE} [%x] %-5p %c{1} %m%n"/>
+	  </layout>
+    </appender>
+
+   <appender name="SYSLOG" class="org.apache.log4j.net.SyslogAppender">
+      <param name="syslogHost" value="127.0.0.1"/>
+      <param name="facility" value="LOCAL1"/>
+      <!--
+      <param name="Header" value="true"/>
+      -->
+      <param name="Threshold" value="DEBUG"/>
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{1}] %m%n"/>
+      </layout>
+   </appender>
+
+   <!-- ================ -->
+   <!-- Limit categories -->
+   <!-- ================ -->
+
+   <!-- Limit the org.apache.commons category to INFO as its INFO is verbose -->
+   <category name="org.apache.commons">
+      <priority value="INFO"/>
+   </category>
+   
+   <category name="org.apache">
+	  <priority value="INFO"/>
+   </category>
+
+    <!-- Limit DCM4CHE categories to INFO -->
+   <category name="org.dcm4che">
+     <priority value="WARN"/>
+   </category>
+
+   <category name="org.dcm4cheri">
+     <priority value="WARN"/>
+   </category>
+   
+   <category name="net.medcommons.router.control.queue">
+   	<priority value="FATAL"/>
+   </category>
+   
+   <category name="org.medcommons.router.control.poller">
+   	<priority value="FATAL"/>
+   </category>
+                            
+   <category name="net.medcommons.router.services.dicom.CStoreSCP">
+   	<priority value="WARN"/>
+   </category>
+
+	<category name="net.sf.hibernate">
+		<priority value="INFO"/>
+	</category>
+	
+	<category name="net.sf.ehcache.Cache">
+		<priority value="INFO"/>
+	</category>
+	
+	<category name="net.sf.ehcache.store.MemoryStore">
+		<priority value="INFO"/>
+	</category>
+		
+  <category name="org.apache.commons.httpclient">
+		<priority value="WARN"/>
+	</category>
+	
+   <category name="net.medcommons.router.configuration">
+     <priority value="WARN"/>
+   </category>
+
+   <!-- Activity log goes to syslog -->
+   <category name="activity">
+     <priority value="INFO"/>
+     <appender-ref ref="SYSLOG"/>
+   </category>
+
+   <!-- All other log categories go to File / Console -->
+   <category name="org">
+      <priority value="INFO"/>
+      <appender-ref ref="CONSOLE"/>
+   </category>
+   <category name="net">
+      <priority value="INFO"/>
+      <appender-ref ref="CONSOLE"/>
+      <appender-ref ref="ROLLING"/>
+   </category>
+   <category name="com">
+      <priority value="INFO"/>
+      <appender-ref ref="CONSOLE"/>
+      <appender-ref ref="ROLLING"/>
+   </category>
+   <category name="gov">
+      <priority value="INFO"/>
+      <appender-ref ref="CONSOLE"/>
+      <appender-ref ref="ROLLING"/>
+   </category>
+   <category name="native">
+      <priority value="INFO"/>
+      <appender-ref ref="CONSOLE"/>
+      <appender-ref ref="ROLLING"/>
+   </category>
+
+   <!-- We only want WARN or higher getting through here because
+        otherwise the activity log would show 
+   <root>
+      <priority value="WARN"/>
+      <appender-ref ref="CONSOLE"/>
+      <appender-ref ref="ROLLING"/>
+   </root>
+   -->
+
+</log4j:configuration>

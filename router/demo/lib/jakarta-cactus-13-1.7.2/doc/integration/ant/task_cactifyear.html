@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>CactifyEar Ant Task</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="CactifyEar Ant Task" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus." class="currentPage">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>CactifyEar Task</h1>
+
+      
+<p>
+        The task <b>cactifyear</b> allows the enhancement of an existing
+        enterprise-application archive (EAR) with the elements needed to run Cactus 
+        in-container tests. This includes adding a web application that contains 
+        the deployed Cactus redirectors.
+      </p>
+
+      
+<p>
+        The <b>cactifyear</b> task extends the built-in Ant task
+        <b>ear</b>, so it also supports all attributes and nested
+        elements that <b>ear</b> supports.
+      </p>
+
+      
+<div class="section">
+<h2>Parameters</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<th>Name</th>
+            <th>Description</th>
+            <th>Required</th>
+          
+</tr>
+          
+<tr>
+            
+<td><b>srcfile</b></td>
+            <td>
+              The original ear that is going to be cactified. 
+            </td>
+            <td>Yes</td>
+          
+</tr>
+          
+<tr>
+            
+<td>addEjbReferences</td>
+            <td>
+              Specifies if EJB references to all local EJB:s in the ear should be added to the cactus war. 
+            </td>
+            <td>No</td>
+          
+</tr>
+        
+</table>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Nested Elements</h2>
+
+
+        
+<div class="section">
+<h3>cactuswar</h3>
+
+          
+<p>
+            The <b>cactuswar</b> element configures everything that 
+            has to do with the cactus web application that will end up in the 
+            ear. This element has all the parameters of the 
+            <a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">cactifywar</a> task except
+            the <b>destfile</b> parameter. The web application will
+            always be named cactus.war and be placed in the root of the ear.
+          </p>
+
+          
+<div class="section">
+<h4>Parameters</h4>
+
+            
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+              
+<tr>
+                
+<th>Name</th>
+                <th>Description</th>
+                <th>Required</th>
+              
+</tr>
+              
+<tr>
+                
+<td>context</td>
+                <td>
+                  The context to wich the cactified web application will be mapped to.
+                </td>
+                <td>No, the default is <i>/cactus</i></td>
+              
+</tr>
+            
+</table>
+</div>
+
+          
+</div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Examples</h2>
+
+        
+<p>
+          The following example demonstrates the simplest-possible use of the
+          task. It will add a web application named cactus.war under the context
+          /cactus. The web application will contain the redirectors necessary
+          for cactus to work.
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifyear srcfile="${build.dir}/my.ear" destfile="${build.dir}/cactified.ear"/&gt;
+</pre>
+</div>
+
+        
+<p>
+          The next example demonstrates how to set the context for the web 
+          application.
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifyear srcfile="${build.dir}/my.ear" destfile="${build.dir}/cactified.ear"&gt;
+    &lt;cactuswar context="/myTestFramework" version="2.3"/&gt;
+&lt;/cactifyear&gt;
+    </pre>
+</div>
+
+        
+<p>
+          In the following example, we use an existing war by cactify it and 
+          add it to the ear.
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifyear srcfile="${build.dir}/my.ear" destfile="${build.dir}/cactified.ear"&gt;
+    &lt;cactuswar srcfile="mytest.war"/&gt;
+&lt;/cactifyear&gt;
+</pre>
+</div>
+
+        
+<p>
+            As mentioned previously all parameters of the tasks 
+            <b>cactifywar</b> and <b>war</b> can be used. 
+            The only exception to this is <b>destfile</b> since
+            the resulting war always is placed inside the ear with the 
+            name cactus.war.
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifyear srcfile="${build.dir}/my.ear" destfile="${build.dir}/cactified.ear"&gt;
+    &lt;cactuswar srcfile="mytest.war" mergewebxml="my-web.xml"&gt;
+        &lt;classes dir="${classes}"&gt;
+            &lt;include name="**/*Test.class"/&gt;
+        &lt;/classes&gt;
+    &lt;/cactuswar&gt;
+&lt;/cactifyear&gt;
+</pre>
+</div>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

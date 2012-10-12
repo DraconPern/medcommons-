@@ -1,0 +1,1924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeDesigner_V6.0" APIVersion="1.4.4057.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2004-04-28T02:08:12Z" uuid="384525f9-2c32-47f9-93fb-51e072a42074">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.1/">
+   <subform layout="tb" name="BasicOrderForm" locale="ambient">
+      <pageSet>
+         <pageArea id="Page1" name="Page1">
+            <contentArea h="10.5in" w="8in" x="0.25in" y="0.25in"/>
+            <medium long="11in" short="8.5in" stock="letter"/>
+            <draw h="279.4mm" name="StaticImage1" w="215.9mm" x="0mm" y="0mm">
+               <value>
+                  <image contentType="image/jpg" href="C:\SvnDocs\Schemata\OrderFormParts\form990q-blank.jpg"/>
+               </value>
+            </draw>
+            <?templateDesigner expand 1?>
+            <draw h="149.484mm" name="Rectangle1" w="216.5188mm" x="0mm" y="129.38mm">
+               <value>
+                  <rectangle>
+                     <edge/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </rectangle>
+               </value>
+            </draw>
+         </pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform h="10.5in" name="MedCommonsOrderFields" w="8in">
+         <draw minH="31.4965mm" minW="88.7398mm" name="InstructionsforUse" x="3.97mm" y="127.79mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Instructions for Use:</p><p><span style="xfa-spacerun:yes"> </span></p><p>Enter Account ID, or Enter Patient and Credit<span style="xfa-spacerun:yes"> </span></p><p><span style="xfa-spacerun:yes">    </span>Card Info</p><p>Enter Study Info, or Paste from Selection Screen</p><p>Sign Your Name</p><p>Press Submit</p></body>
+               </exData>
+            </value>
+            <font typeface="Georgia" weight="bold"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <draw minH="43.5747mm" name="DetailsBlurb" w="50.8mm" x="152.4mm" y="0.53mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Details Behind this Form:</p><p>1) selected studies to transfer from local modality to medcommons</p><p>2) medcommons to transfer to remote modality as indicaed in 'Remote Modaility' hidden field</p><p>3) medcommons to advise availability via email all indicated into 'CopyTo' fields</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+         </draw>
+         <subform h="42.6mm" name="HiddenFieldsSubForm" w="129.9866mm" x="0mm" y="0mm">
+            <field h="8.0285mm" name="RecipeParamFields" w="45.1482mm" x="60.85mm" y="10.58mm" access="readOnly">
+               <ui>
+                  <choiceList>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </choiceList>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="15.08mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Recipe Param Fields</text>
+                  </value>
+               </caption>
+               <items>
+                  <text>RemoteModality</text>
+               </items>
+               <items save="1" presence="hidden">
+                  <text>0</text>
+               </items>
+            </field>
+            <draw h="4.7296mm" name="HiddenFieldsBlurb" w="44.4098mm" x="0mm" y="0.53mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p><span style="xfa-spacerun:yes"> </span>Hidden Fields - normally invisible and read only but shown here for<span style="xfa-spacerun:yes">  </span>discussion</p></body>
+                  </exData>
+               </value>
+               <font size="4pt" typeface="Arial" weight="bold"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+            </draw>
+            <field access="readOnly" h="7.62mm" name="PartnerFormName" w="58.288mm" x="0.26mm" y="4.76mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="14.82mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>PartnerFormName</p></body>
+                     </exData>
+                  </value>
+               </caption>
+               <value>
+                  <text>BasicPartnerOrderForm</text>
+               </value>
+            </field>
+            <field access="readOnly" h="7.62mm" name="Recipe" w="44.8063mm" x="60.85mm" y="3.18mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="15.08mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Recipe</text>
+                  </value>
+               </caption>
+               <value>
+                  <text>BasicOrderRecipe</text>
+               </value>
+            </field>
+            <field access="readOnly" h="6.0114mm" name="MedCommonsTemplateName" w="44.4098mm" x="0mm" y="23.55mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="14.82mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>TemplateName</text>
+                  </value>
+               </caption>
+               <value>
+                  <text>BasicOrderTemplate</text>
+               </value>
+            </field>
+            <field h="12.7mm" name="PartnerSignature" w="56.7019mm" x="0mm" y="11.64mm">
+               <ui>
+                  <signature>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </signature>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="14.82mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Partner Form  Signature</text>
+                  </value>
+               </caption>
+            </field>
+            <field h="12.7mm" name="MedCommonsSignature" w="55.9088mm" x="0mm" y="29.9mm">
+               <ui>
+                  <signature>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </signature>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="14.82mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>MedCommons Template Signature</text>
+                  </value>
+               </caption>
+            </field>
+            <?templateDesigner expand 0?>
+            <field access="readOnly" h="22.0717mm" name="RemoteModality" w="44.8063mm" x="106.36mm" y="11.91mm">
+               <ui>
+                  <textEdit multiLine="1">
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="15.08mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>SpecialModalityInstructions</p></body>
+                     </exData>
+                  </value>
+               </caption>
+               <value>
+                  <text>need to notify 617 848 7233 at completion of all procedures</text>
+               </value>
+            </field>
+            <field h="6mm" name="MailXMLButton" w="25mm" x="162.19mm" y="34.93mm">
+               <ui>
+                  <button/>
+               </ui>
+               <caption>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>MailXMLtoBill</p></body>
+                     </exData>
+                  </value>
+                  <para hAlign="center" vAlign="middle"/>
+                  <font size="8pt" typeface="Arial"/>
+               </caption>
+               <border>
+                  <edge stroke="raised"/>
+                  <fill>
+                     <color value="212,208,200"/>
+                  </fill>
+               </border>
+               <bind match="none"/>
+               <event activity="click">
+                  <submit format="xml" target="mailto:bdonner@medcommons.org" textEncoding="UTF-8"/>
+               </event>
+            </field>
+         </subform>
+         <subform h="7.62mm" name="PartnerSpecificFieldsSubForm" w="44.8063mm" x="106.1mm" y="3.44mm">
+            <field access="readOnly" h="7.62mm" name="RemoteModality" w="44.8063mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="15.08mm">
+                  <font size="4pt" typeface="Arial"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>RemoteModality</p></body>
+                     </exData>
+                  </value>
+               </caption>
+               <value>
+                  <text>Joe'sCadShop</text>
+               </value>
+            </field>
+            <?templateDesigner expand 0?></subform>
+         <field access="readOnly" h="10.281mm" locale="ambient" name="CurrentDate" w="38.1mm" x="80.17mm" y="79.5471mm">
+            <ui>
+               <dateTimeEdit>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                  </border>
+                  <margin/>
+               </dateTimeEdit>
+            </ui>
+            <font size="12pt" typeface="Arial" underline="1"/>
+            <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+            <para hAlign="center" vAlign="middle"/>
+            <calculate override="error"/>
+            <bind match="none"/>
+            <event activity="initialize">
+               <script>// Current Date in short-style date format.
+
+$.rawValue = num2date(date(), DateFmt(1))</script>
+            </event>
+            <value>
+               <date/>
+            </value>
+         </field>
+         <field h="12.2622mm" name="AccountNumber" w="44.5445mm" x="51.86mm" y="149.49mm">
+            <ui>
+               <numericEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </numericEdit>
+            </ui>
+            <font typeface="Arial"/>
+            <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+            <para vAlign="middle"/>
+            <value>
+               <float/>
+            </value>
+            <caption reserve="23.55mm">
+               <font typeface="Arial" weight="bold"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text>Account ID</text>
+               </value>
+            </caption>
+            <format>
+               <picture>999999999</picture>
+            </format>
+            <?templateDesigner ScriptInitializers validate:lang=JavaScript;exit:lang=JavaScript;?>
+            <event activity="exit">
+               <script contentType="application/x-javascript">switch (this.rawValue) {
+case 1 :
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.LastName.rawValue = "Donner";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.FirstName.rawValue = "Bill";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.Prefix.rawValue = "Mr.";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.AddressLine1.rawValue = "33 Valley Road";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.AddressLine2.rawValue = "3rd Floor";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.City.rawValue	= "Bronxville";	
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.State.rawValue	= "New York";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.Zip.rawValue		= "10708";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.DateOfBirth.rawValue	="11/07/52";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.Sex.rawValue			= "M";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.SSN.rawValue			= "058372839";
+
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.CardType.rawValue="Visa";
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.CardNum.rawValue ="**** **** 4206";
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.ExpDate.rawValue	 = "02/07";
+break;
+
+case 2:
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.LastName.rawValue = "Gropper";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.FirstName.rawValue = "Adrian";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.Prefix.rawValue = "Dr.";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.AddressLine1.rawValue = "85 Fleet St";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.AddressLine2.rawValue = "";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.City.rawValue	= "Berkley";	
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.State.rawValue	= "California";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.Zip.rawValue		= "92012";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.DateOfBirth.rawValue	="08/07/52";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.Sex.rawValue			= "M";
+BasicOrderForm.MedCommonsOrderFields.PatientDetailsSubForm.SSN.rawValue			= "058421339";
+
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.CardType.rawValue="MasterCard";
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.CardNum.rawValue ="**** **** 8841";
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.ExpDate.rawValue	 = "03/08";
+break;
+
+}</script>
+            </event>
+         </field>
+         <subform h="42.76mm" name="PatientDetailsSubForm" w="96.5498mm" x="95.25mm" y="127mm">
+            <area x="0mm" y="0mm">
+               <field h="8.89mm" name="DateOfBirth" w="29.9891mm" x="15.88mm" y="33.6mm">
+                  <ui>
+                     <dateTimeEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </dateTimeEdit>
+                  </ui>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <date/>
+                  </value>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </field>
+               <field h="8.9052mm" name="LastName" w="30.7227mm" x="15.61mm" y="0mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+                  <?templateDesigner ScriptInitializers exit:lang=FormCalc;?></field>
+               <field h="8.9052mm" name="FirstName" w="18.6752mm" x="53.71mm" y="0mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+               </field>
+               <draw minH="8.89mm" name="FirstNameBlurb" w="6.8525mm" x="46.57mm" y="0.0076mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>First</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <field h="8.9052mm" name="MiddleInitial" w="5.3036mm" x="76.46mm" y="0mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+                  <value>
+                     <text maxChars="1"/>
+                  </value>
+               </field>
+               <draw minH="8.89mm" name="MiddleInitialBlurb" w="5.3036mm" x="71.7mm" y="0.0076mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>MI</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <field h="8.9052mm" name="Prefix" w="9.439mm" x="87.1107mm" y="0mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+                  <value>
+                     <text maxChars="3"/>
+                  </value>
+               </field>
+               <field h="8.9052mm" name="AddressLine2" w="80.8098mm" x="15.88mm" y="17.2mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+               </field>
+               <draw minH="8.89mm" name="PrefixBlurb" w="6.3454mm" x="81.23mm" y="0.0076mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Pref</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <field h="8.9052mm" name="City" w="34.3699mm" x="15.88mm" y="24.87mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+               </field>
+               <draw minH="8.89mm" name="StateBlurb" w="4.1765mm" x="50.01mm" y="24.87mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>St</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <field h="8.9052mm" name="Zip" w="15.2493mm" x="81.3005mm" y="24.6mm">
+                  <ui>
+                     <numericEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </numericEdit>
+                     <picture>99999-9999</picture>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <float/>
+                  </value>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+               </field>
+               <field h="8.89mm" name="State" w="20.32mm" x="54.24mm" y="24.87mm">
+                  <ui>
+                     <choiceList>
+                        <border>
+                           <edge presence="hidden" thickness="0.0762mm"/>
+                           <edge presence="hidden" thickness="0.0762mm"/>
+                           <edge presence="hidden" thickness="0.0762mm"/>
+                           <edge presence="hidden" thickness="0.0762mm"/>
+                           <corner thickness="0.0762mm"/>
+                           <corner thickness="0.0762mm"/>
+                           <corner thickness="0.0762mm"/>
+                           <corner thickness="0.0762mm"/>
+                        </border>
+                        <margin/>
+                     </choiceList>
+                  </ui>
+                  <font size="9pt" typeface="Arial"/>
+                  <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                  <para marginLeft="0pt" vAlign="middle"/>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+                  <items>
+                     <text>Alabama</text>
+                     <text>Alaska</text>
+                     <text>Arizona</text>
+                     <text>Arkansas</text>
+                     <text>California</text>
+                     <text>Colorado</text>
+                     <text>Connecticut</text>
+                     <text>Delaware</text>
+                     <text>District of Columbia</text>
+                     <text>Florida</text>
+                     <text>Georgia</text>
+                     <text>Hawaii</text>
+                     <text>Idaho</text>
+                     <text>Illinois</text>
+                     <text>Indiana</text>
+                     <text>Iowa</text>
+                     <text>Kansas</text>
+                     <text>Kentucky</text>
+                     <text>Louisiana</text>
+                     <text>Maine</text>
+                     <text>Maryland</text>
+                     <text>Massachusetts</text>
+                     <text>Michigan</text>
+                     <text>Minnesota</text>
+                     <text>Mississippi</text>
+                     <text>Missouri</text>
+                     <text>Montana</text>
+                     <text>Nebraska</text>
+                     <text>Nevada</text>
+                     <text>New Hampshire</text>
+                     <text>New Jersey</text>
+                     <text>New Mexico</text>
+                     <text>New York</text>
+                     <text>North Carolina</text>
+                     <text>North Dakota</text>
+                     <text>Ohio</text>
+                     <text>Oklahoma</text>
+                     <text>Oregon</text>
+                     <text>Pennsylvania</text>
+                     <text>Rhode Island</text>
+                     <text>South Carolina</text>
+                     <text>South Dakota</text>
+                     <text>Tennessee</text>
+                     <text>Texas</text>
+                     <text>Utah</text>
+                     <text>Vermont</text>
+                     <text>Virginia</text>
+                     <text>Washington</text>
+                     <text>West Virginia</text>
+                     <text>Wisconsin</text>
+                     <text>Wyoming</text>
+                  </items>
+                  <items presence="hidden" save="1">
+                     <text>AL</text>
+                     <text>AK</text>
+                     <text>AZ</text>
+                     <text>AR</text>
+                     <text>CA</text>
+                     <text>CO</text>
+                     <text>CT</text>
+                     <text>DE</text>
+                     <text>DC</text>
+                     <text>FL</text>
+                     <text>GA</text>
+                     <text>HI</text>
+                     <text>ID</text>
+                     <text>IL</text>
+                     <text>IN</text>
+                     <text>IA</text>
+                     <text>KS</text>
+                     <text>KY</text>
+                     <text>LA</text>
+                     <text>ME</text>
+                     <text>MD</text>
+                     <text>MA</text>
+                     <text>MI</text>
+                     <text>MN</text>
+                     <text>MS</text>
+                     <text>MO</text>
+                     <text>MT</text>
+                     <text>NE</text>
+                     <text>NV</text>
+                     <text>NH</text>
+                     <text>NJ</text>
+                     <text>NM</text>
+                     <text>NY</text>
+                     <text>NC</text>
+                     <text>ND</text>
+                     <text>OH</text>
+                     <text>OK</text>
+                     <text>OR</text>
+                     <text>PA</text>
+                     <text>RI</text>
+                     <text>SC</text>
+                     <text>SD</text>
+                     <text>TN</text>
+                     <text>TX</text>
+                     <text>UT</text>
+                     <text>VT</text>
+                     <text>VA</text>
+                     <text>WA</text>
+                     <text>WV</text>
+                     <text>WI</text>
+                     <text>WY</text>
+                  </items>
+                  <value>
+                     <text>AL</text>
+                  </value>
+               </field>
+               <draw minH="8.89mm" name="SexBlurb" w="8.266mm" x="45.77mm" y="33.87mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>M/F</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="center"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <field h="8.4282mm" name="Sex" w="7.9636mm" x="53.98mm" y="34.13mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+                  <value>
+                     <text maxChars="1"/>
+                  </value>
+               </field>
+               <draw minH="8.89mm" name="Address1Blurb" w="16.586mm" x="0mm" y="8.4675mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Address 1</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <draw minH="8.89mm" name="LastNameBlurb" w="16.745mm" x="0mm" y="0mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Last Name</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <draw minH="8.89mm" name="DateOfBirthBlurb" w="16.745mm" x="0mm" y="33.87mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>DOB</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <draw minH="8.89mm" name="SSNBlurb" w="7.7333mm" x="61.91mm" y="33.86mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>SSN</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <field h="8.89mm" name="SSN" w="26.9598mm" x="69.59mm" y="33.86mm">
+                  <ui>
+                     <numericEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <float/>
+                  </value>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                  </border>
+               </field>
+               <draw minH="8.89mm" name="CityBlurb" w="16.745mm" x="0mm" y="25.4024mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>City</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <draw minH="8.89mm" name="Address2Blurb" w="16.6722mm" x="0mm" y="16.935mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Address 2</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <field h="8.9052mm" name="AddressLine1" w="80.8636mm" x="15.6859mm" y="8.73mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                     </fill>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                     <corner presence="hidden" thickness="0.006in"/>
+                  </border>
+               </field>
+               <draw minH="8.89mm" name="ZipBlurb" w="6.7198mm" x="74.5592mm" y="24.6076mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>ZIP</p></body>
+                     </exData>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="right"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <color value="192,192,192"/>
+                     </fill>
+                  </border>
+               </draw>
+               <?templateDesigner expand 0?></area>
+            <?templateDesigner expand 0?></subform>
+         <?templateDesigner expand 1?>
+         <field name="TrackingNumber" y="66.94mm" x="3.97mm" w="50.901mm" h="13.7502mm" access="readOnly">
+            <ui>
+               <numericEdit>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                  </border>
+                  <margin/>
+               </numericEdit>
+            </ui>
+            <font typeface="Arial" weight="bold"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <value>
+               <float/>
+            </value>
+            <caption reserve="23.28mm">
+               <font typeface="Arial" weight="bold"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text>TRACKING NUMBER </text>
+               </value>
+            </caption>
+            <format>
+               <picture>99999999999</picture>
+            </format>
+            <bind>
+               <picture>9999999999</picture>
+            </bind>
+            <event activity="initialize">
+               <script contentType="application/x-javascript">var cWSURL = "http://www.random.org/RandomDotOrg.wsdl";
+
+//console.println("Setup random.org Is Interface using WSDL URL: \"" + cWSURL + "\"\n");
+
+var service = SOAP.connect(cWSURL);
+
+if(typeof service != "object")
+	console.println("Couldn't get Random WSDL object");
+
+var e;
+
+try
+{
+//    console.println("Make Random  call value " + param.RandomSignedNumberRequest);
+      var result = service.lrand48();
+
+  //    console.println(result);
+
+	if((result == "") | (result == null))  {
+		console.println("Random return nothing");
+         result = "&lt;no results returned&gt;";
+          }
+
+
+
+	xfa.resolveNode("TrackingNumber").rawValue = result;
+	
+}
+catch(e)
+{
+	console.println("Problem with Random Call: " + e);
+}</script>
+            </event>
+         </field>
+         <subform h="35.08mm" name="CreditCardInfo" w="90.4889mm" x="5.29mm" y="213.78mm">
+            <field h="8.89mm" name="CardNum" w="39.5114mm" x="29.7594mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+            </field>
+            <draw minH="8.89mm" name="CardNumText" w="9.2874mm" x="20.6797mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Num</p></body>
+                  </exData>
+               </value>
+               <font size="8pt" typeface="Arial"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+            </draw>
+            <field h="8.89mm" name="ExpDate" w="14.976mm" x="75.5129mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+               </border>
+            </field>
+            <field h="8.89mm" name="Amount" w="14.976mm" x="75.5129mm" y="8.73mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </numericEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <float/>
+               </value>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+               </border>
+               <format>
+                  <picture>ZZZ9</picture>
+               </format>
+               <calculate override="warning"/>
+            </field>
+            <field h="8.89mm" name="Tax" w="14.976mm" x="75.5129mm" y="17.46mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </numericEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <float/>
+               </value>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+               </border>
+               <validate>
+                  <picture>$Z,999.99</picture>
+               </validate>
+               <format>
+                  <picture>ZZZ9</picture>
+               </format>
+            </field>
+            <field h="8.89mm" name="TotalCharge" w="14.976mm" x="75.5129mm" y="26.19mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </numericEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <float/>
+               </value>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+               </border>
+               <format>
+                  <picture>ZZZ9</picture>
+               </format>
+            </field>
+            <field h="8.89mm" name="CardType" w="20.1984mm" x="0.0248mm" y="0mm">
+               <ui>
+                  <choiceList>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </choiceList>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text>3</text>
+               </value>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <items>
+                  <text>Amex</text>
+                  <text>Discover</text>
+                  <text>MasterCard</text>
+                  <text>Visa</text>
+               </items>
+               <items presence="hidden" save="1">
+                  <text>0</text>
+                  <text>1</text>
+                  <text>2</text>
+                  <text>3</text>
+               </items>
+            </field>
+            <draw minH="8.89mm" name="ExpBlurb" w="6.0494mm" x="69.0632mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Exp</p></body>
+                  </exData>
+               </value>
+               <font size="8pt" typeface="Arial"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+               </border>
+            </draw>
+            <draw minH="8.89mm" name="AmountBlurb" w="37.2943mm" x="38.2456mm" y="8.73mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Amount</p></body>
+                  </exData>
+               </value>
+               <font size="8pt" typeface="Arial"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <para hAlign="right"/>
+            </draw>
+            <draw minH="8.89mm" name="TaxBlurb" w="38.2486mm" x="37.9656mm" y="17.2mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Tax</p></body>
+                  </exData>
+               </value>
+               <font size="8pt" typeface="Arial"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <para hAlign="right"/>
+            </draw>
+            <draw minH="8.89mm" name="TotalChargeBlurb" w="38.6594mm" x="37.9661mm" y="25.93mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <text>Total Charge</text>
+               </value>
+               <font size="8pt" typeface="Arial"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <corner/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <para hAlign="right"/>
+            </draw>
+            <?templateDesigner expand 0?></subform>
+         <subform h="32.2583mm" name="CopyGroupSubform" w="67.2211mm" x="113.77mm" y="218.55mm">
+            <?templateDesigner expand 0?>
+            <area name="SendCopyGroup" x="0mm" y="0mm">
+               <field h="11.6861mm" name="SendCopyTo1" w="67.2211mm" x="0mm" y="9.4622mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="12pt" typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                  </border>
+                  <event activity="initialize">
+                     <script contentType="application/x-javascript">xfa.connectionSet.DataConnection.loadXML("C:\SvnDocs\Schemata\OrderFormParts\SelectionSubForm.xml");</script>
+                  </event>
+               </field>
+               <field h="11.6861mm" name="SendCopyTo2" w="67.2211mm" x="0mm" y="20.5722mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="12pt" typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                  </border>
+               </field>
+               <draw minH="9.385mm" name="SendCopyText" w="67.2211mm" x="0mm" y="0mm">
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Send<span style="xfa-spacerun:yes">  </span>Copy to:</p></body>
+                     </exData>
+                  </value>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                  </border>
+               </draw>
+               <?templateDesigner expand 0?></area>
+         </subform>
+         <subform h="13.2496mm" name="BottomMatterSubForm" w="147.23mm" x="24.08mm" y="253.74mm">
+            <field h="12.7196mm" name="UserSignature" w="91.2424mm" x="0mm" y="0.53mm">
+               <ui>
+                  <signature>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </signature>
+               </ui>
+               <font typeface="Arial" weight="bold"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="20mm">
+                  <font typeface="Arial" weight="bold"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Signature<span style="xfa-spacerun:yes"> </span></p></body>
+                     </exData>
+                  </value>
+               </caption>
+            </field>
+            <field h="12.7196mm" name="PrintButton" w="25mm" x="94.2362mm" y="0mm">
+               <ui>
+                  <button/>
+               </ui>
+               <caption>
+                  <value>
+                     <text>PRINT</text>
+                  </value>
+                  <para hAlign="center" vAlign="middle"/>
+                  <font typeface="Arial" weight="bold"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <fill>
+                     <color value="212,208,200"/>
+                  </fill>
+                  <edge/>
+                  <edge/>
+                  <edge/>
+               </border>
+               <bind match="none"/>
+            </field>
+            <field h="12.7196mm" name="SubmitButton" w="25mm" x="122.23mm" y="0mm">
+               <ui>
+                  <button/>
+               </ui>
+               <caption>
+                  <value>
+                     <text>SUBMIT</text>
+                  </value>
+                  <para hAlign="center" vAlign="middle"/>
+                  <font typeface="Arial" weight="bold"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <fill>
+                     <color value="212,208,200"/>
+                  </fill>
+                  <edge/>
+                  <edge/>
+                  <edge/>
+               </border>
+               <bind match="none"/>
+               <event activity="click">
+                  <submit target="http://medcommons.net:8080/central/OrderProcessorServlet" textEncoding="UTF-8" format="xml"/>
+               </event>
+            </field>
+            <?templateDesigner expand 0?></subform>
+         <subform x="0mm" y="169.6mm" w="190.2694mm" h="39.95mm" name="SelectionSubForm">
+            <draw name="ThumbNailStrip" y="0mm" x="11.64mm" h="25.4mm" w="169.3926mm">
+               <value>
+                  <image href=".\OrderFormParts\ThumbnailTestStrip.jpg" contentType="image/jpg"/>
+               </value>
+            </draw>
+            <field h="6.35mm" name="Selection1" w="190.2694mm" x="0mm" y="29.37mm" access="readOnly">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge presence="hidden"/>
+                        <edge presence="hidden"/>
+                        <edge presence="hidden"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font size="6pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <?templateDesigner ScriptInitializers exit:lang=JavaScript;?>
+               <event activity="exit">
+                  <script contentType="application/x-javascript">var amount = 0;
+var val = BasicOrderForm.MedCommonsOrderFields.SelectionSubForm.Selection1.rawValue;  
+if ((val!="")&amp;(val!=null))
+		{amount += 50;
+		 console.println("Selection1 is " + val);
+		 }
+if ((BasicOrderForm.MedCommonsOrderFields.SelectionSubForm.Selection2.value != "") &amp;  
+        (BasicOrderForm.MedCommonsOrderFields.SelectionSubForm.Selection2.value != null))amount += 50;
+
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.Amount.rawValue = amount;</script>
+               </event>
+               <bind match="dataRef" ref="$record.Selection1"/>
+            </field>
+            <field h="6.35mm" name="Selection2" w="190.2694mm" x="0mm" y="33.6mm" access="readOnly">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge presence="hidden"/>
+                        <edge presence="hidden"/>
+                        <edge presence="hidden"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font size="6pt" typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+               <event activity="exit">
+                  <script contentType="application/x-javascript">var amount = 0;
+var val = BasicOrderForm.MedCommonsOrderFields.SelectionSubForm.Selection1.rawValue;  
+if ((val!="")&amp;(val!=null))
+		{amount += 50;
+		 console.println("Selection1 is " + val);
+		 }
+if ((BasicOrderForm.MedCommonsOrderFields.SelectionSubForm.Selection2.value != "") &amp;  
+        (BasicOrderForm.MedCommonsOrderFields.SelectionSubForm.Selection2.value != null))amount += 50;
+
+BasicOrderForm.MedCommonsOrderFields.CreditCardInfo.Amount.rawValue = amount;</script>
+               </event>
+               <bind match="dataRef" ref="$record.Selection2"/>
+            </field>
+            <draw h="2.794mm" name="SelectionBlurb" w="190.2693mm" x="0mm" y="28.04mm">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <exData contentType="text/html" maxLength="0">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p><span style="xfa-spacerun:yes">   </span>Patient<span style="xfa-spacerun:yes">                           </span>Study ID<span style="xfa-spacerun:yes">                                                                  </span>Date/Time<span style="xfa-spacerun:yes">                                                                                   </span>Description<span style="xfa-spacerun:yes">                                                      </span>Status</p></body>
+                  </exData>
+               </value>
+               <font size="4pt" typeface="Arial"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="192,192,192"/>
+                  </fill>
+               </border>
+            </draw>
+            <?templateDesigner expand 0?></subform>
+      </subform>
+   </subform>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?templateDesigner DefaultRunAt client?>
+   <?templateDesigner XDCFile acrobat6.xdc?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 84?>
+   <?templateDesigner DefaultPreviewType interactive?>
+   <?templateDesigner DefaultPreviewDataFileName C:\SvnDocs\Schemata\OrderFormParts\SelectionSubForm.xml?></template>
+<config xmlns="http://www.xfa.org/schema/xci/1.0/">
+   <agent name="designer">
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </agent>
+   <present>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+            <adjustData>0</adjustData>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+      <pdf name="pdf">
+         <version>1.5</version>
+         <creator>Adobe Designer 6.0</creator>
+         <producer>Adobe Designer 6.0</producer>
+         <scriptModel>XFA</scriptModel>
+         <interactive>1</interactive>
+         <tagged>1</tagged>
+         <compression>
+            <level>6</level>
+         </compression>
+      </pdf>
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </present>
+   <agent name="acrobat">
+      <common>
+         <locale/>
+         <data>
+            <incrementalLoad/>
+            <adjustData/>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+         <template>
+            <relevant/>
+            <base/>
+            <uri/>
+         </template>
+      </common>
+   </agent>
+</config>
+<xfa:datasets xmlns="" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="SelectionSubForm">
+      <SelectionSubForm>
+         <Selection1/>
+         <Selection3/>
+         <Selection2/>
+      </SelectionSubForm>
+   </dd:dataDescription>
+</xfa:datasets>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+   <annots/>
+</xfdf>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.1/">
+   <xmlConnection name="DataConnection" dataDescription="SelectionSubForm">
+      <uri>C:\SvnDocs\Schemata\OrderFormParts\SelectionSubForm.xml</uri>
+   </xmlConnection>
+</connectionSet>
+<PDFSecurity xmlns="http://ns.adobe.com/xtd/" print="1" printHighQuality="1" change="1" modifyAnnots="1" formFieldFilling="1" documentAssembly="1" contentCopy="1" accessibleContent="1" metadata="1"/></xdp:xdp>

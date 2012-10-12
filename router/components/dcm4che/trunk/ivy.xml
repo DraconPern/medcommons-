@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ivy-module version="1.3">
+  <info organisation="dcm4che" module="dcm4che2"/>
+  <publications>
+	  <artifact name="dcm4che-net"  />
+	  <artifact name="dcm4che-core"  />
+	  <artifact name="dcm4che-core"  />
+	  <artifact name="slf4j-api-1.2"  />
+	  <artifact name="slf4j-log4j12-1.2"/>
+  </publications>
+</ivy-module>
+

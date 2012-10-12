@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Page3.plist
+   MCProvider
+
+   Created by bill donner on 4/27/10.
+   Copyright 2010 MedCommons, Inc. All rights reserved.
+-->
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>MedCommons Settings</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+	<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Anonymous Use Requires No Setup</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Use Anonymously</string>
+			<key>Key</key>
+			<string>MCanonymousUse</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Home Page Settings</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Home Page URL</string>
+			<key>Key</key>
+			<string>MCHomeURL</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Home Page Title</string>
+			<key>Key</key>
+			<string>MCHomeTitle</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Visit www.medcommons.net</string>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Labels,URLs,Colors,Fonts</string>
+		</dict>
+				<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Customize MedCommons Provider</string>
+			<key>File</key>
+			<string>Page3</string>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Standard Groups Layout (no plist)</string>
+			<key>Key</key>
+			<string>MCGroupView</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>iPhone Compatibility</string>
+		</dict>
+	
+				<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Specify a Configuration URL</string>
+		</dict>
+		
+			<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Use Configuration Selected on Main Page</string>
+			<key>Key</key>
+			<string>MCUseSamples</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Choose Configuration</string>
+			<key>Key</key>
+			<string>MCSampleURL</string>
+			<key>Titles</key>
+			<array>
+			<string>iPhone</string>
+			<string>iPad</string>
+			<string>Custom</string>
+			<string>Help</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>http://medcommons.net/MCProvider/configuration/iphoneLayout.xml</string>
+				<string>http://medcommons.net/MCProvider/configuration/ipadLayout.xml</string>	
+				<string>http://medcommons.net/MCProvider/configuration/customLayout.xml</string>
+				<string>http://medcommons.net/MCProvider/configuration/help.xml</string>
+			</array>
+			<key>DefaultValue</key>
+			<string>http://medcommons.net/MCProvider/configuration/help.xml</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Otherwise Enter Configuration URL here:</string>
+			<key>Key</key>
+			<string>MCEnteredURL</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>
+

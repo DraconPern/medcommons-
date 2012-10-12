@@ -1,0 +1,1437 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 885E5E61124853C30013AC95 /* GigStand */;
+		activeSDKPreference = iphonesimulator4.2;
+		activeTarget = 883DBE6A11A5661C0021AC85 /* GigStand */;
+		addToTargets = (
+			883DBE6A11A5661C0021AC85 /* GigStand */,
+		);
+		breakpoints = (
+			88DD5E83124CD97F007CC342 /* DocumentsManager.m:1 */,
+			88DD5F5F124CFEA8007CC342 /* DocumentsManager.m:74 */,
+			882B7CEB12514DAD00F2843E /* DocumentsManager.m:70 */,
+			882B7D3B1252282000F2843E /* ZipArchive.mm:153 */,
+			88D0172E1259225800B31060 /* DocumentsManager.m:70 */,
+			881CC8E9125FA4F50087E175 /* WebViewController.m:70 */,
+			881CC983125FD2710087E175 /* OneTuneViewController.m:935 */,
+			881CC9D1125FDE260087E175 /*  malloc_error_break */,
+			881CCE6D126491B30087E175 /* TuneOptionsActionController.m:30 */,
+			881CCEF91264A02C0087E175 /* ViewSourceController.m:22 */,
+			88990869126730E700CA8F9F /* DataManager.m:1329 */,
+			88DC5FAD1269FFEE0058C93B /* FavoritesViewController.m:21 */,
+			88DC623B126CCFCD0058C93B /* DataManager.m:16 */,
+			889E65C71271D686005C1AC5 /* DataManager.m:1455 */,
+			88EFFD0F1288662B00599917 /* GeneralSetListViewController.m:30 */,
+			88EFFF721289CDBE00599917 /* AddTuneToSetListController.m:159 */,
+			88EF005A1289FAD000599917 /* AddTuneToSetListController.m:44 */,
+			88EF00E8128AFAFF00599917 /* NewSetListView.m:52 */,
+			88EF010C128AFD7300599917 /* CreateNewSetListController.m:73 */,
+			88EF010E128AFD8100599917 /* CreateNewSetListController.m:218 */,
+			88EF0204128B25EC00599917 /* DataManager.m:172 */,
+			8817181D1291880800B72CB4 /* OneTuneViewController.m:217 */,
+			881718A21291B84000B72CB4 /* OneTuneViewController.m:217 */,
+			881718C21291BD8E00B72CB4 /* OneTuneViewController.m:1214 */,
+			88AA7D911299F4A2003CA3CF /* GeneralListViewController.m:153 */,
+			88AA7EA7129AF214003CA3CF /* CreateNewSetListController.m:288 */,
+			88AA828E12A2A8E1003CA3CF /* AppDelegate.m:186 */,
+			883CAEB012AE9361004CD63A /* GeneralSetListViewController.m:202 */,
+			883CB15212B2A7C9004CD63A /* DataManager.m:780 */,
+			88664B5412B2D03F00D63A45 /* malloc_error_break */,
+			884A03BC12C39E9A00FA835A /* SettingsManager.m:142 */,
+			884A03C812C3A12500FA835A /* DictionaryAdditions.m:182 */,
+			884A03D212C3A17B00FA835A /* DictionaryAdditions.m:184 */,
+			884A03D712C3A1A000FA835A /* SettingsManager.m:163 */,
+			884A03DA12C3A1AE00FA835A /* SettingsManager.m:171 */,
+		);
+		codeSenseManager = 885E5E78124853E20013AC95 /* Code sense */;
+		executables = (
+			885E5E61124853C30013AC95 /* GigStand */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					914,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					874,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 314826107;
+			PBXWorkspaceStateSaveDate = 314826107;
+		};
+		perUserProjectItems = {
+			885E5F25124867530013AC95 = 885E5F25124867530013AC95 /* PBXTextBookmark */;
+			885E5F26124867530013AC95 = 885E5F26124867530013AC95 /* PBXTextBookmark */;
+			885E5F8C12486B480013AC95 = 885E5F8C12486B480013AC95 /* PBXTextBookmark */;
+			885E60501248D2B30013AC95 = 885E60501248D2B30013AC95 /* PBXTextBookmark */;
+			885E60511248D2B30013AC95 = 885E60511248D2B30013AC95 /* PBXTextBookmark */;
+			885E60521248D2B30013AC95 = 885E60521248D2B30013AC95 /* PBXTextBookmark */;
+			885E69981248D8900013AC95 = 885E69981248D8900013AC95 /* PBXBookmark */;
+			885E69991248D8900013AC95 = 885E69991248D8900013AC95 /* PBXBookmark */;
+			885E699A1248D8900013AC95 = 885E699A1248D8900013AC95 /* PlistBookmark */;
+		};
+		sourceControlManager = 885E5E77124853E20013AC95 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8817181D1291880800B72CB4 /* OneTuneViewController.m:217 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 881CC7F9125F72170087E175 /* OneTuneViewController.m */;
+		functionName = "-addTuneToSetList";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 217;
+		location = MusicStand;
+		modificationTime = 314827108.833629;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	881718A21291B84000B72CB4 /* OneTuneViewController.m:217 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 881CC7F9125F72170087E175 /* OneTuneViewController.m */;
+		functionName = "-pickerSetListChosen";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 217;
+		location = MusicStand;
+		modificationTime = 314827108.833643;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	881718C21291BD8E00B72CB4 /* OneTuneViewController.m:1214 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 881CC7F9125F72170087E175 /* OneTuneViewController.m */;
+		functionName = "-dealloc";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 1214;
+		location = MusicStand;
+		modificationTime = 314827108.833712;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	881CC7F8125F72170087E175 /* OneTuneViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 1767}}";
+			sepNavSelRange = "{2580, 21}";
+			sepNavVisRange = "{1575, 1211}";
+		};
+	};
+	881CC7F9125F72170087E175 /* OneTuneViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1332, 26334}}";
+			sepNavSelRange = "{3228, 15}";
+			sepNavVisRange = "{2941, 858}";
+		};
+	};
+	881CC8E9125FA4F50087E175 /* WebViewController.m:70 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F50D325B11738C3200F5E425 /* WebViewController.m */;
+		functionName = "-refreshWithURL:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 70;
+		location = MusicStand;
+		modificationTime = 314827108.833042;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	881CC983125FD2710087E175 /* OneTuneViewController.m:935 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 881CC7F9125F72170087E175 /* OneTuneViewController.m */;
+		functionName = "-refreshWithURL:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 935;
+		location = MusicStand;
+		modificationTime = 314827108.833058;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	881CC9D1125FDE260087E175 /*  malloc_error_break */ = {
+		isa = PBXSymbolicBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 1;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		hitCount = 0;
+		ignoreCount = 0;
+		location = "";
+		modificationTime = 314827116.884421;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+		symbolName = " malloc_error_break";
+	};
+	881CCC581263682B0087E175 /* TitleNode.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 957}}";
+			sepNavSelRange = "{255, 64}";
+			sepNavVisRange = "{0, 983}";
+		};
+	};
+	881CCDC612647FCA0087E175 /* TuneOptionsActionController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = TuneOptionsActionController.m;
+		path = /Users/billdonner/MusicStand/Classes/ViewControllers/TuneOptionsActionController.m;
+		sourceTree = "<absolute>";
+	};
+	881CCDEA126485200087E175 /* ViewSourceController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1392, 1008}}";
+			sepNavSelRange = "{255, 0}";
+			sepNavVisRange = "{0, 302}";
+		};
+	};
+	881CCDEB126485200087E175 /* ViewSourceController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1371, 1900}}";
+			sepNavSelRange = "{1308, 322}";
+			sepNavVisRange = "{457, 1794}";
+		};
+	};
+	881CCE6D126491B30087E175 /* TuneOptionsActionController.m:30 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 881CCDC612647FCA0087E175 /* TuneOptionsActionController.m */;
+		functionName = "-viewSource:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 30;
+		location = MusicStand;
+		modificationTime = 314827108.833127;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	881CCEF91264A02C0087E175 /* ViewSourceController.m:22 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 881CCDEB126485200087E175 /* ViewSourceController.m */;
+		functionName = "-initWithPath:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 22;
+		location = MusicStand;
+		modificationTime = 314827108.833157;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	882B7CEB12514DAD00F2843E /* DocumentsManager.m:70 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5E45EC311D24BE400D305E1 /* DocumentsManager.m */;
+		functionName = "-deletAllFilesInDocumentDirectory";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 70;
+		location = MusicStand;
+		modificationTime = 314827108.832904;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	882B7D3B1252282000F2843E /* ZipArchive.mm:153 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F54306B11226CB0F00F617E2 /* ZipArchive.mm */;
+		functionName = "-UnzipOpenFile:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 153;
+		location = MusicStand;
+		modificationTime = 314827108.83296;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	883CAEB012AE9361004CD63A /* GeneralSetListViewController.m:202 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88637E2B1284477E00E6C4B4 /* GeneralSetListViewController.m */;
+		functionName = "-actionPressed";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 202;
+		location = MusicStand;
+		modificationTime = 314827108.833878;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	883CB15212B2A7C9004CD63A /* DataManager.m:780 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5AF264E11CA96000044FAFE /* DataManager.m */;
+		functionName = "-readAllTunes";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 780;
+		location = GigStand;
+		modificationTime = 314827108.833961;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	883DBE6A11A5661C0021AC85 /* GigStand */ = {
+		activeExec = 0;
+		executables = (
+			885E5E61124853C30013AC95 /* GigStand */,
+		);
+	};
+	883DBF7911A59A170021AC85 /* MusicStand.ipa */ = {
+		activeExec = 0;
+	};
+	884A030612C3829100FA835A /* SearchableTunesViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 665}}";
+			sepNavSelRange = "{158, 0}";
+			sepNavVisRange = "{0, 631}";
+		};
+	};
+	884A030712C3829100FA835A /* SearchableTunesViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 9196}}";
+			sepNavSelRange = "{2445, 0}";
+			sepNavVisRange = "{8548, 1277}";
+		};
+	};
+	884A032512C389E700FA835A /* Borders.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 2166}}";
+			sepNavSelRange = "{187, 0}";
+			sepNavVisRange = "{0, 257}";
+		};
+	};
+	884A03BC12C39E9A00FA835A /* SettingsManager.m:142 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F516090111CBD1E2000FEA70 /* SettingsManager.m */;
+		functionName = "+sharedInstance";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 142;
+		modificationTime = 314827116.884437;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	884A03C812C3A12500FA835A /* DictionaryAdditions.m:182 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 884A03C912C3A12500FA835A /* DictionaryAdditions.m */;
+		functionName = "-stringForKey:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 182;
+		modificationTime = 314827108.834498;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	884A03C912C3A12500FA835A /* DictionaryAdditions.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DictionaryAdditions.m;
+		path = /Users/billdonner/MusicStand/Classes/ViewControllers/DictionaryAdditions.m;
+		sourceTree = "<absolute>";
+	};
+	884A03D212C3A17B00FA835A /* DictionaryAdditions.m:184 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 884A03C912C3A12500FA835A /* DictionaryAdditions.m */;
+		functionName = "-stringForKey:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 184;
+		modificationTime = 314827108.834532;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	884A03D712C3A1A000FA835A /* SettingsManager.m:163 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F516090111CBD1E2000FEA70 /* SettingsManager.m */;
+		functionName = "-applicationName";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 163;
+		modificationTime = 314827116.884397;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	884A03DA12C3A1AE00FA835A /* SettingsManager.m:171 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F516090111CBD1E2000FEA70 /* SettingsManager.m */;
+		functionName = "-applicationVersion";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 171;
+		modificationTime = 314827116.884342;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	884A086812C3E08E00FA835A /* GigStandAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2244, 1501}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1720}";
+		};
+	};
+	885E5E61124853C30013AC95 /* GigStand */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = GigStand;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+			$cs = 1;
+			$ds = 1;
+			$eax = 1;
+			$ebp = 1;
+			$ebx = 1;
+			$ecx = 1;
+			$edi = 1;
+			$edx = 1;
+			$eflags = 1;
+			$eip = 1;
+			$es = 1;
+			$esi = 1;
+			$esp = 1;
+			$fs = 1;
+			$gs = 1;
+			$ss = 1;
+		};
+	};
+	885E5E77124853E20013AC95 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	885E5E78124853E20013AC95 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	885E5EA612485C210013AC95 /* UINavigationController.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = UINavigationController.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UINavigationController.h;
+		sourceTree = "<absolute>";
+	};
+	885E5EC21248634C0013AC95 /* AppDelegate.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = AppDelegate.m;
+		path = /Users/billdonner/GigStand720/Classes/ViewControllers/AppDelegate.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 7486}}";
+			sepNavSelRange = "{1592, 0}";
+			sepNavVisRange = "{1160, 537}";
+		};
+	};
+	885E5EC31248634C0013AC95 /* AppDelegate.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = AppDelegate.h;
+		path = /Users/billdonner/GigStand720/Classes/ViewControllers/AppDelegate.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 1235}}";
+			sepNavSelRange = "{1020, 0}";
+			sepNavVisRange = "{477, 841}";
+		};
+	};
+	885E5ED9124864290013AC95 /* DataStore.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1851, 976}}";
+			sepNavSelRange = "{999, 0}";
+			sepNavVisRange = "{0, 1007}";
+		};
+	};
+	885E5EDA124864290013AC95 /* DataStore.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 3933}}";
+			sepNavSelRange = "{5442, 6}";
+			sepNavVisRange = "{5031, 1012}";
+		};
+	};
+	885E5F25124867530013AC95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 885E5EA612485C210013AC95 /* UINavigationController.h */;
+		name = "UINavigationController.h: 111";
+		rLen = 167;
+		rLoc = 6094;
+		rType = 0;
+		vrLen = 2050;
+		vrLoc = 4516;
+	};
+	885E5F26124867530013AC95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 885E5EC31248634C0013AC95 /* AppDelegate.h */;
+		name = "AppDelegate.h: 26";
+		rLen = 0;
+		rLoc = 271;
+		rType = 0;
+		vrLen = 1223;
+		vrLoc = 290;
+	};
+	885E5F6B1248691D0013AC95 /* AppDelegate_iPad.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = AppDelegate_iPad.h;
+		path = /Users/billdonner/GigStand720/Classes/ViewControllers/AppDelegate_iPad.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 708}}";
+			sepNavSelRange = "{166, 0}";
+			sepNavVisRange = "{0, 284}";
+		};
+	};
+	885E5F8C12486B480013AC95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 885E5F6B1248691D0013AC95 /* AppDelegate_iPad.h */;
+		name = "AppDelegate_iPad.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 3;
+		vrLoc = 0;
+	};
+	885E60501248D2B30013AC95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F5FBF90A11978B9000E3487A /* ProjectRelease.xcconfig */;
+		name = "ProjectRelease.xcconfig: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 3;
+		vrLoc = 0;
+	};
+	885E60511248D2B30013AC95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F5FBF90911978B9000E3487A /* ProjectDistribution.xcconfig */;
+		name = "ProjectDistribution.xcconfig: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 3;
+		vrLoc = 0;
+	};
+	885E60521248D2B30013AC95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F5FBF90811978B9000E3487A /* ProjectDebug.xcconfig */;
+		name = "ProjectDebug.xcconfig: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 3;
+		vrLoc = 0;
+	};
+	885E69981248D8900013AC95 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+	};
+	885E69991248D8900013AC95 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+	};
+	885E699A1248D8900013AC95 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = F5D355B611737E97006F5099 /* _Entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/billdonner/Documents/MCMusic/Resources/_Entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	8861A7471225769600D216FA /* AllTunesViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 957}}";
+			sepNavSelRange = "{346, 25}";
+			sepNavVisRange = "{0, 624}";
+		};
+	};
+	8861A7481225769600D216FA /* AllTunesViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 9291}}";
+			sepNavSelRange = "{229, 0}";
+			sepNavVisRange = "{0, 616}";
+		};
+	};
+	88637E2A1284477E00E6C4B4 /* GeneralSetListViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1340, 525}}";
+			sepNavSelRange = "{517, 0}";
+			sepNavVisRange = "{0, 549}";
+		};
+	};
+	88637E2B1284477E00E6C4B4 /* GeneralSetListViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 10640}}";
+			sepNavSelRange = "{3557, 0}";
+			sepNavVisRange = "{0, 756}";
+		};
+	};
+	88664B5412B2D03F00D63A45 /* malloc_error_break */ = {
+		isa = PBXSymbolicBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 1;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		hitCount = 0;
+		ignoreCount = 0;
+		location = libSystem.B.dylib;
+		modificationTime = 314827108.851471;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+		symbolName = malloc_error_break;
+	};
+	887795E5129561E600491CD0 /* FrontSearchController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 957}}";
+			sepNavSelRange = "{174, 1}";
+			sepNavVisRange = "{0, 914}";
+		};
+	};
+	887795E6129561E600491CD0 /* FrontSearchController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 7315}}";
+			sepNavSelRange = "{6889, 1}";
+			sepNavVisRange = "{6299, 1560}";
+		};
+	};
+	888ACDDC124AB1BA006411CE /* GigStand-Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1371, 2774}}";
+			sepNavSelRange = "{1556, 0}";
+			sepNavVisRange = "{2682, 1446}";
+		};
+	};
+	88990869126730E700CA8F9F /* DataManager.m:1329 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5AF264E11CA96000044FAFE /* DataManager.m */;
+		functionName = "+reWind:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 1329;
+		location = MusicStand;
+		modificationTime = 314827108.833193;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	889E65C71271D686005C1AC5 /* DataManager.m:1455 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5AF264E11CA96000044FAFE /* DataManager.m */;
+		functionName = "+findItemsFromArchive:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 1455;
+		location = MusicStand;
+		modificationTime = 314827108.833294;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88AA7D911299F4A2003CA3CF /* GeneralListViewController.m:153 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88DC608E126C7B3E0058C93B /* GeneralListViewController.m */;
+		functionName = "-tableView:commitEditingStyle:forRowAtIndexPath:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 153;
+		location = GigStand;
+		modificationTime = 314827108.833756;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	88AA7EA7129AF214003CA3CF /* CreateNewSetListController.m:288 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88EF009A128AE89300599917 /* CreateNewSetListController.m */;
+		functionName = "-textFieldDidEndEditing:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 288;
+		location = GigStand;
+		modificationTime = 314827108.833817;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	88AA828E12A2A8E1003CA3CF /* AppDelegate.m:186 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 885E5EC21248634C0013AC95 /* AppDelegate.m */;
+		functionName = "-application:handleOpenURL:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 186;
+		location = MusicStand;
+		modificationTime = 314827108.833848;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88B3804212C0E20400BE07FA /* TitleNode.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 1425}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 297}";
+		};
+	};
+	88BFF02112BBF36A001DF15F /* TitleNodeWrapper.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1371, 962}}";
+			sepNavSelRange = "{1, 0}";
+			sepNavVisRange = "{0, 263}";
+		};
+	};
+	88BFF02212BBF36A001DF15F /* TitleNodeWrapper.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1371, 962}}";
+			sepNavSelRange = "{401, 0}";
+			sepNavVisRange = "{0, 498}";
+		};
+	};
+	88CCF1F411814323008B0D28 /* SettingsViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 627}}";
+			sepNavSelRange = "{506, 12}";
+			sepNavVisRange = "{89, 516}";
+		};
+	};
+	88CCF1F511814323008B0D28 /* SettingsViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1596, 15789}}";
+			sepNavSelRange = "{11723, 0}";
+			sepNavVisRange = "{5914, 1200}";
+		};
+	};
+	88D0172E1259225800B31060 /* DocumentsManager.m:70 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5E45EC311D24BE400D305E1 /* DocumentsManager.m */;
+		functionName = "-decompressAllZipFilesInDocumentDirectory";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 70;
+		location = MusicStand;
+		modificationTime = 314827108.833011;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88DC5E0912688BB70058C93B /* StartupController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 502}}";
+			sepNavSelRange = "{201, 0}";
+			sepNavVisRange = "{0, 481}";
+		};
+	};
+	88DC5E0A12688BB70058C93B /* StartupController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1490, 3401}}";
+			sepNavSelRange = "{2014, 0}";
+			sepNavVisRange = "{1722, 747}";
+		};
+	};
+	88DC5F871269F8A40058C93B /* FavoritesViewController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = FavoritesViewController.m;
+		path = /Users/billdonner/GigStand720/Classes/ViewControllers/FavoritesViewController.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 502}}";
+			sepNavSelRange = "{234, 23}";
+			sepNavVisRange = "{0, 369}";
+		};
+	};
+	88DC5FAD1269FFEE0058C93B /* FavoritesViewController.m:21 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88DC5F871269F8A40058C93B /* FavoritesViewController.m */;
+		functionName = "-tableView:cellForRowAtIndexPath:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 21;
+		location = GigStand;
+		modificationTime = 314827108.83321;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	88DC608D126C7B3E0058C93B /* GeneralListViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1598, 951}}";
+			sepNavSelRange = "{600, 0}";
+			sepNavVisRange = "{0, 829}";
+		};
+	};
+	88DC608E126C7B3E0058C93B /* GeneralListViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1598, 5814}}";
+			sepNavSelRange = "{3046, 125}";
+			sepNavVisRange = "{6192, 1035}";
+		};
+	};
+	88DC623B126CCFCD0058C93B /* DataManager.m:16 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5AF264E11CA96000044FAFE /* DataManager.m */;
+		functionName = "-finalizevariants";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 16;
+		location = MusicStand;
+		modificationTime = 314827108.83324;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88DD5E83124CD97F007CC342 /* DocumentsManager.m:1 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5E45EC311D24BE400D305E1 /* DocumentsManager.m */;
+		functionName = "-scanForDocuments";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 1;
+		location = MusicStand;
+		modificationTime = 314827108.83278;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88DD5F5F124CFEA8007CC342 /* DocumentsManager.m:74 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5E45EC311D24BE400D305E1 /* DocumentsManager.m */;
+		functionName = "-scanForDocuments";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 74;
+		location = MusicStand;
+		modificationTime = 314827108.832857;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88EF005A1289FAD000599917 /* AddTuneToSetListController.m:44 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88EFFF511289C86900599917 /* AddTuneToSetListController.m */;
+		functionName = "-donePressed";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 44;
+		modificationTime = 314827108.833433;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88EF0099128AE89300599917 /* CreateNewSetListController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 570}}";
+			sepNavSelRange = "{311, 13}";
+			sepNavVisRange = "{395, 292}";
+		};
+	};
+	88EF009A128AE89300599917 /* CreateNewSetListController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 5624}}";
+			sepNavSelRange = "{194, 0}";
+			sepNavVisRange = "{2491, 898}";
+		};
+	};
+	88EF00D2128AF3D000599917 /* NewSetListView.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = NewSetListView.m;
+		path = /Users/billdonner/GigStand720/Classes/ViewControllers/NewSetListView.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1572, 8474}}";
+			sepNavSelRange = "{7811, 0}";
+			sepNavVisRange = "{18226, 1514}";
+		};
+	};
+	88EF00E8128AFAFF00599917 /* NewSetListView.m:52 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88EF00D2128AF3D000599917 /* NewSetListView.m */;
+		functionName = "-init";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 52;
+		location = MusicStand;
+		modificationTime = 314827108.833448;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88EF010C128AFD7300599917 /* CreateNewSetListController.m:73 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88EF009A128AE89300599917 /* CreateNewSetListController.m */;
+		functionName = "-init";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 73;
+		location = MusicStand;
+		modificationTime = 314827108.83353;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88EF010E128AFD8100599917 /* CreateNewSetListController.m:218 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88EF009A128AE89300599917 /* CreateNewSetListController.m */;
+		functionName = "-pickerView:titleForRow:forComponent:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 218;
+		location = MusicStand;
+		modificationTime = 314827108.833561;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88EF0204128B25EC00599917 /* DataManager.m:172 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F5AF264E11CA96000044FAFE /* DataManager.m */;
+		functionName = "-allocLoadRefNodeItemsFromString:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 172;
+		location = MusicStand;
+		modificationTime = 314827108.83361;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88EFFD0F1288662B00599917 /* GeneralSetListViewController.m:30 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88637E2B1284477E00E6C4B4 /* GeneralSetListViewController.m */;
+		functionName = "-wireSetList:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 30;
+		location = MusicStand;
+		modificationTime = 314827108.833344;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	88EFFD7B1289550A00599917 /* AllSetListsController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1598, 951}}";
+			sepNavSelRange = "{223, 21}";
+			sepNavVisRange = "{0, 313}";
+		};
+	};
+	88EFFD7C1289550A00599917 /* AllSetListsController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 7657}}";
+			sepNavSelRange = "{149, 0}";
+			sepNavVisRange = "{0, 1212}";
+		};
+	};
+	88EFFD8412895B7200599917 /* SetListSingleViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 477}}";
+			sepNavSelRange = "{233, 27}";
+			sepNavVisRange = "{0, 439}";
+		};
+	};
+	88EFFD8512895B7200599917 /* SetListSingleViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 931}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 526}";
+		};
+	};
+	88EFFF511289C86900599917 /* AddTuneToSetListController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = AddTuneToSetListController.m;
+		path = /Users/billdonner/MusicStand/Classes/ViewControllers/AddTuneToSetListController.m;
+		sourceTree = "<absolute>";
+	};
+	88EFFF721289CDBE00599917 /* AddTuneToSetListController.m:159 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 88EFFF511289C86900599917 /* AddTuneToSetListController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 159;
+		modificationTime = 314827116.884377;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	F50D325A11738C3200F5E425 /* WebViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1318, 722}}";
+			sepNavSelRange = "{182, 7}";
+			sepNavVisRange = "{145, 612}";
+		};
+	};
+	F50D325B11738C3200F5E425 /* WebViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1596, 5548}}";
+			sepNavSelRange = "{199, 0}";
+			sepNavVisRange = "{0, 723}";
+		};
+	};
+	F516090111CBD1E2000FEA70 /* SettingsManager.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = SettingsManager.m;
+		path = /Users/billdonner/MusicStand/Classes/Managers/SettingsManager.m;
+		sourceTree = "<absolute>";
+	};
+	F54306A71226CB0F00F617E2 /* crypt.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1058, 2489}}";
+			sepNavSelRange = "{1887, 5}";
+			sepNavVisRange = "{1288, 1161}";
+		};
+	};
+	F54306A81226CB0F00F617E2 /* ioapi.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 3515}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 703}";
+		};
+	};
+	F54306AA1226CB0F00F617E2 /* mztools.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 5491}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 977}";
+		};
+	};
+	F54306AC1226CB0F00F617E2 /* unzip.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 30229}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 598}";
+		};
+	};
+	F54306AD1226CB0F00F617E2 /* unzip.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1058, 6612}}";
+			sepNavSelRange = "{235, 3}";
+			sepNavVisRange = "{0, 1491}";
+		};
+	};
+	F54306AE1226CB0F00F617E2 /* zip.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 23541}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 365}";
+		};
+	};
+	F54306AF1226CB0F00F617E2 /* zip.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1058, 4389}}";
+			sepNavSelRange = "{4775, 3}";
+			sepNavVisRange = "{4566, 432}";
+		};
+	};
+	F54306B01226CB0F00F617E2 /* ZipArchive.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 931}}";
+			sepNavSelRange = "{567, 0}";
+			sepNavVisRange = "{373, 759}";
+		};
+	};
+	F54306B11226CB0F00F617E2 /* ZipArchive.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1481, 7087}}";
+			sepNavSelRange = "{4274, 0}";
+			sepNavVisRange = "{4126, 474}";
+		};
+	};
+	F5AF264D11CA96000044FAFE /* DataManager.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 3705}}";
+			sepNavSelRange = "{2772, 0}";
+			sepNavVisRange = "{3, 1301}";
+		};
+	};
+	F5AF264E11CA96000044FAFE /* DataManager.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 28538}}";
+			sepNavSelRange = "{910, 0}";
+			sepNavVisRange = "{717, 491}";
+		};
+	};
+	F5AF265311CA96000044FAFE /* StyleManager.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 1045}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2708}";
+		};
+	};
+	F5AF265411CA96000044FAFE /* StyleManager.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 12369}}";
+			sepNavSelRange = "{214, 0}";
+			sepNavVisRange = "{0, 1989}";
+		};
+	};
+	F5D3551D11737B2B006F5099 /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 934}}";
+			sepNavSelRange = "{501, 19}";
+			sepNavVisRange = "{0, 567}";
+		};
+	};
+	F5D3551E11737B2B006F5099 /* Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 418}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 387}";
+		};
+	};
+	F5D3554411737B3C006F5099 /* NSObject+SBJSON.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 950}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 740}";
+		};
+	};
+	F5D3554611737B3C006F5099 /* NSString+SBJSON.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 874}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1206}";
+		};
+	};
+	F5D3554811737B3C006F5099 /* SBJSON.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 3705}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1361}";
+		};
+	};
+	F5D3554A11737B3C006F5099 /* SBJsonBase.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 1292}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1628}";
+		};
+	};
+	F5D3554C11737B3C006F5099 /* SBJsonParser.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437, 8778}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1435}";
+		};
+	};
+	F5E45EC311D24BE400D305E1 /* DocumentsManager.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = DocumentsManager.m;
+		path = /Users/billdonner/MusicStand/Classes/Managers/DocumentsManager.m;
+		sourceTree = "<absolute>";
+	};
+	F5FBF90711978B9000E3487A /* ProjectBase.xcconfig */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 934}}";
+			sepNavSelRange = "{665, 1}";
+			sepNavVisRange = "{0, 1335}";
+		};
+	};
+	F5FBF90811978B9000E3487A /* ProjectDebug.xcconfig */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 934}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 169}";
+		};
+	};
+	F5FBF90911978B9000E3487A /* ProjectDistribution.xcconfig */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 934}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 349}";
+		};
+	};
+	F5FBF90A11978B9000E3487A /* ProjectRelease.xcconfig */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 934}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 234}";
+		};
+	};
+	F5FBF90B11978B9000E3487A /* ProjectVersion.xcconfig */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1571, 934}}";
+			sepNavSelRange = "{63, 0}";
+			sepNavVisRange = "{0, 76}";
+		};
+	};
+}

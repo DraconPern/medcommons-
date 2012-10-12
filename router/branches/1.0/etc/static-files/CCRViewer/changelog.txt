@@ -1,0 +1,35 @@
+CCR XSLT Change Log
+
+Changes in version 1.2.1 (20060420)
+=================================
+- fixed the error in FamilyProblemHistory, "a:Problem" was in the XPath expressions for the
+	Description/Text and Description/Code and it needed to be removed
+- changed the default Table stlyes (classes: list and internal) to be top vertically aligned
+- add xsl:if states in Patient's and Actor's Address so empty ',' and ':' will not be displayed
+- fixed actor.xsl to display Information/Type.  The XPath expression was missing the
+	"a:InformationSystem/"
+- added xsl:if statement in displaying the "To" so if there is no ActorRole, there are no "()"
+- removed empty columns before CCR header information and patient demographics that cause FireFox
+	to display those row off to the right.
+- changed Actors header to "Additional Information About People & Organizations"
+
+Changes in version 1.2
+=================================
+- fixed "Email" typo so the EMail will display in actors
+- fixed IDs/ID iteration.  The IDs for actors will now display multiple ID elements
+- added a parameter to allow a differnt CSS to be passed to the XSLT
+- comparmentalized the large XSLT into smaller templates
+	- the subfolder 'lib' contains the EXSLT libraries
+	- the subfolder 'templates' contains subtemplates called by the top XSLT
+- added a footer.xsl file
+- added a defaulCSS.xsl which contains the text for the default CSS
+- added a code.xsl file which contains the template for CodeType
+- moved actor templates into a separate file
+- moved datatime template into a separate file
+- moved Problem/Description template into a separate file
+- added a directions.xsl which contain the template to display Directions
+	- add a xsl:choose statement to display the Direction/Description/Text node contents
+	  if present, otherwise it constructs the SIG from the structured data.
+- added 'id' attributes to each table and to the <tr> above each section header.
+	Thanks to Simon from Medcommons for adding these 'id' attributes. This will make
+	it easier to navigate within the HTML file, if needed.

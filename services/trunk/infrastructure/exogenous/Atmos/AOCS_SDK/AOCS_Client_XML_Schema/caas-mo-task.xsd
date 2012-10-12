@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- __CR__
+     Copyright (c) 2009 EMC Corporation
+     All Rights Reserved
+
+     This software contains the intellectual property of EMC Corporation
+     or is licensed to EMC Corporation from third parties.  Use of this
+     software and the intellectual property contained therein is expressly
+     limited to the terms and conditions of the License Agreement under which
+     it is provided by or on behalf of EMC.
+     __CR__ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:caas="http://www.emc.com/caas"
+	targetNamespace="http://www.emc.com/caas"
+	elementFormDefault="qualified" >
+	<!-- basic caas types -->
+	<xs:include schemaLocation="caas-mo-types.xsd"/>
+	<!-- this is a read-only object, appears in a vdc task list, designed to show the status of 
+		a task; vdc maintains a list of asynchronous tasks (default list side, can be adjusted
+		at a later time through "interface-properties" of a vdc -->
+	<!--Task-->
+	<xs:complexType name="Task">
+		<xs:complexContent>
+			<xs:extension base="caas:ManagedObject">
+				<xs:sequence>
+					<xs:element name="object-name" type="xs:string" minOccurs="0" maxOccurs="1" />
+					<xs:element name="start-time" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="end-time" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="status" type="caas:TaskStatus" />
+					<xs:element name="type" type="caas:TaskType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="progress" type="xs:int" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="cancelable" type="xs:boolean" />
+					<xs:element name="error"  type="caas:ErrorMessage" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="result"  type="xs:anyType" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="TaskStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="completed"/>
+			<xs:enumeration value="failed"/>
+			<xs:enumeration value="started"/>
+			<xs:enumeration value="starting"/>
+			<xs:enumeration value="stopped"/>
+			<xs:enumeration value="stopping"/>
+			<xs:enumeration value="abandoned"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="running-overtime"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="TaskType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PowerOnVm"/>
+			<xs:enumeration value="PowerOffVm"/>
+			<xs:enumeration value="SuspendVm"/>
+			<xs:enumeration value="ResumeVm"/>
+			<xs:enumeration value="ResetVm"/>
+			<xs:enumeration value="CloneVm"/>
+			<xs:enumeration value="UpdateVm"/>
+			<xs:enumeration value="ProvisionVDC"/>
+			<xs:enumeration value="DeleteVDC"/>
+			<xs:enumeration value="DeployVm"/>
+			<xs:enumeration value="DeleteVm"/>
+			<xs:enumeration value="CreateVDC"/>
+			<xs:enumeration value="EnableNFS"/>
+			<xs:enumeration value="ResyncNFS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="TaskList">
+		<xs:sequence>
+			<xs:element name="task"
+				type="caas:ManagedObjectRef" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server>
+  <mbean code="net.medcommons.router.configuration.ConfigurationService" name="medcommons:service=ConfigurationService">
+	<depends>jboss:service=Naming</depends>
+	<attribute name="ConfigPath">config.xml</attribute>
+  </mbean>
+</server>

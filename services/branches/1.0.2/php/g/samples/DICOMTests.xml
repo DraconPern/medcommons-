@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">	<dict>
+		<key>mastertitle</key>
+		<string>jane hernandez and co...</string>
+	
+		<key>scenes</key>
+		<array>
+			<dict>
+				<key>scene</key>
+				<string>0</string>
+				<key>name</key>
+				<string>First Scene</string>
+				<key>cellstyle</key>
+				<string>dicom</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>Janes Account</string>
+				<key>largetitle</key>
+				<string>Jane Hernandez</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/3DBone.html
+						</string>
+						<key>Label</key>
+						<string>3D Bone</string>
+						<key>Title</key>
+						<string>3D Bone Series</string>
+						<key>Info</key>
+						<string>3D Bone Series MGH</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/3DBone.png
+						</string>
+					</dict>
+					
+					
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb2.png
+						</string>
+						<key>Label</key>
+						<string>Cross Sections</string>
+						<key>Title</key>
+						<string>DICOM Cross Sections</string>
+						<key>Info</key>
+						<string>this came from Jane H</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb2.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb3.png
+						</string>
+						<key>Label</key>
+						<string>Fourth Series</string>
+						<key>Title</key>
+						<string>Forth:=) Series</string>
+						<key>Info</key>
+						<string>this came from Keith B</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb3.png
+						</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb4.png
+						</string>
+						<key>Label</key>
+						<string>Yet another series</string>
+						<key>Title</key>
+						<string>DICOM - The Final Series</string>
+						<key>Info</key>
+						<string>214 iimages</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb4.png
+						</string>
+					</dict>
+
+			
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/tests/pagefor.php?p=dThumb0.png
+						</string>
+						<key>Label</key>
+						<string>Alpha Test - 38615</string>
+						<key>Info</key>
+						<string>1713806360 has motion</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/tests/dThumb0.png
+						</string>
+						<key>Title</key>
+						<string>DICOM Alpha Test - 38615</string>
+					</dict>
+
+
+			
+				</array>
+			</dict>
+			
+		</array>
+	</dict>
+</plist>

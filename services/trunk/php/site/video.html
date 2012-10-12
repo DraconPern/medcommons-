@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="description" content="MedCommons Website Version 1.0 Page $$$htmltitle$$$" />
+    <meta name="keywords" 
+    content="medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr"/>
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=320" />
+    <title>Home - </title>
+       
+     
+    <link rel="shortcut icon" href="../images/favicon.gif" type="image/gif" />
+     
+    <link media="all" href="/zip/yui/2.8.0r4/reset-fonts-grids/reset-fonts-grids.css,yui/2.8.0r4/base/base-min.css,css/medCommonsStyles.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+    var signed_on = false;
+    var MAX_IDLE_TIME = 900 * 1000;
+    function getCookie(n) {
+        var dc = document.cookie;
+        var prefix = n+"=";
+        var begin = dc.indexOf("; " + prefix);
+        if (begin == -1) {
+            begin = dc.indexOf(prefix);
+            if (begin != 0) return null;
+        }
+        else 
+            begin += 2;
+        
+        var end = dc.indexOf(";", begin);
+        if (end == -1) 
+            end = dc.length;
+        
+        return unescape(dc.substring(begin + prefix.length, end));
+    }    
+    function get_mc_attribute(att) {
+      var mc = getCookie('mc');
+      if(!mc)
+        return null;
+      var atts = mc.split(',');
+      for(var i=0; i<atts.length; ++i) { 
+        if(atts[i].match(new RegExp('^'+att+'='))) {
+          return atts[i].split('=')[1];
+        }
+      }
+      return null;
+    }
+    var top_nav = [
+      { text: 'FAQ', href: '/help/info.html', target: '_new' },
+      
+      { text: 'Services', href: 'http://mc/mod/svcsetup.php', hidden: true },
+      
+      { text: 'Inbox', href: 'http://mc/acct/', hidden: function() { return !signed_on;} },
+      { text: 'Settings', href: 'http://mc/acct/settings.php' },
+      { text: 'Simtrak Admin', href: 'http://mc/simtrak/', hidden: true },
+      { text: 'Sign In', href: 'http://mc/acct/login.php', hidden: true },
+      { text: 'Logout', href: 'http://mc/acct/logout.php' },
+      { text: 'DDL', href: '/acct/ddl.php', hidden: function() {return !getCookie('mcddl') || (getCookie('mcddl')=='false');} }
+    ];
+</script>
+    
+<script type='text/javascript'>
+</script>
+<style type='text/css'>
+  table tr { height: 2.3em; }
+  td.usertools * { vertical-align: middle; }
+  td.usertools .icon { position: relative; top: -2px; }
+  td { padding-left: 5px; }
+  #login {
+      font-size: 16px;
+      margin: 1em 1em 1em 1em;
+      position: relative;
+  }   
+  #login input.text {
+      width: 120px;
+      padding: 2px;
+  }
+  #login input#username {
+    width: 210px;
+  }
+  #login * {
+      vertical-align: middle;
+  }
+  #login #tou, 
+  #login #tou * {
+      vertical-align: bottom;
+  }
+  #tou input {
+      position: relative;
+      top: -2px;
+  }
+  
+  #login #passwordshadow {
+      color: gray;
+  }
+  .error {
+      color: orange;
+  }
+  .clickable {
+      cursor: pointer;
+  }
+  INPUT.hintTextbox       { color: #888; }
+  INPUT.hintTextboxActive { color: #000; }
+</style>
+<link rel="stylesheet" type="text/css" href="yui/2.8.0r4/button/assets/skins/sam/button.css" /> 
+
+
+    </head>
+<body >
+
+<div id="doc3" class="yui-t7 yui-skin-sam">
+   <div id="hd" role="banner">
+       <div id="navcontainer"></div> 
+      
+      <a href="https://www.medcommons.net/acct" title="A video about MedCommmons">
+      <script type='text/javascript'>
+    	if(getCookie('mc') && (get_mc_attribute('s')&64))	{
+         document.write('<img  border="0" src="/acct/logo.php"  id="logoImg"/>');
+    	}
+    	else
+         document.write('<img  border="0" src="/images/mc_logo.png"  id="logoImg"/>');
+      </script>
+      </a>
+   </div>
+   <div id="bd" role="main">
+    <div id="yui-main">
+    <div class="yui-b">
+      <div class="yui-g">
+        <div id='main'>
+               
+
+<div id='content'>
+      <h2>A video about MedCommons</h2>
+      <div id='vid'>
+        <div id='myPlayerGoesHere'>
+          <a href='http://www.adobe.com/go/getflashplayer'><img src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>
+        </div>
+      </div>            
+      <div id='bullets'>
+      </div>
+    </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+   <div id="ft" role="contentinfo">
+     
+     <ul>
+       <li>&copy; MedCommons 2010</li>
+       <li><a href='http://www.medcommons.net/privacy.html'>Privacy Policy</a></li>
+       <li><a href='http://www.medcommons.net/terms.html'>Terms of Use</a></li>
+     </ul>
+     
+   </div>
+</div>
+  <script type="text/javascript">
+  if(getCookie('mc'))
+    document.write("<style type='text/css'> #loggedon, #visi { display: block; }</style>");
+  </script>
+  <script type='text/javascript' src='/zip/yui/3.2.0/simpleyui/simpleyui-min.js,root.js'></script>
+  
+  <script type='text/javascript'>
+  </script>
+  
+
+<script type='text/javascript'>
+Y.on("domready", function() {
+  var flashvars = {
+      src: 'medcommons_test.flv',
+      autostart: 'true',
+      themeColor: '0395d3',
+      mode: 'overlay',
+      scaleMode: 'fit',
+      frameColor: '333333',
+      fontColor: 'cccccc',
+      link: '',embed: ''
+      };
+          
+      var params = {allowFullScreen: 'true'};var attributes = {id: 'myPlayer',name: 'myPlayer'};
+      swfobject.embedSWF('AkamaiFlashPlayer.swf', 'myPlayerGoesHere', '320', '240', '9.0.0', 'expressInstall.swf',
+      flashvars, params, attributes);
+});
+</script>
+<script type='text/javascript' src='swfobject.js'></script>
+
+
+</body>
+</html>

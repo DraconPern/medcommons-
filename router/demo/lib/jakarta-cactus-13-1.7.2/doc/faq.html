@@ -1,0 +1,1090 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>FAQ</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="FAQ" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus.">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list.">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)" class="currentPage">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus.">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>FAQ Content</h1>
+
+      
+<p>
+        Please also make sure you visit the
+        <a href="http://wiki.apache.org/jakarta-cactus/FrequentlyAskedQuestions" title="">online user FAQ</a> on our 
+        <a href="http://wiki.apache.org/jakarta-cactus/FrontPage" title="">Wiki</a>.
+      </p>
+      
+      
+<ul>
+        
+<li>
+          
+<a href="#faq_cant_find_resource">"Can't find resource for cactus" error
+          message</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_webxml_test_prod">How can I have a web.xml that is valid both for
+          testing and for production?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_stream_corrupted_exception">I'm getting a
+          <code>java.io.StreamCorruptedException: InputStream does not contain a
+          serialized object</code> error. What does it mean?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_chaining_requests">How can I test the chaining of several HTTP
+          requests?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_runservertests_hangs">The &lt;runservertests&gt; Ant task hangs when 
+          my server is started</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_not_a_valid_response">I'm getting a
+          "<code>not a valid response</code> error message. What does it
+          mean?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_failed_to_get_test_results">I'm getting a
+          "<code>ChainedRuntimeException</code>: Failed to get the test results" 
+          error message. What does it mean?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_send_multipart">How to send multipart/form-data?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_classcastexception_logfactoryimpl">I get a 
+          "java.lang.ClassCastException: org.apache.commons.logging.impl.LogFactoryImpl" 
+          error when I use a JUnit TestRunner different from TextTestRunner</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_parametrize">How can I parametrize my Cactus tests?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_maintain_session">How do I maintain a Session between 2 Cactus test?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_eclipse_version">What version of Eclipse do I need for the 
+          Eclipse plugin?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_httpclient_nosuchmethoderror">Why do I get an HttpClient 
+          NoSuchMethodError when running Cactus tests with JBoss 3.x?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_load_balancing">Does Cactus work with load-balancers?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_javascript_assert">Does Cactus supports asserting HTML pages with Javascript?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_strutstestcase">I have problems using StrutsTestCase...</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_https_support">Does Cactus support HTTPS?</a>
+        
+</li>
+        
+<li>
+          
+<a href="#faq_init_servlet">Why is my ServletContext and ServletConfig null in the servlet under test?</a>
+        
+</li>
+      
+</ul>
+    
+</div>
+
+    
+<a name="faq_cant_find_resource">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Can't find resource for cactus error message</h1>
+
+      
+<p>
+        If you get the following stack trace:
+      </p>
+
+
+<div class="source">
+<pre>
+java.lang.ExceptionInInitializerError: java.util.MissingResourceException:
+  Can't find bundle for base name cactus, locale en_GB
+at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:707)
+at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:679)
+at java.util.ResourceBundle.getBundle(ResourceBundle.java:546)
+</pre>
+</div>
+
+      
+<p>
+        it simply means that you have not put the cactus.properties file in
+        your CLASSPATH (i.e. the directory which contains this file should
+        be in the CLASSPATH). This file is the Cactus configuration file and
+        is required. Check the Cactus
+        <a href="./integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a> page for
+        more information.
+      </p>
+    
+</div>
+
+    
+<a name="faq_webxml_test_prod">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>How can I have a web.xml that is valid both for testing and for production?</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+          Cactus needs to have a few entries set in the <code>web.xml</code>
+          file (redirector definition and mappings mostly). The application to
+          test also needs its own entries. What would be nice would be to be
+          able to use the same <code>web.xml</code> file in the build process
+          for both application testing and deployment to production.
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+            Here's how I accomplished conditional inclusion
+            of Cactus web.xml configuration.  My web.xml file is capable of
+            working standalone without requiring any filtered copy to work.
+            In Ant I'm doing this:
+        </p>
+
+<div class="source">
+<pre>
+&lt;!-- Activate the Cactus web.xml configuration --&gt;
+&lt;copy todir="${admin.build.dir}/WEB-INF"
+      file="web/admin/WEB-INF/web.xml"
+      overwrite="yes"&gt;
+  &lt;filterset&gt;
+    &lt;filter token="start.cactus.config" value="--&amp;gt;" /&gt;
+    &lt;filter token="end.cactus.config" value="&amp;lt;!--" /&gt;
+  &lt;/filterset&gt;
+&lt;/copy&gt;</pre>
+</div>
+
+        
+<p>
+          In <code>web.xml</code> I have this:
+        </p>
+
+
+<div class="source">
+<pre>
+&lt;!-- Cactus configuration
+Note: Do not place any XML comments in this Cactus configuration section
+(Ant's filtered copy is used to activate this configuration when the test
+web application is built)
+--&gt;
+&lt;!-- Begin Cactus Configuration @start.cactus.config@
+&lt;servlet&gt;
+  &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;org.apache.cactus.server.ServletTestRedirector&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+
+&lt;servlet&gt;
+    &lt;servlet-name&gt;JspRedirector&lt;/servlet-name&gt;
+    &lt;jsp-file&gt;/somewhere/jspRedirector.jsp&lt;/jsp-file&gt;
+&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/ServletRedirector/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;JspRedirector&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/JspRedirector/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+@end.cactus.config@ End Cactus Configuration --&gt;
+</pre>
+</div>
+
+      
+</div>
+
+    
+</div>
+
+    
+<a name="faq_stream_corrupted_exception">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>I'm getting a java.io.StreamCorruptedException error. What does it mean?</h1>
+
+      
+<div class="note">
+        This error only appears for Cactus 1.3dev (before 21/04/2002) and
+        below. Cactus 1.3 no longer uses a serialized object to return test
+        result. It uses an XML string.
+      </div>
+
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+          This exception results when client-side Cactus code attempts to talk
+          to a misconfigured installation of Cactus on the server side. The
+          reason for the obscure exception is this: Cactus makes two requests
+          to the server. In the first, the client-side test runner requests that
+          such-and-such a test be run on the server (an oversimplification,
+          please see: XXXX). Immediately after the response from the server
+          the client code makes a second request, this time for the results of
+          the server-side test. Cactus is supposed to send back a serialized
+          Object containing the results. Cactus then attempts to deserialize
+          this Object from the input stream in the response. If
+          Cactus is installed properly on the server, this process
+          works transparently. If not (for instance the second
+          request does not even arrive at a Cactus redirector) then
+          the response to the second request (which very well may be
+          a 404 or 500 error) will not contain the object that
+          client-cactus expects. This leads to the
+          StreamCorruptedException.
+        </p>
+        
+<p>
+          When troubleshooting this error, the most likely prospect
+          is that the requests from client-Cactus are not even
+          reaching server-Cactus. This can happen when the
+          <code>cactus.properties</code> contains a bad entry. For instance, I
+          have run into this problem when building several different
+          testing-applications. I tried to run my tests against
+          <code>http://localhost/webapp1/ServletRedirector/</code> when I needed
+          to be running against
+          <code>http://localhost/webapp2/ServletRedirector/</code>. This can
+          also happen if your web.xml file contains an error, or does not
+          properly map the URLs contained in cactus.properties to the
+          Cactus redirectors.
+        </p>
+        
+<p>
+          A good way to check whether your requests are reaching a
+          Cactus redirector is to manually enter in the URLs for all
+          of the redirectors you use into the navigation bar of your
+          web-browser. Actually the Cactus redirectors provide a URL just for
+          that: <code>http://localhost/webapp/ServletRedirector?Cactus_Service=RUN_TEST</code>
+          (this also works for the other redirectors).
+        </p>
+        
+<div class="note">
+          If you call <code>http://localhost/webapp/ServletRedirector</code>
+          directly, you'll get a 500 error and get a stack trace (in the log or
+          along with your error page) that says <code>Missing service
+          name parameter [] in HTTP request.</code>. This is because the
+          Cactus redirector expects HTTP parameter from the Cactus client side.
+        </div>
+        
+<p>
+          Another likely error is that your server-side classpath
+          does not contain a copy of the cactus.jar. (Cactus is
+          effectively not present on the server.) According to
+          e-mails on the Cactus user list, the
+          <code>StreamCorruptedException</code> could also result when you are
+          using the wrong version of the servlet.jar in some area
+          (any version prior to 2.2, or using servlet.jar 2.2 with a
+          Cactus-1.3 installation).
+        </p>
+      
+</div>
+
+    
+</div>
+
+    
+<a name="faq_chaining_requests">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>How can I test the chaining of several HTTP requests?</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+          Let's imagine that I have one servlet that performs an HTTP redirect
+          to a JSP page (or to another servlet). How do I test it with Cactus?
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+          Short answer: you don't !
+        </p>
+        
+<p>
+          Long answer: Cactus is meant to be a unit testing tool, meaning it
+          lets you perform tests for a given method and then it lets you
+          assert the result from that method.
+        </p>
+        
+<p>
+          In the above scenario, a typical Cactus test will consist in
+          verifying that the return HTTP response is an HTTP redirect (by
+          checking the HTTP response code - 302 - in the <code>endXXX()</code>
+          method) and possibly also checking the URL of the redirect page.
+        </p>
+        
+<p>
+          Then, as a second test, you could (if you wish) verify that calling
+          the URL of the JSP does return such HTML content (using HttpUnit
+          integration for example). Note that this second test is rather a
+          functional test than a unit test but it can still be viewed as
+          unit testing the <code>doGet()</code> method of the JSP ...
+        </p>
+      
+</div>
+
+    
+</div>
+
+    
+<a name="faq_runservertests_hangs">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>The &lt;runservertests&gt; Ant task hangs when my server is started</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+          When I use the <code>&lt;runservertests&gt;</code> Cactus custom Ant 
+          task, it starts my server allright but then hangs and the tests are 
+          not executed. What is happening?
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+          It means that the <code>testURL</code> attribute you've specified
+          in <code>&lt;runservertests&gt;</code> is not a valid URL. It must 
+          be a URL that is valid when the server is up. To diagnosis the 
+          problem simply open a browser once your server is started (i.e. when 
+          the task hangs) and type the URL in your browser. An alternative to 
+          debug is also to run Ant in debug mode 
+          (<code>ant -debug [your target]</code>).
+        </p>
+        
+<p>
+          With Cactus 1.3, the correct URL to call is the following, which is
+          always valid:
+          <code>http://localhost:8080/webapp/ServletRedirector?Cactus_Service=RUN_TEST</code>.
+          Of course replace <code>webapp</code> by your webapp context and
+          replace the port by the one you're using.
+        </p>
+      
+</div>
+
+    
+</div>
+
+    
+<a name="faq_not_a_valid_response">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>I'm getting a 'not a valid response' error message. What does it mean?</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+         When I run my Cactus test, I'm getting the following:
+        </p>
+
+
+<div class="source">
+<pre>
+testRequestDispatcherInclude(org.apache.cactus.sample.TestSampleServlet)
+  org.apache.cactus.util.ChainedRuntimeException:
+
+Not a valid response
+  at
+org.apache.cactus.client.WebTestResultParser.readRootElement(
+  WebTestResultParser.java;org/apache/cactus/util/log/LogAspect.java(1k):134)
+</pre>
+</div>
+
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+          It means that Cactus could not connect to the server side properly.
+          There could several reasons for this: a valid Redirector URL but
+          not pointing to the Redirector, a secured resource, etc.
+        </p>
+        
+<p>
+          To easiest way to diagnosis the problem is to enable Cactus logging
+          (see the <a href="./integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a>
+          for how to do this). The cactus client log
+          (<code>cactus_client.log</code> will clearly give the error).
+        </p>
+      
+</div>
+
+    
+</div>
+
+    
+<a name="faq_failed_to_get_test_results">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>I'm getting a 'ChainedRuntimeException: Failed to get the test results' error message. What does it mean?</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+         When I run my Cactus test, I'm getting the following:
+        </p>
+
+
+<div class="source">
+<pre>
+org.apache.cactus.util.ChainedRuntimeException: 
+    Failed to get the test results [...]
+</pre>
+</div>
+
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+         It means that Cactus failed to retrieve the test result from the 
+         server side for some reason. To easiest way to diagnosis the problem 
+         is to enable Cactus logging(see the 
+         <a href="./integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a>
+         or how to do this). The cactus client log
+        (<code>cactus_client.log</code> will clearly give the error).
+        </p>
+      
+</div>
+
+    
+</div>
+
+    
+<a name="faq_send_multipart">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>How to send multipart/form-data?</h1>
+
+        
+<div class="section">
+<h2>Question</h2>
+          
+<p>
+           How to send multipart/form-data to my servlet under test?
+          </p>
+        
+</div>
+        
+<div class="section">
+<h2>Solution 1</h2>
+          
+<p>
+            Use a recent version of Commons-httpclient, which supports 
+            <a href="http://jakarta.apache.org/commons/httpclient/apidocs/org/apache/commons/httpclient/methods/multipart/package-summary.html" title="">sending multipart
+            data</a>. Tobias also has a nice 
+            <a href="http://www.freeroller.net/page/tradem/20030722" title="">blog 
+            entry</a> describing how to use Java NIO, Commons-httpclient 
+            and Cactus to upload a file.            
+          </p>
+        
+</div>
+        
+<div class="section">
+<h2>Solution 2</h2>
+          
+<p>
+            Another solution is to use the
+            <a href="http://www.innovation.ch/java/HTTPClient/" title="">HTTPClient</a>
+            classes from Ronald Tschalar, as demonstrated in the following
+            example:
+          </p>
+
+
+<div class="source">
+<pre>
+import HTTPClient.Codecs;
+import HTTPClient.NVPair;
+.
+.
+.
+NVPair[] hdrs = new NVPair[1];
+
+public void beginUpload(WebRequest theRequest)
+{
+  NVPair[] opts = { new NVPair("option", "myoption") };
+  NVPair[] file = { new NVPair("comment", "/home/alan/src.zip") };
+  try {
+    byte[] data = Codecs.mpFormDataEncode(opts, file, hdrs);
+    InputStream i = new ByteArrayInputStream(data);
+    theRequest.setUserData(i);
+    theRequest.setContentType(hdrs[0].getValue());
+    i.close();
+  } catch (IOException e) {
+    System.out.println("Error Building Multipart");
+  }
+}
+</pre>
+</div>
+
+      
+</div>
+    
+</div>
+
+    
+<a name="faq_classcastexception_logfactoryimpl">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>I get a 'java.lang.ClassCastException: org.apache.commons.logging.impl.LogFactoryImpl' error when I use a JUnit TestRunner different from TextTestRunner</h1>
+
+        
+<div class="section">
+<h2>Question</h2>
+          
+<p>
+            Cactus tests run fine when I use the JUnit TextTestRunner but 
+            fails with other runners like the SwingTestRunner. I get the
+            following exception:
+          </p>
+
+<div class="source">
+<pre>
+org.apache.commons.logging.LogConfigurationException:
+java.lang.ClassCastException: org.apache.commons.logging.impl.LogFactoryImpl
+at org.apache.commons.logging.LogFactory.newFactory(LogFactory.java:505)
+at org.apache.commons.logging.LogFactory.getFactory(LogFactory.java:340)
+at org.apache.commons.logging.LogFactory.getLog(LogFactory.java:381) 	at
+org.apache.cactus.AbstractTestCase.runBare(AbstractTestCase.java:188) 
+</pre>
+</div>
+
+        
+</div>
+        
+<div class="section">
+<h2>Solution</h2>
+          
+<p>
+	        Check the 
+	        <a href="http://junit.sourceforge.net/doc/faq/faq.htm#running_8">JUnit 
+	        FAQ</a>. Indeed, JUnit uses a special class loader to load 
+	        classes that is incompatible with the Commons-Logging framework. 
+	        Thus you need to put the commons-logging package in the JUnit 
+	        <code>excluded.properties</code> file (see the JUnit FAQ).
+		  </p>
+		
+</div>
+	
+</div>
+
+    
+<a name="faq_parametrize">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>How can I parametrize my Cactus tests?</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+          I would like to pass some configuration information to my
+          Cactus tests but without having to hardcode them in my tests.
+          Can I do this, and how?
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+          The easiest solution is to pass dynamic configuration 
+          information as System properties to Cactus. For example, if 
+          you have to pass a username and password as HTTP parameter to
+          your servletfor all your tests and you cannot control your 
+          environment by defining a test user, you could write the 
+          following:
+        </p>
+
+<div class="source">
+<pre>           
+public void MyTest extends ServletTestCase
+{
+    public void begin(WebRequest request)
+    {
+        request.addParameter("username", System.getProperty("username"));
+        request.addParameter("password", System.getProperty("password"));
+    }
+    [...]
+}
+</pre>
+</div>
+        
+<p>
+          In order to pass the system properties to cactus you have 2 
+          options:
+        </p>
+        
+<ol>
+          
+<li>
+            Pass them on the command line that you use to start the JUnit 
+            Test Runner. If you're using the ServletTestRunner, then that 
+            would be on the command line that you use to start your 
+            container.
+          </li>
+          
+<li>
+            Add these properties in the <code>cactus.properties</code> file.
+            All properties found in this file are imported as System 
+            Properties during the Cactus initialization.
+          </li>
+        
+</ol>           
+      
+</div>
+	
+</div>
+
+    
+<a name="faq_maintain_session">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>How do I maintain a Session between 2 Cactus test?</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+          I would like to use the same HTTP Session between several Cactus 
+          tests. How can I do that?
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+          Cactus is a unit testing framework and not a functional testing 
+          framework. Each test <i>must</i> be independent of the others.
+          There are several reasons for this: tests become very brittle,
+          test order is not guaranteed by the JVM, etc. Thus, before each
+          test you must set the fixture. This can be factorized in the
+          <code>setUp()</code> method or in the Cactus <code>begin()</code>
+          method.
+        </p>
+      
+</div>
+	
+</div>
+
+    
+<a name="faq_eclipse_version">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>What version of Eclipse do I need for the Eclipse plugin?</h1>
+
+      
+<p>
+        The Cactus plugin for Eclipse requires Eclipse 2.1 RC2 or greater.
+        It has not yet been tested with Eclipse 3.0.
+      </p>      	
+
+	
+</div>
+
+    
+<a name="faq_httpclient_nosuchmethoderror">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Why do I get an HttpClient NoSuchMethodError when running Cactus tests with JBoss 3.x?</h1>
+
+      
+<div class="section">
+<h2>Question</h2>
+        
+<p>
+          When running my Cactus tests with JBoss 3.x, I get:
+        </p>
+
+<div class="source">
+<pre>           
+java.lang.NoSuchMethodError: 
+  org.apache.commons.httpclient.methods.GetMethod.setRequestHeader(
+  Ljava/lang/String;Ljava/lang/String;)V at [...]
+</pre>
+</div>
+      
+</div>
+      
+<div class="section">
+<h2>Solution</h2>
+        
+<p>
+          JBoss 3.x bundles an old version of HttpClient and Cactus requires a
+          newer version. Just replace the HttpClient version in JBoss by the
+          one provided by Cactus.
+        </p>
+      
+</div>
+	
+</div>
+
+    
+<a name="faq_load_balancing">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Does Cactus work with load-balancers?</h1>
+      
+<p>
+        Answer: No. For each test, Cactus performs 2 HTTP connections to the
+        Server side: one for executing the test and one to get the test
+        result. The test result is stored in the application scope
+        (Servlet context). Thus, if the load-balancer directs the second
+        HTTP connection to another server instance, the test result will
+        not be correct.
+      </p>
+    
+</div>
+
+    
+<a name="faq_javascript_assert">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Does Cactus supports asserting HTML pages with Javascript?</h1>
+      
+<p>
+        Cactus provides powerful response assertion through its integration 
+        with HttpUnit. HttpUnit does support asserting page containing 
+        Javascript. However, the Cactus integration with HttpUnit currently 
+        does not support this use case (There's a 
+        <a href="http://issues.apache.org/jira/secure/ViewIssue.jspa?key=CACTUS-76" title="">bug</a> 
+        opened for adding this support).
+      </p>
+    
+</div>
+
+    
+<a name="faq_strutstestcase">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>I have problems using StrutsTestCase...</h1>
+      
+<p>
+        
+<a href="http://strutstestcase.sourceforge.net" title="">StrutsTestCase</a> is a project separate 
+        from Cactus. It has its own mailing list/forum. Please post your 
+        questions there.
+      </p>
+    
+</div>
+
+    
+<a name="faq_https_support">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Does Cactus support HTTPS?</h1>
+      
+<p>
+        No, Cactus doesn't support HTTPS. The reason is that we don't think 
+        it's necessary. Whether you use HTTP or HTTPS should be transparent 
+        to the tested code. And you should run the tests in a test 
+        environment anyway, which doesn't necessarily need to be HTTPS just 
+        because the production environment is. Of course, if you have good 
+        arguments for HTTPS support and a patch, we might change our 
+        collective mind :-)
+      </p>
+    
+</div>
+
+    
+<a name="faq_init_servlet">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Why is my ServletContext and ServletConfig null in the servlet under test?</h1>
+      
+<p>
+        You must initialize the servlet with the implicit cactus config 
+        object (see the 
+        <a href="./writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">ServletTestCase
+        principles</a> documentation for more details). For example:
+      </p>
+
+<div class="source">
+<pre>           
+MyServlet servlet = new MyServlet();
+servlet.init(config);
+</pre>
+</div>
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

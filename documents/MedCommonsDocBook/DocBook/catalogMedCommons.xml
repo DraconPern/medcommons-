@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog
+   PUBLIC "-//OASIS/DTD Entity Resolution XML Catalog V1.0//EN"
+   "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+  <!-- DTD and stylesheet files installed under /usr/share/xml -->
+  <group  xml:base="file:///." >
+
+    <!-- Resolve DTD URL system ID to local file -->
+    <rewriteSystem
+        systemIdStartString="http://www.medcommons.org/docbook/"
+        rewritePrefix="MedCommonsDocBook/" />
+   
+    <!-- To resolve simple DTD SYSTEM identifiers. -->
+    <!-- Note: this does not work with Java resolver -->
+    <!--   classes in Saxon or Xalan -->
+    <system
+         systemId="MedCommonsDocbookExtensions.dtd"
+         uri="MedCommonsDocbookExtensions.dtd" />
+
+  </group>
+
+</catalog>

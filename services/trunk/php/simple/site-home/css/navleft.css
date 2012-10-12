@@ -1,0 +1,169 @@
+div#navcol .leftnav{	
+	/*background: url(../images/sys_images/leftnav_column_background.gif) repeat-y;			*/
+	display: block;
+	position: relative;		
+	
+}
+/*
+div#containerIE7L div#navcol .leftnav{
+	margin-top: 20px;
+}
+*/
+
+div#navcol .leftnav .outter{
+	margin-top: 0px;	
+	
+	font-weight: bold;
+}
+
+div#navcol .leftnav .inner{	
+	padding-bottom: 5px;	
+}
+
+
+
+div#navcol .leftnav ul.menu{
+	list-style-type: none;	
+	margin:0px 0px;
+	padding:0px 0px;	
+	
+	display: block;
+	position:relative;	
+	/*font-size: 12px;*/
+	font-size: 1em;
+	
+	margin:0 10px 5px 0;
+}
+
+div#navcol .leftnav ul.menu li ul li{
+	font-weight: normal;
+	font-size: 1em;
+}
+
+
+
+div#navcol .leftnav .menu li {
+	position:relative;
+	height:100%;
+	display:block;
+	margin: 0px 0px;
+	padding: 0px 0px;	
+	border-top: 1px solid #d7d7d7;
+	
+	
+}
+
+div#navcol .leftnav .menu li a{
+	display:block;
+	position:relative;
+	height:100%;
+	margin: 0px 0px;
+	padding: 10px 0px;
+	padding-left: 8px;
+	
+}
+
+div#navcol .leftnav .menu ul li a{	
+	/*border-bottom: 1px dotted gray;	*/
+}
+div#navcol .leftnav a{
+	display:block;
+	position:relative;
+	color: #333333;	
+	text-decoration:none;
+	margin: 0px 0px;	
+}
+
+
+
+div#navcol .leftnav .menu{
+	text-align:left;
+	padding-top:1px;
+}
+
+
+div#navcol .leftnav ul.menu ul{
+	margin: 0px;
+	padding: 0px;
+	
+	font-size: 1em;
+}
+
+div#navcol .leftnav ul.menu li a{		
+	/*padding-left: 10px;			*/
+}
+
+
+
+div#navcol .leftnav ul ul li a{		
+	/*color: #727272;	*/
+}
+
+div#navcol .leftnav ul.menu ul ul li a{	
+	padding-left: 1em;	
+}
+
+div#navcol .leftnav ul.menu ul li a, div#navcol .leftnav ul.menu ul li ul li a{
+	/*color: #727272;		*/
+}
+
+
+div#navcol .leftnav ul.menu li.actived a, div#navcol .leftnav ul li li.actived a, div#navcol .leftnav ul li ul li li.actived a{
+	color:black;
+	background-color:#c3d6de;
+}
+
+div#navcol .leftnav ul.menu li.actived ul li a{
+	background-color:#e4edf3;
+	color: black;
+	
+}
+
+
+
+
+div#navcol .leftnav .menu li.subactived a{	
+	background-color:  #e4edf3;
+}
+
+div#navcol .leftnav .menu li.subactived ul li.actived a{	
+	color: black;	
+}
+
+
+
+
+
+
+div#navcol .leftnav .menu li.actived a{		
+	/*background-image: none;	*/
+}
+
+div#navcol .leftnav a:hover, div#navcol .leftnav a:focus{
+	color: #FFCC66;
+}
+
+
+div#navcol .leftnav .menu li a:hover, div#navcol .leftnav .menu li a:focus{	
+	
+	color: #105191;
+	text-decoration: underline;
+}
+
+
+
+div#navcol .leftnav ul.menu li.subactived ul li ul li {	
+	border-top: none;
+}
+div#navcol .leftnav ul.menu li.subactived ul li ul li a{	
+	padding: 5px 0px;
+	padding-left: 20px;
+}
+
+div#navcol .leftnav ul.menu li ul li ul li a{
+	background: url(../images/sys_images/dot.jpg) 12px 12px no-repeat;	
+}
+
+div#navcol .leftnav ul.menu li ul li ul li.actived a{
+	background: url(../images/sys_images/dot_actived.jpg) 12px 12px no-repeat #c3d6de;	
+}

@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gui-prototype", "gui-prototype\gui-prototype.csproj", "{8B8EDFF1-1301-41C2-B128-233393DB07B1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{38466C72-8785-45DC-86F1-D93806ADC258}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8B8EDFF1-1301-41C2-B128-233393DB07B1}.Debug.ActiveCfg = Debug|.NET
+		{8B8EDFF1-1301-41C2-B128-233393DB07B1}.Debug.Build.0 = Debug|.NET
+		{8B8EDFF1-1301-41C2-B128-233393DB07B1}.Release.ActiveCfg = Release|.NET
+		{8B8EDFF1-1301-41C2-B128-233393DB07B1}.Release.Build.0 = Release|.NET
+		{38466C72-8785-45DC-86F1-D93806ADC258}.Debug.ActiveCfg = Debug|.NET
+		{38466C72-8785-45DC-86F1-D93806ADC258}.Debug.Build.0 = Debug|.NET
+		{38466C72-8785-45DC-86F1-D93806ADC258}.Release.ActiveCfg = Release|.NET
+		{38466C72-8785-45DC-86F1-D93806ADC258}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		Icon1.ico = Icon1.ico
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

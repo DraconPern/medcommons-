@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+    <title>Device Requirements </title>
+    
+    <articleinfo>
+        <invpartnumber>REQ-0011</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>March 18, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>
+            
+            
+            
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para>
+            The MedCommons system contains different sorts of physical devices. 
+            FOB
+            Slug
+            Gateway (PC/Linux/OSX)
+            Central (Linux)
+        </para>
+    </sect1>
+    
+</article>

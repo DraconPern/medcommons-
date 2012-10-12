@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EditSession xmlns="http://www.medcommons.net/editsession11"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+    xsd:schemaLocation="http://www.medcommons.net/editsession11 http://stego.myhealthespace.com/router/EditSession11.xsd">
+    <SessionToken>a42b268bccaa5339ee52ccc8284e673e9e0ee1a9</SessionToken>
+    <ContentType>application/x-ccr+xml</ContentType>
+    <SessionURI>http://stego.myhealthespace.com/router/DocumentEditSession?token=a42b268bccaa5339ee52ccc8284e673e9e0ee1a9&amp;useSchema=11</SessionURI>
+    <Alias>currentCCR</Alias>
+    <PersonName>Test Patient</PersonName>
+    <ApplicationTitle>MedCommons CCR Editor:Test Patient</ApplicationTitle>
+    <Status>200</Status>
+    <Reason>OK</Reason>
+    <DocumentDownloadRootURI>http://stego.myhealthespace.com/router/router/getDocument?token=a42b268bccaa5339ee52ccc8284e673e9e0ee1a9&amp;useSchema=11&amp;reference=</DocumentDownloadRootURI>
+    <UploadReferenceCopy>true</UploadReferenceCopy>
+    <Profiles>
+        <Profile>
+            <Alias>CURRENTCCR</Alias>
+            <RequestSessionURI>http://stego.myhealthespace.com/router/getPHREditSession?storageId=9112048506962655&amp;reference=CURRENTCCR&amp;useSchema=11</RequestSessionURI>
+        </Profile>
+    </Profiles>
+</EditSession>

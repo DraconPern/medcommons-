@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<book>
+  <title>MedCommons IHE Requirements</title>
+
+  <chapter>
+    <title>Overview</title>
+
+    <para>This document describes the IHE requirements for MedCommons that are
+    common to all MedCommons applications and appliances.</para>
+
+    <para>[Note: the only part of this document that has any meat is Chapter
+    4. I believe that these requirements define what is needed for a
+    &#39;Norton Utilities&#39; for IHE.]</para>
+
+    <sect1>
+      <title>IHE profiles</title>
+
+      <para>IHE defines 12 implementation profiles. According to the IHE
+      Technical Framework, Vol 1:</para>
+
+      <blockquote>
+        <para>Profiles define real-world scenerios or specific sets of
+        capabilities for integrated systems. An Integration Profile applies to
+        a specific set of actors and for each actor specifies the transactions
+        necessary to support those capabilities [Rev 5.5, page 10]</para>
+      </blockquote>
+
+      <para>This document contains only summary information about these
+      profiles, actors, and transactions. Details are in the IHE
+      documentation. </para>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>IHE Implementation Profiles</title>
+
+    <para>Have a section for all 12 implemenation profiles</para>
+  </chapter>
+
+  <chapter>
+    <title>IHE Actors</title>
+
+    <para>Have a section for all 23 IHE actors.</para>
+  </chapter>
+
+  <chapter>
+    <title>IHE Extensions</title>
+
+    <para>They are featured in this specification. R&#38;G are Dead.</para>
+
+    <sect1>
+      <title>Quality of Service (QoS) actor</title>
+
+      <para>[From product brief: &#34;Tests and Logs IHE compliance of RIS and
+      PACS components. This section addresses &#39;logs&#39;]</para>
+
+      <para>A new entity is required to measure quality of service of the
+      different components. When there is a performance problem at a site in a
+      RIS, HIS, or PACS system it is difficult to isolate where the bottleneck
+      occurs. Although IHE profiles define conformance, each transaction
+      requiring measurement is performed between IHE actors. As only actors
+      can address actors in the IHE model of the world this means that a new
+      actor is required: the Quality of Service Actor.</para>
+
+      <para>The QoS Actor is a type of server proxy which permits the
+      performance of other IHE actors to be monitored. From the point of view
+      of the original actors in the transaction is invisible - all information
+      is passed from the source actor to the target actor; all responses and
+      acknowlegements are also passed </para>
+
+      <para>For the QoS actor to be successful it must meet the following
+      requirements</para>
+
+      <orderedlist>
+        <listitem>
+          <para>The QoS actor must be able to be configured as the middleman
+          for all IHE transactions.</para>
+        </listitem>
+
+        <listitem>
+          <para>The QoS actor must not excessively delay any IHE transactions.
+          For a load of XXX transactions/second the delay must not exceed
+          10msec. </para>
+        </listitem>
+
+        <listitem>
+          <para>Multiple QoS actors must be permitted on a single network for
+          load balancing, configuration, or other purposes. The output from
+          these QoS actors must be able to be pooled to create a performance
+          profile of the entire information system. Note that several IHE
+          transactions involve multiple actors; the QoS Actor(s) must be able
+          to build a consistent and coherent performance profile of the
+          system.</para>
+        </listitem>
+
+        <listitem>
+          <para>The output from the QoS will be defined by an XML schema.
+          Fields which must be included in the output stream are</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Name of the transaction</para>
+            </listitem>
+
+            <listitem>
+              <para>Timestamp of transaction start</para>
+            </listitem>
+
+            <listitem>
+              <para>Timestamp of transaction completion</para>
+            </listitem>
+
+            <listitem>
+              <para>Number of bytes transferred in the transaction</para>
+            </listitem>
+
+            <listitem>
+              <para>Summary of transaction status. Summaries fall into two
+              categories</para>
+
+              <itemizedlist>
+                <listitem>
+                  <para>&#34;Normal&#34;. This transaction status indicates
+                  that the transaction completed normally. No claim about the
+                  contents of the transaction is indicated here. For example:
+                  a query which results in zero matches will be considered to
+                  be &#39;Normal&#34; if all messages passed as defined in the
+                  IHE, HL7, and DICOM documents.</para>
+                </listitem>
+
+                <listitem>
+                  <para>&#34;Error&#34;. This transaction status indicates
+                  that some error has occurred in processing (network,
+                  protocol violation, &#38;etc). Additional details may be
+                  specified [tbd]</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </itemizedlist>
+
+          <para>Additionally there are fields which are optional and may
+          depend on the specific transaction type</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Latency of acknowledgement message. This is useful for
+              determining how well the target system is responding under load.</para>
+            </listitem>
+
+            <listitem>
+              <para>? [tbd]</para>
+            </listitem>
+          </itemizedlist>
+
+          <para></para>
+        </listitem>
+
+        <listitem>
+          <para>The QoS actor must not cache or report any message
+          information; There must be zero HIPAA issues with running this actor
+          at a clinical site.</para>
+        </listitem>
+
+        <listitem>
+          <para>The QoS actor must be able to be configured via a web browser.
+          Configuration fields include</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Turning performance monitoring on/off for any particular
+              transactoin</para>
+            </listitem>
+
+            <listitem>
+              <para>Actor network addresses and protocols.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>The output from the QoS actor is processed by a separate
+          entity for generating reports.</para>
+        </listitem>
+      </orderedlist>
+
+      <para></para>
+    </sect1>
+
+    <sect1>
+      <title>Testing actors</title>
+
+      <para>[From product brief: &#34;Tests and Logs IHE compliance of RIS and
+      PACS components. This section addresses &#39;tests&#39;]</para>
+
+      <para>Unlike the QoS agent the testing agents change state in the target
+      systems. Thus, the testing agents are not meant to be used uncritically
+      on a live clinical system. There are two types of testing: IHE
+      conformance testing and IHE performance testing. Both of these type of
+      tests require substantial amounts of data for testing, thus three new
+      actors are required:</para>
+
+      <orderedlist>
+        <listitem>
+          <para>Recording Actor. This is similar to the QoS Actor in terms of
+          transparency and latency requirements. However, the Recording Actor
+          caches all messages and responses in standard formats for later
+          manipulation or retrieval. These messages may be recorded verbatim
+          or anonymized.</para>
+        </listitem>
+
+        <listitem>
+          <para>Protocol Conformance Actor. This actor plays back the source
+          data records to the target in a number of different modes</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Simple playback. Test to see that the responses are the
+              same.</para>
+            </listitem>
+
+            <listitem>
+              <para>Scramble message playback order. Determine what the change
+              in message sequences has on the responses. This will give rise
+              to some errors because there may be dependencies between these
+              messages. This tests the ability of the system to respond to an
+              alternative stream of correct input messages (as correct as the
+              source provided)</para>
+            </listitem>
+
+            <listitem>
+              <para>Scramble messages. Messages can be scrambled in a number
+              of ways to subtly or not-so-subtly violate IHE, DICOM, or HL7
+              message definitions, including</para>
+
+              <itemizedlist>
+                <listitem>
+                  <para>Scrambing identifiers and demographics</para>
+                </listitem>
+
+                <listitem>
+                  <para>Scramble message delivery</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>Protocol Performance Actor. This actor plays messages back
+          more quickly or more slowly than they were originally generated by
+          the source. </para>
+        </listitem>
+      </orderedlist>
+
+      <para>Both the Protocol Conformance Actor and the Protocol Performance
+      Actor can additionally generate additional data from the source data
+      sets via simple statistical models. For example: a DICOM image may be
+      resent with generated patient demographics and generated DICOM UIDs. It
+      is expected that there will be data sets either generated by the
+      Recording Actor or by hand for testing. </para>
+    </sect1>
+  </chapter>
+</book>

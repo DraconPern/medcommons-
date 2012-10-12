@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>Webalizer</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Webalizer" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus.">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list.">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus.">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Webalizer</h1>
+
+      
+<p>
+        Webalizer is an httpd logfile analysis tool, which the Cactus web site
+        uses to track website traffic.
+      </p>
+
+      
+<div class="section">
+<h2>Webalizer Definitions</h2>
+
+        
+<p>
+          From the
+          <a href="ftp://ftp.mrunix.net/pub/webalizer/README/" title="">Webalizer
+          Readme</a>:
+        </p>
+
+        
+<p>
+          
+<b>Hits</b>: Any request made to the server which is
+          logged, is considered a 'hit'. The requests can be for anything...
+          html pages, graphic images, audio files, CGI scripts, etc... Each
+          valid line in the server log is counted as a hit. This number
+          represents the total number of requests that were made to the server
+          during the specified report period.
+        </p>
+
+        
+<p>
+          
+<b>Files</b>: Some requests made to the server, require
+          that the server then send something back to the requesting client,
+          such as a html page or graphic image. When this happens, it is
+          considered a 'file' and the files total is incremented. The
+          relationship between 'hits' and 'files' can be thought of as
+          'incoming requests' and 'outgoing responses'.
+        </p>
+
+        
+<p>
+          
+<b>Pages</b>: Pages are, well, pages! Generally, any HTML
+          document, or anything that generates an HTML document, would be
+          considered a page. This does not include the other stuff that goes
+          into a document, such as graphic images, audio clips, etc... This
+          number represents the number of 'pages' requested only, and does not
+          include the other 'stuff' that is in the page. What actually
+          constitutes a 'page' can vary from server to server. The default
+          action is to treat anything with the extension '.htm', '.html' or
+          '.cgi' as a page. A lot of sites will probably define other
+          extensions, such as '.phtml', '.php3' and '.pl' as pages as well.
+          Some people consider this number as the number of 'pure' hits... I'm
+          not sure if I totally agree with that viewpoint. Some other programs
+          (and people :) refer to this as 'Pageviews'.
+        </p>
+
+        
+<p>
+          
+<b>Sites</b>: Each request made to the server comes from
+          a unique 'site', which can be referenced by a name or ultimately, an
+          IP address. The 'sites' number shows how many unique IP addresses
+          made requests to the server during the reporting time period. This
+          DOES NOT mean the number of unique individual users (real people)
+          that visited, which is impossible to determine using just logs and
+          the HTTP protocol (however, this number might be about as close as
+          you will get).
+        </p>
+
+        
+<p>
+          
+<b>Visits</b>: Whenever a request is made to the server
+          from a given IP address (site), the amount of time since a previous
+          request by the address is calculated (if any). If the time
+          difference is greater than a pre-configured 'visit timeout' value (or
+          has never made a request before), it is considered a 'new visit',
+          and this total is incremented (both for the site, and the IP
+          address). The default timeout value is 30 minutes (can be changed),
+          so if a user visits your site at 1:00 in the afternoon, and then
+          returns at 3:00, two visits would be registered. Note: in the 'Top
+          Sites' table, the visits total should be discounted on 'Grouped'
+          records, and thought of as the "Minimum number of visits" that came
+          from that grouping instead. Note: Visits only occur on PageType
+          requests, that is, for any request whose URL is one of the 'page'
+          types defined with the PageType option. Due to the limitation of the
+          HTTP protocol, log rotations and other factors, this number should
+          not be taken as absolutely accurate, rather, it should be considered
+          a pretty close "guess".
+        </p>
+
+        
+<p>
+          
+<b>KBytes</b>: The KBytes (kilobytes) value shows the
+          amount of data, in KB, that was sent out by the server during the
+          specified reporting period. This value is generated directly from the
+          log file, so it is up to the web server to produce accurate numbers
+          in the logs (some web servers do stupid things when it comes to
+          reporting the number of bytes). In general, this should be a fairly
+          accurate representation of the amount of outgoing traffic the server
+          had, regardless of the web servers reporting quirks.
+        </p>
+
+        
+<p>
+          Note: A kilobyte is 1024 bytes, not 1000 :)
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

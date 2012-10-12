@@ -1,0 +1,34 @@
+<html><head><Title>MedCommons CXP Page</title></head><body>
+<img src='../images/MEDcommons_logo_246x50.gif' width=246 height=50 alt='foo.bar'>
+<h3>CXP Information for Developers</h3>
+
+<p>MedCommons is pleased to propose CXP (CCR Exchange Protocol) to the CCR Accelerator Group. 
+
+<p>In a nutshell, CXP is the smallest protocol we could think of which:
+
+<ul>
+<li>Is a 2 party peer-to- peer vendor and operating system neutral protocol for moving CCRs and attachments</li>
+<li>Is built on industry standard HTTP protocols, namely POST and SOAP carrying XML</li>
+<li>Handles transfers and queries</li>
+<li>Supports API mechanisms for both polling and asynchronous notifications</li>
+<li>Supports SSL and TLS
+<li>Handles CCRs that are encrypted per ASTM spec</li>
+</ul>
+<p>
+CXP does not:
+<ul><li>Prescribe authentication standards</li>
+<li>Prescribe storage methods for repositories or discrete registries</li>
+<li>Address email as a means for communications of either CCRs or notification messages – we think this can be constructed on top of CXP</li>
+<li>Address HL7 in any manner – we think this might be constructed on top of CXP, or will be dealt with as additional data formats that are transported thru CXP</li>
+<li>Include a manual with UML Sequence Diagrams – the pictures are pretty lame but should get improved</li>
+</ul>
+<p>We have built a prototype implementation in PHP. You are free to take the code and improve it.
+<p>
+We have set up 2 websites that communicate to eatch other. They are each running the standard distro:
+
+
+<p><a href="http://mcpurple01.homeip.net/cxp">http://mcpurple01.homeip.net/cxp</a></br>
+<p><a href="http://virtual03.medcommons.net/cxp">http://virtual03.medcommons.net/cxp</a></br>
+
+<p>Please go to either site for more info.
+</body></html>

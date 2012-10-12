@@ -1,0 +1,97 @@
+
+.ccr * {
+	font-size: X-small;
+	font-family: Arial, sans-serif;
+}
+.ccr h1 {
+	font-size: 150%;
+}
+.ccr strong.clinical {
+	color: #3300FF;
+  color: #a1c48e;
+  color: #74a759;
+}
+.ccr p {
+	margin-left: 20px
+}
+.ccr span.header{
+	font-weight: bold;
+    font-size: medium;
+    line-height: 16pt;
+	padding-top: 10px;
+}
+.ccr table#ccrheader { 
+  background-color: #fbf4e4;
+}
+
+.ccr table.list {
+	padding-bottom: 5px;
+	border: thin solid #cccccc;
+	border-style-internal: thin solid #cccccc;
+	BORDER-COLLAPSE: collapse;
+	background: white;
+	background-image: none
+}
+.ccr table.list th {
+	text-align: left;
+	font-weight: bold;
+	color: white;
+	background-color: #958f6d;
+	background-image: none
+}
+.ccr table.list td {
+	padding: 5px;
+	border: thin solid #cccccc;
+}
+.ccr table.internal {
+	border: none
+}
+.ccr table.internal td {
+    padding: 1px;
+    border: none;
+}
+.ccr table.internal tr.even{
+	background: #CEFFFF;
+	background-image: none
+}
+
+.ccr table {
+  font-family: arial;
+  font-size: 12px;
+}
+
+.ccr span.header {
+  font-family: arial;
+  font-size: 14px;
+}
+
+.ccr h1 {
+  font-size: medium;
+}
+
+.ccr h4 {
+  font-family: arial;
+}
+
+.ccr .commentHeading {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #333;
+}
+
+.ccr table td.ccredittool, .ccr table th.ccredittool {
+  text-align: center;
+}
+
+.ccr table td.ccredittool img, .ccr table th.ccredittool img {
+  cursor: pointer;
+}
+
+.ccr a:link, .ccr a:visited {
+  color: #5987ac;
+  text-decoration: none;
+}
+.ccr a:hover, .ccr a:active {
+  text-decoration: underline;
+}
+ 

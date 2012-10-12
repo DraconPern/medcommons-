@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:cxp" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="urn:cxp" xmlns:intf="urn:cxp" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+ <wsdl:types>
+  <schema targetNamespace="urn:cxp" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="Parameter">
+    <sequence>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="value" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfParameter">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:Parameter"/>
+    </sequence>
+   </complexType>
+   <complexType name="RegistryParameters">
+    <sequence>
+     <element name="parameters" nillable="true" type="impl:ArrayOfParameter"/>
+     <element name="registryId" nillable="true" type="xsd:string"/>
+     <element name="registryName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfRegistryParameters">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:RegistryParameters"/>
+    </sequence>
+   </complexType>
+   <complexType name="PutResponse">
+    <sequence>
+     <element name="cxpVersion" nillable="true" type="xsd:string"/>
+     <element name="guid" nillable="true" type="xsd:string"/>
+     <element name="parameters" nillable="true" type="impl:ArrayOfRegistryParameters"/>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="registryParameters" nillable="true" type="impl:ArrayOfRegistryParameters"/>
+     <element name="status" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="CXPException">
+    <sequence/>
+   </complexType>
+   <complexType name="CXPAttachment">
+    <sequence/>
+   </complexType>
+   <complexType name="ArrayOfCXPAttachment">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:CXPAttachment"/>
+    </sequence>
+   </complexType>
+   <complexType name="GetResponse">
+    <sequence>
+     <element name="content" nillable="true" type="xsd:string"/>
+     <element name="contentType" nillable="true" type="xsd:string"/>
+     <element name="cxpVersion" nillable="true" type="xsd:string"/>
+     <element name="guid" nillable="true" type="xsd:string"/>
+     <element name="parameters" nillable="true" type="impl:ArrayOfRegistryParameters"/>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="registryParameters" nillable="true" type="impl:ArrayOfRegistryParameters"/>
+     <element name="status" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="DeleteResponse">
+    <sequence>
+     <element name="cxpVersion" nillable="true" type="xsd:string"/>
+     <element name="guid" nillable="true" type="xsd:string"/>
+     <element name="parameters" nillable="true" type="impl:ArrayOfRegistryParameters"/>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="registryParameters" nillable="true" type="impl:ArrayOfRegistryParameters"/>
+     <element name="status" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getResponse1">
+
+      <wsdl:part name="getReturn" type="impl:GetResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="CXPException">
+
+      <wsdl:part name="fault" type="impl:CXPException"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="putResponse">
+
+      <wsdl:part name="putReturn" type="impl:PutResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getVersionRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="getVersionResponse">
+
+      <wsdl:part name="getVersionReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="putRequest">
+
+      <wsdl:part name="ccrXml" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="putResponse2">
+
+      <wsdl:part name="putReturn" type="impl:PutResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteResponse1">
+
+      <wsdl:part name="deleteReturn" type="impl:DeleteResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteResponse2">
+
+      <wsdl:part name="deleteReturn" type="impl:DeleteResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequest1">
+
+      <wsdl:part name="xmlData" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRequest2">
+
+      <wsdl:part name="guid" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRequest1">
+
+      <wsdl:part name="parameters" type="impl:ArrayOfRegistryParameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRequest">
+
+      <wsdl:part name="guid" type="xsd:string"/>
+
+      <wsdl:part name="parameters" type="impl:RegistryParameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="putRequest2">
+
+      <wsdl:part name="ccrXml" type="xsd:string"/>
+
+      <wsdl:part name="inputRegistryParameters" type="impl:ArrayOfRegistryParameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="putResponse1">
+
+      <wsdl:part name="putReturn" type="impl:PutResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteResponse">
+
+      <wsdl:part name="deleteReturn" type="impl:DeleteResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="putRequest1">
+
+      <wsdl:part name="ccrXml" type="xsd:string"/>
+
+      <wsdl:part name="inputRegistryParameters" type="impl:ArrayOfRegistryParameters"/>
+
+      <wsdl:part name="attachments" type="impl:ArrayOfCXPAttachment"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getResponse">
+
+      <wsdl:part name="getReturn" type="impl:GetResponse"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequest">
+
+      <wsdl:part name="inputRegistryParameters" type="impl:ArrayOfRegistryParameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CXP_10">
+
+      <wsdl:operation name="put" parameterOrder="ccrXml">
+
+         <wsdl:input message="impl:putRequest" name="putRequest"/>
+
+         <wsdl:output message="impl:putResponse" name="putResponse"/>
+
+         <wsdl:fault message="impl:CXPException" name="CXPException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="put" parameterOrder="ccrXml inputRegistryParameters attachments">
+
+         <wsdl:input message="impl:putRequest1" name="putRequest1"/>
+
+         <wsdl:output message="impl:putResponse1" name="putResponse1"/>
+
+         <wsdl:fault message="impl:CXPException" name="CXPException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="put" parameterOrder="ccrXml inputRegistryParameters">
+
+         <wsdl:input message="impl:putRequest2" name="putRequest2"/>
+
+         <wsdl:output message="impl:putResponse2" name="putResponse2"/>
+
+         <wsdl:fault message="impl:CXPException" name="CXPException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get" parameterOrder="inputRegistryParameters">
+
+         <wsdl:input message="impl:getRequest" name="getRequest"/>
+
+         <wsdl:output message="impl:getResponse" name="getResponse"/>
+
+         <wsdl:fault message="impl:CXPException" name="CXPException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get" parameterOrder="xmlData">
+
+         <wsdl:input message="impl:getRequest1" name="getRequest1"/>
+
+         <wsdl:output message="impl:getResponse1" name="getResponse1"/>
+
+         <wsdl:fault message="impl:CXPException" name="CXPException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete" parameterOrder="guid parameters">
+
+         <wsdl:input message="impl:deleteRequest" name="deleteRequest"/>
+
+         <wsdl:output message="impl:deleteResponse" name="deleteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete" parameterOrder="parameters">
+
+         <wsdl:input message="impl:deleteRequest1" name="deleteRequest1"/>
+
+         <wsdl:output message="impl:deleteResponse1" name="deleteResponse1"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete" parameterOrder="guid">
+
+         <wsdl:input message="impl:deleteRequest2" name="deleteRequest2"/>
+
+         <wsdl:output message="impl:deleteResponse2" name="deleteResponse2"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVersion">
+
+         <wsdl:input message="impl:getVersionRequest" name="getVersionRequest"/>
+
+         <wsdl:output message="impl:getVersionResponse" name="getVersionResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CXPSoapBinding" type="impl:CXP_10">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="put">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="putRequest">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="putResponse">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CXPException">
+
+            <wsdlsoap:fault name="CXPException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="put">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="putRequest1">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="putResponse1">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CXPException">
+
+            <wsdlsoap:fault name="CXPException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="put">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="putRequest2">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="putResponse2">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CXPException">
+
+            <wsdlsoap:fault name="CXPException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRequest">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getResponse">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CXPException">
+
+            <wsdlsoap:fault name="CXPException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRequest1">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getResponse1">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CXPException">
+
+            <wsdlsoap:fault name="CXPException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteRequest">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteResponse">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteRequest1">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteResponse1">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteRequest2">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteResponse2">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVersion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getVersionRequest">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getVersionResponse">
+
+            <wsdlsoap:body namespace="urn:cxp" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CXP_10Service">
+
+      <wsdl:port binding="impl:CXPSoapBinding" name="CXP">
+
+         <wsdlsoap:address location="https://cxp.medcommons.net/router/CXP"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

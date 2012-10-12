@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================
+     $Id: build.xml 47 2004-01-12 02:24:00Z michael $
+     ====================================================================== -->
+
+<project name="central" default="world">
+
+  <!-- === globals ======================================================== -->
+
+  <property name="build.compiler" value="modern" />
+
+  <path id="compile.path">
+    <pathelement location="${build.compile.dir}" />
+    <fileset dir="lib/medcommons/common/" />
+    <fileset dir="lib/jboss/" />
+    <fileset dir="lib/commons-codec/" />
+  	<fileset dir="lib/struts/" />
+  </path>
+  
+  <!-- === world ========================================================== -->
+
+  <target name="world" depends="compile,package" />
+
+  <target name="package" depends="package-ear,package-services" />
+  <target name="package-services" depends="package-guidfactory-sar,package-controller-sar,package-storage-sar,package-chef-sar,package-log-sar" />
+
+  <target name="package-wsr" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/central-ws.wsr">
+      <metainf dir="src/net/medcommons/central/ws/">
+        <include name="web-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/central/ws/test/**" />
+        <include name="net/medcommons/central/ws/command/**" />
+        <include name="net/medcommons/central/ws/device/**" />
+        <include name="net/medcommons/central/ws/guid/**" />
+        <include name="net/medcommons/central/ws/pkg/**" /> 
+        <include name="net/medcommons/central/ws/recipe/**" />   
+        <include name="net/medcommons/central/ws/log/**" />    
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-war" depends="compile">
+    <mkdir dir="build/dist/" />
+    <war destfile="build/dist/central-web.war" webxml="src/net/medcommons/central/ws/WEB-INF/web.xml">
+      <classes dir="build/classes/">
+        <include name="net/medcommons/central/ws/test/*.class" />   
+      	<include name="net/medcommons/central/ws/transferutility/*.class" />   
+      </classes>
+      <fileset dir="src/net/medcommons/central/ws/">
+    	<include name="transferutility/*.jsp" />
+      	<include name="transferutility/*.jpg" />
+      	<include name="logviewer/*.jsp" />
+      	<include name="logviewer/*.jpg" />
+      </fileset>
+   	  <webinf dir="src/net/medcommons/central/ws/WEB-INF/" />
+      <lib dir="lib/struts/" />
+    </war>
+  </target>
+  
+  <target name="package-ear" depends="package-wsr,package-war">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/central.ear">
+      <metainf dir="src/net/medcommons/central/">
+        <include name="application.xml" />
+      </metainf>
+      <fileset dir="build/dist/">
+        <include name="central-ws.wsr" />
+        <include name="central-web.war" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-guidfactory-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/central-guidfactory.sar">
+      <metainf dir="src/net/medcommons/central/guid/">
+      	<include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+      	<include name="net/medcommons/central/guid/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-controller-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/central-controller.sar">
+      <metainf dir="src/net/medcommons/central/controller/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/central/controller/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-storage-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/central-storage.sar">
+      <metainf dir="src/net/medcommons/central/storage/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/central/storage/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-chef-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/central-chef.sar">
+   	  <metainf dir="src/net/medcommons/central/chef/">
+   	    <include name="jboss-service.xml" />
+   	  </metainf>
+   	  <fileset dir="build/classes/">
+   	    <include name="net/medcommons/central/chef/**" />
+   	  </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-log-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/central-log.sar">
+      <metainf dir="src/net/medcommons/central/log/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/central/log/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-server" depends="jboss,deploy">
+    <mkdir dir="build/dist/" />
+    <zip destfile="build/dist/central-server.zip">
+      <fileset dir="stage/jboss-3.2.3/server/central/" />
+    </zip>
+  </target>
+
+  <target name="compile">
+  	<mkdir dir="build/classes/" />
+    <javac srcdir="src/" destdir="build/classes/" debug="true">
+      <classpath refid="compile.path" />
+    </javac>
+  </target>
+
+  <!-- === jboss ========================================================= -->
+  
+  <target name="jboss" depends="clean-jboss">
+  	<mkdir dir="stage/" />
+    <unzip src="etc/jboss/dist/jboss-3.2.3.zip" dest="stage/" />
+    <copy todir="stage/jboss-3.2.3/server/central/">
+      <fileset dir="etc/jboss/central/" />
+    </copy>
+  </target>
+  
+  <target name="deploy" depends="world">
+    <copy todir="stage/jboss-3.2.3/server/central/deploy/">
+      <fileset dir="build/dist/">
+        <include name="central.ear" />
+        <include name="central-guidfactory.sar" />
+        <include name="central-controller.sar" />
+        <include name="central-storage.sar" />
+        <include name="central-chef.sar" />
+        <include name="central-log.sar" />
+      </fileset>
+    </copy>  
+    <copy todir="stage/jboss-3.2.3/server/central/lib/">
+      <fileset dir="lib/medcommons/common/" />
+      <fileset dir="lib/commons-codec/" />
+    </copy>
+  </target>
+  
+  <target name="clean-jboss" depends="clean">
+    <delete dir="stage/" />
+  </target>
+
+  <!-- === doc =========================================================== -->
+
+  <target name="doc" depends="xmldoc,javadoc" />
+
+  <target name="xmldoc">
+    <mkdir dir="build/doc/" />
+    <xslt basedir="doc/src/" destdir="build/doc/" extension=".html" style="doc/lib/docbook-xsl/html/docbook.xsl">
+      <param name="chapter.autolabel" expression="1" />
+      <param name="section.autolabel" expression="1" />
+      <param name="section.label.includes.component.label" expression="1" />
+    </xslt>
+  </target>
+
+  <target name="javadoc">
+  	<mkdir dir="build/doc/api/" />
+    <javadoc destdir="build/doc/api/" author="true" version="false" use="true" windowtitle="Zabbix/J" classpathref="compile.path">
+      <packageset dir="src/" defaultexcludes="yes">
+        <include name="net/medcommons/central/**" />
+      </packageset>
+
+      <doctitle><![CDATA[<h1>MedCommons Central API Docs</h1>]]></doctitle>
+      <bottom><![CDATA[<i>Copyright &#169; 2004 MedCommons, Inc. All Rights Reserved.</i>]]></bottom>
+    </javadoc>
+  </target>
+
+  <!-- === clean ========================================================== -->
+
+  <target name="clean">
+    <delete dir="build/" />
+  </target>
+
+</project>

@@ -1,0 +1,121 @@
+<group>
+  <group indir='www'>
+    <group outdir='html'>
+      <group outdir='images'>
+        <directory indir='images' ignore='.svn *~' />
+        <blobs sql='SELECT png16x16, website, source_id FROM identity_providers'
+          blob_column='png16x16' outdir='idps'
+          out='{{ source_id }}.png' />
+      </group>
+
+
+
+
+      <template in='index.html' bodyid='page_home' title='Home - {{ CommonName }}' />
+
+      <template in='privacy.html' bodyid='page_privacy' title='Privacy Policy - {{ CommonName }}' />
+      
+      <template in='terms.html' bodyid='page_terms' title='Terms of Use - {{ CommonName }}' />
+
+
+      <template in='style.css' />
+      <template in='base.js' />
+      <template in='utils.js' />
+      <template in='MochiKit.js' />
+      <template in='version.php' />
+
+      <group outdir='feedback'>
+        <template in="feedback/feedback-form.html" title="MedCommons Feedback Form" />
+        <template in="feedback/feedback-error.html" title="MedCommons Feedback Form - Error Detected" />
+        <template in="feedback/feedback-thankyou.html" title="Thank You for Your Feedback" />
+      </group>      
+      <group outdir='help'>
+        <template in='help/info.html' title='Help / FAQ - {{ CommonName }}' />
+        <template in='help/ondemand-patients.html' title='Help / For Patients - {{ CommonName }}' />
+        <template in="help/ondemand-doctors.html" title='Help / For Doctors - {{ CommonName }}' />
+        <template in="help/ondemand-physgroups.html" title='Help / For Practice Groups - {{ CommonName }}' />
+        <template in="help/how-addpdf.html" title='Help / How Do I / Add PDF Documents to DICOM - {{ CommonName }}' />
+        <template in="help/how-backup.html" title='Help / How Do I / Make a Personal Backup of My MedCommons Account? - {{ CommonName }}' />
+        <template in="help/how-dicomwkstn.html" title='Help / How Do I / Connect to a DICOM Workstation? - {{ CommonName }}' />
+        <template in="help/how-mrict.html" title='Help / How Do I / Connect to a MRI/CT Scanner? - {{ CommonName }}' />
+        <template in="help/docs-manual.html" title='Help / MedCommons Manual - {{ CommonName }}' />
+        <template in="help/samples.html" title='Help / DICOM Samples - {{ CommonName }}' />
+        <!--
+        <template in="supFormats.html" title='Help / Supported Import/Export Formats - {{ CommonName }}' />
+        -->
+      </group>
+
+    </group>
+
+    <group outdir='mc_templates'>
+      <template in='base.tpl.php' title='&lt;?=$title?&gt;' />
+      <template in='login.tpl.php' title='Sign In - {{ CommonName }}' />
+      <template in='openid_login.tpl.php' title='OpenID Sign In - {{ CommonName }}' />
+      <template in='login_tn.tpl.php' title='Sign In - {{ CommonName }}' />
+      <template in='link.tpl.php' title='Link OpenID User - {{ CommonName }}' />
+      <template in='recover.tpl.php' title='Password Recovery - {{ CommonName }}' />
+      <template in='pwchanged.tpl.php' title='Password Changed - {{ CommonName }}' />
+      <template in='claim.tpl.php' title='Claim Account - {{ CommonName }}' />
+      <template in='forgot.tpl.php' title='Recover Password - {{ CommonName }}' />
+      <template in='receiptText.tpl.php' title='Registration Complete - {{ CommonName }}' />
+      <template in='receipt.tpl.php' title='Registration Complete - {{ CommonName }}' />
+      <template in='verified.tpl.php' title='Email Address Verified - {{ CommonName }}' />
+      <template in='info.tpl.php' title='Appliance Information - {{ CommonName }}' />
+
+      <template in='setemail.tpl.php' title='Change Email Address - {{ CommonName }}' />
+      <template in='edituser.tpl.php' title='Change Name - {{ CommonName }}' />
+
+      <template in='no_current_ccr.tpl.php'
+    title='No Current CCR - {{ CommonName }}' />
+
+      <template in='home.tpl.php' bodyid='page_dashboard'
+          title='Dashboard - {{ CommonName }}' />
+ 
+      <group indir='backups' outdir='backups'>
+        <template in='01_encryption.tpl.php' title='Backup Step 1 - Set up encryption - {{ CommonName }}' />
+        <template in='02_service.tpl.php' title='Backup Step 2 - Choose service - {{ CommonName }}' />
+        <template in='03_s3.tpl.php' title='Backup Step 3 - Configure service - {{ CommonName }}' />
+        <template in='03_url.tpl.php' title='Backup Step 3 - Configure service' />
+      </group>
+    </group>
+  </group>
+
+  <group indir='email' outdir='mc_templates/EmailTemplates'>
+    <template in='forgotHTML.tpl.php' />
+    <template in='forgotText.tpl.php' />
+
+    <template in='accessHTML.tpl.php' />
+    <template in='accessText.tpl.php' />
+
+    <template in='accessHTML.tpl.php' />
+    <template in='accessText.tpl.php' />
+
+    <template in='emergencyHTML.tpl.php' />
+    <template in='emergencyText.tpl.php' />
+
+    <template in='inviteHTML.tpl.php' />
+    <template in='inviteText.tpl.php' />
+
+    <template in='resetHTML.tpl.php' />
+    <template in='resetText.tpl.php' />
+
+    <template in='verifyHTML.tpl.php' />
+    <template in='verifyText.tpl.php' />
+
+    <template in='viewHTML.tpl.php' />
+    <template in='viewText.tpl.php' />
+
+    <template in='faxHTML.tpl.php' />
+    <template in='faxText.tpl.php' />
+    
+    <template in='linkShareHTML.tpl.php' />
+    <template in='linkShareText.tpl.php' />
+  </group>
+
+  <!-- templates used by the orders application (grails) -->
+  <group indir='orders' outdir='../apache-tomcat/webapps/orders/WEB-INF/grails-app/views/layouts'>
+    <template in='timc.gsp' />
+  </group>
+
+</group>
+

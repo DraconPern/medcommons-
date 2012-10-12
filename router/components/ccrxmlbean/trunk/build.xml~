@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id$
+     ====================================================================== -->
+<project name="ccrxmlbean" default="world" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+	
+	<property name="build.dir" value="build"/>
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+
+	
+  <taskdef name="xmlbean" classname="org.apache.xmlbeans.impl.tool.XMLBean" classpath="\cygwin\usr\share\xmlbeans\lib\xbean.jar:\cygwin\usr\share\xmlbeans\lib\jsr173_api-1.0.jar"/>
+  <target name="world" depends="jar">
+  </target> 
+	
+	<path id="compile.path">
+		<fileset dir="lib" >
+			<include name="*.jar"/>
+			</fileset>
+	</path>
+	
+	
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+     - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+      <echo message="Initializing build ..." />
+      <ivy:configure file="ivy-settings.xml" />
+		 <ivy:resolve />
+		<ivy:retrieve /> 
+	  <mkdir dir="${build.dir}" />
+    </target>
+
+   <target name="jar" depends="init">
+	   
+	   <mkdir dir="${build.dir}/dist/" />
+	   <mkdir dir="${build.dir}/src/" />
+	<xmlbean 
+		classgendir="${build.dir}/classes" 
+		destfile="${build.dir}/dist/ccrxmlbean.jar"
+		schema="src/meta/astm/CCR_20051109.xsd"
+		classpathref="compile.path" 
+		javasource="1.5" 
+		srcgendir="${build.dir}/src"
+      failonerror="true">
+	</xmlbean>
+	   </target>
+   
+ 
+
+    <target name="load-build-number" if="build.buildnumber.disable">
+      <property file="build.number" />
+    </target>
+
+    <target name="update-build-number" depends="load-build-number" unless="build.buildnumber.disable">
+      <propertyfile file="build.number" comment="">
+        <entry  key="build.number" type="int" operation="+" value="1"/>
+      </propertyfile>
+      <property file="build.number" />
+    </target>
+
+    <target name="publish" depends="jar,update-build-number">
+      <ivy:publish resolver="public" pubrevision="1.0.${build.number}" overwrite="true">
+        <artifacts pattern="build/dist/[artifact].[ext]" />
+      </ivy:publish>
+    </target>
+
+    <target name="clean">
+     <delete dir="build"/>
+    </target>
+</project>

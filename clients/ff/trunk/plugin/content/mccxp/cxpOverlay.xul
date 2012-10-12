@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<overlay id="cxpOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://mccxp/content/mccxp.js" />		
+
+	<!-- Firefox -->
+	<menupopup id="menu_ToolsPopup">
+		<menuitem id="menu_cxp" position="1" label="CCR Client" oncommand="mccxp_send()"/>
+	</menupopup>
+</overlay>

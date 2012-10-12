@@ -1,0 +1,29 @@
+<?php
+require_once "wslib.inc.php";
+// send back a response , turning around a user supplied string
+class pingws extends restws {
+
+	function xmlbody(){
+		//
+		// echo inputs
+		//
+
+		$this->xm($this->xmnest ("inputs",
+		$this->xmfield("a",$this->cleanreq('a'))));
+
+		//
+		// return outputs
+		//
+		$this->xm($this->xmnest("outputs",
+		$this->xmfield("status","ok")));
+	}
+}
+
+//main
+
+$x = new pingws();
+$x->handlews("ping_Response");
+
+
+
+?>

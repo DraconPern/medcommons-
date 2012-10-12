@@ -1,0 +1,257 @@
+body {
+	background-color: #FFFFFF;
+	font-family: verdana, arial, sans-serif;
+	color: #000000;
+	margin: 0px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.skip {
+  font-size: 0.6em;
+  font-family: verdana, arial, sans-serif;
+}
+
+dt {
+  font-size: 0.8em;
+}
+
+dd {
+  font-size: 0.8em;
+}
+
+p {
+  font-size: 0.8em;
+  line-height: 1.2em;
+  padding: 2px;
+}
+
+.adobe {
+  font-size: 10px;
+}
+
+blockquote {
+  font-size: 12px;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.homepage {
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 25px;
+  margin-bottom: 0px;
+  line-height: 1.2em;
+}
+
+.homelist {
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+
+li {
+	font-size: 12px;
+	line-height: 1.4em;
+}
+
+ul {
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 25px;
+  margin-bottom: 0px;
+  line-height: 1.2;
+}
+
+/* LISTED font-size fixes by SAS */
+
+ol p {
+	font-size: 12px;
+	line-height: 1.4em;
+}
+
+ul p {
+	font-size: 12px;
+	line-height: 1.4em;
+}
+
+blockquote p {
+	font-size: 12px;
+	line-height: 1.4em;
+}
+
+ol h4 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+ul h4 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* End of LISTED font-size fixes */
+
+input {
+  font-size: 13px;
+}
+
+.sublist {
+  margin-left: 60px;
+}
+
+.footer {
+  font-size: 11px;
+}
+
+.red {
+  color: #FF0000;
+}
+
+.footer2 {
+  font-size: 10px;
+}
+
+.lastupdated {
+  font-size: 10px;
+  color: #727272;
+}
+
+
+.newsitem {
+  font-size: 0.6em;
+  line-height: 0.8em;
+}
+
+.time {
+  font-size: 0.6em;
+  line-height: 1.2em;
+}
+
+.newstext {
+  font-size: 0.6em;
+  line-height: 1.4em;
+}
+
+.newsback {
+  background-image: url(images/newsbackground.jpg);
+  background : repeat-x;
+}
+
+.newslist {
+  font-size: 0.6em;
+  font-weight: 600;
+}
+
+#newslist2 {
+  list-style-image: url("images/cicle.gif");  
+}
+
+h1 {
+  font-size:1.4em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 900;
+  margin-bottom: 0px;
+}
+
+h4 {
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.newsheader {
+  background-color: #FFCC66;
+  font-weight: 600;
+}
+
+.search {
+  font-size: 12px;
+}
+
+.searchbar {
+  background-color: #FFCC66;
+}
+
+.tagline {
+  font-weight: 600;
+  font-style: italic;
+  font-size: medium;
+}
+
+.footerbar {
+  background-color: #ffcc66;
+}
+
+.thirdnavigation {
+  background-color: #FFCC66;
+}
+
+.navi {
+  padding: 5px;
+}
+
+.subcontent {
+  font-size: 1em;
+  padding-left: 10px;
+}
+
+.subsubcontent {
+  font-size: medium;
+  padding-left: 40px;
+}
+
+.top {
+  font-size: 0.6em;
+}
+
+.color1 {
+  background-color: #ebebeb;
+}
+
+.color2 {
+  background-color: #dff4ff;
+}
+
+.colorhead {
+  background-color: #c3c3c3;
+}
+
+.sectionhead {
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.bibyear {
+  font-size: 0.7em;
+}
+
+.smalltag {
+  font-size: 10px;
+}
+
+.required {
+  color: #FF0000;
+  font-weight: 400;
+}
+
+.formtext {
+  font-size: medium;
+  line-height: 1.2em;
+  padding: 2px;
+}
+
+address {
+  font-size: medium;
+}

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Begin preupgrade."
+launchctl unload /Library/LaunchDaemons/net.medcommons.cxpcd.plist
+echo "End preupgrade."

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+if [ $(whoami) != "root" ]
+then
+    echo "You must be root to run this command."
+    exit 1
+fi
+
+VERSION=0.3
+INSTALL=release
+if [ ! -z $1 ]; then
+    INSTALL=$1
+fi
+
+wget -O /etc/yum.repos.d/medcommons.repo http://appliance.medcommons.net/$VERSION.repo
+touch /etc/yum.repos.d/medcommons.repo
+
+medcommons-control stop &&
+yum --disablerepo=* --enablerepo=$INSTALL* update
+medcommons-control start
+
+#
+# Publish...
+#
+/var/www/console/bin/mc-publish ||
+	echo "Publish Error!!";
+
+echo "Verify Self Test - https://`hostname`/router/SelfTest.action";
+echo "  (Test Data - https://`hostname`/acct/testdata.php)";
+
+#
+# And hostname for good measure...
+#
+(/var/www/console/bin/mc-hostname >& /dev/null) ||
+	echo "Hostname Error!!";

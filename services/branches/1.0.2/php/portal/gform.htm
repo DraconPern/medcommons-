@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MedCommons Practice Registration Form</title>
+ <link rel="stylesheet" type="text/css"  href="gstyle.css"/>
+        <link rel="shortcut icon" href="favicon.gif" type="image/gif"/>
+<meta name="viewport" content="minimum-scale=0.6, width=device-width, maximum-scale=1.6, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="mcportal.png">
+
+</head>
+
+<body>
+<img src='http://www.medcommons.net/images/logoHeader.gif' />
+$$$crumbs$$$
+<h3>Practice Registration Form</h3>
+<form id=payment method=post action='?handler=prphandler'>
+	<div class='_errormainclass' >_errormaintext</div> 
+	<fieldset>
+		<legend>Your Practice</legend>
+		<ol>
+			<li>
+				<label for=name>Name</label>
+				<input id=name name=name type=text placeholder="name of your practice" required autofocus>
+			</li>
+		</ol>
+	</fieldset>
+
+	<fieldset>
+		<legend>Select Template</legend>
+		<ol>		
+			<li>
+				<fieldset>
+					<legend>Choose your workflow and style template [<a href=catalog.html>catalog</a>]</legend>
+					<ol>
+					   <li>
+							<input id=amex name=program value='1' type=radio>
+							<label for=amex>Incoming CD Dashboard</label>
+						</li>
+						<li>
+							<input id=rpp name=program value='2' type=radio>
+							<label for=rpp >Referring Physician Portal - Open</label>
+						</li>
+						<li>
+							<input id=rpp2 name=program value='3' type=radio>
+							<label for=rpp2 >Referring Physician Portal - Restricted</label>
+						</li>
+					</ol>
+				</fieldset>
+			</li>
+		</ol>
+	</fieldset>
+		<fieldset>
+		<legend>Administrator</legend>
+		<ol>
+			<li>
+				<label for=First>First</label>
+				<input id=First name=First type=text required>
+			</li>
+			<li>
+				<label for=Last>Last</label>
+				<input id=Last name=Last type=text required>
+			</li>
+				<li>
+				<label for=Email>Email</label>
+				<input id=Email name=Email type=text required>
+			</li>
+				<li>
+				<label for=Password>Password</label>
+				<input id=Password name=Password type=password required>
+			</li>
+				<li>
+				<label for=Password2>Password(again)</label>
+				<input id=Password2 name=Password2 type=password required>
+			</li>
+		</ol>
+	</fieldset>
+			<fieldset>
+		<legend>Terms of Use</legend>
+		<ol>
+		<li>
+		<fieldset>
+					<legend>please confirm you acceptance</legend>
+					<ol>
+						<li>
+						<input id=confirm name=confirm type=checkbox value='0' required >
+						<label for=confirm>I agree</label>
+						</li>
+					</ol>
+				</fieldset>		
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<button type=submit>$$$buttonlabel$$$</button>
+	</fieldset>
+</form>
+</body>
+</html>

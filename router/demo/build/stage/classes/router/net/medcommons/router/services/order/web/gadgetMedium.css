@@ -1,0 +1,39 @@
+/* 
+ * IMPORTANT:
+ * import gadgetSmall.css before
+ * including this file
+ * to get defaults
+ */
+body {
+  font-size: 12px;
+}
+ul {
+  font-size: 12px;
+}
+
+#history, table tr td {
+  font-size: 12px;
+}
+
+#ccrheader {
+  color: black;
+}
+
+table {
+  border-collapse: separate;
+}
+
+table tr th {
+  color: black;
+  font-size: 12px;
+}
+
+table tr td {
+  font-size: 12px;
+}
+
+h5 {
+  margin-left: 5px;
+  font-size: 12px;
+  display: inline;
+}

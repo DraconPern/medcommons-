@@ -1,0 +1,23 @@
+#!/bin/sh
+# mc_restore
+# Copyright(c) 2008, Medcommons, Inc.
+#
+# Extract downloaded S3 backup files
+#
+# 1. concatenate the split files
+# 2. decrypt using OpenSSL dec
+# 3. decompress using bzip2
+# 4. result is an uncompressed TAR file
+#
+# Usage: mc_restore {repository}/{mcid} {files}...
+
+if [ $# -lt 2 ]
+then
+    echo "Usage: $0 {repository}/{mcid} {files}..."
+    exit 1
+fi
+
+directory=$1; shift
+
+cat $* | openssl enc -d -aes-256-cbc -kfile /opt/gateway/.aes-key | bunzip2 --quiet | tar --extract --file - --directory ${directory}
+rm $*

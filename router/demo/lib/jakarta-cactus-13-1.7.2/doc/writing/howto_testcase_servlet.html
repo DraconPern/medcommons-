@@ -1,0 +1,649 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>ServletTestCase Principles</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="ServletTestCase Principles" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././writing/howto_testcase.html">Writing Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Writing Tests<ul>
+    
+<li>
+<a href=".././writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">General Principles</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets." class="currentPage">Testing Servlets</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus.">Testing Filters</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_jsp.html" title="How to write unit tests for JSP pages using Cactus.">Testing JSP Pages</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus.">Testing Taglibs</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">Testing EJBs</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Advanced Topics<ul>
+    
+<li>
+<a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">Integrating HttpUnit</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_security.html" title="">Using Authentication</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Reference<ul>
+    
+<li>
+<a href=".././api/framework-12/index.html" title="">Javadocs (J2EE 1.2)</a>
+</li>
+    
+<li>
+<a href=".././api/framework-13/index.html" title="">Javadocs (J2EE 1.3)</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>When to use?</h1>
+
+      
+<p>
+        Your test case class should extend <code>ServletTestCase</code>
+        whenever you are unit testing:
+      </p>
+      
+<ul>
+        
+<li>
+          Servlets,
+        </li>
+        
+<li>
+          Any java code that uses Servlet API objects
+          (<code>HttpServletRequest</code>, ...)
+        </li>
+      
+</ul>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Provided Implicit Objects</h1>
+
+      
+<p>
+        Cactus automatically initializes the implicit objects for you and
+        they are made available to your <code>setUp()</code>,
+        <code>testXXX()</code> and <code>tearDown()</code> methods as
+        instance variables of the <code>ServletTestCase</code> class (and thus
+        as instance variables of your test case class as it extends
+        <code>ServletTestCase</code>).
+      </p>
+      
+<div class="note">
+        You may ask yourself how Cactus initializes these objects. The
+        mechanism is described in the <a href=".././how_it_works.html" title="High level view of the inner workings of Cactus.">How it
+        works</a> guide.
+      </div>
+
+      
+<p>
+        The provided implicit objects are:
+      </p>
+
+      
+<a name="servlet_request">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>request</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>request</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>org.apache.cactus.server.HttpServletRequestWrapper
+              </code>, which inherits from
+              <code>javax.servlet.http.HttpServletRequest</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<p>
+          Cactus wraps methods of the original HTTP request in order to return
+          the HTTP related parameters set up in the <code>beginXXX()</code>
+          method. Thus, you will be able to pass this request object to
+          your code to test and set the needed parameter in the
+          <code>beginXXX()</code> method.
+        </p>
+        
+<p>
+          For example, if your code under test calls
+          <code>getCookies()</code> on the request object that you have
+          passed to it, it will return the cookies that you have added to the
+          HTTP request in <code>beginXXX()</code> by calling the
+          <code>WebRequest.addCookie()</code> method.
+        </p>
+        
+<p>
+          See the javadoc for the
+          <code>org.apache.cactus.WebRequest</code> interface and the
+          <code>org.apache.cactus.server.HttpServletRequestWrapper
+          </code> class for all details. You should also look at the
+          samples provided in the Cactus distribution.
+        </p>
+
+        
+<div class="section">
+<h3>Additional methods</h3>
+
+          
+<p>
+            Cactus provides some additional methods to ease writing tests
+            (see the javadoc for full details). These methods are provided
+            because it is not easy (if not downright impossible in some
+            cases) to simulate them with real configuration data:
+          </p>
+          
+<ul>
+            
+<li>
+              
+<code>setRemoteIPAddress()</code>: sets the remote IP address
+              that will be returned by <code>getRemoteIPAddress()</code>,
+            </li>
+            
+<li>
+              
+<code>setRemoteHostName()</code>: sets the remote Host name
+              that will be returned by <code>getRemoteHostName()</code>,
+            </li>
+            
+<li>
+              
+<code>setRemoteUser()</code>: sets the remote user name
+              that will be returned by <code>getRemoteUser()</code>.
+            </li>
+          
+</ul>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="servlet_response">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>response</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>response</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>javax.servlet.http.HttpServletResponse</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<div class="note">
+          Cactus does not wrap the response.
+        </div>
+
+      
+</div>
+
+      
+<a name="servlet_config">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>config</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>config</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>org.apache.cactus.server.ServletConfigWrapper
+              </code>, which inherits from
+              <code>javax.servlet.ServletConfig</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<p>
+          Cactus wraps the original Servlet Config for two reasons:
+        </p>
+        
+<ul>
+          
+<li>
+            In order to provide additional methods. For example, it is
+            possible to initialise parameters without setting them in
+            <code>web.xml</code>, etc...,
+          </li>
+          
+<li>
+            So that it can return a wrapped Servlet Context instead of the
+            original one. This is because the Servlet Context is used
+            to perform forwards and includes and we need to pass to these
+            methods the original request and response. As we have wrapped
+            the request, we need to wrap the Servlet Context to pass the
+            original request (and not the wrapped one).
+          </li>
+        
+</ul>
+        
+<p>
+          The <code>config</code> implicit object will contain all
+          initialisation parameters defined in <code>web.xml</code>
+          under the Servlet Redirector servlet definition.
+        </p>
+        
+<p>
+          See the javadoc for the
+          <code>org.apache.cactus.server.ServletConfigWrapper</code>
+          class for all details. You should also look at the
+          samples provided in the Cactus distribution.
+        </p>
+
+        
+<div class="section">
+<h3>Additional methods</h3>
+
+          
+<p>
+            Additional methods provided:
+          </p>
+          
+<ul>
+            
+<li>
+              
+<code>setInitParameter()</code>: sets an initialisation
+              parameter (as if it has been defined in the <code>web.xml</code>
+              file),
+            </li>
+            
+<li>
+              
+<code>setServletName()</code>: sets the Servlet name that will be
+              returned by <code>getServletName()</code> (if not set, the
+              Cactus Servlet redirector name will be returned).
+            </li>
+          
+</ul>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="servlet_context">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>ServletContextWrapper</h2>
+
+        
+<p>
+          This is not an implicit object per see (as it is not accessible as
+          an instance variable). It is available by calling
+          <code>config.getServletContext()</code>.
+        </p>
+        
+<p>
+          However, Cactus wraps the <code>ServletContext</code> in a
+          <code>ServletContextWrapper</code> in order to take into account
+          simulated URLs and provide additional methods to help write tests.
+        </p>
+
+        
+<p>
+          See the javadoc for the
+          <code>org.apache.cactus.server.ServletContextWrapper</code>
+          class for all details. You should also look at the
+          samples provided in the Cactus distribution.
+        </p>
+
+        
+<div class="section">
+<h3>Additional methods</h3>
+
+          
+<p>
+            Additional methods provided:
+          </p>
+          
+<ul>
+            
+<li>
+              
+<code>getLogs()</code>: returns the text that has been logged
+              by calls to <code>ServletContext.log()</code> methods. This is
+              a helper method that makes it easy to assert what is logged.
+            </li>
+            
+<li>
+              
+<code>setInitParameter()</code>: sets an initialisation
+              parameter (as if it has been defined in the <code>web.xml</code>
+              file, using the <code>&lt;context-param&gt;</code> element).
+            </li>
+          
+</ul>
+
+        
+</div>
+
+      
+</div>
+
+      
+<a name="servlet_session">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>session</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>session</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>javax.servlet.http.HttpSession</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<div class="note">
+          Cactus does not wrap the response.
+        </div>
+
+        
+<p>
+          By default, Cactus always creates an HTTP session for your test
+          case. It is possible to tell it not to do so by calling the
+          <code>WebRequest.setAutomaticSession(false)</code> method (it is
+          <code>true</code> by default). This could be useful for cases
+          where your code under test verifies branches when
+          "<code>request.getSession(false)</code>" is <code>null</code>.
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Tips and Tricks</h1>
+
+      
+<div class="section">
+<h2>Parameter initialisation</h2>
+
+        
+<p>
+          If your code under test make use of any of the servlet methods
+          inherited from <code>javax.servlet.GenericServlet</code> (these are
+          the <code>log()</code>, <code>getServletConfig()</code>, ...
+          methods), then you need to call the <code>init(ServletConfig)</code>
+          method of your servlet to initialise its internal
+          <code>ServletConfig</code> object.
+        </p>
+        
+<p>
+          For example:
+        </p>
+
+
+<div class="source">
+<pre>
+public void testXXX()
+{
+    MyServletToTest servlet = new MyServletToTest();
+    servlet.init(config);
+
+    // Call a method to test that uses a method inherited from Generic Servlet
+    servlet.someMethodToTest();
+
+[...]
+}
+</pre>
+</div>
+
+        
+<p>
+          See the samples provided as part of the Cactus distribution.
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Sample</h1>
+
+      
+<p>
+        This is a very basic sample intended to give you a flavour of Servlet
+        unit testing. Check the distribution samples for extensive
+        examples.
+      </p>
+
+      
+<div class="note">
+        This example is for Cactus 1.2 and above as it uses the new
+        <code>WebRequest</code> and <code>WebResponse</code> objects.
+      </div>
+
+
+<div class="source">
+<pre>
+public void beginXXX(WebRequest theRequest)
+{
+    // Set up HTTP related parameters
+    theRequest.setURL("jakarta.apache.org", "/mywebapp", "/test/test.jsp",
+        null, null);
+    theRequest.addCookie("cookiename", "cookievalue");
+}
+
+public void testXXX()
+{
+    MyServletToTest servlet = new MyServletToTest();
+    servlet.init(config);
+
+    // Call method to test
+    servlet.methodToTest();
+
+    // Perform some server side asserts
+    assertEquals("someValue", session.getAttribute("someAttribute"));
+    assertEquals("jakarta.apache.org", request.getServerName());
+}
+
+public void endXXX(WebResponse theResponse)
+{
+    // Asserts the returned HTTP response
+
+    Cookie cookie = theResponse.getCookie("someCookie");
+    assertEquals("someValue2", cookie.getValue());
+
+    assertEquals("some content here", theResponse.getText());
+}
+</pre>
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+/**
+ * Copyright 2004 MedCommons Inc.   All Rights Reserved.
+ */
+/* The whole entire area of the viewer - contains everything else */
+.ViewerArea {
+  background-color: #003366;
+  height: 1000px;
+  width: 770px;
+}
+
+/* Common properties for all thumbnails */
+.ThumbTime {
+  position: absolute;
+  left: 108px;
+  top: 145px;
+  font-weight: normal;
+}
+/* Label includes # of images etc. */
+.ThumbLabel {
+  position: absolute;
+  width: 102px;
+  top: 172px;
+}
+.ThumbDescription {
+  position: absolute;
+  width: 102px;
+  top: 145px;
+}
+
+.thumbCellBox {
+  position: absolute;
+  top: 750px;
+  width: 140px;
+  background-color: #003366;
+  font-size: 12px;
+}
+
+/* Properties individual to each thumbnail referenced by id - horizontal positions */
+#thumb0 {
+  left: 2px;
+}
+#thumb1 {
+  left: 145px;
+}
+#thumb2 {
+  left: 289px;
+}
+#thumb3 {
+  left: 433px;
+}
+
+/* General properties of tools area */
+.tools {
+  position: absolute;
+  left: 579;
+  top: 750px;
+  background-color: #003366;
+}
+
+/* Position and style of the MedCommons logo image */
+#mclogo {
+  position: absolute;
+  left: 572px;
+  top: 904px;
+}
+
+#mclogoimage {
+  background-image: url(medcommons_bottomfooter.gif); 
+  width: 180; 
+  height: 35;
+}
+
+/* The div containing all the tools */
+.tools {
+  position: absolute;
+  left:  600px;
+  top:   750px;
+}
+
+/* Common properties for all tools */
+.Tool {
+  position: absolute;
+}
+
+/* Tools - for portrait view we want them to form a 3x3 grid */
+#tool1 { left: 0px;   top: 0px; }
+#tool2 { left: 54px;  top: 0px; }
+#tool3 { left: 108px; top: 0px; }
+#tool4 { left: 0px;   top: 50px; }
+#tool5 { left: 54px;  top: 50px; }
+/*#tool6 { left: 108px; top: 50px; }
+#tool7 { left: 0px;   top: 100px; }*/
+#tool6 { left: 108px; top: 0px; }
+#tool7 { left: 54px;   top: 0px; }
+/*#tool8 { left: 54px;  top: 100px; }*/
+#tool9 { left: 0px; top: 50px; }
+
+/* The footer - at the bottom of the page */
+.footer {
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 952px;
+  left: 0px;
+  width: 770px;
+  height: 50px;
+}
+
+/* The text inside the footer */
+.footerLabel {
+  vertical-align: bottom; 
+  text-align: center;
+  position: relative;
+  top: -11;
+  left: -90;
+}
+
+/* The main WADO image */
+.mainImage {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: #000000;
+  width: 770px;
+  height: 750px;
+}
+
+/* Images for paging the series forward and backwards */
+#pageuparrow {
+  position: absolute;
+  top: 755px;
+  left: 579px;
+}
+
+#pagedownarrow {
+  position: absolute;
+  top: 875px;
+  left: 579px;
+}
+
+#pager {
+  position: absolute;
+  top: 955px;
+  left: 320px;
+  color: white;
+	font-size: 10px; 
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif; 
+  width: 10;
+  word-wrap: break-word;
+  z-index: 30;
+}
+
+a:hover {
+  color: red;  
+}
+
+a {
+  text-decoration: none;
+}
+
+.pagerLabel {
+  display: none;
+}
+
+#cachedPane {
+  position: absolute;
+  left: 700px;
+}
+
+#speedPane {
+  position: absolute;
+  left: 700px;
+}
+
+#dragScrollOuter {
+  left: 735px;
+}
+
+#dragScrollLabel {
+  left: 735px;
+  top: 60px;
+}
+
+#xdsSubmitButton {
+  position: absolute;
+  top: 800px;
+  left: 600px;
+}
+

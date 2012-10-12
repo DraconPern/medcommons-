@@ -1,0 +1,5 @@
+<server>
+  <mbean code="net.medcommons.central.guid.GuidFactoryService" name="medcommons:service=GuidFactoryService">
+  	<depends>jboss:service=Naming</depends>
+  </mbean>
+</server>

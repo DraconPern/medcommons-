@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication>
+    <CCRDataObjectID>BB0063</CCRDataObjectID>
+    <DateTime>
+        <Type>
+            <Text>Date Prescribed</Text>
+        </Type>
+        <ExactDateTime>2002-02-02T05:00:00Z</ExactDateTime>
+    </DateTime>
+    <Type>
+        <Text>Medication</Text>
+    </Type>
+    <Status>
+        <Text>Active</Text>
+    </Status>
+    <Source>
+        <Actor>
+            <ActorID>AA0001</ActorID>
+            <ActorRole>
+                <Text>Patient</Text>
+            </ActorRole>
+        </Actor>
+    </Source>
+    <Product>
+        <ProductName>
+            <Text>Ortho Cyclen</Text>
+        </ProductName>
+        <Form>
+            <Text>Tablet(s)</Text>
+        </Form>
+    </Product>
+    <Quantity>
+        <Value>28</Value>
+    </Quantity>
+    <Directions>
+        <Direction>
+            <Dose>
+                <Value>1</Value>
+                <Units>
+                    <Unit>Tablet(s)</Unit>
+                </Units>
+            </Dose>
+            <Frequency>
+                <Value>Once a day</Value>
+            </Frequency>
+        </Direction>
+    </Directions>
+    <PatientInstructions>
+        <Instruction>
+            <Text>Take medication one time a day, if missed one day, please use a different form of 
+                contraception to avoid pregnancy. :  I added these comments</Text>
+        </Instruction>
+    </PatientInstructions>
+    <Refills>
+        <Refill>
+            <Number>1</Number>
+        </Refill>
+    </Refills>
+</Medication>

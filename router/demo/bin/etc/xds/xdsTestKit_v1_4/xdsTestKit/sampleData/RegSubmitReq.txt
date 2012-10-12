@@ -1,0 +1,36 @@
+POST /ebxmlrr/registry/soap HTTP/1.1
+Accept: */*
+Accept-Language: en-us
+Referer: http://sst138.ncsl.nist.gov/web/soap/soap-diag-client.htm
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+Host: gunshot.ncsl.nist.gov:8080
+Connection: Keep-Alive
+Cache-Control: no-cache
+Authorization: Basic amI6amIK
+Content-Length: 851
+
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <SubmitObjectsRequest xmlns="urn:oasis:names:tc:ebxml-regrep:registry:xsd:2.
+1">
+      <LeafRegistryObjectList>
+        <ExtrinsicObject id="urn:uuid:7a3b7f3f-27eb-4634-8622-f3e4a8ebb472" isOp
+aque="false" mimeType="" objectType="urn:uuid:baa2e6c8-873e-4624-8f2d-b9c7230eb4
+f8" userVersion="">
+          <Name>
+            <LocalizedString charset="UTF-8" lang="en-US" value="jb test object1
+"></LocalizedString>
+          </Name>
+          <Description><LocalizedString charset="UTF-8" lang="en-US" value="jb t
+est object1"></LocalizedString>
+          </Description>
+        </ExtrinsicObject>
+      </LeafRegistryObjectList>
+    </SubmitObjectsRequest>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

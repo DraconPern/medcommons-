@@ -1,0 +1,1 @@
+<p class='errorAlert'>Your account has already been verified.  Please login below to access your account</p>

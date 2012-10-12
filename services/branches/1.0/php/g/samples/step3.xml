@@ -1,0 +1,20 @@
+				
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>produced in Keynote</string>
+						<key>toplabel</key>
+						<string>QuickTime - Hello MedPad!</string>
+						<key>label</key>
+						<string>Hello MedPad! - QuickTime</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Quicktime_X_Logo.png/64px-Quicktime_X_Logo.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/MedPadStrategery.mov
+						</string>
+					</dict>
+

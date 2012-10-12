@@ -1,0 +1,206 @@
+/*
+ * ========================================================================
+ * 
+ * Copyright 2001-2003 The Apache Software Foundation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * ========================================================================
+ */
+
+/* Global styles */
+body {
+  background: white;
+  color: black;
+  margin: 0;
+  padding: 0; /* for Opera */;
+}
+a:link, a:visited { color: #023264; }
+code { color: #023264; }
+img { border: 0; }
+table, th, td { border: none; }
+
+/* Styles for the page header */
+#header {
+  background-color: white;
+  border-bottom: 1px solid gray;
+  border-spacing: 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#header td.logo { padding: 3px }
+#projectLogo {
+  text-align: left;
+  width: 50%;
+}
+#subprojectLogo {
+  text-align: right;
+  width: 50%;
+}
+#contextBar td {
+  background-color: whitesmoke;
+  border: solid silver;
+  border-width: 1px 0;
+  padding: 4px 13px;
+}
+#contextBar a:link, #contextBar a:visited {
+  color: #023264;
+  text-decoration: none;
+}
+#contextBar a:hover { color: #828DA6 }
+#breadCrumbs {
+  font: normal x-small Arial,Helvetica,sans-serif;
+  text-align: left;
+  width: 50%;
+}
+#status {
+  font: normal x-small Arial,Helvetica,sans-serif;
+  text-align: right;
+  width: 50%;
+}
+
+/* Styles for the left sidebar */
+#sidebar {
+  padding: 2px 4px;
+  vertical-align: top;
+  width: 160px;
+}
+#navigation ul {
+  font: normal 100% Arial,Helvetica,sans-serif;
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+}
+#navigation ul ul { margin-left: .5em }
+#navigation li {
+  font-weight: bold;
+  margin-bottom: 0.25em;
+  white-space: nowrap;
+}
+#navigation li li {
+  font-size: smaller;
+  font-weight: normal;
+}
+#navigation a:link, #navigation a:visited {
+  text-decoration: none;
+}
+#navigation a:hover {
+  color: #828DA6;
+  text-decoration: underline;
+}
+#navigation a.currentPage {
+  background-color: whitesmoke;
+  color: #828DA6;
+}
+
+/* Styles for the main content area */
+#content {
+  vertical-align: top;
+}
+#content .figure {
+  text-align: center;
+}
+#content .note {
+  font-style: italic;
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+}
+#content .source {
+  font-size: 9pt;
+}
+#content .source pre {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+#content .tabular th {
+  font: bolder 90% Arial,Helvetica,sans-serif;
+}
+#content .tabular td {
+  font: normal 90% Arial,Helvetica,sans-serif;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5 {
+  color: white;
+  font: bold 100% Arial,Helvetica,sans-serif;
+  margin-left: -2.5em;
+  padding: 1px 2px;
+}
+#content h1 {
+  background: #525D76;
+  padding-left: 4px;
+  padding-top: 2px;
+}
+#content h2, #content h3, #content h4, #content h5 {
+  background: #828DA6;
+  padding-left: 4px;
+  padding-top: 2px;
+}
+#content h3 {
+  font-style: italic;
+}
+#content h4 {
+  font-style: italic;
+  font-size: 95%;
+}
+#content h5 {
+  font-style: italic;
+  font-size: 95%;
+}
+#content .note {
+  background: url(../images/note.gif) center left no-repeat;
+  min-height: 32px;
+  padding: .5em 40px;
+  vertical-align: middle;
+}
+#content .section {
+  font: normal 100% Times,serif;
+  margin-bottom: 2em;
+  margin-left: 2.5em;
+}
+#content .source {
+  background-color: whitesmoke;
+  border: solid 1px solid #888;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-top: 1em;
+}
+#content .tabular {
+  margin: 0.1in;
+}
+#content .tabular th {
+  background: #039acc;
+  color: white;
+  text-align: left;
+  vertical-align: middle;
+}
+#content .tabular td {
+  background-color: #a0ddf0;
+  color: black;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Styles for the page footer */
+#footer {
+  background-color: whitesmoke;
+  border-top: solid 1px gray;
+  color: #023264;
+  font: italic 80% Arial,Helvetica,sans-serif;
+  padding: 0 .5em;
+}
+#footer p {
+  border-top: solid 1px silver;
+  margin: 0;
+  padding: .5em 0;
+  text-align: center;
+}

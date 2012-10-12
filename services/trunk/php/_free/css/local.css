@@ -1,0 +1,744 @@
+div.secondary_newlaw div.innerPageGroup1 div#main  div#mainbody h2, 
+div.secondary_newlaw div.innerPageGroup2 div#main  div#mainbody h2{	
+	display: none;
+}
+
+div.new_law_header{			
+	padding: 0px 0px;
+	width: 960px;		
+	position: relative;
+	display: block;
+	text-align:left;	
+	margin: 0px auto;		
+	background-color: #FFFBBF;
+}
+div.new_law_hbody{
+	margin: 0px 30px;
+	padding: 13px 0px;
+	/*border-bottom: 1px solid #F1E7A9;*/
+}
+div.new_law_header p{
+	margin: 0px 0px;
+}
+div.new_law_header h1{
+	margin-top: 0px;
+}
+div.new_law_header img{
+	float:left;
+}
+
+
+div.secondary_newlaw div#main{
+	margin-top: 0px;
+}
+
+div.secondary_newlaw div#main div#mainbody{
+	padding: 0px 0px;
+	border: none;
+	margin-bottom: 10px
+}
+
+div.secondary_newlaw div#main div#mainbody .mainbody_inner{
+	padding: 0px 10px;
+}
+
+div.secondary_newlaw div#main div#mainbody2{
+	width: 100%;
+	border: none;
+}
+/********* Understand the New Law Intro billboard ********/
+
+div.main_newlaw_intro_billboard{
+	position: relative;
+	display:block;
+	height: 100%;
+	margin: 0px 0px;		
+	width: 100%;	
+	
+}
+
+div.new_law_intro_billboard{
+		position:relative;		
+		display:block;					
+		margin-left:0px;		
+		background: url(../images/sys_images/white-880-box-bg_on-yellow.gif) top left repeat-y;		
+		width:892px;				
+		margin-bottom: 20px;
+		margin-left: 35px;
+}
+
+
+
+div.new_law_intro_billboard_inner{
+	height: 100%;
+	position:relative;
+	background: url(../images/sys_images/white-880-box-top_on-yellow.gif) top left no-repeat;	
+}
+
+div.new_law_intro_billboard_inner2{
+	height: 100%;
+	position:relative;
+	background: url(../images/sys_images/white-880-box-bottom_on-yellow.gif) bottom left no-repeat;	
+}
+
+div.new_law_intro_billboard_body{		
+	padding: 5px 15px;	
+	padding-bottom: 15px;
+}
+
+
+div.secondary_newlaw div.sub_billboard{	
+	position: relative;
+	display:block;
+	height: 100%;
+	
+	background: url(../images/sys_images/yellow_bottom_bg.gif) bottom left repeat-y;		
+	
+	
+}
+
+div.secondary_newlaw div.sub_billboard_inner{
+	background: url(../images/sys_images/yellow_features_top_bg.gif) top left no-repeat;
+	margin-top: 5px;	
+	padding: 10px 35px;
+}
+
+
+
+/* General Information **/
+div#generalInfo_block{
+	padding: 5px 0;
+	background-color: #EAF0F4;
+}
+ul#generalInfo{
+	
+	
+	/*border: 1px solid lightgrey;*/
+}
+ul#generalInfo li{
+	
+}
+ul#generalInfo li ul li{
+	font-size: .9em;
+}
+ul#generalInfo, ul#generalInfo ul{
+	list-style-type: none;
+	margin: 0 0;
+	padding: 0 0;
+}
+/************* Understand the New Law Default Template *****************/
+
+div.secondary_newlaw div#wrapper5{
+	padding: 0 10px;
+}
+div.secondary_newlaw div#navcollb{
+	margin: 0;
+	padding: 0;	
+	position: static;
+}
+
+div.secondary_newlaw div#navcolbg{
+	background: url(../images/sys_images/navleftbg.gif) repeat-y;		
+	
+}
+
+div.secondary_newlaw div#navcol {
+	width:225px;		
+	float: left;				
+	position: relative;			
+	
+	
+}
+
+div.secondary_newlaw div#navcol .leftnav .outter {
+	font-weight:normal;	
+	width: 225px;
+}
+
+div.secondary_newlaw div#navcol .leftnav .outter a{
+	color: #105191;
+}
+
+
+div.secondary_newlaw .leftnav div.inner{
+	margin-top: -15px;
+}
+
+div.secondary_newlaw div#navcol .leftnav .menu{
+	
+	font-size: 1.2em;
+	color: #8a805b;
+	
+	position:relative;
+}
+div.secondary_newlaw div#navcol div.leftnav ul{
+	margin-left: 5px;
+	
+}
+
+div.secondary_newlaw div#navcol .leftnav .menu li{	
+	border: none;
+	display: block;
+}
+
+div.secondary_newlaw div#navcol div.leftnav ul.menu li a{ 	
+	padding:5px 15px 5px 5px;
+	
+	
+}
+
+div.secondary_newlaw div#navcol .leftnav .menu li.label span.label{		
+	border-bottom:1px solid #DED298;			
+	width: 100%;
+	display:block;		
+	margin-top:15px;
+	padding-bottom:5px;
+	width:235px;
+	margin-bottom: 10px;
+	font-weight: bold;
+
+}
+
+
+div.secondary_newlaw div#navcol div.leftnav ul.menu li ul li a{	
+	border: none;
+	background-color: transparent;
+	width: 225px;
+}
+
+div.secondary_newlaw div#navcol div.leftnav ul.menu li.actived a{	
+	background:url(../images/sys_images/brown-arrow.png) 98% 55% no-repeat #F6E497;;
+	font-weight: bold;
+	
+}
+
+div.secondary_newlaw div#navcol div.leftnav ul.menu li.actived li a{	
+	background: none transparent;
+	font-weight: normal;
+	color: #105191;
+	background: url(../images/sys_images/dot.jpg) 12px 12px no-repeat;
+	
+}
+
+
+
+div.secondary_newlaw div.subpageGroup div#main{
+	display: block;
+	position: relative;	
+	min-height:300px;
+  height:auto !important;
+  height:300px;  
+  /*width:637px;  */
+  padding: 0px 0px;  
+  width: auto;
+  
+}
+
+
+
+div.secondary_newlaw div.subpageGroup div#main div#mainbody{
+	width:100%;
+	
+	
+	/*overflow:hidden;*/
+}
+
+div.secondary_newlaw div.subpageGroup div#sidecolbg div#main{			
+	margin-right: 235px;		
+	margin-left: 275px;				
+	
+}
+
+
+#containerIE div.secondary_newlaw div.subpageGroup div#sidecolbg div#main {
+	margin-left: 260px;		
+}
+
+#containerIE div.secondary_newlaw div.subpageGroup div#sidecolbg_no div#main {
+	margin-left: 260px;			
+}
+
+
+div.secondary_newlaw div.subpageGroup div#sidecolbg_no div#main{		
+	margin-left: 260px;		
+}
+
+div.secondary_newlaw div.subpageGroup div#navcolbg_no div#main {		
+	padding-top:0px;
+	margin-left:0px;		
+}
+
+#containerIE div.secondary_newlaw div.subpageGroup div#navcolbg_no div#main {	
+	margin-left: 0px;	
+	
+}
+
+div.secondary_newlaw div.subpageGroup div#main div#mainbody{
+	position: relative;
+	height: 100%;
+	background: url(../images/sys_images/white-625-box-bg_on-yellow.gif) top left repeat-y;
+	margin-bottom: 10px;
+	
+}
+
+div.secondary_newlaw div.subpageGroup div#main div#mainbody div.mainbody_inner{
+	position: relative;
+	height: 100%;
+	background: url(../images/sys_images/white-625-box-top_on-yellow.gif) top left no-repeat;
+	margin: 0 0;
+	padding: 0 0;
+}
+
+div.secondary_newlaw div.subpageGroup div#main div#mainbody div.mainbody_inner2{
+	position: relative;
+	height: 100%;
+	background: url(../images/sys_images/white-625-box-bottom_on-yellow.gif) bottom left no-repeat;	
+	
+}
+
+
+div.secondary_newlaw div.subpageGroup div#main div#mainbody div.mainbody_inner2 div.mainbody_content{	
+	padding: 10px 20px;
+	padding-right: 80px;
+	
+}
+
+div.secondary_newlaw div.subpageGroup div#navcolbg_no div#main{
+	padding-left: 20px;
+}
+div.secondary_newlaw div.subpageGroup div#navcolbg_no div#main div#mainbody{
+	position: relative;
+	height: 100%;
+	background: url(../images/sys_images/white-880-box-bg_on-yellow.gif) top left repeat-y;		
+	margin-bottom: 10px;
+}
+div.secondary_newlaw div.subpageGroup div#navcolbg_no div#main div#mainbody div.mainbody_inner{
+	position: relative;
+	height: 100%;
+	background: url(../images/sys_images/white-880-box-top_on-yellow.gif) top left no-repeat;
+}
+div.secondary_newlaw div.subpageGroup div#navcolbg_no div#main div#mainbody div.mainbody_inner2{
+	position: relative;
+	height: 100%;
+	background: url(../images/sys_images/white-880-box-bottom_on-yellow.gif) bottom left no-repeat;	
+}
+
+div.secondary_newlaw div.subpageGroup div#navcolbg_no div#main div#mainbody div.mainbody_inner2 div.mainbody_content{
+	
+	padding: 10px 20px;
+	padding-right: 80px;
+	
+}
+
+
+
+
+div.secondary_newlaw div.innerPageGroup1 div#main,
+div.secondary_newlaw div.innerPageGroup2 div#main,
+div.secondary_newlaw div.innerPageGroup1 div#navcolbg_no div#main,
+div.secondary_newlaw div.innerPageGroup2 div#navcolbg_no div#main,
+div.secondary_newlaw div.innerPageGroup1 div#main div#mainbody div.mainbody_inner2 div.mainbody_content,
+div.secondary_newlaw div.innerPageGroup2 div#main div#mainbody div.mainbody_inner2 div.mainbody_content,
+div.secondary_newlaw div.innerPageGroup1 div#navcolbg_no div#main div#mainbody div.mainbody_inner2 div.mainbody_content,
+div.secondary_newlaw div.innerPageGroup2 div#navcolbg_no div#main div#mainbody div.mainbody_inner2 div.mainbody_content{	
+	padding: 0px 0px;	
+	background-image: none;
+	
+	
+}
+
+/*
+div.secondary_newlaw div.innerPageGroup1 div#main div#mainbody{
+	padding: 0px 0px;
+	margin: 0px 0px;
+	
+}
+*/
+
+div.secondary_newlaw div.innerPageGroup1 div#main div#mainbody div.mainbody_inner,
+div.secondary_newlaw div.innerPageGroup1 div#main div#mainbody div.mainbody_inner2,
+div.secondary_newlaw div.innerPageGroup1 div#navcolbg_no div#main div#mainbody,
+div.secondary_newlaw div.innerPageGroup1 div#navcolbg_no div#main div#mainbody div.mainbody_inner,
+div.secondary_newlaw div.innerPageGroup1 div#navcolbg_no div#main div#mainbody div.mainbody_inner2,
+div.secondary_newlaw div.innerPageGroup2 div#main div#mainbody,
+div.secondary_newlaw div.innerPageGroup2 div#main div#mainbody div.mainbody_inner,
+div.secondary_newlaw div.innerPageGroup2 div#main div#mainbody div.mainbody_inner2,
+div.secondary_newlaw div.innerPageGroup2 div#navcolbg_no div#main div#mainbody,
+div.secondary_newlaw div.innerPageGroup2 div#navcolbg_no div#main div#mainbody div.mainbody_inner,
+div.secondary_newlaw div.innerPageGroup2 div#navcolbg_no div#main div#mainbody div.mainbody_inner2{
+	padding: 0px 0px;
+	margin: 0px 0px;
+	background-image: none;	
+}
+
+/************* End Understand the New Law Default Template *****************/
+
+
+/**** Learn About Prevention ***/
+
+div.secondary_page1_3 .mainbody_inner{
+	background-color: white;
+}
+
+div.secondary_page1_2 div.two_columns, div.secondary_page1_3 div.two_columns{
+	position: relative;
+	z-index: 1;
+	
+	background-color: #ddeeef;	
+	width:960px;	
+	left: 1px;
+	top: 10px;
+	padding: 20px 0px;
+
+}
+
+div.secondary_page1_2 div.two_columns .col1 .col_body, div.secondary_page1_3 div.two_columns .col1 .col_body{
+	padding-left: 40px;
+}
+
+div.secondary_page1_2 div.two_columns .col, div.secondary_page1_3 div.two_columns .col{
+	border: none;
+}
+div.secondary_page1_2 div.two_columns .col2, div.secondary_page1_3 div.two_columns .col2{
+	height: 100%;
+	border-left: 1px solid #b9d4d5;
+}
+
+div.secondary_page1_2 div.two_columns .col2 .col_body, div.secondary_page1_3 div.two_columns .col2 .col_body{
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+
+/** Compare Care Quality ****/
+div.secondary_page1_3 #main{
+	background-color:#e0f5ee;
+}
+
+
+
+/**************** Audience ******************/
+
+
+/****************** Box ********************/
+div.two_columns div.col_body {	
+	padding:0px 10px;
+}
+div.two_columns div.col1 div.col_body{
+	margin-right: 5px;	
+}
+
+div.two_columns div.col2 div.col_body{
+	margin-left: 5px;
+}
+
+/**************** News **********************/
+div.news_section{
+	background: url(../images/sys_images/in_titleheaderbak.jpg) top center no-repeat;
+	margin:14px 0 0 0;	
+	
+}
+
+div.news_section .news_header_container{
+	padding: 0px 0px;
+	width: 960px;		
+	position: relative;
+	display: block;
+	text-align:left;	
+	margin: 0px auto;	
+	height:81px;
+	
+}
+
+
+
+div.news_section .news_header h1{
+	font-family: "Century Gothic", Helvetica, Arial, san-serif;
+	font-size: 2.4em;
+}
+
+div.news_section .breadcrumb{
+	font-family:Helvetica;
+	font-size: 12px;
+	color:  #666666;
+	
+	
+}
+
+div.news_section .breadcrumb a{
+	color: #1a73b8;
+}
+
+
+div.newsroom h2{
+	/*font-size: 25px;*/
+	font-size: 2em;	
+}
+
+div.newsroom h3{
+	font-size: 21px;
+	font-size: 1.7em;
+	
+}
+
+
+div.newsroom ul.latest{
+	list-style-type: none;
+	margin: 0 0;
+	padding: 0 0;	
+	
+}
+div.newsroom ul.latest li{
+	margin: 0 0;
+	padding: 5px 0;		
+	
+}
+div.newsroom ul.latest li h5, div.newsroom #main div.recentAuto ul li h5{
+	font-weight:normal;
+	font-size: 1em;
+}
+
+div.newsroom ul.latest li span{
+	font-size: 1.01em;
+	color: #333333;
+}
+
+div.newsroom ul.latest li a:link{
+	color:#1a73b8;
+}
+div.newsroom ul.latest li a:visited{
+	color:#2eb4ba;
+}
+
+div.newsroom p.more{
+	margin: 0 0 10px 0;
+	padding: 10px 0;
+	font-weight: bold;	
+}
+div.newsroom p.more a{
+	padding-right: 20px;
+	background: url(../images/sys_images/inslideshow_nextbtn.gif) center right no-repeat;
+}
+
+div.newsroom #main .custom_inner{
+padding: 0 0;
+}
+
+
+
+div.newsroom #main div.recentAuto ul{
+	list-style-type: none;
+	margin: 0 0;
+	padding: 0 0;
+	margin-top: 5px;
+	
+}
+
+div.newsroom #main div.recentAuto ul li{	
+	margin: 0 0;
+	padding: 5px 0;		
+	
+}
+
+div.newsroom #main div.recentAuto ul li p{
+	margin: 0 0;
+}
+
+
+
+div#main div#mainbody{
+	padding: 0px 0px;
+	border: 1px solid lightgrey;
+	margin-bottom: 10px
+}
+
+div#main div#mainbody .mainbody_inner{
+	padding: 15px 30px;
+	
+}
+
+div#main div#mainbody2 h3{
+	font-weight: normal;
+}
+
+div.information div#wrapper5{
+	padding-top: 20px;
+}
+
+/**************** Timeline ****************/
+div#timeline-fullcontent{		
+	background:url(../images/sys_images/timeline_back.jpg) top left repeat-x;
+	
+	margin-left: -10px;
+	margin-right: -10px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Safari 3.0 and Chrome rules here */
+	div#container div#timeline-content div.section-middle{
+		height: 400px;		
+		
+	}
+}
+
+div#timeline-fullcontent .date{
+	padding: 8px 0;
+	border-top: 1px dotted #888888;
+	border-bottom: 1px dotted #888888;	
+	font-size: 1.1em;
+	
+}
+
+div#timeline-fullcontent div#timeline-outer{	
+	position: relative;
+	z-index: 2;
+}
+div#timeline-fullcontent div#timeline-years-bar{
+	position: relative;
+	z-index:3;
+}
+div#timeline-fullcontent div#timeline-marker{
+	position: relative;
+	margin-top: -4px;
+	z-index: 1;
+	margin-bottom: 0px;
+}
+
+
+/********** Two Colums *****************/
+
+
+div#timeline-fullcontent div.two_columns{		
+	margin-bottom: 10px;
+	padding: 0 50px 0 30px;
+	
+}
+
+div#timeline-fullcontent div.two_columns div.col{
+	border: none;
+	text-align:left;
+	
+}
+div#timeline-fullcontent div.two_columns div.col1{
+	width: 400px;
+	margin-right: 0;
+}
+
+div#timeline-fullcontent div.two_columns div.col2{
+	float:right;	
+	width: 350px;
+}
+
+div#timeline-fullcontent div.two_columns div.col div.col_body{
+	overflow: visible;
+}
+
+div#timeline-fullcontent div.two_columns div.col2 div.col_body{
+}
+
+div#timeline-fullcontent div.two_columns div.col2 div.col_body p{	
+}
+div#timeline-fullcontent div.two_columns h3{
+	display: none;	
+}
+
+div#timeline-fullcontent div.two_columns div.col h3{
+	display: block;	
+}
+
+div#timeline-fullcontent div.two_columns div.col h3{
+	
+}
+
+/********* blog ************/
+.pagination{
+	text-align: right;	
+}
+.pagination .page{
+	position:relative;
+	display: inline;
+	margin-right: 5px;
+}
+
+div.blog_post_snippets div.clear{
+	display:none;
+}
+
+/******** A to Z Glossary page *******/
+.azSecondary .section_title{
+	padding-top: 5px;	
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Safari 3.0 and Chrome rules here */	
+	.azSecondary .section_title{
+			padding-top: 7px;			
+		}
+}
+.azSecondary .section_title h1{	
+	font-family: "Century Gothic", Helvetica, san-serif;
+	font-weight: normal;	
+	color: black;
+	margin-bottom: 0px;
+	padding-bottom: 0px;		
+}
+.azSecondary .breadcrumb ul{
+	margin: 3px 0 0 0;
+	padding: 0 0;
+	margin-left: -5px;
+	
+	
+}
+
+.azSecondary .breadcrumb li{
+	list-style-type: none;
+	margin: 0 0;
+	padding: 0 0;
+	float:left;
+	text-align: center;
+	font-size:14px;
+	font-weight: bold;
+	
+}
+.azSecondary .breadcrumb li a{	
+	margin: 0;
+	padding: 0;
+	width: 35px;
+	height: 34px;	
+	display:block;
+	padding-top: 11px;
+}
+
+.azSecondary .breadcrumb li.actived a, .azSecondary .breadcrumb li a:hover{
+	width: 42px;
+	height: 34px;
+	background: url(../images/sys_images/a-z_index_tab-bg.gif) top left no-repeat;
+}
+
+.azSecondary .breadcrumb li a.disabled,.azSecondary .breadcrumb li.actived a.disabled,.azSecondary .breadcrumb li a.disabled:hover{
+	width: 35px;
+	height: 34px;	
+	background: none;
+	text-decoration: none;
+	color: #666666;
+}
+
+.return_to_list{	
+	position:relative;
+	top:-10px;	
+}
+
+/********** Misc **********/
+a.anchor {
+	padding-top: 60px;
+	background:url(../images/sys_images/anchor-bg.gif) repeat-x top left;
+	display: block;	
+}
+
+.smaller {
+	font-size: .8em;
+	color: #666666;
+	font-weight:normal;
+}
+
+.introduction{
+	font-size: 1.1em;
+}

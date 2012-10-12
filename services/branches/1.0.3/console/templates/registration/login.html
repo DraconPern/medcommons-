@@ -1,0 +1,47 @@
+{% extends "form.html" %}
+
+{% block content %}
+
+{% if frozen %}
+<p class='error'>Sorry, too many logins have been attempted on this account.  Please wait 5 minutes and try again.</p>
+{% else %}
+  {% if error %}
+		<p class='error'>Unknown username/password</p>
+	{% endif %}
+{% endif %}
+
+<form method='post' action='login'>
+  <table>
+    <tbody>
+      <tr>
+	<td><label for='username'>Username:</label></td>
+	<td>
+	  <input type='text' name='username' id='username'
+		 value='{{ username }}' />
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='password'>Password:</label></td>
+	<td>
+	  <input type='password' name='password' id='password' />
+	</td>
+      </tr>
+
+      <tr>
+	<td></td>
+	<td>
+	  <input type='hidden' name='next' value='{{ next }}' />
+	  <input type='submit' value='Login' class='default' />
+	</td>
+      </tr>
+
+      <tr>
+	<td></td>
+	<td><a href='forgot'>forgotten password?</a></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+{% endblock %}

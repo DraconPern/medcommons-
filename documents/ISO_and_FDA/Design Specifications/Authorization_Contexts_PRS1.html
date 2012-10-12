@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Authorization Contexts</title>
+</head>
+<body>
+<div style="text-align: right;">Preliminary Requirements Specification<br>
+PRS1-v1<br>
+January 23, 2004<br>
+</div>
+<br>
+<big><big>Authorization Contexts</big></big><br>
+<ol>
+  <li><span style="font-weight: bold;">LAN_DEFAULT</span> - A (DICOM)
+Study object begins its MedCommons existence when it becomes available
+to the Router via a DICOM transfer. At that point, the study has no
+authorization context and is the HIPAA responsibility of whoever
+controls the LAN that the DICOM came over on. At this point, MedCommons
+has not modified the study in any way and may or may not have
+acknowledged receipt (e.g.: DICOM Storage Commitment or IHE). As long
+as MedCommons does not display the patient name or other Protected
+Health Information (PHI) there's no HIPAA issue. Obviously MedCommons
+tech support personnel may have access to PHI and, if they do, they
+have to be trained in the procedures surrounding this responsibility.<br>
+  </li>
+  <li><span style="font-weight: bold;">LAN_CLERICAL</span> - MedCommons
+may be called upon to display PHI as part of an activity list or
+worklist or as a result of a query. The typical LAN_CLERICAL context
+might be the front desk clerk at an imaging center. This person would
+be authorized to vew some or all of the recent activity on the Router
+but may not be authorized to view images or reports. Their HIPAA
+policies and training are the responsibility of whoever controls the
+DICOM LAN. Occasionally, there may be some default restrictions placed
+upon the LAN_CLERICAL context - e.g.: there are two imaging facilities
+on the East and West sides of town and the clerk at each facility is
+restricted, by default to one or the other. Even so, note that the
+study has not been modified yet. <br>
+  </li>
+  <ol>
+    <li>If MedCommons displays PHI (E.G.: on it's Main Screen) in this
+context, we will be expected to have a HIPAA Log entry that includes
+Time/Date, Object ID, LAN ID and UserID. The Patient's approval is
+implied and may have been documented in something they signed when they
+agreed to the scan. In the rare situation where the Patient is being
+scanned anonymously (e.g.: an HIV test or the patient is unidentified)
+MedCommons should provide tools to identify a particular object without
+relying on PHI. Even so, a HIPAA Log entry should be created.<br>
+    </li>
+  </ol>
+  <li><span style="font-weight: bold;">LAN_CLINICAL</span> - Typically,
+this is the most common context. It allows full access by
+technologists, physicians and nurses. This context also applies to the
+default DICOM received and does not require any particular modification
+of the study or associated information.</li>
+  <li><span style="font-weight: bold;">PATIENT_ANY</span> - Here, the
+patient has unequivocal and possibly sole access to the PHY (e.g.: the
+equivalent of being imaged as John Doe and being handed the negatives
+to take away). The patient, once they identify themselves somehow, take
+full control of the study. For example, the patient might supply a
+password or PKI certificate that is used to encrypt the study and all
+PHI. Alternatively, a CD-ROM could be handed to the patient and all PHI
+erased from the router. A LAN_CLERICAL or LAN_CLINICAL transaction may
+precede PATIENT_ANY.<br>
+  </li>
+  <li><span style="font-weight: bold;">LICENSED_CLINICIAN</span> - This
+is the most common "second opinion" context where an imaging facility
+might try to limit its liability by insisting that PHI and images are
+accessed only by a patient's physician. The facility that controls the
+study will typically depend on the policies associed with the license
+to limit its liability. For example, any physician with a valid license
+and DEA number can prescribe narcotics. In this example, MedCommos
+might be playing the role of pharmacy and be subject to HIPAA and
+related regulations that control physician authentication and we, in
+turn, may look to a third-party service (e.g.: Tracmed) to take that
+responsibility.</li>
+  <li><span style="font-weight: bold;">BUSINESS_ASSOCIATE</span> - This
+is another common situation where MedCommons is used to move or copy a
+study to another HIPAA-compliant facility such as a 3D processing
+service. Business Associate is a HIPAA-defined category that is
+separate from the Provider category. Business Associates have a
+contractual relationship with the entity that controls the study. I'm
+not sure whether MedCommons will need to keep separate contexts for
+Business Associates vs. Providers (hospitals) but it can't hurt.</li>
+  <li><span style="font-weight: bold;">EMERGENCY</span> - The specified
+contexts&nbsp; where MedCommons might&nbsp; override other contexts.</li>
+  <li><span style="font-weight: bold;">NAMED_CLINICIAN</span> - An
+alternative to LICENSED_CLINICIAN. Authentication might be via the USPS
+and Authentidate.</li>
+  <li><span style="font-weight: bold;">AUTHORIZATION_REQUIRED</span> -
+This context might be assigned to a study that is being placed into
+archival storage or simply to allow listing in a worklist at a remote
+site. The controlling entity would insist that it be contacted before
+release of the study. Encryption, may or may not be a component of the
+implementation. If encryption is used, then we will have to deal with
+back doors and key escrow issues.</li>
+  <li><span style="font-weight: bold;">STRONG_AUTHENTICATION</span> -
+This context could be applied to force users to be biometrically
+authenticated or bonded in some way.</li>
+  <li><span style="font-weight: bold;">ROLE_SENSITIVE</span> - This can
+of worms opens when authorization needs to depend on the recipient's
+role. I'm not aware of any standard or legal definition of roles in
+healthcare or HIPAA and things get even more complicated when patient's
+family and health care proxies are involved. I'd like to stay away from
+this if at all possible.<br>
+  </li>
+</ol>
+<br>
+<br>
+</body>
+</html>

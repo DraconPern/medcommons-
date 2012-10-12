@@ -1,0 +1,44 @@
+#proberpanel {background-color:white;
+	font-size: .9em;
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, verdana;
+	text-decoration: none;
+	color: black;
+}
+#testcase {font-size:1.0em; font-weight:700}
+#data, #ipaddr{
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: rgb(204, 204, 204);
+}
+#pagecontent {background-color:white}
+
+.noshow, .invisible {
+    display: none;
+}
+
+#proberpanel h3 {
+    margin-top: 10px;
+    padding: 0px;
+}
+
+img #smallimg {
+    height: 40px;
+}
+
+.rowtag, .rowtagiphone {
+    font-size: 0.8em;
+    color: rgb(128, 128, 128);
+}
+.rowtag, .rowtagiphone {
+    font-size: 0.8em;
+    color: rgb(128, 128, 128);
+}
+
+.sparknum {
+    font-size: 0.6em;
+    color: rgb(128, 128, 128);
+    width: 5em;
+    margin-top: 0.3em;
+}

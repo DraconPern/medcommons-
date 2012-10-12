@@ -1,0 +1,646 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id: build.xml 3245 2009-02-19 03:26:07Z ssadedin $ 
+     ====================================================================== -->
+<!--
+	- Servlets for installing
+	- jnlp file with a list of jar files to download/install
+	- a local war file to install under jetty.
+
+	-->
+<project name="dicomclient" default="world" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+	<tstamp>
+       <format property="cur-tstamp" pattern="M/d/yyyy h:m a"/>
+	</tstamp>
+
+	<property file="pack.properties" />
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+  <property name="application.package.classes" value="build/classes"/>
+  <property name="application.package" value="net.medcommons.application"/>
+  <property name="application.package.folder" value="net/medcommons/application"/>
+  <property name="application.package.files" value="${application.package.folder}/**"/>
+  <property name="build.dist" value="build/dist"/>
+  <property name="build.jnlp" value="build/jnlp"/>
+  <property name="stage.jnlp" value="build/stage/jnlp"/>
+  <property name="stage.lib" value="build/stage/lib/"/>
+  <property name="build.lib" value="build/dist/lib"/>
+  <property name="cxp.host" value="ci.myhealthespace.com"/>
+
+  <target name="world" depends="generate-war">
+  </target>
+
+    <!-- - - - - - - - - - - - - - - - - -
+          target: init
+     - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+		<mkdir dir="${build.lib}"/>
+      <echo message="Initializing build ..." />
+      <ivy:configure file="ivy-settings.xml" />
+      <ivy:retrieve pattern="${build.lib}/[artifact].[ext]" sync="true"/>
+	  <available file="${stage.lib}" property="stage.lib.present" />
+    </target>
+
+	  <!-- Create our Pack200 Tasks -->
+	<!--
+  <target name="p200">
+
+
+     <taskdef name="pack200"
+    	classname="com.sun.tools.apache.ant.pack200.Pack200Task"
+    	classpath="lib/Pack200Task.jar"/>
+
+
+     <taskdef name="unpack200"
+    	classname="com.sun.tools.apache.ant.pack200.Unpack200Task"
+    	classpath="lib/Pack200Task.jar"/>
+
+  </target>
+		-->
+
+
+  <target name="init-lib" unless="stage.lib.present" depends="init">
+      <mkdir dir="build/dist/" />
+      <mkdir dir="${stage.lib}"/>
+        <copy todir="${stage.lib}">
+        <fileset dir="${build.lib}">
+        </fileset>
+      </copy>
+
+      <antcall target='sign-pack-libs'/>
+
+    </target>
+
+    <target name="sign-pack-libs" unless="ddl.unsigned">
+      <apply executable="signpack.sh" type="file" osfamily="unix"
+     		 resolveexecutable="true" failonerror="true" ignoremissing="false">
+				<fileset dir="${stage.lib}" includes="**/*.jar" excludes="**/activ*.jar"/>
+				<srcfile/>
+				<arg value="${keystore.location}"/>
+				<arg value="${keystore.password}"/>
+				<arg value="${key.alias}"/>
+      </apply>
+
+      <apply executable="signpack.bat" type="file" osfamily="windows"
+     		 resolveexecutable="true" failonerror="true" ignoremissing="false">
+				<fileset dir="${stage.lib}" includes="**/*.jar" excludes="**/activ*.jar"/>
+				<srcfile/>
+				<arg value="${keystore.location}"/>
+				<arg value="${keystore.password}"/>
+				<arg value="${key.alias}"/>
+      </apply>
+
+
+    </target>
+
+    <!-- =================================
+          target: compile
+         ================================= -->
+    <target name="compile" depends="init-lib,generate-index-files" description="--> compiles source">
+      <mkdir dir="build/classes"/>
+
+      <javac srcdir="src/java" compiler="modern" target="1.5" destdir="build/classes" debug="true" >
+        <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="**/*.jar"/>
+          </fileset>
+        </classpath>
+      </javac>
+    </target>
+
+  
+
+	<!--
+	  Convert the libraries to be included in the
+	  Class-Path attribute of the MANIFEST.MF file
+	-->
+	<path id="application.compile.path">
+
+				<fileset dir="${stage.lib}">
+					<include name="**/*.jar"/>
+					<!-- Log4j.. -->
+				</fileset>
+	</path>
+
+
+
+
+	<target name="pack-ddl-jar" depends="compile,generate-local-war">
+
+
+		<mkdir dir="${application.package.classes}" />
+
+		<pathconvert property="application.manifest.classpath"
+			                      pathsep=" ">
+			  <path refid="application.compile.path"/>
+			  <chainedmapper>
+			    <flattenmapper/>
+			    <globmapper from="*" to="lib/*"/>
+			  </chainedmapper>
+			</pathconvert>
+
+
+		<copy todir="${build.dist}">
+			<fileset dir="etc/images">
+				<include name="**/*.jpg"/>
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+			</fileset>
+		</copy>
+
+		<jar jarfile="${stage.lib}/medcommons-dicomclient-application.jar"
+				
+				basedir="${application.package.classes}">
+				<manifest>
+					<attribute name="Built-By" value="${user.name}"/>
+			      	<attribute name="Class-Path" value="${application.manifest.classpath}"/>
+					<!-- <attribute name="Build-Version" value="${buildVersion}"/> -->
+					<attribute name="Main-Class" value="net.medcommons.application.dicomclient.DICOMClient"/>
+
+			      </manifest>
+
+				<fileset dir="src/java">
+						<include name="**/*.hbm.xml"/>
+				</fileset>
+		
+				  <fileset dir="etc/conf">
+					<include name="hibernate.cfg.xml"/>
+				</fileset>
+				  <fileset dir="etc/conf">
+					<include name="DicomMetadata.hbm.xml"/>
+				</fileset>
+				  <fileset dir="etc/conf">
+					<include name="CxpTransaction.hbm.xml"/>
+				</fileset>
+				<fileset dir="etc/images">
+					<include name="**/*.png"/>
+					<include name="**/*.gif"/>
+					<include name="**/*.jpg"/>
+				</fileset>
+
+
+				<fileset dir="src/java/net/medcommons/application/dicomclient/http/web/WEB-INF">
+					<include name="**/*.xml"/>
+				</fileset>
+				<fileset dir="src/java/net/medcommons/application/dicomclient/http/web/WEB-INF">
+					<include name="**/*.properties"/>
+				</fileset>
+		
+				<fileset dir="build/dist/">
+					<include name="**/localDDL.war"/>
+				</fileset>
+				<fileset dir="src/">
+					<include name="timestamp.txt"/>
+					<include name="ddlversion.txt"/>
+					<include name="buildtime.txt"/>
+					
+				</fileset>
+					<fileset dir="etc/conf">
+					<include name="log4j.xml"/>
+				</fileset>
+
+		</jar>
+		<jar jarfile="${stage.lib}/medcommons-uploadAccountFiles-application.jar"
+						basedir="${application.package.classes}">
+						<manifest>
+							<attribute name="Built-By" value="${user.name}"/>
+					      	<!--<attribute name="Class-Path" value="${application.manifest.classpath}"/> -->
+							<!-- <attribute name="Build-Version" value="${buildVersion}"/> -->
+							<attribute name="Main-Class" value="net.medcommons.application.upload.UploadAccountFiles"/>
+
+					      </manifest>
+
+						
+						<fileset dir="etc/images">
+							<include name="**/*.png"/>
+							<include name="**/*.gif"/>
+							<include name="**/*.jpg"/>
+						</fileset>
+
+
+					
+						<fileset dir="src/">
+							<include name="timestamp.txt"/>
+							<include name="ddlversion.txt"/>
+							<include name="buildtime.txt"/>
+							
+						</fileset>
+							<fileset dir="etc/conf">
+							<include name="log4j.xml"/>
+						</fileset>
+
+				</jar>
+
+        <antcall target='sign-pack-core'/>
+
+		<!--
+	    <signjar
+			alias="dicomClient" keystore="dicomClientKeyStore" storepass="developer"
+			 lazy="true">
+			 <path>
+				 <fileset dir="${build.dist}" includes="medcommons-dicomclient-application.jar" />
+			 </path>
+		 </signjar>
+		 -->
+
+    <echo file="version.xml" append="false" message="&lt;?xml version='1.0' encoding='utf-8'?&gt;&lt;version&gt;&lt;rev&gt;$$Rev: ${svn.revision} $$&lt;/rev&gt;&lt;/version&gt;"/>
+
+
+	</target>
+
+  <target name='sign-pack-core' unless='ddl.unsigned'>
+		<apply executable="signpack.sh" type="file" osfamily="unix"
+     		 resolveexecutable="true" failonerror="true" ignoremissing="false">
+				 <fileset dir="${stage.lib}" includes="medcommons-dicomclient-application.jar" />
+				<srcfile/>
+				<arg value="${keystore.location}"/>
+				<arg value="${keystore.password}"/>
+				<arg value="${key.alias}"/>
+		</apply>
+		<apply executable="signpack.sh" type="file" osfamily="unix"
+		     		 resolveexecutable="true" failonerror="true" ignoremissing="false">
+						 <fileset dir="${stage.lib}" includes="medcommons-uploadAccountFiles-application.jar" />
+						<srcfile/>
+						<arg value="${keystore.location}"/>
+						<arg value="${keystore.password}"/>
+						<arg value="${key.alias}"/>
+				</apply>
+		
+
+		<apply executable="signpack.bat" type="file" osfamily="windows"
+     		 resolveexecutable="true" failonerror="true" ignoremissing="false">
+				 <fileset dir="${stage.lib}" includes="medcommons-dicomclient-application.jar" />
+				<srcfile/>
+				<arg value="${keystore.location}"/>
+				<arg value="${keystore.password}"/>
+				<arg value="${key.alias}"/>
+		</apply>
+		<apply executable="signpack.bat" type="file" osfamily="windows"
+		     		 resolveexecutable="true" failonerror="true" ignoremissing="false">
+						 <fileset dir="${stage.lib}" includes="medcommons-uploadAccountFiles-application.jar" />
+						<srcfile/>
+						<arg value="${keystore.location}"/>
+						<arg value="${keystore.password}"/>
+						<arg value="${key.alias}"/>
+				</apply>
+  </target>
+
+    <target name="publish" depends="generate-war">
+      <!-- You will get an error when publishing unless you increment the version number below -->
+      <ivy:publish resolver="public" pubrevision="1.2.6" overwrite="true">
+        <artifacts pattern="build/dist/[artifact].[ext]" />
+      </ivy:publish>
+    </target>
+
+    <target name="clean">
+      <delete dir="build/jnlp"/>
+	  <delete dir="build/classes"/>
+	  <delete dir="build/dist/classes"/>
+	  <delete dir="build/dist/localDDL.war"/>
+    </target>
+	<target name="cleanall">
+     <delete dir="build"/>
+    </target>
+
+	<target name="build-webapp">
+		<mkdir dir="${stage.jnlp}"/>
+		 <copy todir="${stage.jnlp}">
+			<fileset dir="src/meta/war"/>
+			<fileset dir="etc/localDDL"> 
+				<include name="*.css"/> 
+			</fileset>
+		</copy>
+		<mkdir dir="${stage.jnlp}/lib"/>
+		<mkdir dir="${stage.jnlp}/images"/>
+		<copy todir="${stage.jnlp}/images">
+			<fileset dir="etc/images/toolbar">
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+			<fileset dir="etc/localDDL/images">
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+		<mkdir dir="${stage.jnlp}/WEB-INF/lib"/>
+	    <mkdir dir="${stage.jnlp}/WEB-INF/classes"/>
+		<copy todir="${stage.jnlp}/WEB-INF/lib">
+			<fileset dir="build/dist/lib">
+				<include name="jnlp*.jar"/>
+				<include name="commons*.jar"/>
+				<include name="jslt.jar"/>
+				<include name="standard.jar"/>
+		     </fileset>
+
+	    </copy>
+		<copy todir="${stage.jnlp}/WEB-INF/classes">
+			<fileset dir="src/meta/war/app">
+				<include name="log4j.xml"/>
+		     </fileset>
+<!--
+			<fileset dir="src/java/net/medcommons/application/dicomclient/http/jsp">
+								<include name="**"/>
+								<exclude name="**/.svn"/>
+				</fileset>
+	-->
+	    </copy>
+	</target>
+	<target name="generate-war" depends="pack-ddl-jar, build-webapp">
+		 <mkdir dir="${build.jnlp}"/>
+
+
+		<copy todir="${stage.jnlp}/app">
+			<fileset dir="${stage.lib}"/>
+		       <!-- <globmapper from="*.jar" to="*__V1.0.jar"/> -->
+	    </copy>
+		<copy toDir="${stage.jnlp}">
+			<fileset dir="etc/images">
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+		<copy todir="${stage.jnlp}/app">
+			<fileset dir="build/dist">
+				<!-- <include name="medcommons-dicomclient-application.jar" />
+				<include name="medcommons-uploadAccountFiles-application.jar" />
+				-->
+				<include name="**/*.png"/>
+            </fileset>
+	  </copy>
+		<!--
+		 <pack200 src="${build.dist}/medcommons-dicomclient-application.jar"
+	          destfile="${build.jnlp}/medcommons-dicomclient-application.pack" />
+			-->
+		<jar jarfile="${build.jnlp}/DDL.war"
+           basedir="${stage.jnlp}"
+      />
+	</target>
+<target name="update-version" unless="version.noupdate">
+		<exec executable="svnversion" output="src/ddlversion.txt">
+			<arg value="." />
+		</exec>
+		<loadfile property="buildVersion" srcFile="src/ddlversion.txt"/>
+		<echo message="Build version is ${buildVersion}"/>
+	</target>
+
+   <!-- Runs standard DDL application -->
+	<target name="run">
+		 <java classname="net.medcommons.application.dicomclient.DICOMClient" fork="true" >
+    		<jvmarg value="-Xmx256m"/>
+    		<jvmarg value="-Xdebug"/>
+		 	  <jvmarg value="-Xnoagent"/>
+		 	  <jvmarg value="-XX:MaxPermSize=128m"/>
+		 	  <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,address=4144,suspend=n"/>
+         <arg line="src/meta/war/app/DDL.properties"/>
+         <arg line="http://localhost:9080"/>
+
+
+        <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="build/dist">
+            <include name="medcommons-dicomclient-application.jar" />
+            <include name="medcommons-dicomclient.jar" />
+          </fileset>
+        </classpath>
+
+      </java>
+		</target>
+		<!--Runs DICOM on Demand UI (pops up dialog) -->
+		<target name="run-dod">
+				 <java classname="net.medcommons.application.dicomclient.DICOMClient" fork="true" >
+		    		<jvmarg value="-Xmx256m"/>
+		    		<jvmarg value="-Xdebug"/>
+				 	  <jvmarg value="-Xnoagent"/>
+				 	  <jvmarg value="-XX:MaxPermSize=128m"/>
+            <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,address=4144,suspend=n"/>
+				 	  <jvmarg value="-DpopupDoDDialog=true"/>
+            <!--
+				 	  <jvmarg value="-Dmedcommons.cxp.throttleDelay=200000"/>
+            -->
+				 	<jvmarg value="-DuseREST=false"/>
+				 	<!--  <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,address=4144,suspend=n"/> -->
+		         <arg line="src/meta/war/app/DDL.properties"/>
+		         <arg line="http://localhost:9080"/>
+
+
+		        <classpath>
+              <pathelement path=".build"/>
+		          <fileset dir="${stage.lib}">
+		            <include name="*.jar" />
+		          </fileset>
+		          <fileset dir="build/dist">
+		            <include name="medcommons-dicomclient-application.jar" />
+		            <include name="medcommons-dicomclient.jar" />
+		          </fileset>
+		        </classpath>
+
+		      </java>
+		
+	</target>
+	<target name="run-upload">
+					 <java classname="net.medcommons.application.dicomclient.DICOMClient" fork="true" >
+			    		<jvmarg value="-Xmx256m"/>
+			    		<jvmarg value="-Xdebug"/>
+					 	  <jvmarg value="-Xnoagent"/>
+					 	  <jvmarg value="-XX:MaxPermSize=128m"/>
+					 	  <jvmarg value="-Dcommand=upload"/>
+					 	  <jvmarg value="-Dcommand_storageid=1088448116240388"/>
+              <jvmarg value="-Dcommand_auth=44fe679d448385765ef7329d069520d3e73e0413"/>
+              <jvmarg value="-Dcommand_cxphost=${cxp.host}"/>
+              <jvmarg value="-Dcommand_cxpport=80"/>
+              <jvmarg value="-Dcommand_cxpprotocol=http"/>
+              <jvmarg value="-Dcommand_cxppath=/gateway/services/CXP2"/>
+              <jvmarg value="-Dcommand_accountid=1172619833385984"/>
+              <jvmarg value="-Dcommand_groupname=Demo Doctor Worklist"/>
+              <jvmarg value="-DpopupDoDDialog=true"/>
+					 	
+					 	<!--  <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,address=4144,suspend=n"/> -->
+			         <arg line="src/meta/war/app/DDL.properties"/>
+			         <arg line="http://localhost:9080"/>
+
+
+			        <classpath>
+			          <fileset dir="${stage.lib}">
+			            <include name="*.jar" />
+			          </fileset>
+			          <fileset dir="build/dist">
+			            <include name="medcommons-dicomclient-application.jar" />
+			            <include name="medcommons-dicomclient.jar" />
+			          </fileset>
+			        </classpath>
+
+			      </java>
+			
+		</target>
+	
+		<target name="spawn">
+		 <java classname="net.medcommons.application.dicomclient.DICOMClient" fork="true" spawn="true" >
+    		<jvmarg value="-Xmx256m"/>
+    		<jvmarg value="-Xdebug"/>
+		 	  <jvmarg value="-Xnoagent"/>
+		 	  <jvmarg value="-XX:MaxPermSize=128m"/>
+		 	  <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,address=4144,suspend=n"/>
+         <arg line="src/meta/war/app/DDL.properties"/>
+         <arg line="http://localhost:9080"/>
+
+
+        <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="build/dist">
+            <include name="medcommons-dicomclient-application.jar" />
+            <include name="medcommons-dicomclient.jar" />
+          </fileset>
+        </classpath>
+
+      </java>
+	</target>
+
+	<target name="run-download">
+		 <java classname="net.medcommons.application.transfer.DownloadFileAgent" fork="true">
+        <classpath>
+          <fileset dir="lib">
+            <include name="*.jar" />
+          </fileset>
+
+        </classpath>
+	    <arg value="http://localhost:9080/gateway/services/CXP2"/>
+		<arg value="1013062431111407" />
+		<arg value="00e6c80bb7f863962c37312d98943ae1e6c03dec" />
+	    <arg value="Cache"/>
+      </java>
+	</target>
+	<target name="build-timestamp">
+		<tstamp>
+			<format property="build.buildtime" pattern="EEE, MMM d 'at' yyyy HH:mm:ss z"/>
+		</tstamp>
+		<tstamp>
+			<format property="build.timestamp" pattern="yyyy-MM-dd HH:mm:ss"/>
+		</tstamp>
+		<echo message="${build.buildtime}"  file="src/buildtime.txt"/>
+		<echo message="${build.timestamp}"  file="src/timestamp.txt"/>
+	</target>
+	<!--
+		This is a war file deployed on the local Jetty server.
+		It contains stripes, dojo, and local jsps.
+
+		-->
+	<target name="generate-local-war">
+		<mkdir dir="build/dist/classes"/>
+		<war destfile="build/dist/localDDL.war"  webxml="etc/localDDL/WEB-INF/web.xml" duplicate="preserve">
+			<classes dir="etc/localDDL/WEB-INF/classes/">
+				<include name="StripesResources.properties"/>
+			</classes>
+
+			<lib dir="build/stage/lib/">
+				<include name="jslt.jar"/>
+				<include name="standard.jar"/>
+				<include name="stripes.jar"/>
+			</lib>
+
+
+
+			<fileset dir="etc/localDDL/">
+				<include name="**/*.html"/>
+				<include name="**/*.smd"/>
+				<include name="**/*.css"/>
+				<include name="**/*.jpeg"/>
+				<include name="**/*.jpg"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.png"/>
+				<include name="**/*.svg"/>
+				<include name="**/*.js"/>
+
+			</fileset>
+
+			<fileset dir="src/java/net/medcommons/application/dicomclient/http/jsp">
+
+				<include name="**/*.js"/>
+			</fileset>
+
+
+		</war>
+	</target>
+	<target name="test-components">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" >
+			 <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="build/dist">
+            <include name="medcommons-dicomclient-application.jar" />
+            <include name="medcommons-dicomclient.jar" />
+          </fileset>
+        </classpath>
+			<formatter type="plain"/>
+
+			<test name="net.medcommons.application.dicomclient.utils.test.DicomNamesTest"/>
+
+		</junit>
+
+	</target>
+	<target name="test-module" depends="spawn">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" >
+			 <classpath>
+          <fileset dir="${stage.lib}">
+            <include name="*.jar" />
+          </fileset>
+          <fileset dir="build/dist">
+            <include name="medcommons-dicomclient-application.jar" />
+            <include name="medcommons-dicomclient.jar" />
+          </fileset>
+        </classpath>
+			<formatter type="plain"/>
+
+			<test name="net.medcommons.application.dicomclient.test.WaitStartupTest"/>
+			<test name="net.medcommons.application.dicomclient.test.ContextManagerTest"/>
+			<test name="net.medcommons.application.dicomclient.test.UploadDICOMTest"/>
+
+			<test name="net.medcommons.application.dicomclient.test.ShutdownTest"/>
+
+
+		</junit>
+
+	</target>
+	<target name="generate-index-files" depends="build-timestamp,update-version">
+		<loadfile property="buildVersion" srcFile="src/ddlversion.txt"/>
+		<loadfile property="buildTime" srcFile="src/buildtime.txt"/>
+		<echo message="Build version is ${buildVersion}"/>
+	    <delete file="src/meta/war/index.html" quiet="true"/>
+	    <copy file="src/meta/war/index_ddl_template.html"
+	             tofile="src/meta/war/index.html" >
+	        <filterchain>
+	           <striplinecomments>
+	              <comment value="!"/>
+	           </striplinecomments>
+	           <replacetokens>
+	                <token key="BuildTime" value="${buildTime}"/>
+	                <token key="BuildVersion" value="${buildVersion}"/>
+	            </replacetokens>
+	        </filterchain>
+	    </copy>
+		<delete file="src/meta/war/UploadAccountFiles.html" quiet="true"/>
+			    <copy file="src/meta/war/UploadAccountFiles_template.html"
+			             tofile="src/meta/war/UploadAccountFiles.html" >
+			        <filterchain>
+			           <striplinecomments>
+			              <comment value="!"/>
+			           </striplinecomments>
+			           <replacetokens>
+			                <token key="BuildTime" value="${buildTime}"/>
+			                <token key="BuildVersion" value="${buildVersion}"/>
+			            </replacetokens>
+			        </filterchain>
+			    </copy>
+	</target>
+</project>

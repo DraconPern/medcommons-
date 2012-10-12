@@ -1,0 +1,429 @@
+/**
+ * Copyright 2004 MedCommons Inc.   All Rights Reserved.
+ */
+.FolderTab {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; HEIGHT: 25px
+}
+.FolderTop {
+	BORDER-LEFT-COLOR: #000000; BORDER-TOP-COLOR: #000000; BORDER-BOTTOM: #000000 1px solid; BORDER-RIGHT-COLOR: #000000
+}
+.FolderLeft {
+	BORDER-BOTTOM-COLOR: #000000; BORDER-LEFT: #000000 1px solid; BORDER-TOP-COLOR: #000000; BORDER-RIGHT-COLOR: #000000
+}
+.FolderHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; TEXT-INDENT: 4px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.TrackingField {
+	BORDER-RIGHT: #ccccff 1px solid; BORDER-TOP: #ccccff 1px solid; LEFT: 12px; BORDER-LEFT: #ccccff 1px solid; 
+: 270px; BORDER-BOTTOM: #ccccff 1px solid; POSITION: relative; TOP: 14px; HEIGHT: 25px; BACKGROUND-COLOR: #ffffff
+}
+.AccountFieldLeft {
+	LEFT: 5px; WIDTH: 110px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.AccountFieldLarge {
+	LEFT: 5px; WIDTH: 270px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.AccountFieldSmall {
+	LEFT: 0px; WIDTH: 40px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.AccountFieldRight {
+	LEFT: 0px; WIDTH: 96px; POSITION: relative; TOP: 10px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.FieldHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #999999; TEXT-INDENT: 5px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.CreditCardField {
+	LEFT: 5px; WIDTH: 150px; POSITION: relative; TOP: 0px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.CreditCardFieldRight {
+	LEFT: 5px; WIDTH: 100px; POSITION: relative; TOP: 0px; HEIGHT: 25px; BACKGROUND-COLOR: #e1e3f0
+}
+.HIPAAblock {
+	FONT-SIZE: 9px; LEFT: 5px; OVERFLOW: hidden; WIDTH: 270px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; POSITION: relative; TOP: 5px; HEIGHT: 40px; BACKGROUND-COLOR: #e1e3f0
+}
+.RightColHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.RightFieldHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.RightColTextField {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(/mc/images/fieldbackg_rightscreen.gif); OVERFLOW: hidden; BORDER-LEFT: medium none; WIDTH: 320px; LINE-HEIGHT: 30px; BORDER-BOTTOM: medium none; FONT-FAMILY: "Courier New", Courier, mono; POSITION: relative; TOP: 5px; HEIGHT: 150px
+}
+.RightColTextSmall {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 320px; BORDER-BOTTOM: medium none; POSITION: relative; HEIGHT: 30px; BACKGROUND-COLOR: #ffffff
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: auto; PADDING-TOP: 0px; BACKGROUND-COLOR: black;
+}
+.ThumbLabel {
+	FONT-WEIGHT: bold; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.ThumbDescription {
+	FONT-WEIGHT: bold; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.ThumbTime {
+	FONT-WEIGHT: bold; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.ImageCount {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #cccccc; normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right
+}
+.FooterCell {
+	HEIGHT: 30px;FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #cccccc; TEXT-INDENT: 5px; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right
+}
+
+.MenuHighlight {
+	color: #0000FF; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-align: right
+}
+
+.MenuItems {
+	COLOR: #000000; font-size: 11px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right
+}
+
+.MenuDisabled {
+	color: #EEEEEE; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-align: right
+}
+
+.SelectedImage {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1px;
+  width: 140px;
+}
+
+.SelectedPagerLink {
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+.NotSelectedPagerLink {
+  font-weight: normal;
+  font-size: 11px;
+  color: gray;
+}
+
+#bodyFrame {
+  border-style: none;
+}
+
+.CCRThumbLabels {
+	font-size: 10px; 
+  font-weight: bold; 
+  color: #ffffff; 
+  font-family: Arial, Helvetica;
+}
+
+.CCRThumbContents {
+  font-size: 9px; 
+  font-weight: normal; 
+  color: #ffffff; 
+  font-family: Arial, Helvetica;
+  text-align: left;
+}
+
+.CCRTitle {
+  background-color: #454a4f;
+	font-size: 14px; 
+  font-weight: bold; 
+  font-family: Arial, Helvetica;
+  height: 25px;
+  width: 100%;
+  color: white;
+}
+
+.CCRDetailRow {
+  height: 17px;
+}
+
+#thumbCell0 {
+  background-color: #334455;
+  height: 140px;
+}  
+
+#errorPane {
+  font-family: Arial, Helvetica;
+ 	font-size: 12px; 
+  height: 30px;
+  position: absolute;
+  padding: 10px;
+  top: 0px;
+  background-color: #dd3322;
+  display: none;
+  text-align: center;
+}
+
+#cachedPane {
+  position: absolute;
+  top: 707px;
+  background-color: transparent;
+  display: none;
+}
+
+#cachedAmount {
+  font-family: Arial, Helvetica;
+ 	font-size: 1px; 
+  height: 6px;
+  color: white;
+  filter: alpha(opacity=70);
+  background-color: gray;
+  border-style: none;
+  display: block;
+}
+
+#cachedPercent {
+  position: absolute;
+  top: -2px;
+  left: 42px;
+  font-family: Arial, Helvetica;
+ 	font-size: 8px; 
+  height: 6px;
+  color: gray;
+  filter: alpha(opacity=70);
+  background-color: transparent;
+}
+
+#speedPane {
+  position: absolute;
+  top: 697px;
+  background-color: transparent;
+  display: none;
+}
+
+#speedAmount {
+  font-family: Arial, Helvetica;
+ 	font-size: 1px; 
+  height: 6px;
+  color: white;
+  filter: alpha(opacity=70);
+  background-color: white;
+  border-style: none;
+  display: block;
+}
+
+#speedPercent {
+  position: absolute;
+  top: -2px;
+  left: 42px;
+  font-family: Arial, Helvetica;
+ 	font-size: 8px; 
+  height: 6px;
+  color: white;
+  filter: alpha(opacity=70);
+  background-color: transparent;
+}
+
+#errorPaneMessage {
+  position: relative;
+}
+
+#mainImageZoomRect {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-color: white;
+  border-width: 1px;
+  z-index: 30;
+}
+
+#dragScrollOuter {
+  position: absolute;
+  top: 50px;
+  height: 360px;
+  width: 30;
+  border-style: none;
+  border-width: 1px;
+  border-color: green;
+  z-index: 10000;
+  background-color: transparent;
+}
+
+#dragScrollPane { 
+  border-style: none;
+  border-left: none;
+  border-right: none;
+  border-width: 1px;
+  border-color: gray;
+  background-color: transparent;
+  height: 100%;
+  cursor: n-resize;
+}
+
+#dragScrollTab { 
+  position: absolute;
+  top: 190px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
+  background-color: black;
+  height: 20px;
+  width: 100%;
+  cursor:row-resize;
+}
+
+#dragScrollDisplay {
+  display: none;
+  position: absolute;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-right-style: none;
+  border-right-width: 0px;
+  border-right-color: transparent;
+  
+}
+
+/* Image number displayed & updated while user drags */
+#dragScrollImageNum {
+  position: relative;
+  display: none;
+  left: 4px;
+  color: white;
+  font-family: Arial, Helvetica;
+ 	font-size: 8px; 
+}
+
+/* Small icon displayed to show drag scroll region */
+#dragScrollIcon {
+  z-index: 60;
+}
+
+/* The label containing total images and dragScrollIcon */
+#dragScrollLabel {
+  position: absolute;
+  z-index: 60;
+}
+
+#dragScrollTotalImages {
+  position: relative;
+  top: -7px;
+  z-index: 60;
+  color: white;
+  font-family: Arial, Helvetica;
+ 	font-size: 10px; 
+}
+
+#xdsPleaseWait {
+  position: absolute;
+  top: 150px;
+  left: 450px;
+  height: 30px;
+  vertical-align: middle;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  background-color: #f0efe4;  
+  padding: 7px;
+  z-index: 200;
+  display: none;
+}
+
+#xdsAddReportForm {
+  position: absolute;
+  top: 150px;
+  left: 350px;
+  font-family: Arial, Helvetica;
+ 	font-size: 12px; 
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  padding: 10px;
+  display: none;
+  background-color: #f0efe4;  
+  z-index: 200;
+}
+
+.thumbAnnotation {
+  position: absolute;
+  left: 118px;
+  top: 2px;
+}
+
+#mainImage {
+  background-color: black;
+}
+
+.dialog h4 { 
+  margin: 0px 0px 0px 5px;
+}
+
+.dialog .hd { 
+  font-family: arial;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  background-color: #898770;
+}
+
+
+.dialog { 
+  position: absolute;
+  width:620px; 
+  left: 205px;
+  min-width: 200px;
+  top: 50px;
+  z-index: 100000;
+  background-color: #e2e1d7;
+}
+
+#quickReplyDlg button {
+  display: block;
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+#quickReplyDlg textarea {
+  width: 94%;
+  margin: 3%;
+}
+
+#replyStatus {
+  font-family: arial;
+  font-size: 13px;
+  margin-left: 15px;
+}
+
+#quickReplyDlg #ccrTable {
+  width: 600px;
+}
+
+#notificationsTableCache {
+  display: none;
+}
+
+.leftnav, table.ccrTable tr th {
+  width: 75px;
+}
+
+.secureImg {
+  display: none;
+}
+
+#sendStatusDiv {
+  /* Note: must be higher than .dialog */
+  z-index: 200000;
+  top: 40px;
+  left: 40px;
+}
+#wadoImageArea {
+  background-color: transparent;
+  border: none;
+}
+div.textThumb {
+  color: white;
+  margin: 0px 12px;
+  padding: 10px 0px;
+}
+
+div.textThumb h3 {
+  margin: 7px 0px;
+}
+div.textThumb p {
+  margin: 5px 0px;
+  font-size: 12px;
+}
+div.textThumb a {
+  color: #ccccff;
+  text-decoration: underline;
+}

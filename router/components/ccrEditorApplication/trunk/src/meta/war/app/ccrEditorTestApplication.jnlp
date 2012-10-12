@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for CCR Editor Test Application -->
+<jnlp
+  spec="1.5+"
+	codebase="$$codebase"
+	href="ccrEditorTestApplication.jnlp">
+  <information>
+    <title>CCR Editor Test Application</title>
+    <vendor>MedCommons, Inc.</vendor>
+
+    <homepage href="http://medcommons.net" />
+    <description>Test application for third party CCR editing</description>
+    
+    <icon  kind="shortcut" href="Active.png"/>
+    <association mime-type="application/x-healthbook-url" />
+    <offline-allowed />
+
+    <update check="always" policy="prompt-update"/>
+
+    <shortcut online="true">
+         <menu submenu="CCR Editor Test Application"/>
+         <desktop/>
+      </shortcut>
+
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+
+ <j2se version="1.5+" />
+
+	<jar href="medcommons-ccrEditorTest-application.jar" main="true"/>
+    <jar href="log4j.jar" download="eager"/>
+   
+    <jar href="ccrxmlbean.jar" download="eager"/>
+
+    <jar href="commons-codec.jar" download="eager"/>
+    <jar href="medcommons-crypto.jar" download="eager"/>
+    <jar href="commons-collections.jar" download="eager"/>
+    <jar href="commons-httpclient.jar" download="eager"/>
+    <jar href="commons-logging-api.jar" download="eager"/>
+    <jar href="commons-logging.jar" download="eager"/>
+    <jar href="jdom.jar" download="eager"/>
+    <jar href="jnlp.jar" download="eager"/>
+    <jar href="xbean.jar" download="eager"/>
+    <jar href="xbean_xpath.jar" download="eager"/>
+    <jar href="xercesImpl.jar" download="eager"/>
+    <jar href="saxon.jar" download="eager"/>
+    <jar href="saxon-dom.jar" download="eager"/>
+   
+
+
+	
+
+  </resources>
+
+  <application-desc main-class="net.medcommons.application.ccreditortest.CCREditor" />
+
+
+</jnlp>
+

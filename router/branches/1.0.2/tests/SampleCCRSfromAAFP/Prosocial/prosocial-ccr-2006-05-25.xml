@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ContinuityOfCareRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR CCR_20051008_Final.xsd" xmlns="urn:astm-org:CCR">
+<CCRDocumentObjectID>ProsocialApplications11115</CCRDocumentObjectID>
+<Language><Text>English</Text></Language>
+<Version>V1.0</Version>
+<DateTime><ExactDateTime>2006-05-25T13:51:02-0600</ExactDateTime></DateTime>
+<Patient><ActorID>AA0001</ActorID></Patient>
+<From>
+<ActorLink><ActorID>AA0001</ActorID></ActorLink>
+</From>
+<Body>
+<Alerts>
+<Alert>
+<CCRDataObjectID>OBJ0001</CCRDataObjectID>
+<DateTime>
+<ExactDateTime>2006-05-22T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Allergy</Text></Type>
+<Description><Text>CU has a strong allergy to nearly all forms of pollen</Text></Description>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Agent><Products><Product>
+<CCRDataObjectID>OBJ0002</CCRDataObjectID>
+<Description><Text>HAY FEVER</Text></Description>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Product><ProductName><Text>HAY FEVER</Text></ProductName></Product>
+</Product></Products></Agent>
+</Alert>
+<Alert>
+<CCRDataObjectID>OBJ0003</CCRDataObjectID>
+<DateTime>
+<ExactDateTime>2006-05-23T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Allergy</Text></Type>
+<Description><Text>Sulfa allergy: rash when exposed to sun.</Text></Description>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Agent><Products><Product>
+<CCRDataObjectID>OBJ0004</CCRDataObjectID>
+<Description><Text>MEDICATION</Text></Description>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Product><ProductName><Text>MEDICATION</Text></ProductName></Product>
+</Product></Products></Agent>
+</Alert>
+<Alert>
+<CCRDataObjectID>OBJ0005</CCRDataObjectID>
+<DateTime>
+<ExactDateTime>2006-05-23T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Allergy</Text></Type>
+<Description><Text>Allergic to cats and dogs - sneezing, runny nose, itchy eyes, itchy skin.</Text></Description>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Agent><Products><Product>
+<CCRDataObjectID>OBJ0006</CCRDataObjectID>
+<Description><Text>ANIMAL DANDER</Text></Description>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Product><ProductName><Text>ANIMAL DANDER</Text></ProductName></Product>
+</Product></Products></Agent>
+</Alert>
+<Alert>
+<CCRDataObjectID>OBJ0007</CCRDataObjectID>
+<DateTime>
+<ExactDateTime>2006-05-23T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Allergy</Text></Type>
+<Description><Text>Latex allergy: itchy rash.</Text></Description>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Agent><Products><Product>
+<CCRDataObjectID>OBJ0008</CCRDataObjectID>
+<Description><Text>LATEX</Text></Description>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Product><ProductName><Text>LATEX</Text></ProductName></Product>
+</Product></Products></Agent>
+</Alert>
+</Alerts>
+<Medications>
+<Medication>
+<CCRDataObjectID>OBJ0009</CCRDataObjectID>
+<DateTime><Type><Text>Prescription Date</Text></Type>
+<ExactDateTime>2006-05-22T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Medication</Text></Type>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+<Product><ProductName><Text>Trazodone</Text></ProductName></Product>
+</Medication>
+<Medication>
+<CCRDataObjectID>OBJ0010</CCRDataObjectID>
+<DateTime><Type><Text>Prescription Date</Text></Type>
+<ExactDateTime>2006-05-23T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Medication</Text></Type>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0002</ActorID></Actor></Source>
+<Product><ProductName><Text>Advair Diskus</Text></ProductName></Product>
+</Medication>
+<Medication>
+<CCRDataObjectID>OBJ0011</CCRDataObjectID>
+<DateTime><Type><Text>Prescription Date</Text></Type>
+<ExactDateTime>2006-05-23T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Medication</Text></Type>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0003</ActorID></Actor></Source>
+<Product><ProductName><Text>Allegra</Text></ProductName></Product>
+</Medication>
+<Medication>
+<CCRDataObjectID>OBJ0012</CCRDataObjectID>
+<DateTime><Type><Text>Prescription Date</Text></Type>
+<ExactDateTime>2006-05-23T00:00:00-0600</ExactDateTime>
+</DateTime>
+<Type><Text>Medication</Text></Type>
+<Status><Text>Active</Text></Status>
+<Source><Actor><ActorID>AA0002</ActorID></Actor></Source>
+<Product><ProductName><Text>Celexa</Text></ProductName></Product>
+</Medication>
+</Medications>
+</Body>
+<Actors>
+<Actor>
+<ActorObjectID>AA0001</ActorObjectID>
+<Person>
+<Name>
+<CurrentName>
+<Given>CCR</Given>
+<Family>User</Family>
+</CurrentName>
+</Name>
+<DateOfBirth><ExactDateTime>1939-12-07T00:00:00-0700</ExactDateTime></DateOfBirth>
+</Person>
+<Address>
+<Type><Text>Home</Text></Type>
+<Line1>469 Algonquin Pl</Line1>
+<Line2>Apt 204</Line2>
+<City>Kalamazoo</City>
+<State>MI</State>
+<PostalCode>49001</PostalCode>
+</Address>
+<EMail>
+<Value>ccr_user@prosocialapps.com</Value>
+</EMail>
+<Status><Text>Current</Text></Status>
+<Source><Actor><ActorID>AA0001</ActorID></Actor></Source>
+</Actor>
+<Actor>
+<ActorObjectID>AA0002</ActorObjectID>
+<Person>
+<Name>
+<CurrentName>
+<Given>Gene</Given>
+<Family>Martin</Family>
+</CurrentName>
+</Name>
+</Person>
+<EMail>
+<Value>genemartin@caregiveralliance.com</Value>
+</EMail>
+<Status><Text>Current</Text></Status>
+<Source><Actor><ActorID>AA0002</ActorID></Actor></Source>
+</Actor>
+<Actor>
+<ActorObjectID>AA0003</ActorObjectID>
+<Person>
+<Name>
+<CurrentName>
+<Given>Louise</Given>
+<Family>Singleton</Family>
+</CurrentName>
+</Name>
+</Person>
+<EMail>
+<Value>louisesingleton@caregiveralliance.com</Value>
+</EMail>
+<Status><Text>Current</Text></Status>
+<Source><Actor><ActorID>AA0003</ActorID></Actor></Source>
+</Actor>
+</Actors>
+</ContinuityOfCareRecord>

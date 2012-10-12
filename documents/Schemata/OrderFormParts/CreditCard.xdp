@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeDesigner_V6.0" APIVersion="1.4.4057.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2004-04-23T02:47:04Z" uuid="69ca2224-50c2-4d52-901a-694f58347e65">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.1/">
+   <subform name="form1" layout="tb">
+      <pageSet>
+         <pageArea name="Page1" id="Page1">
+            <contentArea x="0.25in" y="0.25in" w="8in" h="10.5in"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+            <draw name="StaticImage1" y="0mm" x="0mm" w="215.9mm" h="279.4mm">
+               <value>
+                  <image aspect="actual"/>
+               </value>
+            </draw>
+         </pageArea>
+      </pageSet>
+      <subform w="8in" h="10.5in">
+         <field name="TextField1" y="187.59mm" x="36.8746mm" w="39.5114mm" h="8.89mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+            </border>
+         </field>
+         <draw name="StaticText1" y="187.59mm" x="27.7949mm" w="9.2874mm" minH="8.89mm">
+            <ui>
+               <textEdit>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Num</p></body>
+               </exData>
+            </value>
+            <font typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+            </border>
+         </draw>
+         <field name="TextField1" y="187.59mm" x="82.6281mm" w="14.976mm" h="8.89mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+            </border>
+         </field>
+         <field name="TextField1" y="196.32mm" x="82.6281mm" w="14.976mm" h="8.89mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+            </border>
+         </field>
+         <field name="TextField1" y="205.05mm" x="82.6281mm" w="14.976mm" h="8.89mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+            </border>
+         </field>
+         <field name="TextField1" y="213.78mm" x="82.6281mm" w="14.976mm" h="8.89mm">
+            <ui>
+               <textEdit>
+                  <border>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+            </border>
+         </field>
+         <field name="SignatureField1" y="222.51mm" x="7.14mm" w="90.4642mm" h="8.89mm">
+            <ui>
+               <signature>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </signature>
+            </ui>
+            <font typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <caption reserve="17.2mm">
+               <font typeface="Arial"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text>Signature </text>
+               </value>
+            </caption>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+            </border>
+         </field>
+         <field name="DropDownList1" y="187.59mm" x="7.14mm" w="20.1984mm" h="8.89mm">
+            <ui>
+               <choiceList>
+                  <border>
+                     <edge stroke="lowered"/>
+                  </border>
+                  <margin/>
+               </choiceList>
+            </ui>
+            <font typeface="Arial"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <value>
+               <text>Visa</text>
+            </value>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+            </border>
+            <items save="1">
+               <text>Amex</text>
+               <text>Discover</text>
+               <text>MasterCard</text>
+               <text>Visa</text>
+            </items>
+         </field>
+         <draw name="StaticText1" y="187.59mm" x="76.1784mm" w="6.0494mm" minH="8.89mm">
+            <ui>
+               <textEdit>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Exp</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+            </border>
+         </draw>
+         <draw name="StaticText1" y="196.32mm" x="7.14mm" w="75.5209mm" minH="8.89mm">
+            <ui>
+               <textEdit>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Amount</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+            </border>
+            <para hAlign="right"/>
+         </draw>
+         <draw name="StaticText1" y="204.79mm" x="7.1152mm" w="76.1861mm" minH="8.89mm">
+            <ui>
+               <textEdit>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <value>
+               <exData contentType="text/html" maxLength="0">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Tax</p></body>
+               </exData>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+            </border>
+            <para hAlign="right"/>
+         </draw>
+         <draw name="StaticText1" y="213.78mm" x="7.14mm" w="76.6954mm" minH="8.89mm">
+            <ui>
+               <textEdit>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <value>
+               <text>Total Charge</text>
+            </value>
+            <font size="8pt" typeface="Arial"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+            <border>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <corner/>
+               <corner/>
+               <corner/>
+               <corner/>
+               <fill>
+                  <color value="192,192,192"/>
+               </fill>
+            </border>
+            <para hAlign="right"/>
+         </draw>
+      </subform>
+   </subform>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?templateDesigner DefaultRunAt client?>
+   <?templateDesigner XDCFile acrobat6.xdc?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 100?></template>
+<config xmlns="http://www.xfa.org/schema/xci/1.0/">
+   <agent name="designer">
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </agent>
+   <present>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<sourceSet xmlns="http://www.xfa.org/schema/xfa-source-set/1.0/"/>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.1/"/>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+</xfa:datasets></xdp:xdp>

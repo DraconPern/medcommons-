@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Upload Account Files 
+</title>
+This launches file uploads to a particular account
+<body>
+     
+<APPLET 
+  CODE="DDLApplet.class"
+  WIDTH="100%" HEIGHT="200"
+  ARCHIVE = "app/medcommons-uploadAccountFiles-application.jar,app/dcm4che-core.jar,app/dcm4che-net.jar,app/xfire-all.jar,app/log4j.jar,app/medcommons-services.jar,app/medcommons-crypto.jar,app/medcommons-utils.jar,app/junit.jar,app/medcommons-cxp-client.jar,app/medcommons-transfer-application.jar"
+  
+  >
+  <PARAM NAME=cxpEndpoint VALUE="https://ci.myhealthespace.com/gateway/services/CXP2">
+  <PARAM NAME=storageId VALUE="1088448116240388">
+  <PARAM NAME=auth VALUE="xyz">
+  
+This example uses an applet.
+</APPLET>
+</body>
+</html>

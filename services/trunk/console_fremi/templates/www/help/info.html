@@ -1,0 +1,123 @@
+{% extends "www/base.html" %} 
+
+{% block head %}
+<style type='text/css'>
+  #faqcontent {
+    margin-left: 1em;
+  }
+  h3 {
+    color: #666;
+  }
+
+  ul li h3 a {
+    font-weight: normal !important;
+  }
+
+  h3 a {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+</style>
+{% endblock head %}
+
+{% block main %}
+<div id='faqcontent'>
+  <h2>Frequently Asked Questions (FAQ)</h2>
+  
+  <p>If you are looking for detailed help, please
+     view or download our detailed Help file as a PDF document.</p>
+       <button class='mainwide' onclick='window.open("/Help.pdf", "help", "width=800,height=600");'>Open Help</button>
+       
+  <p>For a list of common questions, see below:</p>
+  <ul>
+    <li><a href='#q1'>Why is MedCommons free?</a></li>
+    <li><a href='#q2'>How does MedCommons make money?</a></li>
+    <li><a href='#q8'>What are the benefits of MedCommons?</a></li>
+    <li><a href='#q3'>How long do images that I upload stay on MedCommons?</a></li>
+    <li><a href='#q4'>Can I use MedCommons for diagnosis?</a></li>
+    <li><a href='#q5'>Do I need to install anything to use MedCommons?</a></li>
+    <li><a href='#q6'>Can I transfer images of my patients using MedCommons?</a></li>
+    <li><a href='#q7'>How can I get help using MedCommons?</a></li>
+  </ul>
+
+  <h2>Answers</h2>
+  <h3><a name='q1'>Why is MedCommons free?</a></h3>
+
+  <p class='content'>MedCommons offers limited accounts as a service to the community and as an easy and simple way for
+  people to try out our products.&nbsp;   MedCommons does not offer support or other services for free accounts.&nbsp;</p>
+
+  <h3><a name='q2'>How does MedCommons make money?</a></h3>
+
+  <p class='content'>MedCommons charges for high usage accounts, accounts that
+  need FDA compliance, custom and dedicated upload facilities, system
+  integration and support.&nbsp;  If you need any of these 
+  services, please <a href='mailto:cmo@medcommons.net'>contact us</a>.&nbsp;</p>
+
+
+  <h3><a name='q8'>What are the benefits of MedCommons?</a></h3>
+  <p class='content'>MedCommons allows you to replace fragile and inconvenient use of physical
+  media such as CDs with online transfers which are faster, cheaper and safer.&nbsp;  Every healthcare worker is
+  familiar with the problems of receiving unreadable, incorrect, or incompatible image data on CD.&nbsp; 
+  MedCommons eliminates these problems by allowing senders of imaging data to easily upload it and view it online and ensure 
+  correct data is ready for download before the recipient gets it.&nbsp;    Recipients who integrate MedCommons into their 
+  PACS can automate image transfer so that images are delivered direct into their systems with no manual intervention.&nbsp;
+  </p>
+
+  <h3><a name='q3'>How long do images that I upload stay on MedCommons?</a></h3>
+
+  <p class='content'>By default, images and other documents stay on MedCommons for 30 days.&nbsp;
+  If you don't do anything to preserve them, images and documents will be completely erased including backups or
+  archived copies after that time.&nbsp;  MedCommons may keep some logs and other data about transfers as part of our 
+  obligations under law and to ensure we can provide adequate customer service and support.&nbsp;</p>
+
+  <h3><a name='q4'>Can I use MedCommons for diagnosis?</a></h3>
+
+  <p class='content'>
+    Radiology diagnosis requires FDA-registered software and display screens of
+    adequate quality for the task.&nbsp;
+    The free version of MedCommons can be used to transfer and share health
+    records, including radiology images but is not labeled for use as a display for
+    diagnostic purposes at this time.&nbsp;
+    Please contact us for our FDA-registered software and services.&nbsp;
+  </p>
+
+  <h3><a name='q5'>Do I need to install anything to use MedCommons?</a></h3>
+
+  <p class='content'>People receiving images do not need to have any software
+  installed other than a browser.&nbsp;   The MedCommons online viewer will allow them to view
+  or download the images at full fidelity.&nbsp;</p>
+  <p class='content'>
+  MedCommons uses a Java based image upload utility to assist in uploading large image sets.&nbsp;  Most people already
+  have Java installed but if not, our web pages will prompt you to install it when it is needed.&nbsp;   The MedCommons upload utility 
+  itself is called DDL.&nbsp;   It does not install anything permanently on your
+  computer and only needs to run while images are actually uploading.&nbsp;</p>
+
+  <h3><a name='q6'>Can I transfer images of my patients using MedCommons?</a></h3>
+
+  <p class='content'>The answer to this question depends on legal obligations that are particular to your situation.&nbsp;
+  In the USA, healthcare providers are covered by HIPAA which will not usually allow you to transfer patient data
+  unless you have signed a HIPAA business associate agreement with the parties involved, including parties such as MedCommons.&nbsp; 
+  For paying customers MedCommons can arrange to 
+  sign HIPAA business associate agreements to enable you to use MedCommons.&nbsp;</p>
+
+  <p class='content'>All users are encouraged to carefully consult local laws regarding patient privacy before using MedCommons to transfer
+  images of patients.&nbsp;  MedCommons encourages such users to try out our services using free sets of anonymized sample data that 
+  can be obtained from the following web site:</p>
+  <p class='content'>
+    <a href='http://spool.medcommons.net/dicom/'>MedCommons Sample Data Archive</a>
+  </p>
+
+  <p class='content'>For a comprehensive guide in how to use the sample data, please refer to this document:</p>
+  <p class='content'>
+           <a href='https://docs.google.com/document/d/1AcK2505E5y-4PTlyHW-Zr6Z5_HQyV1natHxvT__oaa8/edit?hl=en' target='sampledata'>Sample Images for Test Upload</a>
+  </p>
+
+  <h3><a name='q7'>How can I get help using MedCommons?</a></h3>
+
+  <p class='content'>For detailed help in using MedCommons, please read 
+  our <a href='/Help.pdf'>FAQ and Help</a> document (PDF).  This document will guide you step-by-step
+  through using MedCommons to transfer and view images.&nbsp;</p>
+</div>
+{% endblock main %}

@@ -1,0 +1,955 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>JspTestCase Principles</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="JspTestCase Principles" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././writing/howto_testcase.html">Writing Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Writing Tests<ul>
+    
+<li>
+<a href=".././writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">General Principles</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_servlet.html" title="Information on writing Cactus-based tests to test Servlets.">Testing Servlets</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_filter.html" title="How to write unit tests for Servlet Filters using Cactus.">Testing Filters</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_jsp.html" title="How to write unit tests for JSP pages using Cactus.">Testing JSP Pages</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_testcase_jsp.html" title="How to write unit tests for JSP tag libraries using Cactus." class="currentPage">Testing Taglibs</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_ejb.html" title="How to test Enterprise JavaBeans using Cactus.">Testing EJBs</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Advanced Topics<ul>
+    
+<li>
+<a href=".././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">Integrating HttpUnit</a>
+</li>
+    
+<li>
+<a href=".././writing/howto_security.html" title="">Using Authentication</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Reference<ul>
+    
+<li>
+<a href=".././api/framework-12/index.html" title="">Javadocs (J2EE 1.2)</a>
+</li>
+    
+<li>
+<a href=".././api/framework-13/index.html" title="">Javadocs (J2EE 1.3)</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>When to use?</h1>
+
+      
+<p>
+        Your test case class should extend <code>JspTestCase</code>
+        whenever you are unit testing:
+      </p>
+      
+<ul>
+        
+<li>
+          Custom tags,
+        </li>
+        
+<li>
+          Any java code that uses JSP API objects
+          (<code>PageContext</code>, ...)
+        </li>
+      
+</ul>
+      
+<p>
+        This tutorial focuses on testing custom tags, as they are the principal
+        code which uses the JSP API objects. Future versions of this tutorial
+        will expand upon testing actual JSPs.
+      </p>
+    
+</div>
+
+    
+<div class="section">
+<h1>Overview of Tag Library Testing</h1>
+        
+<p>
+            Custom tags consist of entries in a Tag Library Descriptor file 
+            (TLD) and a tag handler class. Cactus provides the facility to test 
+            both aspects of a custom tag. However, since the TLD contains no 
+            logic, you will use Cactus primarily to test the tag handler class.
+        </p>
+        
+<p>
+            To test the tag handler class, use the implicit objects provided by
+            JspTestCase to set up the initial state for the test. Then create 
+            and initialize your custom tag using the <code>pageContext</code>
+            implicit
+            object. After setting up the tag, call the lifecycle methods 
+            implemented by your tag in the correct order and verify that the 
+            methods return the expected results. The tag's output can be 
+            inspected in the <code>endXXX()</code> method.
+        </p>
+        
+<p>
+            For an additional degree of integration testing, you can create a
+            JSP that exercises your custom tag and call it from within a regular
+            Cactus test case. See the section on <a href="#further_integration">Further Integration Testing</a> 
+            for details.
+        </p>
+        
+<div class="note">
+          To simplify the complexities of managing a tag handlers lifecycle, 
+          Cactus provides the helper class <code>JspTagLifecycle</code>. It
+          is basically a stub implementation of a JSP engines tag management
+          routines, and provides many convenient shortcut methods to test
+          tag handlers. For detailled documentation, check out the
+          corresponding
+          <a href=".././api/framework-13/org/apache/cactus/extension/jsp/JspTagLifecycle.html" title="">API documentation</a>.
+          Currently, <code>JspTagLifecycle</code> is only available for
+          JSP 1.2.
+        </div>
+    
+</div>
+
+    
+<div class="section">
+<h1>Provided Implicit Objects</h1>
+
+      
+<p>
+        Cactus automatically initializes the following implicit objects.
+        They are made available to your <code>setUp()</code>,
+        <code>testXXX()</code> and <code>tearDown()</code> methods as
+        instance variables of the <code>JspTestCase</code> class (and thus
+        as instance variables of your test case class).
+      </p>
+      
+<div class="note">
+        See the <a href=".././how_it_works.html" title="High level view of the inner workings of Cactus.">How it
+        works</a> guide for details on how Cactus initializes these objects.
+      </div>
+
+      
+<p>
+        The provided implicit objects are:
+      </p>
+
+      
+<a name="jsp_request">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>request</h2>
+
+        
+<p>
+         See <code>ServletTestCase</code><code>
+         <a href=".././writing/howto_testcase_servlet.html#servlet_request">request
+         </a></code> implicit object for documentation.
+       </p>
+
+      
+</div>
+
+      
+<a name="jsp_response">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>response</h2>
+
+        
+<p>
+         See <code>ServletTestCase</code><code>
+         <a href=".././writing/howto_testcase_servlet.html#servlet_response">response
+         </a></code> implicit object for documentation.
+        </p>
+
+      
+</div>
+
+      
+<a name="jsp_config">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>config</h2>
+
+        
+<p>
+         See <code>ServletTestCase</code><code>
+         <a href=".././writing/howto_testcase_servlet.html#servlet_config">config
+         </a></code> implicit object for documentation.
+        </p>
+      
+</div>
+
+      
+<a name="jsp_session">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>session</h2>
+
+        
+<p>
+         See <code>ServletTestCase</code><code>
+         <a href=".././writing/howto_testcase_servlet.html#servlet_session">session
+         </a></code> implicit object for documentation.
+        </p>
+      
+</div>
+
+      
+<a name="jsp_out">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>out</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>out</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>public javax.servlet.jsp.JspWriter</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<div class="note">
+          Cactus does not wrap the out object.
+        </div>
+        
+<p>
+         You can use this object to write data to the response, thereby
+         simulating the body of a tag (if the tag does not modify its body). If
+         the tag <b>does</b> modify its body, then you will need to 
+         generate a BodyContent object before writing out the simualted body.
+         See <a href="#body_content"><code>bodyContent</code></a> for
+         details.
+        </p>
+      
+</div>
+
+      
+<a name="jsp_pageContext">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>pageContext</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>pageContext</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>org.apache.cactus.server.PageContextWrapper
+              </code>, which inherits from
+              <code>javax.servlet.jsp.PageContext</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<p>
+          Custom tags rely exclusively on the <code>pageContext</code> object to
+          provide information about the enclosing JSP. Therefore this is the 
+          most important implicit object for testing custom tags. Cactus 
+          provides a very thin wrapper that ensures that all of the objects that 
+          <code>pageContext</code> returns (such as the <code>ServletRequest
+          </code> from <code>pageContext.getRequest()</code>) are the correctly
+          wrapped versions available in the other implicit variables.
+        </p>
+        
+<p>
+          See the javadoc for
+          <code>org.apache.cactus.server.PageContextWrapper</code>
+          for more details. You should also look at the
+          samples provided in the Cactus distribution.
+        </p>
+      
+</div>
+
+
+    
+<a name="jsp_bodyContent">
+<!--anchor--></a>
+      
+<div class="section">
+<h2>bodyContent</h2>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<td>
+              Instance variable name
+            </td>
+            <td>
+              <b><code>bodyContent</code></b>
+            </td>
+          
+</tr>
+          
+<tr>
+            
+<td>
+              Class name
+            </td>
+            <td>
+              <code>javax.servlet.jsp.tagext.BodyContent</code>
+            </td>
+          
+</tr>
+        
+</table>
+</div>
+
+        
+<p>
+          JspTestCase does not actually provide a <code>bodyContent</code> 
+          implicit object for use with <code>BodyTags</code>. However, obtaining
+          one is so easy that it deserves mention here. Calling <code>
+          pageContext.pushBody()</code> returns an object of type <code>
+          javax.servlet.jsp.tagext.BodyContent</code> (which inherits from 
+          <code>JspWriter</code>). This call also changes the value of the 
+          "out" variable stored in page scope (and thus the value of 
+          <code>pageContext.getOut()</code>). To put test content into the 
+          <code>bodyContent</code> object, simply use its writer methods. To
+          quote Sun's API reference on the matter: "Note that the content of
+          BodyContent is the result of evaluation, so it will not contain
+          actions and the like, but the result of their invocation." 
+          See <a href="#using_body_content">Body Tags</a> 
+          for more information.
+        </p>
+            
+<div class="note">
+                It's important to balance 
+                calls to <code>pushBody()</code> with calls to 
+                <code>popBody()</code>--otherwise many servlet engines will not
+                output the tag's body. The easiest way to accomplish this is to
+                call pushBody in <code>setUp()</code> and <code>popBody()</code>
+                in <code>tearDown()</code>.
+            </div>
+        
+      
+</div>
+    
+</div>
+
+    
+<div class="section">
+<h1>Custom Tag Set Up</h1>
+        
+<p>
+            Creating the test fixture for a custom tag test involves several 
+            steps. The exact order of the steps can vary depending on the 
+            needs of the test. For instance, placing the test data in the 
+            correct scope would probably happen before a real JSP began its
+            execution. You can emulate this, or choose to do it after the 
+            tag has been in initialized (as described below). In most cases 
+            you can determine the exact order of the steps based on what 
+            is most convenient for a given test (some steps may be specific 
+            to only one test in the <code>TestCase</code> and so should 
+            be executed after common <code>setUp()</code> code).
+        </p>
+        
+<div class="section">
+<h2>Step 1: Create the Tag (Required)</h2>
+            
+<p>
+                Instantiate a copy of the tag you wish to test.
+            </p>
+
+<div class="source">
+<pre>SomeTag tag = new SomeTag();</pre>
+</div>
+        
+</div>
+
+        
+<div class="section">
+<h2>Step 2: Set the pageContext (Optional)</h2>
+            
+<p>
+                Call the <code>setPageContext()</code> method with the implicit
+                object provided by Cactus to register the pageContext with the
+                tag.
+            </p>
+
+<div class="source">
+<pre>tag.setPageContext(pageContext);</pre>
+</div>
+        
+</div>
+
+        
+<div class="section">
+<h2>Step 3: Set the tag's attributes (Optional)</h2>
+            
+<p>
+                If your tag takes attributes, call setter methods to initialize
+                the tag's state. Setters on the tag handler class represent the 
+                attributes of custom tags. Thus to emulate this JSP fragment:
+            </p>
+
+<div class="source">
+<pre>&lt;someTag foo="10" bar="11"/&gt;</pre>
+</div>
+            
+<p>
+                You would need to use the following:
+            </p>
+
+<div class="source">
+<pre>
+someTag.setFoo("10");
+someTag.setBar("11");
+</pre>
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h2>Step 4: Set the parent tag (Optional)</h2>
+            
+<p>
+                If you would like the tag you are testing to access a parent 
+                tag, you will need to call 
+            </p>
+
+<div class="source">
+<pre>tag.setParent(enclosingTag);</pre>
+</div>
+            
+<p>
+                This will allow tag to successfully call <code>getParent</code>
+                and <code>TagSupport.findAncestorWithClass()</code>. Of course 
+                <code>enclosingTag</code> will have to be instantiated and 
+                set up as well, including another call to 
+                <code>setParent()</code> if you would like to simulate multiple
+                levels of nesting.
+            </p>
+        
+</div>
+    
+
+        
+<div class="section">
+<h2>Step 5: Create the BodyContent Object (Optional)</h2>
+            
+<p>
+                If your tag processes its body, call 
+                <code>pageContext.pushBody()</code> 
+                to obtain a <code>BodyContent</code>. If you employ this step,
+                be sure to also include a call to 
+                <code>pageContext.popBody()</code> after the tag finishes 
+                execution. See the 
+                <a href="#using_body_content">Body Tags</a> section
+                for more details.
+            </p>
+        
+</div>
+
+
+        
+<div class="section">
+<h2>Step 6: Set up page state (Optional)</h2>
+            
+<p>
+                Set up any necessary page state by putting test objects into the
+                appropriate scopes. Tags frequently access data in the 
+                session, the request, or the page. If your tag operates on data 
+                contained in any of these (or in the application scope), be sure
+                to set up this part of the test fixture. Objects can be placed 
+                in these scopes by using the implicit objects provided by Cactus
+                directly, or by accessing them indirectly through the 
+                <code>pageContext</code> object.
+            </p>
+
+<div class="source">
+<pre>
+request.setAttribute("key", new DomainObject("testValue"));
+//or
+pageContext.setAttribute("key", new DomainObject("testValue"), PageContext.REQUEST_SCOPE);
+</pre>
+</div>
+        
+</div>
+    
+</div>
+
+    
+<div class="section">
+<h1>Running the Test</h1>
+        
+<p>
+            Once the tag has been set up and any necessary page data has been 
+            placed in the appropriate scopes, testing a custom tag consists of 
+            calling the relevant life-cycle methods and then using JUnit 
+            asserts to verify the outcome.
+        </p>
+        
+<div class="section">
+<h2>Verifying individual methods</h2>
+            
+<p>
+                Most of the life cycle methods return <code>ints</code>, 
+                which signal that 
+                the container should take a certain action after the method. 
+                For instance, the constant <code>EVAL_BODY_INCLUDE</code> 
+                returned from <code>doStartTag()</code> tells the container to 
+                include the tag's body in the JSP's output response. So a tag 
+                which conditionally includes its body based on the value of one 
+                of its attributes might be verified like this:
+            </p>
+
+<div class="source">
+<pre>
+tag.setValueThatResultsInInclude("correct value");
+assertEquals(Tag.EVAL_BODY_INCLUDE, tag.doStartTag());
+</pre>
+</div>
+        
+</div>
+        
+<div class="section">
+<h2>Checking effects on page data</h2>
+            
+<p>
+            In addition to "listening" for the signals that your tag sends to 
+            the container, you may want to verify that the tag's execution 
+            has the appropriate effects upon the page data. Use 
+            <code>JspTestCase's</code> implicit objects to verify that the 
+            tag has correctly modified the information. The following 
+            snippet verifies that the <code>CatalogListTag</code> has placed a 
+            collection of objects in the request under the key "catalogs":
+            </p>
+
+<div class="source">
+<pre>
+catalogListTag.doStartTag();
+Collection catalogs = (Collection)request.getAttribute("catalogs");
+assertNotNull(catalogs);
+</pre>
+</div>
+        
+</div>
+        
+        
+<div class="section">
+<h2>Verifying tag output</h2>
+            
+<p>
+                Use the <code>endXXX</code> method to verify that your tag's 
+                methods have resulted in the correct data being written 
+                to the response.
+            </p>
+            
+<div class="note">
+                    This example uses the <code>endXXX()</code> 
+                    signature from Cactus 1.2 or above.
+            </div>
+
+<div class="source">
+<pre>
+public void endSomeTagTest (WebResponse response)
+{
+    String output = response.getText();
+    assertEquals("&lt;b&gt;expected output&lt;/b&gt;", output);
+}
+</pre>
+</div>
+        
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Special Cases</h1>
+        
+<p>
+            There are a few scenarios in custom tag testing that deserve extra
+            attention.
+        </p>
+        
+<div class="section">
+<h2>Iteration Tags</h2>
+            
+<p>
+                To test a tag that repeats its body processing a number of 
+                times, simply create a <code>do-while</code> loop that mimics  
+                the life cycle of an iteration tag:
+            </p>
+
+<div class="source">
+<pre>
+//[...tag set up and early life cycle methods omitted...]
+
+int count = 0;
+do
+{
+    count++;
+
+} while (tag.doAfterBody() == tag.EVAL_BODY_AGAIN);
+
+tag.doEndTag();
+
+//based on setUp we expect 9 repetitions
+assertEquals(9, count);
+</pre>
+</div>
+            
+<p>
+                You can use a count variable (such as the one illustrated 
+                in the example) to check whether the tag's body was processed 
+                the expected number of times.
+            </p>
+        
+</div>
+        
+<a name="using_body_content">
+<!--anchor--></a>
+        
+<div class="section">
+<h2>Body Tags</h2>
+            
+<p>
+                Unless specified otherwise by the deployment descriptor, all 
+                tags can include a body, which can in turn include other tags 
+                or scriptlet expressions. These are automatically evaluated at 
+                run time, and the content of the body is simply written out 
+                if the tag signals it should be (with 
+                <code>EVAL_BODY_INCLUDE </code> for instance). Nothing special 
+                is required to test this sort of tag, since the tag is 
+                unconcerned about its contents.
+            </p>
+            
+<p>
+                Testing BodyTags--tags which actually perform some processing
+                on their content--is a little trickier.
+                BodyTags can choose to return a constant (
+                <code>EVAL_BODY_TAG</code> in JSP 1.1, 
+                <code>EVAL_BODY_BUFFERED</code> in 1.2)  from 
+                <code>doStartTag()</code> which signals to the container that 
+                the tag would like a chance to handle its own body. 
+                If it receives this result, the container calls 
+                <code>pageContext.pushBody()</code> to obtain a 
+                <code>BodyContent</code>object. The <code>BodyContent</code> 
+                object is passed to the tag through the tag's 
+                <code>setBodyContent()</code>method. The container then uses 
+                this object (the old out object is saved) to capture all of the 
+                response writing that goes on in the body of the tag. After the 
+                tag's body has been evaluated, the tag itself has a chance to 
+                do something with the result of the evaluation in its 
+                <code>doAfterBody()</code> method. After the tag has completed 
+                its execution, the container restores the old out object with
+                a call to <code>pageContext.popBody()</code>.
+            </p>
+            
+<p>
+                To test body tags, your test must replicate this somewhat   
+                complicated lifecycle. The following code covers all of the 
+                steps as they might appear in a typical test:
+            </p>
+
+<div class="source">
+<pre>
+//standard set up
+YourTag tag = new YourTag();
+tag.setPageContext(this.pageContext);
+tag.doStartTag();
+
+//obtain the bodyContent object--presumably doStartTag has returned 
+//EVAL_BODY_TAG or EVAL_BODY_BUFFERED.
+BodyContent bodyContent = this.pageContext.pushBody();
+this.tag.setBodyContent(bodyContent);
+this.tag.doInitBody();
+
+
+//write some "output" into the bodyContent so that endXXX can test for it.
+bodyContent.println("Some content");
+bodyContent.print("Some evaluated content " + (5 + 9));
+
+//actually handles the processing of the body
+tag.doAfterBody();
+
+//after the body processing completes
+tag.doEndTag();
+
+//finally call popBody
+this.pageContext.popBody();
+
+</pre>
+</div>
+            
+<p>
+                This sample does not fully replicate the container's handling of
+                the tag (for instance, the tag would only receive the 
+                <code>bodyContent</code> object if the result of 
+                <code>doStartTag</code> indicated that it should do so). 
+                However, in a test environment, you can make assumptions if 
+                doing so simplifies the workings of the test.
+            </p>
+            
+<div class="note">
+                Again, you can check that the body of the tag was handled
+                correctly by verifying the total output in the 
+                <code>endXXX()</code> method.
+            </div>
+        
+</div>
+        
+<div class="section">
+<h2>TagExtraInfo classes</h2>
+            
+<p>
+                Cactus does not offer any specific services to support the 
+                testing of <code>TagExtraInfo</code> classes because they do 
+                not depend on any of the implicit objects.
+            </p>
+        
+</div>
+    
+</div>
+
+    
+<a name="further_integration">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Further Integration Testing</h1>
+        
+<p>
+            You can use Cactus to test how your tag will react when put into a 
+            real JSP. This allows you to verify that there are no problems with 
+            the deployment descriptor, or unexpected behavior on the part of the 
+            container. You accomplish this by writing a small JSP that 
+            makes use of your custom tag, and then calling it from within a 
+            Cactus test case. You can even use JUnit assertions within 
+            scriptlets to verify certain aspects of the Tag's behavior. However,
+            this method requires that you write a separate JSP for each 
+            test case (or lump several cases into a single JSP). Both options 
+            pose problems, so it may be  best to 
+            include one or two tests of this type and rely on 
+            the more traditional methods described earlier to ensure 
+            total coverage.
+        </p>
+        
+<div class="section">
+<h2>The test JSP</h2>
+            
+<p>
+                All the JSP needs to do is include the tag library that 
+                describes the tag you are testing and makes use of it in 
+                some way. You can import <code>junit.framework.Assert</code>
+                to do some simple checks on the effects of the tag. 
+                Here is a short example of a JSP that exercises a tag:
+            </p>
+
+<div class="source">
+<pre>
+&lt;%@page import="junit.framework.Assert"%&gt;
+&lt;%@taglib uri="WEB-INF/yourTagLib.tld" prefix="example"%&gt;
+
+Here is the custom tag this page verifies:
+&lt;example:someTag variableName="foo" variableValue="bar"/&gt;
+
+Here is the JUnit assert that checks whether the tag correctly created a 
+scripting variable named &lt;code&gt;foo&lt;/code&gt; with the value "bar":
+&lt;%
+//attempt to reference foo will cause a translation error if the tag did not 
+//create the scripting variable
+Assert.assertEquals("bar", foo);
+%&gt;
+</pre>
+</div>
+           
+<p>
+                It's a bad idea to put too many assertions into the 
+                JSP. In the example above, the creation of a scripting variable 
+                can <b>only</b> be tested within the JSP page. (The 
+                same goes for any objects in page scope, because each JSP 
+                creates its own.) If you
+                want to use other assertions with this type of test,
+                call them in your test case after 
+                <code>pageContext.include()</code> (See below for an example.)
+           </p>
+        
+</div>
+
+        
+<div class="section">
+<h2>The TestCase</h2>
+            
+<p>
+                To use the test JSP, include it from within a 
+                <code>JspTestCase.</code> 
+                The convenience function <code>pageContext.include()</code> 
+                takes care of this nicely:
+            </p>
+
+<div class="source">
+<pre>
+public void testSomeTag () throws Exception
+{
+    pageContext.include("/test_some_tag.jsp");
+
+    //an assert to check whether the page also mapped foo into the session
+    assert("bar", session.getAttribute("foo"));
+}
+</pre>
+</div>
+            
+<p>
+                Exceptions that result from either page translation 
+                (such as required attributes being omitted, or the tag missing  
+                a part of its descriptor entry) or page execution 
+                (such as the tag being unable to find required data in the 
+                appropriate scope) are automatically be thrown up to 
+                this level. If you do not catch them there they will be 
+                logged by Cactus/JUnit as failures--which is just what you want.
+            </p>
+            
+<div class="note">
+                Any output that the test JSP generates can be checked normally 
+                in the <code>endXXX</code> method.
+            </div>
+            
+<p>
+                Of course, using this strategy means that you need to put 
+                the <code>test_some_tag.jsp</code> in the specified location 
+                within your web application. If you are using JSP test case 
+                your build script should already deploy the redirector JSP, so 
+                it should be easy to include another JSP in the build process.
+            </p>
+        
+</div>
+    
+</div>
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

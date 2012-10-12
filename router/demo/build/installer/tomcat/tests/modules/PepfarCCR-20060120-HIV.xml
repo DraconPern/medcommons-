@@ -1,0 +1,1249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContinuityOfCareRecord xmlns="urn:astm-org:CCR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR
+C:\MedCommons\svn.medcommons.net\router\demo\etc\schema\ccr\CCR_20051109.xsd">	<!-- Last edited: 12/12/2005 SWD -->
+	<!--/Root/Batch[1]/Report[1]/Originator[1]/BluebirdID[1] -->
+	<CCRDocumentObjectID>DSP2004091413283110600</CCRDocumentObjectID>
+	<Language>
+		<Text>English</Text>
+	</Language>
+	<Version>V1.0</Version>
+	<DateTime>
+		<!--
+		/Root/Batch[1]/Report[1]/Originator[1]/CDate[1]
+		/Root/Batch[1]/Report[1]/Originator[1]/CTime[1]
+		Note that CCR time is in Zulu time.
+	-->
+		<ExactDateTime>2003-01-24T14:50:00Z</ExactDateTime>
+	</DateTime>
+	<Patient>
+		<ActorID>AA0006</ActorID>
+	</Patient>
+	<From>
+		<ActorLink>
+			<ActorID>AA0001</ActorID>
+		</ActorLink>
+	</From>
+	<To>
+		<ActorLink>
+			<ActorID>AA0002</ActorID>
+		</ActorLink>
+	</To>
+	<Body>
+		<Payers>
+			<!-- 
+This section needs some work - don't understand PEPFAR's model.
+/Root/Batch[1]/Report[1]/Originator[1]/Funder[1]
+-->
+			<Payer>
+				<CCRDataObjectID>BB0001</CCRDataObjectID>
+				<IDs>
+					<Type>
+						<Text>PatientIDNumber</Text>
+					</Type>
+					<ID>12345ABCDE</ID>
+					<Source>
+						<Actor>
+							<ActorID>AA0010</ActorID>
+						</Actor>
+					</Source>
+				</IDs>
+				<Type>
+					<Text>Other</Text>
+				</Type>
+				<Source>
+						<Actor>
+							<ActorID>AA00017</ActorID>
+						</Actor>
+					</Source>
+				<PaymentProvider>
+					<ActorID>AA0010</ActorID>
+				</PaymentProvider>
+				<Subscriber>
+					<ActorID>AA0006</ActorID>
+					<ActorRole>
+					<Text>Enrollee</Text>
+					</ActorRole>
+				</Subscriber>
+			</Payer>
+			<!--MA-->
+			<Payer>
+				<CCRDataObjectID>BB0002</CCRDataObjectID>
+				<IDs>
+					<!-- /Root/Batch[1]/Report[1]/Patient[1]/MANumber[1] -->
+					<ID>007-Soap-01</ID>
+					<Source>
+						<Actor>
+							<ActorID>AA0011</ActorID>
+						</Actor>
+					</Source>
+				</IDs>
+				<Type>
+					<Text>Primary Health Insurance</Text>
+				</Type>
+				<Description>
+					<Text>Medical Aid</Text>
+				</Description>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+				<Subscriber>
+					<ActorID>AA0006</ActorID>
+				</Subscriber>
+			</Payer>
+		</Payers>
+		<Support>
+			<SupportProvider>
+				<ActorID>AA0015</ActorID>
+				<ActorRole>
+					<Text>Support Group</Text>
+				</ActorRole>
+			</SupportProvider>
+			<SupportProvider>
+				<ActorID>AA00016</ActorID>
+			</SupportProvider>
+		</Support>
+		<Problems>
+			<Problem>
+				<CCRDataObjectID>PROB0001</CCRDataObjectID>
+				<Type><Text>Diagnosis</Text></Type>
+				<Description>
+					<!-- Note: Need to code both Text and ObjectAttribute for this to show up in XSLT. 
+						Perhaps need to use coded value here.
+					-->
+					<Text>Moderately Malnourished</Text>
+					<ObjectAttribute>
+						<Attribute>Nutrition</Attribute>
+						<AttributeValue>
+							<Value>Moderately Malnourished</Value>
+						</AttributeValue>
+					</ObjectAttribute>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source><Actor><ActorID>AA0007</ActorID></Actor></Source>
+				
+				
+			</Problem>
+
+
+			<!-- List of Symptoms from HIVHx -->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/HIVSymptoms[1]/  Abdominal pain -->
+			<Problem>
+				<CCRDataObjectID>PROB0002</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2005-10-20</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Symptom</Text>
+				</Type>
+				<Description>
+					<Text>Abdominal pain</Text>
+					<Code>
+						<Value>789.00</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/HIVSymptoms[2]/  Fever-->
+			<Problem>
+				<CCRDataObjectID>PROB0003</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2005-10-20</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Symptom</Text>
+				</Type>
+				<Description>
+					<Text>Fever</Text>
+					<Code>
+						<Value>780.6</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/HIVSymptoms[3]/  Vomiting-->
+			<Problem>
+				<CCRDataObjectID>PROB0004</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2005-10-20</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Symptom</Text>
+				</Type>
+				<Description>
+					<Text>Vomiting</Text>
+					<Code>
+						<Value>787.03</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- HIV Diagnosis -->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/FirstDx[1]/  HIV/AIDS -->
+			<Problem>
+				<CCRDataObjectID>PROB0005</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2001-04-01</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>HIV/AIDS, symptomatic</Text>
+					<Code>
+						<Value>042.00</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- ART Contraindicators/Cautions -->
+			<!-- These are historical diagnoses that would affect ART effectiveness
+					Should be listed as <Problem>s, and then use XSL to filter in front-end view
+			-->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/Adherence[1]/ARTContraindications[1]  Severe Neutropenia -->
+			<Problem>
+				<CCRDataObjectID>PROB0006</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2002-01-01</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>Severe neutropenia</Text>
+					<Code>
+						<Value>288.00</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/Adherence[1]/ARTContraindications[2]  Severe Anemia -->
+			<Problem>
+				<CCRDataObjectID>PROB0007</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2003-01-01</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>Severe anemia</Text>
+					<Code>
+						<Value>280.9</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/Adherence[1]/ARTCautions[1]/Caution[1]  History of Pancreatitis -->
+			<Problem>
+				<CCRDataObjectID>PROB0008</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2003-01-01</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>Pancreatitis</Text>
+					<Code>
+						<Value>577.0</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/Adherence[1]/ARTCautions[1]/Caution[2]  Peripheral neuropathy -->
+			<Problem>
+				<CCRDataObjectID>PROB0009</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2003-01-01</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>Peripheral neuropathy</Text>
+					<Code>
+						<Value>356.9</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			<!-- TB Diagnosis  -->
+			<!-- This would replace the TB elements in <HIVHx -->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/Adherence[1]/CurrentTB[1]  TB -->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/Adherence[1]/DateTBDx[1]  TB -->
+			<Problem>
+				<CCRDataObjectID>PROB0010</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2001-01-22</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>Pulmonary tuberculosis, unspecified</Text>
+					<Code>
+						<Value>011.9</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>
+			
+			
+				<!-- Alcohol/Drug use  -->
+			<!-- This would replace the drug/alcohol elements in <HIVHx 
+					Don't necessarily need date/times for these
+			-->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/ComplianceRiskFactors[1]/Alcohol[1]  TB -->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/ComplianceRiskFactors[1]/RecDrug[1]  TB -->
+			<Problem>
+				<CCRDataObjectID>PROB0011</CCRDataObjectID>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>Alcohol abuse</Text>
+					<Code>
+						<Value>305.00</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>		
+			<Problem>
+				<CCRDataObjectID>PROB0012</CCRDataObjectID>
+				<Type>
+					<Text>Diagnosis</Text>
+				</Type>
+				<Description>
+					<Text>Substance use, unspecified</Text>
+					<Code>
+						<Value>305.90</Value>
+						<CodingSystem>ICD-9CM</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</Problem>					
+			
+		</Problems>
+		
+
+		
+		<FamilyHistory>
+			<FamilyProblemHistory>
+				<CCRDataObjectID>CC0001</CCRDataObjectID>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</FamilyProblemHistory>
+		</FamilyHistory>
+		<SocialHistory>
+			<SocialHistoryElement>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/Language[1] -->
+				<CCRDataObjectID>BB0003</CCRDataObjectID>
+				<Type>
+					<Text>Preferred Language</Text>
+				</Type>
+				<Description>
+					<Text>English</Text>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</SocialHistoryElement>
+			<SocialHistoryElement>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/HIVSocial[1]/SupportGroup[1]/RxLiteracy[1] -->
+				<CCRDataObjectID>BB0004</CCRDataObjectID>
+				<DateTime>
+					<ApproximateDateTime>
+						<!-- /Root/Batch[1]/Report[1]/Patient[1]/HIVSocial[1]/SupportGroup[1]/LitDate[1] -->
+						<Text>1999/01/22</Text>
+					</ApproximateDateTime>
+				</DateTime>
+				<Type>
+					<Text>RxLiteracy</Text>
+				</Type>
+				<Description>
+					<Text>Yes</Text>
+					<ObjectAttribute>
+						<Attribute>HIVLiteracyProgram</Attribute>
+						<AttributeValue>
+							<Value>Yes</Value>
+						</AttributeValue>
+						<Code>
+							<Value>Yes</Value>
+							<CodingSystem>SAMDC</CodingSystem>
+							<Version>1.0</Version>
+						</Code>
+					</ObjectAttribute>
+					<ObjectAttribute>
+						<Attribute>HIVLiteracyProgramDate</Attribute>
+						<AttributeValue>
+							<Value>
+							1999/01/22
+							</Value>
+							<Code>
+								<Value>
+								1999/01/22
+								</Value>
+								<CodingSystem>SAMDC</CodingSystem>
+							</Code>
+						</AttributeValue>
+					</ObjectAttribute>
+					<Code>
+						<Value>001.Literacy</Value>
+						<CodingSystem>SAMDC</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>AA0015</ActorID>
+					</Actor>
+				</Source>
+			</SocialHistoryElement>
+			<SocialHistoryElement>
+				<CCRDataObjectID>BB0005</CCRDataObjectID>
+				<DateTime>
+					<ExactDateTime>2005-10-20</ExactDateTime>
+				</DateTime>
+				<Type>
+					<Text>Education level</Text>
+				</Type>
+				<Description>
+					<Text>ElementarySchool</Text>
+					<Code>
+						<Value>01 Grade 1-7</Value>
+						<CodingSystem>SAMDC?</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</SocialHistoryElement>
+			<SocialHistoryElement>
+				<CCRDataObjectID>BB0006</CCRDataObjectID>
+				<Type>
+					<Text>Dwelling</Text>
+				</Type>
+				<Description>
+					<Text>Housing</Text>
+					<Code>
+						<Value>02. Informal house, formal residential area</Value>
+						<CodingSystem>SAMDC</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</SocialHistoryElement>
+			<SocialHistoryElement>
+				<CCRDataObjectID>BB0007</CCRDataObjectID>
+				<Type>
+					<Text>Lives With</Text>
+				</Type>
+				<Description>
+					<Text>Partner</Text>
+					<Code>
+						<Value>01. Partner</Value>
+						<CodingSystem>SAMDC</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</SocialHistoryElement>
+			<SocialHistoryElement>
+				<CCRDataObjectID>BB0008</CCRDataObjectID>
+				<Type>
+					<Text>Employment Status</Text>
+				</Type>
+				<Description>
+					<Text>Unemployed but able, willing to work</Text>
+					<Code>
+						<Value>03. Unemployed but able, willing</Value>
+						<CodingSystem>SAMDC</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</SocialHistoryElement>
+			<SocialHistoryElement>
+				<CCRDataObjectID>BB0009</CCRDataObjectID>
+				<Type>
+					<Text>Income</Text>
+					<ObjectAttribute>
+						<Attribute>Currency</Attribute>
+						<AttributeValue>
+							<Value>Rand</Value>
+						</AttributeValue>
+					</ObjectAttribute>
+					<ObjectAttribute>
+						<Attribute>Time period</Attribute>
+						<AttributeValue>
+							<Value>Monthly</Value>
+						</AttributeValue>
+					</ObjectAttribute>
+					<ObjectAttribute>
+						<Attribute>Income</Attribute>
+						<AttributeValue>
+							<Value>1000</Value>
+						</AttributeValue>
+					</ObjectAttribute>
+				</Type>
+				<Description>
+					<Text>1000 Rand/Month</Text>
+					<Code>
+						<Value>1000</Value>
+						<CodingSystem>SAMDC</CodingSystem>
+					</Code>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source>
+				</Source>
+			</SocialHistoryElement>
+		</SocialHistory>
+		
+		<!-- ALERTS Section
+			Added Sulfa allergy 
+	-->
+		<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/<SulphonamideAllergy[1]/ -->
+		<Alerts>
+			<Alert>
+				<CCRDataObjectID>ALERT0001</CCRDataObjectID>
+				<Type>
+					<Text>Allergy</Text>
+				</Type>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source>
+				</Source>
+				<Agent>
+					<Products>
+						<Product>
+							<CCRDataObjectID>PROD0001</CCRDataObjectID>
+							<Description>
+								<Text>Sulphonamide</Text>
+								<Code>
+									<Value>12345678</Value>
+									<CodingSystem>RxNorm</CodingSystem>
+								</Code>
+							</Description>
+							<Status><Text>Active</Text></Status>
+							<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+							<Product>
+								<ProductName><Text>Sulphonamide</Text></ProductName>
+							</Product>
+						</Product>
+					</Products>
+				</Agent>
+			</Alert>
+		</Alerts>
+		<!--
+	Added Medications section. Major Outstanding questions include:
+	 - how to indicate ART medication adherence
+	- how to indicate drug class, i.e.: ART medication
+	
+	-->
+		<Medications>
+			<!-- Example 1: Past medication, only dose per day needed -->
+			<Medication>
+				<CCRDataObjectID>MED0001</CCRDataObjectID>
+				<!-- DateTime indicates Start and End dates for medication. -->
+				<DateTime>
+					<DateTimeRange>
+						<BeginRange>
+							<ExactDateTime>1999-01-22</ExactDateTime>
+						</BeginRange>
+						<EndRange>
+							<ExactDateTime>2000-06-30</ExactDateTime>
+						</EndRange>
+					</DateTimeRange>
+				</DateTime>
+				<!-- Type specifies that this is a medication; other types are Immunization, Medical Equipment, Device, etc. -->
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<!-- Possible location for drug class. 
+				**********TO DO: Need to research standards for Attribute values.*********** -->
+				<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/AntiRetroExposure[1]/ -->
+				<Description>
+					<ObjectAttribute>
+						<Attribute>Drug class</Attribute>
+						<AttributeValue>
+							<Value>ART</Value>
+						</AttributeValue>
+					</ObjectAttribute>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+				<Product>
+					<ProductName>
+						<Text>AZT</Text>
+					</ProductName>
+					<Strength>
+						<Value>400</Value>
+						<Units>
+							<Unit>mg</Unit>
+						</Units>
+					</Strength>
+					<Form>
+						<Text>Tablet</Text>
+					</Form>
+				</Product>
+				<Directions>
+					<Direction>
+						<Dose>
+							<Value>1</Value>
+						</Dose>
+						<Interval>
+							<Value>bid</Value>
+						</Interval>
+					</Direction>
+				</Directions>
+			</Medication>
+			<!-- Example 2: Current medication, dosing info included -->
+			<Medication>
+				<CCRDataObjectID>MED0002</CCRDataObjectID>
+				<!-- DateTime indicates Start and End dates for medication. -->
+				<DateTime>
+					<DateTimeRange>
+						<BeginRange>
+							<ExactDateTime>2002-09-17</ExactDateTime>
+						</BeginRange>
+					</DateTimeRange>
+				</DateTime>
+				<!-- Type specifies that this is a medication; other types are Immunization, Medical Equipment, Device, etc. -->
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<!-- *********Possible location for drug class. 
+				**********TO DO: Need to research standards for Attribute values.*********** -->
+				<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/AntiRetroExposure[1]/ -->
+				<!-- Check RxNorm for standard vocabulary for drug classes -->
+				<Description>
+					<ObjectAttribute>
+						<Attribute>Drug class</Attribute>
+						<AttributeValue>
+							<Value>ART</Value>
+						</AttributeValue>
+					</ObjectAttribute>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+				<Product>
+					<ProductName>
+						<Text>Combivir</Text>
+					</ProductName>
+					<Strength>
+						<Value>400</Value>
+						<Units>
+							<Unit>mg</Unit>
+						</Units>
+					</Strength>
+					<Form>
+						<Text>Tablet</Text>
+					</Form>
+				</Product>
+				<Directions>
+					<Direction>
+						<Dose>
+							<Value>1</Value>
+						</Dose>
+						<Interval>
+							<Value>bid</Value>
+						</Interval>
+					</Direction>
+				</Directions>
+				<Reaction>
+					<Description>
+						<Text>Nausea</Text>
+					</Description>
+				</Reaction>
+				<!--********* TO DO: Need to fit Adherence in to model.  ********* -->
+			</Medication>
+			<!-- Example 3: TB Prophylaxis medication history -->
+			<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/MonthsINHProphylaxis[1]/ -->
+			<Medication>
+				<CCRDataObjectID>MED0003</CCRDataObjectID>
+				<!-- DateTime indicates Start and End dates for medication. -->
+				<DateTime>
+					<DateTimeRange>
+						<BeginRange>
+							<ExactDateTime>1999-01-22</ExactDateTime>
+						</BeginRange>
+						<EndRange>
+							<ExactDateTime>2000-01-22</ExactDateTime>
+						</EndRange>
+					</DateTimeRange>
+				</DateTime>
+				<!-- Type specifies that this is a medication; other types are Immunization, Medical Equipment, Device, etc. -->
+				<Type>
+					<Text>Medication</Text>
+				</Type>
+				<!-- Possible location for drug class. 
+				**********TO DO: Need to research standards for Attribute values.*********** -->
+				<!-- /Root/Batch[1]/Report[1]/ClinicalData[1]/HIVHx[1]/AntiRetroExposure[1]/ -->
+				<Description>
+					<ObjectAttribute>
+						<Attribute>Drug class</Attribute>
+						<AttributeValue>
+							<Value>Antibiotic</Value>
+						</AttributeValue>
+					</ObjectAttribute>
+				</Description>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+					<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+				<Product>
+					<ProductName>
+						<Text>Isoniazid</Text>
+					</ProductName>
+					<Strength>
+						<Value>300</Value>
+						<Units>
+							<Unit>mg</Unit>
+						</Units>
+					</Strength>
+					<Form>
+						<Text>Tablet</Text>
+					</Form>
+				</Product>
+				<Directions>
+					<Direction>
+						<Dose>
+							<Value>1</Value>
+						</Dose>
+						<Interval>
+							<Value>qd</Value>
+						</Interval>
+					</Direction>
+				</Directions>
+			</Medication>
+		</Medications>
+		<Results>
+			<Result>
+				<CCRDataObjectID>MED0004</CCRDataObjectID>
+				<Source>
+					<Actor>
+						<ActorID>AA0015</ActorID>
+					</Actor>
+				</Source>
+			</Result>
+		</Results>
+		<!-- Not sure why this is here anymore - perhaps it's an editing mistake? Need to look back at original document-->
+		<Procedures>
+			<Procedure>
+				<CCRDataObjectID>PROC0001</CCRDataObjectID>
+				<Type><Text>Monitoring</Text></Type>
+					<Status>
+					<Text>Monitoring</Text>
+				</Status>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+				<Locations>
+					<Location>
+						<Description>
+							<Text>Site Number 1234</Text>
+						</Description>
+						<Actor>
+							<ActorID>AA0003</ActorID>
+						</Actor>
+					</Location>
+				</Locations>
+				
+			</Procedure>
+		</Procedures>
+		<!-- Added PlanOfCare elements
+			- Support group
+			- Prescription literacy (?) - possible location, but not if already occurred
+		-->
+		<PlanOfCare>
+			<Plan>
+				<CCRDataObjectID>POC0001</CCRDataObjectID>
+				<Description>
+					<Text>Support Group</Text>
+				</Description>
+				<Status>
+					<Text>Current</Text>
+				</Status>
+				<Source>
+					<Actor>
+						<ActorID>AA0007</ActorID>
+					</Actor>
+				</Source>
+				<OrderRequest>
+				<CCRDataObjectID>ORDER001</CCRDataObjectID>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+				</OrderRequest>
+			</Plan>
+		</PlanOfCare>
+	</Body>
+	<Actors>
+		<Actor>
+			<ActorObjectID>AA0001</ActorObjectID>
+			<IDs>
+				<ID>soap.j</ID>
+				<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+			</IDs>
+			<Source>
+		</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0002</ActorObjectID>
+			<EMail>
+				<!-- /Root/Batch[1]/Report[1]/SendTo[1] -->
+				<!-- <Value>hiv@bluebird.co.za</Value> -->
+				<Value>sdoyle@gmail.com</Value>
+			</EMail>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0003</ActorObjectID>
+			<IDs>
+				<!--
+			/Root/Batch[1]/Report[1]/Originator[1]/SiteNo[1]
+			-->
+				<Type>
+					<Text>Site Number</Text>
+				</Type>
+				<ID>15777</ID>
+				<IssuedBy><ActorID>AA00017</ActorID></IssuedBy>
+				
+				<Source>
+					<Actor>
+						<ActorID>AA0004</ActorID>
+					</Actor>
+				</Source>
+			</IDs>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0004</ActorObjectID>
+			<Organization>
+				<Name>BlueBird</Name>
+			</Organization>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<!--
+			Research study organization; used only to provide a <Source> for the
+			research study identifier that is associated with the patient.
+		-->
+		<Actor>
+			<ActorObjectID>AA0005</ActorObjectID>
+			<Organization>
+				<Name>
+				ResearchStudyOrganizationName
+				</Name>
+			</Organization>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<!--
+			The Patient
+		-->
+		<Actor>
+			<ActorObjectID>AA0006</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<!-- /Root/Batch[1]/Report[1]/Patient[1]/FirstName[1] -->
+						<Given>Jane</Given>
+						<!-- /Root/Batch[1]/Report[1]/Patient[1]/LastName[1] -->
+						<Family>Soap</Family>
+						<Title>Ms.</Title>
+					</CurrentName>
+				</Name>
+				<DateOfBirth>
+					<!-- /Root/Batch[1]/Report[1]/Patient[1]/IDNumber[1] -->
+					<ExactDateTime>1999-01-22T00:00:00Z</ExactDateTime>
+				</DateOfBirth>
+				<Gender>
+					<!-- /Root/Batch[1]/Report[1]/Patient[1]/Gender[1] -->
+					<Text>Female</Text>
+				</Gender>
+			</Person>
+			<IDs>
+				<Type>
+					<Text>ResearchStudyID</Text>
+				</Type>
+				<!-- /Root/Batch[1]/Report[1]/Originator[1]/StudyID[1]-->
+				<ID>12345</ID>
+				<Source>
+					<Actor>
+						<ActorID>AA0005</ActorID>
+					</Actor>
+				</Source>
+			</IDs>
+			<IDs>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/Folder[1] -->
+				<Type>
+					<Text>Folder Number</Text>
+				</Type>
+				<!-- Created fake folder ID here -->
+				<ID>ABCDEF</ID>
+				<Source>
+					<Actor>
+						<ActorID>AA0007</ActorID>
+					</Actor>
+				</Source>
+			</IDs>
+			<IDs>
+				<Type>
+					<Text>National Identifier</Text>
+				</Type>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/IDNumber[1] -->
+				<ID>9901220520086</ID>
+				<Source>
+					<Actor>
+						<ActorID>AA0012</ActorID>
+					</Actor>
+				</Source>
+			</IDs>
+			<IDs>
+				<Type>
+					<Text>Account Number</Text>
+				</Type>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/AccountNumber[1] -->
+				<ID>n/a</ID>
+				<Source>
+					<Actor>
+						<ActorID>AA0009</ActorID>
+					</Actor>
+				</Source>
+			</IDs>
+			<Address>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/Address[1] -->
+				<Type>
+					<Text>Home</Text>
+				</Type>
+				<Line1>4 Wibble Rd</Line1>
+				<City>Cape Town</City>
+				<Country>South Africa</Country>
+				<PostalCode>7000</PostalCode>
+			</Address>
+			<Telephone>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/HomePh[1] -->
+				<Value>021 7803641</Value>
+				<Type>
+					<Text>Home Phone</Text>
+				</Type>
+				<Priority>Secondary</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<Telephone>
+				<!--  /Root/Batch[1]/Report[1]/Patient[1]/WorkPh[1] -->
+				<Value>021 8803247</Value>
+				<Type>
+					<Text>Work Phone</Text>
+				</Type>
+				<Priority>Secondary</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<Telephone>
+				<!--  /Root/Batch[1]/Report[1]/Patient[1]/CellPh[1] -->
+				<Value>082 7621182</Value>
+				<Type>
+					<Text>Cell  Phone</Text>
+				</Type>
+				<Priority>Secondary</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<Telephone>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/ConfidentialPh[1] -->
+				<Value>082 7621182</Value>
+				<Type>
+					<Text>Confidential</Text>
+				</Type>
+				<Priority>Primary, Preferred</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<Telephone>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/ConfidentialPh[1] -->
+				<Value>021 6743641</Value>
+				<Type>
+					<Text>FAX</Text>
+				</Type>
+				<Priority>Secondary</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<EMail>
+				<Value>soapj@iafrica.com</Value>
+			</EMail>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<!--
+Patient's doctor.
+-->
+		<Actor>
+			<ActorObjectID>AA0007</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<Given>Phillip</Given>
+						<Family>Physician</Family>
+						<!-- /Root/Batch[1]/Report[1]/Originator[1]/DrDegree[1] -->
+						<Title>MBChB</Title>
+					</CurrentName>
+					<!-- /Root/Batch[1]/Report[1]/Originator[1]/DoctorName[1] -->
+					<DisplayName>Dr. Phil</DisplayName>
+				</Name>
+			</Person>
+			<!-- SAMDC Number -->
+			<IDs>
+				<!-- /Root/Batch[1]/Report[1]/Originator[1]/SAMDCno[1] -->
+				<ID>GFEDCBA</ID>
+				<Source>
+					<Actor>
+						<ActorID>AA0008</ActorID>
+					</Actor>
+				</Source>
+			</IDs>
+			<!-- ID number of doctor in the specified practice -->
+			<IDs>
+				<!--/Root/Batch[1]/Report[1]/Originator[1]/DrPrac[1] -->
+				<ID>1243564</ID>
+				<Source>
+					<Actor>
+						<ActorID>AA0009</ActorID>
+					</Actor>
+				</Source>
+			</IDs>
+			<Specialty>
+				<!-- /Root/Batch[1]/Report[1]/Originator[1]/Speciality[1] -->
+				<Text>OB-GYN</Text>
+			</Specialty>
+			<Address>
+				<!-- /Root/Batch[1]/Report[1]/Originator[1]/PhysicalAddress[1] -->
+				<Type>
+					<Text>Physical Location</Text>
+				</Type>
+				<Line1>40 Heart Rd</Line1>
+				<City>Cape Town</City>
+				<Country>South Africa</Country>
+				<PostalCode>7000</PostalCode>
+			</Address>
+			<Address>
+				<!--/Root/Batch[1]/Report[1]/Originator[1]/PostalAddress[1] -->
+				<Type>
+					<Text>Office Mailing Address Location</Text>
+				</Type>
+				<Line1>40 Heart Rd</Line1>
+				<City>Cape Town</City>
+				<Country>South Africa</Country>
+				<PostalCode>7000</PostalCode>
+			</Address>
+			<Telephone>
+				<!-- /Root/Batch[1]/Report[1]/Originator[1]/Ph[1] -->
+				<Value>021 7803641</Value>
+				<Type>
+					<Text>Office Phone</Text>
+				</Type>
+				<Priority>Primary - Preferred</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<Telephone>
+				<!--  /Root/Batch[1]/Report[1]/Originator[1]/CellPh[1] -->
+				<Value>082 7621182</Value>
+				<Type>
+					<Text>Cell Phone</Text>
+				</Type>
+				<Priority>Secondary</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<Telephone>
+				<!--  /Root/Batch[1]/Report[1]/Originator[1]/Fax[1] -->
+				<Value>021 6743641</Value>
+				<Type>
+					<Text>FAX</Text>
+				</Type>
+				<Priority>Primary</Priority>
+				<Status>
+					<Text>Active</Text>
+				</Status>
+			</Telephone>
+			<EMail>
+				<Value>soapj@iafrica.com</Value>
+			</EMail>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0008</ActorObjectID>
+			<Organization>
+				<Name>SAMDC</Name>
+			</Organization>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<!-- Originating doctor's practice -->
+		<Actor>
+			<ActorObjectID>AA0009</ActorObjectID>
+			<Organization>
+				<Name>Physician's Practice Group Name</Name>
+			</Organization>
+			<Source>
+				<Actor>
+					<ActorID>AA0007</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0010</ActorObjectID>
+			<Organization>
+				<Name>PEPFAR</Name>
+			</Organization>
+			<Address>
+				<Line1>1600 Pennsylvania Ave.</Line1>
+				<City>Washington, DC</City>
+				<PostalCode>20006</PostalCode>
+			</Address>
+			<Source>
+				<Actor>
+					<ActorID>AA0007</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0011</ActorObjectID>
+			<Organization>
+				<Name>Medical Aid</Name>
+			</Organization>
+			<Source>
+				<Actor>
+					<ActorID>AA0007</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA0012</ActorObjectID>
+			<Organization>
+				<Name>Government of South Africa</Name>
+			</Organization>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<!-- HelpAid Lead contact -->
+		<Actor>
+			<ActorObjectID>AA0014</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<!-- /Root/Batch[1]/Report[1]/Patient[1]/HIVSocial[1]/SupportGroup[1]/LeadLastName[1] -->
+						<Given>Helen</Given>
+						<Family>Nkosi</Family>
+					</CurrentName>
+				</Name>
+			</Person>
+			<Source>
+				<Actor>
+					<ActorID>AA0015</ActorID>
+					<ActorRole>
+						<Text>Lead Contact</Text>
+					</ActorRole>
+				</Actor>
+			</Source>
+			<InternalCCRLink>
+				<LinkID>AA0015</LinkID>
+				<LinkRelationship>Employer</LinkRelationship>
+			</InternalCCRLink>
+		</Actor>
+		<!-- HelpAid Organization -->
+		<Actor>
+			<ActorObjectID>AA0015</ActorObjectID>
+			<Organization>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/HIVSocial[1]/SupportGroup[1]/SGName[1] -->
+				<Name>HelpAid</Name>
+			</Organization>
+			<Address>
+				<Line1>102 Main Rd</Line1>
+				<City>Cape Town</City>
+				<PostalCode>7804</PostalCode>
+			</Address>
+			<Telephone>
+				<Value>021 7853342</Value>
+			</Telephone>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA00016</ActorObjectID>
+			<Organization>
+				<!-- /Root/Batch[1]/Report[1]/Patient[1]/HIVSocial[1]/SocialSupport[1] -->
+				<Name>Prayer Group</Name>
+			</Organization>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>AA00017</ActorObjectID>
+			<Organization>
+				<!-- Required for CCR to validate; several sections require a 'Source' element and empty Source elements aren't permitted-->
+				<Name>Unknown</Name>
+			</Organization>
+			<Source><Actor><ActorID>AA00017</ActorID></Actor></Source>
+		</Actor>
+	</Actors>
+</ContinuityOfCareRecord>

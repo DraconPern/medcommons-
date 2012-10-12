@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Begin postinstall."
+launchctl load /Library/LaunchDaemons/net.medcommons.cxpcd.plist
+echo "End postinstall."

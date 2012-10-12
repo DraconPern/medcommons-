@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.medcommons.application.dicomclient.utils">
+<class name="net.medcommons.modules.services.interfaces.DicomMetadata" table="DICOMMETADATA">
+	<id name="id" column="OBJECT_ID">
+       <generator class="native"/>
+     </id>
+
+	<property name="patientId"/>
+    <property name="patientName"/>
+	<property name="patientSex"/>
+	<property name="patientAge"/>
+    <property name="patientAddress"/>
+    <property name="patientTelephoneNumber"/>
+    <property name="patientEmail"/>
+    <property name="patientDateOfBirth"/>
+    <property name="windowCenter"/>
+    <property name="windowWidth"/>
+	<property name="windowCenterWidthExplanation"/>
+    <property name="instanceNumber"/>
+    <property name="studyInstanceUid" index="indexStudyInstanceUid"/>
+    <property name="studyDescription"/>
+    <property name="seriesInstanceUid" index="indexSeriesInstanceUid"/>
+    <property name="seriesDescription"/>
+    <property name="sopInstanceUid" index="indexSopInstanceUid"/>
+    <property name="seriesNumber"/>
+    <property name="seriesDate"/>
+    <property name="studyDate"/>
+    <property name="modalities"/>
+    <property name="modality"/>
+    <property name="frames"/>
+    <property name="sha1"/>
+	<property name="file"/>
+    <property name="displayOrder"/>
+	<property name="institutionName"/>
+    <property name="institutionAddress"/>
+    <property name="referringPhysicianName"/>
+	<property name="referringPhysicianAddress"/>
+	<property name="referringPhysicianTelephoneNumber"/>
+	<property name="referringPhysicianEmail"/>
+    <property name="performingPhysicianName"/>
+    <property name="physicianOfRecord"/>
+    <property name="accessionNumber"/>
+    <property name="imageType"/>
+    <property name="sopClassUid"/>
+    <property name="stationName"/>
+	<property name="manufacturer"/>
+    <property name="manufacturerModelName"/>
+	<property name="length"/>
+    <property name="transactionStatus"/>
+	<property name="callingAeTitle"/>
+	<property name="calledAeTitle"/>
+	<property name="cxpJob"/>
+	<property name="reasonForStudy"/>
+	<property name="bodyPart"/>
+
+</class>
+</hibernate-mapping>

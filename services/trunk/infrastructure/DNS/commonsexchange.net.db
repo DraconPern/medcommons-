@@ -1,0 +1,17 @@
+@ IN SOA ns1.medcommons.net. root.medcommons.net. (
+	2009022402	; serial
+	3h		; refresh
+	1h		; retry
+	7d		; expire
+	1d		; minimum ttl
+	)
+
+	in	ns	ns1.medcommons.net.
+	in	ns	ns2.medcommons.net.
+
+	in	txt	"v=spf1 mx -all"
+
+        in	mx	10 mx00.1and1.com.
+        in	mx	10 mx01.1and1.com.
+
+	2m	in	a	67.202.30.246	; AWS i-fc895395 (ami-21e20648/nva-20080808-keypair - 082208@1502) (aka www.mc.n)

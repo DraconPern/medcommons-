@@ -1,0 +1,192 @@
+<SCRIPT language = JavaScript>
+var FormType = null;
+var WADOFormType ="WADO";
+var OrderFormType="ORDER";
+<%
+String guid = "";
+  if(request.getParameter("guid") != null) {
+  	guid = request.getParameter("guid");
+  }
+
+  String tracking = "";
+  if(request.getParameter("tracking") != null) {
+  	tracking = request.getParameter("tracking");
+  }
+  
+  String name = "";
+  if(request.getParameter("name") != null) {
+  	name = request.getParameter("name");
+  }
+  
+  String address = "";
+  if(request.getParameter("address") != null) {
+ 	address = request.getParameter("address");
+  }
+  
+  String city = "";
+  if(request.getParameter("city") != null) {
+  	city = request.getParameter("city");
+  }
+  
+  String state = "";
+  if(request.getParameter("state") != null) {
+  	state = request.getParameter("state");
+  }
+  
+  String zip = "";
+  if(request.getParameter("zip") != null) {
+  	zip = request.getParameter("zip");
+  }
+  
+  String cardnumber = "";
+  if(request.getParameter("cardnumber") != null) {
+  	cardnumber = request.getParameter("cardnumber");
+  }
+  
+  String expiration = "";
+  if(request.getParameter("expiration") != null) {
+  	expiration = request.getParameter("expiration");
+  }
+  
+  String amount = "";
+  if(request.getParameter("amount") != null) {
+  	amount = request.getParameter("amount");
+  }
+  
+  String tax = "";
+  if(request.getParameter("tax") != null) {
+  	tax = request.getParameter("tax");
+  }
+  
+  String charge = "";
+  if(request.getParameter("charge") != null) {
+  	charge = request.getParameter("charge");
+  }
+  
+  String signature1 = "";
+  if(request.getParameter("signature1") != null) {
+  	signature1 = request.getParameter("signature1");
+  }
+  
+  String signature2 = "";
+  if(request.getParameter("signature2") != null) {
+  	signature2 = request.getParameter("signature2");
+  }
+  
+  String signature3 = "";
+  if(request.getParameter("signature3") != null) {
+  	signature3 = request.getParameter("signature3");
+  }
+  
+  String history = "";
+  if(request.getParameter("history") != null) {
+  	history = request.getParameter("history");
+  }
+  
+  String comments = "";
+  if(request.getParameter("comments") != null) {
+  	comments = request.getParameter("comments");
+  }
+  
+  String copyto = "";
+  if(request.getParameter("copyto") != null) {
+  	copyto = request.getParameter("copyto");
+  }
+  
+  int selectedSeries = -1;
+  if(request.getParameter("selectedSeries") != null) {
+  	selectedSeries = Integer.parseInt(request.getParameter("selectedSeries"));
+  }
+  
+  
+		int imageHeight = 1024 - 280;
+		int imageWidth = 768;
+		int tableWidth = imageWidth +2;
+		
+		
+		
+		
+		
+		StringBuffer passthruBuff = new StringBuffer();
+		passthruBuff.append("?guid="); passthruBuff.append(guid);
+		if (tracking!= null){passthruBuff.append("&tracking=");passthruBuff.append(tracking);}
+		if (name!= null) {passthruBuff.append("&name="); passthruBuff.append(name);}
+		if (address!= null) {passthruBuff.append("&address="); passthruBuff.append(address);}
+		if (city!= null){passthruBuff.append("&city="); passthruBuff.append(city);}
+		if (state!= null){passthruBuff.append("&state="); passthruBuff.append(state);}
+		if (zip!= null){passthruBuff.append("&zip="); passthruBuff.append(zip);}
+		if (cardnumber!= null){passthruBuff.append("&cardnumber="); passthruBuff.append(cardnumber);}
+		if (expiration!= null){passthruBuff.append("&expiration="); passthruBuff.append(expiration);}
+		if (amount!= null){passthruBuff.append("&amount="); passthruBuff.append(amount);}
+		if (tax!= null){passthruBuff.append("&tax="); passthruBuff.append(tax);}
+		if (charge!= null){passthruBuff.append("&charge="); passthruBuff.append(charge);}
+		if (signature1!= null){passthruBuff.append("&signature1="); passthruBuff.append(signature1);}
+		if (signature2!= null){passthruBuff.append("&signature2="); passthruBuff.append(signature2);}
+		if (signature3!= null){passthruBuff.append("&signature3="); passthruBuff.append(signature2);}
+		if (history!= null){passthruBuff.append("&history="); passthruBuff.append(history);}
+		if (comments!= null){passthruBuff.append("&comments="); passthruBuff.append(comments);}
+		if (copyto!= null){passthruBuff.append("&copyto="); passthruBuff.append(copyto);}
+		String passthruURLs = passthruBuff.toString();
+       String dest =
+			(String) net.medcommons.router.configuration.Configuration.getInstance().getConfiguredValue(
+				"net.medcommons.dicom.directory");
+	   File rootDirectory = new File(dest);
+	   if (!rootDirectory.exists())
+	   	throw new java.io.FileNotFoundException(dest);
+	   	
+
+
+		MCOrder order = null;
+		try {
+			order = OrderManager.getOrderViaGuid(guid);
+			if (order== null)
+				throw new NullPointerException("No order matches GUID " + guid);
+			}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+       %>
+    
+      	maxRows = <%= imageHeight %>; 
+      	maxColumns = <%= imageWidth %>;
+          var newObj;
+          var newSeries;
+          p = new Patient("<%=  order.getPatientName() %>", 
+        	 "<%=  order.getPatientId() %>");
+          newObj=  new Study(
+	        "<%=  order.getDescription() %>", 
+	       "<%=  order.getOrderGuid() %>", 
+	        "<%=  order.getTimeCreated() %>", 
+	        "<%=  order.getTimeCreated() %>" );
+          p.StudiesArray[0] = newObj;
+         <% 
+         List allSeries = OrderManager.getOrderSeries(order.getOrderGuid());
+         for (int i = 0; i < allSeries.size(); i++) {
+			MCSeries series = (MCSeries) allSeries.get(i);
+		%>
+		
+		newSeries = new Series(
+			"<%= series.SeriesDescription %>", 
+			"<%= series.mcGUID %>", 
+			"<%= series.SeriesInstanceUID %>", 
+			"<%= series.Modality %>", 
+			"<%= series.SeriesNumber %>");
+		p.StudiesArray[0].SeriesArray[p.StudiesArray[0].SeriesArray.length] = newSeries;
+			
+		<%
+			for (int j=0;j<series.getInstances().size();j++){
+				MCInstance instance= (MCInstance) series.getInstance(j);
+				%>
+				newObj= new Instance(
+					"<%= instance.SOPInstanceUID %>", 
+					"<%= instance.InstanceNumber %>", 
+					"<%= instance.ReferencedFileID %>",
+					"<%= instance.window %>",
+					"<%= instance.level %>");
+				newSeries.InstanceArray[newSeries.InstanceArray.length] = newObj;		
+				<%
+			}
+		}
+		%>
+	var urlParameters = '<%=passthruURLs%>';
+</SCRIPT>

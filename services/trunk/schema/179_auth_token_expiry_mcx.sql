@@ -1,0 +1,2 @@
+alter table authentication_token add column at_expired_date_time datetime;
+create index at_expired_date_time_idx on authentication_token(at_expired_date_time);

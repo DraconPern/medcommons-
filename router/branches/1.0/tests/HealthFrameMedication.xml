@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="urn:astm-org:CCR">
+    <CCRDataObjectID>ID-405d40e2-08c8-4da6-9e6f-a0ddc7a745ff</CCRDataObjectID>
+    <DateTime>
+        <Type>
+            <Text>Start Date</Text>
+        </Type>
+        <ExactDateTime>2002-02-02</ExactDateTime>
+    </DateTime>
+    <Type>
+        <Text>Medication</Text>
+    </Type>
+    <Status>
+        <Text>Active</Text>
+    </Status>
+    <Source>
+        <Description>
+            <Text>Unknown</Text>
+        </Description>
+    </Source>
+    <Product>
+        <ProductName>
+            <Text>Ortho Cyclen</Text>
+            <Code>
+                <Value>C1337075</Value>
+                <CodingSystem>UMLS</CodingSystem>
+                <Version>2005AC</Version>
+            </Code>
+            <Code>
+                <Value>RX10407838</Value>
+                <CodingSystem>RXNORM</CodingSystem>
+                <Version>2005AC</Version>
+            </Code>
+        </ProductName>
+    </Product>
+    <Directions>
+        <Direction>
+            <Dose>
+                <Value>1</Value>
+            </Dose>
+            <Frequency>
+                <Value>Once a day</Value>
+            </Frequency>
+        </Direction>
+    </Directions>
+    <PatientInstructions>
+        <Instruction>
+            <Text>Take medication one time a day, if missed one day, please use a different form of 
+                contraception to avoid pregnancy. :  I added these comments</Text>
+        </Instruction>
+    </PatientInstructions>
+</Medication>

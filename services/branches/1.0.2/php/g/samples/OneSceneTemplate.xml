@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>Hello MedPad!</string>
+		<key>leftLineStyle</key>
+		<string>narrow</string>
+
+		<key>leftDetailSM</key>
+		<dict></dict>
+
+		<key>rightDetailSM</key>
+		<dict></dict>
+
+		<key>leftRootSM</key>
+		<dict></dict>
+
+		<key>rightRootSM</key>
+		<dict></dict>
+
+		<key>bottomRootSM</key>
+		<dict></dict>
+
+		<key>scenes</key>
+		<array>
+		<dict>
+				<key>scene</key>
+				<string>0</string>
+				<key>name</key>
+				<string>First Scene</string>
+				<key>cellstyle</key>
+				<string>dicom</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>Janes Account</string>
+				<key>largetitle</key>
+				<string>Jane Hernandez</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+
+				<array>
+
+				
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/MedPadUserGuide.pdf
+						</string>
+						<key>label</key>
+						<string>MedPad Prototyper - Setup Guide</string>
+						<key>blabel</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/MedPadUserGuide.pdf
+						</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>toplabel</key>
+						<string>MedPad Prototyper - Setup Guide</string>
+					</dict>
+		</array>
+		</dict>
+		
+		
+		</array>
+
+	</dict>
+</plist>
+
+

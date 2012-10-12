@@ -1,0 +1,12 @@
+#!/bin/bash
+echo
+echo
+echo 'COMPILES SoapSubmission SETTING THE CLASSPATH TO:'
+echo
+echo '-classpath .:lib/activation.jar:lib/commons-logging.jar:lib/dom.jar:lib/mail.jar:lib/saaj-api.jar:lib/saaj-impl.jar:lib/xercesImpl.jar:lib/commons-cli-1.0.jar:lib/jaxp-api.jar'
+echo
+export CLASSPATH=$CLASSPATH:.:lib/activation.jar:lib/commons-logging.jar:lib/dom.jar:lib/mail.jar:lib/saaj-api.jar:lib/saaj-impl.jar:lib/xercesImpl.jar:lib/commons-cli-1.0.jar:lib/jaxp-api.jar
+echo
+echo
+echo 
+command javac makejar/xdsSoapRequest.java

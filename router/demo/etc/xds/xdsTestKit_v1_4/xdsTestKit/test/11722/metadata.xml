@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+This example of a XDS Registry submission includes a:
+    XDS Submission Set containing a,
+    XDS Folder containing a,
+    Single XDS Document.
+    
+This example covers the content for metadata for both the Provide and Register
+transaction and the Register Transaction.  From the view of the metadata, the only
+difference is that the Register transaction contains information on how thec
+repository stored the document. Attributes/elements below that only apply to the
+Register transaction are labeled "Register Transaction Only".  Otherwise, everything
+applies to both transactions.
+
+This applies to only one attribute, XdsDocument.URI.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    
+    <LeafRegistryObjectList>
+        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+             ++ Multiple ebXML Registry objects can be coded here, limited only by the 
+             ++ capacity of the XML parser and transforms 
+             ++ within the registry server. 
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+             
+        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+             ++ Here starts the coding of a single XDS Documnet
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            ExtrinsicObject is a registry object that represents a document in a Document 
+            Repository. The UUID in the objectType attribute below identifies the document 
+            as being of type XDSDocumentEntry. 
+            
+            The UUID/Name linkage (XdsDocumentEntry vs. urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1) for 
+            the objectType is created as part of a calledScheme called ObjectType (defined by ebXML 
+            Registry standard) which is extended by XDS. 
+            
+            The id "theDocument" is symbolic within this file. 
+            Other elements within this file can reference this element by this symbolic name.  
+            The registry server creates a unique UUID to replace the symbolic name when this 
+            file is submitted.
+            
+            The ObjectRef declares that UUID as being already in the registry and not
+            defined in this file.
+            
+            XdsDocumentEntry.title is coded as the Name element under the ExtrinsicObject.
+            
+            XdsDocumentEntry.availabilityStatus is coded as the status element of the ExtrinsicObject below.
+            When an object is created the status element is automatically generated internally by t
+            he registry with a value of "submitted" so it is not shown in this submission.
+            
+            XdsDocumentEntry.EntryUUID is implemented by the "id" attribute on the ExtrinsicObject below. As
+            mentioned above, it is specified symbolically below and will be assigned by the registry.
+            
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <ObjectRef id="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"/>
+        <ObjectRef id="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"/>
+        <ObjectRef id="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"/>
+        <ObjectRef id="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"/>
+        <ObjectRef id="urn:uuid:92d03292-84a0-4b86-8139-dd244173ddbb"/>
+        <ObjectRef id="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"/>
+        <ObjectRef id="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4"/>
+        <ObjectRef id="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"/>
+        <ObjectRef id="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"/>
+        <ObjectRef id="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"/>
+        
+        <ObjectRef id="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832"/>
+        <ObjectRef id="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8"/>
+        <ObjectRef id="urn:uuid:4b052cba-b03b-4233-8b27-e8d5e3f8d3e4"/>
+        <ObjectRef id="urn:uuid:f64ffdf0-4b97-4e06-b79f-a52b38ec2f8a"/>
+        <ObjectRef id="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"/>
+        <ObjectRef id="urn:uuid:75df8f67-9973-4fbe-a900-df66cefecc5a"/>
+
+        <ExtrinsicObject 
+            id="theDocument" 
+            mimeType="application/pdf"
+            objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1">
+            
+             
+            <Name>
+                <LocalizedString value = "test 11731"/>
+            </Name>
+            
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+                An ExternalIdentifier creates an optimized search key for a document. The 
+                attribute identificationScheme gives this external identifier a type. 
+                An object can have multiple ExternalIdentifiers. A name for this type 
+                (and possibly other details) can be found by finding the registry object 
+                with this UUID. It will be a Classification Scheme object. 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+                XdsDocumentEntry.patientId - assign patient id 
+                6578946^^^&7898372243&ISO to this document. 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <ExternalIdentifier 
+                identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" 
+                value="6578946^^^%267898372243%26ISO">
+                <Name>
+                    <LocalizedString value = "XdsDocumentEntry.patientId"/>
+                </Name>
+            </ExternalIdentifier>
+                
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.uniqueId (document id) 
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <ExternalIdentifier 
+                identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" 
+                value="36784664">
+                <Name>
+                    <LocalizedString value = "XdsDocumentEntry.uniqueId"/>
+                </Name>
+            </ExternalIdentifier>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSDocumentEntry.authorDepartment
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="authorDepartment">
+                <ValueList>
+                    <Value>Laboratory</Value>
+                </ValueList>
+            </Slot>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSDocumentEntry.authorInstitution
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="authorInstitution">
+                <ValueList>
+                    <Value>Fairview Hospital</Value>
+                </ValueList>
+            </Slot>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.authorPerson  (single value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="authorPerson">
+                <ValueList>
+                    <Value>^Welby^Marcus^^^Dr^MD</Value>
+                </ValueList>
+            </Slot>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.serviceStartTime  (single value)CCYYMMDDHHmmSS
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="serviceStartTime">
+                <ValueList>
+                    <Value>20041225212010</Value>
+                </ValueList>
+            </Slot>
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.serviceStopTime  (single value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="serviceStopTime">
+                <ValueList>
+                    <Value>20041225235050</Value>
+                </ValueList>
+            </Slot>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.languageCode  (single value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="languageCode">
+                <ValueList>
+                    <Value>en-us</Value>
+                </ValueList>
+            </Slot>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.creationTime  (single value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="creationTime">
+                <ValueList>
+                    <Value>20041225212010</Value>
+                </ValueList>
+            </Slot>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.legalAuthenticator  (multi value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="legalAuthenticator">
+                <ValueList>
+                    <Value>^Welby^Marcus^^^Dr^MD</Value>
+                </ValueList>
+            </Slot>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.sourceRecordTargetId  (single value) oid+ext
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="sourcePatientId">
+                <ValueList>
+                    <Value>65789946+3982</Value>
+                </ValueList>
+            </Slot>
+			 <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.sourceRecordTargetInfo  (multi value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="sourcePatientInfo">
+                <ValueList>
+                    <Value></Value>
+                </ValueList>
+            </Slot>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.size  (single value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="size">
+                <ValueList>
+                    <Value>43014</Value>
+                </ValueList>
+            </Slot>
+			<!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.hash  (single value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="hash">
+                <ValueList>
+                    <Value>c230b5102ad975932ce601a4f9be746e5c78b134</Value>
+                </ValueList>
+            </Slot>		
+            
+
+            
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.classCode - an external classification.  An external classification 
+                has a registry enforced type but a value enforced by some agent outside 
+                the registry, in this case the XDS Registry Adaptor. A document must have exactly
+                one Classification of this type.
+
+                Within the Classification object we encode the code, code display name, and 
+                coding scheme name. The following XML can be interpreted as:
+
+                classificationScheme - identifies this Classification as classCode
+
+                classifiedObject - object being classified
+
+                nodeRepresentation - code value
+
+                Name - code name
+
+                codingScheme Slot - name of coding scheme
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+            <Classification 
+                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="Education">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.classCodeDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="Education"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for classCode
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>Connect-a-thon classCodes</Value>
+                    </ValueList>
+                </Slot>
+
+            </Classification>
+            
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.typeCode - an external classification.  An external classification 
+                has a registry enforced type but a value enforced by some agent outside 
+                the registry, in this case the XDS Registry Adaptor. A document must have exactly
+                one Classification of this type.
+
+                Within the Classification object we encode the code, code display name, and 
+                coding scheme name. The following XML can be interpreted as:
+
+                classificationScheme - identifies this Classification as typeCode
+
+                classifiedObject - object being classified
+
+                nodeRepresentation - code value
+
+                Name - code name
+
+                codingScheme Slot - name of coding scheme
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+            <Classification 
+                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="18748-4">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.typeCodeDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="name"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for classCode
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>a coding scheme</Value>
+                    </ValueList>
+                </Slot>
+
+            </Classification>
+
+           <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.practiceSettingCode (exactly one classification of this type)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Classification 
+                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="Laboratory">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.practiceSettingCodeDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="Laboratory"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for practiceSettingCode
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>Connect-a-thon practiceSettingCodes</Value>
+                    </ValueList>
+                </Slot>
+            </Classification>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.eventCodeList (zero or more classifications of this type)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Classification 
+                classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="eventCode 1">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.eventCodeListDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="name"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for eventCodeList
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>a coding scheme</Value>
+                    </ValueList>
+                </Slot>
+            </Classification>
+            <Classification 
+                classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="eventCode 2">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.eventCodeListDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="name"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for eventCodeList
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>a coding scheme</Value>
+                    </ValueList>
+                </Slot>
+            </Classification>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                  XdsDocumentEntry.confidentialityCode (value = "protected")
+                  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Classification 
+                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="T">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.confidentialityCodeDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="Taboo"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for confidentialityCode
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>Connect-a-thon confidentialityCodes</Value>
+                    </ValueList>
+                </Slot>
+            </Classification>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.healthCareFacilityTypeCode - an external classification.  The classification 
+                has a registry enforced type but a  value enforced by the XDS Registry 
+                Adaptor (external to the registry). The classificationScheme identifies this as the 
+                healthCareFacilityTypeCode. The nodeRepresentation attribute is 
+                the "value".
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+            <Classification 
+                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="Outpatient">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.healthCareFacilityTypeCodeDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="Outpatient"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for healthCareFacilityTypeCode
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>Connect-a-thon healthCareFacilityTypeCodes</Value>
+                    </ValueList>
+                </Slot>
+            </Classification>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XdsDocumentEntry.formatCode - an external classification.  
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+            <Classification 
+                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" 
+                classifiedObject="theDocument" 
+                nodeRepresentation="PDF/IHE 1.x">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XdsDocumentEntry.formatCodeDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="PDF/IHE 1.x"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for formatCode
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>Connect-a-thon formatCodes</Value>
+                    </ValueList>
+                </Slot>
+            </Classification>
+            
+        </ExtrinsicObject>
+        
+        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            There are ancilliary objects that must be created to complete the definition
+            of the XDSDocumentEntry.
+            
+            The ExternalLink object(below) defines a URI. There can be multiple ExternalLinks associated 
+            with an object so assigning a name is important. XDS requires that the name 
+            of the ExternalLink referencing the document in the document repository be "Document". 
+            Separately, an Association is used to link the ExternalLink object to the 
+            ExtrinsicObject.        
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            XdsDocumentEntry.URI - link to document in repository. 
+            
+            This object has a symbolic id - documentURI which is used below in the Association.
+            
+            The Name element included since an object can have multiple ExternalLinks
+            associated with it.
+            
+            Register Transaction Only
+            
+            The ExternalLink object is defined outside 
+            of the ExtrinsicObject above.  The ExternalLink and the ExtrinsicObject are linked 
+            by the the Association below.
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <ExternalLink 
+            id="documentURI" 
+            externalURI="http://www.google.com">
+            <Name>
+                <LocalizedString value="URI"/>
+            </Name>
+        </ExternalLink>
+
+        <Association 
+            associationType="ExternallyLinks" 
+            sourceObject="documentURI" 
+            targetObject="theDocument">
+                <Name>
+                    <LocalizedString value="URI"/>
+                </Name>
+        </Association>
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            XdsDocumentEntry.parentDocumentId and parentDocumentRelationship are together 
+            coded as an Association.  As part of a CDA, the parentDocumentId is an OID. 
+            For registry, that OID must be translated into a registry UUID. A document 
+            OID is found in the attribute XdsDocumentEntry.uniqueId. 
+            
+            The parentDocumentId is the targetObject. The UUID references an object already 
+            in the registry, so it must be coded as a raw UUID and an ObjectRef 
+            is required to declare to the parser that this UUID exists in the registry.
+            
+            The parentDocumentRelationship is the associationType.  
+            
+            The base document (the one with a relationship with the parent) is 
+            coded as the sourceObject, "theDocument" in this example. 
+            
+            The parent document is coded below as the targetObject.
+            
+            This code is commented out since no parent document exists when this
+            exmaple is loaded.
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <!--     <ObjectRef id="urn:uuid:a6e06ca8-0c75-4064-9e5c-88b9045a96f6"/>
+        <Association 
+            associationType="RPLC" 
+            sourceObject="theDocument" 
+            targetObject="urn:uuid:a6e06ca8-0c75-4064-9e5c-88b9045a96f6"/>
+   -->
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ Here ends the coding of a single XDS Document.
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              ++   Here starts the coding of the XDS Submission Set.
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            The id="SubmissionSet" is used instead of a pre-assigned UUID for 
+            references between objects in this submission. 
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+        <ObjectRef id="urn:uuid:4b052cba-b03b-4233-8b27-e8d5e3f8d3e4"/>
+        <ObjectRef id="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832"/>
+        <RegistryPackage id="SubmissionSet" description="Annual physical">
+            <Name>
+                <LocalizedString value = "Submission Set"/>
+            </Name>
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            XdsSubmissionSet.comments is coded in the description attribute.
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+            <Description>
+                <LocalizedString value = "Describe submission set here"/>
+            </Description>
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSSubmissionSet.uniqueId - an ExternalIdentifier. 
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <ExternalIdentifier 
+                identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8" 
+                value="3670984664">
+                <Name>
+                    <LocalizedString value = "XDSSubmissionSet.uniqueId"/>
+                </Name>
+            </ExternalIdentifier>
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSSubmissionSet.sourceId  
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <ExternalIdentifier 
+                identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832" 
+                value="8449607624">
+                <Name>
+                    <LocalizedString value = "XDSSubmissionSet.sourceId"/>
+                </Name>
+            </ExternalIdentifier>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSSubmissionSet.submissionTime  (single value)
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="submissionTime">
+                <ValueList>
+                    <Value>20041225235050</Value>
+                </ValueList>
+            </Slot>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSSubmissionSet.authorDepartment
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="authorDepartment">
+                <ValueList>
+                    <Value></Value>
+                </ValueList>
+            </Slot>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSSubmissionSet.authorInstitution
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="authorInstitution">
+                <ValueList>
+                    <Value>Fairview Hospital</Value>
+                </ValueList>
+            </Slot>
+
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSSubmissionSet.authorPerson
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <Slot name="authorPerson">
+                <ValueList>
+                    <Value></Value>
+                </ValueList>
+            </Slot>
+        </RegistryPackage>
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            XDSSubmissionSet.contentTypeCode - an external classification.  
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+        <ObjectRef id="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500"/>
+        <Classification 
+            classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500" 
+            classifiedObject="SubmissionSet" 
+            nodeRepresentation="Group counseling">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XDSSubmissionSet.contentTypeCodeDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="Group counseling"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for contentTypeCode
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>Connect-a-thon contentTypeCodes</Value>
+                    </ValueList>
+                </Slot>
+          </Classification>
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            This classification labels the above RegistryPackage as an XDSSubmissionSet. 
+            The classificaitonNode shown exists under the ClassificationScheme ObjectTypes.
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <ObjectRef id="urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"/>
+        <Classification 
+            classifiedObject="SubmissionSet" 
+            classificationNode="urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"/>
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            Link the document above and the Folder below into the Submission Set with an Association of type "HasMember"
+            The UUID for HasMember is urn:uuid:2d03bffb-f426-4830-8413-bab8537a995b
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+        <Association 
+            associationType="HasMember" 
+            sourceObject="SubmissionSet" 
+            targetObject="theDocument">
+            <Slot name="SubmissionSetStatus">
+                <ValueList>
+                    <Value>Original</Value>
+                </ValueList>
+            </Slot>
+        </Association>
+        <Association 
+            associationType="HasMember" 
+            sourceObject="SubmissionSet" 
+            targetObject="Folder"/>
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              ++ Here ends the coding of the XDS Submission Set.
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              ++ Here starts the coding of the XDS Folder.
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+        <ObjectRef id="urn:uuid:f64ffdf0-4b97-4e06-b79f-a52b38ec2f8a"/>
+        <RegistryPackage id="Folder">
+            <Name>
+                <LocalizedString value = "FOLDER"/>
+            </Name>
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            XDSFolder.comments 
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+            <Description>
+                <LocalizedString value = "comments go here"/>
+            </Description>
+            <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                XDSFolder.uniqueId 
+             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <ExternalIdentifier 
+                identificationScheme="urn:uuid:75df8f67-9973-4fbe-a900-df66cefecc5a" 
+                value="367084664">
+                <Name>
+                    <LocalizedString value = "XDSFolder.uniqueId"/>
+                </Name>
+            </ExternalIdentifier>
+                
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+                XdsFolder.patientId - assign patient id 
+                6578946+312 to this Folder. It must match the patientId on all documents
+                include in the Folder.  It uses the same ClassificationScheme to
+                support the ExternalIdentifier as XDSDocumentEntry.patientId.
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <ExternalIdentifier 
+                identificationScheme="urn:uuid:f64ffdf0-4b97-4e06-b79f-a52b38ec2f8a" 
+                value="6578946+312">
+                <Name>
+                    <LocalizedString value = "XDSFolder.patientId"/>
+                </Name>
+            </ExternalIdentifier>
+
+        </RegistryPackage>
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            XDSFolder.codeList - a collection (multiple) external classifications.  
+            Shown below is a single value.
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+        <ObjectRef id="urn:uuid:1ba97051-7806-41a8-a48b-8fce7af683c5"/>
+        <Classification 
+            classificationScheme="urn:uuid:1ba97051-7806-41a8-a48b-8fce7af683c5" 
+            classifiedObject="Folder" 
+            nodeRepresentation="11548-7">
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    XDSFolder.codeListDisplayName
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Name>
+                    <LocalizedString value="name for 11548-7"/>
+                </Name>
+                <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Coding scheme for XDSFolder.codeList
+                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <Slot name="codingScheme">
+                    <ValueList>
+                        <Value>Loinc</Value>
+                    </ValueList>
+                </Slot>
+        </Classification>
+            
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            This classification labels the above RegistryPackage as an XDS 
+            Folder. The classificaitonNode shown exists under the 
+            ClassificationScheme ObjectTypes.
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <ObjectRef id="urn:uuid:d9d542f3-6cc4-48b6-8870-ea235fbc94c2"/>
+        <Classification 
+            classifiedObject="Folder" 
+            classificationNode="urn:uuid:d9d542f3-6cc4-48b6-8870-ea235fbc94c2"/>
+
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+            Link the document into the Folder with an Association of 
+            type "HasMember"
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+        <Association 
+            associationType="HasMember" 
+            sourceObject="Folder" 
+            targetObject="theDocument"/>
+        <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              ++ Here ends the coding of the XDS Folder.
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+    </LeafRegistryObjectList>
+</SubmitObjectsRequest>

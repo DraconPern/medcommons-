@@ -1,0 +1,203 @@
+<html>
+	<head>
+		<title>DDL Release notes </title>
+	</head>
+	<body>
+		<h2>Changes since last release </h2>
+
+	    <ul>
+		<li>
+	    <li>  December 18, 2007</i>
+	    	<ul>
+	    	  <li>Installer page now shows subversion build number; date now automatically generated. </li>
+	    	  <li>More small transactional bugfixes</li>
+	    	  <li>Local DICOM setting changes now take effect without DDL restart</li>
+	    	  <li>Better error messages when DDL shuts down</li>
+
+
+	    	</ul>
+	    </li>
+	    
+	    <li>
+	    <li>  December 4, 2007</i>
+	    	<ul>
+	    	  <li>Faster DICOM timeout (15 seconds) added. </li>
+	    	  <li>Many small transactional bugfixes</li>
+	    	  <li>Add DICOM and DICOM import behavior changed. New patients no longer created by default. The user must either
+	    	  explicitly create a new patient or merge it into an existing one. Merging is done in three steps:
+	    	  <ul>
+	    	  	<li> Select 'Add DICOM' from the menu of a CCR in an account want to merge the data into.
+	    	  	<li> Send the DICOM to MedCommons
+	    	  </ul>
+	    	   </li>
+
+	    	</ul>
+	    </li>
+
+	    <li>
+	    <li>  November 20, 2007</i>
+	    	<ul>
+	    	  <li>DDL.log file now deleted on startup; file also truncated for viewing so that browser doesn't run out of memory. </li>
+
+	    	</ul>
+	    </li>
+
+	    <li>
+	    <li>  November 16, 2007</i>
+	    	<ul>
+	    	  <li>Fixed race condition for Download DICOM state </li>
+
+	    	</ul>
+	    </li>
+
+	    <li>
+	    <li>  November 12, 2007</i>
+	    	<ul>
+	    	  <li>About and status pages now display "Powered by MedCommons" in page footer.</li>
+	    	  <li>URLs from the status page now  use standard HealthURL format </li>
+			  <li>Window/level presets now extracted from DICOM headers; placed in generated CCRs for use by viewer. </li>
+			  <li>About page configuration no longer throws an exception in FireFox </li>
+	    	</ul>
+	    </li>
+	    <li <i>Sept XX, 2007</i>
+	    	<ul>
+	    		<li>Added <i>Upload DICOM Folder</i> menu item to upload local DICOM files from a file directory or CD.</li>
+	    		<li>New stylesheets are used for the installer, about, and status pages. </li>
+	    	</ul>
+	    </li>
+	    <li> <i>August 29, 2007</i>
+	    	<ul>
+	    	<li>Some format issues with patient and physician names in CCR generated from DICOM fixed </li>
+			<li>DICOM send error messages now more useful</li>
+			<li>New icons replace traffic light on the status bar </i>
+			<li>Configuration editing much more robust</li>
+			<li>Latency for status and about page actions lower </li>
+			<li>More DICOM metadata added to CCR in &lt;Procedure&gt; section (Study Description; body part examined; modality; study date, accession number); InformationSystem actor
+			now contains AE Titles from when data was sent to DDL. </li>
+			<li>Incoming DICOM series no longer dispear from the status screen once they are complete - they remain until the CXP upload job is created.</li>
+			<li>CCR encoding of references follows schema needs for new AAFP stylesheet</li>
+	    	</ul>
+	    </li>
+
+		<li> <i>August 7, 2007</i>
+		<ul>
+		<li>Deployment pause at startup reduced from ~15 seconds to about 0.1 seconds</li>
+		<li>Setting preferences in IE7 now working</li>
+		<li>Initial display of contents of 'About DDL' page displays much faster</li>
+		<li>Status, About pages now have links to each other.</li>
+		<li>Column headings of the About and Status pages are now left-aligned</li>
+		<li>About page table of configurations now contains a new column with descriptions</li>
+		<li>About page now contains link to DDL log file</li>
+		<li>Retry, Cancel buttons now easier to select. Previously they often appeared to be superimposed on top of each other. </li>
+		<li>Delete of upload/download jobs now better about cleaning up cached files </li>
+		</ul>
+		</li>
+		<li> <i>August 1, 2007</i>
+		<ul>
+		<li>Both uploads and downloads can now be cancelled and retried; retry also works on error</li>
+		<li>Both uploads and downlods can be queued. </li>
+		<li>If the DDL is shut down all current jobs are set to 'cancelled'</li>
+		<li>The status page now has links to the CCR on the appliance for both uploads and downloads.</li>
+		<li>Missing configuration file now displays about.html page where configurations can be edited instead of telling the
+		user to edit the file directly</li>
+		<li>
+			Restart of the JavaWebStart process may have been fixed with new libraries from Sun. Previously there were timeouts as each
+			jar file
+			was read.
+		</li>
+		<li>
+			On startup a message appears saying that the user must log into an appliance with an active dashboard. When the dashboard
+			is displayed in the browser the DDL is notifified of which worklist and appliance is active. If there dashboard is already
+			visible when the DDL is started the user will need to refresh the page in the browser (it's the 'onLoad' method that
+			sends the message to the DDL).
+		</li>
+		<li>
+			Removed 'MedCommons' from several menu and error messages from the DDL.
+		</li>
+		</ul>
+		</li>
+
+		<li>
+		<i>July 20, 2007</i>
+	<ul>
+		<li>
+			Status page now dynamic. Try 'Show Status' from the DDL menu.
+		</li>
+		<li>
+			Some configurations are now editable. Try  'About DDL' from the DDL menu.
+		</li>
+		<li>
+			New ExportFile method permits DICOM to be saved to an external file. The base directory where the files are placed is set in the about page (the exportDirectory)
+			The name of the file inside the folder depends on the contents of the CCR:
+			<ol>
+				<li>If there is a non-MedCommons patient id - use the patient id value and the 'type' of the id to create the directory</li>
+				<li>If there are multiple non-MedCommons patient ids -use the last one. This logic probably needs to be changed - perhaps there should
+				be a preference for 'preferred patient id type'?</li>
+				<li>If there is only a MedCommons id - use that.</li>
+				<li>If there are no patient is - use the patient's name.<li>
+			</ol>
+			Typical example: If the export directory is set to ~/MedCommons and the CCR has both a MedCommons ID and a eHGT one with value 99999c, then
+			the directory where the DICOM is placed will be:<br/>
+			 ~/MedCommons/eHGT/99999c/
+			<br/>
+			Note that this can have some strange behavior if the user has an SSN and an eHGT account - which one is currently selected is the last one
+			in the CCR. Not very useful (yet).
+
+		</li>
+
+
+	</ul>
+	</li>
+	</ul>
+		<h2>Known bugs/limitations</h2>
+		<ul>
+			<li>'Add DICOM' to existing CCR not yet supported. </li>
+			<li>About page not yet very friendly
+			<ul>
+			<li>
+			Page not found or server not responding if user attempts to view before startup is complete.
+			</li>
+
+			<li>Editing of fields in the DICOM configurations in the 'About' page doesn't permit the entire entry to be selected. Instead
+			the cursor has to be inserted at the end of the text item and then the user has to backspace over the entries.
+			</li>
+			<li> The editing of the ExportDirectory is harder than it should be.
+			For Windows - the value should be set to something like "C:\Export"; for the Mac it should be of the form /Users/mesozoic/MedCommons/Export.
+			The directory must already exist before you try to set the configuration.
+			<p/>
+			What would be much nicer would be if the file 'browse' button in the web browser would select the export directory. However, the
+			HTML browse button only permits the selection of files, not directories.
+			</li>
+		</ul>
+
+			<li>Status page
+				<ul>
+
+					<li> The output status page should probably show which DICOM device or which file directory the output has been sent to.</li>
+					<li> Newer CCRs (starting with this version) contain the size of the references; older versions do not. This means that on
+					download the total number of bytes is not available and thus the percentage complete is displayed as ??%. Newly created
+					CCRs should properly display the percent downloaded.</li>
+					<li>Jobs should all be set to 'cancelled' when the DDL is shut down; outgoing DICOM jobs are not.</li>
+					<li>If there are jobs that are hung and the status is not accurate then clicking the button "Clear All Transactions" and restarting
+					DDL should fix any problem. This will become more robust.</li>
+				</ul>
+			</li>
+
+
+
+			</li>
+
+			<li>
+				Typically all cache files are deleted on upload or download; if the DDL is quit while a job is in progress files may be
+				left on disk.
+			</li>
+
+			<li>
+			If multiple DICOM files are being uploaded or downloaded and the user switches between worklists it is ambiguous from the user's point of view
+			which DICOM will go to which worklist or DICOM server. The current design decision is that the values used are the ones that are in the
+			configurations at the time that the user clicks "Download DICOM" or that the DICOM study arrives in DDL.
+			</li>
+			<li>Offline JavaWebStart mode doesn't work - the machine must be on the network to launch</li>
+		</ul>
+	</body>
+</html>

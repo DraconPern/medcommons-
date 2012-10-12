@@ -1,0 +1,16 @@
+<!-- 
+	XFire configuration for the mapping between the name of the service, the interface class, and the implementation 
+	class.
+ -->
+ <beans xmlns="http://xfire.codehaus.org/config/1.0">
+   <service>
+    <name>CXP2</name>
+    <namespace>http://cxp2.org</namespace>
+    <serviceClass>org.cxp2.soap.CXPService</serviceClass>
+    <implementationClass>net.medcommons.modules.cxp.server.CXP2Impl</implementationClass>
+    <!-- <serviceFactory>org.codehaus.xfire.jaxb2.JaxbServiceFactory</serviceFactory> -->
+    <properties>
+      <property key="mtom-enabled">true</property>
+     </properties>
+  </service>
+ </beans>

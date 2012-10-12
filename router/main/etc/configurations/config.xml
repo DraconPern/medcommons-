@@ -1,0 +1,9 @@
+<config>
+  <property name="DeviceGuid">QLOCAL1</property>
+
+  <property name="CommandServiceUrl">http://sophie.quigley.com:8080/jboss-net/services/CommandService</property>
+  <property name="PackageServiceUrl">http://sophie.quigley.com:8080/jboss-net/services/PackageService</property>
+  <property name="DeviceDirectoryServiceUrl">http://sophie.quigley.com:8080/jboss-net/services/DeviceDirectoryService</property>
+
+  <property name="DataRoot">../server/router/data/</property>
+</config>

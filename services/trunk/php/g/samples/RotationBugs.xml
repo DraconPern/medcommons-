@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>UISplitViewController Issues</string>
+						<key>leftLineStyle</key>
+		<string>narrow</string>
+		
+		<key>scenes</key>
+		<array>
+			<dict>
+
+				<key>scene</key>
+				<string>0</string>
+
+				<key>name</key>
+				<string>
+					UIWebView and UISplitViewController Issues
+				</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Issues</string>
+
+				<key>largetitle</key>
+				<string>UIWebView and UISplitViewController</string>
+
+				<key>barbuttontitle</key>
+				<string>Issues</string>
+
+
+
+				<key>blocks</key>
+				<array>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>bugs - landscape and rotating</string>
+						<key>toplabel</key>
+						<string>PDF - Rotation Problem</string>
+						<key>label</key>
+						<string>PDF Rotation Problem</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>url</key>
+						<string>
+							http://manuals.info.apple.com/en/iphone_user_guide.pdf
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>
+							margins on rotation
+						</string>
+						<key>toplabel</key>
+						<string>WebView - Apple/iPad</string>
+						<key>label</key>
+						<string>Apple/iPad - WebView</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>url</key>
+						<string>http://www.apple.com/ipad/</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>doesnt stop playing</string>
+						<key>toplabel</key>
+						<string>QuickTime - Moon Landing</string>
+						<key>label</key>
+						<string>QuickTime - Moon Landing</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Quicktime_X_Logo.png/64px-Quicktime_X_Logo.png
+						</string>
+						<key>url</key>
+						<string>
+							http://history.nasa.gov/alsj/a11/a11f.1024502.mov
+						</string>
+					</dict>
+
+					
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>cant pan horizontally</string>
+						<key>toplabel</key>
+						<string>
+							Test HTML5 - 1000x1110 from Wikipedia
+						</string>
+						<key>label</key>
+						<string>HTML5 - 1000x1110</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Wikipedia-logo.svg/600px-Wikipedia-logo.svg.png
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage1000.html
+						</string>
+					</dict>
+
+
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>renders incorrectly</string>
+						<key>imageurl</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>toplabel</key>
+						<string>HTML5VideoPlayer</string>
+						<key>label</key>
+						<string>HTML5VideoPlayer</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/HTML5VideoPlayer
+						</string>
+					</dict>
+
+				</array>
+
+			</dict>
+		</array>
+	</dict>
+</plist>

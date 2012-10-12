@@ -1,0 +1,190 @@
+<!--
+PAGE REVISON : 2.3
+LAST UPDATED : 7.22.2005
+BY : ALEX BEUSCHER
+//-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MedCommons</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="fp_diag.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function ShowCaption(numMessage) {
+  var visible = 'block';
+  var hidden = 'none';
+  var MessageBlock=document.getElementById("Message" + numMessage);
+  MessageBlock.className = 'ShowMe';
+
+}
+
+function HideCaption(numMessage) {
+
+  var visible = 'block';
+  var hidden = 'none';
+  var MessageBlock=document.getElementById("Message" + numMessage);
+  MessageBlock.className = 'HideMe';
+
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function showCaption(msgnum) {
+	for(i=1;i<7;i++) {		
+	var theCaption = document.getElementById("msg" + i);
+	theCaption.className = (i==msgnum) ? 'show' : 'hide';
+	if (!i==6) { 
+		theImage.style.borderColor= (i==msgnum) ? '#000000' : '#527463';
+		var theImage = document.getElementById("img" + i); 
+		}
+	}
+	if (msgnum==3) {
+	var theCaption = document.getElementById("msg6");
+	theCaption.className = 'show';
+	}	
+		
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+body {
+	overflow: hidden;
+}
+.RightMenuLink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-top: 0px;
+	padding-right: 0px;
+	position: relative;
+}
+-->
+</style>
+</head>
+<body onLoad="MM_preloadImages('images/diagram_over_03.gif','images/diagram_over_05.gif','images/diagram_over_08.gif','images/diagram_over_14.gif','images/diagram_over_15.gif')"> 
+<table width="100%"  border="0" cellspacing="0" cellpadding="0"> 
+  <tr> 
+    <td width="100%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+        <tr align="right">
+          <td colspan="2"><p><a href="tour.htm" target="_top" class="TextMenu">take a tour</a> || <a href="about.html" target="_top" class="TextMenu">about us</a> || <a href="faq.html" target="_top" class="TextMenu">faq</a> || <a href="termsofuse.html" target="_top" class="TextMenu">terms of use</a>&nbsp;&nbsp;&nbsp;</p></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><img class="Indent" src="images/title_hpwelcome.gif" width="325" height="50"></td> 
+        </tr> 
+        <tr> 
+          <td colspan="2"><p class="TextMain">MedCommons is a service for secure digital transfer of patient health information records (PHI) among providers, patients, and their consultants under explicit patient consent. Patients 'opt in' to PHI transfers by signing consent forms with their providers. This also allows MedCommons to support the provider&rsquo;s HIPAA responsibilities.</p> 
+            <p class="TextMain">For interoperability and archival longevity, MedCommons uses the ASTM Continuity of Care Record (CCR) standard for transfer of PHI. Diagnostic imaging and legacy documents such as physicians&rsquo; reports are also handled in a non-proprietary manner.</p> 
+            <p class="TextMain">MedCommons delivers increased productivity for physicians whether or not they have installed an electronic medical record system. MedCommons can be used for faster electronic referrals, secure patient communications that are more efficient than the phone, and as a highly integrated yet individualized presentation of the services they access or provide.</p> 
+            <p class="TextMain">All of this is provided by MedCommons in a manner that is automatically accessible to the patient and automatically incorporated into their personal health record repository that only they control.</p> 
+            <p class="TextMain">&nbsp;</p></td> 
+        </tr> 
+        <tr> 
+          <td valign="top" width="80"><img src="images/spacer.gif" height="1" width="70"></td> 
+          <td valign="top" width="100%">
+<div id="diagramhead">Privacy for Patients, Productivity for Doctors</div>
+<div id="diagram">
+<a href="#" onmouseover="javascript:showCaption(1);"><img id="img1" border="0" src="images/diag_safe.jpg" width="100" height="100"></a>
+<a href="#" onmouseover="javascript:showCaption(2);"><img id="img2" border="0" src="images/diag_doctor.jpg" width="100" height="100"></a>
+<a href="#" onmouseover="javascript:showCaption(3);"><img id="img3" border="0" src="images/diag_astmlogo.gif" width="122" height="60"></a>
+<a href="#" onmouseover="javascript:showCaption(4);"><img id="img4" border="0" src="images/diag_xray.jpg" width="100" height="100"></a>
+<a href="#" onmouseover="javascript:showCaption(5);"><img id="img5" border="0" src="images/diag_surgeon.jpg" width="100" height="100"></a>
+<div class="hide" id="msg1">MedCommons is the patient's bank for personal health information.</div>
+<div class="hide" id="msg2">Physicians save time when they use a standard designed and controlled by their peers.</div>
+<div class="hide" id="msg3">ASTM CCR is the physician-inspired interoperability standard.</div>
+<div class="hide" id="msg4">Imaging facilities and diagnostic labs achieve unprecedented integration of their services</div>
+<div class="hide" id="msg5">Specialists extend their referral base across traditional enterprise and technical barriers.</div>
+<div class="hide" id="msg6"><a href="http://www.astm.org/" target="_blank">visit ASTM CCR site</a><br><br><br><a href="http://www.centerforhit.org/x201.xml" target="_blank">learn more about the CCR standard</a></div>
+</div></td> 
+    <td width="200" valign="top" bgcolor="#A4B4B0"><table width="200" border="0" cellpadding="0" cellspacing="0" bgcolor="A4B4B0"> 
+        <tr> 
+          <td colspan="2"><img src="images/title_whatsnew.gif" width="200" height="50"></td> 
+        </tr> 
+        <tr> 
+          <td width="30" align="right" valign="top"><a href="http://www.medcommons.net/whitepapers/nhinrfiresponse.pdf" target="_top"><img src="images/bullet_pdf.gif" width="20" height="20" border="0"></a></td> 
+          <td width="180" valign="top" class="RightMenuLink"><a href="http://www.medcommons.net/whitepapers/nhinrfiresponse.pdf" target="_top">MedCommons Response to NHIN RFI </a></td>
+        </tr>
+        <tr>
+          <td align="right" valign="top"><a href="http://www.medcommons.net/press/mcpr021605.html" target="_top"><img src="images/bullet_wri.gif" width="20" height="20" border="0"></a></td>
+          <td valign="top" class="RightMenuLink"><a href="http://www.medcommons.net/press/mcpr021605.html" target="_top">MedCommons HIMSS press release </a></td>
+        </tr>
+        <tr>
+          <td align="right" valign="top"><a href="photo_ag.htm" target="_top"><img src="images/bullet_pic.gif" width="20" height="20" border="0"></a></td>
+          <td valign="top" class="RightMenuLink"><a href="photo_ag.htm" target="_top">Dr. Brailer visits MedCommons at the HIMSS Interoperability Showcase</a></td>
+        </tr>
+        <tr>
+          <td align="right" valign="top">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="right" valign="top">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="right" valign="top">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr> 
+        <tr> 
+          <td colspan="2" bgcolor="#FFFFFF">&nbsp;</td> 
+        </tr> 
+        <tr> 
+          <td colspan="2"><img src="images/title_links.gif" width="200" height="50"></td> 
+        </tr> 
+        <tr> 
+          <td align="right" valign="top"><a href="http://www.centerforhit.org/x201.xml" target="_blank"><img src="images/bullet_web.gif" width="20" height="20" border="0"></a></td> 
+          <td valign="top" class="RightMenuLink"><a href="http://www.centerforhit.org/x201.xml" target="_blank">More information on the CCR standard </a></td>
+        </tr> 
+        <tr> 
+          <td colspan="2">&nbsp;</td> 
+        </tr> 
+        <tr> 
+          <td colspan="2">&nbsp;</td> 
+        </tr> 
+        <tr> 
+          <td colspan="2">&nbsp;</td> 
+        </tr> 
+        <tr> 
+          <td colspan="2">&nbsp;</td> 
+        </tr> 
+        <tr> 
+          <td colspan="2">&nbsp;</td> 
+        </tr> 
+        <tr> 
+          <td colspan="2">&nbsp;</td> 
+        </tr> 
+      </table></td> 
+  </tr> 
+</table> 
+ <table width="100%" cellpadding="0" cellspacing="0"> 
+   <tr>
+    <td align="right"><p class="CopyRight">&copy;2005 MedCommons, Inc. all rights reserved &nbsp;</p>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

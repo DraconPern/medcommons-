@@ -1,0 +1,3 @@
+Main-Class: makejar.xdsSoapRequest
+Class-Path: activation.jar commons-logging.jar dom.jar mail.jar saaj-api.jar saaj-impl.jar xercesImpl.jar commons-cli-1.0.jar RegObjBean.jar xdstest.jar
+

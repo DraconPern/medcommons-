@@ -1,0 +1,308 @@
+number,text,level
+,MedCommons TIMC Requirements,1
+,,1
+1,Introduction,2
+2,Use Cases,2
+2.1,Actors,3
+2.1.1,MedCommons Administrator,4
+2.1.2,Uploader,4
+2.1.3,TIMC Order System,4
+2.1.4,DDL,4
+2.1.5,Polling DDL,4
+2.1.6,TIMC PACS,4
+2.1.7,Image Analyst,4
+2.2,Definitions,3
+2.2.1,HealthURL - The group of CCRs that belong to a Patient and the transitive set of all the data they reference are known collectively as the Patient's HealthURL.,5
+2.2.2,Group - A collection of users who share visibility of a shared set of Patients,5
+2.2.3,Consent – information about whether an entity is allowed to access a Patient account in a particular way. ,5
+2.2.4,External Share – a link to an identity of an entity outside of MedCommons,5
+2.2.5,"Appliance – a single logical instance of a MedCommons system consisting of Accounts, Console and one or more Gateways. ",5
+2.2.6,Series – a DICOM Series. ,5
+2.2.7,Order – a set of information associated with a set of DICOM images about it's handling and processing,5
+2.2.8,Claim - the granting of ownership of a Patient account to an entity claiming to be the Patient or an agent of the Patient,5
+2.2.9,Voucher – a temporary authorization that allows a 3rd party to Claim an account using a Voucher ID and PIN,5
+2.2.10,Temporary Account – a MedCommons Account associated with a Voucher,5
+2.2.11,"Tracking Number – A 12 digit number identifying a specific, saved, CCR",5
+2.3,Use Cases ,3
+2.3.1,Upload Images,4
+2.3.2,Polling DDL Forwards Image Data to PACS,4
+2.3.3,,4
+3,Requirements,2
+3.1,General,3
+3.1.1,"Unless otherwise specified, pages will load within 15 seconds on a broadband internet connection.",5
+3.1.2,Supported platforms are PC or Mac that with Java 5 (1.5) or better and IE 7+ or FF 3+. ,5
+3.1.3,"All DICOM related functions work for CT, MR and PET images, both compressed and uncompressed",5
+3.2,Login and Authorization,3
+3.2.1,Log In,4
+3.2.1.1,All pages that access PHI or control settings that affect the accessibility of PHI in any way are Restricted Pages. ,5
+3.2.1.2,A login session can be initiated by entering an email address and the correct password on the login page.,5
+3.2.1.3,Attempting to access a Restricted Page without a valid login session displays the login page.,5
+3.2.1.4,A logged in user who is inactive for more than 10 minutes is automatically logged out and their login session is no longer valid.,5
+3.2.1.5,Entering an incorrect password on the login page increments a login counter on the user record that was accessed if the last login attempt was less than 5 minutes ago. ,5
+3.2.1.6,A login attempt that increases the login counter to more than 3 is rejected and a message is displayed to the user asking them to wait for 5 minutes to try again. ,5
+3.2.1.7,During a Login session a Logout link is displayed at the top of all pages except the Viewer. ,5
+3.2.1.8,"During a Login session, a “Login Stamp” consisting of the user's photo, their First and Last name, MedCommons Account Id and email is displayed in the top right hand corner on all pages except the Viewer",5
+3.3,Registration,3
+3.3.1,A user cannot login until they are registered,5
+3.3.2,A user must supply a valid email address and password in order to register,5
+3.3.3,Password – the user must supply a password of 8 or more characters,5
+3.3.4,Password Verification – the user must enter their chosen password twice. ,5
+3.3.5,Users are informed during registration that sharing passwords is not permitted,5
+3.3.6,Email Confirmation - to complete registration a user must confirm their email address by responding to a cryptographically secure link sent to their email address,5
+3.3.7,Terms of Use – the user must check a box to indicate they understand and agree to the Terms of Use,5
+3.3.8,A link to the Terms of Use is displayed to the user prior to registering. ,5
+3.4,Dashboard,3
+3.4.1,Navigation,4
+3.4.1.1,"The header section contains links to the Dashboard, Settings and Logout",5
+3.4.1.2,The footer section contains a link to the Contact Us page,5
+3.4.2,Patient List,4
+3.4.2.1,The Patient List includes all Patients that have been created by DICOM uploads to the user's Group,5
+3.4.2.2,"Patients are ordered in the order that patient uploads were initiated, in descending order (newest first).",5
+3.4.2.3,"When the number of patients that would be displayed exceeds a configurable limit, only the first page of patients is displayed and a list of page links is displayed, one for each page of patients that are available",5
+3.4.2.4,When a list of page links is displayed the user may click any link to see the corresponding page of patients. ,5
+3.4.2.5,"The list of displayed patients updates in “real time”, ie: without any manual action on the user's part. ",5
+3.4.2.6,The Patient List displays information for each Patient as follows:,5
+3.4.2.7,Patient Count. ,5
+3.4.2.8,Links to HealthURLs. ,5
+3.4.2.9,"Whenever a Patient's HealthURL is opened from the Dashboard, the Patient Information Page for that Patient displays in the lower section of the Dashboard.",5
+3.4.2.10,"If a window showing Patient's HealthURL is closed, the Dashboard closes any Patient Information Page for the Patient that is displayed within it.",5
+3.4.2.11,Patient Messages ,5
+3.4.2.12,DDL Messages,5
+3.4.2.13,Download DICOM. ,5
+3.5,DDL Control Page,3
+3.5.1,Header Link,4
+3.5.1.1,"When a user visits either the dashboard or the DDL Upload page and has a DDL running on their computer, a “DDL” link is displayed at the top of the page. ",5
+3.5.2,Shutdown Function,4
+3.5.2.1,If the user has a DDL running on their computer then a “Shutdown DDL” button is shown on the DDL Control page. ,5
+3.5.2.2,Clicking the Shutdown DDL button causes:,5
+3.5.2.3,"A confirmation dialog to display giving the user an option to cancel the decision to shut down their DDL, or OK to continue",5
+3.5.2.4,"If OK is selected, DDL stops running on the user's computer.",5
+3.5.2.5,"After the DDL stops running, the page refreshes and the page shows as described in 3.5.3.1",5
+3.5.3,Start DDL Function,4
+3.5.3.1,"If the user views the DDL Control Page and does not have a DDL running then it shows a message “No DDL was detected running on your computer.”, and a button “Start DDL” is displayed.",5
+3.5.3.2,Clicking the Start DDL button causes DDL to download and run on the user's computer.,5
+3.5.3.3,After the DDL has started running the DDL Control page redisplays and detects the DDL in running state.,5
+3.6,Settings,3
+3.6.1,Tabbed Display,4
+3.6.1.1,The settings page displays a tabbed interface showing a series of tabs:,5
+3.6.2,Personal Details,4
+3.6.2.1,"The Name of the user is displayed, with a link to the 'Change Name' page next to it",5
+3.6.2.2,The email address of the user is displayed with a link to the 'Change Email' page next to it,5
+3.6.2.3,If the user has uploaded a picture then the user's picture is displayed. ,5
+3.6.2.4,A file upload field and Browse button are shown. ,5
+3.6.2.5,A 'Change Picture' button causes the file selected in 3.6.2.4 to be uploaded and set as the user's photo,5
+3.6.2.6,"After changing the photo, the login stamp shows the updated photo",5
+3.6.3,Password Management,4
+3.6.3.1,Masked Text Fields are displayed for,5
+3.6.3.2,A “Change Password” button is displayed. ,5
+3.6.3.3,If one or more fields fails to validate then the page is redisplayed and an error message is displayed indicating at least one of the errors in validation.,5
+3.6.3.4,If all fields are validated successfully then the user's password is changed to the value in the “New password” field and the message “Password successfully updated” is displayed.,5
+3.6.4,Group Tab,4
+3.6.4.1,The name of the Group is displayed and may be edited and saved by clicking a button. ,5
+3.6.4.2,The Account ID of the user's active group is displayed,5
+3.6.4.3,New users can be added to the group by entering the MedCommons Account ID of the user to be added and clicking an “Add” button.,5
+3.6.4.4,The Group Invitation Dialog can be invoked via an Invite button (see 3.6.5),5
+3.6.4.5,A table listing all members of the user's active Group is displayed. ,5
+3.6.4.6,An account can be removed from the Group by selecting it in the table and clicking on a 'Delete User' icon,5
+3.6.4.7,A link to a page allowing the user to start a DDL Poller is displayed (see Error: Reference source not found).,5
+3.6.5,Group Invitation Dialog,4
+3.6.5.1,One or more email addresses can be entered,5
+3.6.5.2,The user can click Cancel to dismiss the dialog,5
+3.6.5.3,The user can click OK to submit the dialog in which case:,5
+3.6.5.4,The Group Invitation Email contains a cryptographically secure link that allows them to accept the invitation. ,5
+3.6.6,Change Name Page,4
+3.6.6.1,Two editable text fields containing the First Name and Last Name are shown below the current name of the user,5
+3.6.6.2,A button 'Change Name' is shown. ,5
+3.6.7,Change Email Page,4
+3.6.7.1,"The user's current email address is displayed, and an editable text field below it is also displayed allowing entry of a new email address",5
+3.6.7.2,A “Change Email Address” button is displayed. ,5
+3.6.7.3,"If validation fails, the page is redisplayed with the message “Please enter a valid email address”.",5
+3.6.7.4,If validation succeeds a verification email containing a cryptographically secure link is sent to the user's email address,5
+3.6.7.5,If the user clicks the link then the email address for the user's account is updated,5
+3.6.7.6,"After updating email address, the new email address may be used to log in. ",5
+3.7,HealthURL and Current CCR,3
+3.7.1,CCRs,4
+3.7.1.1,A Patient has one or more of CCRs that record their health information. ,5
+3.7.1.2,A Patient has a CCR identified as their Current CCR,5
+3.7.1.3,The Current CCR is created when the corresponding Patient account is created,5
+3.7.1.4,When the patient is created from a DICOM Order the Current CCR has the same name for the Patient as is recorded in the DICOM associated with the DICOM order,5
+3.7.2,HealthURL,4
+3.7.2.1,Links to HealthURLs are identified with a specific recognizable icon throughout the system,5
+3.8,Patient Information Page (PIP),3
+3.8.1,Header,4
+3.8.1.1,"The Patient Name is displayed in the header of the PIP in the format First Name followed by Last Name - AgeSex, where AgeSex is: the Patient's age if known or blank otherwise concatenated with 'M' or 'F' corresponding to the Patient's sex if known or blank otherwise.",5
+3.8.1.2,HealthURL Link – opens the Patient's HealthURL in a new window,5
+3.8.2,Activity Log Section,4
+3.8.2.1,The top section of the PIP shows the activity log for the Patient,5
+3.8.2.2,The activity log display contains 4 columns:,5
+3.8.2.3,Sessions – the Activity Log display is divided into Sessions. ,5
+3.8.2.4,When first shown the Activity Log display shows only sessions. ,5
+3.8.2.5,Session rows have a '+' symbol on the far left side. ,5
+3.8.2.6,Descriptions for Access rows – the description for access rows shows a description of the nature of the access. ,5
+3.8.2.7,Descriptions for Session Rows – the description for rows representing sessions is counts of the number of each type of event belonging to the most critical category of access contained in the sessions. ,5
+3.8.2.8,When a Session row contains only a single access the description for the the session row is replaced by the access description.,5
+3.8.2.9,The By columns shows the identity of the entity that accessed the Patient PHI. ,5
+3.8.3,Consents Display,4
+3.8.3.1,The lower portion of the PIP section is a pane showing consents (authorizations to access) the Patient account.,5
+3.8.3.2,"Consents are displayed as a series of tables which are of three kinds: Group, Application, and Individual. ",5
+3.8.3.3,"For all Groups, if the group itself or any individual member of it has a Consent relevant to the Patient then a table of Consents for that Group is displayed in the Consents section.",5
+3.8.3.4,Group Table Header – the header row of a Consent table for a Group shows ,5
+3.8.3.5,The table of Individual Consents is displayed below the tables showing Group Consents. ,5
+3.8.3.6,"For all Applications, if an Application has an OAuth Authorization to access the Patient account then a table consisting only of a header row is displayed, containing the Application name in the first column, the URL of the application in the second column folled by a '?' ",5
+3.8.3.7,Consent tables contain a detail row for each Consent relevant to the Patient for the entity that the table is displaying consents for.,5
+3.8.3.8,A Consent Detail Row shows the identity of the the entity who has the access. ,5
+3.8.3.9,Consent Selectors are a dropdown control containing 4 options:,5
+3.8.3.10,"When a new option is selected in a Consent Selector, the Patient's consents are automatically updated to reflect the new option in the background. ",5
+3.8.4,Share by Phone,4
+3.8.4.1,The Individuals section in the Consents display (see 3.8.3.5) contains an icon to invite the user to Share access to the Patient by Phone,5
+3.8.4.2,"The Share By Phone icon displays the Share By Phone dialog, which contains fields:",5
+3.8.4.3,All the fields on the Share By Phone dialog are required. ,5
+3.8.4.4,When Cancel is clicked the dialog is dismissed.,5
+3.8.4.5,When OK is clicked and all fields are valid:,5
+3.8.5,Share with Open ID,4
+3.8.5.1,The Individuals section in the Consents display (see 3.8.3.5) contains an icon to invite the user to Share access to the Patient with an Open ID,5
+3.8.5.2,The Share with Open ID icon shows a dialog with a field containing the Open ID icon allowing entry of an Open ID URL.,5
+3.8.5.3,Clicking OK in the Share with Open ID dialog first validates that the URL is a valid OpenID end point. ,5
+3.8.5.4,Once HealthURL is successfully shared with an Open ID as specified in 3.8.5.3,5
+3.9,Activity Logs,3
+3.9.1,General,4
+3.9.1.1,Anything that results in an entity (whether machine or human) seeing or modifying PHI belonging to a Patient generates an event in the Activity Log for the Patient,5
+3.9.1.2,The Activity Log contains the following information:,5
+3.10,DICOM Upload Page,3
+3.10.1,Callers Order Reference,4
+3.10.1.1,"A parameter, 'callers_order_reference' is accepted as input to the page. ",5
+3.10.2,Install Java,4
+3.10.2.1,The Upload Page detects whether the user has has Java installed. ,5
+3.10.2.2,If the user clicks the Install Java link then:,5
+3.10.3,Start DDL,4
+3.10.3.1,When a user visits the Upload Page and does not have a DDL Running:,5
+3.10.4,DICOM Source,4
+3.10.4.1,"The user is offered options of uploading from a CD, performing a DICOM Query on their network and, if a previous upload has been performed, showing a previous Order",5
+3.10.4.2,Selecting the DICOM Query option displays a message that it is still under construction,5
+3.10.4.3,"Selecting the CD option allows the user to browse on their computer to select a CD, DVD or a folder to upload. ",5
+3.10.4.4,When a folder is selected by the user:,5
+3.10.5,Image Selection – TIMC Order,4
+3.10.5.1,The name of the Patient detected in the DICOM is displayed,5
+3.10.5.2,The date of birth of the Patient detected in the DICOM is displayed,5
+3.10.5.3,A free text comment can be entered which is included in the CCR created when the upload proceeds. ,5
+3.10.5.4,"A statement describing which images are to be sent is displayed, which is:",5
+3.10.5.5,The user can select a subset of images to be sent at the Series level. ,5
+3.10.5.6,"The Patient ID, Scan Date and Time and Modality found in the DICOM are compared for an exact match with the Patient ID and Scan Date Time found in the DICOM Order submitted by TIMC. ",5
+3.10.6,Send Content,4
+3.10.6.1,The user is required to confirm that the patient is correct by checking a box before the upload can begin,5
+3.10.6.2,The user can start the upload process by clicking a button,5
+3.10.6.3,When the upload begins:,5
+3.10.6.4,A Voucher ID and randomly generated 5 digit PIN are assigned to the created Patient Account. ,5
+3.10.6.5,"Once the upload begins, a status table shows the Voucher, the PIN, the Patient name linked to the HealthURL for the Patient and the progress as a percentage, and the total number of studies being sent.",5
+3.10.6.6,Clicking the displayed link to the HealthURL shows the HealthURL without any login challenge for 24 hours. ,5
+3.10.6.7,A 'Print' icon is displayed which shows a popup window containing Voucher information:,5
+3.10.6.8,The user can cancel the upload while it is in progress. ,5
+3.10.6.9,"When the upload is complete, if an Order is associated with the upload then status for the order is changed to DDL_ORDER_UPLOAD_COMPLETE.",5
+3.10.6.10,"When the upload is complete, a 'Done' button is displayed. ",5
+3.10.7,Problem Reports,4
+3.10.7.1,The user can file a Problem Report in the form of details of their session including a free text comment to MedCommons describing any problem they have had.,5
+3.10.7.2,When a Problem Report is filed an email notification about the problem report is sent to a MedCommons representative.,5
+3.11,Vouchers,3
+3.11.1,Claim,4
+3.11.1.1,A Temporary Account may be Claimed by accessing the Voucher Claim page and entering the Voucher ID and PIN for the Voucher,5
+3.11.1.2,A Temporary Account can only be claimed once. ,5
+3.11.1.3,When Claiming a Temporary Account the claiming user must enter a password for the account of at least 5 characters in length,5
+3.11.1.4,The Claiming user must agree to a HIPAA transfer agreement in the process of claiming the account,5
+3.11.1.5,An account cannot be Claimed after it's Voucher has expired,5
+3.11.2,Access,4
+3.11.2.1,"After a Temporary Account is Claimed the Voucher ID and the password entered when the account was Claimed can be entered on the Voucher Claim page to log in to the Temporary Account, as long as the Voucher for the Temporary Account has not expired.",5
+3.11.2.2,Login to a Temporary Account is refused after its Voucher has expired.,5
+3.11.2.3,PHI belonging to a Temporary Account cannot be accessed from another account after the Voucher for the account has expired,5
+3.11.2.4,"PHI data belonging to a Temporary Account is physically erased, both from backup and physical storage within 1 month of the expiry of the corresponding Voucher",5
+3.11.3,Dashboard,4
+3.11.3.1,The Temporary Account Dashboard is shown after accessing or claiming a Temporary Account,5
+3.11.3.2,A Temporary Account Dashboard displays:,5
+3.11.4,Settings,4
+3.11.4.1,A Temporary Account has access to only the Password Management section of the Settings page,5
+3.12,Order Management,3
+3.12.1,Order Creation,4
+3.12.1.1,An order can be created by calling a web service. ,5
+3.12.1.2,When an Order is created it is set to DDL_ORDER_ACCEPTED state.,5
+3.12.1.3,If a parameter 'source' is provided to the web service call and the parameter has any value other than 'MedCommons' then an order will NOT be created and an error will be returned.,5
+3.12.2,Status Display,4
+3.12.2.1,Order Status Values – an Order has a status which is a value from the following set:,5
+3.12.2.2,A status page can be invoked to display the status of an order at a URL of the form:,5
+3.12.2.3,The status page for an order shows the following fields:,5
+3.12.2.4,Order History – the status page displays a table of history for the order containing a row for every time the Order Status has changed. ,5
+3.12.2.5,Order History - each Order History row contains:,5
+3.12.3,Notifications,4
+3.12.3.1,If an Order changes status to DDL_ORDER_DOWNLOAD_COMPLETE and the 'email' parameter was supplied in the original Order creation then a notification email is sent to the email addresses supplied in the email field originally submitted with the order (if any). ,5
+3.12.4,Security – TIMC,4
+3.12.4.1,"When an appliance is deployed to TIMC, order management functions are restricted by ip address. ",5
+3.12.4.2,Allowed ip addresses can be specified in the mcproperties table in MySQL on the Appliance.,5
+3.13,Viewer,3
+3.13.1,Menus ,4
+3.13.1.1,Download CCR – A menu option allows the users to download the CCR corresponding to the tab currently selected in the viewer to save as a file on their computer. ,5
+3.13.1.2,Change DICOM Overlay - causes the state of DICOM Overlays to move to the next state in the sequence of overlay states specified in 3.13.7.,5
+3.13.1.3,"Print – if a CCR is displayed in the image area then causes the Print dialog to show, enabling the user to print a copy of the CCR. ",5
+3.13.1.4,Download DICOM – causes all DICOM referenced by the active tab to begin downloading to the user's computer. ,5
+3.13.1.5,CCR Section Menu – ,5
+3.13.2,Header,4
+3.13.2.1,At the top of the Viewer window there is a notice that this is a temporary HealthURL which will expire in (initially) 4 days. ,5
+3.13.2.2,Header Fields - the header displays the following fields:,5
+3.13.3,CCR,4
+3.13.3.1,"The CCR contains a Patient Actor with the patient name, data of birth, and sex as extracted from the DICOM Image data uploaded. ",5
+3.13.3.2,The study description and the sender's email address are populated if entered upon upload. ,5
+3.13.4,CCRs and Tabs,4
+3.13.4.1,Each CCR in the Patient's HealthURL that is in a visible state is shown as a tab in the Viewer,5
+3.13.4.2,When the viewer is opened using a HealthURL link the active tab is the Current CCR tab,5
+3.13.4.3,The tab containing the Current CCR for the Patient is labeled “Current CCR”,5
+3.13.4.4,Tabs corresponding to CCRs other than the Current CCR are labeled according to the date they were created in MM/DD/YYYY format,5
+3.13.5,Thumbnails and Scrolling,4
+3.13.5.1,The standard HTML rendering of the CCR is displayed in the Main Image Area when a CCR is opened in the Viewer,5
+3.13.5.2,The Viewer displays four Thumbnails to the left of the display and a Main Image Area to the right,5
+3.13.5.3,The first thumbnail position is occupied by a Terms of Use warning,5
+3.13.5.4,"The 2nd, 3rd, and 4th thumbnails contain images or icons representing the three references corresponding to the active page of references selected in the Reference List (see 3.13.5.11).",5
+3.13.5.5,Clicking on any of the lower three thumbnails ,5
+3.13.5.6,DICOM Reference Thumbnail Images - when a Thumbnail corresponds to a DICOM Reference the thumbnail displays a scaled down version of the an image representing that DICOM Series. ,5
+3.13.5.7,DICOM Reference Labeling - For thumbnails corresponding to DICOM references:,5
+3.13.5.8,DICOM Image Scrolling – when a DICOM Series is displayed in the Main Image Area the user can scroll sequentially forward and backward between images in the series by using:,5
+3.13.5.9,Drag Scrolling - when a DICOM Series is displayed in the Main Image Area an area 20 pixels wide and 360 pixels high becomes a “drag scroll” region. ,5
+3.13.5.10,"PDF References – when a reference corresponds to a PDF, the file name of the PDF document, if known, is displayed near the top of the thumbnail. ",5
+3.13.5.11,References List - a list of numbers corresponding to References appears below the thumbnails. ,5
+3.13.6,Main Image Display Area,4
+3.13.6.1,Image Area Size - the main image display area displays the image as scaled to 750x750 pixels.,5
+3.13.6.2,Any part of the image which does not fit in the specified browser space can be viewed by scrolling the window. ,5
+3.13.6.3,Zoom Function - images may be magnified by drawing a rectangular box on the image display area. ,5
+3.13.6.4,Zoom Limitation - the user cannot zoom in such that either horizontal of vertical dimension displayed in the viewer is less than 25% of the original. ,5
+3.13.7,Overlays,4
+3.13.7.1,"When the viewer is first invoked and a DICOM Image is shown in the viewer, by default all available DICOM Overlay information is displayed in the viewer (the ALL state), rendered on top of the image",5
+3.13.7.2,DICOM Overlay States - the following sequence of DICOM Overlay states is supported:,5
+3.13.7.3,"Localization Information – when Localization Information is displayed (LOCALIZERS or ALL state) and the information about patient orientation is available in the DICOM being viewed, the patient orientation is marked on the right and bottom edge of the image using standard DICOM identifiers: A (anterior), P (posterior), R (right), L (left), H (head), F (foot).",5
+3.13.8,Window/Level Presets,4
+3.13.8.1,If the DICOM images being viewed contain Window / Level preset information then a Window / Level menu is displayed in the menus. ,5
+3.13.8.2,Selection of Window / Level Preset - selecting a Window / Level Preset entry from the menu causes the viewer to display the image using the specified Window / Level values. ,5
+3.13.8.3,"Window / Level Value lifetime - once selected, Window Level values stay in use until the user selects a different series or other content in the main viewing area",5
+3.14,DDL,3
+3.14.1,Start Poller Page,4
+3.14.1.1,A button is displayed allowing the user to start a DDL Poller. ,5
+3.14.2,Polling,4
+3.14.2.1,"When a Poller is started on a Group and DICOM image data is uploaded in association with a new DICOM Order, the DDL Poller will download the DICOM image data to the computer on which the DDL Poller is running.",5
+3.14.2.2,"Download Notification – when a DDL begins downloading DICOM Image data for a DICOM Order, a notification message is displayed on the user's computer (eg: in the Notification Area). ",5
+3.14.2.3,"Update Order Status after Download – when a DDL completes downloading DICOM Image data for a DICOM Order, the Order status is updated to:",5
+3.14.2.4,Transfer – if a DDL successfully downloads DICOM Image data then it processes the data in one of two ways:,5
+3.14.2.5,"Order Status after Transfer – after a DDL transfers DICOM as specified in 3.14.2.4, it updates the status of the Order to:",5
+3.14.3,Configuration,4
+3.14.3.1,Page - the user can access a configuration page that displays the DDL configuration settings,5
+3.14.3.2,Remote DICOM Device Configuration – editable fields are displayed for the following settings:,5
+3.14.3.3,Export Method - a drop down selection is displayed for choosing between the values FILE and CSTORE (default: FILE),5
+3.14.3.4,Export Directory – an editable text field is displayed for entering the Export Directory folder (default: folder DDL/DICOMExport inside user's home directory on their computer).,5
+3.14.3.5,Proxy – editable fields are displayed for the following settings:,5
+3.14.3.6,Update – the user may click a button to cause changes to the settings to be saved. ,5
+3.14.4,Proxy,4
+3.14.4.1,If a value is saved in the configuration for the Proxy Address then the DDL will perform all communications through the specified proxy. ,5
+3.14.5,Automatic Restart,4
+3.14.5.1,When the DDL is running a Poller (see 3.14.2) an option is available to cause it to automatically start up when the user starts their computer and logs in.,5
+3.14.5.2,"When the Automatic Restart option is enabled, the DDL automatically starts up and resumes polling when the user logs into their computer.",5
+3.14.6,Transfer,4
+3.15,Formats,3
+3.15.1,Relative Date Time,4
+3.15.2,Full Date Time,4
+3.15.3,MedCommons Account ID,4
+3.15.3.1,"Display – Unless otherwise noted, MedCommons Account IDs are displayed as 4 sets of 4 digits separated by dashes.",5
+3.15.3.2,"Entry – Unless otherwise noted, MedCommons Account IDs are entered as 16 digit numbers, optionally separated by dashes or spaces.",5

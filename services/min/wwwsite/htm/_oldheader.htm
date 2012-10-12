@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="description" content="MedCommons Website Version 1.0 Page $$$htmltitle$$$" />
+    <meta name="keywords" 
+    content="medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr"/>
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=320" />
+    <title>$$$htmltitle$$$</title>
+    <link rel="shortcut icon" href="images/favicon.gif" type="image/gif" />
+    <link media="all"
+	href="/css/medCommonsStyles.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+ var args;
+function myunescape (str)
+{
+	str = '' + str;
+	while (true)
+	{var i = str . indexOf ('+');
+		if (i < 0)break;
+		str = str . substring (0, i) + ' ' + str . substring (i + 1, str . length);
+	}
+	return unescape (str);
+}   
+    function setvalue(id,innerhtml)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).innerHTML =innerhtml;
+    }
+      /* shows a particlur div */
+    function showinline(id)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).style.display = 'inline';
+    }
+    function showblock(id)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).style.display = 'block';
+    }
+    function dontshow(id)
+    {
+    	if (document.getElementById( id ))
+    	document.getElementById( id ).style.display = 'none';
+    }
+    function getCookie(name)
+    {
+    	var dc = document.cookie;
+    	var prefix = name + "=";
+    	var begin = dc.indexOf("; " + prefix);
+    	if (begin == -1) {
+    		begin = dc.indexOf(prefix);
+    		if (begin != 0) return null;
+    	}
+    	else {
+    		begin += 2;
+    	}
+    	var end = document.cookie.indexOf(";", begin);
+    	if (end == -1) {
+    		end = dc.length;
+    	}
+    	return unescape(dc.substring(begin + prefix.length, end));
+    } 
+ function wsinit()
+{
+	args = new Array ();
+	var argstring = window . location . search;
+	if (argstring . charAt (0) != '?')		return;
+	argstring = argstring . substring (1, argstring . length);
+	var argarray = argstring . split ('&');
+	var i;
+	var singlearg;
+	for (i = 0; i < argarray . length; ++ i)
+	{	singlearg = argarray [i] . split ('=');
+		if (singlearg . length != 2)continue;
+		var key = myunescape (singlearg [0]);
+		var value = myunescape (singlearg [1]);
+		args [key] = value;
+	}
+	if (args['error'])	if (args['p']){p = args['p'];document.getElementById(p).innerHTML = '<span class="errorAlert">'+args['error']+'</span>';	}
+	
+	if (getCookie('mc'))	{setvalue('_logout',"<span>Logout</span>");	showblock('loggedon');
+    		dontshow('notloggedon');
+    		showinline('visi');	}
+	else { 		setvalue('_logout',"<span>Login</span>");showblock('notloggedon');
+    		dontshow('loggedon');
+    		dontshow('visi'); 
+	}
+}
+</script>
+</head>
+<body >
+<body  id='$$$pageid$$$' >
+<table><tr>
+<td align=left valign='top'>
+<div >
+        <a href='/newsite/index.php' title='MedCommons Homepage'><img border="0" src="/images/mc_logo.png" width="243" height="56" /></a>
+</div>
+</td><td width=100% >&nbsp;</td>
+  <td  align=right  valign='top'>
+ <div id='visi' class=right >
+                <a href='/acct/home.php'>
+                    <img alt='' border=0 id='stamp' src='/acct/stamp.php' width='260' height='60' /></a>
+ </div>
+</td>
+ </tr></table>

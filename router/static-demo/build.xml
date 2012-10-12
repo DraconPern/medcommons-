@@ -1,0 +1,470 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================
+     $Id: build.xml 232 2004-08-01 05:58:21Z ssadedin $
+     ====================================================================== -->
+
+<project name="router" default="world">
+
+  <!-- === globals ======================================================== -->
+
+  <property name="build.compiler" value="modern" />
+
+  <!-- optional user settable properties -->
+  <property file="build.properties" />
+
+  <path id="compile.path">
+    <pathelement location="${build.compile.dir}" />
+    <fileset dir="lib/medcommons/common/" />
+    <fileset dir="lib/jboss/" />
+    <fileset dir="lib/dcm4che/" />
+    <fileset dir="lib/struts/" />
+  </path>
+  
+  <!-- === world ========================================================== -->
+
+  <target name="world" depends="compile,package" />
+
+  <target name="package" depends="build-timestamp,package-services,package-ear,package-applications" />
+  <target name="package-services" depends="package-config-sar,package-poller-sar,package-dicom-sar,package-dmgr-sar" />
+  
+  <target name="package-applications" depends="package-modality-simulator-jar" />
+
+  <target name="build-timestamp">
+    <tstamp>
+      <format property="build.timestamp" pattern="yyyy-MM-dd HH:mm:ss"/>
+    </tstamp>
+    <echo message="${build.timestamp}"  file="src/net/medcommons/timestamp.txt"/>    
+  </target> 
+  
+  <target name="package-wsr" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-services.wsr">
+      <metainf dir="src/net/medcommons/router/services/">
+        <include name="web-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/services/study/**" />
+      </fileset>
+      <fileset dir="etc/static-files/">
+        <include name="studies/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-war" depends="compile">
+    <mkdir dir="build/dist/" />
+    <war destfile="build/dist/router-web.war"  webxml="src/net/medcommons/router/web/WEB-INF/web.xml">
+      <classes dir="build/classes/">
+        <include name="net/medcommons/router/services/wado/**" />
+        <include name="net/medcommons/router/services/selection/**" />
+        <include name="net/medcommons/router/services/dicom/util/**" />
+        <exclude name="net/medcommons/router/services/dicom/util/Configuration.class" />
+        <include name="net/medcommons/router/services/order/processing/**" />
+        <include name="net/medcommons/router/services/selection/action/**" />
+        <include name="net/medcommons/*.class" />
+      </classes>
+      <classes dir="src">
+        <include name="net/medcommons/*.txt" />
+      </classes>
+      <lib dir="lib/struts">
+        <include name="*.jar"/>
+      </lib>
+      <fileset dir="src/net/medcommons/router/services/wado/">
+        <include name="DcmDir.xsl" />
+         <include name="Simple*.xsl" />
+         <include name="blank.html"/>
+         <include name="seriesControl.html"/>
+         <include name="*.png"/>
+         <include name="*.js"/>
+      </fileset>
+      <fileset dir="etc/static-files/HipaaLog/"/>
+      <fileset dir="etc/static-files/DemoHelp/"/>
+
+      
+      <fileset dir="src/net/medcommons/router/services/order/web/" />
+      <fileset dir="src/net/medcommons/router/services/selection/">
+        <include name="**"/>
+      </fileset>
+      <fileset dir="src/net/medcommons/router/web/">
+        <include name="**"/>
+        <exclude name="WEB-INF/web.xml"/>
+      </fileset>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/configuration/**" />
+      </fileset>    	
+      <fileset dir="etc/configurations/" />
+    </war>
+  </target>
+  
+  <target name="explode-war" depends="package-war" if="deployExploded">
+    <!-- <move file="build/dist/router-web.war" tofile="build/dist/router-web-package.war"/> -->
+    <!-- commented out, problems getting jboss to work argh... -->
+    <delete file="stage/jboss-3.2.3/server/router/deploy/router.ear" />
+  	<antcall target="real-explode-war"/>
+    <property name="warFile" value="router-web.war/**"  />
+    <property name="warFileBase" value="router-web-exploded.war/"  />
+  </target>
+
+  <!-- explodes the war file into the build directory -->
+  <target name="real-explode-war">
+    <mkdir dir="build/dist/router-web-exploded.war/router-web.war"/>
+    <unwar src="build/dist/router-web.war" dest="build/dist/router-web-exploded.war/router-web.war"/>
+  </target>
+  
+  <target name="package-config-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-config.sar">
+      <metainf dir="src/net/medcommons/router/configuration/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/configuration/**" />
+      </fileset>
+      <fileset dir="etc/configurations/" />
+    </jar>
+  </target>
+
+  <target name="precompile-jsps" depends="real-explode-war,deploy"> 
+    <delete dir="build/jspc" />
+  	<mkdir dir="build/jspc/classes"/>  	
+  	<mkdir dir="build/jspc/src"/>  	
+  	
+  	<!-- generate the jsp java files -->
+    <jspc destdir="build/jspc/src"
+          verbose="1"
+          srcdir="build/dist/router-web-exploded.war/router-web.war"
+    	  package="org.apache.jsp"
+    	>    	
+		<classpath>
+			<fileset dir="lib/jboss">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="stage/jboss-3.2.3/server/router/deploy/jbossweb-tomcat41.sar/">
+				<include name="**/*.jar"/>
+			</fileset>
+		</classpath>
+      <include name="*.jsp" />
+      <exclude name="TestQuery.jsp"/>
+    </jspc>
+  	<!-- compile the jsps -->
+    <javac   srcdir="build/jspc/src"
+             destdir="build/jspc/classes"    	    	
+             debug="on">
+    	<classpath>
+    		<path refid="compile.path"/>
+			<fileset dir="stage/jboss-3.2.3/server/router/deploy/jbossweb-tomcat41.sar/">
+				<include name="**/*.jar"/>
+			</fileset>
+    		<path location="build/classes"/>
+        </classpath>    
+   	</javac>  	
+  	<!-- put them in the tomcat work directory -->
+  	<mkdir dir="stage/jboss-3.2.3/server/router/work/MainEngine/localhost/router"/>
+  	<copy todir="stage/jboss-3.2.3/server/router/work/MainEngine/localhost/router">
+  		<fileset dir="build/jspc/classes/org/apache/jsp">
+  			<include name="*.class"/>
+  		</fileset>
+  		<fileset dir="build/jspc/src">
+  			<include name="*.java"/>
+  		</fileset>
+  	</copy>
+  </target>
+  
+  <target name="package-rcpmdb-jar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-rcpmdb.jar">
+      <metainf dir="src/net/medcommons/router/control/processor/">
+        <include name="*.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/control/processor/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-poller-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-poller.sar">
+      <metainf dir="src/net/medcommons/router/control/poller/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/control/poller/**" />
+      </fileset>      
+    </jar>
+  </target>
+
+  <target name="package-dicom-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-dicom.sar">
+      <metainf dir="src/net/medcommons/router/services/dicom/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/services/dicom/**" />
+      </fileset>
+      <fileset dir="src/net/medcommons/router/services/dicom/">
+        <include name="CStoreSCP.properties" />
+        <include name="CStoreSCP.cfg" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-dmgr-sar" depends="compile">
+    <mkdir dir="build/dist/" />
+    <jar destfile="build/dist/router-dmgr.sar">
+      <metainf dir="src/net/medcommons/router/data/">
+        <include name="jboss-service.xml" />
+      </metainf>
+      <fileset dir="build/classes/">
+        <include name="net/medcommons/router/data/**" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-modality-simulator-jar" depends="compile">
+  <mkdir dir="build/dist/" />
+  <jar jarfile="build/dist/modality-simulator.jar">
+  	<fileset dir="build/classes">
+  		<include name="net/medcommons/simulator/Modality.*"/>
+  		<include name="net/medcommons/simulator/util/CStoreSCU*.*"/>
+  		<include name="net/medcommons/router/services/dicom/util/DICOMProperties.*"/>
+  	</fileset>
+  	<fileset dir="src/net/medcommons/simulator/util/">
+        <include name="CStoreSCU.properties" />
+        <include name="CStoreSCU.cfg" />  
+      </fileset>
+  </jar>
+  </target>
+  
+  <target name="package-ear" depends="package-wsr,package-rcpmdb-jar,package-war,explode-war">
+    <mkdir dir="build/dist/" />
+    <!-- this property is overwritten by explode-war if the deployExploded flag is set -->
+    <property name="warFile" value="router-web.war" />
+    <property name="warFileBase" value="" />
+    <echo message="War file is ${warFileBase}/${warFile}"/>
+    <jar destfile="build/dist/router.ear">
+      <metainf dir="src/net/medcommons/router/">
+        <include name="application.xml" />
+      </metainf>
+      <fileset dir="build/dist/">
+        <include name="router-services.wsr" />
+        <include name="router-rcpmdb.jar" />
+      </fileset>
+      <fileset dir="build/dist/${warFileBase}">
+        <include name="router-services.wsr" />
+        <include name="router-rcpmdb.jar" />
+        <include name="${warFile}" /> 
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="package-server" depends="update-version,jboss,deploy">
+    <mkdir dir="build/dist/" />
+    <zip destfile="build/dist/router-server.zip">
+      <fileset dir="stage/jboss-3.2.3/server/router/" />
+    </zip>
+  </target>
+
+  <target name="compile">
+  	<mkdir dir="build/classes/" />
+    <javac srcdir="src/" destdir="build/classes/" debug="true">
+      <classpath refid="compile.path" />
+    </javac>
+  </target>
+
+  <!-- === jboss ========================================================= -->
+  
+  <target name="jboss" depends="clean-jboss">
+  	<mkdir dir="stage/" />
+    <unzip src="etc/jboss/dist/jboss-3.2.3.zip" dest="stage/" />
+    <copy todir="stage/jboss-3.2.3/server/router/">
+      <fileset dir="etc/jboss/router/" />
+    </copy>
+  </target>
+  
+  <target name="deploy" depends="world,deploy-ear,deploy-ear-exploded">   
+    <copy todir="stage/jboss-3.2.3/server/router/deploy/">
+      <fileset dir="build/dist/">
+        <include name="router-config.sar" />
+        <include name="router-dmgr.sar" />
+      </fileset>
+    </copy>
+        
+    <!-- If you don't want the images or already deployed them, set noImages in your build.properties file -->    
+    <antcall target="deploy-images"/>
+                    
+    <mkdir dir="stage/jboss-3.2.3/server/router/deploy/deploy.last/" />
+    <copy todir="stage/jboss-3.2.3/server/router/deploy/deploy.last/">
+      <fileset dir="build/dist/">
+        <include name="router-poller.sar" />
+        <include name="router-dicom.sar" />
+      </fileset>
+    </copy>
+
+    <copy todir="stage/jboss-3.2.3/server/router/lib/">
+      <fileset dir="lib/medcommons/common/">
+        <include name="common.jar" />
+      </fileset>
+      <fileset dir="lib/dcm4che/">
+        <include name="dcm4che.jar" />
+      </fileset>
+    </copy>
+  </target>
+
+  <!-- default deploy of ear file without exploding - see alternate, deploy-ear-exploded -->
+  <target name="deploy-ear" depends="world" unless="deployExploded" >    
+    <mkdir dir="stage/jboss-3.2.3/server/router/deploy/" />
+     <copy todir="stage/jboss-3.2.3/server/router/deploy/">
+      <fileset dir="build/dist/">
+        <include name="router.ear" />
+      </fileset>
+    </copy>
+  </target>
+  	
+  <!-- deploy of ear in exploded form - useful for web development -->
+  <target name="deploy-ear-exploded" depends="world" if="deployExploded" >  	
+    <mkdir dir="stage/jboss-3.2.3/server/router/deploy/" />
+    <mkdir dir="stage/jboss-3.2.3/server/router/deploy/router.ear"/>
+    <unjar src="build/dist/router.ear" dest="stage/jboss-3.2.3/server/router/deploy/router.ear"/>
+  </target>
+  
+  <target name="hot-deploy-war" depends="package-war,explode-war">
+<!--    <copy todir="stage/jboss-3.2.3/server/router/deploy/router.ear/router-web.war"> -->
+    <copy todir="stage/jboss-3.2.3/server/router/deploy/router.ear/">
+      <!-- <fileset dir="build/dist/router-web-exploded.war/router-web.war">
+        <include name="**" />
+      </fileset>      -->
+      <fileset dir="build/dist/">
+        <include name="router-web.war" />
+      </fileset>   
+      
+    </copy>
+    <!-- arggh.  jboss ignores the web.xml being touched.  -->
+    <touch file="stage/jboss-3.2.3/server/router/deploy/router.ear/META-INF/application.xml" />
+  </target>
+    
+  <target name="deploy-images" unless="noImages">
+    <unzip src="etc/static-files/images/images.zip" dest="stage/jboss-3.2.3/server/router/data/" />      
+  </target>
+                    
+  <target name="clean-jboss" depends="clean">
+    <delete dir="stage/" />
+  </target>
+
+  <!-- === version ============================================================= -->
+	<target name="update-version">
+    <exec executable="svnversion" output="src/net/medcommons/version.txt">
+      <arg value="." /> 
+    </exec>    
+    <loadfile property="buildVersion" srcFile="src/net/medcommons/version.txt"/>
+    <echo message="Build version is ${buildVersion}"/>
+	</target>
+
+  <!-- === installer =========================================================== -->
+
+  <!-- full installer includes everything -->
+  <target name="installer" depends="deploy,precompile-jsps,installer-core,installer-jboss,installer-images"/>
+
+  <!-- patch includes just the files we actually update every now and then -->
+  <target name="installer-patch" depends="deploy,precompile-jsps,installer-core">
+
+   <copy todir="build/installer/jboss">
+      <fileset dir="stage/jboss-3.2.3">
+        <include name="client/jnet.jar"/>
+        <include name="client/jbossall-client.jar"/>
+      </fileset>
+   </copy>
+    
+    <!-- the dependencies create the base install, we now delete some unnecessary files
+         that would not be in a typical patch -->
+    <delete>
+      <fileset dir="build/installer/jboss/server/router/lib" includes="*.jar"/>
+      <fileset dir="build/installer/jboss/server/router/deploy">
+        <include name="jboss-net.sar/**"/>
+        <include name="jbossweb-tomcat41.sar/**"/>
+        <include name="management/**"/>
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="installer-core" depends="deploy,precompile-jsps">
+    <delete dir="build/installer"/>
+    <mkdir dir="build/installer/" />
+    <copy todir="build/installer/jboss/server/router">
+      <fileset dir="stage/jboss-3.2.3/server/router">
+        <include name="lib/**"/>
+        <include name="deploy/**"/>
+        <include name="conf/**"/>        
+        <include name="data/jbossmq/**"/>
+        <include name="work/MainEngine/localhost/router/**"/>
+        <!--
+        <exclude name="**/*.java"/> -->
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="installer-images" depends="installer-core">
+    <mkdir dir="build/installer/jboss/server/router/data/images" />
+    <copy todir="build/installer/server/router">
+      <fileset dir="stage/jboss-3.2.3/server/router">
+        <include name="data/images/**"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="installer-jboss" depends="installer-core">
+   <copy todir="build/installer/jboss">
+      <fileset dir="stage/jboss-3.2.3">
+        <include name="bin/**"/>
+        <exclude name="bin/run.log"/>
+        <exclude name="bin/*.sh"/>
+        <include name="lib/**"/>
+        <include name="client/jnet.jar"/>
+      </fileset>
+      <fileset dir=".">
+        <include name="build/dist/modality-simulator.jar"/>
+        <include name="bin/modality-simulator.bat"/>
+        <include name="bin/simulate.bat"/>
+        <include name="lib/dcm4che/dcm4che.jar"/>
+      </fileset>
+   </copy>
+  </target>
+
+
+
+
+  <!-- === doc =========================================================== -->
+
+  <target name="doc" depends="xmldoc,javadoc" />
+
+  <target name="xmldoc">
+    <mkdir dir="build/doc/" />
+    <xslt basedir="doc/src/" destdir="build/doc/" extension=".html" style="doc/lib/docbook-xsl/html/docbook.xsl">
+      <param name="chapter.autolabel" expression="1" />
+      <param name="section.autolabel" expression="1" />
+      <param name="section.label.includes.component.label" expression="1" />
+    </xslt>
+  </target>
+
+  <target name="javadoc">
+  	<mkdir dir="build/doc/api/" />
+    <javadoc destdir="build/doc/api/" author="true" version="false" use="true" windowtitle="Zabbix/J" classpathref="compile.path">
+      <packageset dir="src/" defaultexcludes="yes">
+        <include name="net/medcommons/router/**" />
+      </packageset>
+
+      <doctitle><![CDATA[<h1>MedCommons Router API Docs</h1>]]></doctitle>
+      <bottom><![CDATA[<i>Copyright &#169; 2004 MedCommons, Inc. All Rights Reserved.</i>]]></bottom>
+    </javadoc>
+  </target>
+
+
+  <!-- === clean ========================================================== -->
+
+  <target name="clean">
+    <delete dir="build/" />
+  </target>
+  
+</project>

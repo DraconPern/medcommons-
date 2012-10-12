@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>Hello MedPad - My Daily Read</string>
+
+
+		
+
+		<key>scenes</key>
+		<array>
+			<dict>
+				<key>scene</key>
+				<string>0</string>
+				<key>name</key>
+				<string>My Daily Read</string>
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>News</string>
+				<key>largetitle</key>
+				<string>My Daily Read</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+				<array>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>URL</key>
+						<string>
+							http://andrewsullivan.theatlantic.com/
+						</string>
+						<key>Label</key>
+						<string>Andrew Sullivan blog</string>
+						<key>Info</key>
+						<string>
+							Andrew Sullivan blog
+						</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>Title</key>
+						<string>The Daily Dish</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>All The News Thats Fit to Print</string>
+						<key>ImageURL</key>
+						<string>http://graphics8.nytimes.com/images/misc/nytlogo379x64.gif
+						</string>
+						<key>Title</key>
+						<string>The New York Times</string>
+						<key>Label</key>
+						<string>The New York Times</string>
+						<key>URL</key>
+						<string>http://www.nytimes.com/
+						</string>
+					</dict>
+
+				</array>
+			</dict>
+
+		</array>
+
+	</dict>
+</plist>
+
+

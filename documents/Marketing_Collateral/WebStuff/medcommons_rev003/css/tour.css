@@ -1,0 +1,61 @@
+/* CSS Document */
+
+/* PAGE LAST UPDATED: 7/26/05          */
+/*                BY: ALEX BEUSCHER    */  
+
+* {
+	font: 12px Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+#content {
+	position:relative;
+	width:inherit;
+	padding: 130px 0 0 50px;
+	height:700px;
+	}
+#content h1 {margin:25px 0 25px 0; font-size:24px; color: #527463;}
+#footer {
+	float:right;
+	margin: 0 10px 5px 0;
+	bottom:0px;
+	font-size:9px;
+	vertical-align: bottom;
+	clear:both;
+}	
+#tour {
+	position:absolute;
+	width:720px;
+	margin:0;
+	border:3px double #000;
+	height:600px;
+	padding:0;
+	}
+#tour h1 {width: 200px; margin:0px; font-size:24px; color: #527463;}
+#tour h2 {width: 200px; height:40px; margin:0 5px 20px 5px; padding: 0 5px 0 5px; overflow:hidden; font-size:10px;}
+#tour h2 a:link, h2 a:visited, #tour h2 a:active {
+	font-size:12px;
+	position:relative;
+	font-weight:bold;
+	color:#0000FF;
+	text-decoration:none;
+	}
+#tour h2 a:hover {
+	font-size:12px;
+	color:#000;
+	text-decoration:underline;
+}
+#tour h3 {width: 500px; max-width:500px; height:auto; margin:0 0 20px 0; font-size:14px; font-weight:bold; }
+.show {
+	width:500px;
+	height:600px;
+	margin:0; padding: 0;
+	float:left;
+	border-right: 1px solid #000;
+	}
+.hide {
+	display:none;
+	}
+#tour h2.current_slide {
+	font-size:12px;
+	height:auto;
+	}

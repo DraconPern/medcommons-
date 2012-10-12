@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>Runners Howto</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Runners Howto" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus." class="currentPage">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Starting Cactus tests</h1>
+
+      
+<p>
+        The Cactus tests are started using a JUnit Test Runner. There are
+        several integration clients you can use for executing these test runners:
+      </p>
+      
+<ul>
+        
+<li>
+          
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manually</a>. This means 
+          that you need to deploy your code and tests into your container and
+          start this container by yourself. Then you can execute the tests 
+          by running a standard JUnit test Runner. For example, you can start
+          the tests:
+          <ul>
+            
+<li>
+              From the java command line, calling the <code>main()</code> 
+              method of a JUnit Test Runner. For example, running the JUnit 
+              Swing Test Runner:
+              <code>junit.swingui.TestRunner.main [test case class]</code>
+            
+</li>
+            
+<li>
+              
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">From an IDE</a> or any tool 
+              providing a JUnit integration plugin.
+            </li>
+            
+<li>
+              
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">From a browser</a>, by
+              using the Cactus Servlet Test Runner, which is a special JUnit 
+              Test Runner. Please also check the 
+              <a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat quick start tutorial</a>
+              which is a step by step tutorial describing how to deploy Cactus 
+              tests in Tomcat and how to execute them through a browser.
+            </li>
+            
+<li>
+              From Ant by simply using the <code>&lt;junit&gt;</code> Ant task
+              found in the Ant distribution.
+            </li>
+          
+</ul>
+        
+</li>
+        
+<li>
+          Using the Cactus <a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant 
+          integration</a>. Cactus provides several custom Ant task to
+          automate the deployment of Cactus tests 
+          (<code>&lt;cactifywar&gt;</code>) and the 
+          start/stop/configuration of your container 
+          (<code>&lt;cactus&gt;</code>). Note that you can also use the 
+          custom <code>&lt;runservertests&gt;</code> Ant task which allows you 
+          to use your existing container configuration should you wish to.
+        </li>
+        
+<li>
+          Using the Cactus <a href="http://jakarta.apache.org/cactus/integration/maven/index.html" title="">Maven 
+          plugin</a>. As with the Ant tasks this plugin offers a fully 
+          automated solution to deploy and execute Cactus tests.
+        </li>
+        
+<li>
+          Using the <a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty 
+          integration</a>. Cactus provides a 
+          <code>JettyTestSetup</code> class that you can directly 
+          use in your Cactus TestCase's <code>suite()</code> method. This 
+          <code>TestSetup</code> class will automatically configure and start
+          Jetty for you before the tests are executed and it will stop it once
+          the tests are finished. The nice thing is that starting Jetty takes
+          only a few hundreds of milliseconds making this solution the fastest 
+          one to execute your Cactus tests. Obviously it is only interesting if
+          you wish to test using Jetty.
+        </li>
+      
+</ul>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

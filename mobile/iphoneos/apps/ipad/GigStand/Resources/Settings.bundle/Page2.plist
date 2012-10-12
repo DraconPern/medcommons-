@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Page2.plist
+   MCProvider
+
+   Created by bill donner on 4/24/10.
+   Copyright 2010 MedCommons, Inc. All rights reserved.
+-->
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>MedCommons Settings</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+
+		
+				<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Integration Settings</string>
+		</dict>
+				<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Integration Settings</string>
+			<key>File</key>
+			<string>Page2</string>
+		</dict>
+	
+		
+	<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Photo Settings</string>
+		</dict>	
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Use Camera Subsystem</string>
+			<key>Key</key>
+			<string>MCUseCamera</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>	
+
+	
+	<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Factory Settings</string>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Use as if iPhone</string>
+			<key>Key</key>
+			<string>MCiPhoneComp</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Reset</string>
+			<key>Key</key>
+			<string>MCReset</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+					<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Sandbox</string>
+		</dict>
+	
+			<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Identity Service</string>
+			<key>Key</key>
+			<string>MCIdentityservice</string>
+			<key>Titles</key>
+			<array>
+				<string>MedCommons</string>
+	
+				<string>OpenID</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>MedCommons</string>
+		
+				<string>OpenID</string>
+			</array>
+			<key>DefaultValue</key>
+			<string>MedCommons</string>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Appliance</string>
+			<key>Key</key>
+			<string>MCAppliance</string>
+			<key>Titles</key>
+			<array>
+				<string>ci.myhealthespace.com</string>
+				<string>healthurl.medcommons.net</string>
+				<string>portal.medcommons.net</string>
+				<string>atmos.medcommons.net</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>ci.myhealthespace.com</string>
+				<string>healthurl.medcommons.net</string>
+				<string>portal.medcommons.net</string>
+				<string>atmos.medcommons.net</string>
+			</array>
+			<key>DefaultValue</key>
+			<string>portal.medcommons.net</string>
+		</dict>
+				<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Username</string>
+			<key>Key</key>
+			<string>MCUsername</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string>billdonner@gmail.com</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Password</string>
+			<key>Key</key>
+			<string>MCPassword</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>IsSecure</key>
+			<true/>
+			<key>DefaultValue</key>
+			<string>tester</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Visit www.medcommons.net</string>
+		</dict>
+	</array>
+</dict>
+</plist>

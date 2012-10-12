@@ -1,0 +1,5 @@
+<server>
+  <mbean code="net.medcommons.central.controller.ControllerService" name="medcommons:service=ControllerService">
+  	<depends>jboss:service=Naming</depends>
+  </mbean>
+</server>

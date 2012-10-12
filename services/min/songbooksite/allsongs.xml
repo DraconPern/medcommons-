@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+-
+- all Songs XML Dump
+- version 0.8
+- Host: localhost
+- Generation Time: 06/01/09 13:10:28
+
+-->
+
+<!--
+- Database: 'songbook'
+-->
+<TableExport xporttime='06/01/09 13:10:28' filter='none' >
+<description>ALL Songs Master Set List</description>
+  <songs>
+<tune>After Midnight</tune>
+<tune>Angel of Harlem</tune>
+<tune>Around and Around </tune>
+<tune>Bad Moon Rising</tune>
+<tune>Bad to the Bone</tune>
+<tune>Beast of Burden</tune>
+<tune>Because the Night</tune>
+<tune>Big Yellow Taxi</tune>
+<tune>Birthday</tune>
+<tune>Black Magic Woman</tune>
+<tune>Blue Sky</tune>
+<tune>Born to Be Wild</tune>
+<tune>Bring It On Home</tune>
+<tune>Brown Eyed Girl</tune>
+<tune>Brown Sugar</tune>
+<tune>Burnin Love </tune>
+<tune>Chain Gang</tune>
+<tune>Cocaine</tune>
+<tune>Cold Shot</tune>
+<tune>Come Together</tune>
+<tune>Crossroads</tune>
+<tune>Dancin In the Streets</tune>
+<tune>Dani California</tune>
+<tune>Desire</tune>
+<tune>Evil Ways </tune>
+<tune>Fire</tune>
+<tune>Fly Like An Eagle</tune>
+<tune>For What Its Worth</tune>
+<tune>Forever Man</tune>
+<tune>Get Back</tune>
+<tune>Gimme Shelter</tune>
+<tune>Gimme Some Lovin</tune>
+<tune>Gloria</tune>
+<tune>HaveSeenRain</tune>
+<tune>Heard It Thru the Grapevine</tune>
+<tune>Heat Wave</tune>
+<tune>Helter Skelter</tune>
+<tune>Hey Joe</tune>
+<tune>Higher Ground</tune>
+<tune>Hit Me With Your Best Shot</tune>
+<tune>Honey Dont</tune>
+<tune>Honky Tonk</tune>
+<tune>Hurts So Bad</tune>
+<tune>Hush</tune>
+<tune>I Saw Her Standing There</tune>
+<tune>I Shot the Sheriff</tune>
+<tune>Imagine</tune>
+<tune>Its All Over Now</tune>
+<tune>Jumpin Jack Flash </tune>
+<tune>Key to the Highway</tune>
+<tune>La Grange</tune>
+<tune>Let It Rain</tune>
+<tune>Light My Fire</tune>
+<tune>Like A Rolling Stone</tune>
+<tune>Locomotion</tune>
+<tune>Locomotive Breath</tune>
+<tune>Long Train Running</tune>
+<tune>Look at Little Sister</tune>
+<tune>Love Me Like a Man</tune>
+<tune>Love Me Two Times</tune>
+<tune>Love Shack</tune>
+<tune>Low Budget</tune>
+<tune>Maggies Farm</tune>
+<tune>Magic Carpet Ride</tune>
+<tune>Magical Mystery Tour</tune>
+<tune>Middle of the Road</tune>
+<tune>Midnight Hour</tune>
+<tune>Midnight Rambler</tune>
+<tune>Miss You</tune>
+<tune>Mississippi Queen</tune>
+<tune>Money</tune>
+<tune>Move It On Over</tune>
+<tune>My Generation</tune>
+<tune>Mysterious Ways</tune>
+<tune>Mystery Achievement</tune>
+<tune>Oye Como Va</tune>
+<tune>Paint It Black</tune>
+<tune>Pinball Wizard</tune>
+<tune>Pride </tune>
+<tune>Pride and  Joy</tune>
+<tune>Proud Mary</tune>
+<tune>Purple Haze</tune>
+<tune>Radio Nowhere</tune>
+<tune>Rainy Day Women </tune>
+<tune>Ramblin  Man</tune>
+<tune>Reelin in the Years</tune>
+<tune>Rescue Me</tune>
+<tune>Respect</tune>
+<tune>Revolution</tune>
+<tune>Rhiannon</tune>
+<tune>Roadhouse Blues</tune>
+<tune>Rock and Roll</tune>
+<tune>Rock and Roll Music</tune>
+<tune>Satisfaction</tune>
+<tune>Secret Agent Man</tune>
+<tune>Shes Not There</tune>
+<tune>Simple Twist of Fate</tune>
+<tune>Somebody to Love</tune>
+<tune>Son of a Preacher</tune>
+<tune>Soul Kitchen</tune>
+<tune>Statesboro</tune>
+<tune>Stop Draggin My Heart</tune>
+<tune>Street Fighting Man</tune>
+<tune>Subterranean Homesick Blues</tune>
+<tune>Sultans of Swing</tune>
+<tune>Sunshine/Crossroads</tune>
+<tune>Sweet Child of Mine </tune>
+<tune>Sweet Home Alabama</tune>
+<tune>Tangled Up in Blue</tune>
+<tune>Thatll Be The Day</tune>
+<tune>The House is Rockin</tune>
+<tune>The Last Time</tune>
+<tune>The Letter</tune>
+<tune>The Twist</tune>
+<tune>Truckin</tune>
+<tune>Tush</tune>
+<tune>Twist Again</tune>
+<tune>Twist and Shout</tune>
+<tune>Under My Thumb</tune>
+<tune>Vertigo</tune>
+<tune>Volcano</tune>
+<tune>Voodoo Chile</tune>
+<tune>Waiting on a Friend</tune>
+<tune>Were an American Band</tune>
+<tune>Whammer Jammer</tune>
+<tune>When Love Comes to Town</tune>
+<tune>When Will I Be Loved</tune>
+<tune>White Rabbit</tune>
+<tune>Wild Horses</tune>
+<tune>Wild Night</tune>
+<tune>With a Little Help From My Friends</tune>
+<tune>Wonderful Tonight</tune>
+<tune>Wont Get Fooled Again</tune>
+<tune>You Cant Do That</tune>
+<tune>You Really Got Me</tune>
+<tune>Youre No Good</tune>
+</songs>
+</TableExport>

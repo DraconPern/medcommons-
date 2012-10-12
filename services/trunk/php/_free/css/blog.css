@@ -1,0 +1,151 @@
+/* Post formating */
+
+div.addCommentForm{
+	margin-bottom: 20px;	
+}
+.cLinks{
+	/*border-top: 1px solid gray;
+	
+	padding: 10px 0px;
+	*/
+}
+
+.cLinks a{
+	text-decoration: none;
+	font-style:italic;
+	color: #2C77B2;
+	font-weight: bold;
+}
+div.addCommentForm .fields{
+	margin-bottom:10px;
+}
+
+div.addCommentForm .fields span.mainLabel{
+	font-weight:bold;
+}
+
+div.addCommentForm .buttons .button input{
+	
+}
+
+div#postinfo{	
+}
+div#date_comment_info{			
+}
+div#date_comment_info span#post_comment_info{
+	background:url(../images/sys_images/comments.jpg) top left no-repeat;
+	padding-left:25px;
+}
+
+div#postrating{
+	float:right;	
+	white-space: nowrap;
+	margin-right: 90px;
+}
+
+div#containerIE div#postrating{	
+	margin-right: 0px;
+}
+
+div.authorInfo span{
+	font-weight: bold;
+}
+
+
+div.visitor_comments{
+	margin-top:15px;
+}
+div.commentInfo span.commentdate{
+	text-transform:uppercase;
+	margin-right: 10px;
+}
+
+div.commentRating form div{
+	display:inline;
+}
+
+div.commentRating{		
+	float:right;
+	display:inline;
+}
+
+div.commentInfo span.reply{
+	margin-left:10px;
+	margin-right:10px;
+}
+
+div.commentInfo span.reply a{
+	font-weight: bold;
+	text-decoration: none;
+	color:#2C77B2;
+}
+
+div.commentReply{
+	margin-left:25px;
+}
+
+div.commentReply div.innerComment{
+	margin-top:10px;
+}
+
+div.postFirst{
+	padding-bottom: 10px;
+	border-bottom: 1px solid lightgrey;	
+	margin-bottom: 10px;	
+}
+
+div.postComment{
+	padding-bottom: 10px;
+	border-bottom: 1px solid lightgrey;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+img#bookmarkShare{
+	vertical-align: bottom;	
+}
+
+span#head_rss_link{
+	display:none;
+}
+
+div.postSN{
+	border-bottom: 1px solid gray;	
+	margin-bottom: 15px;
+}
+
+div.lastPostSN{
+	border-bottom: 1px solid none;
+}
+
+p.linkButton{
+	text-align: center;	
+}
+
+div.recentAuto h2{
+	font-family:Verdana;	
+	color: #1b519b;
+	font-size: 1.45em;
+}
+div.recentAuto div.postinfo{
+	color: #666666;	
+}
+
+div.recentAuto div.blog_post_snippets{
+	margin-bottom: 15px;
+	
+}
+
+div.blogExpert{		
+	height:100%;
+	margin-top: 1em;
+	overflow:hidden;
+	background:url(../images/sys_images/BlogExcerpt_Bak.jpg) bottom right no-repeat;
+	font-family: Verdana;
+	color: #2E5C83;
+}
+
+div.blogExpert p{
+	margin: 0px 0px;
+	padding: 0px 0px;
+}

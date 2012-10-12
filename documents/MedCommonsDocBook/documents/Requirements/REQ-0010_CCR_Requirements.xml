@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+   <title>CCR specification</title>
+    <requirement id="CCR-0001">
+        <reqTitle>MedCommons should follow the letter and spirit of the ASTM CCR spec</reqTitle>
+        <reqDescription>
+            We need to use the CCR for our own purposes. The CCR must be used.
+        </reqDescription>
+    </requirement>
+    
+    <requirement id="CCR-0002">
+        <reqTitle>Print vs. Screen </reqTitle>
+        <reqDescription></reqDescription>
+    </requirement>
+    <requirement id="CCR-0003">
+        <reqTitle>XSL stylesheet must be located outside of CCR document itself</reqTitle>
+        <reqDescription>
+                Need to have presentation controlled by context.
+                Stylesheet not in spec.
+        </reqDescription>
+    </requirement>
+    <requirement id="CCR-XXX">
+        <reqTitle>Fixed</reqTitle>
+        <reqDescription></reqDescription>
+    </requirement>
+    
+    
+</article>

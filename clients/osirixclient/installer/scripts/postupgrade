@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Begin postupgrade."
+launchctl load /Library/LaunchDaemons/net.medcommons.cxpcd.plist 2>> /tmp/install.err
+echo "End postupgrade."

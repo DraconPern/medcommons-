@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<project name="Release 1.0 Plan" company="" manager="" phase="" project-start="20060724T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Working" description="A default working day"/>
+      <day-type id="1" name="Nonworking" description="A default non working day"/>
+      <day-type id="2" name="Use base" description="Use day from base calendar"/>
+    </day-types>
+    <calendar id="1" name="Default">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Release 1.0" note="" work="1440000" start="20060724T000000Z" end="20060929T170000Z" work-start="20060724T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="2" name="Misc Stuff" note="" work="230400" start="20060724T000000Z" end="20060802T170000Z" work-start="20060724T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="3" name="Fixing group schemas, problems with changes to migrate php code  etc." note="" work="57600" start="20060724T000000Z" end="20060725T170000Z" work-start="20060724T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="4" name="Discussing, clarifying requirements" note="" work="28800" start="20060725T170000Z" end="20060726T170000Z" work-start="20060726T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="3" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="5" name="Fixing problems due to unexpected central, identity server changes" note="" work="57600" start="20060726T170000Z" end="20060728T170000Z" work-start="20060727T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="4" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="6" name="PHP e_strict compliance" note="" work="86400" start="20060728T170000Z" end="20060802T170000Z" work-start="20060731T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="5" type="FS"/>
+          </predecessors>
+        </task>
+      </task>
+      <task id="7" name="Patient List (RLS)" note="" work="172800" start="20060802T170000Z" end="20060810T170000Z" work-start="20060803T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="6" type="FS"/>
+        </predecessors>
+        <task id="8" name="Remove PINs and Tracking Numbers" note="" work="86400" start="20060802T170000Z" end="20060807T170000Z" work-start="20060803T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="9" name="Fetching Registry Address from Account" note="" work="28800" start="20060807T170000Z" end="20060808T170000Z" work-start="20060808T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="8" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="10" name="User Specific Filters" note="" work="28800" start="20060808T170000Z" end="20060809T170000Z" work-start="20060809T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="9" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="11" name="User Specific filter configuration/save in RLS" note="" work="28800" start="20060809T170000Z" end="20060810T170000Z" work-start="20060810T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="10" type="FS"/>
+          </predecessors>
+        </task>
+      </task>
+      <task id="12" name="Account Merge Phase 1" note="" work="28800" start="20060810T170000Z" end="20060811T170000Z" work-start="20060811T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="11" type="FS"/>
+        </predecessors>
+        <task id="13" name="db cleanup and merge" note="" work="28800" start="20060810T170000Z" end="20060811T170000Z" work-start="20060811T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="14" name="ToDir" note="" work="115200" start="20060811T170000Z" end="20060817T170000Z" work-start="20060814T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
+        </predecessors>
+        <task id="15" name="Add Icons based on entry types" note="" work="28800" start="20060811T170000Z" end="20060814T170000Z" work-start="20060814T080000Z" percent-complete="80" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="16" name="FireFox Client Support" note="" work="28800" start="20060814T170000Z" end="20060815T170000Z" work-start="20060815T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="15" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="17" name="Display of Assertions (todir account integration)" note="" work="57600" start="20060815T170000Z" end="20060817T170000Z" work-start="20060816T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="16" type="FS"/>
+          </predecessors>
+        </task>
+      </task>
+      <task id="18" name="Merging Group Schemas" note="" work="86400" start="20060817T170000Z" end="20060822T170000Z" work-start="20060818T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="17" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="19" name="CCR Merge" note="" work="403200" start="20060822T170000Z" end="20060911T170000Z" work-start="20060823T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="18" type="FS"/>
+        </predecessors>
+        <task id="20" name="Account Merge Enhancements" note="" work="57600" start="20060822T170000Z" end="20060824T170000Z" work-start="20060823T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="21" name="DB Design, UI updates" note="" work="28800" start="20060822T170000Z" end="20060823T170000Z" work-start="20060823T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="22" name="WS Enhancements to flag required merges" note="" work="28800" start="20060823T170000Z" end="20060824T170000Z" work-start="20060824T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="21" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
+        <task id="23" name="Core Merge Algorithm" note="" work="144000" start="20060824T170000Z" end="20060831T170000Z" work-start="20060825T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="22" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="24" name="Manual Merge Interface" note="" work="201600" start="20060831T170000Z" end="20060911T170000Z" work-start="20060901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="23" type="FS"/>
+          </predecessors>
+          <task id="25" name="Body Section Merge" note="" work="144000" start="20060831T170000Z" end="20060907T170000Z" work-start="20060901T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="26" name="Patient Information Merge" note="" work="57600" start="20060907T170000Z" end="20060911T170000Z" work-start="20060908T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <predecessors>
+              <predecessor id="1" predecessor-id="25" type="FS"/>
+            </predecessors>
+          </task>
+        </task>
+      </task>
+      <task id="27" name="Viewer" note="" work="115200" start="20060911T170000Z" end="20060915T170000Z" work-start="20060912T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="26" type="FS"/>
+        </predecessors>
+        <task id="28" name="Mantis Bugs" note="" work="57600" start="20060911T170000Z" end="20060913T170000Z" work-start="20060912T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="29" name="Multiple Gateway support" note="" work="57600" start="20060913T170000Z" end="20060915T170000Z" work-start="20060914T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="28" type="FS"/>
+          </predecessors>
+        </task>
+      </task>
+      <task id="30" name="Account Page" note="" work="230400" start="20060915T170000Z" end="20060927T170000Z" work-start="20060918T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="29" type="FS"/>
+        </predecessors>
+        <task id="31" name="Visual cleanup" note="" work="57600" start="20060915T170000Z" end="20060919T170000Z" work-start="20060918T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="32" name="Pinless-Access List" note="" work="28800" start="20060919T170000Z" end="20060920T170000Z" work-start="20060920T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="31" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="33" name="Practice Administration" note="" work="57600" start="20060920T170000Z" end="20060922T170000Z" work-start="20060921T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="32" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="34" name="Audit Log" note="" work="28800" start="20060922T170000Z" end="20060925T170000Z" work-start="20060925T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="33" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="35" name="Ownership type, verification, status (1.9.2)" note="" work="28800" start="20060925T170000Z" end="20060926T170000Z" work-start="20060926T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="34" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="36" name="Account details management (Address, recovery passphrase)" note="" work="28800" start="20060926T170000Z" end="20060927T170000Z" work-start="20060927T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="35" type="FS"/>
+          </predecessors>
+        </task>
+      </task>
+      <task id="37" name="Build" note="" work="28800" start="20060927T170000Z" end="20060928T170000Z" work-start="20060928T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="36" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="38" name="Test and Monitor" note="" work="28800" start="20060928T170000Z" end="20060929T170000Z" work-start="20060929T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="37" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources/>
+  <allocations/>
+</project>

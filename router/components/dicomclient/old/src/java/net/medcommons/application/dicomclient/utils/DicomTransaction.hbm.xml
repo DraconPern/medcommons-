@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.medcommons.application.dicomclient.utils">
+
+  <class name="net.medcommons.application.dicomclient.utils.DicomTransaction" table="DICOMTRANSACTION"
+    optimistic-lock="dirty"
+    dynamic-update="true">
+
+	<id name="id" column="OBJECT_ID">
+       <generator class="native"/>
+     </id>
+	<property name="storageId"/>
+	<property name="seriesInstanceUid"/>
+	<property name="seriesDescription"/>
+	<property name="studyInstanceUid"/>
+	<property name="seriesSha1"/>
+	<property name="lastModifiedTime"/>
+	<property name="timeStarted"/>
+	<property name="status"/>
+	<property name="statusMessage"/>
+	<property name="timeCompleted"/>
+	<property name="totalBytes"/>
+	<property name="objectCount"/>
+	<property name="patientName"/>
+	<property name="studyDescription"/>
+	<property name="retryCount"/>
+	<property name="bytesTransferred"/>
+	<property name="cxpJob"/>
+	<many-to-one name="contextState"/>
+
+</class>
+</hibernate-mapping>

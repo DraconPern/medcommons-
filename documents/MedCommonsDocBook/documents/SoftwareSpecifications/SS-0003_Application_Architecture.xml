@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../Requirements/MedCommonsDocbookExtensions.dtd">
+<article>
+    <title> MedCommons Application Architecture </title>
+    <articleinfo>
+        <invpartnumber>SS-0003</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                <date>April 7, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>
+                    <para>Initial Draft</para>
+                </revdescription>
+            </revision>
+        </revhistory>
+        <legalnotice><para>Copyright 2005 MedCommons, Inc.</para></legalnotice>
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+    </sect1>
+    <sect1>
+        <title>Software platform</title>
+        <para>
+            Software platform implies that multiple applications or services can be inserted.
+        </para>
+       
+      
+    </sect1>
+     <sect1>
+            <title>Modularity</title>
+             <sect2>
+                 <title>Services</title>
+                 <para>
+                     Each service (as defined in SS-0002) must reside in a different Java jar file. Additional jar files may be used for common components.
+                 </para>
+             </sect2>
+         
+     </sect1>
+    <sect1>
+        <title>Security</title>
+        <sect2>
+            <title>Distribution</title>
+            <para>
+                Use classloader to lock things down. One extreme (and too fragile) mechanism would be to load all jar files from a central repository. If no files are loaded from the local disk it's certainly harder to attack.
+                
+                Look at secure classloader possibilities.
+                
+              
+               
+                
+            </para>
+        </sect2>
+        <sect2>
+            <title>Permissions</title>
+            <para>
+                Set permissions centrally. Do checksum of permissions file to check for tampering?
+                </para>
+        </sect2>
+        
+        <sect2>
+            <title>Integrity checking</title>
+            Each jar file should be signed; some element of the signature should be checked on startup.
+            
+        </sect2>
+        
+    </sect1>
+    <sect1>
+        <title></title>
+    </sect1>
+    
+    
+    
+</article>

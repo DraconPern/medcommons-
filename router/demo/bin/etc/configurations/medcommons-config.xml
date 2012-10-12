@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!--
+  This file contains internal software component configurations for 
+  the MedCommons Gateway.  No user servicable parts!
+-->
+<beans>
+  <bean id="mergePolicy" class="net.medcommons.router.services.ccrmerge.PatientDemoGraphicMatchMergePolicy">
+  </bean>
+  <bean id="ccrXPathCache" class="net.medcommons.phr.db.xml.XPathCache">
+    <property name="XPathMappingFile" value="data/xpaths-ccr-1.0.xml"/>
+    <!-- for development, set to low ms value so you can edit paths at run time 
+    <property name="maxCacheAge" value="500"/>-->
+  </bean>
+  <bean id="systemServicesFactory" class="net.medcommons.modules.services.client.rest.RESTProxyServicesFactory">
+    <constructor-arg><value>token:Gateway</value></constructor-arg>
+  </bean>
+
+  <bean id="documentResolver" class="net.medcommons.router.services.repository.DocumentResolver">
+    <constructor-arg><ref bean="systemServicesFactory"/></constructor-arg>
+  </bean>
+
+  <bean id="xmlPhrDbConfig" class="net.medcommons.phr.db.xml.XMLPHRDBConfig">
+    <property name="schemaPath" value="conf/CCR_20051109.xsd"/>
+  </bean>
+
+  <bean id="emailAddressCache" class="net.medcommons.router.services.account.EmailAddressCache">
+  </bean>
+
+  <bean id="systemStorageModel" class="net.medcommons.router.services.ccr.FixedContentStorageModel">
+  </bean>
+
+  <!--
+  <bean id="systemStorageModel" class="net.medcommons.router.services.ccr.NamedDocumentStorageModel">
+  </bean>
+  -->
+
+  <bean id="nodeKeyProvider" class="net.medcommons.router.configuration.tomcat.RegisterNodeTask">
+  </bean>
+
+  <bean id="profilesService" class="net.medcommons.router.services.profiles.XmlProfileService">
+  </bean>
+
+  <bean id="smallFileBackupService" class="net.medcommons.modules.backup.SmallFileBackupService">
+  </bean>
+
+  <bean id="documentIndexService" class="net.medcommons.router.services.index.DBDocumentIndexService">
+  </bean>
+
+  <bean id="dicomStatusService" factory-bean="systemServicesFactory" factory-method="getDICOMStatusService">
+  </bean>
+
+  <bean id="JdbcPhrDbConfig" class="net.medcommons.phr.db.sqlite.JDBCPHRDBConfig">
+    <property name="fileStoreRoot" value="data"/>
+    <property name="driverClass" value="org.sqlite.JDBC"/>
+    <property name="connectUrl" value="jdbc:sqlite:data/Repository/{dbname}/account.db"/>
+  </bean>
+
+  <bean id="phrDatabase" class="net.medcommons.phr.db.sqlite.SQLitePHRDB" singleton="false"/>
+  
+</beans>

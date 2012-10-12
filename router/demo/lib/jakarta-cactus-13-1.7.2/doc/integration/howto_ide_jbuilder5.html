@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>JBuilder 5 Integration</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="JBuilder 5 Integration" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Forewords and Requirements</h1>
+
+      
+<p>
+        This document describes steps to setup Cactus to unit test Server side
+        code (i.e. EJBs, Servlets, etc) deployed to Weblogic 6.1 within
+        JBuilder5 IDE.
+      </p>
+
+      
+<p>
+        The steps described below apply to current release (Cactus 1.3 as of
+        this writing) and assume that Cactus has been installed correctly
+        (which means that you can run sample successfully).
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 1: Create cactus.properties file</h1>
+
+      
+<p>
+        Create cactus.properties file: Add entry to identify the URL of the
+        redirector (see the <a href=".././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration
+        Howto</a> for details).
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 2: Configure Cactus to work with JBuilder5</h1>
+
+      
+<p>
+        Follow these steps:
+      </p>
+      
+<ol>
+        
+<li>
+          Click Menu item Tools/Configure Libraries to open Configure Libraries
+          wizard
+        </li>
+        
+<li>
+          On the lefthand side of Configure Libraries wizard, click on New
+          button to open New Library Wizard.
+        </li>
+        
+<li>
+          Enter value <code>"cactus"</code> in the Name field.  Choose
+          <code>"user home"</code> from the Location drop down menu.
+        </li>
+        
+<li>
+          Click on Add button to open the dialog to choose files.
+        </li>
+        
+<li>
+          Navigate to <code>[cactus home]/lib/</code> directory, select
+          <code>cactus.jar</code> and click OK button.
+        </li>
+        
+<li>
+          Click on Add button again to open the dialog to choose files.
+        </li>
+        
+<li>
+          Navigate to the directory where the <code>cactus.properties</code>
+          file is saved.
+        </li>
+        
+<li>
+          Click OK button.
+        </li>
+        
+<li>
+          Click "Add as Class Path" button if "No Paths Found" dialog box pops
+          up
+        </li>
+        
+<li>
+          Follow steps 2 - 6 to add <code>junit.jar</code>,
+          <code>httpclient.jar</code> and <code>aspectjrt.jar</code> which are
+          all in <code>[cactus home]/lib</code> directory
+        </li>
+        
+<li>
+          Optionally, add <code>log4j.jar</code> in
+          <code>[cactus home]/lib</code> directory to enable cactus logging
+        </li>
+        
+<li>
+          Click Menu item Project/Project Properties to open Project
+          Properties dialog box
+        </li>
+        
+<li>
+          Click Path tab and then Required Libraries tab
+        </li>
+        
+<li>
+          Click Add button and add the libraries created above to your project.
+        </li>
+      
+</ol>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 3: Configure Cactus for Weblogic6.1</h1>
+
+      
+<ol>
+        
+<li>
+          Open <code>web.xml</code> in <code>WEB-INF</code> directory of the
+          web application deployed on Weblogic
+        </li>
+        
+<li>
+          Add the mapping for the redirector under the
+          <code>&lt;web-app&gt;</code> element.
+        </li>
+        
+<li>
+          Copy <code>cactus.jar</code>, <code>junit.jar</code>,
+          <code>aspectjrt.jar</code> and
+          <code>log4j.jar</code>(optional) to <code>WEB-INF/lib</code>
+          directory of the web application
+        </li>
+        
+<li>
+          Copy your classes files to <code>WEB-INF/classes</code> directory of
+          the web application
+        </li>
+      
+</ol>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 4: Run the test</h1>
+
+      
+<ol>
+        
+<li>
+          In JBuilder, click Menu item Project/Project Properties
+        </li>
+        
+<li>
+          Click Run tab and then Application tab
+        </li>
+        
+<li>
+          Open "Select Main Class for Project" dialog box and choose the test
+          case class which has a main method in it.
+        </li>
+        
+<li>
+          Run your project
+        </li>
+      
+</ol>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

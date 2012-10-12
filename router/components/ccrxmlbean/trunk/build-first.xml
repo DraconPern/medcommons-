@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id$
+     ====================================================================== -->
+<project name="ccrxmlbean" default="world" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+	
+	<property name="build.dir" value="build"/>
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+
+	
+  <target name="world" depends="init">
+
+  </target> 
+	
+	<path id="compile.path">
+		<fileset dir="lib" >
+			<include name="*.jar"/>
+			</fileset>
+	</path>
+	
+	
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+     - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+      <echo message="Initializing build ..." />
+      <mkdir dir="lib" />
+
+      <ivy:configure file="ivy-settings.xml" />
+		<ivy:retrieve /> 
+	  <mkdir dir="${build.dir}" />
+    </target>
+
+
+
+    <target name="clean">
+     <delete dir="build"/>
+    </target>
+	
+	
+</project>

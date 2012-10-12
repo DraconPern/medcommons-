@@ -1,0 +1,32 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping package="net.medcommons.modules.backup"> 
+<class name="net.medcommons.modules.services.interfaces.DocumentDescriptor" table="document_index">
+  <id name="id" column="id"> 
+       <generator class="native"/> 
+  </id> 
+  <discriminator column="idx_type" type="string"/>
+
+  <property name="storageId" column="didx_storage_id"   />
+  <property name="documentName" column="didx_name" />
+  <property name="sha1" column="didx_guid" index="idx_didx_guid"   />
+  <property name="contentType" column="didx_content_type"   />
+  <property name="confirmationCode" column="didx_tracking_number"   />
+  <property name="creationDate" column="didx_creation_date" index="idx_didx_creation_date"  />
+  <property name="length" column="didx_size"   />
+  <property name="NDocuments" column="didx_child_count"   />
+  <set name="metadata" table="document_meta_data">
+      <key column="dmd_didx_id"/>
+      <composite-element class="net.medcommons.modules.services.interfaces.DocumentMetadata"> 
+        <property name="key" column="dmd_key"   />
+        <property name="value" column="dmd_value" />
+      </composite-element>
+  </set>
+  <subclass name="net.medcommons.modules.filestore.SimpleDocumentDescriptor" discriminator-value="SIMPLE"/>
+  <subclass name="net.medcommons.modules.services.interfaces.CompoundDocumentDescriptor" discriminator-value="COMPOUND">
+    <property name="guid" column="didx_parent_guid"   />
+  </subclass>
+ </class>
+</hibernate-mapping>

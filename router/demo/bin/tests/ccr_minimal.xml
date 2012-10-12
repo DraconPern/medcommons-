@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContinuityOfCareRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR file:///d:/ASTM%20CCR/CCRDraft20050614/DraftStandard/CCR_20050728.xsd" xmlns="urn:astm-org:CCR">
+  <CCRDocumentObjectID>AA7134637181409767000-${rand}</CCRDocumentObjectID>
+	<Language>
+		<Text>English</Text>
+	</Language>
+	<Version>V1.0</Version>
+	<DateTime>
+		<ExactDateTime>2005-10-18T08:37:59.0Z</ExactDateTime>
+	</DateTime>
+	<Patient>
+		<ActorID>AA0001</ActorID>
+	</Patient>
+	<From>
+		<ActorLink>
+			<ActorID>AA0001</ActorID>
+			<ActorRole>
+				<Text>Patient</Text>
+			</ActorRole>
+	</ActorLink>
+  </From>
+	<Purpose>
+		<DateTime>
+			<ExactDateTime>2005-08-31</ExactDateTime>
+		</DateTime>
+		<Description>
+			<Text>Request For Consult</Text>
+		</Description>
+	</Purpose>
+  <Body>
+  </Body>
+	<Actors>
+		<Actor>
+			<ActorObjectID>AA0001</ActorObjectID>
+			<Person>
+				<Name>
+					<CurrentName>
+						<Given>Mr</Given>
+						<Middle>B</Middle>
+						<Family>Minimal</Family>
+					</CurrentName>
+				</Name>
+			</Person>
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+  </Actors>
+</ContinuityOfCareRecord>

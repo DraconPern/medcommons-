@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu title="MedCommons Dashboard Generated Mon June 29, 1:44PM">
+ <patient>
+  <name>Jane Hernandez</name> 
+  <demographics>43F</demographics> 
+  <healthurl><![CDATA[<span><a 
+href='https://tenth.medcommons.net/router/currentccr?a=1013062431111407&aa=1117658438174637&g=a938178669bd5c7add9faa076d581313469038fb&t=&m=&c=&auth=8e80860c75ca33f30801da7e7ebac3a02ab1ca34&at=8e80860c75ca33f30801da7e7ebac3a02ab1ca34'
+><img  class=healthurl src='http://bam.myhealthespace.com/router/images/hurl.png' alt=H /></a></span>]]></healthurl> 
+  <timest>0 mins ago</timest> 
+  </patient>
+ <patient>
+  <name>Jane Bewell</name> 
+  <demographics>65M</demographics> 
+  <timest>1 day ago</timest> 
+  </patient>
+ <patient>
+  <name>Robert Givens</name> 
+  <demographics>76M</demographics> 
+  <timest>2 days ago</timest> 
+  </patient>
+ <patient>
+  <name>George Sears</name> 
+  <demographics>34M</demographics> 
+  <timest>06/15/08</timest> 
+  </patient>
+</menu>

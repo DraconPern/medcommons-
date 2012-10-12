@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+<link rel="icon" type="image/png" href="/localDDL/images/Active.png" />
+
+<title>Database Dump</title>
+
+<script>
+  djConfig = {
+    isDebug: false,
+    debugAtAllCosts: false
+  };
+</script>
+<!-- SECTION 1 -->
+<script type="text/javascript" src="dojo.js"></script>
+
+
+<script type="text/javascript" src="ddl.js"> /* Load basic DDL routines */ </script>
+<script type="text/javascript" src="format-utils.js"> /* Load dojo-based format routines */ </script>
+<script type="text/javascript" src="dump.js"> /* Load dojo-based format routines */ </script>
+
+
+
+
+<style type="text/css" media="all">
+@import "medCommonsStyles.css";
+</style>
+
+
+
+</head>
+
+<body id="ContentBox">
+<table id="minheader">
+	<tr>
+		<td><a href='https://www.medcommons.net/'> <img
+			alt="Powered by MedCommons" src="/localDDL/images/HP_logo.jpg" /> </a></td>
+
+
+	</tr>
+</table>
+
+
+
+
+
+<h2>PixDemographicData</h2>
+Contains demographic data known to local DDL.
+<table dojoType="filteringTable" id="demographics" alternateRows="true"
+	cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="givenName" dataType="String">givenName</th>
+			<th field="middleName" dataType="String">middleName</th>
+			<th field="familyName" dataType="String">familyName</th>
+			<th field="dob" dataType="String">dob</th>
+			<th field="gender" dataType="String">gender</th>
+			<th field="applianceRoot" dataType="applianceRoot">gender</th>
+
+		</tr>
+
+	</thead>
+
+
+	</thead>
+
+</table>
+
+
+<h2>PixIdentifierData</h2>
+Data mapping from external identifiers (DICOM Patient ID, SSN, &amp;etc)
+to PixDemographicData table entries.
+<table dojoType="filteringTable" id="patientIdentifiers"
+	alternateRows="true" cellpadding="0" cellspacing="0" border="0"
+	style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="affinityDomain" dataType="String">affinityDomain</th>
+			<th field="affinityIdentifier" dataType="String">affinityIdentifier</th>
+			<th field="creationDate" dataType="String">creationDate</th>
+			<th field="pixDemographicDataId" dataType="String">pixDemographicDataId</th>
+			<th field="contextStateId" dataType="String">contextStateId</th>
+			
+		</tr>
+	</thead>
+</table>
+
+
+<h2>CCRReferences</h2>
+Links between a cached CCR (on local disk) and the user's MedCommons
+account.
+<table dojoType="filteringTable" id="ccrReferences" alternateRows="true"
+	cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="storageId" dataType="String">storageId</th>
+			<th field="guid" dataType="String">guid</th>
+			<th field="fileLocation" dataType="String">fileLocation</th>
+			<th field="timeEntered" dataType="String">timeEntered</th>
+			<th field="pixDemographicDataId" dataType="String">pixDemographicDataId</th>
+			<th field="contextStateId" dataType="String">contextStateId</th>
+		</tr>
+
+	</thead>
+</table>
+
+<h2>DownloadQueue</h2>
+Requests for transfers down from server.
+<table dojoType="filteringTable" id="downloadQueue" alternateRows="true"
+	cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="storageId" dataType="String">storageId</th>
+			<th field="guid" dataType="String">guid</th>
+			<th field="attachments" dataType="String">attachments</th>
+			<th field="auth" dataType="String">auth</th>
+			<th field="cxpEndpoint" dataType="String">cxpEndpoint</th>
+			<th field="state" dataType="String">state</th>
+			<th field="creationTime" dataType="String">creationTime</th>
+			<th field="contextStateId" dataType="String">contextStateId</th>
+
+		</tr>
+
+	</thead>
+</table>
+<h2>CxpTransactions</h2>
+Data transactions to/from server.
+<table dojoType="filteringTable" id="cxpTransactions"
+	alternateRows="true" cellpadding="0" cellspacing="0" border="0"
+	style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="bytesTransferred" dataType="String">bytesTransferred</th>
+			<th field="status" dataType="String">status</th>
+			<th field="totalBytes" dataType="String">totalBytes</th>
+			<th field="transactionType" dataType="String">transactionType</th>
+			<th field="patientName" dataType="String">patientName</th>
+			<th field="storageId" dataType="String">storageId</th>
+			<th field="guid" dataType="String">guid</th>
+			<th field="ccrFilename" dataType="String">ccrFilename</th>
+			<th field="contextStateId" dataType="String">contextStateId</th>
+			<th field="dashboardStatusId" dataType="String">dashboardStatusId</th>
+
+		</tr>
+
+	</thead>
+</table>
+
+<h2>ContextState</h2>
+Context (account, authentication information)
+<table dojoType="filteringTable" id="contextState"
+	alternateRows="true" cellpadding="0" cellspacing="0" border="0"
+	style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="guid" dataType="String">guid</th>
+			<th field="storageId" dataType="String">storageId</th>
+			<th field="gatewayRoot" dataType="String">gatewayRoot</th>
+			<th field="transactionType" dataType="String">transactionType</th>
+			<th field="accountId" dataType="String">accountId</th>
+			<th field="groupName" dataType="String">groupName</th>
+			<th field="auth" dataType="String">auth</th>
+			
+		</tr>
+
+	</thead>
+</table>
+
+<h2>DicomMetadata</h2>
+Data transactions to/from server. Only the first few entries are displayed.
+<table dojoType="filteringTable" id="dicomMetadata" alternateRows="true"
+	cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="file" dataType="String">file</th>
+			<th field="patientName" dataType="String">patientName</th>
+			<th field="patientId" dataType="String">patientId</th>
+			<th field="sha1" dataType="String">sha1</th>
+			<th field="InstitutionName" dataType="String">InstitutionName</th>
+			<th field="documentName" dataType="String">documentName</th>
+			<th field="cxpJob" dataType="String">cxpJob</th>
+
+		</tr>
+
+	</thead>
+</table>
+<h2>DicomTransaction</h2>
+Data transactions to/from server.
+<table dojoType="filteringTable" id="dicomTransaction"
+	alternateRows="true" cellpadding="0" cellspacing="0" border="0"
+	style="margin-bottom: 24px;">
+
+	<thead>
+		<tr value=1>
+			<th field="id" dataType="String">id</th>
+			<th field="patientName" dataType="String">patientName</th>
+			<th field="cxpJob" dataType="String">cxpJob</th>
+			<th field="totalBytes" dataType="String">totalBytes</th>
+			<th field="objectCount" dataType="String">objectCount</th>
+			<th field="status" dataType="String">status</th>
+			<th field="statusMessage" dataType="String">statusMessage</th>
+			<th field="seriesDescription" dataType="String">seriesDescription</th>
+
+		</tr>
+
+	</thead>
+</table>
+</html>

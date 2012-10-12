@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>MedCommons Upload Account Files</title>
+<style type="text/css" media="screen">
+#mediumDiv { width: 600px; height:300px; }
+#results {height:200px; width:750px; overflow-y:auto;font-size:8pt;font-family:monospace;}
+h3 {margin-top:30px;margin-bottom:5px;}
+</style>
+</head>
+<body>
+<h3>MedCommons Account Files Uploader</h3>
+
+Browser to the directory containing the files that you wish to upload to your account, then click 'select' to select all files in that directory 
+and subdirectories. Then click 'Upload' to send the files to the server.
+
+If there are files that you do not wish to upload you can select the "Remove" icon for that file and it will not be uploaded.
+
+<div id="mediumDiv"></div>
+
+
+
+<div id="results"></div>
+
+<script type="text/javascript" src="http://bp.yahooapis.com/2.1.7/browserplus-min.js"></script>  
+<script type="text/javascript" src="http://bp.yahooapis.com/toolbox/uploader/1.0.1/uploader-min.js"></script>  
+
+<script class="javascript">
+var fileCallback = function(res) {
+    var msg, results = document.getElementById("results");
+
+    if (res.success) {
+        msg = "{id: " + res.id + ", action:" + res.action + ", name:" + res.name + ", size:" + res.size + ", uuid:" + res.uuid + "}";
+    } else {
+        msg = "<span style=\"color:red\">ERROR(" + res.id + "), upload failed: " + res.error + " - " + res.verboseError + "</span>";
+    }
+
+    results.innerHTML = "<div>" + msg + "</div>" + results.innerHTML;
+};
+
+var postCB = function(uuid) {
+    return { description: "Uploaded File",
+             storageId: "1234567890123456",
+             auth: "abcedfg123123123123123"
+             };
+}
+var uploader;
+
+uploader = BPTool.Uploader.create("mediumDiv", {
+    uploadUrl: "UploadAccountFiles", 
+    fileCB: fileCallback,
+    postCB: postCB,
+    fileBackground: "#666",
+    uploadBackground:"#000", 
+    titleColor:"#fff", 
+    footerBackground:"#333",
+    fileColor:"#ccc",
+    hoverBackground: "#999",
+    progressBackground:"#993",
+    selectBackground: "#d70",
+    footerColor:"silver"});
+
+uploader.render();
+var results = document.getElementById("results");
+results.style.visibility = "hidden";
+
+</script>
+</body>
+</html>
+<!-- re3-bplus-002.yos.re3.yahoo.com compressed/chunked Fri Nov 21 07:59:51 PST 2008 -->
+

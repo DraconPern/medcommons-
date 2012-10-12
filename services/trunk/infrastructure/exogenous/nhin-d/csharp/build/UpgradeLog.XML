@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="build">
+</Property><Property Name="Solution File" Value="C:\usr\wrk\medcommons\services\trunk\infrastructure\exogenous\nhin-d\csharp\build\build.sln">
+</Property><Property Name="Date" Value="Wednesday, October 06, 2010">
+</Property><Property Name="Time" Value="0:25 AM">
+</Property></Properties><Event ErrorLevel="0" Project="nhinCommon" Source="..\common\nhinCommon.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nhinCommon" Source="..\common\nhinCommon.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nhinAgent" Source="..\agent\nhinAgent.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nhinAgent" Source="..\agent\nhinAgent.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="agentTests" Source="..\unittests\agent\agentTests.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="agentTests" Source="..\unittests\agent\agentTests.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="dnsResolverTests" Source="..\unittests\dns\dnsResolverTests.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="dnsResolverTests" Source="..\unittests\dns\dnsResolverTests.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="dnsResolver" Source="..\dns\dnsResolver.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="dnsResolver" Source="..\dns\dnsResolver.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nhinCommonTests" Source="..\unittests\nhinCommonTests\nhinCommonTests.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nhinCommonTests" Source="..\unittests\nhinCommonTests\nhinCommonTests.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="build.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="build.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nhinCommon" Source="..\common\nhinCommon.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nhinAgent" Source="..\agent\nhinAgent.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="dnsResolver" Source="..\dns\dnsResolver.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="agentTests" Source="..\unittests\agent\agentTests.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="dnsResolverTests" Source="..\unittests\dns\dnsResolverTests.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nhinCommonTests" Source="..\unittests\nhinCommonTests\nhinCommonTests.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

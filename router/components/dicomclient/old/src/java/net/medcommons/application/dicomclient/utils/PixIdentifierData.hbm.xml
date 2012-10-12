@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.medcommons.application.dicomclient.utils">
+<class name="net.medcommons.application.dicomclient.utils.PixIdentifierData" table="PIXIDENTIFIER">
+	<id name="id" column="OBJECT_ID">
+       <generator class="native"/>
+     </id>
+	<!--
+	<many-to-one name="pixDemographicDataId"
+		class="net.medcommons.application.dicomclient.utils.PixDemographicData"
+		cascade="all"
+		column="id"
+		>
+		</many-to-one>
+-->
+
+	<property name="affinityDomain"/>
+	<property name="affinityIdentifier"/>
+	<property name="creationDate"/>
+	<property name="pixDemographicDataId"/>
+	<property name="contextStateId"/>
+	
+	
+</class>
+</hibernate-mapping>

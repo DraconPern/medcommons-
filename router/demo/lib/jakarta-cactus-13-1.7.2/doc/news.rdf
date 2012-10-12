@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+ * ========================================================================
+ * 
+ * Copyright 2001-2006 The Apache Software Foundation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * ========================================================================
+-->
+
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:admin="http://webns.net/mvcb/">
+
+  <channel rdf:about="http://jakarta.apache.org/cactus/">
+    <title>Jakarta Cactus News</title>
+    <link>http://jakarta.apache.org/cactus/news.html</link>
+    <description>Latest Cactus news</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator></dc:creator>
+    <dc:date>2003-05-15T00:00:00+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://jakarta.apache.org/cactus"/>
+    <image>
+      <title>Jakarta Cactus News</title>
+      <url>http://jakarta.apache.org/cactus/images/logocactus.gif</url>
+      <link>http://jakarta.apache.org/cactus</link>
+      <description>Latest Cactus news</description>
+    </image>
+
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news31"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news30"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news29"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news28"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news27"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news26"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news25"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news24"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news23"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news22"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news21"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news20"/>
+        <rdf:li rdf:resource="http://jakarta.apache.org/cactus/news.html#news19"/>
+      </rdf:Seq>
+    </items>
+
+  </channel>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news33">
+    <title>Cactus 1.7.2 released</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news33</link>
+    <description>
+<![CDATA[Cactus 1.7.2 has been released. Full details can be found
+in the <a href="http://jakarta.apache.org/cactus/1.7.2/ANNOUNCEMENT.txt">
+release announcement</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>felipeal</dc:creator>
+    <dc:date>2006-03-26T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news32">
+    <title>Cactus 1.7.1 released</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news32</link>
+    <description>
+<![CDATA[Cactus 1.7.1 has been released. Full details can be found
+in the <a href="http://jakarta.apache.org/cactus/1.7.1/ANNOUNCEMENT.txt">
+release announcement</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>felipeal</dc:creator>
+    <dc:date>2005-07-12T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news31">
+    <title>New Cactus banner</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news31</link>
+    <description>
+<![CDATA[Cactus now has a nice
+<a href="http://jakarta.apache.org/cactus/images/cactusbanner.gif">banner</a>
+<img src="http://jakarta.apache.org/cactus/images/cactusbanner.gif"/> that you can use on your web
+site if you wish to show your support to the Cactus project. Thanks Eoghan for
+the design.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2005-04-14T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news30">
+    <title>New Cactus logo</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news30</link>
+    <description>
+<![CDATA[Our previous logo was nice and we thank Lyonel Thouvenot for designing it.
+However change is good and Eoghan McIlwaine has designed a 
+<a href="http://jakarta.apache.org/cactus/images/logos/eoghan2.jpg">new logo</a> for us!
+Thanks Eoghan.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2005-04-13T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news29">
+    <title>Cactus 1.7 released</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news29</link>
+    <description>
+<![CDATA[Cactus 1.7 has been released. Full details can be found
+in the <a href="http://jakarta.apache.org/cactus/1.7/ANNOUNCEMENT.txt">
+release announcement</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2005-01-28T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news28">
+    <title>AppServerUnit testing framework</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news28</link>
+    <description>
+<![CDATA[Christian Sell has started a new framework called
+<a href="http://appserverunit.dev.java.net/">AppServerUnit</a>. Its principle seems
+very similar to Cactus in that it also uses a server interception approach in order
+to run JUnit test cases on the server side. It focuses only on EJB and has some
+client side tools to create test-instrumented EARs.]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2005-01-07T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news27">
+    <title>Testing Your Enterprise JavaBeans with Cactus</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news27</link>
+    <description>
+<![CDATA[Olexiy Prohorenko has published a nice tutorial 
+<a href="http://today.java.net/pub/a/today/2004/12/09/testejb.html">article</a> 
+explaining how to use Cactus to test EJBs.]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-12-10T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news26">
+    <title>ATG Dynamo extension for Cactus</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news26</link>
+    <description>
+<![CDATA[Piran Montford has created a Cactus extension to help 
+<a href="http://www.onwhichsubject.com/DynaCactus/">use Cactus with ATG Dynamo</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-11-23T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news25">
+    <title>Cargo project</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news25</link>
+    <description>
+<![CDATA[The <a href="http://cargo.codehaus.org">Cargo</a> project has just started. 
+The goal is to extract the code to start/stop/configure containers from the Cactus Ant 
+integration and make it a standalone project.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-08-26T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news24">
+    <title>Testing Struts applications with Cactus in OC4J</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news24</link>
+    <description>
+<![CDATA[Julien explains <a href="http://www.oracle.com/technology/pub/articles/server_side_unit_tests.html">how 
+to test struts application with Cactus</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-08-26T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news23">
+    <title>JAM: J2EE build tool - Supports Cactus</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news23</link>
+    <description>
+<![CDATA[<a href="http://www.javagen.com/jam.jsp">JAM</a> is a modular Ant 
+toolkit for developing and testing Java/J2EE applications. JAM supports EJB 
+and Servlet/JSP development using XDoclet, JUnit, Cactus, Maven, Castor and 
+MDA/UML code generation on various J2EE servers including JBoss. There is
+a tutorial showing <a href="http://www.javagen.com/autopkTutorial.jsp">how 
+to test EJBs with Cactus</a>. For more information see also the 
+<a href="http://www.theserverside.com/news/thread.tss?thread_id=26054">release 
+information</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-05-21T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news22">
+    <title>Cactus 1.6.1 released</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news22</link>
+    <description>
+<![CDATA[Cactus 1.6.1 has been released. Full details can be found
+in the <a href="http://jakarta.apache.org/cactus/1.6.1/ANNOUNCEMENT.txt">
+release announcement</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-05-08T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news21">
+    <title>Cactus 1.6 released</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news21</link>
+    <description>
+<![CDATA[Cactus 1.6 has been released. Full details can be found
+in the <a href="http://jakarta.apache.org/cactus/1.6/ANNOUNCEMENT.txt">
+release announcement</a>.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-05-08T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news20">
+    <title>Cactus v2 architecture proposal</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news20</link>
+    <description>
+<![CDATA[Vincent is proposing a <a href="http://blogs.codehaus.org/people/vmassol/archives/000520_cactus_v2_architecture_proposal.html">new 
+architecture</a> for Cactus v2. We have set up a <a href="http://wiki.apache.org/jakarta-cactus/Cactus2Proposal">wiki 
+page</a> to discuss it. There is some start at implementing it in Cactus CVS in 
+the <a href="http://cvs.apache.org/viewcvs.cgi/jakarta-cactus/scratchpad/cactus2">scratchpad</a> area.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-02-13T00:00:00+00:00</dc:date>
+  </item>
+
+  <item rdf:about="http://jakarta.apache.org/cactus/news.html#news19">
+    <title>New Cactus wiki</title>
+    <link>http://jakarta.apache.org/cactus/news.html#news19</link>
+    <description>
+<![CDATA[There is now a new <a href="http://wiki.apache.org/jakarta-cactus/">Cactus wiki</a>.
+This new wiki is based on MoinMoin. All changes go to the cactus-dev mailing list.
+]]>
+    </description>
+    <dc:subject></dc:subject>
+    <dc:creator>vmassol</dc:creator>
+    <dc:date>2004-02-13T00:00:00+00:00</dc:date>
+  </item>
+
+</rdf:RDF>

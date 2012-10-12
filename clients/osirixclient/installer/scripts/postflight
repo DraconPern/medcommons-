@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Begin postflight."
+sed -e 's|SHA1(\(.*\))= [a-f0-9]*|"\1"|' "$1/Contents/Resources/manifest" | xargs openssl sha1 > /tmp/manifest &&\
+diff -q "$1/Contents/Resources/manifest" /tmp/manifest &&\
+echo "End postflight."

@@ -1,0 +1,106 @@
+/* CSS Document */
+#diagramhead {
+	position:absolute;
+	float:left;	
+	clear:left;
+	padding:0;
+	margin:5px 0 0 50px;
+	font-size:18px;
+	font-style:italic;
+	font-weight:bold;
+	text-align:center;
+	width:400px;
+	color: #527463;
+	}
+#diagram {
+	position:absolute;
+	float:left;
+	margin: 30px 0 0 50px;
+	border: 1px solid #000;
+	width:400px;
+	height:300px;
+	overflow:visible;
+	background:#FFF url(../images/diag_bg.gif) no-repeat center;
+	}
+#diagram img {
+	position:absolute;
+	border: 1px solid #527463;
+	}
+.hide {
+	display:none;
+	}
+.show {
+	font-size:12px;
+	position:absolute;
+	clear:none;
+	display:block;
+	width:200px;
+	height:94px;
+	background-color:#CCC;
+	padding:3px;
+	border:1px solid #000;
+	margin:0;
+	}
+#msg1.show  {
+	margin:5px 0 0 80px;
+	border-left:0;
+	}
+#msg2.show  {
+	margin:5px 0 0 113px;
+	border-right:0;
+	}
+#msg3.show  {
+	border-bottom:0;
+	margin:5px 0 0 139px;
+	width:114px;
+	height:112px;
+	}
+#msg4.show  {
+	margin:193px 0 0 80px;
+	border-left:0;
+	}
+#msg5.show  {
+	margin:193px 0 0 113px;
+	border-right:0;
+	}
+#msg6.show  {
+	border-top:0;
+	margin:176px 0 0 139px;
+	width:114px;
+	height:112px;
+	}
+#msg6.show a {
+	padding:0;
+	text-align:center;
+	text-decoration:none;
+	font:12px;
+	font-weight:bold;
+	}
+#msg6.show a:link, #msg6.show a:visited, #msg6.show a:active {
+	color:#0000FF;
+	}
+#msg6.show a:hover {
+	color:#000;
+	text-decoration:underline;
+	}
+#img1 {
+	float:left;
+	margin: 5px 0 0 5px;
+	}
+#img2 {
+	float:right;
+	margin: 5px 0 0 293px;
+	}
+#diagram #img3 {
+	float:left;
+	margin: 120px 0 0 139px;
+	border:0px;
+	}
+#img4 {
+	float:left;
+	margin: 193px 0 0 5px;
+	}
+#img5 {
+	float:right;
+	margin: 193px 0 0 293px;
+	}

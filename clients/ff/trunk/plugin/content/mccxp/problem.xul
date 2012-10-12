@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mccxp.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://mccxp/content/ver.dtd" >
+
+<window
+    id="mccxp_problemWindow"
+    title="Problem Report"
+    xmlns:h="http://www.w3.org/1999/xhtml"    
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"    
+    onload="mccxp_problemInit()"
+    >
+
+    <script src="MochiKit.js"/>
+    <script src="xpath.js"/>
+    <script src="misc.js"/>
+    <script src="dom.js"/>
+    <script src="mccxp.js"/>
+    <label class="infoheading" style="padding-top: 5px;" value="Report a Problem"/>
+    <description>You can help by reporting problems you find viewing or sending CCRs.</description> 
+    <spacer height="10"/>
+    <hbox> <label class="label" value="Your email address (optional):"/><spacer width="10"/><textbox id="email" value="" flex="1"/> <spacer width="30"/></hbox>
+    <spacer height="10"/>
+    <hbox><label class="label" value="Which CCR are you having problems with?"/></hbox>
+    <spacer height="10"/>
+    <hbox align="center">
+      <spacer width="20"/>
+      <label class="label" value="Id/Tracking Number:"/><spacer width="10"/><textbox id="trackingNumber" value="" flex="6"/>
+      <spacer width="20"/>
+      <label class="label" value="PIN:"/><textbox id="pin" value="" flex="1" width="60"/>
+      <spacer width="20"/>
+    </hbox>
+    <spacer height="10"/>
+    <hbox> <label class="label" value="Please describe the problem you are having:"/></hbox>
+    <spacer height="10"/>
+    <hbox> <spacer width="20"/><textbox id="problemDescription" value="Please type your problem here ..." multiline="true" rows="8" flex="1"/><spacer width="20"/> </hbox>
+    <spacer height="10"/>
+    <label id="version" value="&mccxp.ver;" style="display: none;"/>
+    <hbox align="center"> <label class="label" value="Can we send your activity log  for this session (below) with the report?"/><checkbox id="sendLog" label="Yes" checked="false"/></hbox>
+    <spacer height="10"/>
+    <listbox id="activityList" flex="1" style="margin-left: 20px; margin-right: 20px;">
+      <listhead>
+        <listheader label="Log"/>
+      </listhead>
+      <listcols>
+         <listcol flex="1"/>
+      </listcols>
+    </listbox>
+    <spacer height="20"/>
+    <hbox flex="1" align="start" pack="end"   style="">
+        <button id="sendButton" label="Send" oncommand="mccxp_uploadProblem();"/>
+        <button id="cancelButton" label="Close" oncommand="window.close()"/>
+    </hbox> 
+</window>
+

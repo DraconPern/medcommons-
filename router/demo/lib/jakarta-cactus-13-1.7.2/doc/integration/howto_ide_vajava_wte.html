@@ -1,0 +1,441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>VAJava and WebSphere Test Environment</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="VAJava and WebSphere Test Environment" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Forewords and Requirements</h1>
+
+      
+<div class="note">
+        
+<b>This tutorial is written for Cactus 1.2 only. It will need
+        to adapted if you're using Cactus 1.3</b>
+      
+</div>
+
+      
+<p>
+        This tutorial explains how to run Cactus tests within VisualAge for
+        Java WebSphere Test Environment.
+      </p>
+      
+<p>
+        We have received reports that the following tutorial works with
+        VAJava 3.5.2 and 3.5.3. Please tell us if you find that it works with
+        other versions.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 1: Import the correct packages in VAJava</h1>
+
+      
+<p>
+        Let's assume the following conventions:
+        <b><code>{Cactus dir}</code></b> is the directory where you
+        have unzipped the Cactus distribution or sources and
+        <b><code>{VAJava dir}</code></b> is the directory where
+        VAJava is installed. Let's also define <b><code>{WTE dir}</code>
+        </b> to be the WebSphere Test Environment directories, i.e.
+        <code>{VAJava dir}/ide/project_resources/IBM WebSphere Test
+        Environment</code>.
+      </p>
+
+      
+<p>
+        You need to create 4 projects: one for JUnit, one for Cactus (
+        let's call it "Cactus"), one for HttpClient and
+        optionally one for Log4j. Note that the Log4j one is useful only if
+        wish to get some Cactus runtime logs. If you don't import the Log4j
+        classes, some Cactus classes will appear with a red cross in VAJava
+        but you can safely ignore them as they won't be executed.
+      </p>
+
+      
+<div class="note">
+        You can either import the source files or the compiled classes as you
+        wish. If you import the source file, you should import the following
+        directories: <code>{Cactus dir}/src/framework/servlet22</code> and
+        <code>{Cactus dir}/src/framework/share</code>. You also need to
+        copy the following files into
+        <code>{VAJava dir}/ide/project_resources/Cactus</code>:
+        <code>log_client.properties</code> and
+        <code>log_server.properties</code> which are located in
+        <code>{Cactus dir}/sample/conf/test</code>. If you have imported from
+        the Cactus jar file, and you have selected to import resources files
+        then they have been automatically imported for you.
+      </div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 2: Set up the cactus.properties file</h1>
+
+      
+<p>
+        Copy your <code>cactus.properties</code> file (see the
+        <a href=".././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a>
+        tutorial for details on <code>cactus.properties</code>) to
+        <code>{VAJava dir}/ide/project_resources/Cactus</code>.
+      </p>
+
+      
+<div class="note">
+        As WebSphere does not support the <code>jsp-file</code> tag in
+        <code>web.xml</code>, we cannot map the redirector JSP to a name, so
+        instead of writing
+        "<code>cactus.jspRedirectorURL =
+        http://localhost:8080/test/JspRedirector</code>" in
+        <code>cactus.properties</code>, you should simply
+        put the JSP file name, as in
+        "<code>cactus.jspRedirectorURL =
+        http://localhost:8080/test/jspRedirector.jsp</code>". This is only needed
+        if you have test cases that extend <code>JspTestCase</code>.
+      </div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 3: Modify WebSphere Test Environment</h1>
+
+      
+<div class="section">
+<h2>Edit default.servlet_engine</h2>
+
+        
+<p>
+          Edit <code>{WTE dir}/properties/default.servlet_engine</code> and
+          add the following under the <code>default_app</code> webgroup:
+        </p>
+
+
+<div class="source">
+<pre>
+    &lt;websphere-webgroup name="test"&gt;
+       &lt;description&gt;Cactus Testing Web Application&lt;/description&gt;
+       &lt;document-root&gt;$approot$/web&lt;/document-root&gt;
+       &lt;classpath&gt;$approot$/servlets&lt;/classpath&gt;
+       &lt;root-uri&gt;/test&lt;/root-uri&gt;
+       &lt;auto-reload enabled="true" polling-interval="3000"/&gt;
+       &lt;shared-context&gt;false&lt;/shared-context&gt;
+    &lt;/websphere-webgroup&gt;
+</pre>
+</div>
+
+        
+<div class="note">
+          The <code>init-parameter</code> is only needed if you wish to run
+          sample application provided in the Cactus distribution. Also, in
+          order to run this sample application you'll need to copy the
+          <code>{Cactus dir}/sample/web/test/test.jsp</code> file to
+          <code>{WTE dir}/hosts/default_host/test/web/test</code> as it is
+          used by a test case.
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Create a test directory</h2>
+
+        
+<p>
+          Create a directory called <code>test</code> under
+          <code>{WTE dir}/hosts/default_host</code>. Under <code>test</code>
+          create another 2 subdirectories: <code>servlets</code> and
+          <code>web</code>.
+        </p>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Create a test.webapp file</h2>
+
+        
+<p>
+          Create a test.webapp file in
+          <code>{WTE dir}/hosts/default_host/test/servlets</code> and put the
+          following content:
+        </p>
+
+
+<div class="source">
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;webapp&gt;
+   &lt;name&gt;test&lt;/name&gt;
+   &lt;description&gt;Cactus testing web application&lt;/description&gt;
+   &lt;error-page&gt;/ErrorReporter&lt;/error-page&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;ServletRedirector&lt;/name&gt;
+      &lt;description&gt;Cactus Testing ServletRedirector&lt;/description&gt;
+      &lt;code&gt;org.apache.cactus.server.ServletTestRedirector&lt;/code&gt;
+      &lt;servlet-path&gt;/ServletRedirector&lt;/servlet-path&gt;
+      &lt;autostart&gt;false&lt;/autostart&gt;
+      &lt;init-parameter&gt;
+        &lt;name&gt;param1&lt;/name&gt;
+        &lt;value&gt;value1 used for testing&lt;/value&gt;
+    &lt;/init-parameter&gt;
+   &lt;/servlet&gt;
+
+   &lt;!-- Note: We don't provide a mapping for the JSP Redirector because
+        WebSphere does not support the jsp-file tag of the Servlet 2.2
+        specification --&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;ErrorReporter&lt;/name&gt;
+      &lt;description&gt;Default error reporter servlet&lt;/description&gt;
+      &lt;code&gt;com.ibm.servlet.engine.webapp.DefaultErrorReporter&lt;/code&gt;
+      &lt;servlet-path&gt;/ErrorReporter&lt;/servlet-path&gt;
+      &lt;autostart&gt;true&lt;/autostart&gt;
+   &lt;/servlet&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;jsp&lt;/name&gt;
+      &lt;description&gt;JSP support servlet&lt;/description&gt;
+
+      &lt;!--
+        WARNING:
+
+        If you use the JSP 1.0 compiler, use the following
+          &lt;code&gt;com.ibm.ivj.jsp.runtime.JspDebugServlet&lt;/code&gt;
+
+        If you use the JSP 1.1 compiler (VAJava 3.5.3 only), use the following
+          &lt;code&gt;com.ibm.ivj.jsp.jasper.runtime.JspDebugServlet&lt;/code&gt;
+      --&gt;
+      &lt;code&gt;com.ibm.ivj.jsp.jasper.runtime.JspDebugServlet&lt;/code&gt;
+
+      &lt;init-parameter&gt;
+         &lt;name&gt;workingDir&lt;/name&gt;
+         &lt;value&gt;$server_root$/temp/default_app&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;jspemEnabled&lt;/name&gt;
+         &lt;value&gt;true&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;scratchdir&lt;/name&gt;
+         &lt;value&gt;$server_root$/temp/JSP1_1/default_app&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;keepgenerated&lt;/name&gt;
+         &lt;value&gt;true&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;autostart&gt;true&lt;/autostart&gt;
+      &lt;servlet-path&gt;*.jsp&lt;/servlet-path&gt;
+   &lt;/servlet&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;file&lt;/name&gt;
+      &lt;description&gt;File serving servlet&lt;/description&gt;
+      &lt;code&gt;com.ibm.servlet.engine.webapp.SimpleFileServlet&lt;/code&gt;
+      &lt;servlet-path&gt;/&lt;/servlet-path&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;&lt;/name&gt;
+         &lt;value&gt;&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;autostart&gt;true&lt;/autostart&gt;
+   &lt;/servlet&gt;
+&lt;/webapp&gt;
+</pre>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Copy the Cactus JSP Redirector file</h2>
+
+        
+<p>
+          Copy the <code>{Cactus dir}/sample/web/test/jspRedirector.jsp</code>
+          file to <code>{WTE dir}/hosts/default_host/test/web</code>.
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 4: Edit VAJava workspace classpath</h1>
+
+      
+<p>
+        Add the following to the VAJava workspace classpath (select menu
+        "Window... | Resources" under VAJava):
+      </p>
+
+
+<div class="source">
+<pre>
+{VAJava dir}\ide\project_resources\JUnit\;
+{VAJava dir}\ide\project_resources\Cactus\;
+{VAJava dir}\ide\project_resources\HttpClient\;
+{VAJava dir}\ide\project_resources\Log4j\;
+{VAJava dir}\ide\project_resources\Servlet API Classes\;
+</pre>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Step 5: Edit VAJava workspace classpath</h1>
+
+      
+<p>
+        In the WebSphere Test Environment under Servlet Engine, add Cactus,
+        JUnit, HttpClient, Log4j, and the project that contained the tests to
+        the classpath.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Final note</h1>
+
+      
+<div class="note">
+        With this configuration, you'll find <code>cactus_client.log</code>
+        under <code>{VAJava dir}/ide/project_resources/{project being
+        tested}</code> and <code>cactus_server.log</code> under
+        <code>{VAJava dir}/ide/tools/com-ibm-ivj-ui-webcontrolcenter</code>
+        when you run your tests.
+      </div>
+
+      
+<div class="note">
+        If you get a "Failed to invoke suite():
+        java.lang.NoClassDefFoundError" error message, you msy get around that
+        problem by explicitly adding the test cases to the TestSuite that's
+        returned in suite(), for your test case.
+      </div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

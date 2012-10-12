@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>mcmobile-0216</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.6, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="Images/WebClipIcon.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="Parts/Transitions.css">
+    <script type="text/javascript" src="Parts/utilities.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/setup.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Transitions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/StackLayout.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Text.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/PushButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/ButtonHandler.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/List.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_perf.js" charset="utf-8"></script>
+   
+    <script type="text/javascript" src="json2.js"></script>
+    <script type="text/javascript" src="mc_common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_dbsubs.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_absubs.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mc_views.js" charset="utf-8"></script>
+    <script type="text/javascript" src="phonegap.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script> 
+    <script type="text/javascript" src="jquery-1.3.1.min.js"></script>   
+    <script type="text/javascript" src="jquery.sparkline.min.js"></script>
+    <style>
+    #mycontainer {
+    
+-webkit-user-select: none;  /* prevent copy paste */
+width:100%;
+height:100%;
+}
+    #proberpanel {background-color:white;
+	font-size: .9em;
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, verdana;
+	text-decoration: none;
+	color: black;
+}
+#testcase {font-size:1.0em; font-weight:700}
+#data, #ipaddr{
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: rgb(204, 204, 204);
+}
+#pagecontent {background-color:white}
+
+.noshow, .invisible {
+    display: none;
+}
+
+#proberpanel h3 {
+    margin-top: 10px;
+    padding: 0px;
+}
+
+img #smallimg {
+    height: 40px;
+}
+
+.rowtag, .rowtagiphone {
+    font-size: 0.8em;
+    color: rgb(128, 128, 128);
+}
+.rowtag, .rowtagiphone {
+    font-size: 0.8em;
+    color: rgb(128, 128, 128);
+}
+
+.sparknum {
+    font-size: 0.6em;
+    color: rgb(128, 128, 128);
+    width: 5em;
+    margin-top: 0.3em;
+}
+</style>
+    <script type="text/javascript">
+
+touchMove = function(event) {
+
+// Prevent scrolling on this element
+
+event.preventDefault();
+
+}
+
+</script>
+    <!-- '<?php 'http://'.$_SERVER['SERVER_NAME'] ?>' -->
+</head>
+<body onload="customSetup('');">
+    <div id="mycontainer" ontouchmove="touchMove(event);">
+        <div apple-part="com.apple.Dashcode.part.StackLayout" id="views">
+            <div id="front" apple-part-locked="true">
+                <div apple-part="com.apple.Dashcode.part.roundedrectanglewebshape" apple-style="image-theme: 0; image-shape: 3; image-button-type: 3; image-opacity: 1.00; image-top-color: 0.0753586441,0.100114487,0.141304374,1; image-bottom-color: 0.0390480123,0.0558061413,0.0815217495,1; image-radius: 11,11,11,11; image-border: 0; image-border-color: 0.388143748,0.455268174,0.538719773,1; image-border-width: 4; shine-on: 1; shine-strength: 0.18; shine-alpha-level: 0.29; shine-height: 0.91; glass-arc-height: 0.00; shadow-include-shadow: 0;" id="background">
+                    <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="email">
+                    <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="password" apple-always-show-guides="true" maxlength="15">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text1"></div>
+                    <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.206521749,0.206521749,0.206521749,1; image-bottom-color: 0.0705904812,0.142663509,0.157608688,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="loginButton"></div>
+                    <img src="Images/10th60by60.png" id="logo">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text2"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="title"></div>
+            </div>
+            <div id="loginerror" apple-part-locked="true">
+                <div apple-part="com.apple.Dashcode.part.rectanglewebshape" apple-style="image-theme: 0; image-shape: 3; image-button-type: 3; image-opacity: 1.00; image-top-color: 0.393377572,0.519356072,0.676035702,1; image-bottom-color: 1,1,1,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;" id="rectangleShape2" apple-group="rectangleShape2">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="patientListTitleNone1"></div>
+                    <div apple-part="com.apple.Dashcode.part.gobackbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 11; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button2"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text10" apple-style="part-width-dependent: true;part-height-dependent: true;"></div>
+                <div apple-part="com.apple.Dashcode.part.box" id="errbox"></div>
+            </div><div id="settings" apple-part-locked="true">
+                <div apple-part="com.apple.Dashcode.part.gobackbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 11; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button3"></div>
+                <div apple-part="com.apple.Dashcode.part.goforwardbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 12; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="debugButton"></div>
+                <div apple-part="com.apple.Dashcode.part.box" id="settingsGroup">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="familyTitle"></div>
+                    <select apple-part="com.apple.Dashcode.part.inputpopupbutton" apple-style-relative="height: 20px;" id="fontFamily" apple-group="popup" onchange="fontFamilyChanged(event)">
+                        <option class="apple-hidden">American Typewriter</option>
+                        <option class="apple-hidden">American Typewriter Condensed</option>
+                        <option class="apple-hidden">Arial</option>
+                        <option class="apple-hidden">Arial Rounded MT Bold</option>
+                        <option class="apple-hidden">Courier New</option>
+                        <option class="apple-hidden">Georgia</option>
+                        <option class="apple-hidden">Helvetica</option>
+                        <option class="apple-hidden" selected="selected">Marker Felt</option>
+                        <option class="apple-hidden">Times New Roman</option>
+                        <option class="apple-hidden">Trebuchet MS</option>
+                        <option class="apple-hidden">Verdana</option>
+                        <option class="apple-hidden">Zapfino</option>
+                    </select>
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="sizeTitle"></div>
+                    <select apple-part="com.apple.Dashcode.part.inputpopupbutton" apple-style-relative="height: 20px;" id="fontSize" apple-group="popup" onchange="fontSizeChanged(event)">
+                        <option class="apple-hidden" value="12px">12px</option>
+                        <option class="apple-hidden" value="14px">14px</option>
+                        <option class="apple-hidden" value="16px">16px</option>
+                        <option class="apple-hidden" selected="selected" value="18px">18px</option>
+                        <option class="apple-hidden" value="24px">24px</option>
+                        <option class="apple-hidden" value="36px">36px</option>
+                        <option class="apple-hidden" value="48px">48px</option>
+                    </select>
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="fontColor"></div>
+                    <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.157608688,0.157608688,0.157608688,1; image-bottom-color: 0,0,0,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 0; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="blackColorChip"></div>
+                    <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,0.192591071,0.181739271,1; image-bottom-color: 0.739130437,0,0,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 0; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="redColorChip"></div>
+                    <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.280617714,0.262675703,1,1; image-bottom-color: 0,0,1,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 0; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="blueColorChip"></div>
+                    <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.347878575,1,0.328871787,1; image-bottom-color: 0,1,0,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 0; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="greenColorChip"></div>
+                    <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.767837882,0.405171156,1,1; image-bottom-color: 0.664297223,0.0453180075,1,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 0; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="purpleColorChip"></div>
+                    <div apple-part="com.apple.Dashcode.part.rectanglewebshape" apple-style="image-theme: 0; image-shape: 3; image-button-type: 3; image-opacity: 1.00; image-top-color: 0.5,0.5,0.5,1; image-bottom-color: 0.820652187,0.820652187,0.820652187,1; image-radius: 0,0,0,0; image-border: 0; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;" id="checkMark"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.box" id="showstamp"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="logoutButton"></div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.236582503,0.722826123,0.376225054,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button13"></div>
+            </div>
+            <div id="info" apple-part-locked="true">
+                <div apple-part="com.apple.Dashcode.part.gobackbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 11; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="gotoSettingsButton"></div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text3"></div>
+                <div apple-part="com.apple.Dashcode.part.box" id="topbox"></div>
+                <div apple-part="com.apple.Dashcode.part.box" id="message">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text8" apple-style="part-height-dependent: true;"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.box" id="bottombox"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.831521749,0.0911909267,0.0715825111,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button1"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.831521749,0.0911909267,0.0715825111,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button4"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button5"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button8"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button7"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button9"></div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button10"></div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text6" apple-style="part-height-dependent: true;"></div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text7" apple-style="part-height-dependent: true;"></div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text9" apple-style="part-height-dependent: true;"></div>
+            </div><div id="onepatient" apple-part-locked="true" apple-text-overflow="ellipsis">
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="onePatientTitle"></div>
+                <div apple-part="com.apple.Dashcode.part.gobackbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 11; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button12"></div>
+                <ul apple-part="com.apple.Dashcode.part.roundedRectangleList" id="activityList">
+                    <li id="listRowTemplate1" apple-template="true" class="listRowTemplate1_template" style="border-top-width: 0px; ">
+                        <div id="activityListItemLabel" apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children activityListItemLabel_template" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;"></div>
+                        <div id="arrow2" apple-part="com.apple.Dashcode.part.box" class="arrow2_template">
+                        </div>
+                    </li>
+                </ul>
+                <div apple-part="com.apple.Dashcode.part.box" id="patientMcidB">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="patientMcid" apple-style="part-width-dependent: true;part-height-dependent: true;"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.box" id="patientDemoglB">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="patientDemog" apple-style="part-width-dependent: true;part-height-dependent: true;"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.box" id="patientUpdateB">
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="patientTime" apple-style="part-width-dependent: true;part-height-dependent: true;"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.pushbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button15"></div>
+            </div><div id="patients" apple-part-locked="true">
+                <div apple-part="com.apple.Dashcode.part.rectanglewebshape" apple-style="image-theme: 0; image-shape: 3; image-button-type: 3; image-opacity: 1.00; image-top-color: 0.393377572,0.519356072,0.676035702,1; image-bottom-color: 1,1,1,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;" id="rectangleShape">
+                    <div apple-part="com.apple.Dashcode.part.goforwardbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 12; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button11"></div>
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="patientListTitle"></div>
+                </div>
+                <ul apple-part="com.apple.Dashcode.part.edgeToEdgeList" id="patientList">
+                    <li id="patientListItemArray" apple-template="true" class="patientListItemArray_template">
+                        <div id="patientListItemLabel" apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children patientListItemLabel_template" apple-text-overflow="ellipsis"></div>
+                        <div id="arrow" apple-part="com.apple.Dashcode.part.box" class="arrow_template">
+                        </div>
+                    </li>
+                </ul>
+            </div><div id="nopatients" apple-part-locked="true">
+                <div apple-part="com.apple.Dashcode.part.rectanglewebshape" apple-style="image-theme: 0; image-shape: 3; image-button-type: 3; image-opacity: 1.00; image-top-color: 0.393377572,0.519356072,0.676035702,1; image-bottom-color: 1,1,1,1; image-radius: 0,0,0,0; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;" id="rectangleShape1" apple-group="rectangleShape1">
+                    <div apple-part="com.apple.Dashcode.part.goforwardbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 12; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="button14"></div>
+                    <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="patientListTitleNone"></div>
+                </div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text5"></div>
+            </div><div id="perf" apple-part-locked="true">
+                <div apple-part="com.apple.Dashcode.part.gobackbutton" class="apple-no-children" apple-text-overflow="ellipsis" apple-style="image-theme: 0; image-shape: 11; image-button-type: 0; image-opacity: 1.00; image-top-color: 0.290196091,0.423529416,0.607843161,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,0.2; image-border-width: 1; shine-on: 1; shine-strength: 0.17; shine-alpha-level: 0.04; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 1; embossed-depth: 1; embossed-shadow: 0.68; embossed-highlight: 0.3; shadow-include-shadow: 0;" id="gotoSettingsButton1"></div>
+                <div apple-part="com.apple.Dashcode.part.webtext" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text4"></div>
+                <div apple-part="com.apple.Dashcode.part.box" id="proberpanel">
+                    <center>
+                        <div id="pagecontent">
+                            <img src="../custom/logo60by60.png">
+                            <table>
+                                <tbody>
+                                    <tr class="noshow">
+                                        <td><div class="rowtag">Remote Service</div></td>
+                                        <td><span id="service"></span><span id="downloadSize"></span><span id="iteration"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Remote Server</div></td>
+                                        <td id="serverName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Remote Time</div></td>
+                                        <td id="serverTime"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">IP Addrs</div></td>
+                                        <td class="plaincount" id="ipaddr"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Round Trip Time</div></td>
+                                        <td><div id="downloadt" class="sparknum"></div><span class="downloadTime">Loading..</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Elapsed at Server</div></td>
+                                        <td><div id="servicet" class="sparknum"></div><span class="serviceTime">Loading..</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Elapsed in Browser</div></td>
+                                        <td><div id="buildt" class="sparknum"></div><span class="buildTime">Loading..</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="rowtag">Load Average</div></td>
+                                        <td><div id="loadavg" class="sparknum"></div><span class="loadAvg">Loading..</span></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtag">Free Space</div></td>
+                                        <td id="diskfreespace"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td class="rowtag">Total Space</td>
+                                        <td id="disktotalspace"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Users</div></td>
+                                        <td class="plaincount" id="user_count"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Groups</div></td>
+                                        <td class="plaincount" id="group_count"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Documents</div></td>
+                                        <td class="plaincount" id="document_count"></td>
+                                    </tr>
+                                    <tr class="noshow">
+                                        <td><div class="rowtagiphone">Transactions</div></td>
+                                        <td class="plaincount" id="transaction_count"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </center>
+                </div>
+            </div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Ant Integration</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Ant Integration" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus." class="currentPage">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Ant Integration</h1>
+
+      
+<p>
+        Cactus provides strong integration with the popular build tool
+        <a href="http://ant.apache.org/" title="">Ant</a>. This integration consists of a handful
+        of tasks that support the running of tests from an Ant build file.
+      </p>
+
+      
+<div class="section">
+<h2>Background</h2>
+
+        
+<p>
+          A strong principle of <i>eXtreme Programming</i> (XP) is the
+          continuous integration aspect (see the
+          <a href="http://www.martinfowler.com/articles/continuousIntegration.html" title="">
+          Continuous Integration</a> article by Martin Fowler). The
+          traditional approach to the development of complex software has been
+          to separate the development process into phases of coding, testing and
+          integration. The continuous integration principle is to basically code,
+          test and integrate at the same time, so that at almost any point in
+          time, you have a working product.
+        </p>
+        
+<p>
+          In order to achieve this, you need to be able to automatically build
+          your entire application, including running the unit and acceptance
+          tests. Thus, tools such as Ant or <a href="http://maven.apache.org" title="">Maven</a>
+          are the foundation for continuous integration. You can build on that
+          foundation by using a dedicated continuous integration tool like
+          <a href="http://cruisecontrol.sourceforge.net/" title="">CruiseControl</a>,
+          <a href="http://jakarta.apache.org/gump/" title="">Gump</a> or
+          <a href="http://www.urbancode.com/projects/anthill/" title="">AntHill</a>.
+        </p>
+        
+<p>
+          Ant is written in Java and provides a wide variety of tasks that
+          support the development of Java applications (though it is in no way
+          restricted to development). In addition, many third-party tasks are
+          available, and it is quite easy to extend Ant with custom tasks.
+        </p>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Ant Resources</h2>
+
+        
+<p>
+          This documentation assumes good knowledge of the basic concepts of
+          Ant. Here are several resources that can help you get up to speed
+          if you haven't been using Ant yet:
+          <ul>
+            
+<li>
+              The <a href="http://ant.apache.org/manual/index.html" title="">Ant Manual</a> is the 
+              definitive source about Ant.
+            </li>
+            
+<li>
+              
+<a href="http://ant.apache.org/ant_in_anger.html" title="">
+              Ant in Anger</a> discusses best practices and common pitfalls
+              with Ant usage.
+            </li>
+            
+<li>
+              The book <a href="http://www.manning.com/hatcher/index.html" title="">
+              Java Development With Ant</a> by Erik Hatcher and Steve
+              Loughran is very much recommended if you plan to use Ant
+              intensively.
+            </li>
+            
+<li>
+              The document
+              <a href="http://wiki.apache.org/ant/TheElementsOfAntStyle" title="">
+              The Elements of Ant Style</a> in the Apache Wiki lists some
+              general rules for using Ant effectively in any kind of project.
+            </li>
+          
+</ul>
+          
+<p>
+            A full list of resources is maintained by the Ant team at
+            <a href="http://ant.apache.org/resources.html" title="">
+            http://ant.apache.org/resources.html</a>
+          
+</p>
+        
+</p>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Installing the Cactus Ant Tasks</h2>
+
+        
+<p>
+          The Ant tasks provided by Cactus are distributed together with the
+          main distribution of Cactus, which you can get from the
+          <a href="../.././downloads.html" title="Downloads of Cactus releases and nightly builds.">download</a> area. After downloading
+          and expanding the archive, you'll find several JAR files in the
+          <code>lib</code> directory. See the
+          <a href="../.././integration/manual/howto_classpath.html" title="Information on how to set up the classpath for running Cactus tests.">Classpath Guide</a> for
+          information about which of the JARs you need for what.
+        </p>
+        
+<p>
+          It is recommended that you copy these JARs into the project for which
+          you are writing Cactus tests. A common pattern is to have a
+          <code>lib</code> directory in the project directory, and put all the
+          JARs there. So your project might look something like this:
+          <div class="source">
+<pre>
+  [your project]
+    |- doc
+    |  ...
+    |- lib
+    |   |- cactus.jar
+    |   |- cactus-ant.jar
+    |   |- commons-httpclient.jar
+    |   |- commons-logging.jar
+    |   |- junit.jar
+    |   |- aspectjrt.jar
+    |- src
+    |   |- java
+    |   |  ...
+    |   |- test
+    |   |  ...
+    |- build.xml
+</pre>
+</div>
+        
+</p>
+        
+<p>
+          Of course, you can put them anywhere you want as long as you
+          can correctly locate them from within your build file. Another
+          option is to put all the libraries in the <code>lib</code> 
+          directory of your Ant installation, so that they get added to
+          the classpath automatically. This option is not recommended, however,
+          as it quickly leads to pollution of the classpath used by Ant.
+        </p>
+        
+<p>
+          There's one step left to enable your project to run Cactus tests
+          from within Ant: you'll need to introduce the Cactus tasks to Ant.
+          This is done with a <code>&lt;taskdef&gt;</code>:
+<div class="source">
+<pre>
+&lt;!-- Define the Cactus tasks --&gt;
+&lt;taskdef resource="cactus.tasks"&gt;
+  &lt;classpath&gt;
+    &lt;pathelement location="lib/cactus.jar"/&gt;
+    &lt;pathelement location="lib/cactus-ant.jar"/&gt;
+    &lt;pathelement location="lib/commons-httpclient.jar"/&gt;
+    &lt;pathelement location="lib/commons-logging.jar"/&gt;
+    &lt;pathelement location="lib/aspectjrt.jar"/&gt;
+  &lt;/classpath&gt;
+&lt;/taskdef&gt;
+</pre>
+</div>
+        
+</p>
+        
+<p>
+          As you can see, you'll need to add the JARs required by Cactus to the
+          <code>&lt;classpath&gt;</code> of the task definition. Note that we 
+          don't include the JUnit library, because it usually needs to be
+          installed in the <code>lib</code> directory of your Ant installation
+          (see the Ant FAQ for details).
+        </p>
+        
+<div class="note">
+          If you get an error at this point, make absolutely sure that you've
+          correctly set up the classpath for the task definition. Run Ant with
+          the <code>-verbose</code> or the <code>-debug</code> options to find
+          out which libraries or classes could not be found, or what else may
+          be going wrong.
+        </div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Using the Cactus Ant Tasks</h2>
+
+        
+<p>
+          After you have defined the Cactus tasks you'll need to actually use
+          them in the build file to run the Cactus tests. Cactus provides a 
+          couple of tasks that support you with running the tests from an Ant
+          build. Each of the tasks is independant or complementary to the
+          others. You'll need to decide on what tasks to used depending on your
+          requirements.
+          <div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          	
+            
+<tr>
+              
+<th>CactifyWar</th>
+              <td>
+                This task can enhance a provided web application archive (WAR),
+                and add the elements required to run Cactus tests against it.
+                This includes the JARs required by Cactus on the server-side,
+                as well as the definitions of the test redirectors in the 
+                deployment descriptor.
+              </td>
+            
+</tr>
+            
+<tr>
+              
+<th>CactifyEar</th>
+              <td>
+                This task can enhance a provided Enterprise application archive (EAR),
+                and add the elements required to run Cactus tests against it. It can 
+                also add EJB references to allow testing of local EJB:s. 
+              </td>
+            
+</tr>
+            
+<tr>
+              
+<th>Cactus</th>
+              <td>
+                This task extends the standard <code>&lt;junit&gt;</code> task
+                with the capability of running in-container tests.
+              </td>
+            
+</tr>
+            
+<tr>
+              
+<th>RunServerTests</th>
+              <td>
+                This task is an alternative to the <code>&lt;cactus&gt;</code>
+                task that is more generic but harder to use. In contrast to 
+                the <code>&lt;cactus&gt;</code> task, it is not an extension of
+                the standard <code>&lt;junit&gt;</code> task.
+              </td>
+            
+</tr>
+            
+<tr>
+              
+<th>WebXmlMerge</th>
+              <td>
+                This task can merge the definitions from two web deployment
+                descriptors into a new descriptor, and can thus be used to
+                add the definition of the Cactus redirectors to an existing
+                descriptor. The same functionality is provided by the
+                <code>&lt;cactifywar&gt;</code> task, so if you want to cactify
+                an entire WAR, you should use that task instead.
+              </td>
+            
+</tr>
+          
+</table>
+</div>
+        
+</p>
+        
+<p>
+          Typically, the sequence for executing Cactus tests from an Ant build
+          will be the following:
+          <ol>
+          	
+<li>
+          	  Compile the test classes (using the standard tasks like
+          	  <code>&lt;javac&gt;</code>)
+          	</li>
+          	
+<li>
+          	  Cactify the web-application (using the
+          	  <code>&lt;cactifywar&gt;</code> task, or the
+          	  <code>&lt;webxmlmerge&gt;</code> task in combination with builtin
+          	  Ant tasks like <code>&lt;war&gt;</code> and
+          	  <code>&lt;unwar&gt;</code>)
+          	</li>
+          	
+<li>
+          	  Start the target container, deploy the application, run the tests
+          	  and stop the container (using either <code>&lt;cactus&gt;</code> or
+          	  <code>&lt;runservertests&gt;</code>)
+          	</li>
+          
+</ol>
+        
+</p>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+#topheader {margin-top: 20px;}
+#footer {border-top:1px solid #ddd; color:#d7d7d9; font-size:10px;} 
+#footer a { color: #d7d7d9}
+.listinlinetiny{ margin:0; padding:0; }
+#navcontainer {display:none;}
+#topheader {margin-top: 20px;}
+#footer {border-top:1px solid #ddd; color:#d7d7d9; font-size:10px;} 
+#footer a { color: #d7d7d9}
+.listinlinetiny{ margin:0; padding:0; }
+#navcontainer {display:none;}
+body{
+ padding-left:100px; padding-right:100px; margin:0; 
+ background-color: #fff;
+ font: 1em arial, sans-serif;
+ color: #000;
+}
+
+#content #upload h2,  #topmid h2 { font: 2.3em arial, sans-serif;color : #b3b3b3; }
+.appfeatures { border: 1px solid; padding:30px; margin-top:20px;margin-bottom:20px;  }

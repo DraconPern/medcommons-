@@ -1,0 +1,48 @@
+h1,h2,h3,h4 {
+  font-family: arial;
+}
+
+h1 { font-size: 24px;  vertical-align: middle;}
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+
+h1 * {
+  vertical-align: middle;
+}
+h1 img {
+  margin-right: 3em;
+}
+
+body {
+  color: #222;
+}
+
+table.api {
+  border-collapse: collapse;
+  margin-left: 1.0in;
+  margin-right: 1.0in;
+}
+
+table.api thead {
+  background-color: #e5e5c0;
+}
+
+table.api thead tr.spacer {
+  background-color: white;
+}
+
+table.api td, table.api th {
+  border: solid 1px #999;
+  padding: 4px;
+}
+
+table.api tr.example td {
+  font-family: courier;
+  font-size: 10px;
+}
+
+table.api td.param {
+  white-space: nowrap;
+  text-align: center;
+}
+

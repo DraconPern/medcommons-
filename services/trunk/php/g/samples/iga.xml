@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>MedCommons IGA</string>
+
+		<key>leftLineStyle</key>
+		<string>narrow</string>
+
+		<key>scenes</key>
+		<array>
+
+			<dict>
+
+				<key>scene</key>
+				<string>0</string>
+
+
+				<key>name</key>
+				<string>Realms</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Realms</string>
+
+				<key>largetitle</key>
+				<string>Realms</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+
+
+					<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Production Networks</string>
+						<key>height</key>
+						<string>320</string>
+						<key>url</key>
+						<string>
+							https://globals.medcommons.net/iga/status
+						</string>
+						<key>label</key>
+						<string>Production Networks</string>
+						<key>blabel</key>
+						<string>
+							https://globals.medcommons.net/iga/status
+						</string>
+						<key>imageurl</key>
+						<string>
+							https://globals.medcommons.net/iga/status
+						</string>
+					</dict>
+
+					<dict>
+						<key>blocktype</key>
+						<string>webpane</string>
+						<key>toplabel</key>
+						<string>Test Networks</string>
+						<key>height</key>
+						<string>320</string>
+
+						<key>label</key>
+						<string>Test Networks</string>
+						<key>url</key>
+						<string>
+							https://globals.myhealthespace.com/iga/status
+						</string>
+						<key>blabel</key>
+						<string>
+							https://globals.myhealthespace.com/iga/status
+						</string>
+						<key>imageurl</key>
+
+						<string>
+							https://globals.myhealthespace.com/iga/status
+						</string>
+					</dict>
+
+
+				</array>
+
+			</dict>
+
+
+
+		</array>
+	</dict>
+</plist>

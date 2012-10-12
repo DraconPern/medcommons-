@@ -1,0 +1,493 @@
+<WebScriptTemplate>
+	<Variables>
+	</Variables>
+	<TestItem v='3'>
+		<ver>13</ver>
+		<id>465889</id>
+		<Summary v='3'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<childCount>3</childCount>
+		<ChildItems>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>465890</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>3</childCount>
+				<ChildItems>
+					<CookieKiller v='1'>
+						<ver>13</ver>
+						<id>469766</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+					</CookieKiller>
+					<Request v='10'>
+						<ver>13</ver>
+						<id>465891</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>4</childCount>
+						<ChildItems>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465893</id>
+								<name>givenName</name>
+								<value>joe</value>
+								<sendEquals>true</sendEquals>
+								<method>1</method>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465894</id>
+								<name>familyName</name>
+								<value>shmoe</value>
+								<sendEquals>true</sendEquals>
+								<method>1</method>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465895</id>
+								<name>password</name>
+								<value>tester</value>
+								<sendEquals>false</sendEquals>
+								<method>1</method>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465897</id>
+								<name>createCCR</name>
+								<value>false</value>
+								<sendEquals>false</sendEquals>
+							</Parameter>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<host>${host}</host>
+						<path>/router/NewPatient.action</path>
+						<protocol/>
+						<resource/>
+						<targetFrame/>
+						<isActive>1</isActive>
+						<label/>
+						<headers/>
+						<multipartBoundary/>
+						<Object>null</Object>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset>windows-1252</formCharset>
+						<method>1</method>
+						<waitForSubRequests>false</waitForSubRequests>
+					</Request>
+					<Execute v='4'>
+						<ver>13</ver>
+						<id>465911</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<name>set account id, auth</name>
+						<script>var x = eval(&apos;x=&apos;+document.body.innerText);
+badboy.setVariable(&apos;accid&apos;,x.patientMedCommonsId);
+badboy.setVariable(&apos;auth&apos;, x.auth);
+badboy.setVariable(&apos;secret&apos;, x.secret);
+</script>
+						<imageId>4294967295</imageId>
+						<pluginAccess>false</pluginAccess>
+						<frameName/>
+						<sourceFile/>
+					</Execute>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Create New Account</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>1</expanded>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>465899</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>2</childCount>
+				<ChildItems>
+					<Request v='10'>
+						<ver>13</ver>
+						<id>465900</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>7</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>13</ver>
+								<id>465901</id>
+								<Summary v='3'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>2</childCount>
+								<ChildItems>
+									<TemplateBinding v='1'>
+										<sourceFile/>
+									</TemplateBinding>
+									<TemplateBinding v='1'>
+										<sourceFile/>
+									</TemplateBinding>
+								</ChildItems>
+								<Summary v='3'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465902</id>
+								<name>tracking</name>
+								<value>new</value>
+								<sendEquals>true</sendEquals>
+								<method>1</method>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465903</id>
+								<name>accid</name>
+								<value>%24%7Baccid%7D</value>
+								<sendEquals>true</sendEquals>
+								<method>1</method>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465904</id>
+								<name>auth</name>
+								<value>%24%7Bauth%7D</value>
+								<sendEquals>true</sendEquals>
+								<method>1</method>
+							</Parameter>
+							<Request v='10'>
+								<ver>13</ver>
+								<id>465905</id>
+								<Summary v='3'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>1</childCount>
+								<ChildItems>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>465906</id>
+										<name>mode</name>
+										<value>edit</value>
+										<sendEquals>true</sendEquals>
+										<method>1</method>
+									</Parameter>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<Object>null</Object>
+								<host>${host}</host>
+								<path>/router/newCcr.do</path>
+								<protocol>http</protocol>
+								<resource/>
+								<targetFrame>contents</targetFrame>
+								<label/>
+								<headers/>
+								<multipartBoundary/>
+								<Object>null</Object>
+								<lenientSubrequestCount>false</lenientSubrequestCount>
+								<formCharset/>
+								<method>1</method>
+								<waitForSubRequests>false</waitForSubRequests>
+							</Request>
+							<Request v='10'>
+								<ver>13</ver>
+								<id>465907</id>
+								<Summary v='3'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>2</childCount>
+								<ChildItems>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>465908</id>
+										<name>ccrIndex</name>
+										<value>0</value>
+										<sendEquals>true</sendEquals>
+										<method>1</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>465909</id>
+										<name>guid</name>
+										<value/>
+										<sendEquals>true</sendEquals>
+										<method>1</method>
+									</Parameter>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<Object>null</Object>
+								<host>${host}</host>
+								<path>/router/displayCCR.do</path>
+								<protocol>http</protocol>
+								<resource/>
+								<targetFrame>ccrframe</targetFrame>
+								<label/>
+								<headers/>
+								<multipartBoundary/>
+								<Object>null</Object>
+								<lenientSubrequestCount>false</lenientSubrequestCount>
+								<formCharset/>
+								<method>1</method>
+								<waitForSubRequests>false</waitForSubRequests>
+							</Request>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>465922</id>
+								<name>am</name>
+								<value>p</value>
+								<sendEquals>false</sendEquals>
+							</Parameter>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<host>${host}</host>
+						<path>/router/tracking.jsp</path>
+						<protocol/>
+						<resource/>
+						<targetFrame/>
+						<isActive>1</isActive>
+						<label/>
+						<headers/>
+						<multipartBoundary/>
+						<newWindowWidth>4259885</newWindowWidth>
+						<newWindowHeight>852053</newWindowHeight>
+						<FrameStack v='1'>
+							<stackSize>1</stackSize>
+							<frameStack>
+								<id/>
+								<name/>
+							</frameStack>
+						</FrameStack>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset/>
+						<method>1</method>
+						<waitForSubRequests>false</waitForSubRequests>
+					</Request>
+					<Assertion v='10'>
+						<ver>13</ver>
+						<id>465913</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>3</childCount>
+						<ChildItems>
+							<ContentCheckItem v='1'>
+								<ver>13</ver>
+								<id>465914</id>
+								<pattern>shmoe</pattern>
+								<bUseRegex>false</bUseRegex>
+								<checkMessageBoxes>false</checkMessageBoxes>
+								<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+							</ContentCheckItem>
+							<ContentCheckItem v='1'>
+								<ver>13</ver>
+								<id>465915</id>
+								<pattern>joe</pattern>
+								<bUseRegex>false</bUseRegex>
+								<checkMessageBoxes>false</checkMessageBoxes>
+								<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+							</ContentCheckItem>
+							<JScriptCheck v='1'>
+								<ver>13</ver>
+								<id>465930</id>
+								<script>return getTabText().indexOf(&apos;Current CCR&apos;)==0;</script>
+								<frameName/>
+							</JScriptCheck>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<failureAction>
+							<Object>null</Object>
+						</failureAction>
+						<captureScreenShot>true</captureScreenShot>
+						<scalingPercent>50</scalingPercent>
+						<captureDuplicates>false</captureDuplicates>
+						<scroll>false</scroll>
+						<waitToPass>false</waitToPass>
+					</Assertion>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Create CCR for Account</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>1</expanded>
+			</Step>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>469765</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>Test</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+			</Step>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation>&lt;P&gt;When a patient creates their first CCR we should populate it with their name if we know it.&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;Also, the CCR should be named &quot;Current CCR&quot; right from the start, even before they save it.&lt;/P&gt;</documentation>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<Object>null</Object>
+		<title>Create Initial CCR</title>
+		<template/>
+		<expanded>1</expanded>
+	</TestItem>
+</WebScriptTemplate>

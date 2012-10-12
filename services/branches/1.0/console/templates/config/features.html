@@ -1,0 +1,54 @@
+{% extends "form.html" %}
+
+{% block title %}Enable / Disable Appliance Features{% endblock %}
+
+{% block header %}
+<style type='text/css'><!--
+div#box {
+  text-align: left;
+}
+
+input.default {
+  margin-top: 1em;
+}
+fieldset div.padding {
+  padding: 1em;
+}
+// --></style>
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Configuration</a> &gt;
+Features
+{% endblock %}
+
+{% block content %}
+
+<div id='box'>
+<p>Here you may enable or disable selected features on your Appliance.</p>
+<p>Please note that feature changes may require you to publish changes 
+and a system restart to take effect.</p>
+
+<fieldset>
+  <legend>Features</legend>
+  
+  <form name="featuresForm" method='POST'>
+	  <div class='padding'>
+	  {% for f in features %}
+	    <p>
+		  <input type="checkbox" name="{{f.name}}" {% if f.enabled %} checked="true" {% endif %}/>&nbsp;{{ f.description }}	  </p>
+		{% endfor %}
+	  </div>
+    </fieldset>
+	  <input type='submit' name='submit' class='default' value='Save' />
+</form>
+
+</div>
+
+{% if errors %}
+<pre class='errors'>
+{{ errors }}
+</pre>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ivy-module version="1.3">
+  <info organisation="medcommons" module="medcommons-activitylog"/>
+
+  <configurations>
+    <conf name="default" description="only runtime dependencies"/>
+    <conf name="compile" extends="default" description="compile and test dependencies"/>
+  </configurations>
+
+  <dependencies>
+    <!-- runtime dependencies -->
+    <dependency org="opencsv" name="opencsv" rev="1.7" conf="default" />
+    <dependency org="apache" name="log4j"     rev="1.2.15" conf="default" />
+    <dependency org="medcommons" name="gateway-interfaces" rev="1.0.65" conf="default" />
+    <dependency org="medcommons" name="medcommons-build"  rev="1.0.5" conf="default" />
+
+    <!-- compile / test dependencies -->
+    <dependency org="groovy" name="groovy-all"  rev="1.6.5" conf="compile->*" />
+  </dependencies>
+
+</ivy-module>

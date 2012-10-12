@@ -1,0 +1,93 @@
+body {
+  font-family: arial;
+  font-size: 14px;
+}
+
+table {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/* debug div {
+  border-style: solid;
+  border-color: green;
+}*/
+
+#dividerLine {
+  position: absolute;  
+  left: 145px;
+  border-top: none;
+  border-left: none;
+  border-right: solid;
+  border-bottom: none;
+  border-width: 1px;
+  border-color: black;
+  height: 180px;
+  z-index: 20;
+}
+
+.leftnav {
+  font-size: 14px;
+  width: 150px;
+  text-align: right;
+  padding-right: 10px;
+  vertical-align: top;
+  border-style: none;
+}
+
+#ccrTable {
+  margin-left: 65px;
+  border-style: none;
+  border-color: green;
+}
+
+
+.ltrtxt {
+  margin-top: 0px;
+  margin-bottom: 1px;
+  padding-left: 10px;
+  font-size: 13px;
+  vertical-align: top;
+  border-style: none;
+  width: 100%;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.missing {
+  color: gray;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.formInput {
+  border: none;
+  font-family: arial;
+  font-size: 12px;
+  background-color: #f3f3f3;
+  overflow:hidden;
+}
+
+.tableInput {
+  font-size: 10px;
+}
+.tableSelect {
+  font-size: 10px;
+}
+
+#consentTextDiv {
+  margin-left: 70px;
+}
+
+#businessCardDiv  {
+  float: right;
+  top: 55px;
+  text-align: right;
+  z-index: 3;
+}

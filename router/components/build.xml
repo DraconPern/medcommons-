@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id$
+     ====================================================================== -->
+<project name="components" default="world">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+
+
+  <target name="world" depends="compile">
+  </target>
+
+
+
+    <!-- =================================
+          target: compile
+         ================================= -->
+    <target name="compile" depends="activitylog,crypto,configuration"/>
+
+    <target name="activitylog" depends="gateway-interfaces"  description="--> compiles activitylog">
+      <ant dir="activitylog/trunk" antfile="build.xml" target="publish"/>
+    </target>
+
+    <target name="utils" depends="gateway-interfaces"  description="--> medcommons utilities">
+      <ant dir="medcommons-utils/trunk" antfile="build.xml" target="publish"/>
+    </target>
+
+    <target name="crypto" depends="gateway-interfaces,utils"  description="--> crypto libraries">
+      <ant dir="crypto/trunk" antfile="build.xml" target="publish"/>
+    </target>
+
+    <target name="configuration" depends="gateway-interfaces"  description="--> compiles configuration">
+      <ant dir="configuration/trunk" antfile="build.xml" target="publish"/>
+    </target>
+
+    <target name="gateway-interfaces"  description="--> compiles gateway interfaces">
+      <ant inheritRefs="false" dir="gateway-interfaces/trunk"  target="publish"/>
+    </target>
+
+
+</project>

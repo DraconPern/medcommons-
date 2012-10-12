@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Begin preflight."
+osirix=`osascript -e 'tell app "System Events" to count processes whose name is "OsiriX"'`
+if [ $osirix != '0' ]; then
+    echo "You must first quit OsiriX before installing MedCommons CXP."
+    exit 1
+fi
+rm /Library/Application\ Support/MedCommons/*.pyc
+echo "End preflight."
+exit 0

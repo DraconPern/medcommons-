@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>iPhoneMode</key>
+		<string>ON</string>
+		<key>GroupHomeTitle</key>
+		<string>Ray Ramirez, NY Mets</string>
+		<key>GroupHomeURL</key>
+		<string>http://www.medcommons.net/mets/RamHome.html</string>
+	</dict>
+</plist>

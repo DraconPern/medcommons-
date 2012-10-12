@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="description" content="MedCommons Website Version 1.1" />
+    <meta name="keywords" 
+    content="medcommons, dicom, DICOM, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr"/>
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+     {% block meta %} {% endblock %} 
+     {% block favicon %}
+    <link rel="shortcut icon" href="../images/favicon.gif" type="image/gif" />
+     {% endblock %}
+    
+<style type="text/css">
+@import "/css/style.css";
+</style>
+<style type="text/css">
+	@import "/css/home.css";
+</style>
+
+<style type="text/css">
+	@import "/css/application.css";
+</style>
+
+
+<style type="text/css">
+	@import "/css/modal.css";
+</style>
+
+<style type="text/css">
+	@import "/css/navleft_v2.css";
+</style>
+
+<style>
+
+#helpbar {display:none}
+.error{color: red}
+
+div#sitetip_container{
+	position: relative;
+	display:none;
+	}
+div#sitetip{
+	display:none ;
+	}
+div#header div#hdbody{	
+	margin: 0px auto;
+	display:block;
+	position:relative;
+	width: 960px;		
+	text-align:left;	
+	padding-bottom: 5px;
+	padding-top: 0px;
+	padding-left: 10px; 
+	overflow:hide;
+	height: 85px;
+}
+
+</style>
+
+<script type="text/javascript">var rxs_navbase="";</script>
+<script type="text/javascript" src="/jscripts/jquery-1.js"></script>
+<script type="text/javascript" src="/jscripts/jquery.js"></script>
+<script type="text/javascript" src="/jscripts/jquery-cookie.js"></script>
+<script type="text/javascript" src="/jscripts/jquery-plugins.js"></script>
+<script type="text/javascript" src="/jscripts/jquery_002.js"></script>
+<script type="text/javascript" src="/jscripts/main.js"></script>
+<script type="text/javascript" src="/jscripts/blog.js"></script>
+<script type="text/javascript" src="/jscripts/share.js"></script>
+<script type="text/javascript" src="/jscripts/common.js"></script>
+<script type="text/javascript" src="/jscripts/likes.js"></script>
+<script type="text/javascript" src="/jscripts/timeline.js"></script>
+<script type="text/javascript" src="/jscripts/timeline-lib.js"></script>
+<script type="text/javascript" src="/jscripts/application.js"></script>
+<script type="text/javascript" src="/jscripts/modal.js"></script>
+
+<!-- Community Imports -->
+    <script type="text/javascript">
+function $(id) { return document.getElementById(id); }
+function el(id) { return $(id); }
+function showinline(id)
+{
+	if($(id))
+		$(id).style.display = 'inline';
+}
+function showblock(id)
+{
+	if($(id))
+		$(id).style.display = 'block';
+}
+function dontshow(id)
+{
+	if ($( id ))
+	$( id ).style.display = 'none';
+}
+function toggle(id)
+{
+	if(!$(id)) 
+		return true;
+	if($(id).style.display == 'none')
+		$(id).style.display = 'block'; 
+	else
+		$(id).style.display = 'none';
+	return true;
+}
+/**
+* gets the value of the specified cookie.
+*/
+function getCookie(name)
+{
+	var dc = document.cookie;
+	var prefix = name + "=";
+	var begin = dc.indexOf("; " + prefix);
+	if (begin == -1) {
+		begin = dc.indexOf(prefix);
+		if (begin != 0) return null;
+	}
+	else {
+		begin += 2;
+	}
+	var end = document.cookie.indexOf(";", begin);
+	if (end == -1) {
+		end = dc.length;
+	}
+	return unescape(dc.substring(begin + prefix.length, end));
+}
+
+var signed_on; 
+
+
+
+function get_mc_attribute(att) {
+  var mc = getCookie('mc');
+  if(!mc)
+    return null;
+  var atts = mc.split(',');
+  for(var i=0; i<atts.length; ++i) { 
+    if(atts[i].match(new RegExp('^'+att+'='))) {
+      return atts[i].split('=')[1];
+    }
+  }
+  return null;
+}
+
+function wsinit()
+{
+var logoutlink = '';
+var email='';
+var uploadlink = 
+			'<a href="/acct/uploadwww.php" title="Upload CD or DVD to MedCommons Help Desk"><span>Upload</span></a>';
+var inboxlink = '<a href=/acct/index.php ><span>Sign On</span></a>';
+var registerlink = '<a href=/acct/groupsetup.php ><span>Register</span></a>';
+var healthurllink = '<a href=/acct/login.php ><span>Health Records</span></a>';
+	if(getCookie('mc'))	{
+	registerlink = '<a href=/acct/settings.php ><span>Settings</span></a>';
+	 uploadlink = 
+			'<a href="/acct/uploadprivate.php" title="Upload CD or DVD to Current Inbox"><span>Upload</span></a>';
+    inboxlink = '<a href=/acct/index.php ><span>Inbox</span></a>';
+	healthurllink = '<a '+
+			'href="https://healthurl.medcommons.net/router/currentccr?a=1013062431111407&aa=1117658438174637&g=3642665a324059089d0b989286eb9a9ced046e54&t=&m=&c=&auth=c3faf3705e0e98c0984d1f86b96a789f3dba2638&at=c3faf3705e0e98c0984d1f86b96a789f3dba2638" '+
+			'title="View All HealthURL Components"><span>Health Records</span></a>';
+		 logoutlink = "&nbsp;|&nbsp; <a href='/acct/logout.php'>Sign Out</a>";
+		 
+	     email =get_mc_attribute ('email');
+        var s = get_mc_attribute('s');
+		signed_on = true;
+		showblock('loggedon');
+		dontshow('notloggedon');
+		showinline('visi');
+		/*
+        nav('Logout').hidden = false;
+        nav('Dashboard').hidden = true; // removed 8/8/10 by bill
+        nav('Settings').hidden = false;
+        nav('Sign In').hidden = true;
+        if((s & 2) > 0) {
+          nav('Services').hidden = false;
+        }
+        if((s & 4) > 0) {
+          nav('Settings').hidden = true;
+        }
+        if((s & 16) > 0) {
+          nav('Simtrak Admin').hidden = false;
+        }
+        if((s & 32) > 0) {
+          nav('Simtrak Admin').hidden = true;
+          nav('Services').hidden = true;
+          nav('Settings').hidden = false;
+        }
+      
+        if((s & 64) > 0) {
+          $('logoImg').onload = function() {
+	        $('logoImg').style.visibility = 'visible';
+          };
+          $('logoImg').src='/acct/logo.php';
+        }
+        else
+	        $('logoImg').style.visibility = 'visible';
+           */   
+		setIdleTimeout(function() {location.href='/acct/logout.php?next=%2Facct%2Flogin.php%3Fprompt%3Dexpiredsession';}); 
+	}
+	else {
+		signed_on = false;
+		showblock('notloggedon');
+		dontshow('loggedon');
+		dontshow('visi');
+		/*
+	    nav('Sign In').hidden = false;
+	    for(i in menu=['Dashboard','Logout','Settings', 'Services']) {
+	      nav(menu[i]).hidden = true;
+	    }
+
+        $('logoImg').style.visibility = 'visible';
+        	    */
+	}
+	$('UserName').innerHTML = email; /*fn + ' ' + ln +'&nbsp;';*/
+	$('LogoutLink').innerHTML = logoutlink;
+	$('HealthURLLink').innerHTML = healthurllink;
+	$('RegisterLink').innerHTML = registerlink;
+	$('InboxLink').innerHTML = inboxlink;
+	$('UploadLink').innerHTML = uploadlink;
+	/*
+	render_top_nav();
+	*/
+}
+
+(function() {
+    var MAX_IDLE_TIME = {{ SessionTimeoutSeconds }} * 1000;
+    var idleSince = (new Date().getTime());
+    var timeoutHandler = null;
+    var timeoutTimer = null;
+
+    function onActivity() {
+      idleSince = (new Date().getTime());
+    }
+    function checkTimeout() {
+      var now = (new Date().getTime());
+      if(now - idleSince > MAX_IDLE_TIME) {
+        if(timeoutHandler) 
+          timeoutHandler();
+      }
+    }
+    function listen(evt, handler) {
+      var d = document;
+      if(d.addEventListener)   // DOM Level 2 Event Model
+        d.addEventListener(evt, handler, true);
+      else
+      if(d.attachEvent)  // IE 5+ Event Model
+        d.attachEvent("on"+evt, handler);
+    }
+    window.setIdleTimeout = function(handler) {
+      timeoutHandler = handler;
+      if(!timeoutTimer) {
+	      listen("mousemove", onActivity);
+	      listen("keydown", onActivity);
+	      timeoutTimer = setInterval(checkTimeout, 10000);
+      }
+    }
+  })();
+</script>
+    {% block head %}{% endblock %}
+    </head>
+<body {% block body %}{% endblock %}>
+<div id="container">
+  <div id="container1">
+    <div id="container2">
+      <script type="text/javascript">
+				document.getElementById("container").className = "yesjavascript";
+			</script>
+
+ <!--  Start Header  -->
+      <div id="header">
+        <div id="sitetip_container" >
+        	<div id="sitetip">
+        	
+            </div>  <!-- end sitetip -->
+        </div> <!-- end sitetip_container -->
+
+        <div id="hdbody">
+			           <div id="topbanner" >
+			           <div class = headlinks >
+			           <p id=control>
+			           
+				      <span id='UserName'></span>
+				      
+				      <span id='LogoutLink'></span>
+				      
+			           </p>
+ 					
+
+          </div>  <!-- end headlinks -->
+          	<div id="sitelogo">
+
+					    <a href=/info.html><img height=50 src="/images/logoGray.png" alt="MedCommons logo" /></a><p>&nbsp;&nbsp;Imaging, Consults, Referrals</p>
+					    </div>
+          </div>  <!-- end topbanner -->
+        </div>
+        <!-- end hdbody -->
+
+      </div> <!-- end header -->
+      
+
+
+
+<!--[if IE]> <div id="containerIE">	<![endif]-->
+<!--[if lte IE 6]> <div id="containerIE6">	<![endif]-->
+<!--[if lte IE 7]> <div id="containerIE7L">	<![endif]-->
+<!--[if IE 7]> <div id="containerIE7">	<![endif]-->
+<!--[if IE 8]> <div id="containerIE8">	<![endif]-->
+
+
+
+
+<!--googleoff: index-->
+<div id="topnav">
+    <ul>
+    	    
+  						    
+        <!-- DESCENDANT -->
+  			<!-- sec: $secondary -->
+			<li class="menu1_1 menu1_1_not_selected"><span id='RegisterLink'>***</span></li>		
+	  				
+						    
+        <!-- DESCENDANT -->
+
+  			<!-- sec: $secondary -->
+			<li class="menu1_2 menu1_2_not_selected"><span id='UploadLink'>***</span></li>		
+	  				
+						    
+        <!-- DESCENDANT -->
+  			<!-- sec: $secondary -->
+			<li class="menu1_3 menu1_3_not_selected"><span id='InboxLink'>***</span></li>		
+	  				
+						    
+        <!-- DESCENDANT -->
+  			<!-- sec: $secondary -->
+  			
+			<li class="menu1_4 menu1_4_not_selected"><span id='HealthURLLink'>***</span>
+			
+			</li>		
+	  				
+						    
+        <!-- DESCENDANT -->
+
+  			<!-- sec: $secondary -->
+			<li class="menu1_5 lastTopMenu menu1_5_not_selected ">	
+    				<a href="/info.html" title="Information for You"><span><span>More Info</span></span></a>
+			 </li>
+	  				
+						    
+        <!-- DESCENDANT -->
+  	
+  				
+	      </ul>
+</div>
+<div class="clear">&nbsp;</div>
+
+
+        <div id='main'>
+                   {% block main %} {% endblock main %}
+        </div>
+
+            {% block footer %} {% endblock %}
+              </div> <!-- end wrapper3 -->
+      </div>   <!-- end wrapper2 -->
+
+    </div>
+    <!-- end wrapper -->
+  </div>
+  <!-- end wrappers -->
+</div> <!-- end secondary page inner -->
+</div> <!-- end secondarypage -->
+</div> <!-- end container2 -->
+</div> <!-- end container1 -->
+</div><!-- end container -->
+
+<!--[if IE 8]> <div id="containerIE8">	<![endif]-->
+<!--[if IE 7]> </div>	<![endif]-->
+<!--[if lte IE 7]> </div>	<![endif]-->
+<!--[if lte IE 6]> </div>	<![endif]-->
+<!--[if IE]> </div>	<![endif]-->
+
+  <script type="text/javascript">
+  // prevent original www_init() defined in base.js from being called
+  function www_init() {
+  }
+  if(getCookie('mc'))
+    document.write("<!-- "+fn+" "+ln+" --><style type='text/css'> #loggedon, #visi { display: block; }</style>");
+  </script>
+  {% block endjs %} {% endblock %}
+</body>
+</html>

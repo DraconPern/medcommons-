@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+<!--
+This is a trivial CCR display utility.
+-->
+<head>
+		<title> CCR Viewer</title>
+<script src="xml.js"></script>
+<script>
+
+function displayCCR(ccrRef){
+	var ccrDoc = XML.load(ccrRef.value);
+	XML.transform(ccrDoc, 'ccr_20060420.xsl', 'ccrDisplay');
+}
+
+</script>
+	</head>
+<body>
+<h1>CCR Viewer</h1>
+<FORM NAME="ccrForm" ACTION="" METHOD="GET">Select a CCR from your local file system: <BR><INPUT TYPE="file" NAME="ccrFilename" VALUE=""><P><INPUT TYPE="button" NAME="button" Value="Display CCR" onClick="displayCCR(this.form.ccrFilename)"></FORM>
+<br/>
+<small>
+<b>Credits</b>
+</br>
+<ul>
+<li> The AAFP (American Association of Family Pracitioners) Stylesheet <i>ccr_20060420.xsl</i> is used for rendering the CCR.
+<li> The file <i>xml.js</i> from the book "JavaScript: The Definitive Guide, 5th Edition",
+ by David Flanagan. Copyright 2006 O'Reilly Media, Inc. (ISBN: 0596101996). This is used for cross-browser XSL transformations.
+</ul>
+</small>
+<div id="ccrDisplay"> </div>
+
+	</body>
+</html>

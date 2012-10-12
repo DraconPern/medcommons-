@@ -1,0 +1,635 @@
+
+#referralFormContainer { 
+  margin-top: 7px;
+}
+
+.dialog {
+  background-color: #e2e1d7; 
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+table {
+  padding: 0px;
+  margin: 0px;
+}
+
+.ltrtxt {
+  margin-top: 0px;
+  margin-bottom: 1px;
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+.smallltrtxt {
+  font-size: 10px;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.privacyHighlight {
+  background-color: #ffeecc;
+}
+
+#privacyWarning {
+  background-color: #ffeeaa;
+  border-color: gray;
+  border-style: none;
+  border-width: 1px;
+  display: none;
+  width: 100%;
+  font-size: 12px;
+  padding: 0px;
+  margin: 0px;
+}
+
+table.privacyTable tr td {
+  font-size: 10px;
+}
+
+.missing {
+  color: gray;
+}
+
+.clickable {
+   cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+textarea.formInput {
+  width: 98%; 
+  overflow: hidden; 
+  background-color: transparent;
+  padding-bottom: 10px;
+}
+textarea.formInput#purposeText {
+  background-color: white;
+}
+
+#genderACContainer,#patientGender {
+  width: 6em;
+}
+#genderACContainer {
+  position: absolute;
+  top: 65px;
+  left: 145px;
+}
+
+.notifylink {
+  border-style: dotted;
+  border-color: gray;
+  border-width: 1px;
+}
+
+
+#patientCard {
+  margin-top: 10px;
+}
+
+#patientCard.expanded #patientNameBlock {
+  left: 60px;
+}
+
+div#patientCard .formInput {
+  background-color: white;
+  margin-top: 4px;
+  padding-left: 2px;
+}
+
+#patientMiddleNameBlock, #patientIdButtons, #patientIdUp {
+  display: inline;
+}
+
+#pcHeaderDob {
+  display: none;
+}
+
+div.hd {
+  height: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #898770;
+  padding-left: 10px;
+}
+
+div#patientCard .highlighted {
+  background-color: #ffffcc;
+}
+
+#patientCard div.bd {
+  padding-top: 5px;
+}
+
+div#patientCard h4,div#patientCard h5, .patientCardHeading {
+  font-size: 13px;
+}
+
+div#patientCard h4,div#patientCard h5 {
+  float: left;
+  width: 55px;
+  padding: 5px 0px 0px 0px;
+  margin:  0px 0px 0px 0px;
+}
+
+div#patientCard h5 {
+  margin-top: 3px;
+}
+
+div#patientCard h5, .smallPatientLabel {
+  font-weight: normal;
+  font-size: 10px;
+  font-style: italic;
+  text-align: right;
+  vertical-align: middle;
+}
+
+#patientCard,.patientCard {
+  position: relative;
+}
+
+#closePatientCardButton {
+  position: absolute;
+  right: 50px;
+  width: 60px;  
+}
+
+.insecureFormInput {
+  border-style: none; 
+}
+
+.editorOuter {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  width: 580px;
+  display: none;
+  background-color: transparent;
+}
+
+.ccrEditForm {
+  font-family: Arial, Helvetica;
+ 	font-size: 12px; 
+  border-style: none;
+  border-color: black;
+  border-width: 2px;
+  background-color: #f0efe4;  
+  margin: 0px;
+}
+
+.editorTitle {
+  background-color: #999;
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-weight: bold;
+}
+
+.editorBody {
+  position: relative;
+  padding: 10px;
+}
+
+table.editorTable {
+  width: 100%;
+  border-style: 1px;
+}
+
+table.editorTable tr td {
+  text-align: center;
+  font-size: 11px;
+  border-style: none;
+  background-color:  #fff;
+}
+table.editorTable tr th {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  border-style: none;
+  border-bottom-style: solid 2px black;
+  background-color:  #f5f5f5;
+}
+
+table.dosageTable {
+  width: 100%;
+}
+
+table.dosageTable tr td {
+  text-align: center;
+  font-size: 10px;
+}
+table.dosageTable tr th {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tableInput {
+  font-size: 10px;
+}
+.tableSelect {
+  font-size: 10px;
+}
+
+.editorDetail {
+  background-color: #f0efe4;
+  padding: 5px;
+  margin: 5px;
+  border-style: none;
+  border-width: 1px;
+  border-color: #333333;
+}
+
+/* 
+ Following are dummy classes used 
+ by dhtml to detect element type
+ and modify behavior appropriately
+ */
+
+/* Frequency class */
+.frequency {
+}
+
+/* free text class */
+.freetext {
+}
+
+a:link, a:visited { 
+  font-family: verdana;
+  font-size: 12px;
+  color: #6b91ae;
+  text-decoration: none;
+}
+a:hover, a:active { 
+  text-decoration: underline;
+}
+
+a.deleteLink {
+  color: #b64501;
+  font-weight: bold;
+  font-family: verdana;
+  font-size: 14px;
+}
+a.deleteLink:hover, a.deleteLink:active {
+  text-decoration: none;
+}
+
+#referencesTable {
+
+}
+	
+table.referencesTable {
+  position: relative;
+}
+
+th#referencesLabel {
+}
+th#referencesLabel span {
+  position: relative;
+  top: 12px;
+}
+
+table.referencesTable tr td {
+  border-color: black;
+  border-width: 1;
+  font-size: 12px;
+  padding-left: 25px;
+  padding-top: 5px;
+  vertical-align: middle;
+}
+
+table.referencesTable tr.referenceHeader td {
+	font-weight: bold;
+}
+
+
+.validationWarnRow {
+  /*
+  background-color: #fcc;
+  */
+}
+
+.validationWarn {
+  font-weight: bold;
+  font-size: 14px;
+  color: red;
+}
+
+.approxWarn {
+  font-size: 10px;
+  color: gray;
+}
+
+#activeSection {
+  width: 100%;
+  overflow: auto;
+  margin: 5px;
+}
+
+#activeSectionBox {
+  position: absolute;
+  left: 190px;
+  border-style: none;
+  border-width: 1px;
+  border-color: black;
+  background-color: #fea;
+  display: none;
+}
+
+#closeASImg {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+#editASImg {
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+}
+
+#activeSectionBox table {
+  font-size: x-small;
+}
+
+/* FF table column headings */
+.seccolhead {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* IE table column headings */
+#activeSectionBox table tr th {
+  font-size: 12px;
+  border-style: none;
+  text-align: left;
+}
+
+#activeSectionBox table tr td {
+  border-style: none;
+
+}
+
+span.header {
+  font-weight: bold;
+}
+
+#bodySectionsHeadings {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  text-align: right;
+  font-size: 13px;
+}
+
+#patientNameBlock input {
+  font-weight: bold; 
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+div#patientCard h5,
+.smallPatientLabel,
+#patientGivenLabel, 
+#patientFamilyLabel {
+  color: #222;
+}
+
+#patientCard .bd, #patientCard .hd {
+  padding: 0px 10px;
+}
+
+#patientCardInner {
+  display: none;
+}
+#patientCard.expanded #patientCardInner{
+  display: block;
+}
+
+#patientIdBreak {
+ clear: both;
+}
+
+#patientGivenLabel, #patientFamilyLabel {
+  position: absolute;
+  top: 24px;
+  font-size: 9px;
+  font-style: italic;
+  margin: 0px;
+  padding: 0px;
+}
+
+#patientIdUp,#patientIdDown {
+  position: relative;
+  cursor: pointer;
+}
+
+#patientIdUp {
+  top: -14px;
+}
+#patientIdDown {
+  top: -4px;
+  left: -15px;
+}
+#patientIdDown.collapsed {
+  top: -10px;
+  left: -2px;
+}
+
+
+/* Note: overridden for IE in html */
+#patientGivenLabel {
+  left: 65px;
+}
+/* Note: overridden for IE in html */
+#patientFamilyLabel {
+  left: 165px;
+}
+
+#patientIdLabel {
+  position: relative;
+  top: -2px;
+  font-size: 9px;
+  font-style: italic;
+  margin-left: 54px;
+}
+
+/*
+#patientIdLabel {
+  left: 67px;
+  top: 88px;
+}
+*/
+
+#pcAgeSex { 
+  display: none;
+}
+
+#addWebReferenceDiv {
+  padding-bottom: 10px;
+}
+
+#editPatientIdDiv  {
+}
+
+#editPatientIdDiv label {
+  float: left; 
+  text-align: right; 
+  width: 60px;
+}
+
+#editPatientIdDiv input,#editPatientIdDiv button {
+  height: 24px;
+}
+
+#editPatientIdDiv button {
+  margin-left: 4px;
+}
+
+.referenceIndexCell {
+  padding-left: 0px;
+  font-weight: bold;
+}
+
+#sendStatusDiv {
+  top: 75px;
+}
+
+table#statusTable tr td,table#statusTable tr th {
+  font-size: 12px;
+}
+
+table#statusTable tr th {
+  padding-right: 20px;
+  text-align: right;
+}
+
+#results {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: -320px;
+}
+
+#patientFindImg {
+  display: none;
+}
+
+.bodySectionAddImg {
+  display: none;
+}
+#vitalsignsAddImg,#familyhistoryAddImg,#proceduresAddImg,#medicationsAddImg  {
+  display: inline;
+  cursor: pointer;
+}
+
+.ac img {
+  border: none 0px;
+}
+
+.ac img, .ac span {
+ vertical-align: middle;
+}
+
+#termsOfUseLabel {
+  position: relative; 
+  width: 150px; 
+  padding-right: 10px;
+}
+
+#footerLogo {
+  position: absolute;
+  right: 70px;
+  bottom: -180px;
+}
+
+.topbuttonmsg p img {
+  position: relative;
+  padding: 0px;
+  margin: 0px 3px;
+  top: 2px;
+}
+
+.topbuttonmsg p {
+  position: relative; 
+  top: -1px;
+  padding: 0px 5px 0px 5px;
+  margin: 0px;
+}
+
+.topbuttonmsg {
+  width: 100%;
+  background-color: #C1E7A2;
+  padding: 0px;
+  font-size: 11px;
+  margin: 3px 0px 5px 0px;
+}
+
+.invisible {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#ccrframe {
+  width: 100%;
+  background-color: white;
+}
+#dialogDiv {
+  position: relative;
+  height: 320px;
+}
+#orderForm table {
+  width: 95%;
+}
+#orderForm table tr th {
+  width: 120px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+#orderForm input, #orderForm textarea, #orderForm select {
+  width: 90%;
+}
+
+.acholder {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+
+.invalidField {
+  border-style: solid;
+  border-color: red;
+  border-width: 3px;
+}
+
+#toggleToFromImg {
+  position: relative;
+  top: 17px;
+  left: 23px;
+  cursor: pointer;
+  border: solid 1px #e2e1d7;
+}
+#toggleToFromImg:hover {
+  border: solid 1px #f6f6f6;
+}
+#toACContainer,#toEmailWrapper {
+  z-index: 10000;
+}
+#toACContainer img {
+  position: relative;
+  top: 2px;
+}
+input#toEmail,input#ccrPurpose {
+  position: relative !important;
+  width: 98%;
+}

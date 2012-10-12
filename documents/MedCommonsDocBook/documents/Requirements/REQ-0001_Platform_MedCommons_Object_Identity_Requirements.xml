@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+	<title>Object Identity Requirements </title>
+	
+	<articleinfo>
+		<invpartnumber>REQ-0001</invpartnumber>
+		<revhistory>
+			<revision>
+				<revnumber>A</revnumber>
+				
+				<date>April 17, 2005</date>
+				<authorinitials>SWD</authorinitials>
+				<revdescription>Initial Draft</revdescription>
+			</revision>
+			\
+			
+			
+			
+		</revhistory>
+		<legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+		
+	</articleinfo>
+	
+	
+<sect1>
+	<title>Overview</title>
+	<sect2>
+		<title> Types of identifiers</title>
+		<requirement id="">
+			<reqTitle></reqTitle>
+			<reqDescription></reqDescription>
+		</requirement>
+		
+		<para>
+			Many objects in the MedCommons system require identifiers. The following objects need both identifiers and some system for resolving the location of these objects
+			giving an identifier. 
+			<itemizedlist>
+				<listitem>Users</listitem>
+				<listitem>All software nodes(e.g., central and all gateways)</listitem>
+				<listitem>All data objects (series, orders, CCRs, other documents)</listitem>
+				<listitem>All user-level transactions (e.g., tracking numbers)</listitem>
+				<listitem>Encryption keys</listitem>
+				<listitem>Certificates</listitem>
+			</itemizedlist>
+		</para>
+		<para>Some of these are global identifiers; some (like tracking numbers) only make sense in the context  of a MedCommons User Id</para>
+		
+	</sect2>
+	
+	
+	<sect2>
+		<title>
+		Use cases
+		</title>
+		<para>
+			 TBD. Need to describe how a user gets to his data via two distinct paths: XDS and MedCommons queries.
+		</para>
+	</sect2>
+	
+	<sect2>
+	<title>Object Identifier Requirements</title>
+	<para>
+		All Object Identifier Requirements use the prefix "OID".
+	</para>
+	<requirement id="OID-001">
+		<reqTitle>Unambiguous Identity</reqTitle>
+		<reqDescription>Each MedCommons data object identifier (a GUID) must point to one and only one object. </reqDescription>
+	</requirement>
+	
+	<requirement id="OID-002">
+		<reqTitle>Identifier characteristics</reqTitle>
+		<reqDescription>
+			<orderedlist numeration="lowerroman">
+				<listitem>
+					<para>
+						Identifiers must be opaque. No meaning can be attached to a particular identifier; knowing 
+						the identity of one object does not permit the discovery of another object’s identity.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						Identifiers must be large enough to describe all objects in the system.  The MedCommons 
+						system is a national scale system where we want to track all patient medical records. If we 
+						assume that there are 300 million people in the US; that they have 4 exams per year, and that 
+						every exam generates 100 discrete documents we get approximately 1011 documents per year. 
+						100 years of storage moves us up to 1013 documents.  There is one identifier space for 
+						all data objects in the MedCommons universe. Thus – a 160 bit identifier (approximately 1048 )
+						will plausibly hold all objects in the MedCommons universe with a very low-probability of a collision.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						The identifier also should be some one-way function of the contents of the object. This provides a simple
+						mechanism for any node to check the integrity of the object.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						The identifier must be location-independent. This means that the object can be validated as the object 
+						independent of where it is; multiple copies of the object may exist for caching and/or redundancy 
+						reasons but the identifier remains the same. 
+					</para>
+				</listitem>
+				</orderedlist>
+		</reqDescription>
+	</requirement>
+		
+	<requirement id="OID-003">
+		<reqTitle>Object integrity</reqTitle>
+		<reqDescription>Each object must be able to be checked for integrity during transmission or while being stored.  Since the identity of the object is its SHA-1 hash any node in the system should be able to verify that the object has been unchanged by even a single bit after its arrival in the MedCommons universe.</reqDescription>
+	</requirement>
+	<para>
+	This is a paragraph.
+	</para>
+	<requirement id="OID-004">
+		<reqTitle>Individual Object Encryption</reqTitle>
+		<reqDescription>The MedCommons system must be able to encrypt objects at the level of the object identifier. It is not a requirement that each object be encrypted with different parameters than any other object but this might become a requirement later.</reqDescription>
+	</requirement>
+	<requirement id="OID-005">
+		<reqTitle>Objects may have multiple identifiers in the MedCommons system – but only one GUID.</reqTitle>
+		<reqDescription>An object may have multiple identities in the MedCommons system but only one is the global identifier that data integrity, object transfer, and object access rules use: the GUID. Other identifiers are needed because at the gateway level we support multiple protocols and these protocols have their own identifiers.</reqDescription>
+	</requirement>
+	<requirement id="OID-006">
+		<reqTitle>Users must never be required to enter a GUID</reqTitle>
+		<reqDescription>GUIDs are 160 bit entries that are too hard for users to enter accurately. Thus - they are not required for any user interaction.</reqDescription>
+	</requirement>
+	<requirement id="OID-007">
+		<reqTitle>Objects must also be addressable by an XDS registry</reqTitle>
+		<reqDescription>
+			Data objects in an MedCommons repository must be able to be addressable via references from an XDS registry. This does not mean that MedCommons must support XDS UUID identifiers; it simply means
+			that each data object that is in a repository must be able to be addressed via a URL; that URL is stored on the registry. 
+			A further complication is that the granularity of objects may not be the same for MedCommons and XDS: MedCommons might (for a DICOM series) use a GUID to refer to the 
+		</reqDescription>
+	</requirement>	
+	</sect2>
+	
+	<sect2>
+		<title>MedCommons User Id Requirements</title>
+		<para>All MedCommons User Id Requirements use the prefix "MCID".</para>
+		<requirement id="MCID-001">
+			<reqTitle>A MedCommons User Id unambiguously identifies a persona</reqTitle>
+			<reqDescription>MedCommons User Ids identify personas that a user creates. </reqDescription>
+		</requirement>
+		<requirement id="MCID-002">
+			<reqTitle>A MedCommons User Id is globally unique</reqTitle>
+			<reqDescription></reqDescription>
+		</requirement>
+		
+	
+		
+	</sect2>
+	
+	
+	<sect2>
+		<title>Tracking Number Requirements</title>
+		<para>All Tracking Number Requirements use the prefix "TRACK".</para>
+		<para>
+			Tracking numbers are identifiers of user-level requests in the MedCommons system. 
+			They are not tracking numbers of machine transactions nor of sub-transactions generated by a user request for (say) an eReferral. 
+			The domain of tracking numbers is the domain of requests; while a request may be quite complex to execute from the user's point of
+			view it is <emphasis>one thing</emphasis>. 
+		</para>
+		<para>
+			Many online systems have tracking number schemes.
+			<itemizedlist>
+				<listitem>US Postal System example:  9102 1208 1183 6134 7226 78 </listitem>
+				<listitem>UPS example: 1Z 410 E7W 02 9792 114 0</listitem>
+				<listitem>FedEx has a more complex system:
+					<itemizedlist>
+						<listitem>Tracking numbers are ?? digits.</listitem>
+						<listitem>Door tag numbers are 12 digits</listitem>
+						<listitem></listitem>
+					</itemizedlist>
+					FedEx 
+					
+				</listitem>
+			</itemizedlist>
+			
+			
+		</para>
+		<requirement id="TRACK-001">
+			<reqTitle>Tracking numbers are not global identifiers</reqTitle>
+			<reqDescription>
+				Tracking numbers are only unique within a specific domain. One type of tracking
+				number is only unique in the context of a MedCommons User Id. Other types may be
+				created in the future.
+			</reqDescription>
+		</requirement>
+		<requirement id="TRACK-002">
+			<reqTitle>Tracking numbers require PINs to access content</reqTitle>
+			<reqDescription>
+				
+			</reqDescription>
+		</requirement>
+		<requirement id="TRACK-003">
+			<reqTitle>Tracking numbers  and PINs must be easy to read over the phone</reqTitle>
+			<reqDescription>
+				Tracking No: 1234 5678
+				PIN: 1234 
+			</reqDescription>
+		</requirement>
+		<requirement id="TRACK-004">
+			<reqTitle>Tracking numbers are generated only for validated content</reqTitle>
+			<reqDescription>Tracking numbers are generated by the MedCommons system for work that it has been requested to perform.
+			If a request is invalid or incoherent an error condition is generated and a tracking number is not generated for the request.
+			</reqDescription>
+		</requirement>
+		
+	</sect2>
+	
+	<sect2>
+		<title>Use Cases</title>
+		<para>
+			TBD.  Use cases have to be more general than any particular product. 
+		
+		</para>
+		<sect3>
+			<title>Search by tracking number and patient id</title>
+			<para>
+				<orderedlist>
+					<listitem>Search central by MedCommons User Id and tracking number.</listitem>
+					<listitem>Specify PIN to get unencrypted data</listitem>
+					<listitem>From CCR get references to other data objects (DICOM series, PDF documents, &amp;etc.</listitem>
+				</orderedlist>
+				
+			</para>
+		</sect3>
+		
+	</sect2>
+	
+</sect1>
+	<index>
+	
+	</index>
+</article>
+	

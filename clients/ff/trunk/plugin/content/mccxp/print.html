@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="MochiKit.js"></script>
+    <style type="text/css">
+      body {
+        width: 2.2in;
+      }
+      * {
+        font-size: 7pt;
+        font-family: arial;
+      }
+      table#patientTable {
+        width: 2.2in;
+      }
+      table tr td {
+        text-align: center;
+      }
+      table tr td#trackingNumber, table tr td#assignedPin {
+        font-size: 8pt;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p><img id="logo" src=""/></p>
+    <table id="patientTable" border="1" cellspacing="0" cellpadding="2">
+      <tr><th>Patient</th><td id="patientName">&nbsp;</td></tr>
+      <tr><th>To</th><td id="recipient">&nbsp;</td></tr>
+      <tr><th>Date</th><td id="ccrDate">&nbsp;</td></tr>
+      <tr><th>Tracking Number</th><td id="trackingNumber">&nbsp;</td></tr>
+      <tr><th>Assigned PIN</th><td id="assignedPin">&nbsp;</td></tr>
+      <tr><th>List in TEPR Demo Registry</th><td id="agreeRegistry">&nbsp;</td></tr>
+    </table>
+    <p style="font-size: 6pt;">Visit www.MedCommons.Net to access this document by supplying PIN and Tracking Number.<p>
+  </body>
+</html>

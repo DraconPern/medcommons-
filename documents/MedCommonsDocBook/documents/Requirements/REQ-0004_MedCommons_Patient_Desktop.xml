@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "MedCommonsDocbookExtensions.dtd">
+<article>
+    <title>MedCommons Patient Desktop </title>
+    
+    <articleinfo>
+        <invpartnumber>REQ-0004</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>March 29, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>
+            
+            
+            
+            
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para>
+            This needs a bit of work.
+        </para>
+    </sect1>
+    <sect1>
+        <title>Requirements</title>
+        <sect2>
+            <title>HIPAA Logs</title>
+            <para>
+                Note: HIPAA logs on the patient desktop are user interface entries and are not the entire implementation of the HIPAA security and auditing requirements. HIPAA logs 
+                in this context are the user interface component showing access and other events in their logs. 
+            </para>
+            <requirement id="HLOG-0001">
+                <reqTitle>HIPAA Logs are organized by Tracking Numbers</reqTitle>
+                <reqDescription>
+                    The HIPAA log describes events at the level of a Tracking Number.  Example: if  data is sent to the same doctor twice (therefore - it has two tracking numbers) and that an indivdual image is only a one small part of the data
+                    set and the doctor only looks at this individual image and nothing else; then there are two HIPAA log entries made  - one for each tracking number.
+                </reqDescription>
+            </requirement>
+            <requirement id="HLOG-0002">
+                <reqTitle>All events designated to be logged in the HIPAA log must be logged. No exceptions are permitted.
+                </reqTitle>
+                <reqDescription>
+                    The decision for logging a particular event is MedCommons policy. Once this policy has been set for the event of viewing the data set or 
+                    transferring it outside the system (e.g., to a DICOM PACS) then all events matching the policy must be logged.
+                </reqDescription>
+            </requirement>
+            <requirement id="HLOG-0003">
+                <reqTitle>No PHI is permitted in the HIPAA log</reqTitle>
+                <reqDescription>
+                    Although the user's HIPAA Log is secure data it is certainly possible for it to be viewed by third parties under restricted circumstances. In particular, it is possible to imagine that 
+                    the user will call the help desk with questions about who viewed their data. For this reason the HIPAA log should contain no PHI. All references to data should be by tracking number.
+                    The content of the data referred to by the tracking number is secure and uncompromised by another user viewing the HIPAA log.
+                </reqDescription>
+            </requirement>
+            
+        </sect2>
+        <sect2>
+            <title>Labelling Requirements</title>
+            <requirement id="LABEL-0001">
+                <reqTitle>Patient name must be visible on desktop</reqTitle>
+                <reqDescription>There can never be an ambiguity for the user about which patient the desktop refers to.</reqDescription>
+            </requirement>
+            
+        </sect2>
+        <sect2>
+            <title>eReferral requirements</title>
+            <para>TBD</para>
+        </sect2>
+        <sect2>
+            <title>Desktop visual requirements</title>
+            <requirement id="DESKTOP_VISUAL-0001">
+                <reqTitle>The patient's desktop must display all important summary information about the patient's medical records.</reqTitle>
+                <reqDescription>
+                    The critical issue here is what is 'important'. 
+                    Link to transparency.
+                    
+                </reqDescription>
+            </requirement>
+            <requirement id="DESKTOP_VISUAL-0002">
+                <reqTitle>Patient data objects are organized by CCR</reqTitle>
+                <reqDescription>
+                    The CCR is the basic manifest for patient data. All clinical data in the MedCommons system uses the CCR as an envelope to 
+                    provide clinical context.
+                </reqDescription>
+            </requirement>
+            
+            
+        </sect2>
+        
+        <sect2>
+            <title>Viewer launching requirements</title>
+            <requirement id="DESKTOP_VIEWER-0001">
+                <reqTitle>The viewer must be able to be launched from the patient desktop view</reqTitle>
+                <reqDescription>
+                    Each folder on a patient's desktop contains information defined by a CCR. The CCR may be located on a different machine than the 
+                    one where the data referred to by the CCR resides. 
+                </reqDescription>
+            </requirement>
+            
+        </sect2>
+        
+        
+    </sect1>
+    <sect1>
+        <title>Use Cases</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="images/PatientDesktop.jpg"/>/>
+            </imageobject>
+            
+        </mediaobject>
+         <para>
+             [It might be useful to have some of these flows in sequence diagrams;  it would certainly be useful to have the desktop image above annotated so that the mapping between different graphical items and the text
+             was clear]
+         </para>
+        <usecase id="USECASE_DESKTOP-001">
+            <useTitle>Patient Views CCR</useTitle>
+            <useDescription>
+                
+            <orderedlist>
+                <listitem>Patient logs in using their patient Id 
+                    <orderedlist>
+                        <listitem>System displays patient desktop containing a CCR Folder</listitem>
+                    </orderedlist>
+                </listitem>
+                <listitem>
+                    Patient clicks CCR thumbnail in open folder
+                    <orderedlist>
+                        <listitem>System displays WADO Viewer showing CCR in main viewer area</listitem>
+                        <listitem>WADO Viewer shows first thumbnail as a CCR thumbnail.  </listitem>
+                    </orderedlist>
+                    
+                </listitem>
+            </orderedlist>
+                
+            </useDescription>
+        </usecase>
+        
+       
+        <usecase id="USECASE_DESKTOP-002">
+            <useTitle>Patient Edits CCR (extends Patient Views CCR)</useTitle>
+            <useDescription>
+            <orderedlist>
+                <listitem>Patient selects “Edit CCR” from WADO menu
+                <orderedlist>
+                    System shows Purpose and Comment entry box, including several new fields: 
+                    <orderedlist>
+                        <listitem>Checkbox for patient notification</listitem>
+                        <listitem>Checkbox for Recipient Notification</listitem>
+                        <listitem>Checkbox for Acknowledgement Email to Sender and Patient</listitem>
+                        <listitem>Email addresses from the current CCR Actors</listitem>
+                        <listitem>
+                            A button nearby says  Contacts and Providers.  
+                            It will let the user change the patient, source and destination of the CCR with Actors from
+                            their Desktop Contacts Frame. A dropdown of recent contacts next to each email textbox  
+                            would be nicer. At the bottom of the list, the choice would say My Contacts and Providers...
+                        </listitem>
+                        <listitem>
+                            At the bottom of the Purpose and Comment Form we will have 3 prominent buttons:
+                            <orderedlist>
+                                <listitem>Confirm and Send MedCommons eReferral Notifications</listitem>
+                                <listitem>Update CCR</listitem>
+                                <listitem>Cancel</listitem>
+                            </orderedlist>
+                        </listitem>
+                        </orderedlist>
+                </orderedlist>
+                </listitem>
+                <listitem>Patient enters a description, purpose, [possibly modifies other info] and selects “Update CCR”
+                <orderedlist>
+                    <listitem>System allocates new tracking #, writes HIPAA log entry with status “NEW”</listitem>
+                    <listitem>System creates copy of current CCR with modifications as per user’s entries.</listitem>
+                    <listitem>System shows WADO with new CCR in first thumbnail position (old CCR in 2nd position) and CCR in the main viewer area.</listitem>
+                </orderedlist>
+                </listitem>
+            </orderedlist>
+            <literal>
+                [ Technical Note:   alternative Use Case here:  Power Failure – should the user for whatever reason exit the process after this
+                point their edits would be saved and visible on their Patient Desktop if they return  
+                Hence this requires a real save at this point in the process.]
+                
+            </literal>
+                 <orderedlist>
+                     <listitem>Patient chooses “Send eReferral” (button on 1st/new CCR thumbnail)
+                     <orderedlist>
+                         <listitem>WADO Viewer is closed</listitem>
+                         <listitem>
+                             System displays Notification Form.  Notification form shows tracking number, MedCommons Id of patient, checkboxes and email addresses as specified by the patient in Step 2.  
+                             Notification Form includes “Submit” and “Cancel” buttons.
+                         </listitem>
+                         <listitem>
+                             Somewhere on the screen a “Print” button is displayed allowing the user to print the form.
+                         </listitem>
+                     </orderedlist>
+                     </listitem>
+                 
+                    <listitem>Patient selects “Submit”
+                    <orderedlist>
+                        <listitem>System generates a (random) PIN</listitem>
+                        <listitem>System shows Popup window (dialog) containing a text area allowing entry of (optional) comment text.   
+                            Note: this information is sent unencrypted in the clear and is to allow the sender explain to the recipient enough 
+                            ontext for them to follow the email link.  
+                            Popup window also displays (read only) PIN, a checkbox entitled “Send without PIN”  (or similar), and buttons 
+                            “Send” and “Cancel”.</listitem>
+                    </orderedlist>
+                    </listitem>
+                 
+                    <listitem>Patient selects “Send”
+                        <orderedlist>
+                            <listitem>System sends e-mails as per notification checkboxes.</listitem>
+                            <listitem>System updates HIPAA log for tracking number (what status?)</listitem>
+                            <listitem>System displays Patient Desktop.  Desktop contains new folder.</listitem>
+                        </orderedlist>
+                        
+                    </listitem>
+                    
+                </orderedlist>
+            </useDescription>
+        </usecase>
+        
+        <usecase id="USECASE_DESKTOP-003">
+            <useTitle> Doctor Views Referred Study</useTitle>
+            <useDescription>
+                <orderedlist>
+                    <listitem>Doctor opens Email, reads comment text and click’s embedded link
+                        <orderedlist>
+                            <listitem>System decodes tracking number from link and displays a “login” page requesting the Doctor to provide the correct PIN to view the patient record.</listitem>
+                        </orderedlist>
+                        
+                    </listitem>
+                    <listitem>Doctor phones patient to request PIN.  Patient provides PIN and Doctor enters  PIN and selects “Login” button.
+                        <orderedlist>
+                            <listitem>System displays [What does it display – Patient Desktop containing only the referred study?  
+                                Or just WADO for the specific tracking number?]
+                            </listitem>
+                            <listitem>System updates HIPAA log entry corresponding to tracking number to indicate that it was viewed by Doctor.  
+                                [ Technical Note:  this is not a new HIPAA log entry.  It is an update to the existing entry. ]
+                            </listitem>
+                        </orderedlist>
+                        
+                    </listitem>
+                </orderedlist>
+                
+            </useDescription>
+        </usecase>
+        
+        <usecase id="USECASE_DESKTOP-004">
+            <useTitle>Doctor Adds New Patient</useTitle>
+            <useDescription>
+            <orderedlist>
+                <listitem>Previously unknown patient attends clinic. 
+                    <orderedlist>
+                        <listitem>Patient is given some kind of scan, eg. MRI</listitem>
+                        <listitem>DICOM study is transferred from the modality to MedCommons Gateway.</listitem>
+                    </orderedlist>
+                </listitem>
+                <listitem>Doctor views Gateway selection screen to find Patient’s study.
+                    <orderedlist>
+                        <listitem>System shows all recently added studies</listitem>
+                    </orderedlist>
+                    
+                </listitem>
+                <listitem>Doctor clicks link in selection screen
+                    <orderedlist>
+                        <listitem>System reads DICOM header information from Study and attempts to match it to known patients.
+                            [Technical Note:  Implicit here is that the gateway is keeping a persistent (learned) table of 
+                            associations from DICOM header info to MedCommons Patient Ids]</listitem>
+                        <listitem>Since patient is new, no MedCommons Id is found.</listitem>
+                        <listitem>System generates CCR based on best effort information from DICOM headers. [Technical Note:  References to the DICOM study are embedded in the CCR 
+                            using whatever technique we need to use (proprietary if necessary)] </listitem>
+                        <listitem>CCR is assigned a tracking number [Technical Note:  this needs some thought as it breaks our prior assumption that tracking numbers must be attached to a
+                            MedCommons Id.  Possibly it will mean creating a temporary MedCommons Id or similar technique ]
+                        </listitem>
+                        <listitem>System displays WADO Viewer for selected study.</listitem>
+                    </orderedlist>
+                    
+                </listitem>
+                <listitem>Doctor Selects “Send eReferral”
+                    <orderedlist>
+                        <listitem>System shows Notification form as in Use Case 2 3.b, however because patient is not identified, the patient card on the notification form is blank.</listitem>
+                    </orderedlist>
+                    
+                </listitem>
+                <listitem>Doctor asks Patient if they would like to sign up with MedCommons.  Doctor presents Patient with MedCommons signup form.   
+                    [Technical Note:  although obviously not part of the demo,
+                    Adrian suggested that the Doctor would probably have a stack of MedCommons cards with pre-assigned MedCommons Ids ready to hand out. 
+                    This avoids the need to go on line to create the initial account at all]
+                    <orderedlist>
+                        <listitem>Patient signs MedCommons form and accepts MedCommons Id Card.</listitem>
+                    </orderedlist>
+                    
+                </listitem>
+                
+                <listitem>Doctor Enters Patient Id on Notification Form and clicks “Submit”.   
+                    <orderedlist>
+                        <listitem>System contacts MedCommons central and creates account and assigns tracking number to MedCommons Id that was entered.  </listitem>
+                        <listitem>System records association b/w internal patient id (DICOM header info) and new MedCommons Id (recorded in derby database on gateway).</listitem>
+                    </orderedlist>
+                    
+                </listitem>
+                <listitem> From this point the Use Case proceeds as in Use Case 2, Step 4 onwards.</listitem>
+            </orderedlist>
+                
+                
+
+            
+            </useDescription>
+        </usecase>
+        
+        
+    
+    </sect1>
+    
+    <index>
+        
+    </index>
+</article>

@@ -1,0 +1,5 @@
+#change into the directory that has the xdstest harness and execute
+
+#java -jar /Users/bill/ihe/Connectathon2005/xds_test_package/current/lib/xdstest.jar
+java -jar /cygdrive/c/MedCommons/svn/temp/router/demo/etc/xds/xdsTestKit_v1_4/xdsTestKit/lib/xdstest.jar
+

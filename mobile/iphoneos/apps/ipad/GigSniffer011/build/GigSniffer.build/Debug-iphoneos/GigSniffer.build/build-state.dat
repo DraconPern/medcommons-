@@ -1,0 +1,424 @@
+TGigSniffer
+v7
+r3
+t319567906.049883
+cCheck dependencies
+cCpResource build/Debug-iphoneos/GigSniffer.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/Info.plist GigSniffer-Info.plist
+cCpResource build/Debug-iphoneos/GigSniffer.app/recents.jpeg recents.jpeg
+cCompileXIB /Users/billdonner/GigSniffer011/MainWindow.xib
+cProcessPCH /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch.gch GigSniffer_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch.gch GigSniffer_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/main.o /Users/billdonner/GigSniffer011/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferController.o /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferDelegate.o /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/main.o /Users/billdonner/GigSniffer011/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferController.o /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer normal armv6
+cCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferDelegate.o /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer normal armv7
+cCreateUniversalBinary /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer normal "armv6 armv7"
+cGenerateDSYMFile /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app.dSYM /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk
+c000000004CCF74050000000000000110
+t1288664069
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist
+c000000004CB3DFCF00000000000001A7
+t1286856655
+s423
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+c000000004CB3DFCF00000000000001E5
+t1286856655
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC10EF500000000003532B0
+t1287720693
+s3486384
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC10F4700000000003E1F20
+t1287720775
+s4071200
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC10F1C0000000000001466
+t1287720732
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC11AE60000000000000AA1
+t1287723750
+s2721
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC11B750000000000C769F0
+t1287723893
+s13068784
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/arpa/inet.h
+c000000004CB3E4790000000000001533
+t1286857849
+s5427
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/usr/include/netinet/in.h
+c000000004CBFACDD0000000000005462
+t1287630045
+s21602
+
+N/Users/billdonner/GigSniffer011/Classes/GigSnifferController.h
+c000000004D5BFCEA000000000000016F
+t1297874154
+s367
+i<UIKit/UIKit.h>
+
+N/Users/billdonner/GigSniffer011/Classes/GigSnifferController.m
+c000000004D5BFFDA0000000000001E3D
+t1297874906
+s7741
+i"GigSnifferController.h"
+i<netinet/in.h>
+i<arpa/inet.h>
+
+N/Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.h
+c000000004D5BFCEA00000000000001CE
+t1297874154
+s462
+i<UIKit/UIKit.h>
+
+N/Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m
+c000000004D5BFD58000000000000077B
+t1297874264
+s1915
+i"GigSnifferDelegate.h"
+i"GigSnifferController.h"
+
+N/Users/billdonner/GigSniffer011/GigSniffer_Prefix.pch
+c000000004D5BF0BF00000000000000BD
+t1297871039
+s189
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/billdonner/GigSniffer011/MainWindow.xib
+c000000004D5BF1B50000000000004505
+t1297871285
+s17669
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app
+t1297875105
+s272
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app.dSYM
+t2
+s0
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer
+t1297875105
+s51112
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/Info.plist
+t1297875103
+s852
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/MainWindow.nib
+t1297875103
+s960
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/PkgInfo
+t1297875103
+s8
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/ResourceRules.plist
+t1297875103
+s485
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/embedded.mobileprovision
+t2
+s0
+
+N/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/recents.jpeg
+t1297875103
+s16588
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer.xcent
+t2
+s0
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer
+t1297875105
+s22440
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer.LinkFileList
+c000000004D5C009F0000000000000177
+t1297875103
+s375
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferController.o
+t1297875105
+s59948
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferDelegate.o
+t1297875105
+s50776
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/main.o
+t1297875105
+s6432
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer
+t1297875105
+s22440
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer.LinkFileList
+c000000004D5C009F0000000000000177
+t1297875103
+s375
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferController.o
+t1297875105
+s59512
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferDelegate.o
+t1297875105
+s50716
+
+N/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/main.o
+t1297875105
+s6416
+
+N/Users/billdonner/GigSniffer011/main.m
+c000000004D5BF0BF000000000000016B
+t1297871039
+s363
+i<UIKit/UIKit.h>
+
+N/Users/billdonner/GigSniffer011/recents.jpeg
+c000000004D5BF0BF00000000000040CC
+t1297871039
+s16588
+
+N/Users/billdonner/Library/MobileDevice/Provisioning Profiles/067CFD8A-D5E2-411D-A467-483F0F77CE9D.mobileprovision
+c000000004D2A08360000000000002347
+t1294600246
+s9031
+
+N/Users/billdonner/Library/MobileDevice/Provisioning Profiles/C094D072-7C7A-4AD2-A22F-BC2627739679.mobileprovision
+c000000004D5B1EA80000000000002372
+t1297817256
+s9074
+
+N/var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch.gch
+t1297875104
+s10446552
+
+N/var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch.gch
+t1297875104
+s9983704
+
+NGigSniffer-Info.plist
+c000000004D5C009E0000000000000392
+t1297875102
+s914
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies319567903#319567903#0(0"0(0#1#0"8620505024#0"0#
+
+CCodeSign /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app
+r0
+
+CCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferController.o /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s319567904.995773
+e319567905.290332
+r1
+xCompileC
+xbuild/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferController.o
+x/Users/billdonner/GigSniffer011/Classes/GigSnifferController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m319567904#319567905#0(0"0(0#0#62"/Users/billdonner/GigSniffer011/Classes/GigSnifferController.m8622235968#1747"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv6 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -include /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch -c /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferController.o0#
+
+CCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferDelegate.o /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s319567905.217494
+e319567905.402844
+r1
+xCompileC
+xbuild/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferDelegate.o
+x/Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m319567905#319567905#0(0"0(0#0#60"/Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m8621566304#1743"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv6 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -include /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch -c /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSnifferDelegate.o0#
+
+CCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/main.o /Users/billdonner/GigSniffer011/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s319567904.994152
+e319567905.217407
+r1
+xCompileC
+xbuild/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/main.o
+x/Users/billdonner/GigSniffer011/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@46"Compile /Users/billdonner/GigSniffer011/main.m319567904#319567905#0(0"0(0#0#38"/Users/billdonner/GigSniffer011/main.m8622424992#1707"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv6 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -include /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch -c /Users/billdonner/GigSniffer011/main.m -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferController.o /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s319567905.395991
+e319567905.494374
+r1
+xCompileC
+xbuild/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferController.o
+x/Users/billdonner/GigSniffer011/Classes/GigSnifferController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m319567905#319567905#0(0"0(0#0#62"/Users/billdonner/GigSniffer011/Classes/GigSnifferController.m8622136000#1747"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv7 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -include /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch -c /Users/billdonner/GigSniffer011/Classes/GigSnifferController.m -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferController.o0#
+
+CCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferDelegate.o /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s319567905.494462
+e319567905.574376
+r1
+xCompileC
+xbuild/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferDelegate.o
+x/Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@68"Compile /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m319567905#319567905#0(0"0(0#0#60"/Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m8612315104#1743"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv7 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -include /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch -c /Users/billdonner/GigSniffer011/Classes/GigSnifferDelegate.m -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSnifferDelegate.o0#
+
+CCompileC build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/main.o /Users/billdonner/GigSniffer011/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s319567905.290414
+e319567905.395907
+r1
+xCompileC
+xbuild/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/main.o
+x/Users/billdonner/GigSniffer011/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@46"Compile /Users/billdonner/GigSniffer011/main.m319567905#319567905#0(0"0(0#0#38"/Users/billdonner/GigSniffer011/main.m8623011328#1707"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv7 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -include /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch -c /Users/billdonner/GigSniffer011/main.m -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/billdonner/GigSniffer011/MainWindow.xib
+s319567903.249400
+e319567903.770366
+r1
+xCompileXIB
+x/Users/billdonner/GigSniffer011/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib319567903#319567903#0(0"0(0#0#46"/Users/billdonner/GigSniffer011/MainWindow.xib8626249984#524"    cd /Users/billdonner/GigSniffer011    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/MainWindow.nib /Users/billdonner/GigSniffer011/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk0#
+
+CCpResource build/Debug-iphoneos/GigSniffer.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+s319567903.209409
+e319567903.248148
+r1
+xCpResource
+xbuild/Debug-iphoneos/GigSniffer.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist319567903#319567903#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist8626435008#483"    cd /Users/billdonner/GigSniffer011    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app0#
+
+CCpResource build/Debug-iphoneos/GigSniffer.app/recents.jpeg recents.jpeg
+s319567903.248210
+e319567903.254823
+r1
+xCpResource
+xbuild/Debug-iphoneos/GigSniffer.app/recents.jpeg
+xrecents.jpeg
+lSLF07#2@17"Copy recents.jpeg319567903#319567903#0(0"0(0#0#44"/Users/billdonner/GigSniffer011/recents.jpeg28429410741125224#438"    cd /Users/billdonner/GigSniffer011    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/billdonner/GigSniffer011/recents.jpeg /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app0#
+
+CCreateUniversalBinary /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer normal "armv6 armv7"
+s319567905.930032
+e319567905.948345
+r1
+xCreateUniversalBinary
+x/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer
+xnormal
+xarmv6 armv7
+lSLF07#2@89"CreateUniversalBinary build/Debug-iphoneos/GigSniffer.app/GigSniffer normal "armv6 armv7"319567905#319567905#0(0"0(0#0#43"/Users/billdonner/GigSniffer011/armv6 armv78621912640#514"    cd /Users/billdonner/GigSniffer011    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer -output /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer0#
+
+CGenerateDSYMFile /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app.dSYM /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer
+s319567905.948417
+e319567906.049852
+r0
+xGenerateDSYMFile
+x/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app.dSYM
+x/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer
+lSLF07#2@104"GenerateDSYMFile build/Debug-iphoneos/GigSniffer.app.dSYM build/Debug-iphoneos/GigSniffer.app/GigSniffer319567905#319567906#0(0"0(0#0#78"/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer8621471520#350"    cd /Users/billdonner/GigSniffer011    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/GigSniffer -o /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app.dSYM2#
+
+CLd /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer normal armv6
+s319567905.402918
+e319567905.929972
+r1
+xLd
+x/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer
+xnormal
+xarmv6
+lSLF07#2@123"Link /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer319567905#319567905#0(0"0(0#0#0"8621795040#842"    cd /Users/billdonner/GigSniffer011    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -L/Users/billdonner/GigSniffer011/build/Debug-iphoneos -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -filelist /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv6/GigSniffer0#
+
+CLd /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer normal armv7
+s319567905.574445
+e319567905.928563
+r1
+xLd
+x/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer
+xnormal
+xarmv7
+lSLF07#2@123"Link /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer319567905#319567905#0(0"0(0#0#0"8622817824#842"    cd /Users/billdonner/GigSniffer011    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -L/Users/billdonner/GigSniffer011/build/Debug-iphoneos -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -filelist /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/Objects-normal/armv7/GigSniffer0#
+
+CProcessInfoPlistFile /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/Info.plist GigSniffer-Info.plist
+s319567903.226927
+e319567903.245752
+r1
+xProcessInfoPlistFile
+x/Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/Info.plist
+xGigSniffer-Info.plist
+lSLF07#2@29"Process GigSniffer-Info.plist319567903#319567903#0(0"0(0#0#53"/Users/billdonner/GigSniffer011/GigSniffer-Info.plist8626334560#546"    cd /Users/billdonner/GigSniffer011    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility GigSniffer-Info.plist -genpkginfo /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/ResourceRules.plist -o /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/Info.plist0#
+
+CProcessPCH /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch.gch GigSniffer_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s319567903.771213
+e319567904.884042
+r1
+xProcessPCH
+x/var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch.gch
+xGigSniffer_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@32"Precompile GigSniffer_Prefix.pch319567903#319567904#0(0"0(0#0#53"/Users/billdonner/GigSniffer011/GigSniffer_Prefix.pch8625939680#1609"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv7 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -c /Users/billdonner/GigSniffer011/GigSniffer_Prefix.pch -o /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-ddsxgmakskcpgwescalmcqjnchni/GigSniffer_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch.gch GigSniffer_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s319567903.770461
+e319567904.994071
+r1
+xProcessPCH
+x/var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch.gch
+xGigSniffer_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@32"Precompile GigSniffer_Prefix.pch319567903#319567904#0(0"0(0#0#53"/Users/billdonner/GigSniffer011/GigSniffer_Prefix.pch8626154240#1609"    cd /Users/billdonner/GigSniffer011    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-generated-files.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-own-target-headers.hmap -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-all-target-headers.hmap -iquote /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer-project-headers.hmap -F/Users/billdonner/GigSniffer011/build/Debug-iphoneos -I/Users/billdonner/GigSniffer011/build/Debug-iphoneos/include -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources/armv6 -I/Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/DerivedSources -c /Users/billdonner/GigSniffer011/GigSniffer_Prefix.pch -o /var/folders/4n/4n2ZAOIXGfCzdaNq6fpLK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GigSniffer_Prefix-dzyyqthjqdmsaoallxmlzoqlfaft/GigSniffer_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/billdonner/Library/MobileDevice/Provisioning Profiles/067CFD8A-D5E2-411D-A467-483F0F77CE9D.mobileprovision" /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/embedded.mobileprovision
+r0
+
+CProcessProductPackaging "/Users/billdonner/Library/MobileDevice/Provisioning Profiles/C094D072-7C7A-4AD2-A22F-BC2627739679.mobileprovision" /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app/embedded.mobileprovision
+r0
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist /Users/billdonner/GigSniffer011/build/GigSniffer.build/Debug-iphoneos/GigSniffer.build/GigSniffer.xcent
+r0
+
+CTouch /Users/billdonner/GigSniffer011/build/Debug-iphoneos/GigSniffer.app
+r0
+

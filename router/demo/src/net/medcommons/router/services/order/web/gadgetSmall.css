@@ -1,0 +1,226 @@
+/*
+ * General Settings 
+ */
+body {
+  font-family: verdana,arial;
+  font-size: 11px;
+  padding:0px;
+  margin:0px;
+}
+
+table tr td,
+table tr th {
+  padding: 1px 0px;
+  margin: 0px;
+  font-family: verdana,arial;
+}
+
+h5 {
+  margin-left: 5px;
+  font-size: 11px;
+  display: inline;
+}
+
+a:link, a:visited, a:active {
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
+img {
+  border: 0;
+}
+
+/**
+ * Current CCR Widget
+ */
+#ccrheader, #history {
+  width: 98%;
+}
+#ccrheaderLinks {
+  float: right;
+}
+
+#ccrheader {
+  font-weight: normal;
+  color: #333;
+  margin-left: 0px;
+  background-color: #9ce;
+  background-color: transparent;
+}
+ul {
+  font-size: 10px;
+}
+#history, table tr td {
+  font-size: 9px;
+}
+
+#ccrheader table {
+  border-collapse: separate;
+}
+#ccrheader table tr th {
+  color: #444;
+  font-weight: bold;
+  text-align: left;
+  border-spacing: 3px 1px;
+  font-size: 10px;
+}
+#ccrheader table tr td {
+  background-color: #f3f3f3;
+  font-size: 9px;
+}
+
+/**
+ * Activity Log Widget
+ */
+#updatesTable {
+  text-align: left;
+  margin-top: 20px;
+}
+#updatesTable table tr.row1 {
+  background-color: #f6f6f6;
+}
+#updatesTable table tr th {
+  text-align: left;
+  font-weight: bold;
+  color: #444;
+  background-image: url('images/lbgrad.png');
+}
+#updatesTable table tr td {
+  padding: 0px 7px 0px 0px;
+}
+
+/**
+ * Hipaa Gadget
+ */
+#privacyFeature table tr th {
+  color: black;
+  font-weight: bold;
+  text-align: left;
+}
+
+#privacyFeature table tr td,
+#privacyFeature table tr th {
+  padding: 2px 0px;
+  margin: 0px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+#privacyFeature h4 {
+  font-size: 10px;
+  color: black;
+}
+#privacyFeature {
+  font-size: 12px;
+  height: 181px;
+}
+#privacyFeature input.text,
+#privacyFeature textarea
+{
+  font-family: arial;
+  background-color: #f3f3f3;
+  font-size: 12px;
+  margin: 0px;
+  margin-top: 2px;
+  padding-left: 7px;
+  border: none transparent 0px;
+  width: 20em;
+}
+
+#privacyFeature input.text.pin {
+  width: 4em;
+}
+
+#privacyFeature form {
+  padding: 0px;
+  margin: 0px;
+}
+
+.reqfield {
+  color: red;
+}
+
+/**
+ * Consents Gadget
+ */
+#privacyWidget {
+  position: relative;
+}
+
+#privacyWidget table tr.practice {
+  background-color: #b5b5b5;
+  color: white;
+  height: 22px;
+}
+
+/**
+ * Combo Gadget Pane
+ */
+
+#gadgetPaneHeader {
+  position: relative;
+}
+
+.gadgetBorderColor  {
+  background-color: #555555;
+}
+
+.gadgetSeparator {
+  border-bottom-style: solid; 
+  border-bottom-width: 3px; 
+  overflow: hidden; 
+  height: 8px;
+}
+
+#gadgetPane {
+ border: solid 2px;
+}
+
+#gadgetPane, .gadgetSeparator {
+  border-color: #555555;
+}
+
+#gadgetPane.borderless {
+	border: none;
+	margin: 1em 1em 1em 0;
+}
+
+
+.gadgetHeaderRightButton {
+  position: absolute;
+  right: 30px;
+  color: white;
+}
+
+.gadgetHeaderRightButton a:link,
+.gadgetHeaderRightButton a:visited
+{
+  color: white;
+}
+
+div.panePadding {
+  margin: 10px;
+}
+
+h3.gadgetTitle {
+  font-size: 13px;
+  margin: 0px 0px;
+  padding: 3px 4px 3px 4px;
+  color: white;
+}
+
+h3.headerText {
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+a.iconLink { 
+  background: url(images/icon-sprite.png) no-repeat 0px 0px;
+  text-decoration: none !important;
+}

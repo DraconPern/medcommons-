@@ -1,0 +1,35 @@
+<html><head><title>Dump Chooser</title>
+</head>
+<body>
+<FORM 
+   action="cd.php" 	
+   METHOD=POST 
+   TARGET="RightFrame"
+   >
+<table>
+<tr><td>Table</td><td><SELECT NAME="url">
+<OPTION VALUE="">Choose a Table...
+<OPTION VALUE="documentdump.php">Document
+<OPTION VALUE="documentlocationdump.php">Document Location
+<OPTION VALUE="forensiclogdump.php">Forensic Log
+<OPTION VALUE="groupnodedump.php">Group Nodes
+<OPTION VALUE="groupsdump.php">Groups
+<OPTION VALUE="hipaadump.php">Hipaa
+<OPTION VALUE="hipaatracedump.php">Hipaa Trace
+<OPTION VALUE="inboxdump.php">Inbox
+<OPTION VALUE="inboxesdump.php">Inboxes
+<OPTION VALUE="nodedump.php">Node
+<OPTION VALUE="noderightdump.php">Node Right
+<OPTION VALUE="rightsdump.php">Rights
+<OPTION VALUE="trackingnumberdump.php">Tracking Number
+<OPTION VALUE="userdump.php">User
+<OPTION VALUE="usergroupdump.php">User Group
+<OPTION VALUE="worklistqueuedump.php">Worklist Queue
+<OPTION VALUE="worklistqueueitemdump.php">Worklist Item
+</SELECT></td></tr>
+<tr><td>Filter</td><td><input type=text value="" name="filter"></td></tr>
+<tr><td>Limit</td><td><input type=text value="30" name="limit"></td></tr>
+<tr><td><INPUT TYPE=SUBMIT VALUE="Go"></td></tr>
+</FORM>
+</body>
+</html>

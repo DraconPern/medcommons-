@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../Requirements/MedCommonsDocbookExtensions.dtd">
+<article>
+    <title> MedCommons Platform Object Identity Specification   </title>
+    <articleinfo>
+        <invpartnumber>SS-0001</invpartnumber>
+        <revhistory>
+            <revision>
+                <revnumber>A</revnumber>
+                
+                <date>March 31, 2005</date>
+                <authorinitials>SWD</authorinitials>
+                <revdescription>Initial Draft</revdescription>
+            </revision>         
+        </revhistory>
+        <legalnotice>Copyright 2005 MedCommons, Inc.</legalnotice>
+        
+    </articleinfo>
+    <sect1>
+        <title>Overview</title>
+        <para>
+            For each type of identitier this document defines 
+            <itemizedlist>
+                <listitem>Which software entity generates it</listitem>
+                <listitem>Where identifiers are stored</listitem>
+                <listitem>Where identifiers are used</listitem>
+            </itemizedlist>
+        </para>
+    </sect1>
+    <sect1>
+        <title>Patient Identifiers</title>
+    </sect1>
+    <sect1>
+        <title>Data Object Identifiers</title>
+    </sect1><sect1>
+        <title>Tracking Numbers</title>
+    </sect1>
+   <sect1>
+       <title>Device identifiers</title>
+   </sect1>
+    
+    
+</article>

@@ -1,0 +1,246 @@
+<WebScriptTemplate>
+	<Variables>
+	</Variables>
+	<TestItem v='3'>
+		<ver>13</ver>
+		<id>245402</id>
+		<Summary v='3'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<childCount>1</childCount>
+		<ChildItems>
+			<Step v='4'>
+				<ver>13</ver>
+				<id>245403</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>3</childCount>
+				<ChildItems>
+					<CookieKiller v='1'>
+						<ver>13</ver>
+						<id>245407</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+					</CookieKiller>
+					<Request v='10'>
+						<ver>13</ver>
+						<id>245409</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>3</childCount>
+						<ChildItems>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>245611</id>
+								<name>tracking</name>
+								<value>new</value>
+								<sendEquals>false</sendEquals>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>245613</id>
+								<name>accid</name>
+								<value>%24%7Buser1%7D</value>
+								<sendEquals>false</sendEquals>
+							</Parameter>
+							<Parameter v='4'>
+								<ver>13</ver>
+								<id>245612</id>
+								<name>auth</name>
+								<value>%24%7Buser1auth%7D</value>
+								<sendEquals>false</sendEquals>
+								<method>2</method>
+							</Parameter>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>300</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<Object>null</Object>
+						<host>${host}</host>
+						<path>/router/tracking.jsp</path>
+						<protocol/>
+						<resource/>
+						<targetFrame/>
+						<isActive>1</isActive>
+						<label/>
+						<headers/>
+						<multipartBoundary/>
+						<Object>null</Object>
+						<lenientSubrequestCount>false</lenientSubrequestCount>
+						<formCharset/>
+						<method>2</method>
+						<waitForSubRequests>true</waitForSubRequests>
+					</Request>
+					<Navigation v='8'>
+						<ver>13</ver>
+						<id>245614</id>
+						<Summary v='3'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<Request v='10'>
+								<ver>13</ver>
+								<id>245615</id>
+								<Summary v='3'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>2</childCount>
+								<ChildItems>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>245616</id>
+										<name>tip</name>
+										<value>8</value>
+										<sendEquals>true</sendEquals>
+										<method>1</method>
+									</Parameter>
+									<Parameter v='4'>
+										<ver>13</ver>
+										<id>245617</id>
+										<name>sid</name>
+										<value>C712CD9B482515F0B2704CD2D2C078ED</value>
+										<sendEquals>true</sendEquals>
+										<method>2</method>
+									</Parameter>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<Object>null</Object>
+								<host>${host}</host>
+								<path>//acct/disable_tip.php</path>
+								<protocol>http</protocol>
+								<resource/>
+								<targetFrame/>
+								<label/>
+								<headers/>
+								<multipartBoundary/>
+								<Object>null</Object>
+								<lenientSubrequestCount>false</lenientSubrequestCount>
+								<formCharset/>
+								<waitForSubRequests>false</waitForSubRequests>
+							</Request>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<JumpToTopAction v='1'>
+						</JumpToTopAction>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<selectedReference>2</selectedReference>
+						<references>
+							<count>4</count>
+							<VisibleTextReference v='2'>
+								<value/>
+								<filter/>
+							</VisibleTextReference>
+							<NameOrIdReference v='2'>
+								<value>yui-gen0-button</value>
+								<filter>Buttons</filter>
+							</NameOrIdReference>
+							<VisibleTextReference v='2'>
+								<value>OK</value>
+								<filter>Buttons</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>contents.document.getElementById(&apos;yui-gen0-button&apos;);</value>
+								<filter>Buttons</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>true</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+						<allowHidden>true</allowHidden>
+					</Navigation>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>New CCR as User1</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>accid</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>1</expanded>
+			</Step>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>300</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<Object>null</Object>
+		<title>A to P</title>
+		<template/>
+		<expanded>1</expanded>
+	</TestItem>
+</WebScriptTemplate>

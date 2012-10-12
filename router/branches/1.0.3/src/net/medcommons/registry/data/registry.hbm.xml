@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping package="net.medcommons.registry.data">
+
+
+ <class name="net.medcommons.registry.data.Documents" table="REGISTRY_DOCUMENTS">
+ <id name="id" type="long">
+   <column name="REGISTRY_DOCUMENTS_ID" sql-type="INTEGER"/>
+   <generator class="native"/>
+  </id>
+  <property name="mcGuid" column="REGISTRY_DOCUMENTS_MCGUID"   />
+  <property name="key" column="REGISTRY_DOCUMENTS_KEY"/>
+  <property name="location" column="REGISTRY_DOCUMENTS_LOCATION"/>
+  <property name="validityTimestamp" column="REGISTRY_DOCUMENTS_VALIDITY_TIMESTAMP"/>
+ </class>
+ 
+ <class name="net.medcommons.registry.data.OwnerGuidLink" table="REGISTRY_OWNER_GUID_LINK">
+ <id name="id" type="long">
+   <column name="REGISTRY_OWNER_GUID_LINK_ID" sql-type="INTEGER"/>
+   <generator class="native"/>
+  </id>
+  <property name="guid" column="REGISTRY_OWNER_DOCUMENT_GUID"   />
+  <property name="mcid" column="REGISTRY_OWNER_DOCUMENT_MCID"/>
+  
+ </class>
+ 
+ 
+ 
+</hibernate-mapping>

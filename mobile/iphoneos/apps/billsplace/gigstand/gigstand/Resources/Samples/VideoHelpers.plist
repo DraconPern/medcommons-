@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>VideoHelperNames</key>
+	<array>
+		<string>Performing With GigStand</string>
+		<string>Loading Content Into GigStand</string>
+		<string>Make A Zip Archive With GigStand</string>
+		<string>Download Adhoc Distribution </string>
+	</array>
+	<key>VideoHelperURLs</key>
+	<array>
+		<string>http://s354932748.onlinehome.us/video/gsplaying.mov</string>
+		<string>http://s354932748.onlinehome.us/video/gsitunesfs.mov</string>
+		<string>http://s354932748.onlinehome.us/video/gsmakezip.mov</string>
+		<string>http://s354932748.onlinehome.us/video/gsadhoc.mov</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Authorization Features</title>
+<link rel="stylesheet" type="text/css" href="stylesCorp.css">
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body onload="MM_preloadImages('images/tabs/tabs_patientOver.png','images/tabs/tabs_doctorOver.png','images/tabs/tabs_groupOver.png','images/tabs/tabs_urlOver.png','images/tabs/tab_conceptOver.png','images/tabs/tab_platformArchOver.png','images/tabs/tab_platformOperationsOver.png','images/tabs/tab_platformAppsOver.png','images/tabs/tab_benefitsOver.png')">
+
+<!-- Nav Table -->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+<td>
+<div id="topnav">
+<ul class="nav">
+<a href="http://www.medcommons.net"><img src="images/logoHeader.gif" alt="MedCommons Inc" width="166" height="35" border="0"/></a>
+<br />
+	<li><a rel="tab" href="index.html"><em>MedCommons Home</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="ondemand/index.html"><em>On Demand Service</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="integrators/platform.html"><em>Platform</em></a></li>
+    	<li><em>|</em></li>
+    
+    	<li><a rel="tab" href="resources.html"><em>Resources</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="https://healthurl.medcommons.net/mod/voucherclaim.php" target="_blank"><em>Pickup Records</em></a></li>	
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="https://healthurl.medcommons.net/acct/login.php" target="_blank"><em>Sign In</em></a></li>
+	
+</ul>
+
+</div>
+
+</td>
+  </tr>
+  
+  <tr>
+<td bgcolor="#336699"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+</table>
+
+
+
+<!-- Content Table-->
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="75">&nbsp;</td>
+    <td width="750" class="header2">Authorization Features</td>
+    <td width="75">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td valign="top">
+   
+<h3>Email / Password on Host Appliance</h3>
+<img src="images/images_auth/HostRegistration_th.jpg" width="250" height="194" />
+<br />
+The user registers directly with the appliance hosting the patient's HealthURL.
+<h3>OpenID Link to Host Appliance Account</h3>
+<img src="images/images_auth/OpenIDLinkToHostAccount_th.jpg" width="250" height="193" />
+<br />
+After direct registration, the user has the option to link their account to any OpenID provider that is trusted by the Host Appliance administrators. OpenID providers must first be whitelisted in the Appliance Console. This is a simple, practical and standards-based federated identity system.
+<h3>OpenID</h3>
+<img src="images/images_auth/ShareWithOpenID_th.jpg" width="250" height="194" />
+<br />
+A user with access to the Consents can invite anyone using their OpenID. Whitelisting by the host appliance is not required.
+<h3>MedCommons Coupon with One-Time Password</h3>
+<img src="images/images_auth/MedCommonsCoupon_th.jpg" width="250" height="180" />
+<br />
+The MedCommons Coupon enables any health care service provider to deliver electronic documents to the patient and charge for the service.
+<h3>MedCommons Claim with One-Time Password</h3>
+<img src="images/images_auth/ConsoleClaimPrintout_th.jpg" width="250" height="154" />
+<br />
+This administrative Support Console interface enables the host of a HealthURL account to grant control of an account to the patient directly without payment.
+<h3>S/Key on Registration Receipt</h3>
+<img src="images/images_auth/RegistrationReceipt_th.jpg" width="250" height="190" />
+<br />
+Account owners (typically the patient or a legal guardian) are prompted to print their Registration Receipt as absolute proof of their identity. The cryptographic keys can be used, one-by-one to prove identity to support personnel managing the host HealthURL appliance. The S/Key technology also protects your account from unauthorized access by host support personnel.
+<h3>Tracking Number and PIN</h3>
+<img src="images/images_auth/PINChallenge_th.jpg" width="250" height="220" />
+<br />
+Anyone can be granted access to a HealthURL using a tracking number and PIN combination. Tracking numbers can be entered directly on the HealthURL host appliance or indirectly via www.medcommons.net. The PIN can be securely shared over the phone, text message or via a printed receipt.
+<h3>OAuth Single Sign-On</h3>
+<img src="images/images_auth/FacebookHealthURLConnect_th.jpg" width="250" height="207" /><img src="images/images_auth/OAuthSignInChallenge_th.jpg" width="250" height="148" /><img src="images/images_auth/OAuthAccessConsent_th.jpg" width="250" height="153" />
+<br />
+Access to a HealthURL account can be granted to an external program or application such as the MedCommons Application for Facebook in a simple three-step process. First, the external application is directed to the HealthURL. Second, the user is challenged to prove that they already have access to the HealthURL and the right to modify Consents. Finally, the user is asked to authorize the change in Consents requested by the external application.
+<h3>Coded Fax Cover Sheet</h3>
+<img src="images/images_auth/FaxCover_th.jpg" width="250" height="134" />
+<br />
+Anyone can be authorized to add records to a HealthURL using customized coded fax cover sheets that can be reused as neccessary. Optional fields include an email to be notified whenever a document is added to the account and a PIN reminder that allows the user to read account as well as to add to it.
+<h3>Group on Host Appliance</h3>
+<img src="images/images_auth/GroupDetails_th.jpg" width="250" height="201" />
+<br />
+Host appliance administrators can create groups of users that share access to the same set of patient accounts for cross-coverage and integration into practice workflow.
+<h3>Facebook Care Team</h3>
+<img src="images/images_auth/FacebookCareTeam_th.jpg" width="250" height="243" />
+<br />
+Once the MedCommons Application on Facebook is listed in a HealthURL Consents, the patient's supports can be invited to participate as a Care Team. They will benefit from Facebook's extensive authentication and notification features.
+<h3>Amazon Payments Account</h3>
+<img src="images/images_auth/AmazonApplicationBilling_th.jpg" width="250" height="207" />
+<br />
+HealthURL accounts can also be controlled indirectly through Amazon Payment accounts. Compared to Facebook Application control, the benefit of this approach is added security and the ability to charge the end-user (typically the patient or guardian) for information services-related expenses.
+<h3>Post to CCR Commons</h3>
+<img src="images/images_auth/CCRCommonsGeneticTesting_th.jpg" width="250" height="225" />
+<br />
+Altruistic sharing and self-help benefit from the broadest possible access to the Web. CCR Commons is a free site sponsored by MedCommons that enables any authorized user to post a redacted and anonymous copy of their medical records. The CCR Commons site is organized around the 750 topics defined by the National Library of Medicine MedLine Plus project. To limit spam and abuse, postings are moderated by Facebook groups connected with specific topics. </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<br />
+
+
+
+<!-- footer Table wrapper -->
+<table width="900" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+<tr>
+<td colspan="2"><img src="images/spacer.gif" width="2" height="2" alt="Spacer" /></td>
+</tr>
+  <tr>
+<td>
+<div id="footernav">
+<ul class="nav">
+
+	<li><a rel="tab" href="about.html"><em>About Us</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="privacy.html"><em>Privacy Policy</em></a></li>
+	<li><em>|</em></li>
+
+	<li><a rel="tab" href="terms.html"><em>Terms of Use</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="hipaa.html"><em>HIPAA</em></a></li>
+	<li><em>|</em></li>
+	
+	<li><a rel="tab" href="contact.html"><em>Contact</em></a></li>
+	
+</ul>
+</div>
+</td>
+ 
+    <td width="457" align="right" class="footerLink"><b>© MedCommons Inc. 2009</b></td>
+  
+  </tr>
+</table>
+</body>
+</html>

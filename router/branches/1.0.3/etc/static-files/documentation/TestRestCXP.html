@@ -1,0 +1,104 @@
+
+<head>
+<title>Test REST CXP</title>
+<script language="Javascript">
+
+function submitPOST(form){
+    var ccrObj = document.getElementById('inputCCR');
+	document.putform.ccrdata.value = escape(ccrObj.value);
+	//alert("Length of encoded CCR is " + document.putform.ccrdata.value.length);
+	document.putform.submit();
+	
+}
+</script>
+</head>
+<body>
+  <h1>Testbed for REST CXP Interface</h1>
+  05/12/2006 <br/>
+  
+  This is a testbed for the REST-ful version of the CXP interface. This interface is currently under development and may be changed depending on feedback from users.
+  The only changes anticipated before TEPR are to fix bugs (if any).
+  <form name="putform" action="/router/CxpRestServlet" method="post" enctype="application/x-www-form-urlencoded" target="_blank">
+ <h2>CXP PUT</h2>
+  <table>
+  <tr><td> <input type="hidden" name="Command" value="PUT"  ></td></tr>
+  <tr><td>TEPR registry data </td></tr>
+  <tr><td>Dictionary Name </td><td> Value </td><td>Definition</td></tr>
+  <tr><td>PatientFamilyName</td><td><input type=text name=PatientFamilyName value=""></td><td>Family name. If blank the Family name is derived from the CCR.</td></tr>
+  <tr><td>PatientGivenName</td><td><input type=text name=PatientGivenName value=""></td><td>Given name. If blank the Given name is derived from the CCR</td></tr>
+  <tr><td>PatientIdentifier</td><td>    <input type=text name=PatientIdentifier value=""></td><td>Patient identifier. If blank the CXP Server's patient id is used.</td></tr>
+  <tr><td>SenderProviderId</td><td>    <input type=text name=SenderProviderId value=""></td><td>Identifier of sending 'practice'</td></tr>
+   <tr><td>ReceiverProviderId</td><td>    <input type=text name=ReceiverProviderId value=""></td><td>Identifier of receiving 'practice'</td></tr>
+    <tr><td>Purpose</td><td>    <input type=text name=Purpose value=""></td><td>CCR Purpose. If blank the CCR's purpose is used.</td></tr>
+    <tr><td>Comment</td><td>    <input type=text name=Comment  value=""></td><td>Comment on entry (also used in email notifications)</td></tr>
+    <tr><td>CXPServerURL</td><td>    <input type=text name=CXPServerURL  value=""></td><td>Server URL of CXP server</td></tr>
+   <tr><td>CXPServerVendor</td><td>    <input type=text name=CXPServerVendor  value=""></td><td>Vendor of CXP serverr</td></tr>
+      <tr><td>ViewerURL</td><td>    <input type=text name=ViewerURL  value=""></td><td>URL to display CCR</td></tr>
+<tr>
+	<td>ccrdata</td><td>hidden</td><td>URLEncoded version of the CCR text below.</td>
+</tr>
+  
+  <tr><td>RegistryEnabled</td><td>    <input type=text name=RegistryEnabled value="TEPR"></td><td>Must be 'TEPR' to opt-in to the TEPR registry. </td></tr>
+  <tr><td>CXP Server data</td></tr>
+  <tr><td>RegistrySecret</td><td>    <input type=text name=RegistrySecret value="12345"></td><td>If blank a random 5 digit integer is generated.</td></tr>
+  <tr><td>CommonsId</td><td>    <input type=text name=CommonsId value=""></td><td>MedCommonsID (if known)</td></tr>
+
+  <tr><td> <input type="hidden" name="ccrdata" value="" > </td></tr>
+  <tr> <td> <input type="button" value="PUT" onclick="javascript:submitPOST(this.form)"></td></tr>
+
+</table>
+  </form>
+  
+  <table>
+			<tr>
+				<td>Paste CCR in text field below</td>
+			</tr>
+				<tr>
+					<td><form>
+  <textarea cols="100" rows="10" id="inputCCR"  ></textarea>
+  </form><</td>
+				</tr>
+		
+		
+  
+  </table>
+  
+ <h2>CXP GET</h2>
+ <form name="getform" action="/router/CxpRestServlet" method="post" enctype="application/x-www-form-urlencoded" target="_blank">
+  <table>
+  <tr><td> <input type="hidden" name="Command" value="GET"  ></td></tr>
+  <tr><td>GUID</td><td><input type=text name=guid value=""></td></tr>
+  <tr><td>RegistrySecret</td><td><input type=text name=RegistrySecret value=""></td></tr>
+  <tr><td>ConfirmationCode</td><td>    <input type=text name=ConfirmationCode value=""></td></tr>
+<tr><td>CommonsId</td><td>    <input type=text name=CommonsId value=""></td><td>MedCommonsID (if known)</td></tr>
+  <tr> <td> <input type="submit" value="GET"></td></tr>
+
+</table>
+  </form>
+
+ <h2>How to use it</h2>
+<h3>PUT</h3> 
+<ol>
+	<li>Paste a CCR into the appropriate text field</li>
+	<li>Click "PUT". The CCR is sent to the CXP server</li>
+	<li>An XML blob is returned as the result. The names of the elements match the dictionary above (as well as match the ones in the REST query to the TEPR registry)</li>
+</ol>
+<h3>GET</h3>
+<li>Paste either</li>
+<ul>
+	<li>GUID, or </li>
+	<li>ConfirmationCode and RegistrySecret</li>
+</ul>
+	<li>Click "GET". The CCR is returned from the CXP server</li>
+
+<h2>How it works</h2>
+It's just straight HTTP POST with the arguments specified as above with one exception: The text of the CCR is URLEncoded and  placed into a hidden HTML &lt;input&gt; element named ccrdata before the POST is submitted. The form element where you paste the CCR is not part of the submit. 
+
+<h2>Known bugs</h2>
+<ul>
+	<li>Validation warning errors are formatted outside of the returned XML. They will be placed inside the &lt;Reason&gt; element when this is fixed. To avoid this issue for today - only use CCRs that pass schema validation. Note that the CXP transaction is successful and the results are stored on the TEPR registry - this is just a formatting issue in the HTTP response.</li>
+	<li>The ViewerURL field isn't stored in the TEPR registry database. The value is being sent to the server but not stored.</li>
+   
+</ul>
+  </body>
+  

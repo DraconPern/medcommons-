@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>RunServerTests Ant Task</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="RunServerTests Ant Task" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus.">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus." class="currentPage">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+  
+<div class="section">
+<h1>RunServerTests Task</h1>
+
+    
+<p>
+      The <b>runservertests</b> task provides support for starting up
+      a servlet container to run in-container tests, and shutting it down again
+      after the tests have completed.
+    </p>
+    
+<p>
+      This task will perform several actions, in the following order:
+    </p>
+    
+<ul>
+      
+<li>
+        Check if a server is already started by constantly trying to
+        call the test URL defined by the <code>testurl</code> attribute.
+      </li>
+      
+<li>
+        If a server is not running, call the Ant target defined by the
+        <code>starttarget</code> attribute. This target is supposed to start 
+        your container. The <b>runservertests</b> task will then
+        constantly poll the server by calling the test URL until the server
+        answers back.
+      </li>
+      
+<li>
+        It will then call the Ant target defined by the <code>testtarget</code>
+        attribute. This target is supposed to run the unit tests. This is
+        usually implemented by using the Ant <code>junit</code> task.
+      </li>
+      
+<li>
+        Once the tests are finished (i.e. when the
+        <code>testtarget</code> has finished executing), it will then
+        call the Ant target defined by the <code>stoptarget</code> attribute.
+        This target is supposed to stop the container. The
+        <b>runservertests</b> task will then constantly poll the
+        server by calling the test URL until the server stops answering, at
+        which point it will consider the server to be stopped. Note that the
+        <code>stoptarget</code> will only get called if the server was not
+        already started when the <b>runservertests</b> task began
+        executing. This is to allow keeping running servers for intensive
+        debugging phases.
+      </li>
+    
+</ul>
+    
+<p>
+      The <b>runservertests</b> task is generic in the sense that you
+      are free to define the <code>starttarget</code>, <code>testtarget</code>
+      and <code>stoptarget</code> as you wish and they will get called at the
+      right time.
+    </p>
+
+    
+<div class="note">
+      Since Ant 1.5, the effects of this task can also be achieved by using a
+      combination of the built-in Ant tasks <code>waitfor</code> (with the 
+      <code>http</code> condition), <code>parallel</code>, 
+      <code>sequential</code> and <code>antcall</code>.
+    </div>
+
+    
+<div class="section">
+<h2>Parameters</h2>
+
+      
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+        
+<tr>
+          
+<th>Name</th>
+          <th>Description</th>
+          <th>Required</th>
+        
+</tr>
+        
+<tr>
+          
+<td>testurl</td>
+          <td>
+            The HTTP URL to check whether the server is running.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>starttarget</td>
+          <td>
+            The target that is called when the server needs to be started.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>stoptarget</td>
+          <td>
+            The target that is called when the server should be shut down.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>testtarget</td>
+          <td>
+            The target that is called once the server is running. This target
+            will normally perform the actual unit tests.
+          </td>
+          <td>Yes</td>
+        
+</tr>
+        
+<tr>
+          
+<td>timeout</td>
+          <td>
+            The timeout in seconds. If the server could not be started before
+            the timeout is reached, the task will terminate and report a
+            failure.
+          </td>
+          <td>No</td>
+        
+</tr>
+      
+</table>
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h2>Examples</h2>
+
+      
+<p>
+        In the following example, the target <code>start.tomcat.40</code> will
+        be called if the specified test URL is not available. After the server
+        has started up so that requests to the test URL return successful HTTP
+        status codes, the target <code>test</code> is called. Finally, after the
+        <code>test</code> target has completed, the target
+        <code>stop.tomcat.40</code> is called to shut down the servlet
+        container.
+      </p>
+
+      
+<div class="source">
+<pre>
+&lt;runservertests
+    testurl="http://localhost:${test.port}/test/ServletRedirector?Cactus_Service=RUN_TEST"
+    starttarget="start.tomcat.40"
+    stoptarget="stop.tomcat.40"
+    testtarget="test"/&gt;
+</pre>
+</div>
+
+    
+</div>
+
+  
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+/**
+ * Copyright 2004 MedCommons Inc.   All Rights Reserved.
+ */
+/* The whole entire area of the viewer - contains everything else */
+.ViewerArea {
+  background-color: #000000;
+  width: 100%;
+  position: relative;
+}
+#EditArea {
+	background-color: #f9f9f6;
+}
+
+/* Properties applied to all thumbnail boxes */
+.thumbCellBox {
+  width: 200px;
+  height: 164px;
+  left: 50px;
+ }
+
+/* Common properties for all thumbnails */
+.ThumbDescription {
+  /* border-style: solid; border-color: #fccccc; */
+  position: absolute;
+  left: 0px;
+  width: 110px;
+}
+.ThumbLabel {
+  /*border-style: solid; border-color: #ccfccc;*/
+  position: absolute;
+  width: 58px;
+  left: 142px;
+}
+.ThumbTime {
+  /* border-style: solid; border-color: #ccccfc; */
+  position: absolute;
+  left: 110px;
+}
+
+/* Properties individual to each thumbnail referenced by id - vertical positions */
+#thumb0 {
+  top: 0px;
+}
+#thumbLabel0 {
+  top: 0px;
+}
+#thumb1 {
+  top: 165px;  
+}
+#thumbLabel1 {
+  top: 0px;
+}
+#thumb2 {
+  top: 330px;
+}
+#thumbLabel2 {
+  top: 0px;
+}
+#thumb3 {
+  top: 495px;
+}
+#thumbLabel3 {
+  top: 0px;
+}
+
+/* General properties of tools area */
+.tools {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+  height: 720px;
+  background-color: #000000;
+}
+
+/* Position and style of the MedCommons logo image */
+#mclogo {
+  position: absolute;
+  left: 0px;
+  top: 420px;
+  width: 35;
+  height: 200;
+  z-index: 20;
+}
+
+#mclogoimage {
+  background-image: url(medcommons_bottomfooter_side.gif); 
+  height: 235; 
+  width: 45;
+}
+
+/* Style applied to image when it is not the selected thumbnail */
+.NotSelectedImage {
+  border-style: none;
+  width: 140px;
+}
+
+/* The footer - at the bottom left  */
+.footer {
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 691px;
+  left: 8px;
+  width: 230px;
+  height: 20px;
+}
+
+/* The footer label is not shown in landscape mode */
+.footerLabel {
+  visibility: hidden;
+  width: 100%;
+  background-color: transparent;
+  /* IE bug - when line wraps it causes layout to change even though div is hidden(?) */
+  font-size: 5px; 
+}
+
+/* The dropdown menu allowing selection of studies, orders etc. This is inside the footer. */
+.MenuItems {
+  font-size: 9px;
+  width: 230px;
+}
+
+/* The main WADO image */
+.mainImage {
+  position: absolute;
+  left: 270px;
+  background-color: #000000;
+  width: 750px;
+  height: 750px;
+}
+
+#ViewerArea {
+}
+
+.ui-button .ui-button-text {
+	display:block;
+	font-size:12px;
+	line-height:1.4;
+}
+
+/* Pager links */
+.pagerLabel {
+  position: relative;
+  font-weight: bold; 
+  vertical-align: middle; 
+  height: 30px; 
+  top: 3px;
+  float: left;
+}
+
+#pager {
+  position: absolute;
+  top: 664px;
+  left: 12px;
+  width: 180px;
+  color: #cccccc;
+	font-size: 10px; 
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif; 
+  z-index: 2;
+  height: 20px;
+}
+
+#pagerTable {
+  margin-left: 10px;
+}
+
+#pagerTable td {
+  padding: 0px 0px 0px 5px;
+}
+
+.pagerBorder {
+  border-left: solid #FFFFFF;
+  
+}
+
+#pagerLinks {
+  width: 130px; 
+  height: 20px;
+  text-align: left;
+}
+
+a:hover {
+  color: red;  
+}
+
+a {
+  text-decoration: none;
+}
+
+#errorPane {
+  position: absolute;
+  left: 250px;
+}
+
+#cachedPane {
+  position: absolute;
+  left: 950px;
+}
+
+#speedPane {
+  position: absolute;
+  left: 950px;
+}
+
+#dragScrollOuter {
+  left: 200px;
+}
+
+#dragScrollLabel {
+  left: 255px;
+  top: 60px;
+}
+
+/* debug - uncomment to see borders on everything 
+div {
+  border-style: solid;
+  border-color: green;
+} */
+
+#xdsSubmitButton {
+  position: absolute;
+  top: 720px;
+  left: 50px;
+  z-index: 100;
+}
+#animationHelp a {
+	color: white;
+	font-weight: bold;
+}
+#animationHelp {
+  position: absolute;
+  top: 5px;
+  left: 190px;
+  width: 35em;
+  z-index: 100;
+  color: white;
+  font-size: 10px;
+  background-color: #555;
+  cursor: pointer;
+}
+#animationHelp span {
+	padding: 0px 1em;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContinuityOfCareRecord 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="urn:astm-org:CCR CCR_20051109.xsd" 
+	xmlns="urn:astm-org:CCR">
+	<CCRDocumentObjectID></CCRDocumentObjectID>
+	<Language>
+		<Text>English</Text>
+	</Language>
+	<Version>V1.0</Version>
+	<DateTime>
+		<ExactDateTime/>
+	</DateTime>
+	<Patient>
+		<ActorID>Patient1</ActorID>
+	</Patient>
+	<From>
+		<ActorLink>
+			<ActorID>From1</ActorID>
+		</ActorLink>
+	</From>
+	<Body>
+	</Body>
+	<Actors>
+		<Actor>
+			<ActorObjectID>AA0001</ActorObjectID>
+			<InformationSystem>
+				<Name>MedCommons </Name>
+				<Type>Repository</Type>
+				<Version>V1.0</Version>
+			</InformationSystem>
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>Patient1</ActorObjectID>
+			<Person>
+				<DateOfBirth>
+					<ApproximateDateTime>
+						<Text>
+							Unknown
+						</Text>
+					</ApproximateDateTime>
+				</DateOfBirth>
+			</Person>
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+		<Actor>
+			<ActorObjectID>From1</ActorObjectID>
+			<Source>
+				<Actor>
+					<ActorID>AA0001</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+	</Actors>
+</ContinuityOfCareRecord>

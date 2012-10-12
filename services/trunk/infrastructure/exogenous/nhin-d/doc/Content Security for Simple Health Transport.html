@@ -1,0 +1,1143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Content Security for Simple Health Transport</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<div id="main">
+<div id="bodyWrapper">
+<div id="wikiBody">
+<div class="wikiBox">
+<div class="contentBox">
+<div class="innerContentBox">
+<div id="WikiAdMargin" style="">
+<div class="wiki wikiPage" id="content_view"><!-- google_ad_section_start -->
+<h1 id="toc0"><a name="Content Security for Simple Health Transport"></a>Content
+Security for Simple Health Transport</h1>
+<br>
+<h2 id="toc1"><a
+ name="Content Security for Simple Health Transport-Status of this Specification"></a>Status
+of this Specification</h2>
+<br>
+This specification is in Draft state.<br>
+<br>
+<h2 id="toc2"><a
+ name="Content Security for Simple Health Transport-IPR Statement"></a>IPR
+Statement</h2>
+<br>
+By contributing to this specification, all contributors warrant that
+all applicable patient or other intellectual policy rights have been
+disclosed and that any of which contributors are aware of will be
+disclosed in accordance with the NHIN Direct project <a
+ class="wiki_link" href="http://nhindirect.org/IPR+Policy">IPR Policy</a>.<br>
+<br>
+<h2 id="toc3"><a
+ name="Content Security for Simple Health Transport-Abstract"></a>Abstract</h2>
+<br>
+The Content Security for Simple Health Transport specification
+describes an interoperable algorithm to secure messages on the Simple
+Health Transport SMTP messaging backbone.<br>
+<br>
+This specification describes an interoperable method using specific
+elements of S/MIME 3.1 to secure RFC 5322 messages, as described in RFC
+3581. Implementations of this specification are fully S/MIME compliant,
+but need not support all S/MIME 3.1 options.<br>
+<br>
+<div id="toc">
+<h1 class="nopad">Table of Contents</h1>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport">Content
+Security for Simple Health Transport</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport-Status%20of%20this%20Specification">Status
+of this Specification</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport-IPR%20Statement">IPR
+Statement</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport-Abstract">Abstract</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Introduction">Introduction</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Introduction-Purpose">Purpose</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Introduction-Requirements">Requirements</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Introduction-Synopsis">Synopsis</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#SMTP%20Background">SMTP
+Background</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#SMTP%20Background-SMTP%20Message%20Routing">SMTP
+Message Routing</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#SMTP%20Background-SMTP%20Message%20Envelope">SMTP
+Message Envelope</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#SMTP%20Background-SMTP%20Local%20Domain">SMTP
+Local Domain</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview">S/MIME
+Overview</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-What%20is%20secured?">What
+is secured?</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-Header%20Fidelity">Header
+Fidelity</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-Encryption">Encryption</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-Encryption-Encryption%20Algorithm">Encryption
+Algorithm</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-Encryption-Decryption%20Algorithm">Decryption
+Algorithm</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-Signatures">Signatures</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-Signatures-Signature%20Creation">Signature
+Creation</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#S/MIME%20Overview-Signatures-Signature%20Verification">Signature
+Verification</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport%20Use%20of%20S/MIME=">Content
+Security for Simple Health Transport Use of S/MIME=</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport%20Use%20of%20S/MIME=-Detached%20Signatures">Detached
+Signatures</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport%20Use%20of%20S/MIME=-Content%20Security">Content
+Security</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport%20Use%20of%20S/MIME=-Digest%20Algorithms">Digest
+Algorithms</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20for%20Simple%20Health%20Transport%20Use%20of%20S/MIME=-Encryption%20Algorithms">Encryption
+Algorithms</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT">DNS
+CERT</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT-Email%20Address%20To%20Domain%20Name">Email
+Address To Domain Name</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT-Email%20Address%20To%20Domain%20Name-Resource%20Record%20Format">Resource
+Record Format</a></div>
+<div style="margin-left: 4em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT-Email%20Address%20To%20Domain%20Name-Resource%20Record%20Format-Non-Normative%20Example">Non-Normative
+Example</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT-Wildcard%20Certificate%20Record">Wildcard
+Certificate Record</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT-Wildcard%20Certificate%20Record-Non-Normative%20Example">Non-Normative
+Example</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT-Wildcard%20Certificate%20Record-Wildcard%20Certificate%20Resolution">Wildcard
+Certificate Resolution</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#DNS%20CERT-Use%20of%20TCP">Use
+of TCP</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Certificate%20Usage">Certificate
+Usage</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Certificate%20Usage-Certificate%20Verification">Certificate
+Verification</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Certificate%20Usage-Certificate%20Chains%20and%20Trust">Certificate
+Chains and Trust</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Certificate%20Usage-Certificate%20Chains%20and%20Trust-Certificate%20Chains">Certificate
+Chains</a></div>
+<div style="margin-left: 3em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Certificate%20Usage-Certificate%20Chains%20and%20Trust-Certificate%20Trust">Certificate
+Trust</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Certificate%20Usage-Private%20Key%20Stores">Private
+Key Stores</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Message%20Wrapping">Message
+Wrapping</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20Algorithm%20Specification">Content
+Security Algorithm Specification</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20Algorithm%20Specification-Process%20Outgoing">Process
+Outgoing</a></div>
+<div style="margin-left: 2em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Content%20Security%20Algorithm%20Specification-Process%20Incoming">Process
+Incoming</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Security%20Considerations">Security
+Considerations</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Examples">Examples</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Authors">Authors</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#References">References</a></div>
+<div style="margin-left: 1em;"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#Copyright">Copyright</a></div>
+</div>
+<br>
+<h1 id="toc4"><a name="Introduction"></a>Introduction</h1>
+<br>
+<h2 id="toc5"><a name="Introduction-Purpose"></a>Purpose</h2>
+<br>
+<h2 id="toc6"><a name="Introduction-Requirements"></a>Requirements</h2>
+<br>
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in <a class="wiki_link_ext"
+ href="http://www.ietf.org/rfc/rfc2119.txt" rel="nofollow">RFC 2119</a>.<br>
+<br>
+An implementation is not compliant if it fails to satisfy one or more
+of the MUST or REQUIRED level requirements for the protocols it
+implements. An implementation that satisfies all the MUST or REQUIRED
+level and all the SHOULD level requirements for its protocols is said
+to be "unconditionally compliant"; one that satisfies all the MUST
+level requirements but not all the SHOULD level requirements for its
+protocols is said to be "conditionally compliant."<br>
+<br>
+<h2 id="toc7"><a name="Introduction-Synopsis"></a>Synopsis</h2>
+<br>
+This document describes a method for securing sensitive health
+documents. It provides four components:<br>
+<br>
+<ol>
+  <li>Use of standard S/MIME, as documented in RFC 3851, with specific
+limitations on usage provided in this document</li>
+  <li>Validation of certificates to enforce trust</li>
+  <li>Use of the DNS for certificate distribution</li>
+  <li>Use of full message wrapping to secure whole messages</li>
+</ol>
+<br>
+Implementations MUST support S/MIME and certificate validation, and
+SHOULD support DNS and full message wrapping. Implementations that do
+not support DNS MUST have an alternate method for discovering recipient
+certificates (non-normative examples: LDAP-based provider directories,
+sending empty signed messages to transfer certificates, out of band
+transfer of certificates, etc.).<br>
+<br>
+<h1 id="toc8"><a name="SMTP Background"></a>SMTP Background</h1>
+<br>
+Use of this specification is not confined to SMTP transport, but a
+typical use will be implemented as a filter in the SMTP processing
+pipeline. Therefore, the relevant aspects of the SMTP message routing
+pipeline are described here.<br>
+<br>
+This section is non-normative.<br>
+<br>
+SHOULD THIS WHOLE SECTION GO IN THE AGENT + SMTP SPEC?<br>
+<br>
+<h2 id="toc9"><a name="SMTP Background-SMTP Message Routing"></a>SMTP
+Message Routing</h2>
+<br>
+A sender transfers a message to an SMTP Server by issuing SMTP commands
+in this order:<br>
+<ol>
+  <li><tt>mail</tt> from: <a class="wiki_link_ext"
+ href="mailto:bob@nhind.source.example.org" rel="nofollow">bob@nhind.source.example.org</a></li>
+  <li><tt>rcpt</tt> to: <a class="wiki_link_ext"
+ href="mailto:alice@nhind.dest.example.com" rel="nofollow">alice@nhind.dest.example.com</a></li>
+  <li>(Optional, specify one or more additional recipients) rcpt to: <a
+ class="wiki_link_ext" href="mailto:carol@nhind.dest.example.net"
+ rel="nofollow">carol@nhind.dest.example.net</a></li>
+  <li>data: &lt; raw ASCII encoded message, including all headers&gt;</li>
+</ol>
+<br>
+It is important to note is that all source and destination addresses
+used by the SMTP Server are separate from the message itself. The SMTP
+Server does not need to parse the message to route it.<br>
+<br>
+<ol>
+  <li>Servers do not use message Destination Headers - To, CC or BCC -
+to determine the list of message recipients. All recipients must be
+specified using one or more rcpt to commands.</li>
+  <li>Servers do not use message Originator Headers &#8211; From or Sender -
+to determine message sender. The message sender must be specified using
+the mail from command.</li>
+</ol>
+<br>
+Consequently:<br>
+<ol>
+  <li>The recipients specified using rcpt to may not be found in the
+message Destination headers</li>
+  <li>The sender specified using mail from need not match the sender in
+the message Originator headers</li>
+</ol>
+<br>
+Both scenarios can occur legitimately, such as for implementing
+features like mailing lists and BCC.<br>
+<br>
+<h2 id="toc10"><a name="SMTP Background-SMTP Message Envelope"></a>SMTP
+Message Envelope</h2>
+<br>
+To process a message, the SMTP Server creates an internal message
+envelope. This envelope contains:<br>
+<ol>
+  <li>Recipients &#8211; the list of all recipients submitted using rcpt to.</li>
+  <li>Sender &#8211; the message sender submitted using mail from.</li>
+  <li>Message &#8211; exactly the message data submitted by the user.</li>
+</ol>
+<br>
+The message envelope is conceptually represented by an MessageEnvelope
+pseudo class:<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">//<br>// Pseudo Class<br>//<br>public class MessageEnvelope<br>{<br>    public MailAddressCollection Recipients;<br>    public MailAddress Sender;<br>    public MailMessage Message;<br>}</pre>
+<br>
+<h2 id="toc11"><a name="SMTP Background-SMTP Local Domain"></a>SMTP
+Local Domain</h2>
+<br>
+SMTP Servers are configured with their <u>local</u> domain.<br>
+<br>
+A mail message may be sent to addresses in multiple domains. Some of
+these addresses are local (internal) and others may be remote
+(external). The mail client transfers the message to its SMTP Server,
+which categorizes each address as local or remote &#8211; by comparing their
+address domain to its configured local domain. Mail sent to local
+addresses is delivered to the message store of IMAP/POP3 server or even
+a file folder. Messages sent to remote addresses are relayed to the
+SMTP Servers for those domains, which is discovered by resolving MX
+records.<br>
+<br>
+<h1 id="toc12"><a name="S/MIME Overview"></a>S/MIME Overview</h1>
+<br>
+The following represents a high level overview to RFC 3851, which
+should be referred to for details. This section assumes a solid
+understanding of MIME and standard cryptographic methods.<br>
+<br>
+Details such as S/MIME&#8217;s usage of Cryptographic Message Syntax (CMS)
+and PKS7 standards are not discussed. Please refer to RFC 3851 as
+necessary as well as widely available documentation on cryptographic
+methods.<br>
+<br>
+This section is non-normative.<br>
+<br>
+<h2 id="toc13"><a name="S/MIME Overview-What is secured?"></a>What is
+secured?</h2>
+<br>
+S/MIME secures MIME entities.<br>
+<br>
+A MIME entity is defined as:<br>
+<ol>
+  <li>The MIME specific headers and</li>
+  <li>The MIME content/body (the portion consisting of the empty line
+and the subsequent body content)</li>
+</ol>
+<br>
+MIME specific headers have names that begin with <tt>Content-</tt> .
+These include:<br>
+<ul>
+  <li><tt>Content-Type</tt></li>
+  <li><tt>Content-Transfer-Encoding</tt></li>
+  <li><tt>Content-Disposition</tt></li>
+</ul>
+<br>
+All non-content header &#8211; i.e. any headers whose name does not begin
+with &#8220;Content-&#8220; - are not secured.<br>
+<br>
+S/MIME secures the entity as is &#8211; the raw &#8220;wire&#8221; octets of both MIME
+Body Content and Headers. S/MIME implementations must avoid accidental
+loss of wire text fidelity during entity serialization.<br>
+<br>
+<h2 id="toc14"><a name="S/MIME Overview-Header Fidelity"></a>Header
+Fidelity</h2>
+<br>
+Two headers that are functionally equal need not be byte identical or
+occur in the same order in the RFC 5322 message, . The serialized wire
+text for the headers thus may be different even though they convey the
+same information. Headers with different wire texts will always have
+different signatures.<br>
+<br>
+MIME libraries often normalize headers during serialization. The
+library can automatically unfold a header during de-serialization. When
+the same header is serialized back out, the MIME library may not fold
+the header, or write header parameters in a different order. These
+alterations break signatures.<br>
+<br>
+S/MIME implementations must ensure that:<br>
+<ol>
+  <li>Text case sensitivity is maintained</li>
+  <li>Character Escape sequences are maintained</li>
+  <li>If a header uses line folding, then the header is secured with
+the line folding in place &#8211; the whitespace must not be lost.</li>
+  <li>Header parameters are in the same order, with the same escape
+sequences and whitespace.</li>
+</ol>
+<br>
+Accidental loss of header fidelity by MIME libraries is a frequent
+cause of S/MIME interoperability issues and unexpected signature
+verification failures.<br>
+<br>
+<h2 id="toc15"><a name="S/MIME Overview-Encryption"></a>Encryption</h2>
+<br>
+S/MIME encrypts entities by combining symmetric and asymmetric
+encryption. S/MIME can encrypt an entity for multiple recipients
+without creating a separate copy of the entity for each recipient. It
+does so using facilities provided by CMS. The concepts behind the
+algorithm are explained below.<br>
+<br>
+<h3 id="toc16"><a name="S/MIME Overview-Encryption-Encryption Algorithm"></a>Encryption
+Algorithm</h3>
+<ol>
+  <li>Get all public keys for each recipient</li>
+  <li>Generate a secret symmetric encryption key</li>
+  <li>Use the symmetric key to encrypt the MIME entity into encrypted
+bytes</li>
+  <li>Encrypt the secret key with each public key (separately) to
+create an encrypted key collection</li>
+  <li>Combine the encrypted bytes, the encrypted key collection into an
+envelope</li>
+</ol>
+<br>
+<h3 id="toc17"><a name="S/MIME Overview-Encryption-Decryption Algorithm"></a>Decryption
+Algorithm</h3>
+<ol>
+  <li>Scan encrypted key collection to locate an encrypted key that was
+encrypted with the recipient&#8217;s public key</li>
+  <li>Decrypt the encrypted key to get the secret symmetric key</li>
+  <li>Get the encrypted bytes from the envelope.</li>
+  <li>Decrypt encrypted bytes using the symmetric key to obtain
+original MIME entity.</li>
+</ol>
+<br>
+<h2 id="toc18"><a name="S/MIME Overview-Signatures"></a>Signatures</h2>
+This specification follows the S/MIME specification recommendation by
+requiring use of so-called "detached signatures", which separate the
+signature data from the original signed content by use of the <tt>multipart/signed</tt>
+content type. (It sometimes causes confusion that the "detached"
+signatures show up as attachments in e-mail clients, because such
+clients interpret <tt>multipart/signed</tt> as <tt>multipart/mixed</tt>,
+and thus interpret the signature as an unknown attachment type).<br>
+<br>
+<h3 id="toc19"><a name="S/MIME Overview-Signatures-Signature Creation"></a>Signature
+Creation</h3>
+<ol>
+  <li>Get all the (private key, public certificate) pairs for each
+signer</li>
+  <li>Compute a digest of the entity</li>
+  <li>Create a signature for each signer by encrypting the digest using
+their private key.</li>
+  <li>Attach information about each signer (their public certificates)
+to each signature</li>
+  <li>Combine all signatures into a signature MIME entity (of type <tt>application/pkcs7-signature</tt>)</li>
+  <li>Create a new container Multipart MIME entity of <tt>Content-Type</tt>:
+    <tt>multipart/signed</tt></li>
+  <li>Insert the original entity as the first part of the Signed Entity.</li>
+  <li>Insert the signature entity as the second part of the Signed
+Entity</li>
+</ol>
+<br>
+<h3 id="toc20"><a
+ name="S/MIME Overview-Signatures-Signature Verification"></a>Signature
+Verification</h3>
+<ol>
+  <li>Get the signature envelope from the Signed Entity</li>
+  <li>Get the original entity from the first part of the Signed Entity</li>
+  <li>Compute a digest of the entity</li>
+  <li>Decrypt each signature using the attached signer public
+certificate</li>
+  <li>Compare the digest to the signature value</li>
+</ol>
+<br>
+<h1 id="toc21"><a
+ name="Content Security for Simple Health Transport Use of S/MIME="></a>Content
+Security for Simple Health Transport Use of S/MIME=</h1>
+<br>
+<h2 id="toc22"><a
+ name="Content Security for Simple Health Transport Use of S/MIME=-Detached Signatures"></a>Detached
+Signatures</h2>
+<br>
+Implementations of this specification MUST use detached signatures as
+specified by RFC 3851. They MUST use the standard content type (<tt>application/pkcs-signature</tt><br>
+<br>
+<h2 id="toc23"><a
+ name="Content Security for Simple Health Transport Use of S/MIME=-Content Security"></a>Content
+Security</h2>
+<br>
+Implementations MUST support creation and processing of signed and
+encrypted MIME entities. That is, they MUST be capable of creating and
+reading documents that are:<br>
+<br>
+<ol>
+  <li>Encrypted as Enveloped Data, as specified by RFC 3851, with
+content type <tt>application/pkcs-mime</tt> where the encrypted MIME
+entity is</li>
+  <li>A <tt>multipart/signed</tt> document, where the first part is
+the secured document and the second part is the detached signature.</li>
+</ol>
+<br>
+Implementations that perform Content Security MUST take responsibility
+for securing all sensitive data, including data that might exist in RFC
+5322 headers, such as <tt>Subject</tt>. Implementations are
+RECOMMENDED to use full message wrapping, as documented in this
+specification.<br>
+<br>
+<h2 id="toc24"><a
+ name="Content Security for Simple Health Transport Use of S/MIME=-Digest Algorithms"></a>Digest
+Algorithms</h2>
+The implementation MUST support the following Digest Algorithms:<br>
+<ol>
+  <li>SHA1</li>
+  <li>SHA256</li>
+</ol>
+<br>
+The implementation MUST use SHA1 as the default. [WHAT DOES THIS MEAN?
+YOU MUST DIGEST IN SHA1 BUT ACCEPT IN SHA256?]<br>
+<br>
+<h2 id="toc25"><a
+ name="Content Security for Simple Health Transport Use of S/MIME=-Encryption Algorithms"></a>Encryption
+Algorithms</h2>
+The implementation MUST support the following Encryption Algorithms:<br>
+<ol>
+  <li>AES 128</li>
+  <li>AES 256</li>
+</ol>
+<br>
+The implementation MUST use AES 128 as the default. [SAME QUESTION]<br>
+<br>
+<br>
+<h1 id="toc26"><a name="DNS CERT"></a>DNS CERT</h1>
+This section assumes familiarity with the DNS protocol and DNS Servers.
+It describes how to use the DNS capabilities described in RFC 4398 in
+this context.<br>
+<br>
+DNS Resource Records are associated with a domain &#8211; which serves as the
+record&#8217;s primary key. RFC 4398 provides multiple mechanisms to
+associated a domain name to a certificate record. Implementations MUST
+support two mechanisms:<br>
+<br>
+<ol>
+  <li>Email Address to Domain Name</li>
+  <li>Wildcard Certificate Record</li>
+</ol>
+<br>
+<h2 id="toc27"><a name="DNS CERT-Email Address To Domain Name"></a>Email
+Address To Domain Name</h2>
+<br>
+To associated DNS CERT records with email addresses, the Health
+Internet Address address SHALL be formatted as a domain name.<br>
+<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">cert-domain-name = health-endpoint-name '.' health-domain-name</pre>
+<br>
+That is, the DNS cert domain name is constructed by replacing the '@'
+in the e-mail address with &#8216;.&#8217;<br>
+<br>
+For example: <tt>bob@nhind.example.org</tt> becomes <tt>bob.nhind.example.org</tt><br>
+<br>
+<h3 id="toc28"><a
+ name="DNS CERT-Email Address To Domain Name-Resource Record Format"></a>Resource
+Record Format</h3>
+RFC 4398 prescribes the DNS CERT record format. To store certificates
+in conformance with this specification, CERT records MUST be provided
+as follows:<br>
+<ol>
+  <li>Certificate Type: 16 bit number field set to 1 [X509] .</li>
+  <li>Key Tag: Unused and set to 0.</li>
+  <li>Algorithm: Byte field set to 5 - [RSASHA1] .</li>
+  <li>Certificate: MUST be the Base64 encoded DER representation of the
+X.509 Certificate.</li>
+</ol>
+<br>
+<h4 id="toc29"><a
+ name="DNS CERT-Email Address To Domain Name-Resource Record Format-Non-Normative Example"></a>Non-Normative
+Example</h4>
+The following CERT record contains the X509 Certificate for <a
+ class="wiki_link_ext" href="mailto:bob@nhind.example.org"
+ rel="nofollow">bob@nhind.example.org</a><br>
+<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">bob.nhind.example.org. IN CERT 1 0 5 (<br>MIIDfzCCAuigAwIBAgIKcYxqqAAA<br>AAAAFzANBgkqhkiG9w0BAQUFADAV<br>MRMwEQYDVQQDEwpVTS1BTUFMR0Ex<br>MB4XDTEwMDYwMTE3NTM1NVoXDTEx<br>MDYwMTE4MDM1NVowgY0xCzAJBgNV<br>BAYTAlVTMQswCQYDVQQIEwJXQTEQ<br>MA4GA1UEBxMHUmVkbW9uZDEMMAoG<br>&#8230; Removed for Brevity &#8230;<br>)</pre>
+<br>
+<h2 id="toc30"><a name="DNS CERT-Wildcard Certificate Record"></a>Wildcard
+Certificate Record</h2>
+<br>
+To associate a certificate with any address at a Health Domain Name,
+the health domain name SHALL be formatted as a wildcard domain name:<br>
+<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">wildcard-domain-name = '*.' health-domain-name</pre>
+<br>
+For example, a certificate for any user at <tt>nhind.example.com</tt>
+could be stored under a domain name of <tt>*.nhind.example.com</tt><br>
+<br>
+<h3 id="toc31"><a
+ name="DNS CERT-Wildcard Certificate Record-Non-Normative Example"></a>Non-Normative
+Example</h3>
+The following CERT record contains the X509 Certificate for ANY
+sub-domain of <tt>nhind.example.com</tt>.<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">*.nhind.example.com. IN CERT 1 0 5 (<br>MIIDiDCCAvGgAwIBAgIKVGr9qwAA<br>AAAAEjANBgkqhkiG9w0BAQUFADAV<br>MRMwEQYDVQQDEwpVTS1BTUFMR0Ex<br>MB4XDTEwMDUyNzAyMDgyNVoXDTEx<br>MDUyNzAyMTgyNVowgZYxCzAJBgNV<br>BAYTAlVTMQswCQYDVQQIEwJXQTEQ<br>MA4GA1UEBxMHUmVkbW9uZDEMMAoG<br>A1UEChMDSFNHMRIwEAYDVQQLEwlJ<br>&#8230; Removed for Brevity &#8230;<br>)</pre>
+<br>
+<h3 id="toc32"><a
+ name="DNS CERT-Wildcard Certificate Record-Wildcard Certificate Resolution"></a>Wildcard
+Certificate Resolution</h3>
+<br>
+This still being researched (TBD):<br>
+If the client asks for bob.source.domain, the server return Bob&#8217;s
+certificate &#8211; which is explicitly defined (see Section 5.2.1). If the
+client asks for carol.source.domain, who does not have an explicitly
+bound certificate, then server returns the certificate record for the
+wildcard domain source.domain.<br>
+<br>
+WHY NOT MAKE THE CLIENT RESOLVER DO THIS WORK??<br>
+<br>
+<h2 id="toc33"><a name="DNS CERT-Use of TCP"></a>Use of TCP</h2>
+The DNS protocol can run on either UDP or TCP. Both methods use Port 53.<br>
+<br>
+Certificate records are relatively large (&gt; 1.5K). A DNS response
+that returns Certificate Records may exceed configured server side UDP
+buffer limits. The server will label these responses as Truncated.<br>
+<br>
+To retrieve DNS Certificates, the DNS Resolver MUST use TCP. The
+resolver may have to be configured to use TCP by default. Some
+resolvers may automatically upgrade to TCP when they encounter
+truncated responses.<br>
+<br>
+Generally DNS traffic uses UDP and it is possible that TCP traffic on
+port 53 is disabled by default firewall rules.<br>
+Firewalls may need to be configured to allow TCP traffic on Port 53.<br>
+<br>
+<h1 id="toc34"><a name="Certificate Usage"></a>Certificate Usage</h1>
+<br>
+<h2 id="toc35"><a name="Certificate Usage-Certificate Verification"></a>Certificate
+Verification</h2>
+<br>
+Each X509 Certificate has a Distinguished Name, which contains one or
+more name attributes. These attribute define who the certificate is
+issued to.<br>
+<br>
+An X509 certificate used for the purposes of secure health message
+exchange MUST be issued to one of:<br>
+<br>
+<ol>
+  <li>A specific address. E.g. <a class="wiki_link_ext"
+ href="mailto:bob@nhind.example.org" rel="nofollow">bob@nhind.example.org</a></li>
+  <li>A domain. E.g. nhind.example.org</li>
+</ol>
+<br>
+A domain certificate is issued to a domain and can be used to secure
+message exchanges with or for any address in that domain.<br>
+<br>
+The Agent MUST verify the address or domain that an X.509 certificate
+is issued to by:<br>
+<br>
+<ol>
+  <li>Finding the &#8216;E&#8217; attribute in cert.DistinguishedName. This
+attribute contains the email address of the certificate owner.</li>
+</ol>
+Examples: <a class="wiki_link_ext" href="mailto:E=bob@source.domain"
+ rel="nofollow">E=bob@source.domain</a> or E=source.domain<br>
+<ol>
+  <li>Else, finding the &#8216;CN&#8217; attribute.</li>
+</ol>
+Examples: <a class="wiki_link_ext" href="mailto:CN=bob@source.domain"
+ rel="nofollow">CN=bob@source.domain</a> or CN=source.domain<br>
+<br>
+Certificates may contain usage extensions that place restrictions on
+how the certificate key may be used. S/MIME implementations may also
+require that certificates be issued specifically to secure email.<br>
+<br>
+Implementations MAY enforce either restriction but need not.
+Implementations MAY support any valid, non-expired, non-revoked and
+trusted certificate.<br>
+<br>
+Implementations MUST check that a certificate is valid:<br>
+<ol>
+  <li>Has not expired</li>
+  <li>Has a valid signature</li>
+  <li>Has not been revoked</li>
+  <li>Was issued to the expected entity</li>
+  <li>Is trusted (see below)</li>
+</ol>
+<br>
+<h2 id="toc36"><a name="Certificate Usage-Certificate Chains and Trust"></a>Certificate
+Chains and Trust</h2>
+<br>
+<h3 id="toc37"><a
+ name="Certificate Usage-Certificate Chains and Trust-Certificate Chains"></a>Certificate
+Chains</h3>
+TODO &#8211; Umesh.<br>
+Certificate chain is a complex subject that is often not well
+understood. Umesh to write backgrounder.<br>
+<br>
+<h3 id="toc38"><a
+ name="Certificate Usage-Certificate Chains and Trust-Certificate Trust"></a>Certificate
+Trust</h3>
+<br>
+Each implementation MUST maintain an association with a supported
+address (sender or recipient) and a collection of Trusted Anchors. The
+address trusts any valid leaf certificate whose certificate chain
+contains at least one certificate from the address&#8217;s Anchor list.<br>
+<br>
+To determine if a leaf certificate is trusted:<br>
+<br>
+<ol>
+  <li>Build a certificate chain for the leaf certificate (see above).</li>
+  <li>If the chain cannot be built, reject leaf certificate as
+un-trusted.</li>
+  <li>Traverse up the chain, starting at the bottom. For each
+certificate:
+    <ol>
+      <li>If the certificate is invalid, then reject leaf certificate
+as un-trusted</li>
+      <li>If an entry in the certificate chain is found in the Trusted
+Anchor list the leaf certificate is trusted.</li>
+      <li>If the entire trust chain contains zero trusted anchors, the
+leaf certificate is un-trusted.</li>
+    </ol>
+  </li>
+</ol>
+<br>
+Implementations MAY store self-signed certificates in the collection of
+Trusted Anchors. Self signed certificates have a certificate chain of
+length 1. Consequently, a trusted self-signed leaf certificate must
+also be a trusted anchor.<br>
+<br>
+<h2 id="toc39"><a name="Certificate Usage-Private Key Stores"></a>Private
+Key Stores</h2>
+<br>
+Each implementation MUST maintain certificate stores (key stores).
+Certificate stores are local and can be implemented using various
+underlying backing stores &#8211; files, memory, LDAP, Sql.<br>
+<br>
+The implementation MUST return private certificate/key pairs for each
+supported user for the purpose of signature or decryption.
+Implementations MAY support these at the individual user or domain
+level.<br>
+<br>
+<h1 id="toc40"><a name="Message Wrapping"></a>Message Wrapping</h1>
+<br>
+Message bodies can be protected using digital signatures and
+encryption. Message headers are more challenging to protect because
+they are always transmitted in the clear. Signatures that include
+non-MIME specific headers break easily because SMTP servers
+legitimately add, remove and rewrite message headers in transit. Worse,
+some headers (such as Subject) may unwittingly contain Protected Health
+Information (PHI) or other sensitive health information.<br>
+<br>
+To reliably protect the message body and all its headers,
+implementations MUST encrypt the entire Internet Message Format
+document. To do so, implementations:<br>
+<ol>
+  <li>Ensure the document is a valid Internet Message Format document.
+This MAY require creation of required headers (e.g., Message-ID, Date).
+The resulting message (post required header creation) is termed the
+original document</li>
+  <li>Copy required headers - as listed in the <a class="wiki_link"
+ href="http://nhindirect.org/Content+Container+Specification">Content
+Container Specification</a> - from the original document. No other
+headers are copied.</li>
+  <li>Create a new <tt>message/822</tt> MIME entity where the body is
+the bit-identical original document</li>
+</ol>
+<br>
+The resulting <tt>message/822</tt> MIME entity is termed the wrapped
+document<br>
+<br>
+Unwrapping consists of extracting the MIME body and treating it as an
+RFC 5322 message.<br>
+<br>
+<h1 id="toc41"><a name="Content Security Algorithm Specification"></a>Content
+Security Algorithm Specification</h1>
+<br>
+The Content Security Algorithm operates on Message Envelope objects. It
+implements the following conceptual interface:<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">    // Conceptual interface<br>    interface INHINDAgent<br>    {<br>        OutgoingMessage ProcessOutgoing(MessageEnvelope messageEnvelope);<br>        IncomingMessage ProcessIncoming(MessageEnvelope messageEnvelope);<br>    }</pre>
+These operations MAY be applied at various points, but typically are
+applied twice: once prior to sending, and once upon ultimate receipt or
+preparation for ultimate receipt. The operations MAY be applied by the
+sender and receiver of the message, or by agents of the sender and
+receiver. Such agents MAY be embedded in special purpose mail servers
+created to securely transfer health content.<br>
+<br>
+The ProcessOutgoing step enforces the sender&#8217;s Trust setting, then
+signs and encrypts the outgoing message.<br>
+The ProcessIncoming step decrypts the incoming message, verifies
+signatures, and enforces each recipient&#8217;s Trust settings.<br>
+<br>
+<h2 id="toc42"><a
+ name="Content Security Algorithm Specification-Process Outgoing"></a>Process
+Outgoing</h2>
+An outgoing message is a new message being sent to a set of recipients.<br>
+<br>
+The implementation MUST ensure:<br>
+<ol>
+  <li>The sender is trusted</li>
+  <li>The message is sent to only those recipients who the sender trusts</li>
+</ol>
+<br>
+To verify that the sender is configured to send NHIND messages, the
+implementation retrieves the sender&#8217;s private keys and public
+certificates. If no private key can be found, the implementation can
+assume that the sender is not configured to send messages and can
+reject the message.<br>
+<br>
+To verify that the sender trusts a given recipient, the implementation
+retrieves the recipient&#8217;s public certificates. The implementation MUST
+use the DNS method and MAY use other locally supported methods.<br>
+<br>
+To process outgoing messages, the implementation:<br>
+<br>
+<ol>
+  <li>Resolves private keys for messageEnvelope.Sender</li>
+  <li>Resolves public certificates for each messageEnvelope.Recipients</li>
+  <li>Enforces the Trust Model</li>
+  <li>Wraps messageEnvelope.Message (see Message Wrapping)</li>
+  <li>Signs and Encrypts the wrapped MIME entity with the sender
+certificates and private key pair and recipient public certificates</li>
+  <li>Creates a new messageEnvelope.Message with the headers extracted
+in the message wrapping process and the MIME package created by signing
+and encrypting</li>
+</ol>
+<br>
+The implementation MUST check recipient certificate trust. If the
+recipient is un-trusted, the implementation removes the recipient from
+the recipient list. If a message has no trusted recipients, the
+implementation MUST reject the message.<br>
+<br>
+The implementation returns the following conceptual object to indicate
+success:<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">    // Conceptual Object<br>    public class OutgoingMessage<br>    {<br>        // The secured message<br>        public MessageEnvelope MessageEnvelope;<br>        // List of rejected/untrusted recipients<br>        public MailAddressCollection UntrustedRecipients;<br>        // Other Status Information for invoking code<br>        ...<br>    }</pre>
+The implementation MUST indicate a rejected message by returning an
+appropriate error code or throwing an exception.<br>
+<br>
+The mechanism for communicating message rejection and recipient removal
+to the sender is specific to how the agent is integrated with a message
+processing pipeline. For example, SMTP integrations MAY send message
+delivery failure notifications to the sender. Integrations may choose
+to log the list of untrusted recipients for internal auditing and/or
+debugging.<br>
+<br>
+<h2 id="toc43"><a
+ name="Content Security Algorithm Specification-Process Incoming"></a>Process
+Incoming</h2>
+<br>
+An incoming message is signed and encrypted &#8211; i.e. it has passed
+through the ProcessOutgoing method.<br>
+<br>
+The implementation MUST ensure that the message is delivered only to
+those recipients who:<br>
+<br>
+<ol>
+  <li>Really are the intended recipients of the message</li>
+  <li>Trust the sender</li>
+</ol>
+<br>
+To verify that a recipient is the intended recipient, the
+implementation attempts to decrypt the message using each of the
+recipient&#8217;s private keys until decryption succeeds. &lt;HOW DOES AN
+IMPLEMENTATION TELL IF DECRYPTION SUCCEEDS?&gt; If the recipient has no
+private keys, or the decryption fails, the implementation can assume
+that the message was not encrypted with the recipient&#8217;s equivalent
+public certificate.<br>
+<br>
+To ensure that the recipient does not receive the message, The
+implementation removes the recipient from the message&#8217;s recipient list.<br>
+<br>
+To verify if a recipient trusts a sender, the implementation MUST check
+if the sender signed the message with a certificate that the receiver
+trusts. A sender can sign the message using multiple public
+certificates, each of which may represent its membership in different
+trust circles. The implementation finds at least one valid signature
+with a certificate whose trust chain contains an anchor that the
+recipient trusts.<br>
+<br>
+An implementation MUST perform the following steps:<br>
+<br>
+<ol>
+  <li>Resolve private keys for domain recipients</li>
+  <li>Decrypt messageEnvelope.Message</li>
+  <li>Extract the signed Signed Entity</li>
+  <li>Verify the signature</li>
+  <li>Enforce Trust Model</li>
+  <li>Unwrap message</li>
+</ol>
+<br>
+Signatures are verified by:<br>
+<br>
+<ol>
+  <li>Ensuring the signature has an attached certificate</li>
+  <li>Checking that the certificate is properly issued</li>
+  <li>Verifying the signature with the certificate</li>
+</ol>
+<br>
+If the implementation does not find at least one acceptable sender
+signature, it MUST reject the message.<br>
+<br>
+Finally, the implementation unwraps the message and constructs a new
+MessageEnvelope with Sender, valid Recipients, and unwrapped message.<br>
+<br>
+The implementation may return the following conceptual object to
+indicate success.<br>
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.text  {font-family:monospace;}
+.text .imp {font-weight: bold; color: red;}
+.text span.xtra { display:block; }
+
+-->
+</style>
+<pre class="text" style="font-family: monospace;">    // Conceptual object<br>    public class IncomingMessage<br>    {<br>        // The processed message - decrypted, signatures verified<br>        public MessageEnvelope MessageEnvelope;<br>        // Recipients in the local domain about to receive this message<br>        public MailAddressCollection DomainRecipients;<br>        // Recipients who were removed as Untrusted<br>        public MailAddressCollection UntrustedRecipients;<br>    }</pre>
+The implementation MUST indicate a rejected message by returning an
+appropriate error code or throwing an exception.<br>
+<br>
+The mechanism for communicating message rejection and recipient removal
+is specific to how the agent is integrated with a message processing
+pipeline. For example, SMTP integrations MAY send message delivery
+failure notifications to the sender. Integrations may also chose to log
+such events.<br>
+<br>
+<h1 id="toc44"><a name="Security Considerations"></a>Security
+Considerations</h1>
+<br>
+TO BE PROVIDED BASED ON RISK ANALYSIS<br>
+<br>
+<br>
+<h1 id="toc45"><a name="Examples"></a>Examples</h1>
+<br>
+This section is non-normative.<br>
+<br>
+<br>
+<h1 id="toc46"><a name="Authors"></a>Authors</h1>
+Umesh Madan<br>
+Sean Nolan<br>
+Arien Malec<br>
+<br>
+<h1 id="toc47"><a name="References"></a>References</h1>
+<br>
+Bradner, Key words for use in RFCs to Indicate Requirement Levels, <a
+ class="wiki_link_ext" href="http://www.ietf.org/rfc/rfc2119.txt"
+ rel="nofollow">RFC 2119</a><br>
+CMS: RFC 3852. (n.d.). Retrieved from RFC 3852: CMS - Cryptographic
+Message Syntax: <a class="wiki_link_ext"
+ href="http://tools.ietf.org/html/rfc3852" rel="nofollow">http://tools.ietf.org/html/rfc3852</a><br>
+DNS CERT: RFC 4398. (n.d.). Retrieved from RFC 4398 - DNS CERT: <a
+ class="wiki_link_ext" href="http://tools.ietf.org/html/rfc4398"
+ rel="nofollow">http://tools.ietf.org/html/rfc4398</a><br>
+DNS Sec: RFC 4034. (n.d.). Retrieved from RFC 4034: DNS Sec: <a
+ class="wiki_link_ext"
+ href="http://tools.ietf.org/html/rfc4034#appendix-A.1" rel="nofollow">http://tools.ietf.org/html/rfc4034#appendix-A.1</a><br>
+DNS: RFC 1035. (n.d.). Retrieved from RFC 1035: DNS: <a
+ class="wiki_link_ext" href="http://tools.ietf.org/html/rfc1035"
+ rel="nofollow">http://tools.ietf.org/html/rfc1035</a><br>
+MIME: RFC 2045. (n.d.). Retrieved from RFC 2045: Multipurpose Internet
+Mail Extensions: <a class="wiki_link_ext"
+ href="http://www.ietf.org/rfc/rfc2045.txt" rel="nofollow">http://www.ietf.org/rfc/rfc2045.txt</a><br>
+RFC 5322. (n.d.). Retrieved from RFC 5322: Internet Message Format: <a
+ class="wiki_link_ext" href="http://tools.ietf.org/html/rfc5322"
+ rel="nofollow">http://tools.ietf.org/html/rfc5322</a><br>
+SMIME 3.1: RFC 3851. (n.d.). Retrieved from RFC 3851: SMIME 3.1: <a
+ class="wiki_link_ext" href="http://www.ietf.org/rfc/rfc3851.txt"
+ rel="nofollow">http://www.ietf.org/rfc/rfc3851.txt</a><br>
+<br>
+<h1 id="toc48"><a name="Copyright"></a>Copyright</h1>
+<br>
+By contributing to this specification, all contributors agree to
+license contributions according to the <a class="wiki_link_ext"
+ href="http://creativecommons.org/licenses/by/3.0/legalcode"
+ rel="nofollow">Creative Commons Attribution 3.0 License</a> which is
+incorporated into this document by reference.<!-- google_ad_section_end -->
+</div>
+<div id="pageEditor" class="editorWrapper editorLayer">
+<form action="/page/edit/SMIME+Security+Agent+Specification?goto="
+ method="post" class="editorForm"><input name="wikispacesFormToken"
+ value="dc1ec22110004baf4e75ddacccbe1beb1c3655b5" type="hidden"> <input
+ name="mode" autocomplete="off" value="visual" type="hidden"> <input
+ name="version" autocomplete="off" value="153175451" type="hidden"> <input
+ name="contentPresent" autocomplete="off" value="" type="hidden"> <input
+ name="editorCleanup" autocomplete="off" value="" type="hidden"> <textarea
+ id="wsMainEditor" class="noContentHide" name="WikispacesEditorContent"
+ style="width: 100%; height: 400px; position: absolute; top: -50000px; left: -50000px;"
+ autocomplete="off"></textarea><noscript> </noscript> </form>
+<div id="plainTextEditor" style="position: relative; display: none;"
+ class="editorLayer"> <textarea id="textEditor"></textarea>
+<p style="clear: both;" align="right"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#"
+ onclick="jQuery(document).scrollTop(0); jQuery('.WikispacesHelpTrigger').eq(0).click(); loadHelp('help.wikitext'); return false;">help
+on how to format text</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span class="WikiPageMenuEditButtonNoPermission"
+ title="You do not have permission to edit this page."><span></span></span>
+<div class="WikiPageInfo greyBox">
+<table class="noborder fullWidth">
+  <tbody>
+    <tr>
+      <th>Details<br>
+      <br>
+      </th>
+      <td> last edit by <a class="userLink"
+ href="http://www.wikispaces.com/user/view/umesh_madan"
+ style="outline-color: invert; outline-style: none; outline-width: medium;"><img
+ src="http://www.wikispaces.com/i/user_none_sm.jpg" alt="umesh_madan"
+ class="userPicture" height="16" width="16"> </a> <a class="userLink"
+ href="http://www.wikispaces.com/user/view/umesh_madan"
+ style="outline-color: invert; outline-style: none; outline-width: medium;">umesh_madan</a>
+      <a
+ href="http://nhindirect.org/page/diff/SMIME+Security+Agent+Specification/153175451">Jul
+19, 2010 12:50 pm</a> - <a
+ href="http://nhindirect.org/page/history/SMIME+Security+Agent+Specification">13
+revisions</a> <br>
+      <br>
+      </td>
+      <td class="alignRight"><a
+ href="http://nhindirect.org/SMIME+Security+Agent+Specification#"
+ onclick="toggleDetails(); return false;"><img
+ src="http://www.wikispaces.com/i/w/W_close.gif" alt="hide details"
+ title="hide details"></a><br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <th>Tags<br>
+      <br>
+      </th>
+      <td>
+      <form action="#" name="WikiTagForm"
+ class="WikiTagForm WikiTokenAutocomplete"><input
+ name="wikispacesFormToken"
+ value="ebc7567106f15f35b70784ea9e74901d5aa8178c" type="hidden">
+        <div class="WikiTagList medgrey">
+        <ul>
+          <li>none<br>
+            <br>
+          </li>
+        </ul>
+        </div>
+      </form>
+      <br>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<textarea id="autosaveContent" style="display: none;" rows="1" cols="1"></textarea>
+<br>
+</div>
+<script src="http://www.wikispaces.com/s/gz/9372b146-editorc.min.js"
+ type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+
+jQuery(document).ready(function() {
+  attachHelpWindow('/home');
+});
+
+jQuery(document).ready(function() {
+  WikispacesEditor.loadEditorLibs('http://www.wikispaces.com/site/editorlibs/en_US/7b23ca07.gz.js');
+});
+
+function startEditor(moreCoreOptions, moreMainOptions) {
+
+  var coreOptions = {
+    'content_css': 'http://www.wikispaces.com/stylesheet/editor/www/153529803A.gz.css'
+  };
+
+  var mainOptions = {
+    'wssave_cancel_url': '/SMIME+Security+Agent+Specification',
+    'wsimage_upload_url': 'http://nhindirect.org/file/multiupload',
+    'wsimage_max_file_size': '51200'
+  };
+
+  WikispacesEditor.loadEditor(jQuery.extend(coreOptions, moreCoreOptions),
+                              jQuery.extend(mainOptions, moreMainOptions));
+}
+
+
+  jQuery(document).ready(function() {
+    WikispacesEditor.enableButtons(startEditor);
+  });
+
+
+
+--></script><!-- w11 -->
+</body>
+</html>

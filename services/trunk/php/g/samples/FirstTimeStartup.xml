@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>First Time Startup</string>
+		<key>leftLineStyle</key>
+		<string>narrow</string>
+
+		<key>rightRootSegment</key>
+
+		<dict>
+			<key>Width</key>
+			<string>80</string>
+			<key>Buttons</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>ReplaceScene</string>
+					<key>URL</key>
+					<string>1</string>
+					<key>scene</key>
+					<string>1</string>
+					<key>Label</key>
+					<string>Samples</string>
+					<key>Info</key>
+					<string>content from apple and others...</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>Samples</string>
+				</dict>
+			</array>
+		</dict>
+		
+        <key>leftRootSegment</key>
+
+		<dict>
+			<key>Width</key>
+			<string>80</string>
+			<key>Buttons</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>ReplaceScene</string>
+					<key>URL</key>
+					<string>0</string>
+					<key>scene</key>
+					<string>0</string>
+					<key>Label</key>
+					<string>Help</string>
+					<key>Info</key>
+					<string>how to set up Plists</string>
+					<key>ImageURL</key>
+					<string>
+						http://www.protoneurope.org/main_images/pdf_logo/image
+					</string>
+					<key>Title</key>
+					<string>Help</string>
+				</dict>
+			</array>
+		</dict>
+		
+		<key>rightDetailSegment</key>
+
+		<dict>
+			<key>Width</key>
+			<string>80</string>
+			<key>Buttons</key>
+			<array>
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>html5 javscript tests</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>TEST HTML5 Page</string>
+						<key>Label</key>
+						<string>TEST</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/testpage500.html
+						</string>
+					</dict>
+			</array>
+		</dict>
+		
+
+		<key>scenes</key>
+		<array>
+			<dict>
+				<key>scene</key>
+				<string>0</string>
+				<key>name</key>
+				<string>First Scene</string>
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>New User</string>
+				<key>largetitle</key>
+				<string>MedPad Prototyper</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+				<array>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/iPad/MedPadPrototyperGuide.pdf
+						</string>
+						<key>Label</key>
+						<string>Setup Guide</string>
+						<key>Info</key>
+						<string>
+							http://portal.medcommons.net/iPad/MedPadPrototyperGuide.pdf
+						</string>
+						<key>ImageURL</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>Title</key>
+						<string>MedPad Setup Guide</string>
+					</dict>
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>needs to be recut in a few days</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Quicktime_X_Logo.png/64px-Quicktime_X_Logo.png
+						</string>
+						<key>Title</key>
+						<string>Hello MedPad Walkthru</string>
+						<key>Label</key>
+						<string>Hello MedPad</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/MedPadStrategery.mov
+						</string>
+					</dict>
+
+				</array>
+			</dict>
+
+			<dict>
+				<key>scene</key>
+				<string>1</string>
+				<key>name</key>
+				<string>Samples</string>
+				<key>cellstyle</key>
+				<string>plain</string>
+				<key>webviewborder</key>
+				<string>black</string>
+				<key>smalltitle</key>
+				<string>Samples</string>
+				<key>largetitle</key>
+				<string>Samples</string>
+				<key>barbuttontitle</key>
+				<string>menu</string>
+				<key>blocks</key>
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>CardFlip</string>
+						<key>Label</key>
+						<string>CardFlip</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/CardFlip
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>
+							CSS_Transforms_Transitions_and_Web_Fonts
+						</string>
+						<key>Label</key>
+						<string>
+							CSS_Transforms_Transitions_and_Web_Fonts
+						</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/CSS_Transforms_Transitions_and_Web_Fonts
+						</string>
+					</dict>
+
+
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>FingerTips</string>
+						<key>Label</key>
+						<string>FingerTips</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/FingerTips
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>HTML_video_with_CSS_effects</string>
+						<key>Label</key>
+						<string>HTML_video_with_CSS_effects</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/HTML_video_with_CSS_effects/iPodNano.html
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>HTML5VideoPlayer</string>
+						<key>Label</key>
+						<string>HTML5VideoPlayer</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/HTML5VideoPlayer
+						</string>
+					</dict>
+
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>iSudoku</string>
+						<key>Label</key>
+						<string>iSudoku</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/iSudoku
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>PosterCircle</string>
+						<key>Label</key>
+						<string>PosterCircle</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/PosterCircle
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>ProgressBar</string>
+						<key>Label</key>
+						<string>ProgressBar</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/ProgressBar
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>SlideMe</string>
+						<key>Label</key>
+						<string>SlideMe</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/SlideMe
+						</string>
+					</dict>
+
+
+				
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>LeavesWithCSS</string>
+						<key>Label</key>
+						<string>LeavesWithCSS</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/Leaves/WithCSSExtensions
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>LeavesWithoutCSS</string>
+						<key>Label</key>
+						<string>LeavesWithoutCSS</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/Leaves/WithoutCSSExtensions
+						</string>
+					</dict>
+
+				</array>
+			</dict>
+		</array>
+
+	</dict>
+</plist>
+
+

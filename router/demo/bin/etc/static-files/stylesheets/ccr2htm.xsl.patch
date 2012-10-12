@@ -1,0 +1,369 @@
+--- ccr20051110.xsl	2005-12-22 12:36:43.405577600 +1100
++++ ccr20051110.xsl	2005-12-23 17:27:44.037844800 +1100
+@@ -21,6 +21,8 @@
+ 	<xsl:import href="date.format-date.template.xsl"/>
+ 	
+ 	<xsl:output method="html" encoding="UTF-8"/>
++  <xsl:param name="stylesheet"/>
++
+ 	<xsl:template match="/">
+ 		<html xmlns:date="http://exslt.org/dates-and-times">
+ 			<head>
+@@ -66,6 +68,10 @@
+ 	background-color: #CEFFFF;
+ }
+ --&gt;</style>
++      
++      <xsl:if test="$stylesheet!=''">
++        <link href="{$stylesheet}" rel="stylesheet" type="text/css"/> 
++      </xsl:if>
+ 				<title>Continuity of Care Record</title>
+ 			</head>
+ 			<body>
+@@ -78,13 +84,13 @@
+ 							<td>
+ 								<table cellSpacing="1" cellPadding="1">
+ 									<tbody>
+-										<tr>
++										<tr id="ccrheaderrow">
+ 											<td/>
+ 											<td>
+ 												<h1>Continuity of Care Record
+ 													<br/>
+ 												</h1>
+-												<table cellSpacing="3" cellPadding="1" width="75%" bgColor="#ffffcc">
++												<table id="ccrheader" cellSpacing="3" cellPadding="1" width="75%" bgColor="#ffffcc">
+ 													<tbody>
+ 														<tr>
+ 															<td>
+@@ -141,12 +147,12 @@
+ 												<br/>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="demographicsrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Patient Demographics</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="demographics" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Name</th>
+@@ -222,12 +228,13 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++                    <span id="ccrcontent">
++										<tr id="alertsrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Alerts</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="alerts" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -274,12 +281,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="advancedirectivesrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Advance Directives</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="advancedirectives" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -322,10 +329,10 @@
+ 											</td>
+ 										</tr>
+ 										<xsl:if test="a:ContinuityOfCareRecord/a:Body/a:Support/a:SupportProvider">
+-										<tr>
++										<tr id="supportprovidersrow">
+ 											<td/>
+ 											<td>
+-												<span class="header">Support Providers</span>
++												<span id="supportproviders" class="header">Support Providers</span>
+ 												<br/>
+ 												<table class="list" width="100%">
+ 													<tbody>
+@@ -351,7 +358,7 @@
+ 										</tr>
+ 										</xsl:if>
+ 										<xsl:if test="a:ContinuityOfCareRecord/a:Body/a:FunctionalStatus/a:Function">
+-										<tr>
++										<tr id="functionalstatus">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Functional Status</span>
+@@ -403,12 +410,12 @@
+ 											</td>
+ 										</tr>
+ 										</xsl:if>
+-										<tr>
++										<tr id="problemsrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Problems</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="problems" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -454,12 +461,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="proceduresrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Procedures</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="procedures" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -539,10 +546,10 @@
+ 												</table>
+ 											</td>
+ 										</tr>	
+-										<tr>
++										<tr id="medicationsrow">
+ 											<td/>
+ 											<td>
+-												<span class="header">Medications</span>
++												<span id="medications" class="header">Medications</span>
+ 												<br/>
+ 												<table class="list" width="100%">
+ 													<tbody>
+@@ -667,12 +674,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="immunizationsrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Immunizations</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="immunizations" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Code</th>
+@@ -721,12 +728,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="vitalsignsrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Vital Signs</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="vitalsigns" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Vital Sign</th>
+@@ -782,12 +789,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="encountersrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Encounters</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="encounters" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -843,12 +850,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="socialhistoryrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Social History</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="socialhistory" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -894,12 +901,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="familyhistoryrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Family History</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="familyhistory" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -949,12 +956,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="resultsrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Results (Discrete)</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="results" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Test</th>
+@@ -1031,12 +1038,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="resultsreportrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Results (Report)</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="resultsreport" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Test</th>
+@@ -1112,12 +1119,12 @@
+ 												</table>
+ 											</td>
+ 										</tr>
+-										<tr>
++										<tr id="insurancerow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Insurance</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="insurance" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Type</th>
+@@ -1194,12 +1201,12 @@
+ 											</td>
+ 										</tr>
+ 										<xsl:if test="a:ContinuityOfCareRecord/a:Body/a:PlanOfCare/a:Plan[a:Type/a:Text='Treatment Recommendation']">
+-										<tr>
++										<tr id="planofcarerow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Plan Of Care Recommendations</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="planofcare" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Description</th>
+@@ -1235,12 +1242,12 @@
+ 										</tr>										
+ 										</xsl:if>
+ 										<xsl:if test="a:ContinuityOfCareRecord/a:Body/a:PlanOfCare/a:Plan[a:Type/a:Text='Order']">
+-										<tr>
++										<tr id="planofcareordersrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Plan Of Care Orders</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="planofcareorders" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Descripion</th>
+@@ -1320,13 +1327,14 @@
+ 										</tr>										
+ 										</xsl:if>
+ 
++
+ 										<xsl:if test="a:ContinuityOfCareRecord/a:Body/a:HealthCareProviders/a:Provider">
+-										<tr>
++										<tr id="healthcareprovidersrow">
+ 											<td/>
+ 											<td>
+ 												<span class="header">Health Care Providers</span>
+ 												<br/>
+-												<table class="list" width="100%">
++												<table id="healthcareproviders" class="list" width="100%">
+ 													<tbody>
+ 														<tr>
+ 															<th>Role</th>
+@@ -1349,6 +1357,7 @@
+ 											</td>
+ 										</tr>
+ 										</xsl:if>
++                  </span>
+ 										
+ 										<tr>
+ 											<td/>
+@@ -1363,9 +1372,10 @@
+ 						</tr>
+ 					</tbody>
+ 				</table>
++        <span id="actors">
+ 				<span class="header">Actors</span>
+ 				<h4>People</h4>
+-				<table class="list" width="100%">
++				<table id="actorstable" class="list" width="100%">
+ 					<tbody>
+ 						<tr>
+ 							<th>Name</th>
+@@ -1453,8 +1463,10 @@
+ 						</xsl:for-each>
+ 					</tbody>
+ 				</table>
++        </span>
++        <span id="organizations">
+ 				<h4>Organizations</h4>
+-				<table class="list" width="100%">
++				<table id="organizationstable" class="list" width="100%">
+ 					<tbody>
+ 						<tr>
+ 							<th>Name</th>
+@@ -1540,8 +1552,10 @@
+ 						</xsl:for-each>
+ 					</tbody>
+ 				</table>
+-				<h4>Information Systems</h4>
+-				<table class="list" width="100%">
++      </span>
++      <span id="informationsystems">
++      <h4>Information Systems</h4>
++				<table id="informationsystemstable" class="list" width="100%">
+ 					<tbody>
+ 						<tr>
+ 							<th>Name</th>
+@@ -1627,6 +1641,7 @@
+ 						</xsl:for-each>
+ 					</tbody>
+ 				</table>
++        </span>
+ 			</body>
+ 		</html>
+ 	</xsl:template>

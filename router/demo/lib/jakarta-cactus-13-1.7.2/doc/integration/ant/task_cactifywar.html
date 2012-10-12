@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>CactifyWar Ant Task</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="CactifyWar Ant Task" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/ant/index.html">Ant</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Ant Integration<ul>
+    
+<li>
+<a href="../.././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/howto_ant_cactus.html" title="How to integrate Cactus tests with an existing Ant build.">Sample Walkthrough</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Ant Tasks<ul>
+    
+<li>
+<a href="../.././integration/ant/task_cactifywar.html" title="Documentation for the <cactifywar> task provided by Cactus." class="currentPage">CactifyWar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactifyear.html" title="Documentation for the <cactifyear> task provided by Cactus.">CactifyEar</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_cactus.html" title="Documentation for the <cactus> task provided by Cactus.">Cactus</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_runservertests.html" title="Documentation for the <runservertests> task provided by Cactus.">RunServerTests</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">WebXmlMerge</a>
+</li>
+    
+<li>
+<a href="../.././integration/ant/task_resin.html" title="Documentation for the <resin2x> and <resin3x> tasks provided by Cactus.">Resin[2x|3x]</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Development<ul>
+    
+<li>
+<a href="../.././api/integration/ant/index.html" title="">API Documentation</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>CactifyWar Task</h1>
+
+      
+<p>
+        The task <b>cactifywar</b> allows the enhancement of an existing
+        web-application archive (WAR) with the elements needed to run Cactus 
+        in-container tests. This includes adding the definitions of the test 
+        redirectors to the deployment descriptor, as well as adding the libraries
+        that Cactus requires on the server side (see the 
+        <a href="../.././integration/manual/howto_classpath.html" title="Information on how to set up the classpath for running Cactus tests.">Classpath Guide</a> for details).
+      </p>
+
+      
+<div class="note">
+        If you want to use the
+        <a href="../.././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">HttpUnit integration</a> in your
+        tests, you'll need to explicitly add the <code>httpunit.jar</code> to
+        the cactified WAR. You can easily do this by using a nested
+        <code>&lt;lib&gt;</code> element.
+      </div>
+
+      
+<p>
+        The <b>cactifywar</b> task extends the built-in Ant task
+        <b>war</b>, so it also supports all attributes and nested
+        elements that <b>war</b> supports.
+      </p>
+
+      
+<div class="section">
+<h2>Parameters</h2>
+
+        
+<p>
+          As this task is an extension of the <b>war</b> task, it
+          also supports all the attributes supported by the
+          <b>war</b> task. The only exception is the
+          <i>warfile</i> attribute, which has been renamed to
+          <i>destfile</i> for the <b>cactifywar</b> task.
+        </p>
+
+        
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+          
+<tr>
+            
+<th>Name</th>
+            <th>Description</th>
+            <th>Required</th>
+          
+</tr>
+          
+<tr>
+            
+<td><b>destfile</b></td>
+            <td>
+              The location of the cactified web-application archive to create.
+            </td>
+            <td>Yes</td>
+          
+</tr>
+          
+<tr>
+            
+<td>srcfile</td>
+            <td>
+              The original web-application archive that is going to be
+              cactified. If this attribute is not specified, a new web-app
+              archive will be created. You'll need to specify the
+              <i>version</i> attribute in that case.
+            </td>
+            <td>No</td>
+          
+</tr>
+          
+<tr>
+            
+<td>mergewebxml</td>
+            <td>
+              Allows the specification of a web deployment descriptor whose 
+              content will get merged into the resulting descriptor. This is
+              only required for purposes like adding special security
+              constraints for testing, as the Cactus test redirectors will be
+              added to the cactified deployment descriptor anyway. The merging
+              of the descriptors is based on the same principles as used by the
+              <a href="../.././integration/ant/task_webxmlmerge.html" title="Documentation for the <webxmlmerge> task provided by Cactus.">webxmlmerge</a> task.
+            </td>
+            <td>No</td>
+          
+</tr>
+          
+<tr>
+            
+<td>version</td>
+            <td>
+              The version of the web application archive to create if no source
+              archive has been specified with the <i>srcfile</i> attribute.
+              Can be either <code>2.2</code> or <code>2.3</code>.
+            </td>
+            <td>No, unless the <i>srcfile</i> attribute is omitted</td>
+          
+</tr>
+        
+</table>
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Nested Elements</h2>
+
+        
+<p>
+          As this task is an extension of the <b>war</b> task, it
+          also supports all attributes that the <b>war</b> task
+          supports. In addition, you can specify the URL-patterns to map the 
+          Cactus test redirectors to which the nested elements
+          <b>filterredirector</b>, <b>jspredirector</b> and
+          <b>servletredirector</b>. If you don't specify those
+          elements, the test redirectors will be mapped to the default
+          URL-pattern.
+        </p>
+
+        
+<div class="section">
+<h3>filterredirector</h3>
+
+          
+<p>
+            The <b>filterredirector</b> element lets you specify the
+            URL pattern to which the Cactus filter test redirector is mapped in
+            the web application.
+          </p>
+
+          
+<div class="section">
+<h4>Parameters</h4>
+
+            
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+              
+<tr>
+                
+<th>Name</th>
+                <th>Description</th>
+                <th>Required</th>
+              
+</tr>
+              
+<tr>
+                
+<td>name</td>
+                <td>
+                  The name of the filter redirector. Only needed if you want to
+                  add multiple filter redirectors to the deployment descriptor.
+                </td>
+                <td>No, the default is <i>FilterRedirector</i></td>
+              
+</tr>
+              
+<tr>
+                
+<td>mapping</td>
+                <td>
+                  The URL-pattern to which the redirector should be mapped.
+                  Must start with a forward slash ("/").
+                </td>
+                <td>No, the default is <i>/FilterRedirector</i></td>
+              
+</tr>
+              
+<tr>
+                
+<td>roles</td>
+                <td>
+                  A comma-separated list of role names which will be granted
+                  access to the redirector. If this attribute is ommitted,
+                  access to the redirector will not be constrained. Unless the
+                  roles are already defined in the deployment descriptor, they
+                  will be added automatically.
+                </td>
+                <td>No</td>
+              
+</tr>
+            
+</table>
+</div>
+
+          
+</div>
+
+          
+<div class="note">
+            This element will be ignored for Servlet 2.2 web applications.
+          </div>
+
+        
+</div>
+
+        
+<div class="section">
+<h3>jspredirector</h3>
+
+          
+<p>
+            The <b>jspredirector</b> element lets you specify the
+            URL pattern to which the Cactus JSP test redirector is mapped in
+            the web application.
+          </p>
+
+          
+<div class="section">
+<h4>Parameters</h4>
+
+            
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+              
+<tr>
+                
+<th>Name</th>
+                <th>Description</th>
+                <th>Required</th>
+              
+</tr>
+              
+<tr>
+                
+<td>name</td>
+                <td>
+                  The name of the JSP redirector. Only needed if you want to
+                  add multiple JSP redirectors to the deployment descriptor.
+                </td>
+                <td>No, the default is <i>JspRedirector</i></td>
+              
+</tr>
+              
+<tr>
+                
+<td>mapping</td>
+                <td>
+                  The URL-pattern to which the redirector should be mapped.
+                  Must start with a forward slash ("/").
+                </td>
+                <td>No, the default is <i>/JspRedirector</i></td>
+              
+</tr>
+              
+<tr>
+                
+<td>roles</td>
+                <td>
+                  A comma-separated list of role names which will be granted
+                  access to the redirector. If this attribute is ommitted,
+                  access to the redirector will not be constrained. Unless the
+                  roles are already defined in the deployment descriptor, they
+                  will be added automatically.
+                </td>
+                <td>No</td>
+              
+</tr>
+            
+</table>
+</div>
+
+          
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h3>servletredirector</h3>
+
+          
+<p>
+            The <b>servletredirector</b> element lets you specify the
+            URL pattern to which the Cactus servlet test redirector is mapped in
+            the web application.
+          </p>
+
+          
+<div class="section">
+<h4>Parameters</h4>
+
+            
+<div class="tabular">
+<table cellpadding="2" cellspacing="2" border="0">
+<caption></caption>
+              
+<tr>
+                
+<th>Name</th>
+                <th>Description</th>
+                <th>Required</th>
+              
+</tr>
+              
+<tr>
+                
+<td>name</td>
+                <td>
+                  The name of the servlet redirector. Only needed if you want
+                  to add multiple servlet redirectors to the deployment
+                  descriptor.
+                </td>
+                <td>No, the default is <i>ServletRedirector</i></td>
+              
+</tr>
+              
+<tr>
+                
+<td>mapping</td>
+                <td>
+                  The URL-pattern to which the redirector should be mapped.
+                  Must start with a forward slash ("/").
+                </td>
+                <td>No, the default is <i>/ServletRedirector</i></td>
+              
+</tr>
+              
+<tr>
+                
+<td>roles</td>
+                <td>
+                  A comma-separated list of role names which will be granted
+                  access to the redirector. If this attribute is ommitted,
+                  access to the redirector will not be constrained. Unless the
+                  roles are already defined in the deployment descriptor, they
+                  will be added automatically.
+                </td>
+                <td>No</td>
+              
+</tr>
+            
+</table>
+</div>
+
+          
+</div>
+
+        
+</div>
+
+        
+<div class="section">
+<h3>xmlcatalog</h3>
+
+          
+<p>
+            The <code>xmlcatalog</code> element can be used to perform Entity
+            and DTD resolution. This is a built-in Ant type. See the
+            <a href="http://ant.apache.org/manual/index.html" title="">Ant Manual</a> for details.
+          </p>
+
+          
+<div class="note">
+            The <b>cactifywar</b> task resolves the DTDs of web-app
+            descriptors (version 2.2 as well as 2.3) automatically to copies
+            stored in the JAR. So normally, you shouldn't need to specify a
+            nested <code>xmlcatalog</code> element. Further, actually
+            specifying it will disable the default behaviour, and you'll need
+            to provide the web-app DTDs yourself.
+          </div>
+
+        
+</div>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Examples</h2>
+
+        
+<p>
+          The following example demonstrates the simplest-possible use of the
+          task. It will add the redirectors with the default mappings to the
+          cactified WARs, as well as the Cactus libraries and the JSP page
+          needed for the JSP redirector.
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifywar srcfile="${build.dir}/my.war" destfile="${build.dir}/test.war"/&gt;
+</pre>
+</div>
+
+        
+<p>
+          The next example demonstrates how to modify the mappings of the
+          redirectors.
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifywar srcfile="${build.dir}/my.war" destfile="${build.dir}/test.war"&gt;
+  &lt;filterredirector mapping="/test/filterRedirector"/&gt;
+  &lt;jspredirector mapping="/test/jspRedirector"/&gt;
+  &lt;servletredirector mapping="/test/servletRedirector"/&gt;
+&lt;/cactifywar&gt;
+</pre>
+</div>
+
+        
+<p>
+          In the following example, we add the test classes as well as the
+          <a href="../.././writing/howto_httpunit.html" title="How to use HttpUnit tests inside Cactus test cases">HttpUnit</a> library to the
+          cactified WAR.
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifywar srcfile="${build.dir}/my.war" destfile="${build.dir}/test.war"&gt;
+  &lt;classes dir="${build.dir}/classes/test" includes="**/*.class"/&gt;
+  &lt;lib file="${httpunit.jar}"/&gt;
+&lt;/cactifywar&gt;
+</pre>
+</div>
+
+        
+<p>
+          In the next example, we add a security-constrained instance of the
+          servlet redirector to be able to run tests using authentication
+          (see <a href="../.././writing/howto_security.html" title="">Using Authentication</a>
+          for details). Note that you need to provide an empty servlet
+          redirector element, so that the default redirector is included
+          along side the secured redirector (it would just be overridden
+          otherwise).
+        </p>
+
+        
+<div class="source">
+<pre>
+&lt;cactifywar srcfile="${build.dir}/my.war" destfile="${build.dir}/test.war"&gt;
+  &lt;servletredirector/&gt;
+  &lt;servletredirector name="ServletRedirectorSecure"
+      mapping="/ServletRedirectorSecure" roles="test"/&gt;
+&lt;/cactifywar&gt;
+</pre>
+</div>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

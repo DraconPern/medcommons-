@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>Sample Howto</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Sample Howto" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus.">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list.">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus.">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Introduction</h1>
+
+      
+<p>
+        This tutorial explains where to get Cactus samples and how to use
+        them.
+      </p>
+      
+<p>
+        There are some samples available as part of the documentation. The
+        samples depend on the kind of test case you are writing (Servlet,
+        Taglibs, Filters, ...). For this reason you'll find some samples
+        in the <a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">TestCase Howto</a>
+        tutorial.
+      </p>
+      
+<p>
+        However, the majority of Cactus samples are in the form of source
+        samples. These samples are part of the Cactus distribution that
+        you have downloaded (in the <code>sample/src</code> directory).
+      </p>
+      
+<p>
+        The following section explains how to execute the Cactus Samples
+        using Ant (the Samples are packaged to be executed with Ant).
+        If you wish to integrate them in your own build system or in your
+        favorite IDE, you'll have to understand the principles first and
+        manually install them (read the
+        <a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+        and the <a href="./integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a>
+        tutorials). Some detailed explanations for IDE integration
+        are also available in the <a href="./integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">IDE Howto</a>
+        tutorial.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Running the Cactus Samples using Ant</h1>
+
+      
+<div class="section">
+<h2>Prerequisites</h2>
+
+        
+<p>
+          You need to install the following items prior to building the Cactus
+          Sample application:
+        </p>
+        
+<ul>
+          
+<li>
+            A JVM (1.2 or above),
+          </li>
+          
+<li>
+            A Servlet Engine (Servlet API 2.2 or above). The Cactus Sample
+            Ant build script supports automatic running the Cactus unit
+            tests on several Servlet Engines.
+          </li>
+          
+<li>
+            Ant (see the <a href="./integration/ant/howto_ant_install.html" title="Tips for installing and setting up Ant.">"Installing
+            Ant"</a> tutorial).
+          </li>
+          
+<li>
+            A Servlet/J2EE API jar corresponding to the Cactus Sample release
+            you have downloaded (J2EE 1.2 or 1.3). You can download the
+            jar from:
+            <ul>
+              
+<li>
+                For Servlet API 2.2
+                <ul>
+                  
+<li>
+                    From
+                    <a href="http://java.sun.com/products/servlet/download.html" title="">Sun</a> or from 
+                    the <a href="http://jakarta.apache.org/builds/jakarta-servletapi/" title="">Jakarta reference 
+                    implementation</a>
+                  
+</li>
+                
+</ul>
+              
+</li>
+              
+<li>
+                For Servlet API 2.3
+                <ul>
+                  
+<li>
+                    From
+                    <a href="http://java.sun.com/products/servlet/download.html" title="">Sun</a> or from 
+                    the <a href="http://jakarta.apache.org/builds/jakarta-servletapi-4/" title="">Jakarta reference 
+                    implementation</a>
+                  
+</li>
+                
+</ul>
+              
+</li>
+              
+<li>
+                For the J2EE jar
+                <ul>
+                  
+<li>
+                    From <a href="http://java.sun.com/j2ee/download.html" title="">J2EE download 
+                    page</a>
+                  
+</li>
+                
+</ul>
+              
+</li>
+            
+</ul>
+            You can put these libraries anywhere you want on your hard disk.
+            You'll just have to specify the location where they are in the
+            <code>build.properties</code> file, as described below.
+          </li>
+        
+</ul>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Installing the Cactus Sample</h2>
+
+        
+<p>
+          Follow these steps:
+        </p>
+        
+<ul>
+          
+<li>
+            Download the <a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Cactus Sample</a> and
+            unzip it in a directory. Let's call this directory
+            <i><code>sampleroot</code></i>.
+          </li>
+          
+<li>
+            Rename (or copy) the
+            <i><code>sampleroot</code></i>
+            <code>/build/build.properties.default</code> file
+            to <code>build.properties</code>. This file defines the dependencies
+            between the Cactus Sample build process and your environment
+            (location of external jars, home directory for installed servlet
+            engine(s), ...). Edit this file to reflect your environment values.
+          </li>
+        
+</ul>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Running the samples</h2>
+
+        
+<p>
+          Open a shell, cd to the <i><code>sampleroot</code></i>
+          <code>/build</code> directory and type '<code>ant test.all</code>'.
+          The tests will be executed on all the servlet engines you have
+          defined in the <code>build.properties</code> file you have edited.
+        </p>
+
+      
+</div>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

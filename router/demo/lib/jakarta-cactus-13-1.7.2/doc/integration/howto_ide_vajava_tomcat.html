@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href=".././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href=".././css/print.css">
+<title>VAJava and Tomcat Test Environment</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src=".././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="VAJava and Tomcat Test Environment" src=".././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href=".././index.html">Cactus</a> &gt; <a href=".././integration/index.html">Running Tests</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href=".././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href=".././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Running Tests<ul>
+    
+<li>
+<a href=".././integration/index.html" title="Information on the various methods of running tests with Cactus.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Integrations<ul>
+    
+<li>
+<a href=".././integration/manual/index.html" title="Explains how to manually configure Cactus.">Manual</a>
+</li>
+    
+<li>
+<a href=".././integration/ant/index.html" title="Overview of the Ant integration mechanisms provided by Cactus.">Ant</a>
+</li>
+    
+<li>
+<a href=".././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Eclipse</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_jetty.html" title="Explains how to use the special integration Cactus provides for the Jetty servlet container.">Jetty</a>
+</li>
+    
+<li>
+<a href=".././integration/integration_browser.html" title="Explains how to run Cactus tests from a browser.">Browser</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_tomcat.html" title="Quickstart guide for getting Cactus tests running on Tomcat 4.x.">Tomcat</a>
+</li>
+    
+<li>
+<a target="integration_maven" href="http://jakarta.apache.org/cactus/integration/maven/index.html">Maven</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_ide.html" title="Information on integrating Cactus with some IDEs">Various IDEs</a>
+</li>
+    
+<li>
+<a href=".././integration/howto_junitee.html" title="Explains how to integrate Cactus tests with JUnitEE.">JUnitEE</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Forewords and Requirements</h1>
+
+      
+<div class="note">
+        
+<b>This tutorial is written for Cactus 1.2 only. It will need
+        to adapted if you're using Cactus 1.3</b>
+      
+</div>
+
+      
+<p>
+        This tutorial explains how to run Cactus tests within VisualAge for
+        Java Tomcat Test Environment.
+      </p>
+      
+<p>
+        The following tutorial has been tested with VisualAge 3.5.3 and Apache
+        Tomcat Test Environment 3.1. Please tell us if you find that it works
+        with other versions.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Steps</h1>
+
+      
+<p>
+        Let's call <b><code>{VAJava dir}</code></b> the directory
+        where VAJava is installed. Let's also suppose that the context of our
+        webapp is called <b><code>myApp</code></b>.
+      </p>
+
+      
+<ul>
+        
+<li>
+          Import Cactus and JUnit into VisualAge as projects,
+        </li>
+        
+<li>
+          Add the Cactus redirector mappings to your web.xml file (see the
+          <a href=".././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a>), which is
+          located at
+          <code>{VAJava dir}\ide\project_resources\Apache_Tomcat_Test_Environment\webapps\myApp\WEB-INF\</code>,
+        </li>
+        
+<li>
+          Make sure the <code>cactus.properties</code> file has the correct
+          URL for the redirectors (see the
+          <a href=".././integration/manual/howto_config.html" title="Information on how to configure Cactus when running tests manually.">Configuration Howto</a>). Put the
+          file in
+          <code>{VAJava dir}\ide\project_resources\Apache_Tomcat_Test_Environment\webapps\myApp\WEB-INF\</code>,
+        </li>
+        
+<li>
+          Add the following directories to JUnit's TestRunner project classpath
+          (project's properties dialog box):
+        </li>
+      
+</ul>
+
+<div class="source">
+<pre>
+{VAJava dir}\ide\project_resources\Apache_Tomcat_Test_Environment\webapps\myApp\WEB-INF\;
+{VAJava dir}\ide\project_resources\Apache_Tomcat_Test_Environment\webapps\myApp\WEB-INF\classes\;
+</pre>
+</div>
+      
+<ul>
+        
+<li>
+          Add the Cactus project to both JUnit's TestRunner and Apache's
+          TomcatRunner project classpath (project properties dialog boxes).
+        </li>
+      
+</ul>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<server>
+  <mbean code="net.medcommons.router.services.dicom.CStoreSCPService" name="medcommons:service=CStoreSCP">
+  	<depends>jboss:service=Naming</depends>
+  </mbean>
+</server>

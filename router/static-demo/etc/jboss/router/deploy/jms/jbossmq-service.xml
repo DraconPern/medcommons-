@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: jbossmq-service.xml,v 1.10.2.14 2003/08/27 07:44:42 ejort Exp $ -->
+
+<server>
+
+  <!-- ==================================================================== -->
+  <!-- JBossMQ                                                              -->
+  <!-- ==================================================================== -->
+
+
+  <!-- ==================================================================== -->
+  <!-- JBossMQ Interceptor chain configuration                              -->
+  <!-- ==================================================================== -->
+  <!-- To tune performance, you can have the Invoker skip over the TracingInterceptor -->
+  <!-- and/or the SecurityManager, but then you loose the ability to trace and/or enforce security. -->
+  <mbean code="org.jboss.mq.server.jmx.Invoker" name="jboss.mq:service=Invoker">
+    <depends optional-attribute-name="NextInterceptor">jboss.mq:service=DestinationManager</depends>
+  </mbean>
+  
+  <!-- ==================================================================== -->
+  <!-- The state manager                                                    -->
+  <!-- ==================================================================== -->
+
+  <!--
+     | The StateManager is used to keep JMS persistent state data.
+     | For example: what durable subscriptions are active.
+   -->
+  <mbean code="org.jboss.mq.sm.file.DynamicStateManager"
+	 name="jboss.mq:service=StateManager">
+    <!-- This file is pulled from the configuration URL of the server -->
+    <attribute name="StateFile">jbossmq-state.xml</attribute>
+  </mbean>
+
+  <!-- ==================================================================== -->
+  <!-- System Destinations                                                  -->
+  <!-- ==================================================================== -->
+
+  <!-- Dead Letter Queue -->
+  <mbean code="org.jboss.mq.server.jmx.Queue"
+	 name="jboss.mq.destination:service=Queue,name=DLQ">
+    <depends optional-attribute-name="DestinationManager">jboss.mq:service=DestinationManager</depends>
+  </mbean>
+
+</server>

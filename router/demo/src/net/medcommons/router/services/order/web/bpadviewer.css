@@ -1,0 +1,142 @@
+html,body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px; 
+	text-align: left;
+	font-family: arial,verdana;
+}
+
+#buttonPanel button {
+	display: block;
+	width: 80%;
+	margin: 1em 10%;
+}
+
+div.ccrHeader {
+	text-align: center;
+}
+.yui-layout-hd a {
+	text-decoration: none;
+	color: white;
+}
+
+#lefttop {
+	padding: 1em;
+}
+
+.encounterRow img {
+	margin-right: 1em;
+}
+.encounterRow {
+	padding: 5px 0px;
+	border-bottom: solid 1px #aaa;
+}
+h2 {
+	font-size: 16px;
+}
+
+#wrapper {
+    position:relative;  /* needed */
+    z-index:1;          /* needed and important */
+    height:100%;       /* needed */
+    margin: 0;
+    background-color: white;
+    overflow: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+     
+ #center {
+     background-color: white;
+    height:100%;       /* needed */
+ }
+    
+ 
+.yui-skin-mc .yui-layout #yui-gen1 div.yui-layout-bd {
+    border: none;
+}   
+    
+.yui-layout-doc {
+    position: relative;
+    top: -2px;
+}
+
+#productsandservices2 {        
+    position: static;
+}
+ 
+/*
+    For IE 6: trigger "haslayout" for the anchor elements in the root Menu by 
+    setting the "zoom" property to 1.  This ensures that the selected state of 
+    MenuItems doesn't get dropped when the user mouses off of the text node of 
+    the anchor element that represents a MenuItem's text label.
+*/
+ 
+#productsandservices2 .yuimenuitemlabel {
+    _zoom: 1;
+}
+ 
+#productsandservices2 .yuimenu .yuimenuitemlabel {
+    _zoom: normal;
+}
+/*
+    Change some of the Menu colors
+*/
+.yui-skin-mc .yuimenu .bd {
+    background-color: #F2F2F2;
+}
+#productsandservices2 .bd {
+    border: none;
+}
+#productsandservices2 .bd .first-of-type .bd {
+    border: 1px solid #808080;
+}
+    
+.yui-skin-mc .yui-layout {
+    background-color: #f9f9f6;
+}        
+    
+/* override ccr.css */
+html, body {
+    margin: 0 !important;
+}
+    
+.ccr td , .ccr th {
+    border: none;
+}
+    
+.ccr table.list td {
+    border:thin solid #CCCCCC;
+    padding:5px;
+}    
+    
+.ccr table.internal td {
+    border:medium none;
+    padding:1px;
+}        
+    
+.thumbCellBox {
+	left:0px;
+}
+
+#thumb0 {
+	color: white;
+}
+#footer {
+	padding: 2px 4px;
+}
+div.tool {
+	margin: 2px;
+	cursor: pointer;
+}
+#thumb0 h2, #thumb0 p {
+	text-align: center;
+}
+#episodesSplitButton {
+    zIndex: 1000000;	
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    fontSize: 12px;
+}
+

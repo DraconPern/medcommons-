@@ -1,0 +1,344 @@
+<config>
+  <property name="DeviceGuid">TEST</property>
+  <property name="CommandServiceUrl">http://medcommons.net:8080/jboss-net/services/CommandService</property>
+  <property name="PackageServiceUrl">http://localhost:8080/jboss-net/services/PackageService</property>
+  <property name="DataRoot">../server/router/data/</property>
+  <property name="PackageRoot">../server/router/data/packages/</property>
+  
+<!-- Properties of the DICOM file system (cuts across all DICOM subsystems -->
+  <property name="net.medcommons.dicom.directory">../server/router/data/images</property>
+  <property name="net.medcommons.dicom.fs-id">none</property>
+  <property name="net.medcommons.dicom.fs-uid">auto</property>
+  <property name="net.medcommons.dicom.fs-file-id">StudyInstanceUID,StudyID,SeriesNumber,InstanceNumber</property>
+  <property name="net.medcommons.dicom.fs-lazy-update">false</property>
+  
+  <property name="net.medcommons.services.dicom.called-aets">called-aet</property>
+  <property name="net.medcommons.services.dicom.calling-aets">calling-aet</property>
+
+  <property name="net.medcommons.services.dicom.cstore-scp-port">3002</property>
+  <property name="net.medcommons.services.dicom.max-clients">10</property>
+  <property name="net.medcommons.services.dicom.directory">../server/router/data</property>
+  <property name="net.medcommons.services.dicom.resp-delay">0</property>
+  <property name="net.medcommons.services.dicom.ac-timeout">5000</property>
+  <property name="net.medcommons.services.dicom.rq-timeout">5000</property>
+  <property name="net.medcommons.services.dicom.rsp-delay">0</property>
+  <property name="net.medcommons.services.dicom.dimse-timeout">0</property>
+  <property name="net.medcommons.services.dicom.so-close-delay">500</property>
+  <property name="net.medcommons.services.dicom.pack-pdvs">false</property>
+
+  <property name="net.medcommons.services.dicom.trunc-post-pixeldata">false</property>
+  <property name="net.medcommons.services.dicom.prior">0</property>
+  <property name="net.medcommons.services.dicom.max-pdu-len">16352</property>
+  <property name="net.medcommons.services.dicom.max-op-invoked">0</property>
+  <property name="net.medcommons.services.dicom.buf-len">2048</property>
+
+
+<!--
+<property name="net.medcommons.services.dicom.uid-suffix">.999</property>
+<property name="net.medcommons.services.dicom.PatientID">999999999</property>
+<property name="net.medcommons.services.dicom.PatientName">ANONYMOUS</property>
+-->
+
+  <property name="net.medcommons.services.dicom.protocol">dicom</property> 
+  <property name="net.medcommons.services.dicom.tls-key">dcmsnd.jks</property> 
+  <property name="net.medcommons.services.dicom.tls-key-passwd">passwd</property>
+  <property name="net.medcommons.services.dicom.tls-cacerts">cacerts.jks</property>
+  <property name="net.medcommons.services.dicom.tls-cacerts-passwd">passwd</property>
+  <property name="net.medcommons.services.dicom.poll-dir">none</property>
+  <property name="net.medcommons.services.dicom.poll-period">5</property>
+  <property name="net.medcommons.services.dicom.poll-retry-open">60</property>
+  <property name="net.medcommons.services.dicom.poll-delta-last-modified">3</property>
+  <property name="net.medcommons.services.dicom.poll-done-dir">none</property>
+  
+  <property name="net.medcommons.services.dicom.scu.ts-native">ExplicitVRLittleEndian,ImplicitVRLittleEndian</property>
+
+<property name="net.medcommons.services.dicom.ts-native">ExplicitVRLittleEndian,ExplicitVRBigEndian,ImplicitVRLittleEndian</property>
+<property name="net.medcommons.services.dicom.ts-retired">JPEGExtended35Retired,JPEG68Retired,JPEG79Retired,JPEG1012Retired,JPEG1113Retired,JPEGLossless15Retired,JPEG1618Retired,JPEG1719Retired,JPEG2022Retired,JPEG2123Retired,JPEG2426Retired,JPEG2527Retired,JPEGLoRetired,JPEG29Retired</property>
+<property name="net.medcommons.services.dicom.ts-lossless">JPEGLossless14,JPEGLossless,JPEGLSLossless,JPEG2000Lossless,RLELossless</property>
+<property name="net.medcommons.services.dicom.ts-lossy">JPEGBaseline,JPEGExtended,JPEGLSLossy,JPEG2000Lossy</property>
+<property name="net.medcommons.services.dicom.ts-image">$ts-lossless,$ts-lossy,$ts-native</property>
+<property name="net.medcommons.services.dicom.ts-sr">DeflatedExplicitVRLittleEndian,$ts-native</property>
+<!-- DICOM CSTORE SCP Supported Presentation Contexts (spc) -->
+  <property name="net.medcommons.services.dicom.spc.HardcopyGrayscaleImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.HardcopyColorImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.ComputedRadiographyImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.DigitalXRayImageStorageForPresentation">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.DigitalXRayImageStorageForProcessing">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.DigitalMammographyXRayImageStorageForPresentation">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.DigitalMammographyXRayImageStorageForProcessing">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.DigitalIntraoralXRayImageStorageForPresentation">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.DigitalIntraoralXRayImageStorageForProcessing">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.CTImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.UltrasoundMultiframeImageStorageRetired">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.UltrasoundMultiframeImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.MRImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.EnhancedMRImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.MRSpectroscopyStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.NuclearMedicineImageStorageRetired">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.UltrasoundImageStorageRetired">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.UltrasoundImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.SecondaryCaptureImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.MultiframeSingleBitSecondaryCaptureImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.MultiframeGrayscaleByteSecondaryCaptureImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.MultiframeGrayscaleWordSecondaryCaptureImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.MultiframeColorSecondaryCaptureImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.XRayAngiographicImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.XRayRadiofluoroscopicImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.XRayAngiographicBiPlaneImageStorageRetired">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.NuclearMedicineImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.VLImageStorageRetired">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.VLMultiframeImageStorageRetired">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.VLEndoscopicImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.VLMicroscopicImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.VLSlideCoordinatesMicroscopicImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.VLPhotographicImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.PositronEmissionTomographyImageStorage">$ts-image</property>
+  <property name="net.medcommons.services.dicom.spc.RTImageStorage">$ts-image</property>
+
+  <property name="net.medcommons.services.dicom.spc.StoredPrintStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.StandaloneOverlayStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.StandaloneCurveStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.TwelveLeadECGWaveformStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.GeneralECGWaveformStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.AmbulatoryECGWaveformStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.HemodynamicWaveformStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.CardiacElectrophysiologyWaveformStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.BasicVoiceAudioWaveformStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.StandaloneModalityLUTStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.StandaloneVOILUTStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.GrayscaleSoftcopyPresentationStateStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.RawDataStorage">$ts-native</property>
+
+  <property name="net.medcommons.services.dicom.spc.BasicTextSR">$ts-sr</property>
+  <property name="net.medcommons.services.dicom.spc.EnhancedSR">$ts-sr</property>
+  <property name="net.medcommons.services.dicom.spc.ComprehensiveSR">$ts-sr</property>
+  <property name="net.medcommons.services.dicom.spc.MammographyCADSR">$ts-sr</property>
+
+  <property name="net.medcommons.services.dicom.spc.KeyObjectSelectionDocument">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.StandalonePETCurveStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.RTDoseStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.RTStructureSetStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.RTBeamsTreatmentRecordStorage">$ts-native</property>
+  <property name="net.medcommons.services.dicom.spc.RTTreatmentSummaryRecordStorage">$ts-native</property>
+
+  <property name="net.medcommons.services.dicom.spc.BasicStudyContentNotification">$ts-native</property>
+
+<!-- DICOM CSTORE SCU preferences -->
+<!-- DICOM Proposed presentation contexts -->
+<property name="net.medcommons.services.dicom.ppc.1">HardcopyGrayscaleImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.3">HardcopyGrayscaleImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.5">HardcopyGrayscaleImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.7">HardcopyColorImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.9">HardcopyColorImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.11">HardcopyColorImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.13">ComputedRadiographyImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.15">ComputedRadiographyImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.17">ComputedRadiographyImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.19">DigitalXRayImageStorageForPresentation,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.21">DigitalXRayImageStorageForPresentation,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.23">DigitalXRayImageStorageForPresentation,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.25">DigitalXRayImageStorageForProcessing,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.27">DigitalXRayImageStorageForProcessing,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.29">DigitalXRayImageStorageForProcessing,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.31">DigitalMammographyXRayImageStorageForPresentation,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.33">DigitalMammographyXRayImageStorageForPresentation,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.35">DigitalMammographyXRayImageStorageForPresentation,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.37">DigitalMammographyXRayImageStorageForProcessing,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.39">DigitalMammographyXRayImageStorageForProcessing,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.41">DigitalMammographyXRayImageStorageForProcessing,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.43">DigitalIntraoralXRayImageStorageForPresentation,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.45">DigitalIntraoralXRayImageStorageForPresentation,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.47">DigitalIntraoralXRayImageStorageForPresentation,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.49">DigitalIntraoralXRayImageStorageForProcessing,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.51">DigitalIntraoralXRayImageStorageForProcessing,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.53">DigitalIntraoralXRayImageStorageForProcessing,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.55">CTImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.57">CTImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.59">CTImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.61">UltrasoundMultiframeImageStorageRetired,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.63">UltrasoundMultiframeImageStorageRetired,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.65">UltrasoundMultiframeImageStorageRetired,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.67">UltrasoundMultiframeImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.69">UltrasoundMultiframeImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.71">UltrasoundMultiframeImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.73">MRImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.75">MRImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.77">MRImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.79">HardcopyGrayscaleImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.81">HardcopyColorImageStorage,$ts-native</property>
+
+<property name="net.medcommons.services.dicom.ppc.83">EnhancedMRImageStorage,$ts-native</property>
+<!--
+#<property name="net.medcommons.services.dicom.ppc.83">EnhancedMRImageStorage,JPEGLossless</property> 
+#<property name="net.medcommons.services.dicom.ppc.83">EnhancedMRImageStorage,JPEGBaseline</property>
+#<property name="net.medcommons.services.dicom.ppc.83">MRSpectroscopyStorage,$ts-native</property>
+#<property name="net.medcommons.services.dicom.ppc.83">MRSpectroscopyStorage,JPEGLossless</property>
+#<property name="net.medcommons.services.dicom.ppc.85">MRSpectroscopyStorage,JPEGBaseline</property>
+-->
+<property name="net.medcommons.services.dicom.ppc.85">NuclearMedicineImageStorageRetired,$ts-native</property>
+<!--
+#<property name="net.medcommons.services.dicom.ppc.85">NuclearMedicineImageStorageRetired,JPEGLossless</property>
+#<property name="net.medcommons.services.dicom.ppc.85">NuclearMedicineImageStorageRetired,JPEGBaseline</property>
+-->
+<property name="net.medcommons.services.dicom.ppc.87">UltrasoundImageStorageRetired,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.89">UltrasoundImageStorageRetired,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.91">UltrasoundImageStorageRetired,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.93">UltrasoundImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.95">UltrasoundImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.97">UltrasoundImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.99">SecondaryCaptureImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.101">SecondaryCaptureImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.103">SecondaryCaptureImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.105">MultiframeSingleBitSecondaryCaptureImageStorage,$ts-native</property>
+<!--
+#<property name="net.medcommons.services.dicom.ppc.105">MultiframeSingleBitSecondaryCaptureImageStorage,JPEGLossless</property>
+#<property name="net.medcommons.services.dicom.ppc.105">MultiframeSingleBitSecondaryCaptureImageStorage,JPEGBaseline</property>
+-->
+<property name="net.medcommons.services.dicom.ppc.107">MultiframeGrayscaleByteSecondaryCaptureImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.109">MultiframeGrayscaleByteSecondaryCaptureImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.111">MultiframeGrayscaleByteSecondaryCaptureImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.113">MultiframeGrayscaleWordSecondaryCaptureImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.115">MultiframeGrayscaleWordSecondaryCaptureImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.117">MultiframeGrayscaleWordSecondaryCaptureImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.119">MultiframeColorSecondaryCaptureImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.121">MultiframeColorSecondaryCaptureImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.123">MultiframeColorSecondaryCaptureImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.125">XRayAngiographicImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.127">XRayAngiographicImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.129">XRayAngiographicImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.131">XRayRadiofluoroscopicImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.133">XRayRadiofluoroscopicImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.135">XRayRadiofluoroscopicImageStorage,JPEGBaseline</property>
+<!--
+#<property name="net.medcommons.services.dicom.ppc.135">XRayAngiographicBiPlaneImageStorageRetired,$ts-native</property>
+#<property name="net.medcommons.services.dicom.ppc.135">XRayAngiographicBiPlaneImageStorageRetired,JPEGLossless</property>
+#<property name="net.medcommons.services.dicom.ppc.135">XRayAngiographicBiPlaneImageStorageRetired,JPEGBaseline</property>
+-->
+<property name="net.medcommons.services.dicom.ppc.137">NuclearMedicineImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.139">NuclearMedicineImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.141">NuclearMedicineImageStorage,JPEGBaseline</property>
+<!--
+#<property name="net.medcommons.services.dicom.ppc.141">VLImageStorageRetired,$ts-native</property>
+#<property name="net.medcommons.services.dicom.ppc.141">VLImageStorageRetired,JPEGLossless</property>
+#<property name="net.medcommons.services.dicom.ppc.141">VLImageStorageRetired,JPEGBaseline</property>
+#<property name="net.medcommons.services.dicom.ppc.141">VLMultiframeImageStorageRetired,$ts-native</property>
+#<property name="net.medcommons.services.dicom.ppc.141">VLMultiframeImageStorageRetired,JPEGLossless</property>
+#<property name="net.medcommons.services.dicom.ppc.141">VLMultiframeImageStorageRetired,JPEGBaseline</property>
+-->
+<property name="net.medcommons.services.dicom.ppc.143">VLEndoscopicImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.145">VLEndoscopicImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.147">VLEndoscopicImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.149">VLMicroscopicImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.151">VLMicroscopicImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.153">VLMicroscopicImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.155">VLSlideCoordinatesMicroscopicImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.157">VLSlideCoordinatesMicroscopicImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.159">VLSlideCoordinatesMicroscopicImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.161">VLPhotographicImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.163">VLPhotographicImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.165">VLPhotographicImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.167">PositronEmissionTomographyImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.169">PositronEmissionTomographyImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.171">PositronEmissionTomographyImageStorage,JPEGBaseline</property>
+<property name="net.medcommons.services.dicom.ppc.173">RTImageStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.175">RTImageStorage,JPEGLossless</property>
+<property name="net.medcommons.services.dicom.ppc.177">RTImageStorage,JPEGBaseline</property>
+
+<property name="net.medcommons.services.dicom.ppc.179">StoredPrintStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.181">StandaloneOverlayStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.183">StandaloneCurveStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.185">TwelveLeadECGWaveformStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.187">GeneralECGWaveformStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.189">AmbulatoryECGWaveformStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.191">HemodynamicWaveformStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.193">CardiacElectrophysiologyWaveformStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.195">BasicVoiceAudioWaveformStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.197">StandaloneModalityLUTStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.199">StandaloneVOILUTStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.201">GrayscaleSoftcopyPresentationStateStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.203">RawDataStorage,$ts-native</property>
+
+<property name="net.medcommons.services.dicom.ppc.205">BasicTextSR,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.207">EnhancedSR,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.209">ComprehensiveSR,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.211">MammographyCADSR,$ts-native</property>
+
+<property name="net.medcommons.services.dicom.ppc.213">KeyObjectSelectionDocument,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.215">StandalonePETCurveStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.217">RTDoseStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.219">RTStructureSetStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.221">RTBeamsTreatmentRecordStorage,$ts-native</property>
+<property name="net.medcommons.services.dicom.ppc.223">RTTreatmentSummaryRecordStorage,$ts-native</property>
+
+<property name="net.medcommons.services.dicom.ppc.225">BasicStudyContentNotification,$ts-native</property>
+ 
+<property name="net.medcommons.services.dicom.dir.PATIENT.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.PATIENT.PatientName">true</property>
+<property name="net.medcommons.services.dicom.dir.PATIENT.PatientID">true</property>
+<property name="net.medcommons.services.dicom.dir.PATIENT.PatientBirthDate">true</property>
+<property name="net.medcommons.services.dicom.dir.PATIENT.PatientSex">true</property>
+
+<property name="net.medcommons.services.dicom.dir.STUDY.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.StudyDate">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.StudyTime">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.AccessionNumber">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.ReferringPhysicianName">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.StudyDescription">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.ProcedureCodeSeq">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.StudyInstanceUID">true</property>
+<property name="net.medcommons.services.dicom.dir.STUDY.StudyID">true</property>
+
+<property name="net.medcommons.services.dicom.dir.SERIES.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.SeriesDate">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.SeriesTime">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.Modality">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.Manufacturer">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.SeriesDescription">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.BodyPartExamined">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.SeriesInstanceUID">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.SeriesNumber">true</property>
+<property name="net.medcommons.services.dicom.dir.SERIES.Laterality">true</property>
+
+<property name="net.medcommons.services.dicom.dir.IMAGE.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.ContentDate">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.ContentTime">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.RefImageSeq">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.ContrastBolusAgent">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.InstanceNumber">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.NumberOfFrames">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.WindowCenter">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.WindowWidth">true</property>
+<property name="net.medcommons.services.dicom.dir.IMAGE.SeriesInstanceUID">true</property>
+
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.RefSeriesSeq">true</property>
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.InstanceNumber">true</property>
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.PresentationLabel">true</property>
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.PresentationDescription">true</property>
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.PresentationCreationDate">true</property>
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.PresentationCreationTime">true</property>
+<property name="net.medcommons.services.dicom.dir.PRESENTATION.PresentationCreatorName">true</property>
+
+<property name="net.medcommons.services.dicom.dir.SR_DOCUMENT.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.SR_DOCUMENT.ContentDate">true</property>
+<property name="net.medcommons.services.dicom.dir.SR_DOCUMENT.ContentTime">true</property>
+<property name="net.medcommons.services.dicom.dir.SR_DOCUMENT.InstanceNumber">true</property>
+<property name="net.medcommons.services.dicom.dir.SR_DOCUMENT.ConceptNameCodeSeq">true</property>
+<property name="net.medcommons.services.dicom.dir.SR_DOCUMENT.CompletionFlag">true</property>
+<property name="net.medcommons.services.dicom.dir.SR_DOCUMENT.VerificationFlag">true</property>
+
+<property name="net.medcommons.services.dicom.dir.KEY_OBJECT_DOC.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.KEY_OBJECT_DOC.ContentDate">true</property>
+<property name="net.medcommons.services.dicom.dir.KEY_OBJECT_DOC.ContentTime">true</property>
+<property name="net.medcommons.services.dicom.dir.KEY_OBJECT_DOC.InstanceNumber">true</property>
+<property name="net.medcommons.services.dicom.dir.KEY_OBJECT_DOC.ConceptNameCodeSeq">true</property>
+
+<property name="net.medcommons.services.dicom.dir.WAVEFORM.SpecificCharacterSet">true</property>
+<property name="net.medcommons.services.dicom.dir.WAVEFORM.ContentDate">true</property>
+<property name="net.medcommons.services.dicom.dir.WAVEFORM.ContentTime">true</property>
+<property name="net.medcommons.services.dicom.dir.WAVEFORM.InstanceNumber">true</property>
+
+<!-- web properties -->
+<property name="net.medcommons.selection.web.order-form-name">WADOViewer.jsp</property>
+
+</config>

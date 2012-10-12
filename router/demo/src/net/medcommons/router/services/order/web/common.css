@@ -1,0 +1,163 @@
+.hidden {
+	display: none;
+}
+
+/* 
+   Note: to apply secureImg, make sure parent
+   has position: relative, then add the
+   image with this class
+ */
+.secureImg {
+  position: absolute; 
+  top: 1px;
+  right: 6px;
+}
+
+table.notificationsTable tr td {
+  font-size: 12px;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 4px;
+}
+
+table.ccrTable {
+  width: 100%;
+  margin-top: 10px;
+}
+
+table.ccrTable tr th, #referencesTable td.referenceIndexCell {
+  font-size: 12px;
+  font-family: verdana;
+  color: #5a5951;
+}
+
+.leftnav, table.ccrTable tr th {
+  width: 120px;
+  text-align: right;
+  padding-right: 10px;
+  vertical-align: top;
+}
+
+table.notificationsTable tr {
+  height: 15px;
+}
+
+table.notificationsHeader tr td {
+  font-size: 14px;
+}
+
+.insecureFormInput,.formInput {
+  border: none;
+  font-family: arial;
+  font-size: 12px;
+}
+
+textarea.formInput {
+  border: solid #eee 1px;
+}
+
+#toAcctMsg,#toGroupMsg {
+  font-size: 9px;
+  color: #333;
+  display: none;
+}
+
+.insecure,.insecureFormInput {
+  background-color: white;
+  margin: 0px 4px;
+  width: 98%;
+}
+
+span#trackingNumberContainer {
+  width: auto;
+}
+
+.pinField {
+  color: red;
+}
+
+#pinFields input {
+  width: 15px;
+  text-align: center;
+}
+
+.popupForm {
+  position: absolute;
+  background-color: #fea;
+  border: solid 3px #999;
+  padding: 3px 15px 0px 5px;
+  top: 115px;
+  left: 250px;
+  color: #333;
+  display: none;
+  max-width: 420px;
+  z-index: 1000;
+}
+
+#changeNotificationDiv {
+  background-color: #fefffe;
+  padding-bottom: 10px;
+}
+
+#changeNotificationTable tr th {
+  text-align: left;
+}
+
+#changeNotificationTable tr td, tr th {
+  font-size: 12px;
+}
+#changeNotificationTable tr td.cnotifyLabel {
+  text-align: left;
+}
+
+.invisible {
+  display: none;
+}
+
+table.dialogTable {
+	padding-bottom: 5px;
+	border: thin solid #cccccc;
+	border-style-internal: thin solid #cccccc;
+	BORDER-COLLAPSE: collapse;
+	background: white;
+	background-image: none
+  background-color: white;
+  font-size: 12px;
+} 
+
+table.dialogTable tr td, table.dialogTable tr th {
+	border: thin solid #cccccc;
+  padding: 3px;
+}
+table.dialogTable tr table td, table.dialogTable tr table th {
+	border: none;
+}
+
+table.dialogTable tr .ccredittool {
+  display: none;
+}
+
+table#paymentTable, table#countersTable {
+  width: 68%;
+  margin: 2px 15%;
+  text-align: center;
+}
+
+body {
+  font-family: arial;
+}
+
+.popupForm h4 {
+	margin:  5px 0px;
+}
+#downloadAllDocumentsWarning p, #downloadAllDocumentsWarning h4 {
+	margin-left: 32px;
+}
+#phoneDlg .bd p {
+	font-size: 12px;
+	margin: 0.5em 0;
+}

@@ -1,0 +1,597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="../.././css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="../.././css/print.css">
+<title>Eclipse plug-in for Cactus</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="../.././images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Eclipse plug-in for Cactus" src="../.././images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="../.././index.html">Cactus</a> &gt; <a href="../.././integration/index.html">Running Tests</a> &gt; <a href="../.././integration/eclipse/index.html">Eclipse</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="../.././..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>
+<a href="../.././index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Main Page</a>
+<ul></ul>
+</li>
+
+  
+<li>Eclipse Integration<ul>
+    
+<li>
+<a href="../.././integration/eclipse/index.html" title="Overview of the Cactus plugins for Eclipse.">Overview</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Eclipse Plugins<ul>
+    
+<li>
+<a href="../.././integration/eclipse/runner_plugin.html" title="Information about the Cactus Runner plugin for Eclipse." class="currentPage">Cactus Runner Plugin</a>
+</li>
+    
+<li>
+<a href="../.././integration/eclipse/webapp_plugin.html" title="Information about the Cactus Web Application plugin for Eclipse.">Web Application Plugin</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Developers<ul>
+    
+<li>
+<a href="../.././integration/eclipse/development.html" title="Described how to set up an Eclipse development environment for working on the Cactus plugins for Eclipse.">Development environment</a>
+</li>
+  
+</ul>
+</li>
+  
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+    
+<div class="section">
+<h1>Overview</h1>
+      
+<p>
+        The
+        <a href="http://www.eclipse.org" title="">Eclipse</a>
+        plug-in for Cactus is a runner for server-side unit tests. It is
+        intended to hide the complexity of setting up an environment for
+        running Cactus tests. It supports a variety of commercial and
+        open-source application servers (better called containers).
+      </p>
+      
+<li>
+        
+<a href="#features">Features</a>
+      
+</li>
+      
+<li>
+        
+<a href="#installation">Installation</a>
+      
+</li>
+      
+<li>
+        
+<a href="#using">Using</a>
+      
+</li>
+      
+<li>
+        
+<a href="#next">What's next</a>
+      
+</li>
+      
+<li>
+        
+<a href="#developer">Developer's corner</a>
+      
+</li>
+    
+</div>
+
+    
+<a name="features">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Features</h1>
+      
+<ul>
+        
+<li>
+          Adds a shortcut for Cactus tests launching.
+          <div class="figure">
+<img alt="Cactus launch shortcut" src="../.././images/eclipse/runner/launchshortcut.png"></div>
+        
+</li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          Uses the 
+          <a href="../.././integration/eclipse/webapp_plugin.html" title="Information about the Cactus Web Application plugin for Eclipse.">Webapp Eclipse 
+          plug-in</a> to package a WAR file containing the web application.
+        </li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          Relies on the Eclipse Ant integration to :
+          <ul>
+            
+<li>
+              deploy the application
+            </li>
+            
+<li>
+              start the container before running the tests
+            </li>
+            
+<li>
+              stop the container when tests have ended
+            </li>
+          
+</ul>
+        
+</li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          Integrated Jetty container support
+        </li>
+      
+</ul>      
+      
+<ul>
+        
+<li>
+          Cactus preference page
+          <div class="figure">
+<img alt="Cactus preference page" src="../.././images/eclipse/runner/preferences.png"></div>
+	        
+<ul>
+		        
+<li>
+		          Port on which the container is started.
+		        </li>
+		        
+<li>
+		          Working directory where the Cactus plugin will create temporary
+		          files (packaged war, container configuration files, etc).
+		        </li>
+		        
+<li>
+		          Support for several containers
+			        <div class="figure">
+<img alt="Preferences for containers" src="../.././images/eclipse/runner/preferences_containers.png"></div>
+		        
+</li>
+	        
+</ul>
+        
+</li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          The user can provide its own web.xml file. If this is not the case
+          the plug-in will use the one by default.
+        </li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          Relies on the JUnit plug-in for test runs and result reports.
+          <div class="figure">
+<img alt="JUnit plug-in" src="../.././images/eclipse/runner/junit.png"></div>
+        
+</li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          Cactify a Java project : adds client-side jars to a project's
+          build path.
+          <div class="figure">
+<img alt="Cactify popup menu" src="../.././images/eclipse/runner/cactify.png"></div>
+        
+</li>
+      
+</ul>
+      
+<ul>
+        
+<li>
+          Log view a la Ant plugin
+        </li>
+      
+</ul>
+    
+</div>
+
+    
+<a name="installation">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Installation</h1>
+      
+<div class="section">
+<h2>Requirements</h2>
+        
+<p>
+          The Cactus plugin requires a version of the Eclipse platform later
+          than 2.1.
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Installation</h2>
+        
+<p>
+          Uncompress the zip file and copy the
+          <code>org.apache.cactus.integration.eclipse_[version]</code> folder 
+          to your Eclipse <code>plugins</code> folder and restart Eclipse.
+        </p>
+      
+</div>
+      
+<div class="section">
+<h2>Configuration</h2>
+        
+<p>
+          Go to Window -&gt; Preferences -&gt; Cactus and set your preferences.
+        </p>
+      
+</div>
+
+    
+</div>
+    
+    
+<a name="using">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Using</h1>
+      
+<p>
+        Select any Cactus test class and from the toolbar do :
+        Run As -&gt; Cactus Test
+        <div class="figure">
+<img alt="Cactus launch shortcut" src="../.././images/eclipse/runner/launchshortcut.png"></div>
+      
+</p>
+    
+</div>
+
+    
+<a name="next">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>What's next</h1>
+      
+<p>
+        In order to release a production-quality tool some features are needed.
+      </p>
+      
+<p>
+        See the todo section on the Cactus framework page for a list of
+        remaining features
+      </p>
+    
+</div>
+
+    
+<a name="developer">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Developer's corner</h1>
+      
+<div class="section">
+<h2>Overview of the plug-in</h2>
+        
+<p>
+          The Cactus framework extends JUnit. The Cactus
+          plugin for Eclipse extends in a certain manner the existing JUnit
+          plugin. For example
+          <code>JUnitLaunchShortcut</code>
+          is overloaded to be able to:
+        </p>
+        
+<ul>
+          
+<li>
+            prepare tests: set up the container (deployment) and start it
+            up
+          </li>
+          
+<li>execute tests using the JUnit plugin</li>
+          
+<li>
+            tear down tests: stop the container and clean the deployment.
+          </li>
+        
+</ul>
+        
+<p>
+          The plugin uses Ant scripts from the Ant integration subproject for
+          container management.
+        </p>
+
+      
+</div>
+      
+<div class="section">
+<h2>How it works</h2>
+
+        
+<div class="section">
+<h3>Extension points</h3>
+          
+<ul>
+            
+<li>
+              
+<i>
+                org.eclipse.debug.core.launchConfigurationTypes
+              </i>
+              registers cactusLaunchConfiguration
+            </li>
+            
+<li>
+              
+<i>
+                org.eclipse.debug.ui.launchShortcuts
+              </i>
+              registers a shortcut which appears in the run and debug
+              cascade menus to launch the current workbench selection in the
+              Java perspective
+            </li>
+            
+<li>
+              
+<i>
+                org.eclipse.ui.preferencePages
+              </i>
+              adds the Cactus preference page to the preferences.
+            </li>
+          
+</ul>
+        
+</div>
+        
+<div class="section">
+<h3>GUI: preference page</h3>
+          
+<p>
+            A preference page is contributed to the Eclipse preferences. It
+            shows the following entries:
+          </p>
+          
+<ul>
+            
+<li>Cactus properties (contextURL)</li>
+            
+<li>
+              directory of all the jars needed for Cactus tests (client
+              side and server side)
+            </li>
+            
+<li>setting of the container homes</li>
+          
+</ul>
+        
+</div>
+
+        
+<div class="section">
+<h3>IContainerProvider</h3>
+          
+<p>
+            To enable different ways to setup, start, and stop containers the
+            idea of container providers has been introduced in the plugin.
+          </p>
+          
+<p>
+            A container provider is responsible for deploying a web application
+            to the container, starting and stopping it, and undeploying the web
+            app. This concept is concretized in the interface
+            <code>IContainerProvider</code>
+            . See its javadoc for more information.
+          </p>
+          
+<p>
+            A container manager is implemented in the current version of the
+            plugin, which uses Ant scripts to carry out these actions. It is
+            called
+            <code>AntContainerManager</code>
+            and may be used to execute tests on all the containers supported
+            by the Ant integration subproject.
+          </p>
+        
+</div>
+        
+<div class="section">
+<h3>What happens when a test is launched</h3>
+          
+<p>
+            The
+            <code>launch(IType theType, String theMode)</code>
+            method of the
+            <code>CactusLaunchShortcut</code>
+            class is called, which sets up the container, launches the
+            tests by delegating these to the JUnit plugin, and then tears down
+            the container setup.
+          </p>
+          
+<ul>
+            
+<li>
+              Tests preparation
+              <p>This includes:</p>
+              
+<ul>
+                
+<li>
+                  creating the war file for the cactus tests: this is
+                  done in a call to the 
+                  <a href="../.././integration/eclipse/webapp_plugin.html" title="Information about the Cactus Web Application plugin for Eclipse.">Webapp 
+                  plug-in</a> <code>WarBuilder</code> class.
+                </li>
+                
+<li>
+                  setting up the container: prepares the configuration
+                  for the selected container
+                </li>
+                
+<li>
+                  starting the container.
+                </li>
+              
+</ul>
+              
+<p>
+                In the case of
+                <code>
+                  AntContainerProvider
+                </code>
+                :
+              </p>
+              
+<ul>
+                
+<li>
+                  setting up is done by an Ant script
+                </li>
+                
+<li>
+                  starting the container is delegated to the
+                  <code>
+                    StartServerHelper
+                  </code>
+                  class, which initiates a thread starting the container
+                  and then pings it constantly to see if it has effectively
+                  been launched.
+                </li>
+              
+</ul>
+            
+</li>
+            
+<li>
+              Tests launch
+              <p>
+                This behaviour is inherited from the JUnit plugin since
+                <code>
+                  CactusLaunchShortcut
+                </code>
+                extends
+                <code>
+                  JUnitLaunchShortcut
+                </code>
+                .
+              </p>
+            
+</li>
+            
+<li>
+              Tests end
+              <p>
+                To know when tests have ended we register our TestListener to
+                the JUnit plugin. To this end the JUnit plugin needed a
+                modification which has been integrated in the 2.1 release of
+                the Eclipse platform.
+              </p>
+            
+</li>
+
+            
+<li>
+              Test environment cleaning
+              <p>
+                After the tests have completed we stop the container, and
+                delete the configuration and war files created beforehand.
+              </p>
+            
+</li>
+          
+</ul>
+        
+</div>
+      
+</div>
+      
+<div class="section">
+<h2>Contributing</h2>
+        
+<p>
+          Read the <a href="../.././integration/eclipse/development.html" title="Described how to set up an Eclipse development environment for working on the Cactus plugins for Eclipse.">Eclipse 
+          development evironment setup</a> tutorial.
+        </p>
+      
+</div>
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

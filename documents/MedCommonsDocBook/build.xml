@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+ <!--  ant build script for MedCommons Documentation
+ 
+ This  build script has been tested with the following versions of software:
+ANT 1.6.2
+JDK 1.5.0_02
+JAI (Java Advanced Imaging API)1.1.2_01 FCS
+
+Note #1: When FOP is generating the PDF files that there are multiple errors about missing properties. These appear to be 'mostly harmless' and according
+to one of the DocBook developers we just need to be patient:
+>
+>
+>Regarding the annoying messages about unsupported properties, I'm afraid you
+>will have to just ignore them until FOP's next generation arrives.  No one
+>wants to spend the time making those properties conditional for FOP when
+>they are likely to be supported soon.
+>
+>Bob Stayton
+>Sagehill Enterprises
+>DocBook Consulting
+>bobs@sagehill.net
+>
+
+Note #2: The <xslt> command is not compatible with the docbook XSL files. Saxon is used
+for the XSLT transform.
+ -->
+
+ 
+ 
+ <!-- Set the base directory to the location of the xml files -->
+ <project 
+     name="documents"   
+     basedir="."                 
+     default="generateDocuments">                
+     
+     <taskdef name="fop" 
+         classname="org.apache.fop.tools.anttasks.Fop">
+         <classpath>
+             <pathelement location="${fop.dir}\fop.jar"/>
+             <pathelement location="${fop.dir}\avalon-framework-cvs-20020806.jar"/>
+             <pathelement location="${fop.dir}\batik.jar"/>
+           
+         </classpath>
+     </taskdef>
+     
+     <description>MedCommons DocBook Tranformations</description>
+     <property name="fop.dir" value="fop-0.20.5"/>
+
+     <!-- docbook location: Everything taken relative to this for docbook stuff -->
+     <property name="docbookHome" value="DocBook"/>                      
+     <!-- Main stylesheets -->
+     <property name="sSheetHome" value="${docbookHome}/docbook-xsl-1.68.1"/>       
+  
+     
+     <!-- Main Docbook stylesheet -->
+     <property name="html_docbook.stylesheet" value="${sSheetHome}/html/docbook.xsl"/>  
+     <property name="fop_docbook.stylesheet" value="${sSheetHome}/fo/docbook.xsl"/>  
+     <property name="MedCommonsToDocbook.stylesheet" value="TransformMedCommonsToDocbook.xsl"/>
+     
+     <!-- Souce document directory  -->                               
+     <property name="in.dir" value="documents"/>           
+    
+                    
+     
+     <!-- Output Properties: Output directory -->                         
+     <property name="out.dir" value="./output" />  <!-- all files -->         
+     <property name="html_out.dir" value="${out.dir}/html"/>
+     <property name="docbook_out.dir"  value="${out.dir}/docbook"/>
+     <property name="fo_out.dir" value="${out.dir}/fo"/>
+     <property name="pdf_out.dir" value="${out.dir}/pdf"/>
+     <property name="http.proxyHost" value="localhost"/>
+     <property name="http.proxyPort" value="81"/>
+     
+     
+     <!-- Post XSLT transform parameter for Saxon -->
+     <property name="param.args.post" value="use.extensions=1"/>               
+     
+     
+     
+     <!-- XSLT engine class -->
+     <property name="xslt.processor.class" value="com.icl.saxon.StyleSheet" />    
+     
+     <!-- path for xslt processor. 
+     Includes resolver and extensions and catalogManager.properties file.  -->
+     <path id="xslt.processor.classpath">                                         
+         <pathelement path="lib/saxon.jar" />  <!-- Saxon jar -->
+         <pathelement path="lib/resolver-1.0.jar"/> <!-- resolver jar -->
+         <pathelement path="lib/saxon653.jar"/>  <!-- docbook extensions -->
+         <pathelement path="."/> <!-- for catalogManager.properties -->
+         <pathelement path="documents"/> <!-- for catalogManager.properties -->
+     </path>
+     
+     <!-- Use javac 1.3 -->
+     <property name="build.compiler" value="modern"/>                           
+     <property file="ant.properties"/>
+     
+     <!--  -->
+     <!--Initial processing: If any required.  -->
+     <!--  -->
+     <target name="init">
+         <echo message="Initialization" />                          
+         <mkdir dir="${out.dir}" />
+         <mkdir dir="${html_out.dir}" />
+         <mkdir dir="${docbook_out.dir}"/>
+         <mkdir dir="${pdf_out.dir}"/>
+         <mkdir dir="${fo_out.dir}"/>
+     </target>
+     
+     <!-- ================================================ -->
+     <!-- Generate documents              -->
+     <!-- ================================================ -->
+     <target name="generateDocuments" depends="init,generateDocbook,generateFo,generateHtml,generatePdf">                    
+         <!-- -->
+     </target>
+     
+   
+     <!-- Generate DocBook  XML from MedCommons source documents -->
+     <!-- bug - generates more *.docbook entries than is needed -->
+         <target name="generateDocbook">
+        
+         <xslt basedir="${in.dir}/Requirements" destdir="${docbook_out.dir}" 
+             style="${MedCommonsToDocbook.stylesheet}" >
+             <mapper type="glob" from="*.xml" to="*.xml"/>
+         </xslt>
+          
+             <xslt basedir="${in.dir}/SoftwareSpecifications" destdir="${docbook_out.dir}"
+                 style="${MedCommonsToDocbook.stylesheet}">
+                 <mapper type="glob" from="*.xml" to="*.xml"/>
+             </xslt>
+             
+             <xslt basedir="${in.dir}/DevelopmentProcedures" destdir="${docbook_out.dir}"
+                 style="${MedCommonsToDocbook.stylesheet}">
+                 <mapper type="glob" from="*.xml" to="*.xml"/>
+             </xslt>
+             
+             <xslt basedir="${in.dir}" destdir="${docbook_out.dir}"
+                 style="${MedCommonsToDocbook.stylesheet}">
+                 <mapper type="glob" from="*.xml" to="*.xml" />
+             </xslt>
+             
+             <!--
+             <java  
+                 classname="${xslt.processor.class}"
+                 fork="yes"
+                 dir=".">
+                 <classpath refid="xslt.processor.classpath" />
+                 <arg line="-o ${docbook_out.dir}"/>
+                 <arg line="${in.dir}"/>
+                 <arg line="${MedCommonsToDocbook.stylesheet}"/>
+             </java>
+             <java  
+                 classname="${xslt.processor.class}"
+                 fork="yes"
+                 dir=".">
+                 <classpath refid="xslt.processor.classpath" />
+                 <arg line="-o ${docbook_out.dir}"/>
+                 <arg line="${in.dir}/DevelopmentProcedures/*.xml"/>
+                 <arg line="${MedCommonsToDocbook.stylesheet}"/>
+             </java>
+             <java  
+                 classname="${xslt.processor.class}"
+                 fork="yes"
+                 dir=".">
+                 <classpath refid="xslt.processor.classpath" />
+                 <arg line="-o ${docbook_out.dir}"/>
+                 <arg line="${in.dir}/Requirements/*.xml"/>
+                 <arg line="${MedCommonsToDocbook.stylesheet}"/>
+             </java>
+            -->
+       </target>
+     
+     <!-- Generate fo format documents from the docbook format. These are a recursor to PDF files -->
+     
+     <target name="generateFo" unless="noGenPdf" description="Converts docbook xml to fo format">
+         <java  
+             classname="${xslt.processor.class}"
+             fork="yes"
+             dir=".">
+             <classpath refid="xslt.processor.classpath" />
+             <arg line="-o ${fo_out.dir}"/>
+             <arg line="${docbook_out.dir}"/>
+             <arg line="${fop_docbook.stylesheet}"/>
+         </java>
+     </target> 
+     
+     <target name="generateHtml" description="Converts docbook xml to html">
+         <!--
+         <xslt 
+             classpath="${xslt.processor.classpath}"
+             basedir="${docbook_out.dir}" destdir="${html_out.dir}" 
+             style="${html_docbook.stylesheet}" >
+             <mapper type="glob" from="*.xml" to="*.html"/>
+         </xslt>
+         -->
+         <!-- Kludge. XML is generated as output from java; then have to change the suffix to *.html -->
+          <java  
+             classname="${xslt.processor.class}"
+             fork="yes"
+             dir=".">
+             <classpath refid="xslt.processor.classpath" />
+             <arg line="-o ${html_out.dir}"/>
+             <arg line="${docbook_out.dir}"/>
+             <arg line="${html_docbook.stylesheet}"/>
+          </java>
+         <move todir="${html_out.dir}" includeemptydirs="false">
+             <fileset dir="${html_out.dir}">
+                 <include name="**/*.xml"/>
+             </fileset>
+             <mapper type="glob" from="*.xml" to="*.html"/>
+         </move>
+         <copy todir="${html_out.dir}">
+           <fileset dir="."><include name="images/**"/><exclude name="**/.svn"/></fileset>
+       </copy>
+     </target>
+     
+     
+     
+     <target name="generatePdf" description="Generates PDF files for all output" unless="noGenPdf">
+         <fop format="application/pdf" 
+             outdir="${pdf_out.dir}" messagelevel="debug">
+             <fileset dir="${fo_out.dir}">
+                 <include name="*.xml"/>
+             </fileset>
+         </fop>
+     </target>
+    
+ </project>

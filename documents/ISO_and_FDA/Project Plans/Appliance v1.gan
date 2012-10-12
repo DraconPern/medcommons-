@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Appliance V.1" company="MedCommons" webLink="" view-date="2007-11-14" view-index="0" gantt-divider-location="713" resource-divider-location="301" version="2.0">
+    <description><![CDATA[The to-do list for the first release of the project.]]></description>
+    <view zooming-state="default:2"/>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+    </calendars>
+    <tasks color="#8cb6ce">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="16" name="Engineering To-Do List" color="#8cb6ce" meeting="false" start="2007-11-15" duration="3" complete="0" priority="1" expand="false">
+            <task id="0" name="Half a page on how email will work on appliances" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="1" name="Need APIs for groups to be assembled dynamically." color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="2" name="Revive account documents" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true">
+                <notes><![CDATA[Don't know if old code still works.]]></notes>
+            </task>
+            <task id="3" name="Print out user registration receipt, i.e., from console." color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="15" name="Code Freeze" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="27" name="Miscellaneous" color="#8cb6ce" meeting="false" start="2007-11-15" duration="3" complete="0" priority="1" expand="false">
+            <task id="25" name="Fixing group schemas" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="26" name="problems with changes to migrate php code" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="29" name="Discuss, clarify requirements" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="30" name="Fix problems due to unexpected central" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="31" name="Identify server changes" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="32" name="PHP e_strict compliance" color="#8cb6ce" meeting="false" start="2007-11-15" duration="3" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="18" name="Patient List (RLS)" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="false">
+            <task id="33" name="Remove PINs and tracking numbers" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="34" name="Fetching registry address from account" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="35" name="User specific filters" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="36" name="User specific filter configuration/save in RLS" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="28" name="Account merge" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="false">
+            <task id="37" name="DB cleanup and merge" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="19" name="ToDir" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="false">
+            <task id="38" name="Add icons based on entry types" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="39" name="FireFox client support" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="40" name="Display of assertions (todir account integration)" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="41" name="Merging group schemas" color="#8cb6ce" meeting="false" start="2007-11-14" duration="3" complete="0" priority="1" expand="true"/>
+        <task id="20" name="CCR Merge" color="#8cb6ce" meeting="false" start="2007-11-14" duration="5" complete="0" priority="1" expand="false">
+            <task id="42" name="net.sourceforge.ganttproject.delay.Delay@94af2f" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="43" name="DB design, UI updates" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="44" name="WS enhancements to flag required merges" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="45" name="Core merge algorithm" color="#8cb6ce" meeting="false" start="2007-11-14" duration="5" complete="0" priority="1" expand="true"/>
+            <task id="46" name="Manual merge interface" color="#8cb6ce" meeting="false" start="2007-11-14" duration="5" complete="0" priority="1" expand="true">
+                <task id="47" name="Body section merge" color="#8cb6ce" meeting="false" start="2007-11-14" duration="5" complete="0" priority="1" expand="true"/>
+                <task id="48" name="Patient information merge" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true"/>
+            </task>
+        </task>
+        <task id="21" name="Viewer" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="false">
+            <task id="49" name="Mantis bugs" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true"/>
+            <task id="50" name="Multiple gateway support" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="22" name="Account Page" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="false">
+            <task id="51" name="Visual cleanup" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true"/>
+            <task id="52" name="Pin-less access list" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="53" name="Practice administration" color="#8cb6ce" meeting="false" start="2007-11-14" duration="2" complete="0" priority="1" expand="true"/>
+            <task id="54" name="Audit log" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="55" name="Ownership type, verification, status" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="56" name="Account details mgmt (address, recovery passphrase)" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+        </task>
+        <task id="24" name="Build" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+        <task id="57" name="Test and Monitor" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+        <task id="23" name="Console" color="#8cb6ce" meeting="false" start="2007-11-15" duration="1" complete="0" priority="1" expand="true"/>
+        <task id="58" name="HealthBook" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="false">
+            <task id="59" name="Reconfiguration" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="60" name="Move to healthbook.medommons.net domain [terry] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="67" name="Make healthbook aware of particular medcommons gateway that hosts each account [bill]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="61" name="Ensure local disk can be added to gateway increase storage [terry] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="62" name="Ensure 2nd gateway can be added to appliance[terry] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="63" name="Ensure 2nd appliance can be added to healthbook [terry]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="64" name="Enable incoming email for all healthbook use [terry] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="65" name="Careteams" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="66" name="Decide on share with team tab [adrian] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="68" name="Decide whether to distinguish roles of careteam members [all]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="69" name="Implement notifications relay from medcommons to facebook [bill] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="70" name="Acquire email addresses of each careteam member for special emergency notifications [bill] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="71" name="Healthurl " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="72" name="Ensure only self plus careteam can see basic healthurl [simon]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="73" name="Implement emergency ccr healthurl [simon] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="74" name="Implement clipboard ccr healthurl [simon]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="75" name="Panels" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="76" name="The panels are small windows without any of their own navigation" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="77" name="Let's try to use the same panels in different social networking systems" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="78" name="In facebook, each panel is an iframe hosted directly by the gateway that services that account as noted in (make hb aware of particular mc gw..) " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="79" name=" Activity log [adrian, simon] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="80" name="Consents panel [adrian, simon]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="81" name="Info [simon]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="82" name="Remove all the links as they exist elsewhere in healthbook" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="83" name="Forms panel" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="84" name="Needs text embellishment [ adrian ] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="85" name="Should show healthbook logo, not medcommons [terry] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="86" name="Should provide cover pages for personal fax number, without the barcode [simon, terryl] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="87" name="Content panels" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="88" name="Fix overview to include correct instructions for email [adrian]" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="89" name="Implement each content upload panel as iframe to gateway [simon] " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="90" name="Document panel" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true">
+                <task id="91" name="This is the old docs storage that exists at the accounts level " color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="92" name="We will be uploading DNRs, etc. into this" color="#8cb6ce" meeting="false" start="2007-11-14" duration="1" complete="0" priority="1" expand="true"/>
+            </task>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Sean" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="Simon" function="Default:0" contacts="" phone=""/>
+        <resource id="2" name="Terry" function="Default:0" contacts="" phone=""/>
+        <resource id="3" name="Donald" function="Default:0" contacts="" phone=""/>
+        <resource id="4" name="Adrian" function="Default:0" contacts="" phone=""/>
+        <resource id="5" name="Bill" function="Default:0" contacts="" phone=""/>
+        <resource id="6" name="Caroline" function="Default:0" contacts="" phone=""/>
+        <resource id="7" name="Susan" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="1" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="2" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="3" resource-id="4" function="Default:0" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd3" order="0" width="297"/>
+        <displaycolumn property-id="tpd6" order="1" width="15"/>
+        <displaycolumn property-id="tpd10" order="2" width="32"/>
+        <displaycolumn property-id="tpd8" order="3" width="75"/>
+        <displaycolumn property-id="tpd4" order="4" width="40"/>
+        <displaycolumn property-id="tpd5" order="5" width="39"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

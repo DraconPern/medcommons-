@@ -1,0 +1,397 @@
+* {
+	margin: 0;
+	padding: 0;		
+}
+
+body {
+	font-family: Helvetica, Arial, Sans Serif;
+	line-height: 1.5em;
+	margin: 0px 0px;
+	padding: 0px 0px;	
+	color: #333333;
+	text-align:center;		
+	font-size: 78%;		
+}
+
+
+
+a{
+	text-decoration:none;
+}
+a:link{
+	color: #105191;
+}
+
+a:visited{
+	color:#7d508e;
+}
+
+a:hover, a:focus {
+text-decoration: underline;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	margin: .3em 0;	
+	line-height: 1em;
+}
+
+
+h1,h2,h3,div#mainbody h3, div#mainbody1 h3{
+	color: #666666;	
+}
+
+p, pre, blockquote, ul, ol, dl{ 	
+	margin: 1em 0;
+}
+
+dd{ 
+	margin-left: 3em; 	
+}
+
+ul,ol,blockquote{
+	padding-left:0;
+	margin-left: 2em;	
+}
+
+li {
+	margin: .6em;
+}
+
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.5em; font-weight: normal; margin: .8em 0px; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+td,th { padding-left: 5px;}
+
+a {
+	color: 2589c8;
+}
+
+
+table {
+	font-size: 100%;
+}
+
+a img {
+	border: none;
+}
+#containerIE{	
+	padding-bottom: 15px;
+}
+#container {
+	
+	background: url(../images/sys_images/background.jpg) 0px 0px repeat-x;
+	
+	height: 100%;		
+}
+
+@media print{	
+	#container {background:none;}	
+}
+
+#container1 {
+	/*background: url(../images/sys_images/alertbar_background.png) top left repeat-x;*/
+	height: 100%;	
+	
+}
+
+div#skipmenu{
+	position:relative;
+	width: 960px;			
+	display: block;
+	text-align:left;	
+	margin: 0px auto;		
+	
+}
+
+div#skipmenu a.skippy{			
+	position:absolute;
+	top: -1000px;
+	left:-1000px;
+	height: 1px;
+	width: 1px;	
+	overflow:hidden;	
+}
+
+div#skipmenu a.skippy:active, div#skipmenu a.skippy:focus, div#skipmenu a.skippy:hover{	
+	position: absolute;
+	top:40px;
+	left:10px;	
+	height: auto;	
+	font-size:1em;
+	font-weight:bold;
+	width:100%;
+	padding-bottom:5px;
+	color: blue;	
+	text-align:left;	
+	z-index:100;
+	margin-bottom:5px;
+	
+}
+
+
+
+div#wrappers{	
+	display:block;
+	position:relative;	
+}
+
+div#wrapper{
+	padding: 0px 0px;
+	width: 960px;		
+	position: relative;
+	display: block;
+	text-align:left;	
+	margin: 0px auto;		
+	height: 100%;
+	/*background: url(../images/sys_images/frame_body.jpg) -1px 0px repeat-y;		*/
+	overflow: hide;
+	
+}
+
+div#wrapper2{	
+	/*background: url(../images/sys_images/frame_left.jpg) top left no-repeat;*/
+	height: 100%;
+}
+
+div#wrapper3{	
+	/*background: url(../images/sys_images/frame_right.jpg) top right no-repeat;*/
+	height: 100%;
+}
+
+div#wrapper4{
+	/*background: url(../images/sys_images/frame_top.jpg) top left no-repeat;*/
+	height: 100%;	
+}
+
+div#wrapper5{
+	padding: 10px 0px 0px 0px;
+	height: 100%;
+	
+	
+	
+}
+
+
+div#bb_breadcrumb{
+	position:relative;	
+	background: url(../images/sys_images/breadcrumb_bak.jpg) top left no-repeat;
+	height: 100%;
+}
+
+div#breadcrumb{
+	height:28px;
+	margin-left:5px;	
+}
+div#breadcrumb p{
+	margin: 0px 0px;
+	padding-top:.3em;
+	color:white;
+	font-size: .9em;
+	
+}
+
+div#breadcrumb p a{
+	color:#7FC5E9;
+}
+
+div#topnav_wrappers{	
+	padding-bottom: 15px;
+	background: url(../images/sys_images/shadowbelownav.jpg) bottom left no-repeat;
+	position:relative;			
+	height:100%;	
+}
+
+div#containerIE div#topnav_wrappers{
+	padding-bottom: 17px;
+}
+
+
+div#navcollb{
+	margin: 0;
+	padding: 0;	
+	position: relative;
+}
+
+div#navcolbg{
+	/*background: url(../images/sys_images/navleftbg.gif) repeat-y;		*/
+	padding-left:10px;		
+}
+
+div#navcol {
+	width: 130px;		
+	float: left;				
+	position: relative;			
+}
+
+
+
+div#pagebody{
+	
+}
+
+div#main{
+	display: block;
+	position: relative;
+	/*
+	padding: 0px 10px;	
+	padding-top: 5px;
+	padding-bottom: 10px;	
+	*/
+	
+	min-height:300px;
+  height:auto !important;
+  height:300px;  
+  
+}
+
+div#main div#mainbody{	
+	/*overflow:hidden;*/
+}
+
+div#main div#mainbody2{
+	width:100%;
+	/*overflow:hidden;*/
+}
+
+div#sidecolbg div#main{			
+	margin-right: 245px;		
+	margin-left: 140px;				
+}
+
+
+#containerIE div#sidecolbg div#main {
+	margin-left: 140px;		
+}
+
+#containerIE div#sidecolbg_no div#main {
+	margin-left: 140px;			
+}
+
+
+div#sidecolbg_no div#main{		
+	margin-left: 140px;		
+	
+		
+}
+
+#containerIE div#navcolbg_no div#main {	
+	margin-left: 0px;
+}
+
+div#navcolbg_no div#main {			
+	margin-left:0px;
+}
+
+
+div#sidecolbg{	
+	display: block;
+	position: relative;
+	height: 100%;			
+	padding-right:5px;
+}
+
+div#sidecolbg div#sidecolspacer, div#sidecolbg div#sidecolspacer2, div#sidecolbg div#sidecolspacer3{
+	/* background: url(../images/sys_images/verticalfuzz_body.jpg) 700px 0px repeat-y; */
+	display: block;
+	position: relative;
+	/*border:1px solid red;*/
+}
+
+div#sidecolbg div#sidecolspacer2{
+	/* background: url(../images/sys_images/verticalfuzz_top.jpg) 700px 0px no-repeat; */
+}
+
+div#sidecolbg div#sidecolspacer3{
+	/* background: url(../images/sys_images/verticalfuzz_bottom.jpg) 700px 100% no-repeat; */
+}
+
+
+div#navcolbg_no div#sidecolbg div#sidecolspacer, div#navcolbg_no div#sidecolbg div#sidecolspacer2, div#navcolbg_no div#sidecolbg div#sidecolspacer3{
+	background: url(../images/sys_images/verticalfuzz_body.jpg) 710px 0px repeat-y;	
+}
+
+div#navcolbg_no div#sidecolbg div#sidecolspacer2{
+	background: url(../images/sys_images/verticalfuzz_top.jpg) 710px 0px no-repeat;	
+}
+
+div#navcolbg_no div#sidecolbg div#sidecolspacer3{
+	background: url(../images/sys_images/verticalfuzz_bottom.jpg) 710px 100% no-repeat;;	
+}
+
+div#navcolbg_no div#sidEcolbg{
+	/*background: url(../images/sys_images/hbar.gif) 691px 0px repeat-y;		*/	
+}
+
+div#navcolbg_no div#sidecolbg div#sidecolspacer{
+	/*background: url(../images/sys_images/vbarspacer.gif) 691px 100% no-repeat;		*/	
+}
+
+
+div#sidecol {	
+	width: 240px;		
+	float: right;		
+	display:block;
+	height: 100%;
+	position:relative;	
+	overflow: hidden;	
+	
+}
+/*
+div#containerIE7L div#sidecol {	
+	margin-top: 20px;
+}
+*/
+
+div#sidecol #soutter {
+	
+}
+
+div#sidecol #sinner {	
+	padding:0 0 10px 10px;
+	
+}
+
+div#container div#sidecol .hsinner{
+	padding-top:0px;	
+}
+
+.clear{
+	clear: both;
+  display: block;
+  height: 1px;
+	overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/******** Misc *************/
+span.seperator {
+	padding: 0 10px;	
+}
+div.rx_ephox_inlinevariant{
+	display: inline;
+}
+
+div.IEobject{
+	display: none;
+}
+
+div.MozillaObject {
+	padding-top:12px;
+}
+
+div#containerIE div.MozillaObject{	
+	display: none;
+}
+div#containerIE div.IEobject{
+	display: block;
+}
+

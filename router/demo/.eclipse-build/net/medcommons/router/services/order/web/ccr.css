@@ -1,0 +1,96 @@
+*{
+	font-size: X-small;
+	font-family: Arial, sans-serif;
+}
+h1{
+	font-size: 150%;
+}
+strong.clinical {
+	color: #3300FF;
+  color: #a1c48e;
+  color: #74a759;
+}
+p {
+	margin-left: 20px
+}
+span.header{
+	font-weight: bold;
+    font-size: medium;
+    line-height: 16pt;
+	padding-top: 10px;
+}
+table#ccrheader { 
+  background-color: #fbf4e4;
+}
+
+table.list {
+	padding-bottom: 5px;
+	border: thin solid #cccccc;
+	border-style-internal: thin solid #cccccc;
+	BORDER-COLLAPSE: collapse;
+	background: white;
+	background-image: none
+}
+table.list th {
+	text-align: left;
+	font-weight: bold;
+	color: white;
+	background-color: #958f6d;
+	background-image: none
+}
+table.list td {
+	padding: 5px;
+	border: thin solid #cccccc;
+}
+table.internal {
+	border: none
+}
+table.internal td {
+    padding: 1px;
+    border: none;
+}
+table.internal tr.even{
+	background: #CEFFFF;
+	background-image: none
+}
+
+table {
+  font-family: arial;
+  font-size: 12px;
+}
+
+span.header {
+  font-family: arial;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: medium;
+}
+
+h4 {
+  font-family: arial;
+}
+
+.commentHeading {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #333;
+}
+
+table td.ccredittool, table th.ccredittool {
+  text-align: center;
+}
+
+table td.ccredittool img, table th.ccredittool img {
+  cursor: pointer;
+}
+
+a:link, a:visited {
+  color: #5987ac;
+  text-decoration: none;
+}
+a:hover, a:active {
+  text-decoration: underline;
+}
+ 

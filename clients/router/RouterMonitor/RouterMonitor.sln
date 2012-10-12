@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouterMonitor", "RouterMonitor\RouterMonitor.csproj", "{6F6AB303-25D7-4B72-8C73-2E568E043B49}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{6F6AB303-25D7-4B72-8C73-2E568E043B49}.Debug.ActiveCfg = Debug|.NET
+		{6F6AB303-25D7-4B72-8C73-2E568E043B49}.Debug.Build.0 = Debug|.NET
+		{6F6AB303-25D7-4B72-8C73-2E568E043B49}.Release.ActiveCfg = Release|.NET
+		{6F6AB303-25D7-4B72-8C73-2E568E043B49}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

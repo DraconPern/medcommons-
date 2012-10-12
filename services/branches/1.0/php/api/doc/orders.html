@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <link href='api.css' rel='stylesheet' type='text/css'/>
+  </head>
+  <body>
+    <h1><img src='mc_logo.png'/> MedCommons Orders Integration</h1>
+    <hr/>
+    <h2>1. Introduction</h2>
+    <p>MedCommons can integrate with the ordering systems in external application and web sites
+    by using a simple HTML form based interface.  This document briefly describes how to
+    set up your order system to automatically send orders to and receive notifications from 
+    MedCommons. </p>
+
+    <h2>2. Creating Orders Inside MedCommons</h2>
+    <p>The starting point for integrating with the MedCommons order system support
+    will usually be via the DICOM Upload Page.  Every group (or practice) within 
+    MedCommons has a dedicated upload page (you can find the URL on your Settings page).
+    Any time DICOM is uploaded using this page an Order is created within the MedCommons
+    system which can be used to track the status and progress of the processing of the image data.</p>
+    <p>
+    Each order has a unique identifier known as the <i>Callers Order Reference</i>.  
+    In the default case, this identifier is automatically generated for you, however 
+    if you have such an identifier in your own system then you can pass the order reference
+    that you want to use into MedCommons.  To do that, you only need to append a single parameter
+    to the DICOM Upload Page for your group.  Here's an example:</p>
+
+    <pre>https://healthurl.medcommons.net/1172619833385984/upload?callers_order_reference=1234567890</pre>
+
+    <p>Note that each order reference must be unique.</p>
+
+    <h2>3. Tracking Orders within MedCommons</h2>
+    <p>Once an order is created within MedCommons there are various ways to track it.  The simplest way is that you can query 
+       the status via the order status URL.  Such a URL has the following form:</p>
+
+      <pre>https://healthurl.medcommons.net/orders/orderstatus?callers_order_reference=1234567890</pre>
+
+       <p><i>Note that you should be logged into your MedCommons Account for this URL to work.</i></p>
+
+       <p>You can also retrieve this same information in either XML or JSON format if you wish to 
+       integrate it with your own systems.  To retrieve in a different format, just add "&amp;fmt=xml" or 
+       "&amp;fmt=json" to the end of the URL.  For example:</p>
+
+      <pre>https://healthurl.medcommons.net/orders/orderstatus?callers_order_reference=1234567890&fmt=xml</pre>
+
+     <p>The results returned from the status query show the order status.  This status field reflects various 
+     possible states including the those outlined in the table below:
+
+     <table class='api'>
+       <thead>
+         <tr><th>State</th><th>Meaning</th></tr>
+      </thead>
+      <tbody>
+         <tr><td>DDL_ORDER_ACCEPTED</td><td>The order has been created but no DICOM is associated with it.</td></tr>
+         <tr><td>DDL_ORDER_REJECTED</td><td>A problem occurred in initial creation and the order was rejected.</td></tr>
+         <tr><td>DDL_ORDER_XMITING</td><td>The DICOM for the order is currently being uploaded.</td></tr>
+         <tr><td>DDL_ORDER_UPLOAD_COMPLETE</td><td>The DICOM for the order has finished uploading.</td></tr>
+         <tr><td>DDL_ORDER_COMPLETE</td><td>The DICOM for the order has been downloaded by a DDL and forwarded to a PACS or local Workstation</td></tr>
+         <tr><td>DDL_ORDER_CANCELLED</td><td>The order was manually cancelled.</td></tr>
+         <tr><td>DDL_ORDER_ERROR</td><td>An error occurred and the Order has been aborted.</td></tr>
+       </tbody>
+     </table>
+        
+          
+
+    <h2>4. Receiving Notifications from MedCommons about Order Changes</h2>
+    <p><i><b>Please Note:  this function is not yet available.</b></i></p>
+    <p>If you wish, MedCommons can notify you when the status of your order changes.  This is accomplished by adding a parameter to the 
+    URL that originally creates the order called "status_callback" and passing to this URL the URL that you want the status to be
+    sent to.  For example:</p>
+
+    <pre>https://healthurl.medcommons.net/1172619833385984/upload?callers_order_reference=1234567890&status_callback=http://yourwebsite.com/awebpage.jsp</pre>
+
+    <p>MedCommons will post status updates to the URL you specify whenever the status of the order changes.</p>
+  </body>
+</html>

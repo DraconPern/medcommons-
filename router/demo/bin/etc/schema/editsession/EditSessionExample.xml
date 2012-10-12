@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EditSession xmlns="http://www.medcommons.net/editsession01"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.medcommons.net/editsession01 file:/Users/mesozoic/Documents/MedCommons/svn.medcommons.net/router/demo/etc/schema/editsession/EditSession10.xsd">
+    <SessionToken>381610e8803f81bb4f8ae11fb38c98ceb2e98d2b</SessionToken>
+    <ContentType>ContentType0</ContentType>
+    <AuthorizationToken>AuthorizationToken0</AuthorizationToken>
+    <SessionURI>http://stego.myhealthespace.com:9080/router/DocumentEditSession?token=381610e8803f81bb4f8ae11fb38c98ceb2e98d2b</SessionURI>
+    <Alias>Current CCR</Alias>
+    <PersonName>Stella Paterson</PersonName>
+    <PersonImage>(base64 encoded image)</PersonImage>
+    <ApplicationTitle>The Amazing HeathBook (tm)</ApplicationTitle>
+    <Status>200</Status>
+    <Reason>OK</Reason>
+    <Profiles>
+        <Profiles>
+            <Alias>Current CCR</Alias>
+            <RequestSessionURI>http://stego.myhealthespace.com/router/getPHREditSession?storageId=1088448116240388&amp;reference=CurrentCCR</RequestSessionURI>
+        </Profiles>
+        <Profiles>
+            <Alias>Emergency CCR</Alias>
+            <RequestSessionURI>http://stego.myhealthespace.com/router/getPHREditSession?storageId=1088448116240388&amp;reference=EmergencyCCR</RequestSessionURI>
+        </Profiles>
+    </Profiles>
+</EditSession>

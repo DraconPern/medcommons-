@@ -1,0 +1,46 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <service name="TestService" provider="java:RPC">
+    <parameter name="className" value="net.medcommons.central.ws.test.TestService"/>
+    <parameter name="allowedMethods" value="getMessage"/>
+  </service>
+  
+  <service name="CommandService" provider="java:RPC">
+	<parameter name="className" value="net.medcommons.central.ws.command.CommandService"/>
+	<parameter name="allowedMethods" value="*"/>
+	<beanMapping qname="RemoteCommand" xmlns:ns="urn:RemoteCommand" languageSpecificType="java:net.medcommons.command.RemoteCommand"/>
+	<beanMapping qname="RemoteCommandResult" xmlns:ns="urn:RemoteCommandResult" languageSpecificType="java:net.medcommons.command.RemoteCommandResult" />
+  </service>
+  
+  <service name="DeviceDirectoryService" provider="java:RPC">
+    <parameter name="className" value="net.medcommons.central.ws.device.DeviceDirectoryService"/>
+    <parameter name="allowedMethods" value="*"/>
+  </service>
+  
+  <service name="DeviceRegistrationService" provider="java:RPC">
+	<parameter name="className" value="net.medcommons.central.ws.device.DeviceRegistrationService"/>	
+	<parameter name="allowedMethods" value="*"/>
+	<beanMapping qname="DeviceRegistration" xmlns:ns="urn:DeviceRegistration" languageSpecificType="java:net.medcommons.device.DeviceRegistration"/>
+  </service>  
+  
+  <service name="GuidService" provider="java:RPC">
+  	<parameter name="className" value="net.medcommons.central.ws.guid.GuidService" />
+  	<parameter name="allowedMethods" value="*"/>
+  </service>
+  
+  <service name="RecipeService" provider="java:RPC">
+  	<parameter name="className" value="net.medcommons.central.ws.recipe.RecipeService" />
+  	<parameter name="allowedMethods" value="*"/>
+  	<beanMapping qname="RecipeInvocation" xmlns:ns="urn:RecipeInvocation" languageSpecificType="java:net.medcommons.recipe.RecipeInvocation"/>
+  	<beanMapping qname="RecipeInvocationResult" xmlns:ns="url:RecipeInvocationResult" languageSpecificType="java:net.medcommons.recipe.RecipeInvocationResult"/>
+  </service>
+  
+  <service name="PackageService" provider="java:RPC">
+  	<parameter name="className" value="net.medcommons.central.ws.pkg.PackageService"/>
+  	<parameter name="allowedMethods" value="*"/>
+  </service>
+  
+  <service name="HipaaLogService" provider="java:RPC">
+	<parameter name="className" value="net.medcommons.central.ws.log.HipaaLogService"/>
+	<parameter name="allowedMethods" value="*"/>
+  </service>
+</deployment>

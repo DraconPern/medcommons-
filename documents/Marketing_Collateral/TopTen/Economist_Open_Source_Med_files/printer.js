@@ -1,0 +1,1 @@
+document.write('<a target="_blank" href="http://ad.doubleclick.net/click;h=v2|312b|0|0|%2a|a;7341007;0-0;0;6806167;1-468|60;4521067|4538963|1;;%3fhttp://www.economist.com/research/articlesBySubject/display.cfm?id=1527355"><img src="http://m3.doubleclick.net/viewad/711766/US_election_468x60us-election-5.gif" border=0 alt="Click here to find out more!"></a>');

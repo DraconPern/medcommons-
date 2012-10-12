@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!-- ======================================================================
+     $Id$
+     ====================================================================== -->
+<project name="configuration" default="world" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- properties to customize here -->
+	<property file="build.properties" />
+
+  <!-- By default put the medcommons repo in the user's home directory under .mc -->
+  <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+
+  <target name="world" depends="jar">
+  </target>
+
+    <!-- - - - - - - - - - - - - - - - - -
+          target: init
+     - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+      <echo message="Initializing build ..." />
+     <ivy:configure file="ivy-settings.xml" />
+      <ivy:retrieve />
+
+    </target>
+
+
+
+    <!-- =================================
+          target: compile
+         ================================= -->
+    <target name="compile" depends="init" description="--> compiles source">
+      <mkdir dir="build/classes"/>
+      <javac srcdir="src" compiler="modern" debug="true" target="1.5" destdir="build/classes">
+        <classpath>
+          <fileset dir="lib">
+            <include name="**/*.jar"/>
+          </fileset>
+        </classpath>
+      </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+      <mkdir dir="build/dist"/>
+      <jar basedir="build/classes" destfile="build/dist/medcommons-configuration.jar">
+
+      </jar>
+    </target>
+
+    <target name="load-build-number" if="build.buildnumber.disable">
+      <property file="build.number" />
+    </target>
+
+    <target name="update-build-number" depends="load-build-number" unless="build.buildnumber.disable">
+      <propertyfile file="build.number" comment="">
+        <entry  key="build.number" type="int" operation="+" value="1"/>
+      </propertyfile>
+      <property file="build.number" />
+    </target>
+
+    <target name="publish" depends="clean,jar,update-build-number">
+      <ivy:publish resolver="public" pubrevision="1.0.${build.number}" overwrite="true">
+        <artifacts pattern="build/dist/[artifact].[ext]" />
+      </ivy:publish>
+    </target>
+
+    <target name="clean">
+     <delete dir="build"/>
+    </target>
+</project>

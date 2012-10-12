@@ -1,0 +1,21 @@
+
+					<dict>
+						<key>blocktype</key>
+						<string>leftright</string>
+						<key>blabel</key>
+						<string>bugs - landscape and rotating</string>
+						<key>toplabel</key>
+						<string>PDF - Hello MedPad!</string>
+						<key>label</key>
+						<string>Hello MedPad! - PDF</string>
+						<key>imageurl</key>
+						<string>
+							http://www.protoneurope.org/main_images/pdf_logo/image
+						</string>
+						<key>url</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/radreport.pdf
+						</string>
+					</dict>
+
+	

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ivy-module version="1.3">
+  <info organisation="medcommons" module="cilib"/>
+ <publications>
+   <artifact ext='sh'/>
+ </publications>
+ <dependencies>
+ </dependencies>
+</ivy-module>
+

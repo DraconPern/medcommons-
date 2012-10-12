@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mccxp.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://mccxp/content/ver.dtd" >
+
+<window
+    id="mainwindow"
+    title=""
+    xmlns:h="http://www.w3.org/1999/xhtml"    
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"    
+    style="border-style: solid; border-color: green; border-width: 1px; padding:4px;"    
+    onload="mccxp_init()"
+    >
+
+    <script src="MochiKit.js"/>
+    <script src="xpath.js"/>
+    <script src="misc.js"/>
+    <script src="dom.js"/>
+    <script src="sha1.js"/>
+    <script src="base64/Base64.js"/>
+    <script src="mccxp.js"/>
+
+    <hbox align="center">
+      <image id="logo" flex="0" src=""/>
+      <spacer flex="1"/>
+      <h:a href="https://secure.medcommons.net/DemoInstructions.htm" target="demoInstr"><label class="fakeLink" style="font-size: 8px" value="Instructions and CXP Info" tooltiptext="Find out more about this tool and CXP" /></h:a>
+      <h:a href="javascript:mccxp_reportProblem()" ><label class="fakeLink" style="font-size: 8px" tooltiptext="Help us improve - click here to report a problem!" value="Report Problem"/></h:a>
+      <button id="cxpButton" label="Settings" oncommand="mccxp_changeSettings()"/>
+    </hbox>
+    <spacer height="10"/>
+    <label id="version" value="&mccxp.ver;" style="display: none;"/>
+    <popupset>
+      <tooltip id="pinToolTip"><description>Enter a PIN here if you wish to choose one yourself.<h:br/>  <h:br/>If you leave it blank a random PIN will be assigned.</description></tooltip>    
+      <tooltip id="commonsIdToolTip"><description>Enter a MedCommonsID.<h:br/>  <h:br/>If you leave it blank a random ID will be assigned.</description></tooltip>    
+      <tooltip id="receiverProviderIdTip"><description>Enter the practice ID that you want this CCR sent to.<h:br/>  <h:br/>Leaving blank is OK.</description></tooltip>    
+    </popupset>
+
+    <!--
+    <textbox id="debug" row="10" height="100" multiline="true"></textbox>
+    <hbox><button id="printButton" label="Print" oncommand="mccxp_print();"/><button id="debugButton" label="Debug" oncommand="mccxp_debug();"/></hbox>
+    -->
+    <hbox>
+    <h:iframe id="printwindow" style="width: 0px; height: 10px;" width="0" height="20" frameborder="0" name="printwin" src="print.html"/>
+    <tabbox id="getSendTab">
+      <tabs>
+        <tab label="Send" width="50" style="text-align: center"/>
+        <tab label="Get" width="50" style="text-align: center"/>
+      </tabs>
+      <tabpanels>
+        <tabpanel orient="vertical">
+                <hbox align="center">
+                  <label class="infoheading" value="Send CCR"/> 
+                  <spacer flex="1"/>
+                </hbox>
+          <grid style="margin-top: 0px;">
+            <columns><column flex="1" align="center"/><column flex="0"/></columns>
+            <rows>
+              <row>
+                <hbox>
+                  <spacer flex="1"/>
+                  <h:table id="patientTable" border="1" cellspacing="0" cellpadding="0">
+                    <h:tr><h:th>Patient</h:th><h:td><label id="patientName" value="-"/></h:td></h:tr>
+                    <h:tr><h:th>Age/Sex</h:th><h:td><label id="ccrAgeSex" value="-"/></h:td></h:tr>
+                    <h:tr><h:th>Date</h:th><h:td><label id="ccrDate" value="-"/></h:td></h:tr>
+                    <!--
+                    <h:tr><h:th>Size</h:th><h:td><label id="ccrSize" value="-"/></h:td></h:tr>
+                    -->
+                    <h:tr>
+                      <h:th nowrap="1"><label value="Assigned PIN:"/></h:th>
+                      <h:td><textbox id="assignedPin" oninput="mccxp_pinInput(this)" tooltip="pinToolTip" style="text-align: left; margin-top: 2px; vertical-align: middle; font-size: 10px;" size="5" height="17"/></h:td></h:tr>
+                    <h:tr>
+                        <h:th>CommonsID</h:th>
+                          <h:td><textbox id="commonsId" oninput="mccxp_commonsIdInput(this)" tooltip="commonsIdToolTip" style="text-align: left; margin-top: 2px; vertical-align: middle; font-size: 10px;" size="16" height="17"/></h:td>
+                    </h:tr>
+                    <h:tr>
+                        <h:th>ReceiverProviderID</h:th>
+                          <h:td><textbox id="receiverProviderId" oninput="mccxp_receiverProviderIdInput(this)" tooltip="receiverProviderIdTip" style="text-align: left; margin-top: 2px; vertical-align: middle; font-size: 10px;" size="16" height="17"/></h:td>
+                    </h:tr>
+                  </h:table>
+                  <spacer flex="1"/>
+                </hbox> 
+                <vbox>
+                  <spacer flex="1"/>
+                  
+                </vbox>
+              </row>
+              <row>
+                <hbox align="center">
+                  <spacer flex="1"/>
+                    <checkbox id="agreeRegistry" style="margin-top:7px" label="I agree to have my information listed in the TEPR Demo Registry"/>
+                  <spacer flex="1"/>
+                </hbox>
+                <spacer width="30"/>
+              </row>
+            </rows>
+          </grid>
+          <spacer height="10"/>
+           <grid id="sendCCRGrid">
+              <columns><column flex="0" align="center"/><column flex="1"/><column flex="0"/></columns>
+              <rows>
+                <row align="center">
+                  <label class="label" value="CCR:"/>
+                  <textbox id="filename" value="" flex="1"/>
+                  <button id="chooseButton" label="Browse" accesskey="b" oncommand="mccxp_selectFile()"/>
+                </row>
+                <row align="center">
+                  <label class="label" value="To:"/>
+                  <menulist id="recipient" editable="true" flex="1" onclick="mccxp_updateSubject();" onselect="mccxp_updateSubject();" onchange="mccxp_updateSubject();">
+                    <menupopup>
+                    </menupopup>
+                  </menulist>
+                  <button id="attachButton" label="Attach" accesskey="t" oncommand="mccxp_initAttach();"/>
+                </row>
+                <row align="center">
+                  <label class="label" value="Subject:"/>
+                  <textbox id="subject" value="" flex="1"/>
+                  <button id="sendButton" label="Send" accesskey="s" oncommand="mccxp_upload();"/>
+                </row>
+                <row align="center">
+                  <spacer/>
+                  <hbox align="center" ><checkbox id="termsOfUse" oncommand="mccxp_updateTermsFlag();" style="margin-left: 5px; margin-right: 0px; padding-right: 0px;" label="I accept the" /><h:a href="http://www.medcommons.net/terms_of_use.htm" target="termsOfUse"><label class="fakeLink" style="padding-left: 0px; margin-left: 1px;" value="Terms of Use" tooltiptext="Read the Terms of Use" /></h:a>
+                  <checkbox id="printReceipt" style="margin-left: 5px; margin-right: 0px; padding-right: 0px;" label="Print Receipt"/></hbox>
+                  <label id="attachments" value=""/>
+                </row>
+             </rows>
+           </grid>
+        </tabpanel>
+        <!-- Get -->
+        <tabpanel orient="vertical">
+          <label class="infoheading" value="Get CCR"/>
+          <hbox align="end">
+            <radiogroup id="getOptionGroup">
+              <radio id="getViewer" label="MedCommons Viewer CCR"/>
+              <radio id="getFromHistory" selected="true" label="Pick a CCR in History"/>
+              <hbox align="center">
+                <radio id="getTrackNumber" label="Tracking Number:"/><textbox id="trackingNumber" size="13"/>
+                <label value="PIN:"/><textbox id="pin" size="6"/>
+              </hbox>
+            </radiogroup>
+            <spacer flex="1"/>
+            <button id="getCxpButton" flex="0" label="Get ..." oncommand="mccxp_cxpGet()"/>
+         </hbox> 
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
+   </hbox>
+    <spacer height="15"/>
+    <popupset>
+      <popup id="historyMenu">
+        <menuitem label="Get..." oncommand="mccxp_getHistoryItem();"/>
+      </popup>
+    </popupset>
+    <hbox><label class="infoheading" style="margin-bottom: 10px;" value="History"/><spacer flex="1"/><button id="deleteButton" tooltiptext="Delete selected item from MedCommons" disabled="true" oncommand="mccxp_deleteTrackingNumber();" label="Delete"/></hbox>
+    <listbox id="historyTable" context="historyMenu" flex="1">
+      <listhead>
+        <listheader label="Date"/><listheader label="Notify"/><listheader label="Tracking Number"/><listheader label="PIN"/>
+      </listhead>
+      <listcols>
+         <listcol id="dateCol"/>
+         <listcol id="toCol" minwidth="30"/>
+         <listcol id="txIdCol" flex="1"/>
+         <listcol id="pinCol" width="90"/>
+      </listcols>
+    </listbox>
+    <spacer height="10"/>
+    <hbox align="end" pack="end"  style="">
+      <image src="images/logovsmall.gif"/>
+        <label id="copyrightLabel" style="font-size: 9px;" value="v&mccxp.ver; Copyright &#169; MedCommons 2005,2006"/>
+        <spacer flex="1"/>
+        <button id="clearButton" label="Clear History" oncommand="mccxp_clearHistory();"/>
+        <button id="cancelButton" label="Close" oncommand="window.close()"/>
+    </hbox> 
+</window>
+

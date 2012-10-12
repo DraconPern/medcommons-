@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MCU Test Page</title>
+<meta name="viewport" content="minimum-scale=1.0, width=320, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <link rel="apple-touch-icon" href="iphone.png">
+    <style> body {font-size:1.3em}</style>
+</head>
+<body>
+
+ <img src='collateral/mclogo40htrans.png' height=30px />
+<h3>These links are for exercising the mcu:// protocol interface for Shoot the Patient</h3>
+<h4>You must run this page on iphone Mobile Safari only if you expect to get anything done</h4>
+<ul>
+<li>(No Arguments) <a href='mcu://'>here</a>
+<li>Joe Bloggs with URLPIC<a href="mcu://shootpatient?first=Joe&last=Bloggs&pic=http://images.apple.com/home/images/promo-touch-20090909.jpg">here</a></li>
+<li>Joe Bloggs series=123 comment=eat it<a href="mcu://shootpatient?first=Joe&last=Bloggs&series=123&comment=eat%20it">here</a></li>
+<li>Jane Doe 11/11/69 <a href="mcu://shootpatient?first=Jane&last=Done&dob=11/11/69">here</a></li>
+<li>JJane Doe (mcturnaround=AABB-CCDD) <a href="mcu://shootpatient?first=Jane&last=Done&dob=11/11/69&mc=AABB-CCDD">here</a></li>
+</ul>
+</body>
+</html>

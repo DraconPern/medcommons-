@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- __CR__
+     Copyright (c) 2009 EMC Corporation
+     All Rights Reserved
+
+     This software contains the intellectual property of EMC Corporation
+     or is licensed to EMC Corporation from third parties.  Use of this
+     software and the intellectual property contained therein is expressly
+     limited to the terms and conditions of the License Agreement under which
+     it is provided by or on behalf of EMC.
+     __CR__ -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:caas="http://www.emc.com/caas"
+           targetNamespace="http://www.emc.com/caas"
+		   elementFormDefault="qualified" >
+		   
+	<xs:include schemaLocation="caas-mo-types.xsd"/>
+	
+	<!--VirtualMachine-->
+	<xs:complexType name="VirtualMachine">
+		<xs:complexContent>
+			<xs:extension base="caas:ManagedObject">
+				<xs:sequence>
+					<xs:element name="status" type="caas:VmStatus" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="instance-type" type="caas:VmInstanceType" minOccurs="0" maxOccurs="1" />
+					<xs:element name="virtual-nic-list" type="caas:ManagedObjectRef" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="management-action-list" type="caas:ManagedObjectRef" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="has-publicIP" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="public-ip" type="caas:IpAddress" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="fqdn" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="disk-size" type="xs:long" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="VirtualMachineList">
+		<xs:sequence>
+			<xs:element name="virtual-machine"
+				type="caas:ManagedObjectRef" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="VmManagementActionList">
+		<xs:sequence>
+			<xs:element name="management-action" type="caas:ManagedObjectRef" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="ImageList">
+		<xs:sequence>
+			<xs:element name="image" type="caas:ManagedObjectRef" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>	 
+  </xs:complexType>
+  
+  <xs:complexType name="Image">
+  	<xs:complexContent>	
+  	
+		<xs:extension base="caas:ManagedObject" >
+	<xs:sequence>
+		<xs:element name="modification" type="xs:dateTime" />
+		<xs:element name="file" type="caas:File" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	</xs:extension>
+	</xs:complexContent>
+  </xs:complexType>
+    
+  <xs:complexType name="File">
+	<xs:sequence>
+		<xs:element name="name" type="xs:string" />
+		<xs:element name="size" type="caas:FileResourceConstraint" />
+		<xs:element name="modification" type="xs:dateTime" />
+	</xs:sequence> 
+  </xs:complexType>    
+	
+</xs:schema>

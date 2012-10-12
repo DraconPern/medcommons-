@@ -1,0 +1,35 @@
+#scrubber {
+  position: absolute;
+  bottom: 0px;
+  left: 200px;
+  width: 100%;
+  height: 30px;
+  xborder: solid green 1px;
+  xbackground-color: gray;
+  background-color: transparent;
+  z-index: 10000;
+
+}
+#sliderbg {
+  background:url("yui-2.8.2r1/assets/skins/mc/bg-h.gif") repeat-x scroll 5px 0;
+  width: 100%;
+  overflow: hidden;
+}
+#messageDiv {
+	left: 200px;
+}
+
+.toolPalette {
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    width: 60px;
+    background-color: transparent;
+    z-index: 10000;
+}
+
+.toolPalette img {
+    margin: 0px 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}

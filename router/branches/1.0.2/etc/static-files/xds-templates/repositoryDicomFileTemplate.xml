@@ -1,0 +1,10 @@
+<DicomFile xmlns="urn:medcommons-net:repository">
+	<DocumentName></DocumentName>
+	<WindowWidth></WindowWidth>
+	<WindowCenter></WindowCenter>
+	<ContentType></ContentType>
+	<SopInstanceUID></SopInstanceUID>
+	<Frames>1</Frames>
+	<DisplayOrder></DisplayOrder>
+	<InstanceNumber></InstanceNumber>
+</DicomFile>

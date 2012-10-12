@@ -1,0 +1,21 @@
+<notifier-service>
+<notification name="welcomemsg">
+  <email>welcomemsg.htm</email>
+</notification>
+<notification name="intromsg">
+  <email>intromsg.htm</email>
+</notification>
+<notification name="telldocmsg">
+  <email>telldocmsg.htm</email>
+</notification>
+<notification name="tellpatientmsg">
+  <email>tellpatientmsg.htm</email>
+</notification>
+<notification name="referralinvitemsg">
+  <email>referralinvitemsg.htm</email>
+</notification>
+</notifier-service>
+	
+
+	
+	

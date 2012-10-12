@@ -1,0 +1,98 @@
+div.two_columns{
+	margin-bottom: 15px;
+}
+div.two_columns div.col{
+	border: none;
+}
+div.two_columns div.col1{
+	background:url(../images/sys_images/pcip_bak.gif) top left repeat-x #fffbbf;	
+	width: 630px;
+}
+
+div.two_columns div.col2{
+	background-color: #f1f4f8;	
+	margin-right: 5px;
+	width: 305px;
+}
+
+h3.homeh3{
+	position: relative;
+	display:block;
+	font-family: "Century Gothic", Arial, san-serif;
+	font-size: 24px;
+	font-weight:normal;
+	background:url(../images/sys_images/ACAicon_large.gif) -5px 0px no-repeat;	
+	padding: 0 0 0 45px;
+	margin-top: 18px;
+	min-height:50px;
+}
+
+h3{
+	font-size: 1.2em;
+	font-weight: normal;	
+}
+
+h5{
+	font-size: .9em;	
+	font-weight: normal;
+	margin-bottom: -1.4em;
+}
+
+hr{
+	border: none;
+	margin: 15px 0;
+	border-bottom: 1px dotted #888888;	
+}
+
+h4{	
+	font-size: 1em;
+	font-weight: bold;
+	margin: 5px 0 0 0;
+	padding: 0 0;
+	text-transform:uppercase;
+}
+
+div.recentAuto ul{
+	list-style-type: none;
+	margin: 0 0;
+	padding: 0 0;
+}
+
+div.recentAuto ul li{
+	margin: 0 0;
+	padding: 0 0;
+}
+/******** Triple Columns ********/
+
+div#container div.var6 div.col div.col_body{
+	padding: 0 15px;	
+}
+
+div#containerIE6 div.var6 div.col div.col_body{
+	padding: 0 10px;	
+}
+
+div.var6 ol{
+	font-weight: bold;
+}
+
+div.var6 ol li{
+	font-weight: normal;
+	border-bottom: 1px dotted #888888;
+	padding: .5em 0;
+	/*font-size: 1.1em;*/
+}
+
+div.var6 ol li.last{
+	border: none;
+}
+
+div#container div.default_audience{
+	position: relative;
+	padding-top: 1px;
+	height: 100%;	
+	display: block;
+	padding: 0 30px;
+	margin: 0 0;	
+	
+}

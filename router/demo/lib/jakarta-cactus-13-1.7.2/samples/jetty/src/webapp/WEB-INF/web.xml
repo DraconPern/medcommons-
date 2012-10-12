@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+    "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd">
+
+<web-app>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>SecurityRestriction</web-resource-name>
+      <description>Protect the Cactus redirector servlet.</description>
+      <url-pattern>/ServletRedirectorSecure</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <description>Authorized Users Group</description>
+      <role-name>test</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Sample Cactus Servlet Application</realm-name>
+  </login-config>
+
+  <security-role>
+    <description>Test role</description>
+    <role-name>test</role-name>
+  </security-role>
+
+</web-app>

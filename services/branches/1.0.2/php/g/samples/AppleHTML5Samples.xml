@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>Apple HTML5 Samples</string>
+		<key>scenes</key>
+		<array>
+			<dict>
+
+				<key>scene</key>
+				<string>0</string>
+
+
+				<key>name</key>
+				<string>Apple HTML5 Samples</string>
+
+				<key>cellstyle</key>
+				<string>plain</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Samples</string>
+
+				<key>largetitle</key>
+				<string>Apple's own HTML5</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>CardFlip</string>
+						<key>Label</key>
+						<string>CardFlip</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/CardFlip
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>CSS_Transforms_Transitions_and_Web_Fonts</string>
+						<key>Label</key>
+						<string>CSS_Transforms_Transitions_and_Web_Fonts</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/CSS_Transforms_Transitions_and_Web_Fonts
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>Fader</string>
+						<key>Label</key>
+						<string>Fader</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/Fader
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>FingerTips</string>
+						<key>Label</key>
+						<string>FingerTips</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/FingerTips
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>HTML_video_with_CSS_effects</string>
+						<key>Label</key>
+						<string>HTML_video_with_CSS_effects</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/HTML_video_with_CSS_effects
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>HTML5VideoPlayer</string>
+						<key>Label</key>
+						<string>HTML5VideoPlayer</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/HTML5VideoPlayer
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>iPhoneButtons</string>
+						<key>Label</key>
+						<string>iPhoneButtons</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/iPhoneButtons
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>iPhoneIntegration</string>
+						<key>Label</key>
+						<string>iPhoneIntegration</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/CardFlip
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>iPhoneListPatterns</string>
+						<key>Label</key>
+						<string>iPhoneListPatterns</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/iPhoneListPatterns
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>iPhoneOrientation</string>
+						<key>Label</key>
+						<string>iPhoneOrientation</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/iPhoneOrientation
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>iSudoku</string>
+						<key>Label</key>
+						<string>iSudoku</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/iSudoku
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>PosterCircle</string>
+						<key>Label</key>
+						<string>PosterCircle</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/PosterCircle
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>ProgressBar</string>
+						<key>Label</key>
+						<string>ProgressBar</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/ProgressBar
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>SlideMe</string>
+						<key>Label</key>
+						<string>SlideMe</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/SlideMe
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>Trailers</string>
+						<key>Label</key>
+						<string>Trailers</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/Trailers
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>LeavesWithCSS</string>
+						<key>Label</key>
+						<string>LeavesWithCSS</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/Leaves/WithCSSExtensions
+						</string>
+					</dict>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>sample written by apple</string>
+						<key>ImageURL</key>
+						<string>
+							http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Apple_Computer_Logo.svg/200px-Apple_Computer_Logo.svg.png
+						</string>
+						<key>Title</key>
+						<string>LeavesWithoutCSS</string>
+						<key>Label</key>
+						<string>LeavesWithoutCSS</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/portal/samples/Leaves/WithoutCSSExtensions
+						</string>
+					</dict>
+
+
+
+				</array>
+
+			</dict>
+		</array>
+	</dict>
+</plist>

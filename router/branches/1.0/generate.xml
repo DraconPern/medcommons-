@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================
+    $Id: $
+
+    This file contains targets to generate the O/R mapping classes that connect
+    to the database.
+
+    ====================================================================== -->
+<project name="generate" default="all">
+
+  <path id="compile.path">
+    <pathelement location="build/classes" />
+    <fileset dir="lib/medcommons/common/">
+      <include name="**.jar"/>
+    </fileset>
+    <fileset dir="lib/jboss/" >
+      <include name="**.jar"/>
+    </fileset>
+    <fileset dir="lib/dcm4che/" >
+      <include name="**.jar"/>
+    </fileset>
+    <fileset dir="lib/struts/" >
+      <include name="**.jar"/>
+    </fileset>
+    <fileset dir="lib/hibernate/lib/">
+      <include name="**.jar"/>
+    </fileset>
+    <fileset dir="lib/derby/">
+      <include name="**.jar"/>
+    </fileset>
+    <pathelement location="stage/jboss-3.2.3/server/router/lib/hsqldb.jar"/>
+  </path>
+
+<!-- ======================================================================
+    $Id: $
+
+    This file contains targets to generate the O/R mapping classes that connect
+    to the database.
+
+    You can target either the JBoss deployment or Tomcat deployment.  To target
+    the JBoss deployment set a property "jboss=true"
+
+    ====================================================================== -->
+    <target name="dbmanager">
+      <!-- <java classname="org.hsqldb.util. -->
+    
+    </target>
+  <!-- ======================================================================
+   
+    Task Definitions - these are provided with hibernate
+
+    ====================================================================== -->
+  
+  <taskdef classname="net.sf.hibernate.tool.hbm2ddl.SchemaExportTask" name="schemaexport">
+    <classpath>
+      <path refid="compile.path"/>
+    </classpath>
+  </taskdef>
+
+  <taskdef name="schemaupdate"
+      classname="net.sf.hibernate.tool.hbm2ddl.SchemaUpdateTask"
+      classpathref="compile.path"/>
+
+  <!-- ======================================================================
+   
+    Targets to control where the database should go (jboss vs tomcat deploy)
+
+    ====================================================================== -->    
+  <target name="set-properties"  depends="set-tomcat-properties,set-jboss-properties">
+    <echo message="Database directory is ${derbyHome}"/>
+  </target>
+    
+  <target name="set-tomcat-properties" unless="jboss">
+    <property name="derbyHome" value="${basedir}/stage/tomcat/data/derby"/>
+  </target>
+
+  <target name="set-jboss-properties" if="jboss">
+    <property name="derbyHome" value="${derbyHome}"/>
+  </target>
+
+  <!-- ======================================================================
+   
+    Create the database (Derby)
+
+    ====================================================================== -->
+  <target name="create-database" depends="set-properties">
+    <java classname="org.apache.derby.tools.ij" classpathref="compile.path" fork="true">
+      <jvmarg value="-Dderby.system.home=${derbyHome}"/>
+      <arg value="etc/derby/create_database.sql"/>
+    </java>
+  </target>
+
+  <!-- ======================================================================
+   
+    Drop the schema
+
+    ====================================================================== -->
+  <target name="drop-schema">
+    <delete dir="stage/tomcat/data/derby/routerdb" />
+  </target>
+
+  <!-- ======================================================================
+   
+    Drop and recreate the schema
+
+    ====================================================================== -->
+  <target name="recreate-schema" depends="drop-schema,create-database,create-schema"/>
+
+  <!-- ======================================================================
+   
+    Generate and create the wholes schema
+
+    ====================================================================== -->
+  <target name="create-schema" depends="set-properties">
+    <java classname="org.apache.derby.tools.ij" classpathref="compile.path" fork="true">
+      <jvmarg value="-Dderby.system.home=${derbyHome}"/>
+      <jvmarg value="-Dij.connection.routerDb=jdbc:derby:routerdb;user=medcommons;password=d3rbi;"/>
+      <arg value="schema/001_Initial_Schema.sql"/>
+    </java>
+    <java classname="org.apache.derby.tools.ij" classpathref="compile.path" fork="true">
+      <jvmarg value="-Dderby.system.home=${derbyHome}"/>
+      <jvmarg value="-Dij.connection.routerDb=jdbc:derby:routerdb;user=medcommons;password=d3rbi;"/>
+      <arg value="schema/002_Add_Instance_MimeType.sql"/>
+    </java>
+    <java classname="org.apache.derby.tools.ij" classpathref="compile.path" fork="true">
+      <jvmarg value="-Dderby.system.home=${derbyHome}"/>
+      <jvmarg value="-Dij.connection.routerDb=jdbc:derby:routerdb;user=medcommons;password=d3rbi;"/>
+      <arg value="schema/003_Add_Order_MCId.sql"/>
+    </java>
+     <java classname="org.apache.derby.tools.ij" classpathref="compile.path" fork="true">
+      <jvmarg value="-Dderby.system.home=${derbyHome}"/>
+      <jvmarg value="-Dij.connection.routerDb=jdbc:derby:routerdb;user=medcommons;password=d3rbi;"/>
+      <arg value="schema/004_Add_Temporary_RegistryTables.sql"/>
+    </java>
+  	<!--
+    <java classname="org.apache.derby.tools.ij" classpathref="compile.path" fork="true">
+      <jvmarg value="-Dderby.system.home=${derbyHome}"/>
+      <jvmarg value="-Dij.connection.routerDb=jdbc:derby:routerdb;user=medcommons;password=d3rbi;"/>
+      <arg value="schema/005_Add_Temporary_RegistryTables_2.sql"/>
+    </java>
+    -->
+    <!-- Old hibernate version 
+    <schemaexport delimiter=";" drop="false" output="schema.sql"
+      properties="etc/hibernate/hibernate.properties" quiet="false" text="false">
+      <fileset dir="src">
+        <include name="**/*.hbm.xml"/>
+      </fileset>      
+    </schemaexport>
+    -->
+  </target>
+
+  <!-- ======================================================================
+   
+    Generate and create the wholes schema
+
+    ====================================================================== -->
+    <target name="setup-database" depends="create-database,create-schema"/>
+
+  <!-- ======================================================================
+   
+    Incremental update of the schema
+
+    ====================================================================== -->
+  <target name="update-schema">
+      <schemaupdate properties="etc/hibernate/hibernate.properties" quiet="false" text="false">
+        <fileset dir="src">
+          <include name="**/*.hbm.xml"/>
+        </fileset>
+      </schemaupdate>
+  </target>
+</project>
+

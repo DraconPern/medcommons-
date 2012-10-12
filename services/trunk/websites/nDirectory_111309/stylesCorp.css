@@ -1,0 +1,273 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #ffffff;
+	color: #000;
+	overflow: -moz-scrollbars-vertical;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+
+.navText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+.smallBullets {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+.bodyCopy1 {
+	color: #000;
+	font-weight: normal;
+}
+.bodyCopy2 {
+font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+	font-weight: normal;
+	text-indent: 20px;
+}
+.bodyHeadline {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000;
+}
+
+.headline1 {
+	font-size: 24px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #000;
+}
+.subHead1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+}
+.listLink {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #66AA66;
+}
+.listLink a {
+	text-decoration: none;
+}
+.listLink a:link {
+	color: #036;
+}
+.listLink a:visited {
+	color: #036;
+}
+.listLink a:hover {
+	color: #36F;
+}
+.listLink a:active {
+	color: #036;
+}
+
+.footerLink {
+	font: 10px Arial, Helvetica, sans-serif;
+	color: #036;
+}
+.footerLink a {
+	text-decoration: none;
+}
+.footerLink a:link {
+	color: #036;
+}
+.footerLink a:visited {
+	color: #036;
+}
+.footerLink a:hover {
+	color: #36F;
+}
+.footerLink a:active {
+	color: #036;
+}
+
+.bodyLink {
+	font: 14px Arial, Helvetica, sans-serif;
+	color: #f26522;
+}
+.bodyLink a {
+	text-decoration: underline;
+}
+.bodyLink a:link {
+	color: #f26522;
+}
+.bodyLink a:visited {
+	color: #FF6600;
+}
+.bodyLink a:hover {
+	color: #FBA51B;
+}
+.bodyLink a:active {
+	color: #f26522;
+}
+.header2 {
+	height: 50px; 
+	margin-bottom: 0 !important;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	color: #000;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+
+
+
+/*=============== top navigation ===================*/
+#topnav ul { 
+     margin: 0px 0px 0px 0px;
+}
+#topnav em { 
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 12px;
+     font-weight: bold;
+}
+.nav { 
+     width:100%; 
+     overflow:hidden; 
+     padding:2px 0 0 0; 
+}
+.nav li { 
+     float:left; 
+}
+.nav li.first  background:none;}
+.nav li a {display:block; text-decoration:none; color:#cccccc;}
+.nav li a em { display:block; color:#162e5b; font-style:normal; padding:0px 0px 0px 0px;}
+
+
+.nav li { display:block; text-decoration:none; color:#666;}
+.nav li em { display:block; color:#666; font-style:normal; padding:0px 0px 0px 0px; font-weight: bold;}
+
+.nav li a:hover {color:#ffffff; margin-right:0px; position:relative;text-decoration:underline;}
+.nav li a:hover em {padding-left:5px; color:#63a2cd;text-decoration:underline;}
+
+.nav li a.current {color:#000000; position:relative;}
+.nav li a.current em {padding-left:5px; color:#cccccc;}
+
+.fLeft { float:left;}
+.fRight { float:right;}
+.clear { clear:both;}
+
+
+
+/*=============== footer navigation ===================*/
+#footernav ul { 
+     margin: 0px 0px 0px 0px;
+}
+#footernav em { 
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 10px;
+	 font-weight: bold;
+}
+.nav { 
+     width:100%; 
+     overflow:hidden; 
+     padding:10px 0 0 0; 
+}
+.nav li { 
+     float:left; 
+}
+.nav li.first  background:none;}
+.nav li a {display:block; text-decoration:none; color:#cccccc;}
+.nav li a em { display:block; color:#162e5b; font-style:normal; padding:4px 2px 10px 5px;}
+
+
+.nav li { display:block; text-decoration:none; color:#666;}
+.nav li em { display:block; color:#666; font-style:normal; padding:4px 2px 10px 5px; font-weight: bold;}
+
+.nav li a:hover {color:#ffffff; margin-right:0px; position:relative;text-decoration:underline;}
+.nav li a:hover em {padding-left:5px; color:#63a2cd;text-decoration:underline;}
+
+.nav li a.current {color:#000000; position:relative;}
+.nav li a.current em {padding-left:5px; color:#cccccc;}
+
+.fLeft { float:left;}
+.fRight { float:right;}
+.clear { clear:both;}
+
+
+/*=============== Original Styles ===================*/
+/* these are now sized at 760px*/
+#ContentBoxInterior   { padding-top: 2px;     padding-left: 0px;    margin-bottom: 5px;    text-align: left;    float:left;  width:900px;  }
+#ContentBoxInterior p { margin-left: 20px;  margin-right: 10px;}
+#ContentBoxInterior a:hover {text-decoration:underline;}
+#ContentBoxInterior h1,#ContentBoxInterior h2,#ContentBoxInterior h3,#ContentBoxInterior h4,#ContentBoxInterior h5,#ContentBoxInterior h6 {color:#3b5269;font:100% Arial, Helvetica, sans-serif;;margin-bottom:.5em;}
+#ContentBoxInterior h1 {font-size:240%;}
+#ContentBoxInterior h2 {font-size:170%;margin-top:1em;}
+#ContentBoxInterior h2 span {color:#999;font:70% Arial, Helvetica, sans-serif;}
+#ContentBoxInterior h2.first {margin-top:0;}
+#ContentBoxInterior h3 {font:bold 120% Arial, Helvetica, sans-serif;;}
+#ContentBoxInterior p,#ContentBoxInterior ul,#ContentBoxInterior ol,#ContentBoxInterior blockquote {margin-bottom:1.2em;}
+#ContentBoxInterior small {color:#555;font-size:85%;}
+#ContentBoxInterior big {font-size:130%;}
+#ContentBoxInterior hr {height:1px;color:#ccc;background-color:#ccc;border:none;margin:2.5em 0px 1.5em 0px;}
+#ContentBoxInterior ul {list-style-type:disc;list-style-position:inside;padding-left: 60px;}
+#ContentBoxInterior ul li { padding-bottom:.1em;}
+
+.fform {clear: both; background-color:#eee;padding:1em 0em 2em 1em;}
+.fform #err {display: block; padding: .1em 0 1em 0; font-size:1.1em; }
+.fform .field {display: block; padding: .46em;}
+.fform .field .n {      float: left;      margin-left:1em;  margin-right:2em;    width:22em;      text-align: right;}
+/*.fform .field .q {      float: left:      margin-left:20em;      width: 40em;    text-align: left;}
+.fform .field .q  select {      margin: .4em 0 .5em 0; width: 13.5em;      }*/
+.fform .field .q .r {font-size:.7em;color:#AAA; padding-left:2em}
+.fform .field .q .inperr { clear:both; display:block; margin-left:24em;padding:.3em 0 1em 1em; } 
+.fform .field {padding-top: 5px;} 
+
+#main h2 {
+  color:#3B5269;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:170%;
+  margin-top:1em;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+
+/*=============== Instruction Box Styles ===================*/
+.tinst {clear: both; width:100%; border:none;  padding:1em; margin-top: 2em; margin-bottom: 1em;  background-color:#EEE;}
+.tinstprint {clear: both; border:1px solid;  margin-top: 2em; margin-bottom: 1em;  background-color:#EEE;}
+.tinst .lcol {width: 15em; font-weight: 600;} 
+.tinst .rcol {}
+
+
+
+/*=============== Instruction Box 2 Styles ===================*/
+.tinst2 {clear: both; width:90%; border:none;  padding:1em; margin-top: 1em; margin-bottom: 1em;  background-color:#fff;}
+.tinstprint {clear: both; border:1px solid;  margin-top: 2em; margin-bottom: 1em;  background-color:#fff;}
+.tinst2 .lcol {width: 5em; font-weight: 600;} 
+.tinst2 .rcol {}
+
+/*=============== IInput Button Styles ===================*/
+button.mainwide,
+button.mainwide, input.mainwide, input.mainmicro, button.mainmicro  {
+	font-family: verdana;
+	font-weight: bold;
+	text-align: left;
+	border-style: none;
+	color: white;
+	cursor: pointer;
+	vertical-align: middle;
+}
+button.mainwide, input.mainwide {
+  font-size: 12px;  padding: 5px 7px 10px 16px;
+  
+}
+
+
+button.mainwide,input.mainwide {  width: 144px;  background: transparent url(images/button_wide.png) no-repeat scroll 0pt 0pt;}

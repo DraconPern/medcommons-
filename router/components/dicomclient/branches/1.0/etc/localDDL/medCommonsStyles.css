@@ -1,0 +1,351 @@
+body
+{
+    margin-top: 16px;
+    margin-left: 26px;
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    line-height: 22px;
+}
+
+img { border: none;}
+
+#ContentBox p, #ContentBoxInterior p
+{
+    margin-left: 40px;
+    margin-right: 25px;
+}
+H1, H2, H3
+{
+    font-family: Helvetica,Verdana,Geneva,sans-serif;
+    font-weight: bold;
+}
+H1, H2
+{
+    color: #B98D42;
+}
+H1
+{
+    font-size: 20px;
+    line-height: 25px;
+}
+
+H3
+{
+    color: #6D7E74;
+    font-weight: bold;
+    line-height: 19px;
+}
+H4, H5, H6
+{
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-weight: normal;
+}
+H4
+{
+    margin-left: 30px;
+    margin-right: 20px;
+    font-size: 12px;
+    line-height: 24px;
+}
+H5
+{
+    font-size: 10px;
+    line-height: 16px;
+}
+H6
+{
+    margin-top: 0px;
+    font-size: 9px;
+    line-height: 14px;
+}
+#ContentBox a, #ContentBoxInterior a, #search a
+{
+    text-decoration: none;  color: #5987ac;
+}
+
+#ContentBox a:hover, #ContentBoxInterior a:hover, #search a
+{
+    text-decoration: underline;
+}
+
+H4, H5, H6
+{
+    color: #3F3F3F;
+}
+#hp_mast
+{
+    margin-bottom: 25px;
+    width: 750px;
+    background-image: url(/images/HP_mast.jpg);
+    background-repeat: no-repeat;
+    height: 258px;
+    z-index: 1;
+    clear: both; /* swolfe dictation*/
+}
+#interior_mast
+{
+    margin-bottom: 25px;
+    width: 750px;
+    background-image: url(/images/interior_mast.jpg);
+    background-repeat: no-repeat;
+    height: 149px;
+    z-index: 1;
+    clear: both; /* swolfe dictation*/
+}
+#ContentBox
+{
+    /* there was a comma,causing this to be ignored */
+    width: 740px;
+    padding-left: 0px;
+    margin-bottom: 5px;
+    float: left;
+    position: relative; /*Moved from repeat #ContentBox by SW 7-27-07*/
+}
+
+/*#ContentBox{This was added to the ContentBox ID, I'm not sure when this was added
+position:relative;
+}*/
+
+
+#ContentBoxInterior
+{
+    width: 640px; /* changed by sandra on july 26 2007 */
+    padding-left: 0px;
+    margin-bottom: 5px;
+}
+
+#search
+{
+    margin-left: 480px;
+    margin-top: -5px;
+    width: 235px; /* wld - 5px wider to the left for ie6 happiness */
+    position: absolute;
+    z-index: 4;
+}
+
+#search p
+{
+    margin: 0px;
+}
+
+
+
+#search input
+{
+    height: 15px;
+    width: 170px;
+    font-size: 12px;
+    line-height: 14px;
+    vertical-align: middle;
+}
+
+
+
+#search img
+{
+    margin-left: 0px;
+    vertical-align: middle;
+}
+
+
+
+#go
+{
+    margin-left: 5px;
+}
+
+
+
+
+
+
+#search #go input
+{
+    height: 18px;
+    width: 24px;
+    border: none;
+}
+
+#search #examples
+{
+}
+
+#search form
+{
+    margin: 0px;
+    border: 0px;
+}
+
+
+
+#ContentLeft
+{
+    padding: 0px 10px 0px 10px;
+    width: 491px;
+    float: left;
+    border-right: 1px dashed #F2E9DA;
+}
+#ContentRight
+{
+    float: left;
+    width: 166px;
+    margin-left: 0px;
+    line-height: 17px;
+    text-align: right;
+    position: relative;
+}
+#ContentRight img
+{
+
+    margin-top: 5px;
+    text-align: right
+}
+#ContentRight p
+{
+    border-bottom: 1px dashed #D3DED8;
+}
+#ContentBottom
+{
+    border-bottom: 1px dashed #D3DED8;
+    float: left;
+    width: 710px;
+    margin-top: 15px;
+    clear: both;
+}
+
+#footer
+{
+    float: left;
+    width: 710px;
+    border-top: 7px solid #494949;
+    margin-top: 15px;
+    clear: both;
+}
+#footer a
+{
+    text-decoration: none; color: #5987ac;
+}
+#footer a:hover
+{
+    text-decoration: underline;
+}
+
+
+.flushleft
+{
+    text-align: left;
+}
+#poweredby
+{
+    text-align: center;
+    vertical-align: middle;
+}
+
+#pageHeading H1
+{
+    margin: 5px -10px 40px -20px;
+    border-bottom: 2px solid #B98D42;
+}
+#HP_indentList
+{
+    margin-left: 10px;
+    margin-right: 40px;
+}
+#indentList, #indentList2
+{
+    /* to overcome problems with second list on press page,should be a class */
+    margin-left: 40px;
+    margin-right: 40px;
+}
+#indentList ul, #indentList2 ul, #HP_indentList ul
+{
+    list-style-image: url( "images/yellow_bullet.gif" );
+    line-height: 19px;
+}
+#indentList li, #indentList2 li, #HP_indentList li
+{
+    padding-bottom: 10px;
+}
+.marginOverride
+{
+    margin: 0px 0px 0px -30px;
+}
+#ContentBoxInterior H3, #ContentBoxInterior H1
+{
+    border-bottom: 1px solid #F2E9DA;
+}
+#ft
+{
+    text-align: center;
+    margin-left: -20px;
+    font: bold 17px/20px Helvetica,Verdana,Geneva,sans-serif;
+    color: #6D7E74;
+}
+
+#ft p
+{
+    margin-top: 20px;
+    border-top: 1px dashed #D3DED8;
+}
+#ft img
+{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+#sample_healthUrl a
+{
+    background: url(images/example_healthURL.gif) no-repeat left top;
+}
+#sample_healthUrl a:hover
+{
+    background: url(images/example_healthURL_ON.gif) no-repeat left top;
+}
+
+.errorAlert
+{
+    color: red;
+}
+
+.bottom_table
+{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.bottom_table td, tr td
+{
+    background-color: #fbf4e4;
+    color: Black;
+    padding: 7px 7px 7px 7px;
+    border: solid 1px white;
+}
+.bottom_table .table_col, tr th
+{
+    background-color: #898770;
+    color: White;
+    padding: 7px 7px 7px 7px;
+}
+.bottom_table .table_row, .row_head
+{
+    background-color: #958f6d;
+    color: White;
+    padding: 7px 7px 7px 7px;
+}
+#stamp
+{
+    float:right;
+}
+#minheader td
+{
+    background-color:Transparent;
+
+}
+#minheader
+{
+    width: 100%;
+}
+table th, table td {
+  font-size : 77%;
+}

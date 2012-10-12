@@ -1,0 +1,14 @@
+<AdhocQueryRequest>
+    <ResponseOption returnType = "LeafClass" returnComposedObjects="true"/>
+    <SQLQuery>
+    SELECT *  FROM ExternalLink el, Association a, ExternalIdentifier ei, ExtrinsicObject eo 
+        WHERE
+	    a.associationType = 'ExternallyLinks' AND
+	    a.targetObject = eo.id AND
+	    a.sourceObject = el.id AND
+            eo.id = ei.registryobject AND
+            ei.identificationScheme='urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427' AND
+            ei.value='NIST-1234^^^&amp;amp;1.3.6.1.4.1.21367.2005.1.1&amp;amp;ISO^PI' AND
+            eo.status = 'Approved'
+    </SQLQuery>
+</AdhocQueryRequest>

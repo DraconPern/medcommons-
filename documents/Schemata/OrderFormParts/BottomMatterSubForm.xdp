@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeDesigner_V6.0" APIVersion="1.4.4057.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2004-04-23T18:16:15Z" uuid="45080615-51ef-48d2-be83-315874500371">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.1/">
+   <subform name="form1" layout="tb">
+      <pageSet>
+         <pageArea name="Page1" id="Page1">
+            <contentArea x="0.25in" y="0.25in" w="8in" h="10.5in"/>
+            <medium stock="letter" short="8.5in" long="11in"/>
+         </pageArea>
+      </pageSet>
+      <subform w="8in" h="10.5in">
+         <field h="10.2542mm" name="Button1" w="21.7477mm" x="157.96mm" y="16.14mm">
+            <ui>
+               <button/>
+            </ui>
+            <border>
+               <edge stroke="raised" presence="hidden"/>
+               <edge stroke="raised" presence="hidden"/>
+               <edge stroke="raised" presence="hidden"/>
+               <edge stroke="raised" presence="hidden"/>
+               <corner thickness="0.006in" join="round"/>
+               <corner thickness="0.006in" join="round"/>
+               <corner thickness="0.006in" join="round"/>
+               <corner thickness="0.006in" join="round"/>
+            </border>
+            <bind match="none"/>
+            <event activity="mouseUp">
+               <script contentType="application/x-javascript">&lt;!--
+//this.getField("ComboBox_printers").setItems(app.printerNames);
+--&gt;
+    
+// get the printParams object of the default printer
+var pp = this.getPrintParams();
+// print this file 
+// if print another file, specify pp.fileName = .....
+// print this page
+pp.firstPage = this.pageNum;
+pp.lastPage = this.pageNum;
+// set some properties
+pp.interactive = pp.constants.interactionLevel.automatic;
+pp.colorOverride = pp.constants.colorOverrides.auto;
+
+
+// use the printer selected
+//var aPrinter = this.getField("ComboBox_printers").valueAsString;
+//if(aPrinter!=null) pp.printerName=aPrinter;
+
+// print
+this.print(pp);</script>
+            </event>
+         </field>
+         <subform x="14.82mm" y="43.66mm" w="147.23mm" h="13.2496mm">
+            <field name="SignatureField1" y="0.53mm" x="0mm" w="91.2424mm" h="12.7196mm">
+               <ui>
+                  <signature>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </signature>
+               </ui>
+               <font typeface="Arial" weight="bold"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="20mm">
+                  <font typeface="Arial" weight="bold"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Signature<span style="xfa-spacerun:yes"> </span></p></body>
+                     </exData>
+                  </value>
+               </caption>
+            </field>
+            <field name="Button2" y="0mm" x="94.2362mm" w="25mm" h="12.7196mm">
+               <ui>
+                  <button/>
+               </ui>
+               <caption>
+                  <value>
+                     <text>PRINT</text>
+                  </value>
+                  <para vAlign="middle" hAlign="center"/>
+                  <font typeface="Arial" weight="bold"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <fill>
+                     <color value="212,208,200"/>
+                  </fill>
+                  <edge/>
+                  <edge/>
+                  <edge/>
+               </border>
+               <bind match="none"/>
+            </field>
+            <field name="Button2" y="0mm" x="122.23mm" w="25mm" h="12.7196mm">
+               <ui>
+                  <button/>
+               </ui>
+               <caption>
+                  <value>
+                     <text>SUBMIT</text>
+                  </value>
+                  <para vAlign="middle" hAlign="center"/>
+                  <font typeface="Arial" weight="bold"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <fill>
+                     <color value="212,208,200"/>
+                  </fill>
+                  <edge/>
+                  <edge/>
+                  <edge/>
+               </border>
+               <bind match="none"/>
+               <event activity="click">
+                  <submit textEncoding="UTF-8" xdpContent="pdf datasets xfdf" target="http://medcommons.net:8080/central/OrderProcessorServlet"/>
+               </event>
+            </field>
+            <field name="Button2" y="0mm" x="122.23mm" w="25mm" h="12.7196mm">
+               <ui>
+                  <button/>
+               </ui>
+               <caption>
+                  <value>
+                     <text>SUBMIT</text>
+                  </value>
+                  <para vAlign="middle" hAlign="center"/>
+                  <font typeface="Arial" weight="bold"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <fill>
+                     <color value="212,208,200"/>
+                  </fill>
+                  <edge/>
+                  <edge/>
+                  <edge/>
+               </border>
+               <bind match="none"/>
+               <event activity="click">
+                  <submit textEncoding="UTF-8" xdpContent="pdf datasets xfdf" target="http://medcommons.net:8080/central/OrderProcessorServlet"/>
+               </event>
+            </field>
+            <field name="Button2" y="0mm" x="94.2362mm" w="25mm" h="12.7196mm">
+               <ui>
+                  <button/>
+               </ui>
+               <caption>
+                  <value>
+                     <text>PRINT</text>
+                  </value>
+                  <para vAlign="middle" hAlign="center"/>
+                  <font typeface="Arial" weight="bold"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <fill>
+                     <color value="212,208,200"/>
+                  </fill>
+                  <edge/>
+                  <edge/>
+                  <edge/>
+               </border>
+               <bind match="none"/>
+            </field>
+            <field name="SignatureField1" y="0.53mm" x="0mm" w="91.2424mm" h="12.7196mm">
+               <ui>
+                  <signature>
+                     <border>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </signature>
+               </ui>
+               <font typeface="Arial" weight="bold"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="20mm">
+                  <font typeface="Arial" weight="bold"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <exData contentType="text/html" maxLength="0">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:APIVersion="1.4.4057.0"><p>Signature<span style="xfa-spacerun:yes"> </span></p></body>
+                     </exData>
+                  </value>
+               </caption>
+            </field>
+         </subform>
+      </subform>
+   </subform>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?templateDesigner DefaultRunAt client?>
+   <?templateDesigner XDCFile acrobat6.xdc?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 100?></template>
+<config xmlns="http://www.xfa.org/schema/xci/1.0/">
+   <agent name="designer">
+      <coolType>
+         <additionalFontsDirectory>C:\PROGRA~1\Adobe\DESIGN~1.0\fonts</additionalFontsDirectory>
+      </coolType>
+   </agent>
+   <present>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<sourceSet xmlns="http://www.xfa.org/schema/xfa-source-set/1.0/"/>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.1/"/>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+</xfa:datasets></xdp:xdp>

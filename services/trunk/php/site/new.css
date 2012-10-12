@@ -1,0 +1,116 @@
+html {
+	background-color: white;
+}
+
+#hd, #ft, #menu, #main {
+}
+
+#hd, #ft {
+	padding: 0.7em 1em;
+}
+
+#hd {
+	border-bottom: 2px solid #e0e0d0;
+    background-color: #f1eddb;
+}
+
+#bd {
+	background-color: #F3F9FC;
+	background-color: white;
+}
+
+#doc3 {
+	margin: 0 0;
+	padding: 0 0;
+}
+
+body {
+	font-family: 'lucida grande', 'Segoe UI', arial, verdana;
+  font-size: 12pt;
+  margin: 0;
+}
+
+#video {
+	float: right;
+	margin: 30px 40px 0 0;
+}
+
+#ft {
+	margin: 0 0;
+	color: #aaa;
+	font-size: 11px;
+	background-color: white;
+}
+
+#yui-main {
+}
+
+
+
+#hd .button {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;	
+	background-color: #8da095;
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    padding: 6px 1em 3px 1em;
+    margin: 0 1em;
+    position: absolute;
+    float: right;
+    position: relative;
+    top: -14px;
+    cursor: pointer;
+}
+#bullets {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;	
+	padding: 0.5em 14px 1em 14px;
+}
+#bullets h2 {
+	color: #555;
+}
+
+#bullets li {
+	margin-top: 0.4em;
+	font-size: 1.1em;
+}
+
+#login {
+	font-size: 16px;
+	margin: 1em 1em 1em 1em;
+	position: relative;
+}	
+#login input {
+	width: 180px;
+	padding: 2px;
+}
+#login input#password {
+	width: 140px;
+}
+#login * {
+	vertical-align: middle;
+}
+
+#login #passwordshadow {
+	color: gray;
+}
+
+INPUT.hintTextbox       { color: #888; }
+INPUT.hintTextboxActive { color: #000; }
+
+h2 {
+  font-size: 130%;
+  margin: 0.5em 0 0.5em 0;
+}
+
+#content {
+	
+  margin: 0 0;
+}
+
+.hidden {
+	display: none;
+}

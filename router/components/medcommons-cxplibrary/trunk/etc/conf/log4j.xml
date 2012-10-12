@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+      <!-- Pattern to output the caller's file name and line number -->
+      <param name="ConversionPattern" value="%5p [%t] (%F:%L) - %m%n"/>
+    </layout>
+  </appender>
+<!--
+  <appender name="DDLLog" class="org.apache.log4j.FileAppender">
+    <param name="file" value="DDL.log"/>
+    <layout class="org.apache.log4j.SimpleLayout"/>
+
+  </appender>
+-->
+	<category name="org.apache.commons.httpclient.HttpClient">
+		<priority value="WARN"/>
+	</category>
+
+	<category name="org.dcm4che2">
+		<priority value="WARN"/>
+	</category>
+
+
+	<category name="com.sun.javaws.servlet">
+		<priority value="WARN"/>
+	</category>
+
+  <root>
+    <priority value ="info" />
+    <appender-ref ref="stdout" />
+	<!-- <appender-ref ref="DDLLog" /> -->
+  </root>
+</log4j:configuration>

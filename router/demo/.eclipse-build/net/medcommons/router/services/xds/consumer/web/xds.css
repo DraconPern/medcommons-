@@ -1,0 +1,613 @@
+body {
+  font-size: 14px; 
+  font-family: Arial, Helvetica;
+  background-color: #4a4a4a;
+  color: black;
+  margin: 0px;
+}
+
+#allFolders {
+  position: absolute;
+  background-color: black;
+  width: 1000px;
+  height: 730px;  
+}
+
+#folderArea {
+  float: left;
+  background-color: black;
+}
+
+.folderTab,.pendingFolderTab {
+  position: absolute;
+  top: 7px;
+  width: 100px;
+  height: 30px;
+  border-style: none;
+  background-color: transparent;
+  padding: 2px;
+  font-weight: bold; 
+  font-size: 12px;
+  color: #616161;
+  cursor: pointer;
+}
+
+.folderTab {
+  left: 302px;
+}
+
+.pendingFolderTab {
+  left: 227px;
+}
+
+/*
+ * General class for all the cards on the page.
+ */
+.contactCardBox {
+  position: absolute;
+  width: 200px;
+  height: 170px;
+  border-style: none;
+  font-size: 12px; 
+  padding: 3px;
+  background-repeat: no-repeat;
+}
+
+.contactCard {
+  background-color: transparent;
+  width: 200px;
+  height: 125px;
+  margin: 4px;
+  padding: 2px;
+  border-style: none;
+}
+
+.ccrPurpose {
+  position: absolute;
+  top: 120px;
+  left: 230px;
+  width: 190px;
+  height: 60px;
+  border-style: none;
+  background-color: white;
+  padding: 4px;
+  font-size: 11px;
+}
+
+.cardLabel {
+  position: relative;
+  top: -15px;
+  left: 15px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.cardCheckBox {
+  position: absolute;
+  top: -21px;
+  left: 80px;
+  font-size: 10px;
+  width: 150px;
+}
+
+#ccrToCheckBox {
+  left: 67px;
+}
+
+.ccrInfo {
+  position: absolute;
+  left: 227px;
+  top: 56px;
+}
+
+table.ccrInfoDetails tr td {
+  font-size: 9px;
+  padding: 0px;
+  spacing: 0px;        
+}
+
+td {
+  font-size: 11px;
+}
+
+.ccrDetail {
+  text-align: left;
+}
+
+.bodySectionLabel {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  color: #bf0804;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/*
+ * Specific positions for individual cards
+ */
+.sourceCard {
+  top: 207px;
+  left: 0px;
+  width: 202px;
+  background-image:url('images/card_small_square.gif');
+  background-position: 20px 15px;
+  background-repeat: no-repeat;
+}
+
+.toCard {
+  top: 207px;
+  left: 215px;
+  width: 202px;
+  background-image:url('images/card_small_square.gif');
+  background-position: 16px 15px;
+  background-repeat: no-repeat;
+}
+
+.patientCard {
+  top: 40px;
+  left: 7px;
+  background-image:url('images/card_small_round.gif');
+  background-position: right;
+}
+
+.folder,.pendingFolder {
+  position: absolute;
+  top: 30px;
+  width: 475px;
+  height: 645px;
+  background-color: transparent;
+  background-repeat:  no-repeat;
+}
+
+.folder {
+  background-image:url('images/folder.gif');
+}
+
+.pendingFolder {
+  left: 230px;
+  display: none;
+  z-index: 59;
+  background-image:url('images/stripefolder.gif');
+}
+
+.contactName {
+  font-weight: bold;
+}
+
+.contactDetails {
+  position: relative;
+  top: 60px;
+  left: 18px;
+  font-size: 7px;
+  font-weight: normal;
+  color: #fbe9df;
+}
+
+.contactDetailsPatient {
+  top: 67px;
+}
+
+.contactDetailsSource {
+  left: 25px;
+}
+
+.contactTitle {
+ position: relative;
+ top: 0px;
+}
+
+.contactOrg {
+  position: relative;
+  top: 0px;
+}
+
+.contactAddress {
+ position: relative;
+ top: 0px;
+}
+
+.phoneSection {
+  position: relative;
+  left: 100px;
+  top: -40px;
+}
+
+.phoneNo {
+}
+
+.contactEmail {
+  position: absolute;
+  top: 44px;
+  left: 0px;
+}
+
+.contactPicture {
+  position: absolute;
+  left: 144px;
+  top: -63px;
+}
+
+#purpose {
+}
+
+/*.bodySectionContainer {
+  position: absolute;
+  top: 275px;
+  width: 255px;
+  height: 295px;
+  padding: 5px;
+}
+*/
+
+.bodySectionBox {
+  float: left;
+  width: 103px;
+  background-color: transparent;
+  border-style: none;
+  border-width: 1px;
+  margin-left: 6px;
+  text-align: center;
+  padding: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  cursor: pointer;
+  color: #332824;
+  font-size: 11px;
+}
+
+.bodySectionMiddle {
+  border-style: none;
+  border-width: 1px;
+  background-image: url('images/bodysectionmiddle.gif'); 
+  background-repeat: repeat-y; 
+  background-position: 0px 0px;
+  text-align: center;
+}
+
+html>body .bodySectionMiddle {
+  background-position: 3px 0px;
+}
+
+/* Contains all the thumbnails on the main folder */
+.thumbnailContainer {
+  position: absolute;
+  left: 140px;
+  top: 400px;
+  height: 240px;
+  width: 250px;
+  padding: 10px;
+  border-style: none; 
+  border-color: red; 
+  border-width: 1px;  
+}
+
+/* Not displayed by default */
+.moreThumbnailBox {
+  display: none;
+}
+
+
+.thumbnailBox, .moreThumbnailBox {
+  padding-bottom: 3px;
+  padding-top: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: pointer;
+  border-style: none; 
+  border-color: green; 
+  border-width: 1px;  
+}
+
+.thumbnailBox {
+  float: left;
+  background-image: url('images/thumbnaildropshadow.gif');
+  background-repeat: no-repeat;
+  background-position: 1px 5px;
+  display: none;
+}
+
+.dividerLine {
+  position: absolute;  
+  left: 132px;
+  top: 42px;
+  display: none;
+  border-top: none;
+  border-left: none;
+  border-right: solid;
+  border-bottom: none;
+  border-width: 1px;
+  border-color: black;
+  height: 200px;
+  z-index: 20;
+}
+
+/* 
+   Positioned relative to 
+   bodySectionContainer
+*/
+#sendReferralButton {
+  position: absolute;
+  left: 330px;
+  top: 300px;
+}
+
+.borderBottom {
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+}
+
+.borderTop {
+  border-top-style: solid;
+  border-top-color: black;
+  border-top-width: 1px;
+}
+
+.grayback {
+  background-color: white;
+}
+
+.moreButton {
+  position: absolute;
+  left: 318px;
+  top:  580px;
+  display: none;
+  cursor: pointer;
+}
+
+.medcommonsId {
+  position: absolute;
+  top: -18px;
+  left: 0px;
+}
+
+/* debug div {
+  border-style: solid;
+  border-color: green;
+  border-width: 1px;
+}*/
+
+#hipaa {
+  width: 103%;
+  height: 85px;
+  background-color: #599498;
+  z-index: 1000;
+}
+
+#hipaaHeader {
+  color: white;
+  font-size: 12px;
+  background-color: #195d60;
+  padding-left: 10px;
+}
+
+.hipaaMessage {
+  color: #e7ffff;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.hipaaLogTable {
+  margin-left: 10px;
+}
+
+table.hipaaLogTable tr th {  
+  color: #e2d1df;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
+}
+
+table.hipaaLogTable tr td {
+  color: white;
+  text-align: left;
+}
+
+a.hipaaLink:visited {
+  color: white;
+}
+
+
+.presentBodySection {
+  text-align: center;
+  padding-left: 9px;
+}
+
+.notPresentBodySection {
+  text-align: center;
+  color: #888888;
+}
+
+a:hover {
+  color: red;  
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+#contactsbar {
+  z-index: 2000;
+  width: 801px;
+  height: 651px;
+}
+
+#contactslist {
+  font-family: helvetica;
+  float: left;
+  width: 202px;
+  height: 651px;
+  display: none;
+  background-color: #7792bb;
+}
+
+#contactsgripper {
+  float: left;
+  width: 27px;
+  height: 651px;
+  background-image:url('images/contactsbar.gif');
+  cursor: pointer;
+}
+
+.contactsHeader {
+  margin-right: 1px;
+  padding: 5px;
+  background-color: #ecebe8;
+  height: 30px;
+}
+
+h2.contactsHeading {
+  font-size: 14px;
+  color: black;
+}
+
+#contactsDetails {
+  font-size: 10px;
+  padding: 5px;
+  overflow: auto;
+  height: 640px;
+}
+
+.contactBarEmail {
+  font-size: 9px;
+}
+
+/* 
+  All rows in the contacts
+  list have this class,
+  even selected ones.
+ */
+table tr.contactsRow td {
+  padding: 2px;
+  cursor: pointer;
+}
+
+table tr.contactsRow0  td {
+  color: black;
+  background-color: #d0d0d0;
+}
+
+table tr.contactsRow1  td {
+  color: black;
+  background-color: #dfdfdf;
+}
+
+table tr.contactsRowSelected  td {
+  background-color: #999999;
+  color: white;
+}
+
+.contactImageCell {
+  background-color: #6988bb;
+}
+
+#contactlistCard {
+  z-index: 1000;
+  background-image:url('images/card_small_square.gif');
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  margin: 0px;
+  padding: 0px;
+  display: none;
+}
+
+.contactDetailsContactList {
+  top: 67px; 
+  left: 11px;
+}
+
+#clPhone {
+  position: absolute;
+  left: 90px;
+  top: 0px;
+}
+
+.ccrCover {
+  position: absolute;
+  left: 10px;
+  top:  40px;
+  background-color: white;
+  width: 90%;
+  height: 85%;
+}
+
+
+.letterbody {
+  float: left;
+  margin-left: 20px;
+}
+
+.ltrtxt {
+  margin-top: 0px;
+  margin-bottom: 1px;
+  padding-left: 10px;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.missing {
+  color: gray;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.notifylink {
+  border-style: dotted;
+  border-color: gray;
+  border-width: 1px;
+}
+
+.notificationsTable {
+  width: 100%;
+}
+
+table.notificationsTable tr td {
+  font-family: arial;
+  font-size: 10px;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 4px;
+}
+
+table.notificationsTable tr {
+  height: 10px;
+}
+
+table.notificationsHeader {
+}
+
+table.notificationsHeader tr td {
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+.enclosuresLabel {
+  border-style: solid; 
+  border-color: black; 
+  border-width: 1px;  
+}
+
+.leftnav {
+  font-size: 11px;
+  float: left;
+  width: 115px;
+  text-align: right;
+  padding-right: 10px;
+  vertical-align: top;
+}
+
+
+

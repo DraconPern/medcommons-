@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>mastertitle</key>
+		<string>MedPad Movies</string>
+		<key>scenes</key>
+		<array>
+			<dict>
+
+				<key>scene</key>
+				<string>0</string>
+
+
+				<key>name</key>
+				<string>MedPad Movies</string>
+
+				<key>cellstyle</key>
+				<string>black</string>
+
+				<key>webviewborder</key>
+				<string>black</string>
+
+				<key>smalltitle</key>
+				<string>Movies</string>
+
+				<key>largetitle</key>
+				<string>Movies About MedPad</string>
+
+				<key>barbuttontitle</key>
+				<string>menu</string>
+
+				<key>blocks</key>
+				<array>
+
+
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>made 06mar10 in ScreenFlow</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/screenflow.png
+							</string>
+						<key>Title</key>
+						<string>MedPad Overview</string>
+						<key>Label</key>
+						<string>Overview</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/iPad/MedPad.mov
+						</string>
+					</dict>
+					
+					<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>made 08mar10 in ScreenFlow</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/screenflow.png
+							</string>
+						<key>Title</key>
+						<string>Hello MedPad Walkthru</string>
+						<key>Label</key>
+						<string>Hello MedPad Walkthru</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/iPad/AppleHTML5Samples.mov
+						</string>
+					</dict>
+					
+									<dict>
+						<key>Action</key>
+						<string>ShowDetail</string>
+						<key>Info</key>
+						<string>made 07mar10 in ScreenFlow</string>
+						<key>ImageURL</key>
+						<string>
+							http://portal.medcommons.net/portal/images/screenflow.png
+							</string>
+						<key>Title</key>
+						<string>Advanced Plists</string>
+						<key>Label</key>
+						<string>Advanced Plists</string>
+						<key>URL</key>
+						<string>
+							http://portal.medcommons.net/iPad/HelloMedPad.mov
+						</string>
+					</dict>
+
+
+		
+
+
+				</array>
+
+			</dict>
+		</array>
+	</dict>
+</plist>

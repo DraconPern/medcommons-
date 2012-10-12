@@ -1,0 +1,112 @@
+@ IN SOA ns1.medcommons.net. root.medcommons.net. (
+	2010121501	; serial
+	3h		; refresh
+	1h		; retry
+	7d		; expire
+	1d	)	; minimum ttl
+
+	in	ns	ns1.medcommons.net.
+	in	ns	ns2.medcommons.net.
+
+	in	txt	"v=spf1 ip4:67.15.178.32/28 ?all"
+
+	in	mx	10 mx00.1and1.com.
+	in	mx	10 mx01.1and1.com.
+
+globals		2m	in	a	174.129.165.67		; AWS i-23e6734a (ami-8de90de4/nva-20080808-keypair/us-e-1b - 021409@2007)
+ci		2m	in	a	174.129.165.67		; AWS i-23e6734a (ami-8de90de4/nva-20080808-keypair/us-e-1b - 021409@2007)
+s0912		2m	in	a	174.129.165.67		; AWS i-23e6734a (ami-8de90de4/nva-20080808-keypair/us-e-1b - 021409@2007)
+
+;
+; Instances eNNNN have ebs roots (can be stopped/started). Their public/private IPs are volative (change when the instance is stopped/started).
+; The ``-eip'' annotation on the AWS id indicates the IP address is an eip (elastic IP) associated with the instance. This association is also
+; volatile and needs to be reassociated after the instance is restarted but the addresses themselves persist s.t. (up to the limit of available
+; eips) eip associated instances can have constant ip addresses.
+;
+ncis		2m	in	a	50.16.98.11		; AWS i-74714b19 (ami-6c708705-ebs/nva-20080808-keypair/us-e-1c - 121510@2333)
+e0928		2m	in	a	50.16.98.11		; AWS i-74714b19 (ami-6c708705-ebs/nva-20080808-keypair/us-e-1c - 121510@2333)
+
+mcpurple06	2m	in	a	66.92.68.51		; Medcommons
+stego		2m	in	a	74.94.173.178		; Medcommons
+
+familycareteam	2m	in	a	67.202.53.117		; AWS i-8dd80be4 (ami-cf2dc8a6/ttw-2008-714-keypair/us-e-1a - 080714@0028) (fb02/s0022.mc.n)
+
+qatest		2m      in      a       67.202.0.138	        ; AWS i-6bf7bd03 (ami-8de90de4/nva-20080808-keypair/us-e-1d - 121509@1744)
+s0927		2m      in      a       67.202.0.138	        ; AWS i-6bf7bd03 (ami-8de90de4/nva-20080808-keypair/us-e-1d - 121509@1744)
+
+;
+; Terminated/Changed Mapping
+;
+;oci		2m	in	a	74.94.173.181		; Medcommons
+;mcf7c68	2m	in	a	162.97.148.81		; EMCCIS medcommons.atmosphere.mcf7c68 (vmi-mcf7c6 - 120509@1722)
+;atmos07	2m	in	a	162.97.148.81		; EMCCIS medcommons.atmosphere.mcf7c68 (vmi-mcf7c6 - 120509@1722)
+;dicom		2m	in	cname	BMC-1198343740.us-east-1.elb.amazonaws.com. ; AWS Elastic Load Balancer - 2009-08-06 22:18:52 EDT (bmc.mc.n)
+;bam		2m	in	a	174.129.146.253		; AWS i-73e3ea1a (ami-8de90de4/nva-20080808-keypair/us-e-1c - 073009@1724)
+;s0920		2m	in	a	174.129.146.253		; AWS i-73e3ea1a (ami-8de90de4/nva-20080808-keypair/us-e-1c - 073009@1724)
+;bop		2m	in	a	75.101.216.81		; AWS i-42729b2a (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@1021)
+;s0925		2m	in	a	75.101.216.81		; AWS i-42729b2a (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@1021)
+;boom		2m	in	a	174.129.80.134		; AWS i-65969e0c (ami-8de90de4/nva-20080808-keypair/us-e-1b - 073109@1630)
+;s0921		2m	in	a	174.129.80.134		; AWS i-65969e0c (ami-8de90de4/nva-20080808-keypair/us-e-1b - 073109@1630)
+;bif		2m	in	a	174.129.114.39		; AWS i-5f969e36 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 073109@1633)
+;s0922		2m	in	a	174.129.114.39		; AWS i-5f969e36 (ami-8de90de4/nva-20080808-keypair/us-e-1a - 073109@1633)
+;zip            2m      in      a       174.129.164.64          ; AWS i-f47a939c (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@0958)
+;s0923          2m      in      a       174.129.164.64          ; AWS i-f47a939c (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@0958)
+;zap            2m      in      a       67.202.46.19	        ; AWS i-20c62e48 (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@1947)
+;s0925          2m      in      a       67.202.46.19	        ; AWS i-20c62e48 (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@1947)
+;dod		2m	in	cname	2GP-1541192813.us-east-1.elb.amazonaws.com. ; AWS Elastic Load Balancer - 2009-08-24 03:14:53 EDT (2gp.mc.n)
+;qatest		2m      in      a       174.129.122.106	        ; AWS i-b1ea39d9 (ami-8de90de4/nva-20080808-keypair/us-e-1d - 092509@1159)
+;s0926		2m      in      a       174.129.122.106	        ; AWS i-b1ea39d9 (ami-8de90de4/nva-20080808-keypair/us-e-1d - 092509@1159)
+;mcf7c67	2m	in	a	162.97.148.66		; EMCCIS medcommons.atmosphere.mcf7c67 (vmi-mcf7c6 - 120309@0245)
+;atmos06	2m	in	a	162.97.148.66		; EMCCIS medcommons.atmosphere.mcf7c67 (vmi-mcf7c6 - 120309@0245)
+;mcf7c66	2m	in	a	162.97.148.81		; EMCCIS medcommons.atmosphere.mcf7c66 (vmi-mcf7c6 - 120209@1645)
+;atmos02	2m	in	a	162.97.148.81		; EMCCIS medcommons.atmosphere.mcf7c66 (vmi-mcf7c6 - 120209@1645)
+;mcf7c62	2m	in	a	162.97.148.79		; EMCCIS medcommons.atmosphere.mcf7c62 (vmi-mcf7c6 - 111609@0318)
+;atmos04	2m	in	a	162.97.148.79		; EMCCIS medcommons.atmosphere.mcf7c62 (vmi-mcf7c6 - 111609@0318)
+;mcf7c63	2m	in	a	162.97.148.66		; EMCCIS medcommons.atmosphere.mcf7c63 (vmi-mcf7c6 - 111609@2345)
+;atmos05	2m	in	a	162.97.148.66		; EMCCIS medcommons.atmosphere.mcf7c63 (vmi-mcf7c6 - 111609@2345)
+;mcf7c60	2m	in	a	162.97.148.81		; EMCCIS medcommons.atmosphere.mcf7c60 (vmi-mcf7c6 - 111509@1915)
+;atmos02	2m	in	a	162.97.148.81		; EMCCIS medcommons.atmosphere.mcf7c60 (vmi-mcf7c6 - 111509@1915)
+;mcf7c61	2m	in	a	162.97.148.79		; EMCCIS medcommons.atmosphere.mcf7c61 (vmi-mcf7c6 - 111609@0101)
+;atmos03	2m	in	a	162.97.148.79		; EMCCIS medcommons.atmosphere.mcf7c61 (vmi-mcf7c6 - 111609@0101)
+;mcf7c54	2m	in	a	162.97.148.79		; EMCCIS medcommons.atmosphere.mcf7c54 (vmi-mcf7c5 - 111509@0107)
+;atmos01	2m	in	a	162.97.148.79		; EMCCIS medcommons.atmosphere.mcf7c54 (vmi-mcf7c5 - 111509@0107)
+;mcf7c50	2m	in	a	162.97.148.66		; EMCCIS medcommons.atmosphere.mcf7c50 (vmi-mcf7c5 - 111209@1343)
+;atmos00	2m	in	a	162.97.148.66		; EMCCIS medcommons.atmosphere.mcf7c50 (vmi-mcf7c5 - 111209@1343)
+;emc000		2m	in	a	162.97.148.63		; EMCCIS medcommons.atmosphere.mcf7c40 (vmi-mcf7c4 - 111109@1746)
+;zap		2m      in      a       67.202.24.80	        ; AWS i-7c7f9614 (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@1006)
+;s0924		2m      in      a       67.202.24.80	        ; AWS i-7c7f9614 (ami-8de90de4/nva-20080808-keypair/us-e-1c - 082509@1006)
+;medullan	2m	in	a	75.101.249.14		; AWS i-49670b20 (ami-8de90de4/nva-20080630-keypair - 041309@1225)
+;s0916		2m	in	a	75.101.249.14		; AWS i-49670b20 (ami-8de90de4/nva-20080630-keypair - 041309@1225)
+;atmos		2m	in	a	174.129.92.153		; AWS i-a36b33ca (ami-8de90de4/nva-20080808-keypair - 061809@1338)
+;s0919		2m	in	a	174.129.92.153		; AWS i-a36b33ca (ami-8de90de4/nva-20080808-keypair - 061809@1338)
+;boom		2m	in	a	174.129.143.20		; AWS i-7d571514 (ami-8de90de4/nva-20080808-keypair - 042809@2115)
+;s0917		2m	in	a	174.129.143.20		; AWS i-7d571514 (ami-8de90de4/nva-20080808-keypair - 042809@2115)
+;www		2m	in	a	75.101.214.175		; AWS i-61c81808 (ami-cf2dc8a6/nva-20080630-keypair - 070808@2322)
+;s0902		2m	in	a	75.101.214.175		; AWS i-61c81808 (ami-cf2dc8a6/nva-20080630-keypair - 070808@2322)
+;qatest		2m	in	a	75.101.156.254		; AWS i-a56cabcc (ami-cf2dc8a6/ttw-20080408-keypair - 080408@2235)
+;s0900		2m	in	a	75.101.156.254		; AWS i-a56cabcc (ami-cf2dc8a6/ttw-20080408-keypair - 080408@2235)
+;bam		2m	in	a	174.129.86.66		; AWS i-d5005ebc (ami-8de90de4/nva-20080808-keypair - 061609@1225)
+;s0918		2m	in	a	174.129.86.66		; AWS i-d5005ebc (ami-8de90de4/nva-20080808-keypair - 061609@1225)
+;s0915		2m	in	a	67.202.39.0		; AWS i-87d24aee (ami-2c8f6a45/nva-20080808-keypair - 031809@0028)
+;rsfc6v2	2m	in	a	67.202.39.0		; AWS i-87d24aee (ami-2c8f6a45/nva-20080808-keypair - 031809@0028)
+;s0914		2m	in	a	67.202.34.31		; AWS i-4534ad2c (ami-8de90de4/nva-20080808-keypair - 031709@1848)
+;f7db00		2m	in	a	67.202.34.31		; AWS i-4534ad2c (ami-8de90de4/nva-20080808-keypair - 031709@1848)
+;s0913		2m	in	a	67.202.43.10		; AWS i-e533aa8c (ami-8de90de4/nva-20080808-keypair - 031709@1820)
+;f7db00		2m	in	a	67.202.43.10		; AWS i-e533aa8c (ami-8de90de4/nva-20080808-keypair - 031709@1820)
+;healthurl	2m	in	a	75.101.156.33		; AWS i-3eef2d57 (ami-cf2dc8a6/adrian-keypair - 042608@0424)
+;s0905		2m	in	a	75.101.156.33		; AWS i-3eef2d57 (ami-cf2dc8a6/adrian-keypair - 042608@0424)
+;s0911		2m	in	a	174.129.118.201		; AWS i-ad58d2c4 (ami-8de90de4/nva-20080808-keypair - 021209@2147)
+;globals	2m	in	a	74.94.173.181		; Medcommons/in-house
+;ci		2m	in	a	74.94.173.181		; Medcommons/in-house
+;chaos		2m	in	a	174.129.147.225		; AWS i-daf64eb3 (ami-5647a33f/nva-20080808-keypair - 121808@2257)
+;s0910		2m	in	a	174.129.147.225		; AWS i-daf64eb3 (ami-5647a33f/nva-20080808-keypair - 121808@2257)
+;testinstall	2m	in	a	75.101.209.202		; AWS i-2c5e9945 (ami-cf2dc8a6/swd-20080408-keypair - 080408@1056)
+;s0901		2m	in	a	75.101.209.202		; AWS i-2c5e9945 (ami-cf2dc8a6/swd-20080408-keypair - 080408@1056)
+;scm		2m	in	a	75.101.246.38		; AWS i-7af14913 (ami-8de90de4/nva-20080808-keypair - 121808@2107)
+;s0909		2m	in	a	75.101.246.38		; AWS i-7af14913 (ami-8de90de4/nva-20080808-keypair - 121808@2107)
+;bam		2m	in	a	75.101.215.146		; AWS i-0e0ba667 (ami-8de90de4/nva-20080808-keypair - 100808@1445)
+;s0908		2m	in	a	75.101.215.146		; AWS i-0e0ba667 (ami-8de90de4/nva-20080808-keypair - 100808@1445)
+;ehgt			in	a	67.202.2.249 		; AWS i-5229d83b (ami-cf2dc8a6/adrian-keypair - 071229@0640)
+;s0904			in	a	67.202.2.249 		; AWS i-5229d83b (ami-cf2dc8a6/adrian-keypair - 071229@0640)
+;box		2m	in	a	75.101.255.47		; AWS i-2b6eb442 (ami-cf2dc8a6/nva-20080808-keypair - 080826@1405)
+;s0903		2m	in	a	75.101.255.47		; AWS i-2b6eb442 (ami-cf2dc8a6/nva-20080808-keypair - 080826@1405)

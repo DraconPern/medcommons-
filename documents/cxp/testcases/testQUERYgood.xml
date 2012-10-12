@@ -1,0 +1,6 @@
+<cxpcommand>
+<remoteurl>http://localhost/cxp/cxpserv.php</remoteurl>
+<opcode>QUERY</opcode>
+<querynotificationurl>http://localhost/cxp/nothand.php</querynotificationurl>
+<querystring>473590407260</querystring>
+</cxpcommand>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<article>
+  <title>HL7 Working Group Meeting</title>
+
+  <abstract>
+    <para>Overview of HL7 meeting in San Diego, January 2004</para>
+  </abstract>
+
+  <sect1>
+    <title>LOINC &#38; SNOMED: Nomenclatures for medical records</title>
+
+    <para>There are two large nomenclature systems in medical records: LOINC
+    and SNOMED. These were independent efforts in different domains - both are
+    used in HL7. The dividing line between them is murky for all participants.
+    </para>
+
+    <para>LOINC: Logical Observations, Identifiers, Names, and Codes. Details
+    at http://www.loinc.org/.</para>
+
+    <para>SNOMED: Systematized Nomenclature for Medicine:
+    http://www.snomed.org/</para>
+
+    <para>In HL7 3.0 documents either coding system can be used. The XML used
+    for encoding HL7 messages/documents contains an attribute
+    &#34;codeSystem&#34; which can be set to either LOINC or SNOMED. The
+    design of these documents/messages is that:</para>
+
+    <para></para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Some organization (say the National Heart, Lung, and Blood
+        institute) defines a template using the HL7&#39;s RIM (Reference
+        Information Model). </para>
+      </listitem>
+
+      <listitem>
+        <para>The RIM defines the schema.</para>
+      </listitem>
+
+      <listitem>
+        <para>The NHLBI&#39;s template defines required fields in that schema
+        plus some default values.</para>
+      </listitem>
+
+      <listitem>
+        <para>The nomenclature (LOINC or SNOMED) defines the field values.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>LOINC does clinical questions; not answers. Identifies the
+    observation, not the values. SNOMED defines the domain of clinical
+    answers. This is the LOINC description of where the two nomenclatures come
+    into contact but apparently the SNOMED folks want a larger turf. HL7
+    doesn&#39;t take a position on this (at least not yet).</para>
+
+    <para>Both SNOMED and LOINC are &#39;free&#39;. LOINC is a free download
+    but the license prohibits their codes from being used in a competing
+    standard. SNOMED will be free in the US via a special arrangement with the
+    National Library of Medicine sometime in 2004 Q1 (you can pay for it if
+    you need it before then). The NLM is integrating it into their UMLS
+    (Unified Medical Language System) and UMLS is free. </para>
+
+    <para>There are other coding systems like ICD-9 (a taxonomy of diseases)
+    which is typically linked to billing systems. </para>
+
+    <para>So - what&#39;s the big deal? Why spend so much time on this boring
+    stuff?</para>
+
+    <orderedlist>
+      <listitem>
+        <para>Historically hospitals and doctors have either not used a
+        standard nomenclature system (sort of the pre-1980s for big hospitals)
+        or they used their own home-grown one (pretty much everyone).</para>
+      </listitem>
+
+      <listitem>
+        <para>The cost of mapping one set of records unambiguously from one
+        medical records system to another is huge. It&#39;s a big patient
+        safety issue too. </para>
+      </listitem>
+
+      <listitem>
+        <para>None of the hospitals really want to change their stuff - they
+        want others to map to their systems. So - the federal government is
+        moving in to force the issue (partly by makeing SNOMED free; partly by
+        new requirements on medicare/medicaid reimbursements)</para>
+      </listitem>
+    </orderedlist>
+
+    <para>Although this seems like it should be a simple problem it&#39;s been
+    a problematic area in medical records for years. The number of papers that
+    I&#39;ve seen on debabelizers, mapping agents, &#38; friends is obscene.
+    There are (as of May 2003) in LOINC 25,733 laboratory codes and 6,155
+    clinical codes. The LOINC folks have created a tool which builds a
+    database table so you can match your local codes to LOINC codes and even
+    submit new codes to LOINC (suppose you have a new laboratory test that has
+    different clinical outcomes than the existing ones - you need to generate
+    a new code). The LOINC central database is updated frequently so that new
+    codes are shared. </para>
+  </sect1>
+
+  <sect1>
+    <title>HL7 Tools </title>
+
+    <para></para>
+
+    <sect2>
+      <title>HL7 3.0 Overview</title>
+
+      <para>The core of HL7 3.0 is in four core classes (there are other core
+      classes - but the others may be retired over time):</para>
+
+      <orderedlist>
+        <listitem>
+          <para>Everything happening is an <emphasis>Act</emphasis>
+          (Procedures, observations, medicaltions, supply, registration,
+          &#38;etc)</para>
+        </listitem>
+
+        <listitem>
+          <para>Acts are related through an <emphasis>ActRelationship</emphasis>
+          (composition, preconditions, revisions, support, &#38;etc)</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Participation</emphasis> defines the context for an
+          Act (author, performer, subject, location, &#38;etc)</para>
+        </listitem>
+
+        <listitem>
+          <para>The participants are <emphasis>Roles</emphasis> (patient,
+          provider, practitioner, specimen, &#38;etc)</para>
+        </listitem>
+
+        <listitem>
+          <para>Roles are played by <emphasis>Entities</emphasis> (persons,
+          organizations, places, devices, &#38;etc)</para>
+        </listitem>
+      </orderedlist>
+
+      <para>All of these are defined in XML schemas. A specialist creates an
+      R-MIM (Refined Message Information Model) which puts constraints on
+      these classes for a particular clinical application. These in turn are
+      used to generate a HMD (Hierarchical Message Description). The
+      combination of the HMD and use cases defines an interaction model. When
+      all of these steps are laid out in detail they are reviewed for
+      incorporation into the standard. It&#39;s a long process - lots of
+      details and meetings.</para>
+
+      <para>The committee wants most of their time spent on storyboards
+      (similar to UML&#39;s use cases &#38; activity diagrams) and the
+      contents of the documents or messages. In HL7 V2.x much of the time was
+      spent arguing about encoding or syntax - they want to avoid this in 3.0.</para>
+    </sect2>
+
+    <sect2>
+      <title>HL7 Development Process and Tools</title>
+
+      <para>The HL7 folks are worried that if all of the object
+      modelling/specialization/HMD generation and documentation was done by
+      hand that </para>
+
+      <orderedlist>
+        <listitem>
+          <para>The spec would never be completed - too much time would just
+          be revising what was there</para>
+        </listitem>
+
+        <listitem>
+          <para>They would never get rid of the inconsistencies and other
+          errors.</para>
+        </listitem>
+      </orderedlist>
+
+      <para>So - they are building tools to enforce their procedures and make
+      it possible for the committees to focus on the semantics of the messages
+      - code generation is performed by tools.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>All object modelling is done in Visio with special extensions
+          created by the HL7 organization. This tool is called the RMIM
+          Designer. These enforce much more rigid rules than UML does - it
+          prevents people from defining models which are inconsistent. The
+          Visio extensions were built in VB.</para>
+        </listitem>
+
+        <listitem>
+          <para>They have built a tool (RoseTree) which parses the Visio *.vsd
+          files and generates a HMD. RoseTree can export data to XML format.
+          </para>
+
+          <para>As a side note - they don&#39;t seem to like using XMI as
+          their object format - they contend that XMI is close to UML and that
+          it does not apply all of the constraints that the HL7 folks want to
+          impose on their models. </para>
+
+          <para>RoseTree also can generate some default XSLT files to
+          document/publish the designs.</para>
+        </listitem>
+
+        <listitem>
+          <para>There are some other tools which build messages out of the
+          interaction diagrams by extracting the appropriate classes and
+          serializing them in a standard way. There is lots of stuff here -
+          not well integrated by any means - but they really are trying to
+          build a complete schema generation and test system which their
+          medical folks can constrain in Visio. </para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The HL7 folks are very proud of this methodology and their tools -
+      they claim that they are laying the foundation for coherent,
+      well-defined, and well-documented medical information. I believe that
+      they are correct.</para>
+
+      <para>A hidden agenda that I had when going to the HL7 meeting was to
+      evaluate part of this methodology - if we adopted the same general model
+      framework and the same tools but built our versions of the R-MIM outside
+      of the standard (for now) it would provide some nice links to an
+      existing community and documentation standards. After playing with these
+      tools and seeing where they are my view now is:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Danger, Danger! Here be monsters!</para>
+
+          <para>The basic ideas are good; their instincts are solid; but the
+          implementation is very weak. Almost all of the tools crashed at
+          different times during the tutorials for many people in the classes.</para>
+        </listitem>
+
+        <listitem>
+          <para>The copyrights to the tools are held by independent
+          consultants to HL7 - they aren&#39;t owned by HL7 itself. There are
+          two problems:</para>
+
+          <orderedlist>
+            <listitem>
+              <para>No source code to fix the crashes - or even reverse
+              engineer this in Eclipse.</para>
+            </listitem>
+
+            <listitem>
+              <para>The license restricts use to people using the HL7
+              standard. They were very suprised when I asked about using the
+              tools outside of HL7 - this had never occurred to them.</para>
+            </listitem>
+          </orderedlist>
+        </listitem>
+
+        <listitem>
+          <para>While I endorse the general idea of what they are doing - the
+          process isn&#39;t fully baked. I asked some specific questions about
+          how certain medical records would be modelled (I used some TB and
+          AIDs examples from a friend of mine) and I was told that this would
+          be defined in the future. Questions about how one would anonymize
+          the records (which layer is it done on?) elicited panicked looks.
+          </para>
+        </listitem>
+      </itemizedlist>
+
+      <para>It is nice that they apply lots of consistency checks to what they
+      do; it&#39;s also nice that all of the examples for how to manipulate
+      the XML output they were encouraging people to use standard SAX and DOM
+      libraries. But I think it&#39;s not mature enough to build anything on
+      and it won&#39;t be mature for another few years.</para>
+    </sect2>
+
+    <sect2>
+      <title>Other HL7 3.0 software</title>
+
+      <para>Apparently the Java SIG is developing open source Java APIs to the
+      RIM. I left before the Java SIG meeting - but this is controversial. HL7
+      hasn&#39;t decided what the IP issues are nor what they really want from
+      the process. The HL7 committees are focussed on consensus and not all
+      companies want to do anything with open source. I&#39;ll try to find out
+      more.</para>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Clinical Data Architecture (CDA)</title>
+
+    <para>This may be important for MedCommons. CDA is defined by two things:
+    </para>
+
+    <orderedlist>
+      <listitem>
+        <para>An XML Schema</para>
+      </listitem>
+
+      <listitem>
+        <para>A CDA document is different than a XML document. Pretty much
+        anything that is semantically correct can be an XML document; a CDA
+        document is an XML document to which a clinician will affix a
+        signature. </para>
+      </listitem>
+    </orderedlist>
+  </sect1>
+
+  <sect1>
+    <title>Imaging Integration SIG</title>
+
+    <para>TBD: Embedding CDA documents in DICOMDIR.</para>
+
+    <para></para>
+  </sect1>
+
+  <sect1>
+    <title>IHE Connectathon</title>
+
+    <para>TBD</para>
+  </sect1>
+
+  <sect1>
+    <title>Summary of Meeting</title>
+
+    <para>A bit disappointing. A very pleasant group of people who are
+    focussed on building coherent standards in no particular hurry. Unclear
+    how much they want to open their code up for sharing. Unclear what (if
+    any) collaborations they are seeking.</para>
+  </sect1>
+</article>

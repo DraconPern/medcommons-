@@ -1,0 +1,121 @@
+<STYLE TYPE=text/css><!---
+
+TD.tag                  {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#000000}
+
+.archive               {font-family:Verdana,Arial,Helvetica;font-size:9pt;font-weight:bold;color:#993300;line-height:12pt}
+
+.content                {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#000000}
+
+.date                   {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#666633;font-weight:bold;text-align:left}
+
+.descrip                {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#FFFFFF}
+
+.h5                     {font-family:Times New Roman,Verdana,Arial,Helvetica;font-size:18pt;font-weight:bold;color:Navy;line-height:12pt;text-align:left}
+
+.header                 {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#000000;font-weight:Bold;}
+
+.articleheader          {font-family:Verdana,Arial,Helvetica;font-size:13pt;color:#000000;font-weight:Bold;}
+
+.header1                {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#940018}
+
+.header2                {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#940018}
+
+.headerA               {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#FFFFFF;font-weight:Bold;text-align:right}
+
+.input                  {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#000000;}
+
+.links                  {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FFFFFF;text-align:center;valign:middle;}
+
+.navbar               {font-family:Verdana,Arial,Helvetica;font-size:9pt;font-weight:bold;color:#000000;line-height:17pt;text-align:left}
+
+.poll                   {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#000063}
+
+.sponsor             {font-family:Verdana,Arial,Helvetica;font-size:9px;font-weight:normal;color:#5F605E;}
+
+.topic                  {font-family:Verdana,Arial,Helvetica;font-size:9pt;font-weight:bold;color:#000000;}
+
+.topicImage             {font-family:Verdana,Arial,Helvetica;font-size:9pt;font-weight:bold;color:#000000;}
+
+.Tickerbar              {font-family:Verdana,Arial,Helvetica;font-size:9pt;font-weight:bold;color:#000000;}
+
+.window                 {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#000000}
+
+H3                      {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#000000;font-weight:bold}
+
+H2                     {
+	font-family:Verdana,Arial,Helvetica;
+	font-size:9pt;
+	color:#FFFFFF;
+	font-weight:bold;
+	background-color: #415876;
+	padding : 2px;
+}
+
+H4                      {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:red;font-weight:bold}
+
+A:link                  {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#1B1BFD}
+
+A:visited               {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#4B4B91}
+
+A:hover                 {color:#CC2424;text-decoration:none}
+
+A.footer:link           {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#000063;text-decoration:none}
+
+A.footer:visited        {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#000063;text-decoration:none}
+
+A.footer:hover          {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#000063;text-decoration:underline}
+
+A.headline:link         {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#000063;text-decoration:none;font-weight: bold}
+
+A.headline:visited      {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#000063;text-decoration:none;font-weight: bold}
+
+A.headline:hover   {font-family:Verdana,Arial,Helvetica;font-size:10pt;color:#000063;text-decoration:underline;font-weight: bold}
+
+A.leftnav:link          {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FFFFFF;text-decoration:none}
+
+A.leftnav:visited       {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FFFFFF;text-decoration:none}
+
+A.leftnav:hover         {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#000063;text-decoration:underline}
+
+A.leftnavwhite:link     {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FFFFFF;text-decoration:none}
+
+A.leftnavwhite:visited  {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FFFFFF;text-decoration:none}
+
+A.leftnavwhite:hover    {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FFFFFF;text-decoration:underline}
+
+A.leftnavhot:link       {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FEE221;text-decoration:none}
+
+A.leftnavhot:visited    {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FEE221;text-decoration:none}
+
+A.leftnavhot:hover      {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#FEE221;text-decoration:underline}
+
+A.sections:link         {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#526B8C;text-decoration:none}
+
+A.sections:visited      {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#526B8C;text-decoration:none}
+
+A.sections:hover        {font-family:Verdana,Arial,Helvetica;font-size:8pt;color:#526B8C;text-decoration:underline}
+
+A.table:link            {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#993300;font-weight:bold;text-decoration:none}
+
+A.nav:link            {font-family:Verdana,Arial,Helvetica;color:#FFFFFF;font-size:9pt;font-weight:normal;text-decoration:none}
+
+P.deck                  {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#000000;font-weight:bold;text-align:left}
+
+A.header                {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:Navy;font-weight:bold;text-decoration:none}
+
+A.headerIndex           {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:navy;font-weight:bold;text-decoration:none}
+
+A.info                 {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:#993300;font-weight:bold;text-decoration:none}
+
+A.tableLight           {font-family:Verdana,Arial,Helvetica;font-size:11px;color:navy;font-weight:Normal;text-decoration:none}
+
+A.innerlink           {font-family:Verdana,Arial,Helvetica;font-size:9pt;color:navy;font-weight:bold;text-decoration:none}
+
+A.subheader            {font-family:Verdana,Arial,Helvetica;color:#000000;font-size:8pt;font-weight:normal;text-decoration:none}
+
+all.clsMenuItemNS{font: bold x-small Verdana, Arial; color: white; text-decoration: none; cursor: hand;}
+
+.clsMenuItemIE{text-decoration: none; font: bold xx-small Verdana, Arial; color: white; cursor: hand;}
+
+--->
+</STYLE>

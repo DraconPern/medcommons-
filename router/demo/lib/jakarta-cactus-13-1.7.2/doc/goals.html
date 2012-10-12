@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>Cactus goals</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Cactus goals" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus.">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus." class="currentPage">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list.">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus.">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>General goals</h1>
+
+      
+<ul>
+        
+<li>
+          Provide a simple unit testing framework focused on server side java 
+          code which tries to cover all J2EE component models and potentially
+          other type of components.
+        </li>
+        
+<li>
+          Allow fine-grained continuous testing of all files making up  
+          an application: source code but also meta-data files (such as 
+          deployment descriptors, etc) through an in-container approach. 
+          Integration work is costly and Cactus tries to spread this load
+          by doing it during development in an automated way.
+        </li>
+      
+</ul>          
+        
+    
+</div>
+
+    
+<div class="section">
+<h1>Medium terms goals and ideas</h1>
+
+      
+<p>
+        The short term goals for Cactus are to continue providing and improving
+        support for J2EE unit testing. More specifically the following areas
+        are being considered and researched:
+      </p>
+        
+      
+<ul>
+        
+<li>
+          Add support for Servlet API 2.4/JSP 2.0 (by using 
+          Tomcat 5/Resin 3.x),
+        </li>
+        
+<li>
+          Provide a full servlet container test suite a la Watchdog using Cactus.,
+        </li>
+        
+<li>
+          Performance unit testing: Add performance extensions to be able to 
+          test each single method in performance.
+        </li>
+        
+<li>
+          More tutorial on AspectJ testing. Potentially add a Cactus Aspect 
+          extension to allow writing test cases as Aspects (this may allow to
+          remove the need for Cactus redirectors).
+        </li>
+        
+<li>
+          Add EJB Redirectors to be able to unit test Session Beans, Entity 
+          Beans and MessageDriven Beans          
+        </li>
+        
+<li>
+          Decouple the Cactus framework into the core and its "plugins". This 
+          means to publish a public API and a public SPI. The SPI would allow
+          to support plugin for testing different type of components (Servlet,
+          Entity EJB, Struts Actions, etc).
+        </li>
+      
+</ul>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Long term vision</h1>
+
+      
+<div class="section">
+<h2>The Future of Component Unit Testing</h2>
+
+        
+<p>
+          We believe unit testing server side components is going to get harder
+          and harder in the future, unless something is done about it!
+          Even now, depending on the specifications
+          for a given component model it is more or less easy. Sometimes it is
+          even not feasible to test all kind of code.
+        </p>
+        
+<p>
+          We believe that we will see more and more components in the future.
+          By components we mean pieces of code that execute in a container.
+          The container will provide more and more services for the components
+          (like transactions, security, life cycle, persistence, interfaces
+          - like web services -, logging, ...). The consequences will be:
+        </p>
+        
+<ul>
+          
+<li>
+            testing strategies that are not in-container, like Mock Objects
+            will still very useful but will provide less added value in
+            ensuring that the code behaves ok. Indeed, as the components will
+            rely more and more on the container's services, the confidence that
+            the tests will run well when deployed will decrease and the need
+            for a solution that ensures the code will run correctly in its
+            environment will increase,
+          </li>
+          
+<li>
+            it will become more and more difficult to offer an in-container
+            unit testing framework that lives outside the container.
+          </li>
+        
+</ul>
+
+      
+</div>
+
+      
+<div class="section">
+<h2>Long term goals for Cactus</h2>
+
+        
+<p>
+          Consequently to the above predictions, there are 2 long term goals
+          for Cactus:
+        </p>
+        
+<ul>
+          
+<li>
+            Continue with the in-container approach as much as possible. It is
+            a best try effort in order to provide tests in which you can have
+            a good confidence,
+          </li>
+          
+<li>
+            However, we believe the only satisfactory and long term solution 
+            is to include (unit) testing APIs as <i>part</i> of the container
+            specifications. This could be done in the form of a SPI 
+            (Service Provider Interface) against which a generic unit testing 
+            framework could be plugged, thus leaving the implementation details
+            to an external framework and only providing maybe a generic
+            and simple implementation. Thus, one goal of Cactus is to help
+            specify needed container API/SPI for unit testing, 
+            i.e. create
+            an additional service of the container:  a "unit-testing service"
+            (in addition to the existing Security, Transaction, Life Cycle, ...
+            Services). The ultimate
+            goal will be reached when this new API/SPI is accepted and become
+            a de jure standard. It would then be time to think about 
+            integrating it into the Servlet Specifications 
+            (or other components -like EJBs -
+            specifications). Agreed, this far-streched at the current time
+            but it is the Cactus vision!
+          </li>        
+        
+</ul>
+
+      
+</div>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Feedback needed!</h1>
+
+      
+<p>
+        Cactus is an open source project where everyone is free to participate
+        (and even encouraged). Thus, we'd really like to have your opinions on
+        the subject of Cactus future.
+      </p>
+      
+<p>
+        How do you view the future of Cactus?
+      </p>
+      
+<p>
+        Do you like the goals and vision defined above?
+      </p>
+      
+<p>
+        Please send all answers to the 
+        <a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Cactus mailing list</a>.
+      </p>
+      
+<p>
+        Thanks.
+      </p>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

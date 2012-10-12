@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="XFA2_0" APIVersion="1.4.4056.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<xfa:datasets xmlns="" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"
+><xfa:data
+><F
+><P1
+><LastName
+>Bill Donner</LastName
+><TrackingNumber
+/><ImageField
+/><FormName
+>BasicOrderForm</FormName
+><Recipe
+>BasicOrderRecipe</Recipe
+><Street
+>33 Valley rd</Street
+></P1
+></F
+></xfa:data
+></xfa:datasets
+>
+<pdf href="MedCommons Order Form Field Test.pdf" xmlns="http://ns.adobe.com/xdp/pdf/"
+/></xdp:xdp>

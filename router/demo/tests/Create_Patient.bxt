@@ -1,0 +1,159 @@
+<WebScriptTool>
+	<DisplayName>Create Patient</DisplayName>
+	<Step v='4'>
+		<ver>13</ver>
+		<id>597529</id>
+		<Summary v='3'>
+			<maxResponseTime>0</maxResponseTime>
+			<averageResponseTime>0</averageResponseTime>
+		</Summary>
+		<childCount>3</childCount>
+		<ChildItems>
+			<Request v='10'>
+				<ver>13</ver>
+				<id>597530</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>2</childCount>
+				<ChildItems>
+					<Parameter v='4'>
+						<ver>13</ver>
+						<id>597531</id>
+						<name>givenName</name>
+						<value>joe</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>13</ver>
+						<id>597532</id>
+						<name>familyName</name>
+						<value>shmoe</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<host>${host}</host>
+				<path>/router/NewPatient.action</path>
+				<protocol/>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset>windows-1252</formCharset>
+				<method>1</method>
+				<waitForSubRequests>false</waitForSubRequests>
+			</Request>
+			<Assertion v='10'>
+				<ver>13</ver>
+				<id>597533</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ContentCheckItem v='1'>
+						<ver>13</ver>
+						<id>597534</id>
+						<pattern>&quot;status&quot;:&quot;ok&quot;</pattern>
+						<bUseRegex>false</bUseRegex>
+						<checkMessageBoxes>false</checkMessageBoxes>
+						<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+					</ContentCheckItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<failureAction>
+					<Object>null</Object>
+				</failureAction>
+				<captureScreenShot>true</captureScreenShot>
+				<scalingPercent>50</scalingPercent>
+				<captureDuplicates>false</captureDuplicates>
+				<scroll>false</scroll>
+				<waitToPass>false</waitToPass>
+			</Assertion>
+			<Execute v='4'>
+				<ver>13</ver>
+				<id>597535</id>
+				<Summary v='3'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<Object>null</Object>
+				<name>set account id, auth</name>
+				<script>var x = eval(&apos;x=&apos;+document.body.innerText);
+badboy.setVariable(&apos;accid&apos;,x.patientMedCommonsId);
+badboy.setVariable(&apos;auth&apos;, x.auth);
+badboy.setVariable(&apos;secret&apos;, x.secret);
+</script>
+				<imageId>4294967295</imageId>
+				<pluginAccess>false</pluginAccess>
+				<frameName/>
+				<sourceFile/>
+			</Execute>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<Object>null</Object>
+		<name>Create Patient</name>
+		<repetitions>1</repetitions>
+		<repeatType>1</repeatType>
+		<repeatVariable>accid</repeatVariable>
+		<incrementAutomatically>true</incrementAutomatically>
+		<incrementAll>true</incrementAll>
+		<expanded>1</expanded>
+	</Step>
+</WebScriptTool>

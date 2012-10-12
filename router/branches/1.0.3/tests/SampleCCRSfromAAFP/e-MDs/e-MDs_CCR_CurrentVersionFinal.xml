@@ -1,0 +1,2269 @@
+<?xml version="1.0"?>
+<ContinuityOfCareRecord xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:astm-org:CCR">
+  <CCRDocumentObjectID>e-Mds_DocID_1236144204</CCRDocumentObjectID>
+  <Language>
+    <Text>English</Text>
+  </Language>
+  <Version>V1.0</Version>
+  <DateTime>
+    <ExactDateTime>2006-01-20T16:34:41-06:00</ExactDateTime>
+  </DateTime>
+  <Patient>
+    <ActorID>AA0001</ActorID>
+  </Patient>
+  <From>
+    <ActorLink>
+      <ActorID>AA0002</ActorID>
+      <ActorRole>
+        <Text>Provider</Text>
+      </ActorRole>
+    </ActorLink>
+  </From>
+  <Purpose>
+    <Description>
+      <Text>Transfer of Patient Data</Text>
+    </Description>
+  </Purpose>
+  <Body>
+    <Payers>
+      <Payer>
+        <CCRDataObjectID>EMD_INSURANCEID_BB0001</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Effective Date</Text>
+          </Type>
+          <ExactDateTime>2000-09-01T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <IDs>
+          <Type>
+            <Text>Subscriber Number</Text>
+          </Type>
+          <ID>ZGB465752588</ID>
+          <Source>
+            <Actor>
+              <ActorID>AA0001</ActorID>
+              <ActorRole>
+                <Text>Patient</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+        </IDs>
+        <IDs>
+          <Type>
+            <Text>Group Number</Text>
+          </Type>
+          <ID>038000</ID>
+          <Source>
+            <Actor>
+              <ActorID>AA0001</ActorID>
+              <ActorRole>
+                <Text>Patient</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+        </IDs>
+        <Type>
+          <Text>Group Policy</Text>
+          <Code>
+            <Value>GP</Value>
+          </Code>
+        </Type>
+        <Description>
+          <Text>Health Insurance</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0001</ActorID>
+            <ActorRole>
+              <Text>patient</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <PaymentProvider>
+          <ActorID>AA0003</ActorID>
+          <ActorRole>
+            <Text>Payer</Text>
+          </ActorRole>
+        </PaymentProvider>
+        <Subscriber>
+          <ActorID>AA0001</ActorID>
+          <ActorRole>
+            <Text>Patient: Policy Holder</Text>
+          </ActorRole>
+        </Subscriber>
+      </Payer>
+      <Payer>
+        <CCRDataObjectID>EMD_INSURANCEID_BB0002</CCRDataObjectID>
+        <IDs>
+          <Type>
+            <Text>Subscriber Number</Text>
+          </Type>
+          <ID>46575258801</ID>
+          <Source>
+            <Actor>
+              <ActorID>AA0001</ActorID>
+              <ActorRole>
+                <Text>Patient</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+        </IDs>
+        <IDs>
+          <Type>
+            <Text>Group Number</Text>
+          </Type>
+          <ID>88026</ID>
+          <Source>
+            <Actor>
+              <ActorID>AA0001</ActorID>
+              <ActorRole>
+                <Text>Patient</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+        </IDs>
+        <Type>
+          <Text>Health Maintenance Org</Text>
+          <Code>
+            <Value>HM</Value>
+          </Code>
+        </Type>
+        <Description>
+          <Text>Health Insurance</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0001</ActorID>
+            <ActorRole>
+              <Text>patient</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <PaymentProvider>
+          <ActorID>AA0004</ActorID>
+          <ActorRole>
+            <Text>Payer</Text>
+          </ActorRole>
+        </PaymentProvider>
+        <Subscriber>
+          <ActorID>AA0001</ActorID>
+          <ActorRole>
+            <Text>Patient: Policy Holder</Text>
+          </ActorRole>
+        </Subscriber>
+      </Payer>
+    </Payers>
+    <Problems>
+      <Problem>
+        <CCRDataObjectID>PID_BB0015</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Onset</Text>
+          </Type>
+          <ExactDateTime>2003-04-11T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Other specified visual disturbance</Text>
+          <Code>
+            <Value>368.8</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Chronic</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0005</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0016</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Onset</Text>
+          </Type>
+          <ExactDateTime>2003-01-23T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Acute sinusitis, maxillary</Text>
+          <Code>
+            <Value>461.0</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0005</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Episodes>
+          <Number>2</Number>
+          <Source>
+            <Actor>
+              <ActorID>AA0005</ActorID>
+              <ActorRole>
+                <Text>Healthcare Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+        </Episodes>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0017</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Onset</Text>
+          </Type>
+          <ExactDateTime>2002-09-03T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>UTI</Text>
+          <Code>
+            <Value>599.0</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0018</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Onset</Text>
+          </Type>
+          <ExactDateTime>2002-09-03T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Well woman exam</Text>
+          <Code>
+            <Value>V72.3</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Episodes>
+          <Number>3</Number>
+          <Source>
+            <Actor>
+              <ActorID>AA0006</ActorID>
+              <ActorRole>
+                <Text>Healthcare Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+        </Episodes>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0019</CCRDataObjectID>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Fainting spell</Text>
+          <Code>
+            <Value>780.2</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0020</CCRDataObjectID>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Pharyngitis, acute</Text>
+          <Code>
+            <Value>462</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0021</CCRDataObjectID>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Allergies</Text>
+          <Code>
+            <Value>477.0</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0022</CCRDataObjectID>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Sinusitis, frontal</Text>
+          <Code>
+            <Value>461.1</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0007</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0023</CCRDataObjectID>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Atopic dermatitis</Text>
+          <Code>
+            <Value>691.8</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0007</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0024</CCRDataObjectID>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Closed fracture of head of radius</Text>
+          <Code>
+            <Value>813.05</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2006</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0005</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </Problem>
+    </Problems>
+    <SocialHistory>
+      <SocialHistoryElement>
+        <CCRDataObjectID>SOCBB0045</CCRDataObjectID>
+        <Type>
+          <Text>Marital Status</Text>
+        </Type>
+        <Description>
+          <Text>Married</Text>
+          <Code>
+            <Value>M</Value>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </SocialHistoryElement>
+    </SocialHistory>
+    <Alerts>
+      <Alert>
+        <CCRDataObjectID>AID_BB0003</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Initial Occurrence</Text>
+          </Type>
+          <ExactDateTime>2006-01-20T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Allergy</Text>
+        </Type>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <CommentID>BB0005</CommentID>
+        <Agent>
+          <Products>
+            <Product>
+              <CCRDataObjectID>AID_BB0004</CCRDataObjectID>
+              <Description>
+                <Text>Penicillins</Text>
+              </Description>
+              <Source>
+                <Actor>
+                  <ActorID>AA0002</ActorID>
+                  <ActorRole>
+                    <Text>Primary Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+              <Product>
+                <ProductName>
+                  <Text>Penicillins</Text>
+                </ProductName>
+              </Product>
+            </Product>
+          </Products>
+        </Agent>
+        <Reaction>
+          <Severity>
+            <Text>Moderate</Text>
+          </Severity>
+        </Reaction>
+      </Alert>
+      <Alert>
+        <CCRDataObjectID>AID_BB0006</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Initial Occurrence</Text>
+          </Type>
+          <ExactDateTime>2006-01-20T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Allergy</Text>
+        </Type>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Agent>
+          <EnvironmentalAgents>
+            <EnvironmentalAgent>
+              <CCRDataObjectID>AID_BB0007</CCRDataObjectID>
+              <Description>
+                <Text>Horseradish</Text>
+              </Description>
+              <Source>
+                <Actor>
+                  <ActorID>AA0002</ActorID>
+                  <ActorRole>
+                    <Text>Primary Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </EnvironmentalAgent>
+          </EnvironmentalAgents>
+        </Agent>
+        <Reaction>
+          <Severity>
+            <Text>Severe</Text>
+          </Severity>
+        </Reaction>
+      </Alert>
+      <Alert>
+        <CCRDataObjectID>AID_BB0009</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Initial Occurrence</Text>
+          </Type>
+          <ExactDateTime>2006-01-20T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Allergy</Text>
+        </Type>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <CommentID>BB0011</CommentID>
+        <Agent>
+          <EnvironmentalAgents>
+            <EnvironmentalAgent>
+              <CCRDataObjectID>AID_BB0010</CCRDataObjectID>
+              <Description>
+                <Text>Pork</Text>
+              </Description>
+              <Source>
+                <Actor>
+                  <ActorID>AA0002</ActorID>
+                  <ActorRole>
+                    <Text>Primary Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </EnvironmentalAgent>
+          </EnvironmentalAgents>
+        </Agent>
+        <Reaction>
+          <Severity>
+            <Text>Mild</Text>
+          </Severity>
+        </Reaction>
+      </Alert>
+      <Alert>
+        <CCRDataObjectID>AID_BB0012</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Initial Occurrence</Text>
+          </Type>
+          <ExactDateTime>2006-01-20T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Allergy</Text>
+        </Type>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Agent>
+          <EnvironmentalAgents>
+            <EnvironmentalAgent>
+              <CCRDataObjectID>AID_BB0013</CCRDataObjectID>
+              <Description>
+                <Text>Almond</Text>
+              </Description>
+              <Source>
+                <Actor>
+                  <ActorID>AA0002</ActorID>
+                  <ActorRole>
+                    <Text>Primary Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </EnvironmentalAgent>
+          </EnvironmentalAgents>
+        </Agent>
+        <Reaction>
+          <Severity>
+            <Text>Moderate</Text>
+          </Severity>
+        </Reaction>
+      </Alert>
+    </Alerts>
+    <Medications>
+      <Medication>
+        <CCRDataObjectID>MID_BB0025</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2002-09-03T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Triphasil 28 Tablet
+1 tab(s) po qd as directed.
+ #1 28 tablet dial pack</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <InternalCCRLink>
+          <LinkID>PID_BB0018</LinkID>
+        </InternalCCRLink>
+        <Product>
+          <ProductName>
+            <Text>Ethinyl Estradiol/Levonorgestrel</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Triphasil 28</Text>
+          </BrandName>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>28 tablet dial pack</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>1</Value>
+          <Units>
+            <Unit>28 tablet dial pack</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Take 1 tablet(s) by mouth daily as directed.</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Well woman exam</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0006</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+        <PatientInstructions>
+          <Instruction>
+            <Text>as directed.; as directed.</Text>
+          </Instruction>
+        </PatientInstructions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0027</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2002-09-03T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Triphasil 28 Tablet
+1 tab(s) po qd as directed.
+ #1 28 tablet dial pack</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <InternalCCRLink>
+          <LinkID>PID_BB0018</LinkID>
+        </InternalCCRLink>
+        <Product>
+          <ProductName>
+            <Text>Ethinyl Estradiol/Levonorgestrel</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Triphasil 28</Text>
+          </BrandName>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>28 tablet dial pack</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>1</Value>
+          <Units>
+            <Unit>28 tablet dial pack</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Take 1 tablet(s) by mouth daily as directed.</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Well woman exam</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0006</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+        <PatientInstructions>
+          <Instruction>
+            <Text>as directed.; as directed.</Text>
+          </Instruction>
+        </PatientInstructions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0029</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2002-09-03T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Triphasil 28 Tablet
+1 tab(s) po qd as directed.
+ #3 28 tablet dial pack</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <InternalCCRLink>
+          <LinkID>PID_BB0018</LinkID>
+        </InternalCCRLink>
+        <Product>
+          <ProductName>
+            <Text>Ethinyl Estradiol/Levonorgestrel</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Triphasil 28</Text>
+          </BrandName>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>28 tablet dial pack</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>3</Value>
+          <Units>
+            <Unit>28 tablet dial pack</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Take 1 tablet(s) by mouth daily as directed.</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Well woman exam</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0006</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+        <PatientInstructions>
+          <Instruction>
+            <Text>as directed.; as directed.</Text>
+          </Instruction>
+        </PatientInstructions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0031</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2001-08-24T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Ortho Cept 28 Tablets
+1 tablet(s) po qd
+#1 Packs</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Product>
+          <ProductName>
+            <Text>Ethinyl Estradiol/Norgestimate</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Ortho Cyclen  28</Text>
+          </BrandName>
+          <Strength>
+            <Value>35</Value>
+            <Units>
+              <Unit>mcg</Unit>
+            </Units>
+          </Strength>
+          <Strength>
+            <Value>0.25</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>&lt;none&gt;</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>0</Value>
+          <Units>
+            <Unit>&lt;none&gt;</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Well woman exam</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0006</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+        <PatientInstructions>
+          <Instruction>
+            <Text>as directed; as directed</Text>
+          </Instruction>
+        </PatientInstructions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0033</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2001-08-24T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Ortho Cept 28 Tablets
+1 tablet(s) po qd
+#3 Packs</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Product>
+          <ProductName>
+            <Text>Ethinyl Estradiol/Norgestimate</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Ortho Cyclen  28</Text>
+          </BrandName>
+          <Strength>
+            <Value>35</Value>
+            <Units>
+              <Unit>mcg</Unit>
+            </Units>
+          </Strength>
+          <Strength>
+            <Value>0.25</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>&lt;none&gt;</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>0</Value>
+          <Units>
+            <Unit>&lt;none&gt;</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Well woman exam</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0006</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+        <PatientInstructions>
+          <Instruction>
+            <Text>as directed; as directed</Text>
+          </Instruction>
+        </PatientInstructions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0035</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2000-08-31T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Fluticasone Propionate 0.05% Cream
+ small amount to affected area bid
+#1 30gm tube</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0007</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <InternalCCRLink>
+          <LinkID>PID_BB0023</LinkID>
+        </InternalCCRLink>
+        <Product>
+          <ProductName>
+            <Text>Fluticasone Propionate</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Fluticasone Propionate</Text>
+          </BrandName>
+          <Strength>
+            <Value>0.05</Value>
+            <Units>
+              <Unit>%</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Cream</Text>
+          </Form>
+          <Size>
+            <Text>&lt;none&gt;</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>0</Value>
+          <Units>
+            <Unit>&lt;none&gt;</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Apply small amount to affected area bid</Text>
+            </Description>
+            <Route>
+              <Text>Topical</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Atopic dermatitis</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0007</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0037</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2003-01-31T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Amoxil 875mg Tablets
+1 tab(s) po q12h for 10 days
+ #20 tablet(s)</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0005</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <InternalCCRLink>
+          <LinkID>PID_BB0016</LinkID>
+        </InternalCCRLink>
+        <CommentID>BB0038</CommentID>
+        <Product>
+          <ProductName>
+            <Text>Amoxicillin</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Amoxil</Text>
+          </BrandName>
+          <Strength>
+            <Value>875</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>tablet(s)</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>20</Value>
+          <Units>
+            <Unit>tablet(s)</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Take 1 tablet(s) by mouth q12h for 10 days</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Acute sinusitis, maxillary</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0005</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0039</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2003-01-23T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Amoxicillin 875mg Tablets
+1 tab(s) po q12h for 5 days
+ #10 tablet(s)</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0005</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <CommentID>BB0040</CommentID>
+        <Product>
+          <ProductName>
+            <Text>Amoxicillin</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Amoxicillin</Text>
+          </BrandName>
+          <Strength>
+            <Value>875</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>tablet(s)</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>10</Value>
+          <Units>
+            <Unit>tablet(s)</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Take 1 tablet(s) by mouth q12h for 5 days</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Acute sinusitis, maxillary</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0005</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0041</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2003-01-23T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Phenergan VC Syrup
+Take 1 tsp po q4-6h.
+ #8 oz</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0005</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Product>
+          <ProductName>
+            <Text>Promethazine/Phenylephrine</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Phenergan VC</Text>
+          </BrandName>
+          <Strength>
+            <Value>6.25</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Strength>
+            <Value>5</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Strength>
+            <Value>5</Value>
+            <Units>
+              <Unit>ml</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Syrup</Text>
+          </Form>
+          <Size>
+            <Text>oz</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>8</Value>
+          <Units>
+            <Unit>oz</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Take 1 teaspoon by mouth q 4 to 6 hr .</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>Acute sinusitis, maxillary</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0005</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0043</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2002-09-03T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Description>
+          <Text>Septra DS Tablets
+1 tab(s) po q12h for 10 days
+ #20 tablet(s)</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+          <Actor>
+            <ActorID>AA0006</ActorID>
+            <ActorRole>
+              <Text>Healthcare Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <InternalCCRLink>
+          <LinkID>PID_BB0017</LinkID>
+        </InternalCCRLink>
+        <Product>
+          <ProductName>
+            <Text>Trimethoprim/Sulfamethoxazole</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Septra DS</Text>
+          </BrandName>
+          <Strength>
+            <Value>160</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Strength>
+            <Value>800</Value>
+            <Units>
+              <Unit>mg</Unit>
+            </Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>tablet(s)</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>20</Value>
+          <Units>
+            <Unit>tablet(s)</Unit>
+          </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Take 1 tablet(s) by mouth q12h for 10 days</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication>
+              <Description>
+                <Text>UTI</Text>
+              </Description>
+              <Source>
+                <Description>
+                  <Text>Healthcare Provider</Text>
+                </Description>
+                <Actor>
+                  <ActorID>AA0006</ActorID>
+                  <ActorRole>
+                    <Text>Healthcare Provider</Text>
+                  </ActorRole>
+                </Actor>
+              </Source>
+            </Indication>
+          </Direction>
+        </Directions>
+      </Medication>
+    </Medications>
+    <VitalSigns>
+      <Result>
+        <CCRDataObjectID>VID_BB0050</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Assessment Time</Text>
+          </Type>
+          <ExactDateTime>2003-04-11T15:04:53-05:00</ExactDateTime>
+        </DateTime>
+        <Description>
+          <Text>Blood Pressure</Text>
+        </Description>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Test>
+          <CCRDataObjectID>BB0051</CCRDataObjectID>
+          <Type>
+            <Text>Result</Text>
+          </Type>
+          <Description>
+            <Text>Systolic</Text>
+          </Description>
+          <Source>
+            <Actor>
+              <ActorID>AA0002</ActorID>
+              <ActorRole>
+                <Text>Primary Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+          <TestResult>
+            <Value>124</Value>
+            <Units>
+              <Unit>mm Hg</Unit>
+            </Units>
+          </TestResult>
+        </Test>
+        <Test>
+          <CCRDataObjectID>BB0052</CCRDataObjectID>
+          <Type>
+            <Text>Result</Text>
+          </Type>
+          <Description>
+            <Text>Diastolic</Text>
+          </Description>
+          <Source>
+            <Actor>
+              <ActorID>AA0002</ActorID>
+              <ActorRole>
+                <Text>Primary Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+          <TestResult>
+            <Value>70</Value>
+            <Units>
+              <Unit>mm Hg</Unit>
+            </Units>
+          </TestResult>
+        </Test>
+      </Result>
+      <Result>
+        <CCRDataObjectID>VID_BB0053</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Assessment Time</Text>
+          </Type>
+          <ExactDateTime>2003-04-11T15:04:55-05:00</ExactDateTime>
+        </DateTime>
+        <Description>
+          <Text>Pulse</Text>
+        </Description>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Test>
+          <CCRDataObjectID>BB0054</CCRDataObjectID>
+          <Type>
+            <Text>Result</Text>
+          </Type>
+          <Description>
+            <Text>Pulse</Text>
+          </Description>
+          <Source>
+            <Actor>
+              <ActorID>AA0002</ActorID>
+              <ActorRole>
+                <Text>Primary Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+          <TestResult>
+            <Value>68</Value>
+            <Units>
+              <Unit>bpm</Unit>
+            </Units>
+          </TestResult>
+        </Test>
+      </Result>
+      <Result>
+        <CCRDataObjectID>VID_BB0055</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Assessment Time</Text>
+          </Type>
+          <ExactDateTime>2003-04-11T15:04:55-05:00</ExactDateTime>
+        </DateTime>
+        <Description>
+          <Text>Respiration</Text>
+        </Description>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Test>
+          <CCRDataObjectID>BB0056</CCRDataObjectID>
+          <Type>
+            <Text>Result</Text>
+          </Type>
+          <Description>
+            <Text>Respiration</Text>
+          </Description>
+          <Source>
+            <Actor>
+              <ActorID>AA0002</ActorID>
+              <ActorRole>
+                <Text>Primary Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+          <TestResult>
+            <Value>18</Value>
+            <Units>
+              <Unit>bpm</Unit>
+            </Units>
+          </TestResult>
+        </Test>
+      </Result>
+      <Result>
+        <CCRDataObjectID>VID_BB0057</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Assessment Time</Text>
+          </Type>
+          <ExactDateTime>2003-04-11T15:04:55-05:00</ExactDateTime>
+        </DateTime>
+        <Description>
+          <Text>Temperature</Text>
+        </Description>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Test>
+          <CCRDataObjectID>BB0058</CCRDataObjectID>
+          <Type>
+            <Text>Result</Text>
+          </Type>
+          <Description>
+            <Text>Temperature</Text>
+          </Description>
+          <Source>
+            <Actor>
+              <ActorID>AA0002</ActorID>
+              <ActorRole>
+                <Text>Primary Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+          <TestResult>
+            <Value>98.9</Value>
+            <Units>
+              <Unit>F</Unit>
+            </Units>
+          </TestResult>
+        </Test>
+      </Result>
+      <Result>
+        <CCRDataObjectID>VID_BB0059</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Assessment Time</Text>
+          </Type>
+          <ExactDateTime>2003-04-11T15:04:55-05:00</ExactDateTime>
+        </DateTime>
+        <Description>
+          <Text>Weight</Text>
+        </Description>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0002</ActorID>
+            <ActorRole>
+              <Text>Primary Provider</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <Test>
+          <CCRDataObjectID>BB0060</CCRDataObjectID>
+          <Type>
+            <Text>Observation</Text>
+          </Type>
+          <Description>
+            <Text>Weight</Text>
+          </Description>
+          <Source>
+            <Actor>
+              <ActorID>AA0002</ActorID>
+              <ActorRole>
+                <Text>Primary Provider</Text>
+              </ActorRole>
+            </Actor>
+          </Source>
+          <TestResult>
+            <Value>155</Value>
+            <Units>
+              <Unit>lbs</Unit>
+            </Units>
+          </TestResult>
+        </Test>
+      </Result>
+    </VitalSigns>
+  </Body>
+  <Actors>
+    <Actor>
+      <ActorObjectID>AA0001</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>Barbara</Given>
+            <Middle>L</Middle>
+          </BirthName>
+          <CurrentName>
+            <Given>Barbara</Given>
+            <Middle>L</Middle>
+            <Family>Campbell</Family>
+          </CurrentName>
+          <DisplayName>Barbara L Campbell</DisplayName>
+        </Name>
+        <DateOfBirth>
+          <Type>
+            <Text>Date of Birth</Text>
+          </Type>
+          <ApproximateDateTime>
+            <Text>7/26/1972 12:00:00 AM</Text>
+          </ApproximateDateTime>
+        </DateOfBirth>
+        <Gender>
+          <Text>female</Text>
+        </Gender>
+      </Person>
+      <IDs>
+        <Type>
+          <Text>Social Security Number</Text>
+        </Type>
+        <ID>652-07-4756</ID>
+        <Source>
+          <Actor>
+            <ActorRole>
+              <Text>patient</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+      </IDs>
+      <Relation>
+        <Text>patient</Text>
+      </Relation>
+      <Address>
+        <Type>
+          <Text>Home</Text>
+        </Type>
+        <Line1>327 Farm Road 1819</Line1>
+        <City>Round Rock</City>
+        <State>TX</State>
+        <PostalCode>78681-</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Telephone>
+        <Value>(320)804-7453</Value>
+        <Type>
+          <Text>Home</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0002</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>Levi</Given>
+            <Middle>A</Middle>
+          </BirthName>
+          <CurrentName>
+            <Given>Levi</Given>
+            <Middle>A</Middle>
+            <Family>Wright</Family>
+            <Title>M.D.</Title>
+          </CurrentName>
+          <DisplayName>Levi A Wright</DisplayName>
+        </Name>
+        <Gender>
+          <Text>male</Text>
+        </Gender>
+      </Person>
+      <Relation>
+        <Text>Person</Text>
+      </Relation>
+      <Address>
+        <Type>
+          <Text>Billing Address</Text>
+        </Type>
+        <Line1>326 21st Street</Line1>
+        <City>Cedar Park</City>
+        <State>TX</State>
+        <PostalCode>78613</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>430 37th Street</Line1>
+        <City>Cedar Park</City>
+        <State>TX</State>
+        <PostalCode>78613</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0003</ActorObjectID>
+      <Organization>
+        <Name>BCBS Of TX</Name>
+      </Organization>
+      <Relation>
+        <Text>Insurance</Text>
+      </Relation>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>9969 Woodland Dr</Line1>
+        <City>Dallas</City>
+        <State>TX</State>
+        <PostalCode>75266-0044</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0004</ActorObjectID>
+      <Organization>
+        <Name>Prudential</Name>
+      </Organization>
+      <Relation>
+        <Text>Insurance</Text>
+      </Relation>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>9285 Jadestone</Line1>
+        <City>Houston</City>
+        <State>TX</State>
+        <PostalCode>77270-4711</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0005</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>Bryce</Given>
+            <Middle>FF</Middle>
+          </BirthName>
+          <CurrentName>
+            <Given>Bryce</Given>
+            <Middle>FF</Middle>
+            <Family>Miller</Family>
+            <Title>P.A.</Title>
+          </CurrentName>
+          <DisplayName>Bryce FF Miller</DisplayName>
+        </Name>
+        <Gender>
+          <Text>male</Text>
+        </Gender>
+      </Person>
+      <Relation>
+        <Text>Healthcare Provider</Text>
+      </Relation>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>2597 Eagles Nest</Line1>
+        <City>Cedar Park</City>
+        <State>TX</State>
+        <PostalCode>78613</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0006</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>Jackie</Given>
+          </BirthName>
+          <CurrentName>
+            <Given>Jackie</Given>
+            <Family>Enders</Family>
+            <Title>P.A.</Title>
+          </CurrentName>
+          <DisplayName>Jackie Enders</DisplayName>
+        </Name>
+        <Gender>
+          <Text>female</Text>
+        </Gender>
+      </Person>
+      <Relation>
+        <Text>Healthcare Provider</Text>
+      </Relation>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>425 North Route 303</Line1>
+        <City>Cedar Park</City>
+        <State>TX</State>
+        <PostalCode>78613</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0007</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>Jill</Given>
+          </BirthName>
+          <CurrentName>
+            <Given>Jill</Given>
+            <Family>Byrd</Family>
+            <Title>N.P. not really a good dr</Title>
+          </CurrentName>
+          <DisplayName>Jill Byrd</DisplayName>
+        </Name>
+        <Gender>
+          <Text>female</Text>
+        </Gender>
+      </Person>
+      <Relation>
+        <Text>Healthcare Provider</Text>
+      </Relation>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>12 D Eagles Way</Line1>
+        <City>Cedar Park</City>
+        <State>TX</State>
+        <PostalCode>78613</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+    <Actor>
+      <ActorObjectID>eMDs_BB0061</ActorObjectID>
+      <InformationSystem>
+        <Name>e-MDs Solution Series</Name>
+        <Type>Electronic Medical Database Record System</Type>
+        <Version>1.7.0.0</Version>
+      </InformationSystem>
+      <Address>
+        <Type>
+          <Text>Physical Address</Text>
+        </Type>
+        <Line1>500 West Whitestone</Line1>
+        <Line2>ste. 200</Line2>
+        <City>Cedar Park</City>
+        <State>Texas</State>
+        <PostalCode>78613</PostalCode>
+      </Address>
+      <Address>
+        <Type>
+          <Text>Billing Address</Text>
+        </Type>
+        <Line1>P.O. Box 2889</Line1>
+        <City>Cedar Park</City>
+        <State>Texas</State>
+        <PostalCode>78630</PostalCode>
+      </Address>
+      <Telephone>
+        <Value>888-344-9836</Value>
+        <Type>
+          <Text>Sales</Text>
+        </Type>
+      </Telephone>
+      <Telephone>
+        <Value>800-565-5564</Value>
+        <Type>
+          <Text>Support</Text>
+        </Type>
+      </Telephone>
+      <Telephone>
+        <Value>512-335-4375</Value>
+        <Type>
+          <Text>Fax</Text>
+        </Type>
+      </Telephone>
+      <URL>
+        <Value>www.e-mds.com</Value>
+        <Type>
+          <Text>eMDs Main Website</Text>
+        </Type>
+      </URL>
+      <Status>
+        <Text>Active</Text>
+      </Status>
+      <Source>
+        <Actor>
+          <ActorID>AA0002</ActorID>
+          <ActorRole>
+            <Text>Primary Medical Facility</Text>
+          </ActorRole>
+        </Actor>
+      </Source>
+    </Actor>
+  </Actors>
+  <Comments>
+    <Comment>
+      <CommentObjectID>BB0005</CommentObjectID>
+      <DateTime>
+        <ApproximateDateTime>
+          <Text>1/20/2006 12:00:00 AM</Text>
+        </ApproximateDateTime>
+      </DateTime>
+      <Description>
+        <Text>Has bad case of rashes</Text>
+      </Description>
+      <Source>
+        <ActorID>AA0002</ActorID>
+        <ActorRole>
+          <Text>Primary Provider</Text>
+        </ActorRole>
+      </Source>
+    </Comment>
+    <Comment>
+      <CommentObjectID>BB0011</CommentObjectID>
+      <DateTime>
+        <ApproximateDateTime>
+          <Text>1/20/2006 12:00:00 AM</Text>
+        </ApproximateDateTime>
+      </DateTime>
+      <Description>
+        <Text>Blisters on tongue</Text>
+      </Description>
+      <Source>
+        <ActorID>AA0002</ActorID>
+        <ActorRole>
+          <Text>Primary Provider</Text>
+        </ActorRole>
+      </Source>
+    </Comment>
+    <Comment>
+      <CommentObjectID>BB0038</CommentObjectID>
+      <DateTime>
+        <ApproximateDateTime>
+          <Text>1/31/2003 3:25:07 PM</Text>
+        </ApproximateDateTime>
+      </DateTime>
+      <Description>
+        <Text>The prescriber is aware of the following potential:
+Interactions: Amoxicillin interacts with Ethinyl Estradiol</Text>
+      </Description>
+      <Source>
+        <ActorID>AA0005</ActorID>
+        <ActorRole>
+          <Text>Administred Physician</Text>
+        </ActorRole>
+      </Source>
+    </Comment>
+    <Comment>
+      <CommentObjectID>BB0040</CommentObjectID>
+      <DateTime>
+        <ApproximateDateTime>
+          <Text>1/23/2003 11:39:42 AM</Text>
+        </ApproximateDateTime>
+      </DateTime>
+      <Description>
+        <Text>The prescriber is aware of the following potential:
+Interactions: Amoxicillin interacts with Ethinyl Estradiol</Text>
+      </Description>
+      <Source>
+        <ActorID>AA0005</ActorID>
+        <ActorRole>
+          <Text>Administred Physician</Text>
+        </ActorRole>
+      </Source>
+    </Comment>
+  </Comments>
+</ContinuityOfCareRecord>

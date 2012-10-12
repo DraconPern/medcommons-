@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>MedPad Settings</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key> 
+			<string>Specify a PLIST URL</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Plist URL</string>
+			<key>Key</key>
+			<string>EnteredURL</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Or Choose A Sample Plist from MedCommons</string>
+		</dict>
+		
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Sample Plist Files</string>
+			<key>Key</key>
+			<string>SampleURL</string>
+			
+			<key>Titles</key>
+			<array>
+			
+				<string>Hello MedPad</string>
+				<string>PlanB Gig List</string>
+				<string>DICOM Tests</string>
+				<string>Help</string>
+				
+			</array>
+			
+			<key>Values</key>
+			<array>									
+				<string>http://medcommons.net/MedCommonsPrototyper/samples/HelloMedPad.xml</string>
+				<string>http://medcommons.net/MedCommonsPrototyper/samples/PlanBGig032010Notes.xml</string>
+				<string>http://medcommons.net/MedCommonsPrototyper/samples/DICOMTests.xml</string>
+				<string>http://medcommons.net/MedCommonsPrototyper/samples/FirstTimeStartup.xml</string>
+
+			</array>
+			
+			<key>DefaultValue</key>
+				<string>http://medcommons.net/MedCommonsPrototyper/samples/HelloMedPad.xml</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Preferences</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Use Samples</string>
+			<key>Key</key>
+			<string>UseSamples</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+			<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>http://medcommons.net/MedCommonsPrototyper</string>
+			</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MedCommonsTourTest</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+if(!win==""){win.window.focus();}
+}
+function ShowCaption(numMessage) {
+for (x=1;x<9;x++) {
+	var MessageBlock=document.getElementById("tourtext" + x);
+	var PicBlock=document.getElementById("tourpic" + x);
+	PicBlock.className = 'TourDescHide';
+	MessageBlock.className = 'TourDescHide';
+	}
+  var MessageBlock=document.getElementById("tourtext" + numMessage);
+  var PicBlock=document.getElementById("tourpic" + numMessage);
+  PicBlock.className="TourPicShow";
+  MessageBlock.className = 'TourDescShow';
+
+}
+
+</script>
+<style type="text/css">
+<!--
+.TourTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #006666;
+	width: 200px;
+	padding-bottom: 5px;
+}
+.TourPicShow {
+	display: block;
+	}
+.TourDescHide {
+	display: none;
+}
+.TourDescShow {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666666;
+	width: 185px;
+	margin-left: 10px;
+	margin-right: 5px;
+	line-height: 14px;
+}
+a:link {
+    color: #527463;
+	text-decoration: none;
+}
+a:visited {
+    color: #527463;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a:active {
+    color: #527463;
+	text-decoration: none;
+}
+.Boxed {
+	border: 3px double #999999;
+	height: 400px;
+	width: 500px;
+	position: relative;
+	visibility: visible;
+}
+.Lined {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #999999;
+	height: 400px;
+	width: 1px;
+}
+-->
+</style>
+</head>
+
+<body>
+<div id="MainTable" class="Boxed"><table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="295" valign="top"><div id="tourpic1" class="TourPicShow"><img src="images/testtour01.jpg" width="295" height="400"></div>
+	<div id="tourpic2" class="TourDescHide"><img src="images/testtour02.jpg" width="295" height="400"></div>
+    <div id="tourpic3" class="TourDescHide"><img src="images/testtour03.jpg" width="295" height="400"></div>
+	<div id="tourpic4" class="TourDescHide"><img src="images/testtour04.jpg" width="295" height="400"></div>
+	<div id="tourpic5" class="TourDescHide"><img src="images/testtour05.jpg" width="295" height="400"></div>
+	<div id="tourpic6" class="TourDescHide"><img src="images/testtour06.jpg" width="295" height="400"></div>
+	<div id="tourpic7" class="TourDescHide"><img src="images/testtour07.jpg" width="295" height="400"></div>
+	<div id="tourpic8" class="TourDescHide"><img src="images/testtour08.jpg" width="295" height="400"></div></td>	
+	<td width="5"><div class="Lined"></div></td>
+    <td width="200" align="left" valign="top"><div id="tourstep1" class="TourTitle"><a href="javascript:ShowCaption('1');">1. MedCommons Overview</a></div>
+    <div id="tourtext1" class="TourDescShow">
+      <p>With MedCommons you can:</p>
+      <p>create CCR's (Continuity of Care Records), attach PDF's and images to patient records for referrals (no registration required). <a href="memberservice/logon.php">Preview these features with Demo Data-&gt;</a></p>
+      <p>To continue with the tour, click on step 2. </p>
+    </div>
+    <div id="tourstep2" class="TourTitle"><a href="javascript:ShowCaption('2');">2. Enter Patient ID Number</a></div>
+    <div id="tourtext2" class="TourDescHide">
+      <p>Entering a patient ID number will start the CCr creation process. Registered users need do this opnly once, as previously created CCR's are available on their desktop.</p>
+    </div>
+	<div id="tourstep3" class="TourTitle"><a href="javascript:ShowCaption('3');">3. Enter Email Addresses for Recipient of Referral</a></div>
+    <div id="tourtext3" class="TourDescHide">
+      <p>Sending a referral is as easy as sending an email. MedCommons will send an email to the referring physician along with notes and a link to the patient CCR online. </p>
+    </div>
+	<div id="tourstep4" class="TourTitle"><a href="javascript:ShowCaption('4');">4. Attach Notes</a></div>
+    <div id="tourtext4" class="TourDescHide"><p>Notes can be attached to CCR's as well as PDF's and images (for registered users)</p></div>
+	<div id="tourstep5" class="TourTitle"><a href="javascript:ShowCaption('5');">5. Send Notification Email</a></div>
+    <div id="tourtext5" class="TourDescHide"><p>To notify a referring physician, an email is generated out of MedCommons with a tracking number and corresponding PIN.</p></div>
+	<div id="tourstep6" class="TourTitle"><a href="javascript:ShowCaption('6');">6. Record and Transmit PIN</a></div>
+    <div id="tourtext6" class="TourDescHide"><p>A PIN is recorded separately and transmitted to the referring doctor via fax or phone. This practice is in compliance with HIPAA privacy standards.</p></div>
+	<div id="tourstep7" class="TourTitle"><a href="javascript:ShowCaption('7');">7. Notification Email is received</a> </div>
+    <div id="tourtext7" class="TourDescHide"><p>When a referring physician receives a notification email from MedCommons, they can click a link to access a login page specific to the CCR that was forwarded. With the PIN they have received by fax or phone, they can log in, make notations, view images, and then send back to the primary physician as easily as if they were a registyered user.</p></div>
+	<div id="tourstep8" class="TourTitle"><a href="javascript:ShowCaption('8');">8. MedCommons is the Solution</a> </div>   
+	<div id="tourtext8" class="TourDescHide"><p>MedCommons runs inside a web browser so it can be accessed from anywhere. With MedCommons, physicians benefit from the ease, portability, and capability of MedCommons. Patients benefit because they can allow any physician anywhere to view their medical history. MedCommons eReferrals make patient records make sense.</p></div></td>
+  </tr>
+</table></div>
+</body>
+</html>

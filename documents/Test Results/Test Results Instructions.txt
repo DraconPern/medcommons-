@@ -1,0 +1,5 @@
+Please store results of testing done on MedCommons products in this folder. 
+
+Nest results within a folder for each release.
+
+Be sure to include all notes from testing, and the date conducted.

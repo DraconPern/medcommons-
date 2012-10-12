@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0.1//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="">
+<link media="screen" type="text/css" rel="stylesheet" href="./css/apache.css">
+<link media="print" type="text/css" rel="stylesheet" href="./css/print.css">
+<title>Jakarta Cactus</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" id="header">
+<tr>
+<td id="projectLogo" class="logo"><a href="http://jakarta.apache.org/"><img alt="The Apache Jakarta Project" src="./images/jakarta-logo.gif"></a></td><td id="subprojectLogo" class="logo"><a href="http://jakarta.apache.org/cactus/"><img alt="Jakarta Cactus" src="./images/logocactus.gif"></a></td>
+</tr>
+<tr id="contextBar">
+<td id="breadCrumbs"><a href="http://www.apache.org/">Apache</a> &gt; <a href="http://jakarta.apache.org/">Jakarta</a> &gt; <a href="./index.html">Cactus</a></td><td id="status">
+              Docs for:
+              <strong>v1.7.2</strong> | <a href="./..">v1.7</a>
+              &nbsp;&nbsp;
+              Last update: March 26 2006</td>
+</tr>
+</table>
+<table id="main">
+<tr>
+<td id="sidebar">
+<div id="navigation">
+<ul>
+
+  
+<li>About<ul>
+    
+<li>
+<a href="./index.html" title="Describes what the Cactus framework is, defines several types of unit tests and explains which are best implemented with Cactus." class="currentPage">Overview</a>
+</li>
+    
+<li>
+<a href="./goals.html" title="Short and long term goals for Cactus.">Goals</a>
+</li>
+    
+<li>
+<a href="./features.html" title="Cactus feature list.">Features</a>
+</li>
+    
+<li>
+<a href="./news.html" title="Latest news and events about Cactus.">News</a>
+</li>
+    
+<li>
+<a href="./changes.html" title="Cactus release changelogs and list of all the web site pages that have been recently changed.">Changes</a>
+</li>
+    
+<li>
+<a href="./downloads.html" title="Downloads of Cactus releases and nightly builds.">Downloads</a>
+</li>
+    
+<li>
+<a target="bug_database" href="http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10471">Bug Database</a>
+</li>
+    
+<li>
+<a href="./mailinglist.html" title="Information about the Cactus mailing lists.">Mailing Lists</a>
+</li>
+    
+<li>
+<a href="./faq.html" title="Questions frequently asked (and sometimes answered)">FAQ</a>
+</li>
+    
+<li>
+<a target="cactus_wiki" href="http://wiki.apache.org/jakarta-cactus/FrontPage">Wiki</a>
+</li>
+    
+<li>
+<a href="./license.html" title="The Cactus License.">License</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Documentation<ul>
+    
+<li>
+<a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a>
+</li>
+    
+<li>
+<a href="./how_it_works.html" title="High level view of the inner workings of Cactus.">How It Works</a>
+</li>
+    
+<li>
+<a href="./writing/howto_testcase.html" title="Introduction to writing Cactus-based unit tests.">Writing Tests</a>
+</li>
+    
+<li>
+<a href="./integration/index.html" title="Information on the various methods of running tests with Cactus.">Running Tests</a>
+</li>
+    
+<li>
+<a href="./participating/index.html" title="Information on participating in the development of Cactus.">Participating</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Miscellaneous<ul>
+    
+<li>
+<a href="./cactusname.html" title="Some background information about how Cactus got its name.">Why the Name?</a>
+</li>
+    
+<li>
+<a href="./mock_vs_cactus.html" title="Discussion of in-container testing as compared to using a mock objects approach.">Mock vs Container</a>
+</li>
+    
+<li>
+<a target="cactus_testedon" href="http://wiki.apache.org/jakarta-cactus/TestedOn">Tested On...</a>
+</li>
+    
+<li>
+<a href="./resources/index.html" title="Links to Cactus related resources.">Resources</a>
+</li>
+    
+<li>
+<a target="stats" href="http://jakarta.apache.org/cactus/stats/index.html">Statistics</a>
+</li>
+    
+<li>
+<a href="./sitemap.html" title="List of all site resources.">Sitemap</a>
+</li>
+  
+</ul>
+</li>
+
+  
+<li>Translations<ul>
+    
+<li>
+<a target="french" href="http://www.ressources-java.net/cactus">French</a>
+</li>
+    
+<li>
+<a target="korean" href="http://jakarta.apache-korea.org/cactus/index.html">Korean</a>
+</li>
+    
+<li>
+<a target="japanese" href="http://www.ingrid.org/jajakarta/cactus/">Japanese</a>
+</li>
+  
+</ul>
+</li>
+
+
+<li>
+<img src="images/cactusbanner.gif"></li>
+</ul>
+</div>
+</td><td id="content">
+
+  
+
+  
+
+    
+<div class="section">
+<h1>Project Description</h1>
+      
+<p>
+        Cactus is a simple test framework for unit testing server-side java
+        code (Servlets, EJBs, Tag Libs, Filters, ...).
+      </p>
+      
+<p>
+        The intent of Cactus is to lower the cost of writing tests for
+        server-side code. It uses <a href="http://junit.org" title="">JUnit</a> and 
+        extends it.
+      </p>
+      
+<p>
+        Cactus implements an in-container strategy, meaning that tests are
+        executed inside the container.
+      </p>
+      
+<div class="figure">
+<img alt="The Cactus Ecosystem" src="./images/ecosystem.jpg" usemap="#ecosystem">
+        <map name="ecosystem">
+          
+<area coords="225,200,35" alt="Cactus Framework" shape="circle" href="./index.html">
+          
+<area coords="165,145,35" alt="Eclipse Plugin" shape="circle" href="./integration/eclipse/index.html">
+          
+<area coords="305,220,35" alt="Browser Integration" shape="circle" href="./integration/integration_browser.html">
+          
+<area coords="390,175,35" alt="Maven Plugin" shape="circle" href="">
+          
+<area coords="375,235,35" alt="StrutsTestCase" shape="circle" href="http://strutstestcase.sourceforge.net">
+          
+<area coords="345,295,35" alt="JUnitEE Runner" shape="circle" href="http://www.junitee.org/">
+          
+<area coords="355,115,35" alt="Jenerator" shape="circle" href="http://www.visioncodified.com/">
+          
+<area coords="140,225,35" alt="Ant Integration" shape="circle" href="./integration/ant/index.html">
+          
+<area coords="280,145,35" alt="Jetty Integration" shape="circle" href="./integration/integration_jetty.html">
+          
+<area coords="55,200,35" alt="Servlet Sample" shape="circle" href="./howto_sample.html">
+          
+<area coords="225,270,35" alt="Manual Configuration" shape="circle" href="./integration/manual/howto_config.html">
+        
+</map>
+      
+</div>
+      
+<p>
+        The Cactus Ecosystem is made of several components:
+      </p>
+      
+<ul>
+        
+<li>
+          The Cactus Framework: This is the heart of Cactus. It is the engine
+          that provides the API to write Cactus tests.
+        </li>
+        
+<li>
+          The Cactus Integration Modules: They are front ends and frameworks 
+          that provide easy ways of using the Cactus Framework (Ant scripts,
+          Eclipse plugin, Maven plugin, ...).
+        </li>
+        
+<li>
+          The Cactus Samples: They are simple projects that demonstrate how
+          to write Cactus tests and how to use some of the Integration Modules.
+        </li>
+      
+</ul>
+    
+</div>
+
+    
+<a name="unittest_types">
+<!--anchor--></a>
+    
+<div class="section">
+<h1>Different kinds of unit tests</h1>
+
+      
+<p>
+        There are several kinds of unit testing frameworks. We categorize them
+        in 3 types:
+      </p>
+      
+<ol>
+        
+<li>
+          
+<b>Type 1: code logic unit testing</b>. Probably the
+          best strategy for these tests is to use a
+          <a href="http://www.mockobjects.com" title="">Mock Objects</a> type
+          framework.
+        </li>
+        
+<li>
+          
+<b>Type 2: integration unit testing</b>. Cactus is
+          typically in this category (we'll let you judge if it is the best or
+          not :)). These tests will exercise the interactions with the
+          container.
+        </li>
+        
+<li>
+          
+<b>Type 3: functional unit testing</b>. These unit tests
+          will let you test the returned values from your server code. This is
+          for example
+          <a href="http://httpunit.sourceforge.net/" title="">HttpUnit</a> (Note that HttpUnit also 
+          performs standard functional testing - as opposed to functional unit 
+          testing -, which let you test full use cases - a login use case for 
+          example, which is comprised of several requests/responses).
+        </li>
+      
+</ol>
+      
+<p>
+        Ideally you would use 3 different frameworks just to unit test your
+        code ! Then you have to think about acceptance testing, system
+        integration testing, ...
+      </p>
+      
+<p>
+        Cactus was developed to fit Type 2 but also to be a very good
+        compromise for types 1 and 3, with the idea that it is much easier to
+        have to write tests for a single framework than for several ! Moreover,
+        you can never fully test your code. We believe Cactus provides a middle
+        ground that provides a high confidence that your code will run when
+        deployed. However, it is your choice and you can use Cactus only for
+        type 2 if you wish.
+      </p>
+
+    
+</div>
+
+    
+<div class="section">
+<h1>Getting Started</h1>
+
+      
+<p>
+        To get started, read the
+        <a href="./getting_started.html" title="Gentle introduction to get you up to speed with Cactus.">Getting Started</a> guide.
+      </p>
+
+    
+</div>
+
+  
+
+</td>
+</tr>
+</table>
+<div id="footer">
+<p>
+	    Copyright &copy; 2000-2004 The Apache Software Foundation.
+            All Rights Reserved.
+	  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mccxp.css" type="text/css"?>
+
+<window
+    id="mccxp_settingsWindow"
+    title="CXP Settings"
+    xmlns:h="http://www.w3.org/1999/xhtml"    
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"    
+    style="padding: 10px;"
+    onload="mccxp_initSettings();"
+    >
+    <script src="MochiKit.js"/>
+    <script src="xpath.js"/>
+    <script src="misc.js"/>
+    <script src="dom.js"/>
+    <script src="mccxp.js"/>
+    <script language="JavaScript">
+      function mccxp_initSettings() {
+        var prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+        var mccxpBranch = prefService.getBranch("mccxp.");
+
+        if(mccxpBranch.prefHasUserValue("default-subject")) {
+          mcxel('subject').value = mccxpBranch.getCharPref("default-subject");
+        }
+
+        if(mccxpBranch.prefHasUserValue("from-email")) {
+          mcxel('fromemail').value = mccxpBranch.getCharPref("from-email");
+        }
+
+        if(mccxpBranch.prefHasUserValue("SenderProviderID")) {
+          mcxel('SenderProviderID').value = mccxpBranch.getCharPref("SenderProviderID");
+        }
+
+        var history = window.opener.mccxp_history; 
+        var cxpServers = new Array();
+
+        try {
+          for(i=0;i&lt;history.length;++i) {
+            var cxpServer = history[i].destUrl;
+            if(cxpServers[cxpServer]==null) {
+              document.getElementById('cxpServerUrls').appendItem(cxpServer);
+              cxpServers[cxpServer]=1;
+            }
+          }
+          mcxel('cxpServerUrls').value = window.opener.cxpService;
+        }
+        catch(e) {
+          dump(e);
+        }
+
+        mcxel('cxpServerUrl').value = window.opener.cxpService;
+      }
+
+      function mccxp_saveSettings() {
+        var prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+        var mccxpBranch = prefService.getBranch("mccxp.");
+        mccxpBranch.setCharPref("default-subject",mcxelv('subject'));
+        mccxpBranch.setCharPref("from-email",mcxelv('fromemail'));
+        window.opener.cxpService = mcxelv('cxpServerUrls');
+        mccxpBranch.setCharPref("default-cxp-host", window.opener.cxpService);
+        mccxpBranch.setCharPref("SenderProviderID", mcxelv('SenderProviderID'));
+        window.close();
+      }
+    </script>
+
+    <label class="infoheading" style="padding-top: 5px;" value="Settings"/>
+    <hbox> 
+      <label class="label" style="margin-bottom: 5px;" value="Please enter the URL for your CXP Server:"/>
+      <spacer flex="1"/>
+    </hbox>
+    <hbox> 
+      <spacer width="30"/>
+      <menulist id="cxpServerUrls" editable="true" flex="1">
+        <menupopup>
+        </menupopup>
+      </menulist>
+    </hbox>
+    <spacer height="10"/>
+    <label class="label" style="margin-bottom: 5px;" value="Default notification subject text:"/>
+    <textbox style="margin-left: 30px;" id="subject" value="" flex="1"/>
+    <label class="label" style="margin-bottom: 5px; margin-top: 5px;" value="CCR From email address (optional):"/>
+    <textbox style="margin-left: 30px;" id="fromemail" value="" flex="1"/>
+    <spacer height="10"/>
+    <label class="label" style="margin-bottom: 5px; margin-top: 5px;" value="SenderProviderId (optional):"/>
+    <textbox style="margin-left: 30px;" id="SenderProviderID" value="" flex="1"/>
+    <spacer height="10"/>
+    <hbox flex="1" align="start" pack="end"   style="">
+        <button id="okButton" label="Save" oncommand="mccxp_saveSettings(); "/>
+        <button id="cancelButton" label="Cancel" oncommand="window.close()"/>
+    </hbox> 
+    <spacer flex="1"/>
+</window>
+

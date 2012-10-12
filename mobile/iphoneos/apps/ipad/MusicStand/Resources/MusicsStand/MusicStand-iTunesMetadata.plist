@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>artistName</key>
+	<string>MedCommons</string>
+	<key>copyright</key>
+	<string>© 2010 MedCommons, Inc.</string>
+	<key>fileExtension</key>
+	<string>.app</string>
+	<key>genre</key>
+	<string>Medical</string>
+	<key>itemName</key>
+	<string>MCTester</string>
+	<key>kind</key>
+	<string>software</string>
+	<key>playlistArtistName</key>
+	<string>MedCommons</string>
+	<key>playlistName</key>
+	<string>MCTester</string>
+</dict>
+</plist>

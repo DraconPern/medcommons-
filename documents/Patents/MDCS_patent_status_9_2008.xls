@@ -1,0 +1,830 @@
+<html>
+<head>
+<title>
+Client Patent Data Dump</title>
+</head>
+<body>
+<h1 align="CENTER">
+Client Patent Data Dump</h1>
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<tr>
+<td valign="top" align="left" Width="100%">
+<B>
+<font color="blue">
+Sep-10-2008</font>
+</B>
+</td>
+</tr>
+</table>
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<tr>
+<td valign="top" align="left" >
+<B>
+<font color="blue">
+Results for: <br>File Number Starts with 'mdcs*'</font>
+</B>
+</td>
+</tr>
+</table>
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+DOCKET NO.</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+SERIAL NUMBER</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+MATTER FILING DATE</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+TITLE</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+PRIORITY DATE</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+STATUS</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+PATENT NUMBER</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+ISSUE DATE</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+MATTER TYPE CATEGORY DESCRIPTION</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+MATTER TYPE DESCRIPTION</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+MATTER TYPE</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+COUNTRY</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+PUBLICATION NUMBER</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+PUBLICATION DATE</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<B>
+<font color="white">
+CLIENT REFERENCE NUMBER</font>
+</B>
+</td>
+<td valign="top" width="10%" bgcolor=red>
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor=red>
+<B>
+<font color="white">
+PERSONNEL:NAME</font>
+</B>
+</td>
+<td valign="top" width="50%" bgcolor=red>
+<B>
+<font color="white">
+PERSONNEL:ROLE</font>
+</B>
+</td>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+MDCS-P-001-01</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+11089567</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Mar 19, 2004</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+SYSTEM AND METHOD FOR PATIENT CONTROLLED COMMUNICATION OF DICOM PROTECTED HEALTH INFORMATION</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Pending</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility - ORG</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+US-2005-0237776-A1</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Oct 27, 2005</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Hugh V. Cottingham</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+MDCS-P-001-60</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+60555030</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Mar 19, 2004</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+SYSTEM AND METHOD FOR PATIENT CONTROLLED COMMUNICATION OF DICOM PROTECTED HEALTH INFORMATION</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Closed</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Prov - ORG</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Prov</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Hugh V. Cottingham</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+MDCS-P-002-01</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+11089592</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+May 17, 2004</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+SYSTEM AND METHOD FOR VIRTUAL RADIOLOGY AND PATIENT DOCUMENT FLOW</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Pending</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility - ORG</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+US-2007-0005798-A1</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Jan 4, 2007</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Hugh V. Cottingham</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Yair Frankel</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+MDCS-P-002-60</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+60571832</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+May 17, 2004</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+SYSTEM AND METHOD FOR VIRTUAL RADIOLOGY AND PATIENT DOCUMENT FLOW</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Closed</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Prov - ORG</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Prov</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Hugh V. Cottingham</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Yair Frankel</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+MDCS-P-003-01</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+11352704</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Feb 10, 2006</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+PERSONAL CONTROL OF HEALTHCARE INFORMATION AND RELATED SYSTEMS, METHODS, AND DEVICES</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Feb 11, 2005</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Pending</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility - ORG</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+US-2006-0229911-A1</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Oct 12, 2006</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Yair Frankel</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+MDCS-P-003-60</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+60652296</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Feb 11, 2005</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+PATIENT CONTROLLED MEDICAL RECORDS AND eREFERRALS ACROSS AFFINITY DOMAINS</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Closed</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Prov - ORG</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Prov</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+MDCS-P-003-WO</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+PCTUS2006005021</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Feb 10, 2006</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+PERSONAL CONTROL OF HEALTHCARE INFORMATION AND RELATED SYSTEMS, METHODS, AND DEVICES</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Feb 11, 2005</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Closed</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility - ORG</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Utility</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+PCT</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Yair Frankel</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+MDCS-P-004-01</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+11451899</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Jun 13, 2006</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+PRIVATE HEALTH INFORMATION INTERCHANGE AND RELATED SYSTEMS, METHODS, AND DEVICES</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Jun 13, 2005</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Pending</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Utility - ORG</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Utility</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+US-2007-0027715-A1</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Feb 1, 2007</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+MDCS-P-004-60</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+60689803</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Jun 13, 2005</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+A SUSTAINABLE PATIENT-CENTRIC NETWORK FOR PRIVATE HEALTH INFORMATION INTERCHANGE</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Closed</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Prov - ORG</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Prov</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Sean Doyle</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+William L. Donner</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+MDCS-P-005-01</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+11505183</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Aug 16, 2006</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+SYSTEMS AND METHODS FOR EXTENDING AN INFORMATION STANDARD THROUGH COMPATIBLE ONLINE ACCESS</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Aug 17, 2005</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Pending</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Utility - ORG</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Utility</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+US-2007-0192140-A1</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+Aug 16, 2007</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+</td>
+<td valign="top" width="10%" bgcolor="#D1D0CE">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#D1D0CE">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+MDCS-P-005-60</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+60709080</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Aug 17, 2005</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+METHOD FOR EXTENDING AN INFORMATION STANDARD THROUGH COMPATIBLE ONLINE ACCESS</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Closed</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Patent Application</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Prov - ORG</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+Prov</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+United States of America</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+</td>
+<td valign="top" width="10%" bgcolor="#EFEFEF">
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Adrian Gropper</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Inventor</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Joseph M. Guiliano</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Partner</td>
+</tr>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Christopher P. Carroll</td>
+<td valign="top" width="50%" bgcolor="#EFEFEF">
+Working Attorney</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table border="1" width="100%" cellpadding="1" cellspacing="4%">
+<tr>
+<td valign="middle" align="center" >
+<B>
+<font color="blue">
+11 results displayed.</font>
+</B>
+</td>
+</tr>
+</table>
+</body>
+</html>

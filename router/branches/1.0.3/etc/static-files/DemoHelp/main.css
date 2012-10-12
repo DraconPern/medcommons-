@@ -1,0 +1,141 @@
+/**
+ * Copyright 2004 MedCommons Inc.   All Rights Reserved.
+ */
+
+ BODY {
+      FONT-FAMILY: Arial Helvetica, sans-serif; 
+      PADDING-RIGHT: 0px; 
+      PADDING-LEFT: 0px; 
+      PADDING-BOTTOM: 0px; 
+      MARGIN: 0px; PADDING-TOP: 0px; 
+      BACKGROUND-COLOR: #ffffff;
+  }
+      
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #333333;
+}
+.banner {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #FFFFFF;
+}
+.currentPage {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #CC6600;
+	background-color: #F0EFE4;
+}
+.otherPage {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #FFFFFF;
+}
+
+.headline {
+	font-family: Arial;
+	font-size: medium;
+	font-weight: bold;
+  /* Medcommons green */
+	color: #527463;
+}
+
+.headlinedramatic{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-weight: bold;
+	color: #CC6600;
+	background-color: #C3D4D1;
+}
+.subhead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: bold;
+	color: #666666;
+}
+.emphasis {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	color: #507878;
+}
+.textreverse1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #7F9991;
+}
+.textreverse2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #B86928;
+}
+#selectionPane
+{
+  position: relative;
+  left: 30;
+  top:  0.2in;
+  height: 300;
+  width:  920;
+}
+      
+.selHeader {
+  FONT-WEIGHT: bold; FONT-SIZE: medium; 	color: #333333; sans-serif; BORDER-BOTTOM: solid black
+}
+.selTitle {
+      FONT-WEIGHT: bold; FONT-SIZE: medium;  	color: #333333;
+}
+.selRow {
+      font-family: Arial, Helvetica, sans-serif; font-size: x-small; color: #333333;
+}
+.selBottom {
+      FONT-WEIGHT: bold; FONT-SIZE: x-small; 	color: #333333; BORDER-TOP: solid black 3px
+}
+.instructionText {
+      FONT-WEIGHT: normal; FONT-SIZE: xx-small; 	color: #333333; BORDER-TOP: solid black 3px
+}
+
+/*
+
+P {
+  FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+a {
+  FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+
+a:link { 
+  color: blue;
+}
+
+a:visited { 
+  color: purple;
+}
+
+h2 {
+  FONT-SIZE: 16px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+.currentPage {
+  FONT-WEIGHT: bold; 
+  BORDER-BOTTOM: solid black
+}
+*/
+    
+/* ssadedin: added to stop image links showing borders */
+img
+{
+  border-style: none;
+}
+
+.copyrighttext {
+  FONT-SIZE: 9px; 
+  FONT-FAMILY: Arial
+}
+
